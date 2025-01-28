@@ -1,4 +1,4 @@
-- Gruppkontrakt för Spelprojekt 2 - Grupp 3
+# Gruppkontrakt för Spelprojekt 2 - Grupp 3
 Syfte: Att säkerställa en effektiv leverans av spelet och att alla bidrar rättvist.
 [ Ansvar ]
 1. Arbetstid: Varje medlem förbinder sig att arbeta **minst 30 timmar per vecka** och logga sitt arbete HackNplan. 
@@ -6,9 +6,9 @@ Syfte: Att säkerställa en effektiv leverans av spelet och att alla bidrar rät
 3. Veckorapport: En sammanfattning av sitt arbete i slutet av veckan på Discord i sin egna disciplins kanal. Även rullande uppdateringar under veckans gång. 
 
 
-# Om någon missar en skriftlig veckorapport utan förklaring tillkommer en varning.
-# Om någon inte kan komma på ett möte, meddela detta i tid och delta via discord om det går. 
-# Om någon är mer än 15 min sen utan godtycklig anledning blir denne skyldig till att ta med fika till resterande gruppmedlemmar. 
+Om någon missar en skriftlig veckorapport utan förklaring tillkommer en varning. 
+Om någon inte kan komma på ett möte, meddela detta i tid och delta via discord om det går. 
+Om någon är mer än 15 min sen utan godtycklig anledning blir denne skyldig till att ta med fika till resterande gruppmedlemmar. 
 
 [ Kommunikation ]
 1. Obligatorisk kommunikation: Om någon inte kan jobba de planerade timmarna under en vecka så skall detta meddelas tillsammans med en plan för att ta igen tiden och/eller be om hjälp i god tid. 
