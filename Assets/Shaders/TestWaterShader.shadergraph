@@ -578,20 +578,6 @@
         {
             "m_OutputSlot": {
                 "m_Node": {
-                    "m_Id": "7f0fc7da59c64bdeb81efb6e315793f9"
-                },
-                "m_SlotId": 2
-            },
-            "m_InputSlot": {
-                "m_Node": {
-                    "m_Id": "347ca96dfb0a4245bd45d0a4fff6a0c6"
-                },
-                "m_SlotId": 0
-            }
-        },
-        {
-            "m_OutputSlot": {
-                "m_Node": {
                     "m_Id": "7fbbae4430bf444bba04759554df0ae8"
                 },
                 "m_SlotId": 0
@@ -895,20 +881,6 @@
                     "m_Id": "ed677660c7ee4732bf60976f02988513"
                 },
                 "m_SlotId": 2
-            }
-        },
-        {
-            "m_OutputSlot": {
-                "m_Node": {
-                    "m_Id": "ecd9682df2af47d385693515186bbdfc"
-                },
-                "m_SlotId": 3
-            },
-            "m_InputSlot": {
-                "m_Node": {
-                    "m_Id": "257db9073537456c9c73596358532c61"
-                },
-                "m_SlotId": 0
             }
         },
         {
@@ -1460,10 +1432,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1923.9658203125,
-            "y": -431.03289794921877,
-            "width": 182.99990844726563,
-            "height": 251.0
+            "x": -1833.9998779296875,
+            "y": -386.0000305175781,
+            "width": 183.0,
+            "height": 250.99996948242188
         }
     },
     "m_Slots": [
@@ -1540,7 +1512,7 @@
     "m_RenderingPass": 4,
     "m_BlendMode": 0,
     "m_ZTest": 4,
-    "m_ZWrite": false,
+    "m_ZWrite": true,
     "m_TransparentCullMode": 2,
     "m_OpaqueCullMode": 2,
     "m_SortPriority": 0,
@@ -2946,7 +2918,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "Caustics",
     "m_StageCapability": 2,
-    "m_Value": 0.0,
+    "m_Value": 1.0,
     "m_DefaultValue": 0.0,
     "m_Labels": []
 }
@@ -3011,9 +2983,9 @@
     "m_ShaderOutputName": "LowFrequencyNormalWS",
     "m_StageCapability": 2,
     "m_Value": {
-        "x": 0.0,
-        "y": 0.0,
-        "z": 0.0
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
     },
     "m_DefaultValue": {
         "x": 0.0,
@@ -5093,7 +5065,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "Smoothness",
     "m_StageCapability": 2,
-    "m_Value": 0.5,
+    "m_Value": 1.0,
     "m_DefaultValue": 0.5,
     "m_Labels": []
 }
@@ -6118,9 +6090,9 @@
     "m_ShaderOutputName": "BaseColor",
     "m_StageCapability": 2,
     "m_Value": {
-        "x": 0.10760057717561722,
-        "y": 0.4622211754322052,
-        "z": 0.5849056243896484
+        "x": 0.12864899635314942,
+        "y": 0.37749308347702029,
+        "z": 0.46226418018341067
     },
     "m_DefaultValue": {
         "x": 0.0,
