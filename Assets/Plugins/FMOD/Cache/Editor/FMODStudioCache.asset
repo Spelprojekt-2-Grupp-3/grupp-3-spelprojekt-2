@@ -1,5 +1,86 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-3913468501346358413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/TestToMakeSureAudioWorks
+  m_EditorClassIdentifier: 
+  Path: event:/Music/TestToMakeSureAudioWorks
+  Guid:
+    Data1: 1591503772
+    Data2: 1179883141
+    Data3: 647911323
+    Data4: 1116788225
+  Banks:
+  - {fileID: 6946404773456274774}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 156428
+--- !u!114 &-2788533554890506465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/LJUD/AMB/Vatten
+  m_EditorClassIdentifier: 
+  Path: event:/LJUD/AMB/Vatten
+  Guid:
+    Data1: 1270740074
+    Data2: 1123451827
+    Data3: 793831825
+    Data4: 1226112890
+  Banks:
+  - {fileID: 6946404773456274774}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-187801827094987202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/LJUD/SFX/Impact
+  m_EditorClassIdentifier: 
+  Path: event:/LJUD/SFX/Impact
+  Guid:
+    Data1: -2083346854
+    Data2: 1285849023
+    Data3: 417373096
+    Data4: -1530928112
+  Banks:
+  - {fileID: 6946404773456274774}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13,18 +94,18 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 6307140769736683653}
-  - {fileID: 7501463342674138474}
+  - {fileID: 8736947985836088325}
+  - {fileID: 6946404773456274774}
   EditorEvents:
-  - {fileID: 3747116198077106030}
-  - {fileID: 3214316614512004131}
-  - {fileID: 272377575081934991}
+  - {fileID: -187801827094987202}
+  - {fileID: -2788533554890506465}
+  - {fileID: -3913468501346358413}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 7501463342674138474}
+  - {fileID: 6946404773456274774}
   StringsBanks:
-  - {fileID: 6307140769736683653}
-  cacheTime: 638741927292453413
+  - {fileID: 8736947985836088325}
+  cacheTime: 638741935500162722
   cacheVersion: 131622
 --- !u!114 &272377575081934991
 MonoBehaviour:
@@ -127,6 +208,24 @@ MonoBehaviour:
   - Name: 
     Value: 890
   Exists: 1
+--- !u!114 &6946404773456274774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Plugins/FMOD/Banks/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638741935500142703
+  FileSizes: []
+  Exists: 1
 --- !u!114 &7501463342674138474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,4 +243,24 @@ MonoBehaviour:
   StudioPath: bank:/Master
   lastModified: 638741927292408210
   FileSizes: []
+  Exists: 1
+--- !u!114 &8736947985836088325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Plugins/FMOD/Banks/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638741935500162722
+  FileSizes:
+  - Name: 
+    Value: 890
   Exists: 1
