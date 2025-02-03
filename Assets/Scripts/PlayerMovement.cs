@@ -4,17 +4,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(Rigidbody), typeof(Animator))]
 public class PlayerMovement : MonoBehaviour
 {
-    public PlayerInputActions playerControls;
+    [SerializeField] [Range(0, 2000)] private float moveSpeed = 100;
+    private PlayerInputActions playerControls;
     private InputAction move;
     private InputAction interact;
-    [SerializeField] [Range(0, 2000)] private float moveSpeed = 100;
     private Vector3 moveDirection = new Vector3();
     private Rigidbody rb;
-
-
+    
     private void Awake()
     {
         playerControls = new PlayerInputActions();
@@ -47,7 +46,10 @@ public class PlayerMovement : MonoBehaviour
             moveDirection.x * moveSpeed * Time.deltaTime,
             rb.velocity.y,
             moveDirection.y * moveSpeed * Time.deltaTime);
-        rb.rotation = Quaternion.LookRotation(new Vector3(moveDirection.x, 0, moveDirection.y));
+        if (moveDirection.magnitude > 0.0f) // Roterar inte om man inte kollar åt nån riktning
+        {
+            rb.rotation = Quaternion.LookRotation(new Vector3(moveDirection.x, 0, moveDirection.y));
+        }
     }
 
     private void Interact(InputAction.CallbackContext context)
