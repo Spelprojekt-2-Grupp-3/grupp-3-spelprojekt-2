@@ -1,18 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Package : MonoBehaviour
 {
     [SerializeField] private float weight;
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField, Tooltip("Size that the package takes up in the inventory")] 
+    private Vector2Int gridSize;
+    [Tooltip("Image for the package in the 2D inventory")]
+    public Image inventoryImage;
 }
