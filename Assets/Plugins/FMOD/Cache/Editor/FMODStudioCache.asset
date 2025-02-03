@@ -18,12 +18,13 @@ MonoBehaviour:
   EditorEvents:
   - {fileID: 3747116198077106030}
   - {fileID: 3214316614512004131}
+  - {fileID: 7192163671418759238}
   EditorParameters: []
   MasterBanks:
   - {fileID: 7501463342674138474}
   StringsBanks:
   - {fileID: 6307140769736683653}
-  cacheTime: 638741910899787503
+  cacheTime: 638741915746540753
   cacheVersion: 131622
 --- !u!114 &3214316614512004131
 MonoBehaviour:
@@ -89,16 +90,43 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Desktop/Master.strings.bank
+  m_Name: bank:/Master.strings.bank
   m_EditorClassIdentifier: 
   Path: Assets/Plugins/FMOD/Banks/Desktop/Master.strings.bank
-  Name: Desktop/Master.strings
+  Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638741910899787503
+  lastModified: 638741915746540753
   FileSizes:
   - Name: 
-    Value: 818
+    Value: 890
   Exists: 1
+--- !u!114 &7192163671418759238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MUSIK/TestToMakeSureAudioWorks
+  m_EditorClassIdentifier: 
+  Path: event:/MUSIK/TestToMakeSureAudioWorks
+  Guid:
+    Data1: 1591503772
+    Data2: 1179883141
+    Data3: 647911323
+    Data4: 1116788225
+  Banks:
+  - {fileID: 7501463342674138474}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 156000
 --- !u!114 &7501463342674138474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,6 +142,6 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/Banks/Desktop/Master.bank
   Name: Desktop/Master
   StudioPath: bank:/Master
-  lastModified: 638741910899767493
+  lastModified: 638741915746520814
   FileSizes: []
   Exists: 1
