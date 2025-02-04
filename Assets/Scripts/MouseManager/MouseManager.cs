@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 
 public class MouseManager : MonoBehaviour
 {
-    private PlayerController _playerController;
+    private PlayerInputActions _playerController;
     private Camera _mainCamera;
     
     [SerializeField]
@@ -14,10 +14,10 @@ public class MouseManager : MonoBehaviour
 
     void Awake()
     {
-        _playerController = new PlayerController();
+        _playerController = new PlayerInputActions();
         _mainCamera = Camera.main;
         
-        _playerController.Mouse.Click.performed += _ => PerformedClick();
+        _playerController.Player.Interact.performed += _ => PerformedClick();
 
     }
 
