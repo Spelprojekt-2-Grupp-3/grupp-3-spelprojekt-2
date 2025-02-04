@@ -60,6 +60,7 @@ public class BoatMovement : MonoBehaviour
         }
         
         moveDirection = move.ReadValue<Vector2>();
+        moveDirection.Normalize();
         rb.velocity = new Vector3(
             moveDirection.x * moveSpeed * Time.deltaTime,
             rb.velocity.y,
