@@ -9,10 +9,10 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody), typeof(Animator), typeof(BuoyantObject))]
 public class BoatMovement : MonoBehaviour
 {
-    [SerializeField, Range(0, 2000)] [Tooltip("Always slows down until at this value when not pressing the gas")] 
-    private float baseMoveSpeed = 1000;
+    [SerializeField, Range(0, 100)] [Tooltip("Always slows down until at this value when not pressing the gas")] 
+    private float baseMoveSpeed = 10;
     private float moveSpeed;
-    [SerializeField, Range(100, 2000)] [Tooltip("Acceleration")]
+    [SerializeField, Range(1, 200)] [Tooltip("Acceleration")]
     private float acceleration = 100;
     [SerializeField, Range(0f, 1f), Tooltip("Speed for the slerp of the rotation")] private float rotationSpeed = 0.01f;
     private PlayerInputActions playerControls;
@@ -61,10 +61,15 @@ public class BoatMovement : MonoBehaviour
         
         moveDirection = move.ReadValue<Vector2>();
         moveDirection.Normalize();
+    }
+
+    private void FixedUpdate()
+    {
+        if (!move.inProgress && !gas.inProgress) return;
         rb.velocity = new Vector3(
-            moveDirection.x * moveSpeed * Time.deltaTime,
+            moveDirection.x * moveSpeed,
             rb.velocity.y,
-            moveDirection.y * moveSpeed * Time.deltaTime);
+            moveDirection.y * moveSpeed);
         if (moveDirection.magnitude > 0.0f) // Roterar inte om man inte kollar åt nån riktning
         {
             rb.rotation = Quaternion.Slerp(rb.rotation, Quaternion.LookRotation(new Vector3(moveDirection.x, 0, moveDirection.y)), rotationSpeed);
