@@ -7,18 +7,16 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(Rigidbody), typeof(Animator))]
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] [Range(0, 2000)] private float moveSpeed = 100;
+    [SerializeField, Range(0, 2000)] private float moveSpeed = 100;
     private PlayerInputActions playerControls;
     private InputAction move;
     private InputAction interact;
     private Vector3 moveDirection = new Vector3();
     private Rigidbody rb;
-    private bool allowMovement;
     
     private void Awake()
     {
         playerControls = new PlayerInputActions();
-        allowMovement = false;
     }
 
     private void OnEnable()
