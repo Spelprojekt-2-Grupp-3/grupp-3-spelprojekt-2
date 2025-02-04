@@ -9,7 +9,7 @@ public class InventoryController : MonoBehaviour
 { 
    [HideInInspector]public ItemGrid selectedItemGrid;
 
-   private Shipment selectedPackage;
+   private InventoryItem selectedPackage;
    private RectTransform packageRectTransform;
    
    private void Update()
@@ -17,9 +17,12 @@ public class InventoryController : MonoBehaviour
        //item drag
        if (selectedPackage != null)
            packageRectTransform.position = Input.mousePosition;
-       
        if(selectedItemGrid==null){return;}
-      
+       GuiClicking();
+   }
+
+   void GuiClicking()
+   {
        //TODO:Implement input manager here
        if (Mouse.current.leftButton.wasPressedThisFrame)
        {
@@ -38,5 +41,4 @@ public class InventoryController : MonoBehaviour
            }
        }
    }
-   
 }
