@@ -246,6 +246,186 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             ]
         },
         {
+            ""name"": ""Boat"",
+            ""id"": ""44821dcd-a49f-4b29-9f08-36c1c08a532f"",
+            ""actions"": [
+                {
+                    ""name"": ""Move"",
+                    ""type"": ""Value"",
+                    ""id"": ""1bbd0014-13fa-44fa-b57c-e9ce5f3aadbb"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Gas"",
+                    ""type"": ""Button"",
+                    ""id"": ""739c9ffe-a576-40b0-8e10-7c7f9eb38340"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""d28bed14-525a-4dc0-896a-3ec08ceb4336"",
+                    ""path"": ""<Gamepad>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""WASD"",
+                    ""id"": ""2f789e31-cf2a-4a16-877e-c00c1239b791"",
+                    ""path"": ""Dpad"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Move"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""f7cbccc6-4160-4171-9b1f-13134e50972d"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""8032e404-75f0-4838-9d5e-4e1ce5ab65fa"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""0273037b-b4ad-468e-a7d0-b1ce637ff815"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""69ab2bad-66c9-4221-a807-c3735ca4e7c0"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""d24846a8-0a9d-4d2e-9692-c8c5c20da82a"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""cf2aadf6-435d-4286-ba11-3c51157d4e1c"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""7166ead1-b06b-455f-81c9-9a4a15e5c074"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""a3955bbd-3d24-476c-a841-e1e84431661c"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cdd18670-b5e4-4b1c-990a-fad542475770"",
+                    ""path"": ""<XRController>/{Primary2DAxis}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""XR"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""70b8f7b7-e6c0-4760-860b-01194cdb0de2"",
+                    ""path"": ""<Joystick>/stick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Joystick"",
+                    ""action"": ""Move"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""47c7621a-ba62-4709-963d-8b38a7091713"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Gas"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""522ed4df-adf3-4ff4-8296-d9da342cf89d"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Gas"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
+        },
+        {
             ""name"": ""UI"",
             ""id"": ""06e7e9f8-86a4-4161-9d72-3aadc97b4054"",
             ""actions"": [
@@ -830,6 +1010,10 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Player_Move = m_Player.FindAction("Move", throwIfNotFound: true);
         m_Player_Look = m_Player.FindAction("Look", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
+        // Boat
+        m_Boat = asset.FindActionMap("Boat", throwIfNotFound: true);
+        m_Boat_Move = m_Boat.FindAction("Move", throwIfNotFound: true);
+        m_Boat_Gas = m_Boat.FindAction("Gas", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -961,6 +1145,60 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         }
     }
     public PlayerActions @Player => new PlayerActions(this);
+
+    // Boat
+    private readonly InputActionMap m_Boat;
+    private List<IBoatActions> m_BoatActionsCallbackInterfaces = new List<IBoatActions>();
+    private readonly InputAction m_Boat_Move;
+    private readonly InputAction m_Boat_Gas;
+    public struct BoatActions
+    {
+        private @PlayerInputActions m_Wrapper;
+        public BoatActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Move => m_Wrapper.m_Boat_Move;
+        public InputAction @Gas => m_Wrapper.m_Boat_Gas;
+        public InputActionMap Get() { return m_Wrapper.m_Boat; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(BoatActions set) { return set.Get(); }
+        public void AddCallbacks(IBoatActions instance)
+        {
+            if (instance == null || m_Wrapper.m_BoatActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_BoatActionsCallbackInterfaces.Add(instance);
+            @Move.started += instance.OnMove;
+            @Move.performed += instance.OnMove;
+            @Move.canceled += instance.OnMove;
+            @Gas.started += instance.OnGas;
+            @Gas.performed += instance.OnGas;
+            @Gas.canceled += instance.OnGas;
+        }
+
+        private void UnregisterCallbacks(IBoatActions instance)
+        {
+            @Move.started -= instance.OnMove;
+            @Move.performed -= instance.OnMove;
+            @Move.canceled -= instance.OnMove;
+            @Gas.started -= instance.OnGas;
+            @Gas.performed -= instance.OnGas;
+            @Gas.canceled -= instance.OnGas;
+        }
+
+        public void RemoveCallbacks(IBoatActions instance)
+        {
+            if (m_Wrapper.m_BoatActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IBoatActions instance)
+        {
+            foreach (var item in m_Wrapper.m_BoatActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_BoatActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public BoatActions @Boat => new BoatActions(this);
 
     // UI
     private readonly InputActionMap m_UI;
@@ -1129,6 +1367,11 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
+    }
+    public interface IBoatActions
+    {
+        void OnMove(InputAction.CallbackContext context);
+        void OnGas(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
