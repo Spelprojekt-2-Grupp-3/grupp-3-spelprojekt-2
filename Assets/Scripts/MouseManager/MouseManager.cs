@@ -38,8 +38,10 @@ public class MouseManager : MonoBehaviour
     }
 
     //Skjuter en ray från kameran till scenen, och kollar om rayen intersectar objekt
+    
     private void DetectObjectOnClick()
     {
+        
         Ray ray = _mainCamera.ScreenPointToRay(Mouse.current.position.ReadValue());
         RaycastHit hit;
         

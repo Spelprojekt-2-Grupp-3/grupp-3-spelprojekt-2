@@ -24,6 +24,7 @@ public class Shipment : MonoBehaviour, IClick
     {
         Debug.Log("You have picked up a shipment!");
         _player.shipmentCount++;
+        _player.shipments.Add(GetComponent<Shipment>());
         Destroy(gameObject);
     }
 }
