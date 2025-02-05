@@ -43,6 +43,16 @@ public class InventoryController : MonoBehaviour
            packageRectTransform.position = Mouse.current.position.ReadValue();
        if(selectedItemGrid==null){return;}
        GuiClicking();
+
+       if (Mouse.current.rightButton.wasPressedThisFrame)
+       {
+           CreateItem();
+
+           InventoryItem toInsert = selectedPackage;
+           selectedPackage = null;
+           InsertItem(toInsert);
+       }
+      
    }
 
    void GuiClicking()
@@ -74,11 +84,21 @@ public class InventoryController : MonoBehaviour
        }
        else
        {   //Placing item
-           bool success = selectedItemGrid.PlaceItem(selectedPackage, posOnGrid.x, posOnGrid.y);
+           bool success = selectedItemGrid.PlaceItemWithChecks(selectedPackage, posOnGrid.x, posOnGrid.y);
            if (success)
            {
                selectedPackage = null;
            }
        }
+   }
+
+   void InsertItem(InventoryItem itemToInsert)
+   {
+       if (selectedItemGrid == null) { return;}
+       Vector2Int? gridPos = selectedItemGrid.FindSpace(itemToInsert);
+       
+       if(gridPos==null){return;}
+
+       selectedItemGrid.PlaceItem(itemToInsert, gridPos.Value.x, gridPos.Value.y);
    }
 }

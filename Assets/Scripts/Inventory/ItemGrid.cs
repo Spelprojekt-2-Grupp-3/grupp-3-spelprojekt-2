@@ -26,7 +26,7 @@ public class ItemGrid : MonoBehaviour
         
         //Creates an object directly on grid. Prefab requires Data beforehand
         InventoryItem item = Instantiate(itemPrefab).GetComponent<InventoryItem>();
-        PlaceItem(item,5, 2);
+        PlaceItemWithChecks(item,5, 2);
     }
 
     public Vector2Int GetTileGridPosition(Vector2 mousePosition)
@@ -51,7 +51,7 @@ public class ItemGrid : MonoBehaviour
         rectTransform.sizeDelta = size;
     }
 
-    public bool PlaceItem(InventoryItem package, int xPos, int yPos)
+    public bool PlaceItemWithChecks(InventoryItem package, int xPos, int yPos)
     {
         if (CheckBoundry(xPos,yPos,package.packageData.gridSize.x, package.packageData.gridSize.y) == false)
         {
@@ -63,7 +63,13 @@ public class ItemGrid : MonoBehaviour
             return false;
         }
         
-        
+        PlaceItem(package, xPos, yPos);
+
+        return true;
+    }
+
+    public void PlaceItem(InventoryItem package, int xPos, int yPos)
+    {
         RectTransform itemRectTransform = package.GetComponent<RectTransform>();
         itemRectTransform.SetParent(rectTransform);
 
@@ -71,21 +77,19 @@ public class ItemGrid : MonoBehaviour
         {
             for (int y = 0; y < package.packageData.gridSize.y; y++)
             {
-                packageSlot[xPos+ x, yPos + y] = package;
+                packageSlot[xPos + x, yPos + y] = package;
             }
         }
 
         package.onGridPosition.x = xPos;
         package.onGridPosition.y = yPos;
-        
+
         Vector2 itemPosition = new Vector2();
         itemPosition.x = xPos * tileSizeWidth + tileSizeWidth * package.packageData.gridSize.x / 2;
         //inverted y calc because grid goes from Top left instead of unity's Bottom left
-        itemPosition.y = -(yPos * tileSizeHeight + tileSizeHeight * package.packageData.gridSize.y  / 2);
-        
+        itemPosition.y = -(yPos * tileSizeHeight + tileSizeHeight * package.packageData.gridSize.y / 2);
+
         itemRectTransform.localPosition = itemPosition;
-        
-        return true;
     }
 
     public InventoryItem PickUpItem(int xPos, int yPos)
@@ -105,6 +109,26 @@ public class ItemGrid : MonoBehaviour
         
         return toReturn;
     }
+
+    public Vector2Int? FindSpace(InventoryItem itemToInsert)
+    {
+        int width = inventorySizeX - itemToInsert.packageData.gridSize.x+1;
+        int height = inventorySizeY - itemToInsert.packageData.gridSize.y+1;
+
+        for (int x = 0; x < width; x++)
+        {
+            for (int y = 0; y < height; y++)
+            {
+                if (CheckOverlap(x, y, itemToInsert.packageData.gridSize.x, itemToInsert.packageData.gridSize.y))
+                {
+                    return new Vector2Int(x, y);
+                }
+            }
+        }
+
+        return null;
+    }
+    
 
     bool CheckPosition(int xPos, int yPos)
     {
@@ -143,6 +167,7 @@ public class ItemGrid : MonoBehaviour
             {
                 if (packageSlot[xPos + x, yPos + y] != null)
                 {
+                    //for switching held with placed in one go, incomplete
                     /*if (overlapItem == null)
                         overlapItem = packageSlot[xPos + x, yPos + y];
                     else
