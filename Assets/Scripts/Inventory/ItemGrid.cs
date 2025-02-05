@@ -23,7 +23,8 @@ public class ItemGrid : MonoBehaviour
     {
         rectTransform = GetComponent<RectTransform>();
         Init(inventorySizeX, inventorySizeY);
-
+        
+        //Creates an object directly on grid. Prefab requires Data beforehand
         InventoryItem item = Instantiate(itemPrefab).GetComponent<InventoryItem>();
         PlaceItem(item,5, 2);
     }
@@ -50,8 +51,19 @@ public class ItemGrid : MonoBehaviour
         rectTransform.sizeDelta = size;
     }
 
-    public void PlaceItem(InventoryItem package, int xPos, int yPos)
+    public bool PlaceItem(InventoryItem package, int xPos, int yPos)
     {
+        if (CheckBoundry(xPos,yPos,package.packageData.gridSize.x, package.packageData.gridSize.y) == false)
+        {
+            return false;
+        }
+
+        if (CheckOverlap(xPos, yPos, package.packageData.gridSize.x, package.packageData.gridSize.y) == false)
+        {
+            return false;
+        }
+        
+        
         RectTransform itemRectTransform = package.GetComponent<RectTransform>();
         itemRectTransform.SetParent(rectTransform);
 
@@ -72,6 +84,8 @@ public class ItemGrid : MonoBehaviour
         itemPosition.y = -(yPos * tileSizeHeight + tileSizeHeight * package.packageData.gridSize.y  / 2);
         
         itemRectTransform.localPosition = itemPosition;
+        
+        return true;
     }
 
     public InventoryItem PickUpItem(int xPos, int yPos)
@@ -90,5 +104,57 @@ public class ItemGrid : MonoBehaviour
         }
         
         return toReturn;
+    }
+
+    bool CheckPosition(int xPos, int yPos)
+    {
+        if (xPos < 0 || yPos < 0)
+        {
+            return false;
+        }
+        if (xPos >= inventorySizeX || yPos >= inventorySizeY)
+        {
+            return false;
+        }
+
+        return true;
+    }
+
+    bool CheckBoundry(int xPos, int yPos, int width, int height)
+    {
+        if (CheckPosition(xPos, yPos) == false)
+            return false;
+
+        xPos += width-1;
+        yPos += height-1;
+        
+        if (CheckPosition(xPos, yPos) == false)
+            return false;
+        
+        
+        return true;
+    }
+
+    bool CheckOverlap(int xPos, int yPos, int width, int height)
+    {
+        for (int x = 0; x < width; x++)
+        {
+            for (int y = 0; y < height; y++)
+            {
+                if (packageSlot[xPos + x, yPos + y] != null)
+                {
+                    /*if (overlapItem == null)
+                        overlapItem = packageSlot[xPos + x, yPos + y];
+                    else
+                    {
+                        if (overlapItem != packageSlot[xPos + x, yPos + y])
+                            return false;
+                    }*/
+                    return false;
+                }
+            }
+        }
+        
+        return true;
     }
 }

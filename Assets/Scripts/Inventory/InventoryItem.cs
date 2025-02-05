@@ -7,12 +7,12 @@ public class InventoryItem : MonoBehaviour
 {
     public PackageData packageData;
 
-    public Vector2Int onGridPosition;
+    [HideInInspector] public Vector2Int onGridPosition;
 
     internal void Set(PackageData data)
     {
         packageData = data;
-        GetComponent<Image>().sprite = data.inventoryImage.sprite;
+        GetComponent<Image>().sprite = data.inventoryImage;
 
         Vector2 size = new Vector2();
         size.x = data.gridSize.x * ItemGrid.tileSizeWidth;

@@ -10,5 +10,5 @@ public class PackageData : ScriptableObject
     public Vector2Int gridSize;
     [SerializeField] private float weight;
     [Tooltip("Image for the package in the 2D inventory")]
-    public Image inventoryImage;
+    public Sprite inventoryImage;
 }
