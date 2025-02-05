@@ -8,12 +8,6 @@ public class SceneManager : MonoBehaviour
 {
     private string s = "";
 
-    // Start is called before the first frame update
-    void Start() { }
-
-    // Update is called once per frame
-    void Update() { }
-
     public void Load(string s)
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(s);
@@ -37,7 +31,6 @@ public class SceneManager : MonoBehaviour
 
     public void ChangeTextElement(GameObject tmp)
     {
-        //Debug.Log(tmp.GetComponent);
         tmp.GetComponent<TextMeshProUGUI>().text = s;
     }
 }
