@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: Boat Engine
   StudioPath: 
   Min: 0
-  Max: 100
+  Max: 23
   Default: 0
   ID:
     data1: 3768441920
@@ -218,7 +218,7 @@ MonoBehaviour:
   - {fileID: 6946404773456274774}
   StringsBanks:
   - {fileID: 8736947985836088325}
-  cacheTime: 638744515343110397
+  cacheTime: 638744535958922689
   cacheVersion: 131622
 --- !u!114 &272377575081934991
 MonoBehaviour:
@@ -445,7 +445,7 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/Banks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638744515343090333
+  lastModified: 638744535958897511
   FileSizes: []
   Exists: 1
 --- !u!114 &7501463342674138474
@@ -481,7 +481,7 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/Banks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638744515343110397
+  lastModified: 638744535958922689
   FileSizes:
   - Name: 
     Value: 1322
