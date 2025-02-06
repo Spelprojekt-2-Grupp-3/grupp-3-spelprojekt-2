@@ -18,6 +18,7 @@ public class BoatMovement : MonoBehaviour
     private PlayerInputActions playerControls;
     private InputAction move;
     private InputAction gas;
+    private InputAction look;
     private int moveDirection;
     private Rigidbody rb;
     
@@ -33,6 +34,8 @@ public class BoatMovement : MonoBehaviour
         move.Enable();
         gas = playerControls.Boat.Gas;
         gas.Enable();
+        look = playerControls.Boat.Look;
+        look.Enable();
     }
 
     private void OnDisable()
@@ -62,10 +65,10 @@ public class BoatMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!move.inProgress && !gas.inProgress) return;
-        rb.velocity = transform.right * moveSpeed * move.ReadValue<Vector2>().y;
-        Quaternion q = Quaternion.AngleAxis(rotationSpeed, new Vector3(0, move.ReadValue<Vector2>().x, 0));
+        Quaternion q = Quaternion.AngleAxis(rotationSpeed, new Vector3(0, look.ReadValue<Vector2>().x, 0));
         Quaternion targetRot = rb.rotation * q;
         rb.MoveRotation(targetRot);
+        if (!move.inProgress && !gas.inProgress) return;
+        rb.velocity = move.ReadValue<Vector2>().y  * moveSpeed * transform.right;
     }
 }
