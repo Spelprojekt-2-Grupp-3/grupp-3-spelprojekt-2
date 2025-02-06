@@ -14,11 +14,11 @@ public class BoatMovement : MonoBehaviour
     private float moveSpeed;
     [SerializeField, Range(1, 200)] [Tooltip("Acceleration")]
     private float acceleration = 100;
-    [SerializeField, Range(0f, 1f), Tooltip("Speed for the slerp of the rotation")] private float rotationSpeed = 0.01f;
+    [SerializeField, Range(0f, 360f), Tooltip("Angles for the rotation intervals")] private float rotationSpeed = 0.01f;
     private PlayerInputActions playerControls;
     private InputAction move;
     private InputAction gas;
-    private Vector3 moveDirection = new Vector3();
+    private int moveDirection;
     private Rigidbody rb;
     
     private void Awake()
@@ -58,21 +58,14 @@ public class BoatMovement : MonoBehaviour
             moveSpeed -= acceleration * Time.deltaTime;
             if (moveSpeed < baseMoveSpeed) moveSpeed = baseMoveSpeed;
         }
-        
-        moveDirection = move.ReadValue<Vector2>();
-        moveDirection.Normalize();
     }
 
     private void FixedUpdate()
     {
         if (!move.inProgress && !gas.inProgress) return;
-        rb.velocity = new Vector3(
-            moveDirection.x * moveSpeed,
-            rb.velocity.y,
-            moveDirection.y * moveSpeed);
-        if (moveDirection.magnitude > 0.0f) // Roterar inte om man inte kollar åt nån riktning
-        {
-            rb.rotation = Quaternion.Slerp(rb.rotation, Quaternion.LookRotation(new Vector3(moveDirection.x, 0, moveDirection.y)), rotationSpeed);
-        }
+        rb.velocity = transform.right * moveSpeed * move.ReadValue<Vector2>().y;
+        Quaternion q = Quaternion.AngleAxis(rotationSpeed, new Vector3(0, move.ReadValue<Vector2>().x, 0));
+        Quaternion targetRot = rb.rotation * q;
+        rb.MoveRotation(targetRot);
     }
 }
