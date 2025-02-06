@@ -53,12 +53,12 @@ public class ItemGrid : MonoBehaviour
 
     public bool PlaceItemWithChecks(InventoryItem package, int xPos, int yPos)
     {
-        if (CheckBoundry(xPos,yPos,package.packageData.gridSize.x, package.packageData.gridSize.y) == false)
+        if (!CheckBoundry(xPos,yPos,package.packageData.gridSize.x, package.packageData.gridSize.y))
         {
             return false;
         }
 
-        if (CheckOverlap(xPos, yPos, package.packageData.gridSize.x, package.packageData.gridSize.y) == false)
+        if (!CheckOverlap(xPos, yPos, package.packageData.gridSize.x, package.packageData.gridSize.y))
         {
             return false;
         }
@@ -146,13 +146,13 @@ public class ItemGrid : MonoBehaviour
 
     bool CheckBoundry(int xPos, int yPos, int width, int height)
     {
-        if (CheckPosition(xPos, yPos) == false)
+        if (!CheckPosition(xPos, yPos))
             return false;
 
         xPos += width-1;
         yPos += height-1;
         
-        if (CheckPosition(xPos, yPos) == false)
+        if (!CheckPosition(xPos, yPos))
             return false;
         
         

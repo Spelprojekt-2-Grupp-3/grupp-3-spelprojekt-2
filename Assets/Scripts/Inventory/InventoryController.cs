@@ -9,7 +9,7 @@ using UnityEngine.InputSystem;
 public class InventoryController : MonoBehaviour
 { 
    [HideInInspector]public ItemGrid selectedItemGrid;
-
+   
    private InventoryItem selectedPackage;
    private InventoryItem overlapItem;
    private RectTransform packageRectTransform;
@@ -32,6 +32,7 @@ public class InventoryController : MonoBehaviour
        selectedPackage = item;
        packageRectTransform = item.GetComponent<RectTransform>();
        packageRectTransform.SetParent(canvasTransform);
+       packageRectTransform.SetAsLastSibling();
        
        item.Set(packages[0]);
    }
@@ -46,6 +47,7 @@ public class InventoryController : MonoBehaviour
 
        if (Mouse.current.rightButton.wasPressedThisFrame)
        {
+           if (selectedItemGrid == null) { return;}
            CreateItem();
 
            InventoryItem toInsert = selectedPackage;
@@ -80,7 +82,11 @@ public class InventoryController : MonoBehaviour
        {   //Picking up item
            selectedPackage = selectedItemGrid.PickUpItem(posOnGrid.x, posOnGrid.y);
            if (selectedPackage != null)
+           {
                packageRectTransform = selectedPackage.GetComponent<RectTransform>();
+               packageRectTransform.SetParent(canvasTransform);
+           }
+               
        }
        else
        {   //Placing item
@@ -88,17 +94,23 @@ public class InventoryController : MonoBehaviour
            if (success)
            {
                selectedPackage = null;
+               //packageRectTransform.SetAsLastSibling();
            }
        }
    }
 
-   void InsertItem(InventoryItem itemToInsert)
+   bool InsertItem(InventoryItem itemToInsert)
    {
-       if (selectedItemGrid == null) { return;}
-       Vector2Int? gridPos = selectedItemGrid.FindSpace(itemToInsert);
        
-       if(gridPos==null){return;}
+       Vector2Int? gridPos = selectedItemGrid.FindSpace(itemToInsert);
+
+       if (gridPos == null)
+       {
+           Destroy(itemToInsert.gameObject);
+           return false;
+       }
 
        selectedItemGrid.PlaceItem(itemToInsert, gridPos.Value.x, gridPos.Value.y);
+       return true;
    }
 }
