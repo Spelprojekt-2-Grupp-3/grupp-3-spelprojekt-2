@@ -18,7 +18,6 @@ public class BoatMovement : MonoBehaviour
     private PlayerInputActions playerControls;
     private InputAction move;
     private InputAction gas;
-    private InputAction look;
     private int moveDirection;
     private Rigidbody rb;
     
@@ -34,7 +33,6 @@ public class BoatMovement : MonoBehaviour
         move.Enable();
         gas = playerControls.Boat.Gas;
         gas.Enable();
-        look = playerControls.Boat.lo
     }
 
     private void OnDisable()
