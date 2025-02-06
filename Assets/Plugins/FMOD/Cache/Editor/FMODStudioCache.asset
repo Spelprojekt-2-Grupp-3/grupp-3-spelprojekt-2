@@ -1,5 +1,29 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8735512993506361122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Engine/Boat Engine
+  m_EditorClassIdentifier: 
+  Name: Boat Engine
+  StudioPath: 
+  Min: 0
+  Max: 23
+  Default: 0
+  ID:
+    data1: 3768441920
+    data2: 825613701
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-8557432729087341948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,12 +212,13 @@ MonoBehaviour:
   - {fileID: 1592838018426228246}
   - {fileID: -8557432729087341948}
   - {fileID: 5603440480309955713}
+  - {fileID: 3709018377509024801}
   EditorParameters: []
   MasterBanks:
   - {fileID: 6946404773456274774}
   StringsBanks:
   - {fileID: 8736947985836088325}
-  cacheTime: 638742763755789033
+  cacheTime: 638744535958922689
   cacheVersion: 131622
 --- !u!114 &272377575081934991
 MonoBehaviour:
@@ -303,6 +328,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &3709018377509024801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound/SFX/Engine
+  m_EditorClassIdentifier: 
+  Path: event:/Sound/SFX/Engine
+  Guid:
+    Data1: 1498703178
+    Data2: 1269736054
+    Data3: 1820459146
+    Data4: -34187766
+  Banks:
+  - {fileID: 6946404773456274774}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -8735512993506361122}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &3747116198077106030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -392,7 +445,7 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/Banks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638742763755783916
+  lastModified: 638744535958897511
   FileSizes: []
   Exists: 1
 --- !u!114 &7501463342674138474
@@ -428,10 +481,10 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/Banks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638742763755789033
+  lastModified: 638744535958922689
   FileSizes:
   - Name: 
-    Value: 1220
+    Value: 1322
   Exists: 1
 --- !u!114 &9014564047347619284
 MonoBehaviour:
