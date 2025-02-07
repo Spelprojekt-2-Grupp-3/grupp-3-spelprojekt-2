@@ -122,7 +122,7 @@ public class BuoyantObject : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        if (effectors == null)
+        /*if (effectors == null)
             return;
 
         for (var i = 0; i < effectors.Length; i++)
@@ -147,6 +147,6 @@ public class BuoyantObject : MonoBehaviour
                 Gizmos.color = blue;
                 Gizmos.DrawLine(effectors[i].position, effectorProjections[i]);
             }
-        }
+        }*/
     }
 }

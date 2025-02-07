@@ -394,7 +394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56cca652798898f43b30ab8490e8719c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showRaysOnClick: 0
+  showRaysOnClick: 1
   rayLength: 100
 --- !u!4 &394879574
 Transform:
@@ -635,6 +635,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0a1bfe4f34d32a42b94172cd4ae36f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weight: 0
+  gridSize: {x: 0, y: 0}
+  inventoryImage: {fileID: 0}
 --- !u!1 &1612345036
 GameObject:
   m_ObjectHideFlags: 0
@@ -873,7 +876,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e06464d2118bbbf4396c7607fcfd3cfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  packageCount: 0
+  shipmentCount: 0
+  shipments: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
