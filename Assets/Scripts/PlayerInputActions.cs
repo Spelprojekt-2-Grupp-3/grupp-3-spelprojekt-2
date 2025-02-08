@@ -624,6 +624,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Quest"",
+                    ""type"": ""Button"",
+                    ""id"": ""8d0cdb50-f44b-4d5f-b91f-d95a6ef9df09"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -1077,6 +1086,17 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""ModifierButton"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""024004db-0096-41b6-87d9-2907af449124"",
+                    ""path"": ""<Keyboard>/j"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Quest"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -1167,6 +1187,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_UI_TrackedDevicePosition = m_UI.FindAction("TrackedDevicePosition", throwIfNotFound: true);
         m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
         m_UI_ModifierButton = m_UI.FindAction("ModifierButton", throwIfNotFound: true);
+        m_UI_Quest = m_UI.FindAction("Quest", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1363,6 +1384,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_UI_TrackedDevicePosition;
     private readonly InputAction m_UI_TrackedDeviceOrientation;
     private readonly InputAction m_UI_ModifierButton;
+    private readonly InputAction m_UI_Quest;
     public struct UIActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -1378,6 +1400,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @TrackedDevicePosition => m_Wrapper.m_UI_TrackedDevicePosition;
         public InputAction @TrackedDeviceOrientation => m_Wrapper.m_UI_TrackedDeviceOrientation;
         public InputAction @ModifierButton => m_Wrapper.m_UI_ModifierButton;
+        public InputAction @Quest => m_Wrapper.m_UI_Quest;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1420,6 +1443,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @ModifierButton.started += instance.OnModifierButton;
             @ModifierButton.performed += instance.OnModifierButton;
             @ModifierButton.canceled += instance.OnModifierButton;
+            @Quest.started += instance.OnQuest;
+            @Quest.performed += instance.OnQuest;
+            @Quest.canceled += instance.OnQuest;
         }
 
         private void UnregisterCallbacks(IUIActions instance)
@@ -1457,6 +1483,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @ModifierButton.started -= instance.OnModifierButton;
             @ModifierButton.performed -= instance.OnModifierButton;
             @ModifierButton.canceled -= instance.OnModifierButton;
+            @Quest.started -= instance.OnQuest;
+            @Quest.performed -= instance.OnQuest;
+            @Quest.canceled -= instance.OnQuest;
         }
 
         public void RemoveCallbacks(IUIActions instance)
@@ -1544,5 +1573,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnTrackedDevicePosition(InputAction.CallbackContext context);
         void OnTrackedDeviceOrientation(InputAction.CallbackContext context);
         void OnModifierButton(InputAction.CallbackContext context);
+        void OnQuest(InputAction.CallbackContext context);
     }
 }
