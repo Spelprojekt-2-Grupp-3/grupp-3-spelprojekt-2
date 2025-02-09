@@ -376,7 +376,7 @@ PrefabInstance:
     - target: {fileID: 1928120415074828639, guid: a943b96b3422b0f4abb5e231275b1c00,
         type: 3}
       propertyPath: m_Constraints
-      value: 80
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2640563528853764629, guid: a943b96b3422b0f4abb5e231275b1c00,
         type: 3}
@@ -742,6 +742,7 @@ MonoBehaviour:
   baseMoveSpeed: 10
   acceleration: 100
   rotationSpeed: 13
+  maxSpeed: 200
 --- !u!95 &1692538086
 Animator:
   serializedVersion: 5

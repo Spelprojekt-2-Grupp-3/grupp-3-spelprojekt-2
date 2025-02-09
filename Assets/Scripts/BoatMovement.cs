@@ -14,7 +14,8 @@ public class BoatMovement : MonoBehaviour
     private float moveSpeed;
     [SerializeField, Range(1, 200)] [Tooltip("Acceleration")]
     private float acceleration = 100;
-    [SerializeField, Range(0f, 360f), Tooltip("Angles for the rotation intervals")] private float rotationSpeed = 0.01f;
+    [SerializeField, Range(0f, 360f), Tooltip("Angles for the rotation intervals")] private float rotationSpeed = 1f;
+    [SerializeField, Range(0f, 2500f)] private float maxSpeed = 2000f;
     private PlayerInputActions playerControls;
     private InputAction move;
     private InputAction gas;
@@ -55,6 +56,10 @@ public class BoatMovement : MonoBehaviour
         if (gas.inProgress)
         {
             moveSpeed += acceleration * Time.deltaTime;
+            if (moveSpeed > maxSpeed)
+            {
+                moveSpeed = maxSpeed;
+            }
         }
         else if (moveSpeed > baseMoveSpeed)
         {
@@ -69,6 +74,8 @@ public class BoatMovement : MonoBehaviour
         Quaternion targetRot = rb.rotation * q;
         rb.MoveRotation(targetRot);
         if (!move.inProgress && !gas.inProgress) return;
-        rb.velocity = move.ReadValue<Vector2>().y  * moveSpeed * transform.right;
+        rb.velocity = new Vector3(
+            move.ReadValue<Vector2>().y * moveSpeed * transform.right.x, rb.velocity.y,
+            move.ReadValue<Vector2>().y * moveSpeed * transform.right.z);
     }
 }
