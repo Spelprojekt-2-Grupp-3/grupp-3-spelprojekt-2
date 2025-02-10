@@ -16,6 +16,8 @@ public class BoatMovement : MonoBehaviour
     private float acceleration = 100;
     [SerializeField, Range(0f, 100f), Tooltip("Rotationspeed")] private float rotationSpeed = 1f;
     [SerializeField, Range(0f, 2500f)] private float maxSpeed = 2000f;
+    [SerializeField, Range(0, 90)] private int tiltAngle = 25;
+    [SerializeField, Range(0f, 1f)] private float tiltSpeed = 1f;
     private PlayerInputActions playerControls;
     private InputAction move;
     private InputAction gas;
@@ -72,8 +74,8 @@ public class BoatMovement : MonoBehaviour
     private void FixedUpdate()
     {
         Vector3 euler = transform.localEulerAngles;
-        //
-
+        Debug.Log(euler.x);
+        /*
         if (euler.x == 45f * look.ReadValue<Vector2>().x)
         {
             sinTime = 0f;
@@ -86,6 +88,20 @@ public class BoatMovement : MonoBehaviour
             
             euler.x = Mathf.Lerp(0, -45f*look.ReadValue<Vector2>().x, t);
         }
+        */
+
+        if (Mathf.Abs(euler.x) != tiltAngle)
+        {
+            euler.x += Mathf.Lerp(0, -tiltAngle * look.ReadValue<Vector2>().x, tiltSpeed);
+            
+            if (Mathf.Abs(euler.x) > tiltAngle)
+            {
+                euler.x = -tiltAngle * look.ReadValue<Vector2>().x;
+            }
+        }
+        
+        
+        //Debug.Log(tiltAngle);
         
         euler.y += rotationSpeed * look.ReadValue<Vector2>().x;
         rb.rotation = Quaternion.Euler(euler);
