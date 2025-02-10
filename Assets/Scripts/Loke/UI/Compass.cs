@@ -28,7 +28,7 @@ public class Compass : MonoBehaviour
         rt.localEulerAngles = new Vector3(rt.localEulerAngles.x, rt.localEulerAngles.y, angle);
     }
 
-    void switchQuest(GameObject currentQuest)
+    void SwitchQuest(GameObject currentQuest)
     {
         Goal = currentQuest;
     }

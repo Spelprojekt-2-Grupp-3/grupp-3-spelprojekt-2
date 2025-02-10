@@ -19,14 +19,14 @@ public class QuestTracker : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        addQuest("Top", "Bottom");
-        addQuest("Deliver Package to Ingrid", "0/1 Packages Delivered");
-        addQuest("Find the Kraken", "0/1 Kraken Found");
-        removeQuest("Deliver Package to Ingrid");
-        removeQuest("Top");
+        AddQuest("Top", "Bottom");
+        AddQuest("Deliver Package to Ingrid", "0/1 Packages Delivered");
+        AddQuest("Find the Kraken", "0/1 Kraken Found");
+        RemoveQuest("Deliver Package to Ingrid");
+        RemoveQuest("Top");
     }
 
-    void addQuest(string questName, string questText)
+    void AddQuest(string questName, string questText)
     {
         //Instansierar en quest i quest log
         questBox = Instantiate(questBox,questContainer.transform);
@@ -38,7 +38,7 @@ public class QuestTracker : MonoBehaviour
         questBox.gameObject.transform.Find("Quest_Text").GetComponent<TMP_Text>().SetText(questText);
     }
 
-    void removeQuest(string questName)
+    void RemoveQuest(string questName)
     {
         //Hittar questen som du letar efter
         GameObject questFinish = GameObject.Find(questName);
