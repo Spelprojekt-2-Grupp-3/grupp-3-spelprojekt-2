@@ -14,7 +14,7 @@ public class BoatMovement : MonoBehaviour
     private float moveSpeed;
     [SerializeField, Range(1, 200)] [Tooltip("Acceleration")]
     private float acceleration = 100;
-    [SerializeField, Range(0f, 360f), Tooltip("Angles for the rotation intervals")] private float rotationSpeed = 1f;
+    [SerializeField, Range(0f, 100f), Tooltip("Rotationspeed")] private float rotationSpeed = 1f;
     [SerializeField, Range(0f, 2500f)] private float maxSpeed = 2000f;
     private PlayerInputActions playerControls;
     private InputAction move;
@@ -22,6 +22,7 @@ public class BoatMovement : MonoBehaviour
     private InputAction look;
     private int moveDirection;
     private Rigidbody rb;
+    private float sinTime;
     
     private void Awake()
     {
@@ -70,9 +71,25 @@ public class BoatMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Quaternion q = Quaternion.AngleAxis(rotationSpeed, new Vector3(0, look.ReadValue<Vector2>().x, 0));
-        Quaternion targetRot = rb.rotation * q;
-        rb.MoveRotation(targetRot);
+        Vector3 euler = transform.localEulerAngles;
+        //
+
+        if (euler.x == 45f * look.ReadValue<Vector2>().x)
+        {
+            sinTime = 0f;
+        }
+        else 
+        {
+            sinTime += Time.deltaTime * 10;
+            sinTime = Mathf.Clamp(sinTime, 0, Mathf.PI);
+            float t = 0.5f * Mathf.Sin(sinTime - Mathf.PI / 2f) * +0.5f;
+            
+            euler.x = Mathf.Lerp(0, -45f*look.ReadValue<Vector2>().x, t);
+        }
+        
+        euler.y += rotationSpeed * look.ReadValue<Vector2>().x;
+        rb.rotation = Quaternion.Euler(euler);
+        
         if (!move.inProgress && !gas.inProgress) return;
         rb.velocity = new Vector3(
             move.ReadValue<Vector2>().y * moveSpeed * transform.right.x, rb.velocity.y,
