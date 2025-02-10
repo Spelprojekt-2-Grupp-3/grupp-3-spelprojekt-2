@@ -74,34 +74,13 @@ public class BoatMovement : MonoBehaviour
     private void FixedUpdate()
     {
         Vector3 euler = transform.localEulerAngles;
-        Debug.Log(euler.x);
-        /*
-        if (euler.x == 45f * look.ReadValue<Vector2>().x)
-        {
-            sinTime = 0f;
-        }
-        else 
-        {
-            sinTime += Time.deltaTime * 10;
-            sinTime = Mathf.Clamp(sinTime, 0, Mathf.PI);
-            float t = 0.5f * Mathf.Sin(sinTime - Mathf.PI / 2f) * +0.5f;
-            
-            euler.x = Mathf.Lerp(0, -45f*look.ReadValue<Vector2>().x, t);
-        }
-        */
-
-        if (Mathf.Abs(euler.x) != tiltAngle)
-        {
-            euler.x += Mathf.Lerp(0, -tiltAngle * look.ReadValue<Vector2>().x, tiltSpeed);
-            
-            if (Mathf.Abs(euler.x) > tiltAngle)
-            {
-                euler.x = -tiltAngle * look.ReadValue<Vector2>().x;
-            }
-        }
         
+        euler.x += Mathf.Lerp(0, -tiltAngle * look.ReadValue<Vector2>().x, tiltSpeed);
         
-        //Debug.Log(tiltAngle);
+        if (Mathf.Abs(euler.x) > tiltAngle)
+        {
+            euler.x = -tiltAngle * look.ReadValue<Vector2>().x;
+        }
         
         euler.y += rotationSpeed * look.ReadValue<Vector2>().x;
         rb.rotation = Quaternion.Euler(euler);
