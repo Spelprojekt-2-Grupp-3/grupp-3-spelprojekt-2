@@ -77,7 +77,8 @@ public class BoatMovement : MonoBehaviour
         
         euler.x += Mathf.Lerp(0, -tiltAngle * look.ReadValue<Vector2>().x, tiltSpeed);
         
-        if (Mathf.Abs(euler.x) > tiltAngle)
+        
+        if (euler.x > tiltAngle)
         {
             euler.x = -tiltAngle * look.ReadValue<Vector2>().x;
         }
