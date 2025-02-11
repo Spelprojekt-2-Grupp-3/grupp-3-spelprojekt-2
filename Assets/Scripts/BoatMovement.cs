@@ -31,6 +31,7 @@ public class BoatMovement : MonoBehaviour
     private float sinTime;
     public FMODUnity.EventReference boatSoundEvent;
     private FMOD.Studio.EventInstance boatSound;
+    private FMOD.Studio.PARAMETER_ID boatSoundId;
     
     private void Awake()
     {
@@ -64,6 +65,8 @@ public class BoatMovement : MonoBehaviour
     void Update()
     {
         boatSound.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject, rb));
+        float boatSpeed = moveSpeed * 15 / maxSpeed;
+        boatSound.setParameterByName("Boat Engine", boatSpeed);
         if (!move.inProgress && !gas.inProgress) return;
         if (gas.inProgress)
         {
