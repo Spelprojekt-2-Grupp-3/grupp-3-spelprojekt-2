@@ -4,11 +4,13 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 //[RequireComponent(typeof(PlayerInput))]
 public class InventoryController : MonoBehaviour
 { 
-   [HideInInspector] public ItemGrid selectedItemGrid;
+   [HideInInspector] public ItemGrid selectedGrid;
    [HideInInspector]public ItemGrid otherGrid;
    
    private InventoryItem selectedPackage;
@@ -63,7 +65,7 @@ public class InventoryController : MonoBehaviour
 
    private void Start()
    {
-       CreateItem();
+       CreateItem(Random.Range(0,packages.Count));
    }
 
    private void Update()
@@ -71,25 +73,18 @@ public class InventoryController : MonoBehaviour
        //item drag
        if (selectedPackage != null)
            packageRectTransform.position = Mouse.current.position.ReadValue();
-       if(selectedItemGrid==null){return;}
+       if(selectedGrid==null){return;}
        GuiClicking();
-
-       if (Mouse.current.rightButton.wasPressedThisFrame)
-       {
-           if (selectedItemGrid == null) { return;}
-           CreateItem();
-
-           InventoryItem toInsert = selectedPackage;
-           selectedPackage = null;
-           InsertItem(toInsert);
-       }
    }
    
    /// <summary>
    /// Creates a Package based on packages List. It becomes the selectedPackage.
    /// </summary>
-   void CreateItem()
+   /// <param name="package">which package in the list should be generated</param>
+   public void CreateItem(int package)
    {
+       if(selectedPackage!=null)
+           return;
        //Could maybe move this to another script
        InventoryItem item = Instantiate(packagePrefab).GetComponent<InventoryItem>();
        selectedPackage = item;
@@ -97,32 +92,47 @@ public class InventoryController : MonoBehaviour
        packageRectTransform.SetParent(canvasTransform);
        packageRectTransform.SetAsLastSibling();
        
-       item.Set(packages[0]);
+       item.Set(packages[package]);
    }
    void GuiClicking()
    {
        //TODO: Controller support
        if (Mouse.current.leftButton.wasPressedThisFrame)
        {
-           LeftClick();
+           InteractClick();
+       }
+       
+       //Quick-Insert Item
+       if (Mouse.current.rightButton.wasPressedThisFrame)
+       {
+           if (selectedGrid == null) { return;}
+           CreateItem(Random.Range(0,packages.Count));
+
+           if (shift.inProgress)
+           {
+               InventoryItem toInsert = selectedPackage;
+               selectedPackage = null;
+               InsertItem(toInsert);
+           }
        }
    }
-   void LeftClick()
+   void InteractClick()
    {
        Vector2 mousePosition = Mouse.current.position.ReadValue();
-
+       
+       //Corrects position of package
        if (selectedPackage != null)
        {
            mousePosition.x -= (selectedPackage.packageData.gridSize.x - 1) * ItemGrid.tileSizeWidth / 2;
            mousePosition.y += (selectedPackage.packageData.gridSize.y - 1) * ItemGrid.tileSizeHeight / 2;
        }
            
-       Vector2Int posOnGrid = selectedItemGrid.GetTileGridPosition(mousePosition);
+       Vector2Int posOnGrid = selectedGrid.GetTileGridPosition(mousePosition);
 
+       //Picking up item
        if (selectedPackage == null)
-       {   
-           //Picking up item
-           selectedPackage = selectedItemGrid.PickUpItem(posOnGrid.x, posOnGrid.y);
+       {
+           selectedPackage = selectedGrid.PickUpItem(posOnGrid.x, posOnGrid.y);
            
            if (selectedPackage != null)
            {
@@ -136,9 +146,10 @@ public class InventoryController : MonoBehaviour
                packageRectTransform.SetParent(canvasTransform);
            }
        }
+       //Placing item
        else
-       {   //Placing item
-           bool success = selectedItemGrid.PlaceItemWithChecks(selectedPackage, posOnGrid.x, posOnGrid.y);
+       {   
+           bool success = selectedGrid.PlaceItemWithChecks(selectedPackage, posOnGrid.x, posOnGrid.y);
            if (success)
            {
                selectedPackage = null;
@@ -146,9 +157,15 @@ public class InventoryController : MonoBehaviour
            }
        }
    }
+   
+   /// <summary>
+   /// Attempts to insert item into selected grid
+   /// </summary>
+   /// <param name="itemToInsert">what item is attempted to be inserted</param>
+   /// <returns>true if successful, false if not</returns>
    bool InsertItem(InventoryItem itemToInsert)
    {
-       Vector2Int? gridPos = selectedItemGrid.FindSpace(itemToInsert);
+       Vector2Int? gridPos = selectedGrid.FindSpace(itemToInsert);
 
        if (gridPos == null)
        {
@@ -156,9 +173,7 @@ public class InventoryController : MonoBehaviour
            return false;
        }
 
-       selectedItemGrid.PlaceItem(itemToInsert, gridPos.Value.x, gridPos.Value.y);
+       selectedGrid.PlaceItem(itemToInsert, gridPos.Value.x, gridPos.Value.y);
        return true;
    }
-   
-   
 }

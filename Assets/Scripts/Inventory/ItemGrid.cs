@@ -11,7 +11,7 @@ public class ItemGrid : MonoBehaviour
     [SerializeField] private int inventorySizeX;
     [SerializeField] private int inventorySizeY;
 
-    [SerializeField] private GameObject itemPrefab;
+    //[SerializeField] private GameObject itemPrefab;
     
     RectTransform rectTransform;
     private Vector2 positionOnGrid = new Vector2();
@@ -24,9 +24,9 @@ public class ItemGrid : MonoBehaviour
         rectTransform = GetComponent<RectTransform>();
         Init(inventorySizeX, inventorySizeY);
         
-        //Creates an object directly on grid. Prefab requires Data beforehand
-        InventoryItem item = Instantiate(itemPrefab).GetComponent<InventoryItem>();
-        PlaceItemWithChecks(item,5, 2);
+        //Creates an object directly on grid. Prefab requires Data beforehand. Does not scale automatically with size
+        //InventoryItem item = Instantiate(itemPrefab).GetComponent<InventoryItem>();
+        //PlaceItemWithChecks(item,5, 2);
     }
 
     public Vector2Int GetTileGridPosition(Vector2 mousePosition)

@@ -291,8 +291,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventorySizeX: 4
   inventorySizeY: 4
-  itemPrefab: {fileID: 2051847946536933829, guid: c947efda8fff5e14aabcd642067e9a32,
-    type: 3}
 --- !u!114 &580629089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -644,9 +642,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c3c31e26d252d0489d8a60518adccc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectedItemGrid: {fileID: 0}
+  selectedGrid: {fileID: 0}
+  otherGrid: {fileID: 0}
   packages:
   - {fileID: 11400000, guid: 8894094c41bbae44fa88907a18a1288d, type: 2}
+  - {fileID: 11400000, guid: 41284f6e53d1e494d8a0b08bedb613ba, type: 2}
+  - {fileID: 11400000, guid: f03674b0b06cc8743a4038bbd6c2b122, type: 2}
   packagePrefab: {fileID: 2051847946536933829, guid: c947efda8fff5e14aabcd642067e9a32,
     type: 3}
   canvasTransform: {fileID: 420209511}
@@ -730,7 +731,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 432.9, y: -245}
+  m_AnchoredPosition: {x: 181, y: -123}
   m_SizeDelta: {x: 224, y: 128}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1859157078
@@ -798,8 +799,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventorySizeX: 7
   inventorySizeY: 6
-  itemPrefab: {fileID: 2051847946536933829, guid: c947efda8fff5e14aabcd642067e9a32,
-    type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
