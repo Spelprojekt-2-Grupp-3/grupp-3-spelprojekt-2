@@ -9,6 +9,9 @@ public class PackageData : ScriptableObject
     [Tooltip("Size that the package takes up in the inventory")] 
     public Vector2Int gridSize;
     [SerializeField] private float weight;
-    [Tooltip("Image for the package in the 2D inventory")]
+    [Tooltip("Sprite for the package in the 2D inventory")]
     public Sprite inventoryImage;
+    [Tooltip("Who the package belongs to")]
+    public string recipient;
+
 }

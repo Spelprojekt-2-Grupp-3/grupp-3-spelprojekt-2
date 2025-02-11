@@ -11,7 +11,7 @@ using Random = UnityEngine.Random;
 public class InventoryController : MonoBehaviour
 { 
    [HideInInspector] public ItemGrid selectedGrid;
-   [HideInInspector]public ItemGrid otherGrid;
+   [HideInInspector] public ItemGrid otherGrid;
    
    private InventoryItem selectedPackage;
    private InventoryItem overlapItem;
@@ -27,6 +27,7 @@ public class InventoryController : MonoBehaviour
    [SerializeField] private GameObject packagePrefab;
    [SerializeField] private Transform canvasTransform;
 
+   [SerializeField]private ItemGrid mainGrid;
 
    private void Awake()
    {
@@ -65,7 +66,7 @@ public class InventoryController : MonoBehaviour
 
    private void Start()
    {
-       CreateItem(Random.Range(0,packages.Count));
+       CreateRandomItem();
    }
 
    private void Update()
@@ -81,7 +82,7 @@ public class InventoryController : MonoBehaviour
    /// Creates a Package based on packages List. It becomes the selectedPackage.
    /// </summary>
    /// <param name="package">which package in the list should be generated</param>
-   public void CreateItem(int package)
+   public void CreateRandomItem()
    {
        if(selectedPackage!=null)
            return;
@@ -92,7 +93,25 @@ public class InventoryController : MonoBehaviour
        packageRectTransform.SetParent(canvasTransform);
        packageRectTransform.SetAsLastSibling();
        
-       item.Set(packages[package]);
+       item.Set(packages[Random.Range(0,packages.Count)]);
+   }
+
+   /// <summary>
+   /// Creates a package from outside of the packages List. It becomes the selectedPackage.
+   /// </summary>
+   /// <param name="packageData">Data for the package</param>
+   public void CreateItem(PackageData packageData)
+   {
+       if(selectedPackage!=null)
+           return;
+       //Could maybe move this to another script
+       InventoryItem item = Instantiate(packagePrefab).GetComponent<InventoryItem>();
+       selectedPackage = item;
+       packageRectTransform = item.GetComponent<RectTransform>();
+       packageRectTransform.SetParent(canvasTransform);
+       packageRectTransform.SetAsLastSibling();
+       
+       item.Set(packageData);
    }
    void GuiClicking()
    {
@@ -106,7 +125,7 @@ public class InventoryController : MonoBehaviour
        if (Mouse.current.rightButton.wasPressedThisFrame)
        {
            if (selectedGrid == null) { return;}
-           CreateItem(Random.Range(0,packages.Count));
+           CreateRandomItem();
 
            if (shift.inProgress)
            {
@@ -159,7 +178,7 @@ public class InventoryController : MonoBehaviour
    }
    
    /// <summary>
-   /// Attempts to insert item into selected grid
+   /// old InsertItem, remains for dev purposes
    /// </summary>
    /// <param name="itemToInsert">what item is attempted to be inserted</param>
    /// <returns>true if successful, false if not</returns>
@@ -175,5 +194,28 @@ public class InventoryController : MonoBehaviour
 
        selectedGrid.PlaceItem(itemToInsert, gridPos.Value.x, gridPos.Value.y);
        return true;
+   }
+
+   
+   /// <summary>
+   /// Creates and inserts an item into the main inventory
+   /// </summary>
+   /// <param name="data"></param>
+   /// <returns></returns>
+   public bool InsertItem(PackageData data)
+   {
+       CreateItem(data);
+       
+       Vector2Int? gridPos = mainGrid.FindSpace(selectedPackage);
+
+       if (gridPos == null)
+       {
+           Destroy(selectedPackage.gameObject);
+           return false;
+       }
+       
+       mainGrid.PlaceItem(selectedPackage, gridPos.Value.x, gridPos.Value.y);
+       return true;
+
    }
 }

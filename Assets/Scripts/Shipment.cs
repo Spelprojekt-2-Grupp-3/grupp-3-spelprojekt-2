@@ -9,22 +9,29 @@ using UnityEngine.UI;
 public class Shipment : MonoBehaviour, IClick
 {
     private Player _player;
-    [SerializeField] private float weight;
-    [SerializeField, Tooltip("Size that the package takes up in the inventory")] 
-    private Vector2Int gridSize;
-    [Tooltip("Image for the package in the 2D inventory")]
-    public Image inventoryImage;
+    private InventoryController inventoryController;
+
+    [SerializeField, Tooltip("The information about the package")]
+    private PackageData packageData;
 
     private void Awake()
     {
         _player = FindObjectOfType<Player>();
+        inventoryController = FindObjectOfType<InventoryController>();
     }
 
     public void OnClick()
     {
-        Debug.Log("You have picked up a shipment!");
-        _player.shipmentCount++;
-        _player.shipments.Add(GetComponent<Shipment>());
-        Destroy(gameObject);
+        if (inventoryController.InsertItem(packageData))
+        {
+            Debug.Log("You have picked up a shipment!");
+            _player.shipmentCount++;
+            _player.shipments.Add(GetComponent<Shipment>());
+            Destroy(gameObject);
+        }
+        else
+        {
+            Debug.Log("Inventory full");
+        }
     }
 }
