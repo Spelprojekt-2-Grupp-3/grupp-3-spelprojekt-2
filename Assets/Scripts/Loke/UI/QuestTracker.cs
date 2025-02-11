@@ -5,7 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
-using Toggle = UnityEngine.UIElements.Toggle;
+using Toggle = UnityEngine.UI.Toggle;
 
 public class QuestTracker : MonoBehaviour
 {
@@ -15,15 +15,17 @@ public class QuestTracker : MonoBehaviour
     [SerializeField] GameObject questContainer;
     
     private string questText;
+    
+    bool questToggle;
 
     // Start is called before the first frame update
     void Start()
     {
-        AddQuest("Top", "Bottom");
+        AddQuest("Talk to Bengt", "Bengt has not been talked to");
         AddQuest("Deliver Package to Ingrid", "0/1 Packages Delivered");
         AddQuest("Find the Kraken", "0/1 Kraken Found");
-        RemoveQuest("Deliver Package to Ingrid");
-        RemoveQuest("Top");
+        //RemoveQuest("Deliver Package to Ingrid");
+        //RemoveQuest("Talk to Bengt");
     }
 
     void AddQuest(string questName, string questText)
@@ -44,9 +46,11 @@ public class QuestTracker : MonoBehaviour
         GameObject questFinish = GameObject.Find(questName);
         //Sätter den längst ner i hierarkin för quest log
         questFinish.transform.SetAsLastSibling();
-        //Hittar komponenten tmp_text
+        /*//Hittar komponenten tmp_text
         TMP_Text edit = questFinish.GetComponent<TMP_Text>();
         //Stryker över texten
         edit.SetText("<s>" + questName + "</s>");
+        edit.color = Color.black;*/
+        questToggle = questFinish.GetComponentInChildren<Toggle>().isOn = true;
     }
 }
