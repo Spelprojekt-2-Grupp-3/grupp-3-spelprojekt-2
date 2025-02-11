@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using FMOD;
 
 [RequireComponent(typeof(Rigidbody), typeof(Animator), typeof(BuoyantObject))]
 public class BoatMovement : MonoBehaviour
@@ -25,6 +26,8 @@ public class BoatMovement : MonoBehaviour
     private int moveDirection;
     private Rigidbody rb;
     private float sinTime;
+    [FMODUnity.EventRef] public string playerStateEvent = "";
+    private FMOD.Studio.EventInstance playerState;
     
     private void Awake()
     {
@@ -51,10 +54,14 @@ public class BoatMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        playerState = FMODUnity.RuntimeManager.CreateInstance(playerStateEvent);
+        playerState.start();
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(playerState, GetComponent<Transform>(), GetComponent<Rigidbody>());
     }
     
     void Update()
     {
+        playerState.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject, rb));
         if (!move.inProgress && !gas.inProgress) return;
         if (gas.inProgress)
         {

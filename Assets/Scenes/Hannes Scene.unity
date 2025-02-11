@@ -743,6 +743,9 @@ MonoBehaviour:
   acceleration: 100
   rotationSpeed: 13
   maxSpeed: 200
+  tiltAngle: 25
+  tiltSpeed: 1
+  playerStateEvent: event:/Sound/SFX/Engine
 --- !u!95 &1692538086
 Animator:
   serializedVersion: 5
