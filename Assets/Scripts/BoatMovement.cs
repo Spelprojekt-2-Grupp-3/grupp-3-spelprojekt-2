@@ -65,13 +65,6 @@ public class BoatMovement : MonoBehaviour
     void Update()
     {
         boatSound.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject, rb));
-        float boatSpeed = moveSpeed * 15 / maxSpeed;
-        boatSound.setParameterByName("Boat Engine", boatSpeed);
-        if (!move.inProgress && !gas.inProgress && moveSpeed > baseMoveSpeed)
-        {
-            moveSpeed -= acceleration * Time.deltaTime;
-            if (moveSpeed < baseMoveSpeed) moveSpeed = baseMoveSpeed;
-        }
         
         if (gas.inProgress)
         {
@@ -81,21 +74,30 @@ public class BoatMovement : MonoBehaviour
                 moveSpeed = maxSpeed;
             }
         }
+        else
+        {
+            moveSpeed -= acceleration * Time.deltaTime;
+            if (moveSpeed < baseMoveSpeed) moveSpeed = baseMoveSpeed;
+        }
+        float boatSpeed = moveSpeed * 15 / maxSpeed;
+        boatSound.setParameterByName("Boat Engine", boatSpeed);
     }
 
     private void FixedUpdate()
     {
         Vector3 euler = transform.localEulerAngles;
 
-        float targetRot = -tiltAngle * look.ReadValue<Vector2>().x;
+        float targetAngle = moveSpeed * tiltAngle / maxSpeed;
+        float targetRot = -targetAngle * move.ReadValue<Vector2>().x;
         euler.x = Mathf.LerpAngle(euler.x, targetRot, tiltSpeed*Time.deltaTime);
-        
-        euler.y += rotationSpeed * look.ReadValue<Vector2>().x;
+
+        float targetRotationSpeed = moveSpeed * rotationSpeed / maxSpeed;
+        euler.y += targetRotationSpeed * move.ReadValue<Vector2>().x;
         rb.rotation = Quaternion.Euler(euler);
         
-        if (!move.inProgress && !gas.inProgress) return;
+        if (moveSpeed == 0) return;
         rb.velocity = new Vector3(
-             move.ReadValue<Vector2>().y * moveSpeed * transform.right.x, rb.velocity.y,
-             move.ReadValue<Vector2>().y * moveSpeed * transform.right.z);
+             moveSpeed * transform.right.x, rb.velocity.y,
+             moveSpeed * transform.right.z);
     }
 }
