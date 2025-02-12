@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour, IClick
 {
+   //Checks if the player is close to NPC
    private bool playerInRange;
    
    [Header("Ink JSON")]
@@ -17,7 +18,8 @@ public class DialogueTrigger : MonoBehaviour, IClick
 
    public void OnClick()
    {
-      if (playerInRange)
+      //Starts dialogue if player is in range and no other dialogue is active
+      if (playerInRange && !DialogueManager.GetInstance().dialogueIsPlaying)
       {
          DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
       }
