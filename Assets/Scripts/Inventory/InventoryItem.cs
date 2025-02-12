@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//The 2D Item
 public class InventoryItem : MonoBehaviour
 {
     public PackageData packageData;

@@ -7,11 +7,13 @@ using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
-//[RequireComponent(typeof(PlayerInput))]
 public class InventoryController : MonoBehaviour
-{ 
+{
+   [SerializeField] private bool devving;
+    
    [HideInInspector] public ItemGrid selectedGrid;
    [HideInInspector] public ItemGrid otherGrid;
+   [SerializeField] public ItemGrid mainGrid;
    
    private InventoryItem selectedPackage;
    private InventoryItem overlapItem;
@@ -23,11 +25,9 @@ public class InventoryController : MonoBehaviour
    private InputAction shift;
    private InputAction mousePosition;
    
-   [SerializeField] private List<PackageData> packages;
+   [SerializeField] private List<PackageData> packageTypes;
    [SerializeField] private GameObject packagePrefab;
    [SerializeField] private Transform canvasTransform;
-
-   [SerializeField]private ItemGrid mainGrid;
 
    private void Awake()
    {
@@ -66,7 +66,7 @@ public class InventoryController : MonoBehaviour
 
    private void Start()
    {
-       CreateRandomItem();
+       //CreateRandomItem();
    }
 
    private void Update()
@@ -93,7 +93,7 @@ public class InventoryController : MonoBehaviour
        packageRectTransform.SetParent(canvasTransform);
        packageRectTransform.SetAsLastSibling();
        
-       item.Set(packages[Random.Range(0,packages.Count)]);
+       item.Set(packageTypes[Random.Range(0,packageTypes.Count)]);
    }
 
    /// <summary>
@@ -122,7 +122,7 @@ public class InventoryController : MonoBehaviour
        }
        
        //Quick-Insert Item
-       if (Mouse.current.rightButton.wasPressedThisFrame)
+       if (Mouse.current.rightButton.wasPressedThisFrame&& devving)
        {
            if (selectedGrid == null) { return;}
            CreateRandomItem();
@@ -200,8 +200,8 @@ public class InventoryController : MonoBehaviour
    /// <summary>
    /// Creates and inserts an item into the main inventory
    /// </summary>
-   /// <param name="data"></param>
-   /// <returns></returns>
+   /// <param name="data">what data the created package should have</param>
+   /// <returns>true if successful, false if not</returns>
    public bool InsertItem(PackageData data)
    {
        CreateItem(data);
@@ -216,6 +216,5 @@ public class InventoryController : MonoBehaviour
        
        mainGrid.PlaceItem(selectedPackage, gridPos.Value.x, gridPos.Value.y);
        return true;
-
    }
 }

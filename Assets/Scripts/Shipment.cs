@@ -6,13 +6,14 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 //Interface!
+//The 3D Item
 public class Shipment : MonoBehaviour, IClick
 {
     private Player _player;
     private InventoryController inventoryController;
 
-    [SerializeField, Tooltip("The information about the package")]
-    private PackageData packageData;
+    [Tooltip("The information about the package")]
+    public PackageData packageData;
 
     private void Awake()
     {

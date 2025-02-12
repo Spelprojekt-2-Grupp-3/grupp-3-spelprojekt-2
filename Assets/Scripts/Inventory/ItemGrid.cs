@@ -17,8 +17,9 @@ public class ItemGrid : MonoBehaviour
     private Vector2 positionOnGrid = new Vector2();
     private Vector2Int tileGridPosition = new Vector2Int();
 
+    //keeps track of the inventory slots
     private InventoryItem[,] packageSlot;
-    
+
     private void Start()
     {
         rectTransform = GetComponent<RectTransform>();
@@ -99,17 +100,23 @@ public class ItemGrid : MonoBehaviour
         if (toReturn == null)
         { return null;}
         
-        for (int x = 0; x < toReturn.packageData.gridSize.x; x++)
-        {
-            for (int y = 0; y < toReturn.packageData.gridSize.y; y++)
-            {
-                packageSlot[toReturn.onGridPosition.x + x, toReturn.onGridPosition.y+y] = null;
-            }
-        }
+        RemoveItem(toReturn);
         
         return toReturn;
     }
 
+    public void RemoveItem(InventoryItem toRemove)
+    {
+        for (int x = 0; x < toRemove.packageData.gridSize.x; x++)
+        {
+            for (int y = 0; y < toRemove.packageData.gridSize.y; y++)
+            {
+                packageSlot[toRemove.onGridPosition.x + x, toRemove.onGridPosition.y + y] = null;
+            }
+        }
+        Debug.Log("Removed item from grid");
+    }
+    
     public Vector2Int? FindSpace(InventoryItem itemToInsert)
     {
         int width = inventorySizeX - itemToInsert.packageData.gridSize.x+1;
@@ -129,7 +136,6 @@ public class ItemGrid : MonoBehaviour
         return null;
     }
     
-
     bool CheckPosition(int xPos, int yPos)
     {
         if (xPos < 0 || yPos < 0)
@@ -181,5 +187,19 @@ public class ItemGrid : MonoBehaviour
         }
         
         return true;
+    }
+
+    public void RemoveItemsByRecipient(string recipient)
+    {
+        for (int x = 0; x < inventorySizeX; x++)
+        {
+            for (int y = 0; y < inventorySizeY; y++)
+            {
+                if (packageSlot[x, y] != null && packageSlot[x, y].packageData.recipient == recipient)
+                {
+                    RemoveItem(packageSlot[x, y]);
+                }
+            }
+        }
     }
 }
