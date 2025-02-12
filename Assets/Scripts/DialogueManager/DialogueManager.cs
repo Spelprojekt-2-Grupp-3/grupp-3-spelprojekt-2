@@ -14,7 +14,7 @@ public class DialogueManager : MonoBehaviour
     
     private Story _currentStory;
     
-    //Makes it readonly
+    //Readonly (idk why)
     public bool dialogueIsPlaying { get; private set; }
     
     private static DialogueManager _instance;
@@ -82,8 +82,10 @@ public class DialogueManager : MonoBehaviour
         _playerInput.Player.Interact.Reset();
     }
 
-    private void ExitDialogueMode()
+    private IEnumerator ExitDialogueMode()
     {
+        //Small delay before closing UI to avoid double clicks
+        yield return new WaitForSeconds(0.2f);
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         dialogueText.text = "";
@@ -97,7 +99,7 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
-            ExitDialogueMode();
+            StartCoroutine(ExitDialogueMode());
         }
     }
 }
