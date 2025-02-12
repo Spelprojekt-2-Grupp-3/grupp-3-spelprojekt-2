@@ -28,11 +28,11 @@ public class QuestTracker : MonoBehaviour
         AddQuest("Talk to Bengt", "Bengt has not been talked to");
         AddQuest("Deliver Package to Ingrid", "0/1 Packages Delivered");
         AddQuest("Find the Kraken", "0/1 Kraken Found");
-        RemoveQuest("Deliver Package to Ingrid");
-        RemoveQuest("Talk to Bengt");
+        RemoveQuest("Deliver Package to Ingrid", "1/1 package delivered");
+        RemoveQuest("Talk to Bengt", "Bengt has been talked to");
         AddQuest("Do something fun", "Test");
         AddQuest("Do something evil", "Test");
-        RemoveQuest("Do something evil");
+        RemoveQuest("Do something evil", "You dropped grandma's stroller in the sea, she was very mad");
         AddQuest("Do something ugly", "Test");
     }
 
@@ -52,10 +52,11 @@ public class QuestTracker : MonoBehaviour
         questIndex++;
     }
 
-    void RemoveQuest(string questName)
+    void RemoveQuest(string questName, string edit)
     {
         //Hittar questen som du letar efter
         GameObject questFinish = GameObject.Find(questName);
+        questFinish.transform.Find("Quest_Text").GetComponent<TMP_Text>().SetText(edit);
         //Sätter den längst ner i hierarkin för quest log
         questFinish.transform.SetAsLastSibling();
         //Minskar värdet på variabeln
