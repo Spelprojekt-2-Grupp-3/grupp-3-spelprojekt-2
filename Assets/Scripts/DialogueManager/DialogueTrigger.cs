@@ -19,7 +19,7 @@ public class DialogueTrigger : MonoBehaviour, IClick
    {
       if (playerInRange)
       {
-         Debug.Log(inkJSON.text);
+         DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
       }
    }
 

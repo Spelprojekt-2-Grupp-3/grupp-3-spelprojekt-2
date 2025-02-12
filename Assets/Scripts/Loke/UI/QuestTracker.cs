@@ -1,30 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.UIElements;
 using Toggle = UnityEngine.UI.Toggle;
 
 public class QuestTracker : MonoBehaviour
 {
-    private string questName;
-
     [SerializeField] GameObject questBox;
     [SerializeField] GameObject questContainer;
-    
-    private string questText;
 
     //Räknar antalet nuvarande quests
-    private int questIndex = 0;
-    
-    bool questToggle;
+    private int questIndex;
 
     // Start is called before the first frame update
     void Start()
     {
-        //Exempel
+        //Exempel på hur man använder
         AddQuest("Talk to Bengt", "Bengt has not been talked to");
         AddQuest("Deliver Package to Ingrid", "0/1 Packages Delivered");
         AddQuest("Find the Kraken", "0/1 Kraken Found");
@@ -34,8 +23,10 @@ public class QuestTracker : MonoBehaviour
         AddQuest("Do something evil", "Test");
         RemoveQuest("Do something evil", "You dropped grandma's stroller in the sea, she was very mad");
         AddQuest("Do something ugly", "Test");
+        UpdateQuest("Find the Kraken", "1/1 kraken found, talk to Bengt");
     }
 
+    //Lägger till quest i quest log
     void AddQuest(string questName, string questText)
     {
         //Instansierar en quest i quest log
@@ -52,6 +43,14 @@ public class QuestTracker : MonoBehaviour
         questIndex++;
     }
 
+    //Används för att uppdatera quest som har flera steg
+    void UpdateQuest(string questName, string edit)
+    {
+        GameObject questFinish = GameObject.Find(questName);
+        questFinish.transform.Find("Quest_Text").GetComponent<TMP_Text>().SetText(edit);
+    }
+
+    //Avslutar quest i quest log
     void RemoveQuest(string questName, string edit)
     {
         //Hittar questen som du letar efter
@@ -66,6 +65,6 @@ public class QuestTracker : MonoBehaviour
         //Stryker över texten
         edit.SetText("<s>" + questName + "</s>");
         edit.color = Color.black;*/
-        questToggle = questFinish.GetComponentInChildren<Toggle>().isOn = true;
+        bool questToggle = questFinish.GetComponentInChildren<Toggle>().isOn = true;
     }
 }
