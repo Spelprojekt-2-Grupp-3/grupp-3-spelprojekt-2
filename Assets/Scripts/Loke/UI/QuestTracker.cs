@@ -15,17 +15,25 @@ public class QuestTracker : MonoBehaviour
     [SerializeField] GameObject questContainer;
     
     private string questText;
+
+    //Räknar antalet nuvarande quests
+    private int questIndex = 0;
     
     bool questToggle;
 
     // Start is called before the first frame update
     void Start()
     {
+        //Exempel
         AddQuest("Talk to Bengt", "Bengt has not been talked to");
         AddQuest("Deliver Package to Ingrid", "0/1 Packages Delivered");
         AddQuest("Find the Kraken", "0/1 Kraken Found");
-        //RemoveQuest("Deliver Package to Ingrid");
-        //RemoveQuest("Talk to Bengt");
+        RemoveQuest("Deliver Package to Ingrid");
+        RemoveQuest("Talk to Bengt");
+        AddQuest("Do something fun", "Test");
+        AddQuest("Do something evil", "Test");
+        RemoveQuest("Do something evil");
+        AddQuest("Do something ugly", "Test");
     }
 
     void AddQuest(string questName, string questText)
@@ -38,6 +46,10 @@ public class QuestTracker : MonoBehaviour
         questBox.GetComponent<TMP_Text>().SetText(questName);
         //Ändrar texten på quest_text, reflekterar vilket stadie questen är i
         questBox.gameObject.transform.Find("Quest_Text").GetComponent<TMP_Text>().SetText(questText);
+        //Sätter vart questen ska vara
+        questBox.gameObject.transform.SetSiblingIndex(questIndex);
+        //Ökar värdet på den variabeln
+        questIndex++;
     }
 
     void RemoveQuest(string questName)
@@ -46,6 +58,8 @@ public class QuestTracker : MonoBehaviour
         GameObject questFinish = GameObject.Find(questName);
         //Sätter den längst ner i hierarkin för quest log
         questFinish.transform.SetAsLastSibling();
+        //Minskar värdet på variabeln
+        questIndex--;
         /*//Hittar komponenten tmp_text
         TMP_Text edit = questFinish.GetComponent<TMP_Text>();
         //Stryker över texten
