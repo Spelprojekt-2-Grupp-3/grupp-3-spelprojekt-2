@@ -56,6 +56,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Interact(InputAction.CallbackContext context)
     {
-        Debug.Log("interacted");
+        //Debug.Log("interacted");
     }
 }
