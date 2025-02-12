@@ -68,7 +68,7 @@ public class BoatMovement : MonoBehaviour
         
         if (gas.inProgress)
         {
-            moveSpeed += acceleration * Time.deltaTime;
+            moveSpeed += acceleration * gas.ReadValue<float>() * Time.deltaTime;
             if (moveSpeed > maxSpeed)
             {
                 moveSpeed = maxSpeed;
