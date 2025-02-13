@@ -88,5 +88,6 @@ crashlytics-build.properties
 
 # If the source bank files are kept outside of the StreamingAssets folder then these can be ignored.
 # Log files can be ignored.
+Assets/Plugins/FMOD/Resources/FMODStudioCache.asset
+Assets/StreamingAssets/*.bank
 fmod_editor.log
-Assets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset
