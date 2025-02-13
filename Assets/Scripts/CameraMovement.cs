@@ -5,20 +5,15 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
-    [SerializeField] private GameObject player;
+    [SerializeField, Tooltip("This is the reference that the camera always will be pointed at")] private GameObject cameraReference;
     [SerializeField, Range(0, 1f)] private float cameraSmoothing;
     [SerializeField, Tooltip("Camera position relative to player")] private Vector3 cameraPos;
-    private Rigidbody rb;
-
-    private void Start()
-    {
-        rb = player.GetComponent<Rigidbody>();
-    }
 
     void FixedUpdate()
     {
-        Vector3 targetPosition = player.transform.position + cameraPos;
+        Vector3 targetPosition = cameraReference.transform.position - cameraReference.transform.right * cameraPos.z;
+        targetPosition.y = cameraPos.y;
         transform.position = Vector3.Lerp(transform.position, targetPosition, cameraSmoothing);
-        transform.LookAt(player.transform);
+        transform.LookAt(cameraReference.transform);
     }
 }
