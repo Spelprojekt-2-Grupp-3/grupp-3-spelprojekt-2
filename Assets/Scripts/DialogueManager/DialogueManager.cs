@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine;
 using Ink.Runtime;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -12,9 +13,13 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI dialogueText;
     
+    [Header("Choices UI")]
+    [SerializeField] private GameObject[] choices;
+    private TextMeshProUGUI[] _choicesText;
+    
     private Story _currentStory;
     
-    //Readonly (idk why)
+    //Readonly (I dont know why)
     public bool dialogueIsPlaying { get; private set; }
     
     private static DialogueManager _instance;
@@ -30,6 +35,15 @@ public class DialogueManager : MonoBehaviour
         
         dialoguePanel = GameObject.Find("DialoguePanel");
         dialogueText = GameObject.Find("DialogueText").GetComponent<TextMeshProUGUI>();
+        
+        //Get all the choices text
+        _choicesText = new TextMeshProUGUI[choices.Length];
+        int index = 0;
+        foreach (GameObject choice in choices)
+        {
+            _choicesText[index] = choice.GetComponentInChildren<TextMeshProUGUI>();
+            index++;
+        }
         
         _playerInput = new PlayerInputActions();
     }
@@ -49,7 +63,7 @@ public class DialogueManager : MonoBehaviour
         }
         
         //Continue to the next line of the dialogue when click
-        if (_playerInput.Player.Interact.WasPressedThisFrame()) 
+        if (_currentStory.currentChoices.Count == 0 && _playerInput.Player.Interact.WasPressedThisFrame()) 
         {
             ContinueStory();
         }
@@ -75,11 +89,6 @@ public class DialogueManager : MonoBehaviour
         _currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
-
-        ContinueStory();
-        
-        //Reset the input buffer to prevent immediate skipping
-        _playerInput.Player.Interact.Reset();
     }
 
     private IEnumerator ExitDialogueMode()
@@ -95,11 +104,56 @@ public class DialogueManager : MonoBehaviour
     {
         if (_currentStory.canContinue)
         {
+            //Set text for the current dialogeu line
             dialogueText.text = _currentStory.Continue();
+            //Display the choices if this dialogue has any
+            DisplayChoices();
         }
         else
         {
             StartCoroutine(ExitDialogueMode());
         }
+    }
+
+    private void DisplayChoices()
+    {
+        List<Choice> currentChoices = _currentStory.currentChoices;
+
+        //Check to make sure the UI can support the amount of choices coming in
+        if (currentChoices.Count > choices.Length)
+        {
+            Debug.LogWarning("More choices were given than the UI can support. Number of choices given: " 
+                             + currentChoices.Count);
+        }
+
+        int index = 0;
+
+        foreach (Choice choice in currentChoices)
+        {
+            choices[index].gameObject.SetActive(true);
+            _choicesText[index].text = choice.text;
+            index++;
+        }
+
+        for (int i = index; i < choices.Length; i++)
+        {
+            choices[i].gameObject.SetActive(false);
+        }
+        
+        StartCoroutine(SelectFirstChoice());
+    }
+
+    private IEnumerator SelectFirstChoice()
+    {
+        //Event system requires we clear it first and then wait for atleast one frame before we set the current selected object
+        EventSystem.current.SetSelectedGameObject(null);
+        yield return new WaitForEndOfFrame();
+        EventSystem.current.SetSelectedGameObject(choices[0].gameObject);
+    }
+
+    public void MakeChoice(int choiceIndex)
+    {
+        _currentStory.ChooseChoiceIndex(choiceIndex);
+        ContinueStory();
     }
 }

@@ -13,6 +13,7 @@ public class InventoryController : MonoBehaviour
     
    [HideInInspector] public ItemGrid selectedGrid;
    [HideInInspector] public ItemGrid otherGrid;
+   private ItemGrid prevGrid;
    [SerializeField] public ItemGrid mainGrid;
    
    private InventoryItem selectedPackage;
@@ -23,7 +24,8 @@ public class InventoryController : MonoBehaviour
    private InputAction lClick;
    private InputAction rClick;
    private InputAction shift;
-   private InputAction mousePosition;
+   private InputAction pointerPosition;
+   private InputAction middleClick;
    
    [SerializeField] private List<PackageData> packageTypes;
    [SerializeField] private GameObject packagePrefab;
@@ -39,7 +41,8 @@ public class InventoryController : MonoBehaviour
        lClick = playerControls.UI.Click;
        rClick = playerControls.UI.RightClick;
        shift = playerControls.UI.ModifierButton;
-       mousePosition = playerControls.UI.Point;
+       pointerPosition = playerControls.UI.Point;
+       middleClick = playerControls.UI.MiddleClick;
        EnableControls();
    }
 
@@ -53,7 +56,8 @@ public class InventoryController : MonoBehaviour
        lClick.Enable();
        rClick.Enable();
        shift.Enable();
-       mousePosition.Enable();
+       middleClick.Enable();
+       pointerPosition.Enable();
    }
 
    void DisableControls()
@@ -61,12 +65,8 @@ public class InventoryController : MonoBehaviour
        lClick.Disable();
        rClick.Disable();
        shift.Disable();
-       mousePosition.Disable();
-   }
-
-   private void Start()
-   {
-       //CreateRandomItem();
+       middleClick.Disable();
+       pointerPosition.Disable();
    }
 
    private void Update()
@@ -74,8 +74,12 @@ public class InventoryController : MonoBehaviour
        //item drag
        if (selectedPackage != null)
            packageRectTransform.position = Mouse.current.position.ReadValue();
+       if (rClick.WasPressedThisFrame() && selectedPackage!=null && prevGrid!=null)
+           CancelPickup();
+       
        if(selectedGrid==null){return;}
        GuiClicking();
+       
    }
    
    /// <summary>
@@ -116,17 +120,22 @@ public class InventoryController : MonoBehaviour
    void GuiClicking()
    {
        //TODO: Controller support
-       if (Mouse.current.leftButton.wasPressedThisFrame)
+       if (lClick.WasPressedThisFrame())
        {
            InteractClick();
        }
+
+       if (rClick.WasPressedThisFrame())
+       {
+           AltInteractClick();
+       }
        
-       //Quick-Insert Item
-       if (Mouse.current.rightButton.wasPressedThisFrame&& devving)
+       //Dev thingies
+       if (middleClick.WasPressedThisFrame() && devving)
        {
            if (selectedGrid == null) { return;}
-           CreateRandomItem();
 
+           CreateRandomItem();  
            if (shift.inProgress)
            {
                InventoryItem toInsert = selectedPackage;
@@ -155,14 +164,26 @@ public class InventoryController : MonoBehaviour
            
            if (selectedPackage != null)
            {
-               if (shift.inProgress&& otherGrid!=null)
+               //if (shift.inProgress)
+               //{ 
+               //    FindOtherGrid(); //maybe move this
+               //    if (otherGrid != null)
+               //    {
+               //        Vector2Int? otherPos = otherGrid.FindSpace(selectedPackage);
+               //        if (otherPos == null) return;
+               //        otherGrid.PlaceItem(selectedPackage, otherPos.Value.x, otherPos.Value.y);
+               //        Debug.Log("moved to other grid");
+               //        selectedPackage = null;
+               //        prevGrid = null;
+               //    }
+               //}
+               //else
                {
-                   Vector2Int? otherPos = otherGrid.FindSpace(selectedPackage);
-                   if(otherPos!=null)
-                       otherGrid.PlaceItem(selectedPackage,otherPos.Value.x,otherPos.Value.y);
+                   prevGrid = selectedGrid;
+                   packageRectTransform = selectedPackage.GetComponent<RectTransform>();
+                   packageRectTransform.SetParent(canvasTransform);
                }
-               packageRectTransform = selectedPackage.GetComponent<RectTransform>();
-               packageRectTransform.SetParent(canvasTransform);
+               
            }
        }
        //Placing item
@@ -172,9 +193,28 @@ public class InventoryController : MonoBehaviour
            if (success)
            {
                selectedPackage = null;
+               prevGrid = null;
                //packageRectTransform.SetAsLastSibling();
            }
        }
+   }
+
+   void AltInteractClick()
+   {
+       Vector2 mousePosition = Mouse.current.position.ReadValue();
+       Vector2Int posOnGrid = selectedGrid.GetTileGridPosition(mousePosition);
+       
+       if (selectedPackage == null)
+       {
+           //open alternatives gui
+       }
+   }
+
+   void CancelPickup()
+   {
+       prevGrid.PlaceItem(selectedPackage, selectedPackage.onGridPosition.x, selectedPackage.onGridPosition.y);
+       selectedPackage = null;
+       prevGrid = null;
    }
    
    /// <summary>
@@ -216,5 +256,22 @@ public class InventoryController : MonoBehaviour
        
        mainGrid.PlaceItem(selectedPackage, gridPos.Value.x, gridPos.Value.y);
        return true;
+   }
+
+   /// <summary>
+   /// finds candidates for and sets otherGrid
+   /// </summary>
+   void FindOtherGrid()
+   {
+       ItemGrid[] grids = FindObjectsOfType<ItemGrid>();
+       for (int i = 0; i < grids.Length; i++)
+       {
+           if (grids[i] != selectedGrid)
+           {
+               otherGrid = grids[i];
+               Debug.Log("Found other grid");
+               return;
+           }
+       }
    }
 }
