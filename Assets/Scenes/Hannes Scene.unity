@@ -287,9 +287,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e96763d71923dcf4287628ad34ebe0c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1692538083}
-  cameraSmoothing: 0.398
-  cameraPos: {x: 0, y: 20, z: -40}
+  cameraReference: {fileID: 1692538083}
+  cameraSmoothing: 0.29
+  cameraPos: {x: 0, y: 35, z: 60}
 --- !u!1 &246560209
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,12 +517,17 @@ PrefabInstance:
     - target: {fileID: 8465492917450370997, guid: a943b96b3422b0f4abb5e231275b1c00,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.42
+      value: 0.232
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465492917450370997, guid: a943b96b3422b0f4abb5e231275b1c00,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.714
       objectReference: {fileID: 0}
     - target: {fileID: 8465492917450370997, guid: a943b96b3422b0f4abb5e231275b1c00,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -13.69
+      value: 2.31
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8132232073638527397, guid: a943b96b3422b0f4abb5e231275b1c00, type: 3}
