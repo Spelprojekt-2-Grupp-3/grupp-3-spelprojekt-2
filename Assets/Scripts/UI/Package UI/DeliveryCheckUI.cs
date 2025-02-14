@@ -13,12 +13,17 @@ public class DeliveryCheckUI : MonoBehaviour
     {
         deliveryObj = packages[index];
         deliveryObj = Instantiate(deliveryObj, canvas.transform);
-        deliveryObj.transform.SetSiblingIndex(1);
         deliveryObj.gameObject.GetComponentInChildren<TMP_Text>().SetText(textToShow);
+    }
+
+    private void RemoveUIElement()
+    {
+        Destroy(deliveryObj);
     }
 
     private void Start()
     {
-        DeliveryCheck("Du är så rolig\npuss puss", 1);
+        DeliveryCheck("Ingrid Ysterman\n\nRaspberry Island", 0);
+        Invoke("RemoveUIElement", 5);
     }
 }

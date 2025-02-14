@@ -521,31 +521,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f68cf01f4d5e584d849d23014a68b5c, type: 3}
---- !u!1 &1341382409 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8848290563865927147, guid: 3864945a9e03c8c4683af472ebef048f,
-    type: 3}
-  m_PrefabInstance: {fileID: 6551539373860854439}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1341382414
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1341382409}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac85c6f100464f54ebfd904f2f46e1af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  deliveryObj: {fileID: 1914425747562331670, guid: 74d536584e142a54d8733f5eb13607db,
-    type: 3}
-  canvas: {fileID: 1341382409}
-  packages:
-  - {fileID: 1914425747562331670, guid: 74d536584e142a54d8733f5eb13607db, type: 3}
-  - {fileID: 4926112967188371608, guid: ff99bb23bc469ec40b1e85c2e031c138, type: 3}
-  - {fileID: 5834119097785172446, guid: b852e21ff0745794b9b33c3d13bb5b94, type: 3}
 --- !u!1001 &2075146477
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -821,79 +796,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4066540702016352045, guid: 3864945a9e03c8c4683af472ebef048f,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4066540702016352045, guid: 3864945a9e03c8c4683af472ebef048f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4066540702016352045, guid: 3864945a9e03c8c4683af472ebef048f,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: -17
-      objectReference: {fileID: 0}
-    - target: {fileID: 4780066986089403320, guid: 3864945a9e03c8c4683af472ebef048f,
-        type: 3}
-      propertyPath: m_Texture
-      value: 
-      objectReference: {fileID: 2800000, guid: efc1324f6160840a9a4c26231cc2d304, type: 3}
-    - target: {fileID: 4805413021371771050, guid: 3864945a9e03c8c4683af472ebef048f,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: -783
-      objectReference: {fileID: 0}
-    - target: {fileID: 4805413021371771050, guid: 3864945a9e03c8c4683af472ebef048f,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4805413021371771050, guid: 3864945a9e03c8c4683af472ebef048f,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5035076154068586705, guid: 3864945a9e03c8c4683af472ebef048f,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5035076154068586705, guid: 3864945a9e03c8c4683af472ebef048f,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5035076154068586705, guid: 3864945a9e03c8c4683af472ebef048f,
-        type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5431054052140745634, guid: 3864945a9e03c8c4683af472ebef048f,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7364101057223045348, guid: 3864945a9e03c8c4683af472ebef048f,
         type: 3}
       propertyPath: m_Name
       value: Compass with quest UI
       objectReference: {fileID: 0}
-    - target: {fileID: 9067865567082368315, guid: 3864945a9e03c8c4683af472ebef048f,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8848290563865927147, guid: 3864945a9e03c8c4683af472ebef048f,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1341382414}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3864945a9e03c8c4683af472ebef048f, type: 3}
 --- !u!114 &8904171854696576850 stripped
 MonoBehaviour:
