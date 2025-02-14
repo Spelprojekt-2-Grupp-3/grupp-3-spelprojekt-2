@@ -114,7 +114,6 @@ public class ItemGrid : MonoBehaviour
                 packageSlot[toRemove.onGridPosition.x + x, toRemove.onGridPosition.y + y] = null;
             }
         }
-        Debug.Log("Removed item from grid");
     }
     
     public Vector2Int? FindSpace(InventoryItem itemToInsert)
