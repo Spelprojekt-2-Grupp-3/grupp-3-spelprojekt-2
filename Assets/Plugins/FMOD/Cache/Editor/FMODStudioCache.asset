@@ -1,5 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8704859117449681888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound/AMB/River
+  m_EditorClassIdentifier: 
+  Path: event:/Sound/AMB/River
+  Guid:
+    Data1: 2078512569
+    Data2: 1325250120
+    Data3: 1375003022
+    Data4: 247216486
+  Banks:
+  - {fileID: -6721119066295411739}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 65787
 --- !u!114 &-8479292062464010260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,6 +135,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-6774614778315320227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound/SFX/Engine 2
+  m_EditorClassIdentifier: 
+  Path: event:/Sound/SFX/Engine 2
+  Guid:
+    Data1: -1194958024
+    Data2: 1340215152
+    Data3: 154919050
+    Data4: -935636229
+  Banks:
+  - {fileID: -6721119066295411739}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-6721119066295411739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,7 +177,7 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/Banks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638749869679379866
+  lastModified: 638751379673694205
   FileSizes: []
   Exists: 1
 --- !u!114 &-5318540042652159637
@@ -141,10 +195,10 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/Banks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638749869679389868
+  lastModified: 638751379673719341
   FileSizes:
   - Name: 
-    Value: 1410
+    Value: 1502
   Exists: 1
 --- !u!114 &-4396167063528810861
 MonoBehaviour:
@@ -283,12 +337,14 @@ MonoBehaviour:
   - {fileID: 6671272934889936397}
   - {fileID: -2925387715015162332}
   - {fileID: -4396167063528810861}
+  - {fileID: -6774614778315320227}
+  - {fileID: -8704859117449681888}
   EditorParameters: []
   MasterBanks:
   - {fileID: -6721119066295411739}
   StringsBanks:
   - {fileID: -5318540042652159637}
-  cacheTime: 638749869679389868
+  cacheTime: 638751379673719341
   cacheVersion: 131622
 --- !u!114 &5827804432365801762
 MonoBehaviour:
