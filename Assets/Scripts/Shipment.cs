@@ -23,6 +23,11 @@ public class Shipment : MonoBehaviour, IClick
 
     public void OnClick()
     {
+        Pickup();
+    }
+
+    public void Pickup()
+    {
         if (inventoryController.InsertItem(packageData))
         {
             Debug.Log("You have picked up a shipment!");
