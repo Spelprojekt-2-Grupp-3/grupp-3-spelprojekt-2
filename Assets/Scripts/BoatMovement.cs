@@ -14,7 +14,7 @@ public class BoatMovement : MonoBehaviour
     [SerializeField, Range(0, 100)] [Tooltip("Always slows down until at this value when not pressing the gas")] 
     private float baseMoveSpeed = 10;
     
-    private float moveSpeed;
+    public float moveSpeed {get; private set; }
     [SerializeField, Range(1, 200)] [Tooltip("Acceleration")]
     private float acceleration = 100;
     
