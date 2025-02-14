@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Timeline;
@@ -14,7 +15,7 @@ public class AnimationDebugger : MonoBehaviour
     private Animator anim;
 
     [SerializeField]
-    private GameObject TentacleBoatReference;
+    private GameObject _tentacleBoatReference;
 
     private void Awake()
     {
@@ -35,33 +36,55 @@ public class AnimationDebugger : MonoBehaviour
 
     public void OnActivation()
     {
-        transform.position += Vector3.Lerp(
-            transform.position,
-            (TentacleBoatReference.transform.position - transform.position).normalized,
-            1f
-        );
-        StartCoroutine(Timer(1));
+        StartCoroutine(Timer(1, Testingers));
     }
 
-    private IEnumerator Timer(float t)
+    private void Testingers()
     {
+        Debug.Log("Testingers running man");
+        anim.SetBool("Grabbers", true);
+    }
+
+    private bool _grabbing;
+
+    private IEnumerator Timer(float t, Action exec)
+    {
+        _grabbing = true;
+        StartCoroutine(test());
         yield return new WaitForSeconds(t);
-        Debug.Log("Waited");
+        //Debug.Log("Waited");
+        exec();
+    }
+
+    private bool fuckerinioRonaldinio = false;
+
+    private IEnumerator test()
+    {
+        fuckerinioRonaldinio = true;
+        yield return new WaitForSeconds(1);
+        fuckerinioRonaldinio = false;
     }
 
     private void DebugAction()
     {
-        Debug.Log("fucker");
-        //anim.SetBool("Grabbers", true);
+        // Debug.Log("fucker");
+        anim.SetBool("Grabbers", true);
         OnActivation();
     }
-    /*private void Update()
+
+    private void Update()
     {
-        if (_inputDebug.IsPressed()) // move.ReadValue tar din moveinput och y värdet blir W och S och X värdet blir A och D
+        if (_grabbing && fuckerinioRonaldinio)
         {
-            Debug.Log("fucker");
-            //anim.SetBool("Grabbers", true);
-            OnActivation();
+            transform.position += Vector3.Lerp(
+                transform.position,
+                (_tentacleBoatReference.transform.position - transform.position).normalized,
+                1f
+            );
         }
-    }*/
+        else if (_grabbing)
+        {
+            transform.position = _tentacleBoatReference.transform.position;
+        }
+    }
 }
