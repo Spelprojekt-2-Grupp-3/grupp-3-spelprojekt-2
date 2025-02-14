@@ -206,7 +206,8 @@ public class InventoryController : MonoBehaviour
        
        if (selectedPackage == null)
        {
-           //open alternatives gui
+           //open alternatives gui, like package info and drop package or smt
+           Debug.Log("Opened sub-menu");
        }
    }
 
