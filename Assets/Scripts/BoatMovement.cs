@@ -80,7 +80,7 @@ public class BoatMovement : MonoBehaviour
             if (moveSpeed < baseMoveSpeed) moveSpeed = baseMoveSpeed;
         }
         float boatSpeed = moveSpeed * 15 / maxSpeed;
-        boatSound.setParameterByName("Boat Engine", boatSpeed);
+        boatSound.setParameterByName("Speed", boatSpeed);
     }
 
     private void FixedUpdate()
