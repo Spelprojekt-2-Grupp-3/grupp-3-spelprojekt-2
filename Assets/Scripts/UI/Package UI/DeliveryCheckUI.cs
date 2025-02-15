@@ -18,12 +18,12 @@ public class DeliveryCheckUI : MonoBehaviour
 
     private void RemoveUIElement()
     {
-        Destroy(deliveryObj);
+        Destroy(deliveryObj); 
     }
 
     private void Start()
     {
         DeliveryCheck("Ingrid Ysterman\n\nRaspberry Island", 0);
-        Invoke("RemoveUIElement", 5);
+        Invoke("RemoveUIElement", 2);
     }
 }
