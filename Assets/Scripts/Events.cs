@@ -7,6 +7,8 @@ using UnityEngine.Events;
 public class Events : MonoBehaviour
 {
     public static UnityEvent exampleEvent;
+    public static UnityEvent startBoat;
+    public static UnityEvent stopBoat;
 
     private void OnEnable()
     {

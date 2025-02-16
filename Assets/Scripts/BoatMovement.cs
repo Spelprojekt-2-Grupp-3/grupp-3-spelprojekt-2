@@ -47,12 +47,16 @@ public class BoatMovement : MonoBehaviour
         gas.Enable();
         look = playerControls.Boat.Look;
         look.Enable();
+        Events.startBoat.AddListener(AllowMovement);
+        Events.stopBoat.AddListener(DisallowMovement);
     }
 
     private void OnDisable()
     {
         move.Disable();
         gas.Disable();
+        Events.startBoat.RemoveListener(AllowMovement);
+        Events.stopBoat.RemoveListener(DisallowMovement);
     }
 
     void Start()
@@ -99,5 +103,17 @@ public class BoatMovement : MonoBehaviour
         rb.velocity = new Vector3(
              moveSpeed * transform.right.x, rb.velocity.y,
              moveSpeed * transform.right.z);
+    }
+
+    public void AllowMovement()
+    {
+        move.Enable();
+        gas.Enable();
+    }
+
+    public void DisallowMovement()
+    {
+        move.Disable();
+        gas.Disable();
     }
 }
