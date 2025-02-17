@@ -122,6 +122,79 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &156269518
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 7a4c4b519243caf46b5398c3ac27f8b9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -17.822952
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7a4c4b519243caf46b5398c3ac27f8b9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7a4c4b519243caf46b5398c3ac27f8b9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -36.839104
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7a4c4b519243caf46b5398c3ac27f8b9,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7a4c4b519243caf46b5398c3ac27f8b9,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7a4c4b519243caf46b5398c3ac27f8b9,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7a4c4b519243caf46b5398c3ac27f8b9,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7a4c4b519243caf46b5398c3ac27f8b9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7a4c4b519243caf46b5398c3ac27f8b9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7a4c4b519243caf46b5398c3ac27f8b9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7a4c4b519243caf46b5398c3ac27f8b9,
+        type: 3}
+      propertyPath: m_Name
+      value: Kraken_Tentacle_Rigged
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 7a4c4b519243caf46b5398c3ac27f8b9,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 12879dae78fbbc54690b7930bbdb2ef4, type: 2}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7a4c4b519243caf46b5398c3ac27f8b9, type: 3}
 --- !u!1 &180277987
 GameObject:
   m_ObjectHideFlags: 0
@@ -757,6 +830,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1973162829}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1316649728 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7a4c4b519243caf46b5398c3ac27f8b9,
+    type: 3}
+  m_PrefabInstance: {fileID: 156269518}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1692538083 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4312721855822165562, guid: a943b96b3422b0f4abb5e231275b1c00,
@@ -783,10 +862,10 @@ MonoBehaviour:
   tiltSpeed: 6.45
   boatSoundEvent:
     Guid:
-      Data1: 1498703178
-      Data2: 1269736054
-      Data3: 1820459146
-      Data4: -34187766
+      Data1: -1194958024
+      Data2: 1340215152
+      Data3: 154919050
+      Data4: -935636229
     Path: event:/Sound/SFX/Engine
 --- !u!95 &1692538086
 Animator:
@@ -838,8 +917,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1a44e8b799215d4ab2cc67e0e714da9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kraken: {fileID: 0}
+  kraken: {fileID: 1316649728}
   krakenDifficulty: {fileID: 11400000, guid: 424ea5c16eddd514e89d5cf3d9e09436, type: 2}
+  canvas: {fileID: 642318916011621992, guid: 9541a31cfca683b42aebfaba8fc8ae91, type: 3}
+  hpBar: {fileID: 1117802961362163437, guid: e9e3d4f065456a2418ea647d030787b5, type: 3}
 --- !u!4 &1819212492
 Transform:
   m_ObjectHideFlags: 0
@@ -1153,3 +1234,4 @@ SceneRoots:
   - {fileID: 704225525}
   - {fileID: 2076256762}
   - {fileID: 1819212492}
+  - {fileID: 156269518}
