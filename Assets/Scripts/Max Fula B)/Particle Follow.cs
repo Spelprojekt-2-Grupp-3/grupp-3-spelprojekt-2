@@ -24,7 +24,7 @@ public class ParticleFollow : MonoBehaviour
         {
             //particleSystem.emission.SetBurst(0, )
             particleSystem.enableEmission = true;
-            Debug.Log("we movign blyat");
+//            Debug.Log("we movign blyat");
         }
         else
         {
