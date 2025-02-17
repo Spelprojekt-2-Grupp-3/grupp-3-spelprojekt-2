@@ -17,8 +17,7 @@ public class AnimationDebugger : MonoBehaviour
     [SerializeField]
     private GameObject _tentacleBoatReference;
 
-    private float submergedY = -15f;
-    private float SurfacedY = -1f;
+    public GameObject player;
 
     private void Awake()
     {
@@ -39,6 +38,8 @@ public class AnimationDebugger : MonoBehaviour
 
     public void OnActivation()
     {
+        Debug.Log("activating");
+        playerControls.Boat.Move.Disable();
         StartCoroutine(Timer(1, Testingers));
     }
 
@@ -55,6 +56,7 @@ public class AnimationDebugger : MonoBehaviour
         _grabbing = true;
         StartCoroutine(test());
         yield return new WaitForSeconds(t);
+        transform.LookAt(player.transform);
         //Debug.Log("Waited");
         exec();
     }
