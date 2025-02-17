@@ -3139,9 +3139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0a1bfe4f34d32a42b94172cd4ae36f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weight: 0
-  gridSize: {x: 0, y: 0}
-  inventoryImage: {fileID: 0}
+  packageData: {fileID: 0}
 --- !u!65 &890478715
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3253,7 +3251,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 920956541}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.23413998, y: -0.012886263, z: 0.003103745, w: 0.9721126}
+  m_LocalRotation: {x: 0.23413998, y: -0.012886263, z: 0.003103745, w: 0.97211254}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3928,7 +3926,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1078378339}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.26929742, y: -0.0127650155, z: 0.0035697902, w: 0.96296585}
+  m_LocalRotation: {x: 0.26929742, y: -0.0127650155, z: 0.0035697897, w: 0.96296585}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6648,7 +6646,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1791241929}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.25173697, y: -0.012827837, z: 0.0033370103, w: 0.96770495}
+  m_LocalRotation: {x: 0.25173703, y: -0.012827837, z: 0.00333701, w: 0.96770495}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -7383,6 +7381,15 @@ MonoBehaviour:
   acceleration: 100
   rotationSpeed: 13
   maxSpeed: 200
+  tiltAngle: 25
+  tiltSpeed: 1
+  boatSoundEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!95 &1892992252
 Animator:
   serializedVersion: 5
@@ -7926,7 +7933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 142545f0850189049b93647b007cc2d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventoryController: {fileID: 0}
+  inventoryController: {fileID: 2070883004}
 --- !u!114 &1945057533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7941,8 +7948,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventorySizeX: 7
   inventorySizeY: 6
-  itemPrefab: {fileID: 2051847946536933829, guid: c947efda8fff5e14aabcd642067e9a32,
-    type: 3}
 --- !u!114 &1945057534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8619,6 +8624,58 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2065364015}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2070883003
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2070883005}
+  - component: {fileID: 2070883004}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2070883004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2070883003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c3c31e26d252d0489d8a60518adccc3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  devving: 0
+  selectedGrid: {fileID: 0}
+  otherGrid: {fileID: 0}
+  mainGrid: {fileID: 1945057533}
+  packageTypes: []
+  packagePrefab: {fileID: 2051847946536933829, guid: c947efda8fff5e14aabcd642067e9a32,
+    type: 3}
+  canvasTransform: {fileID: 2062292122}
+--- !u!4 &2070883005
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2070883003}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2086171952
 GameObject:
   m_ObjectHideFlags: 0
@@ -8725,3 +8782,4 @@ SceneRoots:
   - {fileID: 938049170}
   - {fileID: 1892992247}
   - {fileID: 1847366246}
+  - {fileID: 2070883005}
