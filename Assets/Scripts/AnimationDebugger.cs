@@ -17,6 +17,9 @@ public class AnimationDebugger : MonoBehaviour
     [SerializeField]
     private GameObject _tentacleBoatReference;
 
+    private float submergedY = -15f;
+    private float SurfacedY = -1f;
+
     private void Awake()
     {
         playerControls = new PlayerInputActions();
@@ -82,9 +85,9 @@ public class AnimationDebugger : MonoBehaviour
                 1f
             );
         }
-        else if (_grabbing)
+        /*else if (_grabbing)
         {
             transform.position = _tentacleBoatReference.transform.position;
-        }
+        }*/
     }
 }

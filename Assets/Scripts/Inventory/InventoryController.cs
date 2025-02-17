@@ -14,7 +14,7 @@ public class InventoryController : MonoBehaviour
    [HideInInspector] public ItemGrid selectedGrid;
    [HideInInspector] public ItemGrid otherGrid;
    private ItemGrid prevGrid;
-   [SerializeField] public ItemGrid mainGrid;
+   [SerializeField, Tooltip("Reference to the main inventory, the one that contains the player's things")] public ItemGrid mainGrid;
    
    private InventoryItem selectedPackage;
    private InventoryItem overlapItem;
@@ -27,9 +27,10 @@ public class InventoryController : MonoBehaviour
    private InputAction pointerPosition;
    private InputAction middleClick;
    
-   [SerializeField] private List<PackageData> packageTypes;
-   [SerializeField] private GameObject packagePrefab;
-   [SerializeField] private Transform canvasTransform;
+   
+   [SerializeField, Tooltip("For randomly generated packages, currently only dev functions")] private List<PackageData> packageTypes;
+   [SerializeField, Tooltip("The object to instantiate")] private GameObject packagePrefab;
+   [SerializeField, Tooltip("Reference to the canvas that holds the grid")] private Transform canvasTransform;
 
    private void Awake()
    {

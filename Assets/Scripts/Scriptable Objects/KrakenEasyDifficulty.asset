@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69f98d9981be584479562ea3a2d87c60, type: 3}
-  m_Name: 1x1Item
+  m_Script: {fileID: 11500000, guid: f31c956148d33734cabb29dd26776054, type: 3}
+  m_Name: KrakenEasyDifficulty
   m_EditorClassIdentifier: 
-  gridSize: {x: 1, y: 1}
-  weight: 0
-  inventoryImage: {fileID: 21300000, guid: affdec397878b774595ce106eb01a52d, type: 3}
+  krakenHP: 5

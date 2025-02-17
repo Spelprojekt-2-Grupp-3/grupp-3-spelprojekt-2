@@ -14,7 +14,7 @@ public class BoatMovement : MonoBehaviour
     [SerializeField, Range(0, 100)] [Tooltip("Always slows down until at this value when not pressing the gas")] 
     private float baseMoveSpeed = 10;
     
-    private float moveSpeed;
+    public float moveSpeed {get; private set; }
     [SerializeField, Range(1, 200)] [Tooltip("Acceleration")]
     private float acceleration = 100;
     
@@ -47,12 +47,16 @@ public class BoatMovement : MonoBehaviour
         gas.Enable();
         look = playerControls.Boat.Look;
         look.Enable();
+        Events.startBoat.AddListener(AllowMovement);
+        Events.stopBoat.AddListener(DisallowMovement);
     }
 
     private void OnDisable()
     {
         move.Disable();
         gas.Disable();
+        Events.startBoat.RemoveListener(AllowMovement);
+        Events.stopBoat.RemoveListener(DisallowMovement);
     }
 
     void Start()
@@ -99,5 +103,17 @@ public class BoatMovement : MonoBehaviour
         rb.velocity = new Vector3(
              moveSpeed * transform.right.x, rb.velocity.y,
              moveSpeed * transform.right.z);
+    }
+
+    public void AllowMovement()
+    {
+        move.Enable();
+        gas.Enable();
+    }
+
+    public void DisallowMovement()
+    {
+        move.Disable();
+        gas.Disable();
     }
 }
