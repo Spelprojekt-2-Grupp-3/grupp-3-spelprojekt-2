@@ -5,18 +5,26 @@ using UnityEngine;
 
 public class Port : MonoBehaviour
 {
-    private string recipient;
+    [SerializeField] private string Inhabitant;
+    [SerializeField] private IslandersListData islanders;
     private List<string> otherRecipients;
 
     private InventoryController inventoryController;
     private Player player;
 
-    [SerializeField] private Shipment shipment;
+    [SerializeField, Tooltip("quest shipment or smth dunno yet")] private Shipment shipment;
 
     private void Awake()
     {
         inventoryController = FindObjectOfType<InventoryController>();
         player = FindObjectOfType<Player>();
+        foreach (var islander in islanders.islanders)
+        {
+            if (islander != Inhabitant)
+            {
+                otherRecipients.Add(islander);
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -36,11 +44,11 @@ public class Port : MonoBehaviour
     {
         foreach (var shipment in player.shipments)
         {
-            if (shipment.packageData.recipient == recipient)
+            if (shipment.packageData.recipient == Inhabitant)
             {
                 player.shipments.Remove(shipment);
             }
         }
-        inventoryController.mainGrid.RemoveItemsByRecipient(recipient);
+        inventoryController.mainGrid.RemoveItemsByRecipient(Inhabitant);
     }
 }

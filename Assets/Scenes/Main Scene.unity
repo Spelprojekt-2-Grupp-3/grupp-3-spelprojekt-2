@@ -5441,7 +5441,7 @@ GameObject:
   - component: {fileID: 1445684309}
   - component: {fileID: 1445684313}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: BengtHamn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5542,10 +5542,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1445684308}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 93d580eb76d4bf6448c3a9d32b6f8baa, type: 3}
+  m_Script: {fileID: 11500000, guid: ef401a459b9bf4540940f067d6041ff8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  p: {fileID: 0}
+  Inhabitant: Bengt
+  islanders: {fileID: 11400000, guid: 7ee6350dd399da04187fa6726c5e05af, type: 2}
+  shipment: {fileID: 0}
 --- !u!1 &1464634985
 GameObject:
   m_ObjectHideFlags: 0
