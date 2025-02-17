@@ -12,6 +12,7 @@ public class DialogueManager : MonoBehaviour
     [Header("Dialogue UI")]
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI dialogueText;
+    [SerializeField] private TextMeshProUGUI displayNameText;
     
     [Header("Choices UI")]
     [SerializeField] private GameObject[] choices;
@@ -24,6 +25,8 @@ public class DialogueManager : MonoBehaviour
     
     private static DialogueManager _instance;
     private PlayerInputActions _playerInput;
+    
+    private const string SPEAKER_TAG = "speaker";
 
     private void Awake()
     {
@@ -35,6 +38,7 @@ public class DialogueManager : MonoBehaviour
         
         dialoguePanel = GameObject.Find("DialoguePanel");
         dialogueText = GameObject.Find("DialogueText").GetComponent<TextMeshProUGUI>();
+        displayNameText = GameObject.Find("DisplayNameText").GetComponent<TextMeshProUGUI>();
         
         //Get all the choices text
         _choicesText = new TextMeshProUGUI[choices.Length];
@@ -108,10 +112,39 @@ public class DialogueManager : MonoBehaviour
             dialogueText.text = _currentStory.Continue();
             //Display the choices if this dialogue has any
             DisplayChoices();
+            //Handle tags
+            HandleTags(_currentStory.currentTags);
         }
         else
         {
             StartCoroutine(ExitDialogueMode());
+        }
+    }
+
+    private void HandleTags(List<string> currentTags)
+    {
+        foreach (string tag in currentTags)
+        {
+            //Parse the tag
+            string[] splitTag = tag.Split(":");
+            if (splitTag.Length != 2)
+            {
+                Debug.LogError("Tag could not be parsed: " + tag);
+            }
+            //Trim is used to clean out any whitespace
+            string tagKey = splitTag[0].Trim();
+            string tagValue = splitTag[1].Trim();
+            
+            //Handle the tag
+            if (tagKey == SPEAKER_TAG)
+            {
+                displayNameText.text = tagValue;
+            }
+            else
+            {
+                Debug.LogWarning("Tag came in but is not currently being handled: " + tagKey);
+            }
+
         }
     }
 
