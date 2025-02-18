@@ -9,6 +9,7 @@ public class Events : MonoBehaviour
     public static UnityEvent exampleEvent = new UnityEvent();
     public static UnityEvent startBoat = new UnityEvent();
     public static UnityEvent stopBoat = new UnityEvent();
+    public static UnityEvent checkInput = new UnityEvent();
 
     private void OnEnable()
     {

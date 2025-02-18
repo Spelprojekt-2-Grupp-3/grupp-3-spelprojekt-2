@@ -12,6 +12,7 @@ public class SceneManager : MonoBehaviour
     private string s = "";
     private PlayerInputActions playerInput;
     private InputAction navigate;
+    private InputDevice inputDevice;
     [SerializeField] private GameObject firstSelected;
     private InputDevice previousDevice = null;
 
@@ -62,15 +63,23 @@ public class SceneManager : MonoBehaviour
 
     private void CheckInputDevice(InputAction.CallbackContext context)
     {
-        if (context.control.device is Mouse)
+        if (Mouse.current != null && 
+            (Mouse.current.leftButton.wasPressedThisFrame ||
+             Mouse.current.rightButton.wasPressedThisFrame ||
+             Mouse.current.middleButton.wasPressedThisFrame ||
+             Mouse.current.delta.ReadValue() != Vector2.zero)) // Detect movement
         {
             EventSystem.current.SetSelectedGameObject(null);
         }
-        else if(context.control.device is not Mouse && previousDevice is Mouse) // Nuvarande input device är inte en mus och om den tidigare var mus så markerar den första objektet.
+        else if (Gamepad.current != null && Gamepad.current.buttonSouth.wasPressedThisFrame || // A (Xbox) / Cross (PS)
+                 Gamepad.current.buttonNorth.wasPressedThisFrame || // Y / Triangle
+                 Gamepad.current.buttonEast.wasPressedThisFrame || // B / Circle
+                 Gamepad.current.buttonWest.wasPressedThisFrame || // X / Square
+                 Gamepad.current.leftStick.ReadValue() != Vector2.zero || // Left Stick Move
+                 Gamepad.current.rightStick.ReadValue() != Vector2.zero || // Right Stick Move
+                 Gamepad.current.dpad.ReadValue() != Vector2.zero)
         {
             EventSystem.current.SetSelectedGameObject(firstSelected);
         }
-
-        previousDevice = context.control.device;
     }
 }

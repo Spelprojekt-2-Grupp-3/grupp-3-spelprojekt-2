@@ -135,7 +135,6 @@ GameObject:
   - component: {fileID: 180277989}
   - component: {fileID: 180277988}
   - component: {fileID: 180277992}
-  - component: {fileID: 180277993}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -274,22 +273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nonRigidbodyVelocity: 0
-  attenuationObject: {fileID: 2088235088}
---- !u!114 &180277993
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 180277987}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96763d71923dcf4287628ad34ebe0c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cameraReference: {fileID: 2088235088}
-  cameraSmoothing: 0.29
-  cameraPos: {x: 0, y: 35, z: 60}
+  attenuationObject: {fileID: 0}
 --- !u!1 &246560209
 GameObject:
   m_ObjectHideFlags: 0
@@ -396,119 +380,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &284871962
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4683250073654010558, guid: 3851e0bf4a7d38044ba5a3993a819b47,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4683250073654010558, guid: 3851e0bf4a7d38044ba5a3993a819b47,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 4683250073654010558, guid: 3851e0bf4a7d38044ba5a3993a819b47,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4683250073654010558, guid: 3851e0bf4a7d38044ba5a3993a819b47,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4683250073654010558, guid: 3851e0bf4a7d38044ba5a3993a819b47,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4683250073654010558, guid: 3851e0bf4a7d38044ba5a3993a819b47,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4683250073654010558, guid: 3851e0bf4a7d38044ba5a3993a819b47,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4683250073654010558, guid: 3851e0bf4a7d38044ba5a3993a819b47,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4683250073654010558, guid: 3851e0bf4a7d38044ba5a3993a819b47,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4683250073654010558, guid: 3851e0bf4a7d38044ba5a3993a819b47,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5159874366048841009, guid: 3851e0bf4a7d38044ba5a3993a819b47,
-        type: 3}
-      propertyPath: m_Name
-      value: boat
-      objectReference: {fileID: 0}
-    - target: {fileID: 8989885519534117489, guid: 3851e0bf4a7d38044ba5a3993a819b47,
-        type: 3}
-      propertyPath: maxSpeed
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 8989885519534117489, guid: 3851e0bf4a7d38044ba5a3993a819b47,
-        type: 3}
-      propertyPath: tiltAngle
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 8989885519534117489, guid: 3851e0bf4a7d38044ba5a3993a819b47,
-        type: 3}
-      propertyPath: acceleration
-      value: 35
-      objectReference: {fileID: 0}
-    - target: {fileID: 8989885519534117489, guid: 3851e0bf4a7d38044ba5a3993a819b47,
-        type: 3}
-      propertyPath: rotationSpeed
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8989885519534117489, guid: 3851e0bf4a7d38044ba5a3993a819b47,
-        type: 3}
-      propertyPath: boatSoundEvent.Path
-      value: event:/Sound/SFX/Engine
-      objectReference: {fileID: 0}
-    - target: {fileID: 8989885519534117489, guid: 3851e0bf4a7d38044ba5a3993a819b47,
-        type: 3}
-      propertyPath: boatSoundEvent.Guid.Data1
-      value: -1194958024
-      objectReference: {fileID: 0}
-    - target: {fileID: 8989885519534117489, guid: 3851e0bf4a7d38044ba5a3993a819b47,
-        type: 3}
-      propertyPath: boatSoundEvent.Guid.Data2
-      value: 1340215152
-      objectReference: {fileID: 0}
-    - target: {fileID: 8989885519534117489, guid: 3851e0bf4a7d38044ba5a3993a819b47,
-        type: 3}
-      propertyPath: boatSoundEvent.Guid.Data3
-      value: 154919050
-      objectReference: {fileID: 0}
-    - target: {fileID: 8989885519534117489, guid: 3851e0bf4a7d38044ba5a3993a819b47,
-        type: 3}
-      propertyPath: boatSoundEvent.Guid.Data4
-      value: -935636229
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 3851e0bf4a7d38044ba5a3993a819b47, type: 3}
 --- !u!1 &947331566
 GameObject:
   m_ObjectHideFlags: 0
@@ -716,86 +587,6 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
---- !u!1001 &1042514129
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 5912779573399572033, guid: 48e7618d9905c24489849679a0b9adca,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5912779573399572033, guid: 48e7618d9905c24489849679a0b9adca,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5912779573399572033, guid: 48e7618d9905c24489849679a0b9adca,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5912779573399572033, guid: 48e7618d9905c24489849679a0b9adca,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5912779573399572033, guid: 48e7618d9905c24489849679a0b9adca,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5912779573399572033, guid: 48e7618d9905c24489849679a0b9adca,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5912779573399572033, guid: 48e7618d9905c24489849679a0b9adca,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5912779573399572033, guid: 48e7618d9905c24489849679a0b9adca,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5912779573399572033, guid: 48e7618d9905c24489849679a0b9adca,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5912779573399572033, guid: 48e7618d9905c24489849679a0b9adca,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6765604044985407211, guid: 48e7618d9905c24489849679a0b9adca,
-        type: 3}
-      propertyPath: kraken
-      value: 
-      objectReference: {fileID: 131798711834786978, guid: c36caa2d2b8ec2c4b81627a7c4f7c42c,
-        type: 3}
-    - target: {fileID: 6765604044985407211, guid: 48e7618d9905c24489849679a0b9adca,
-        type: 3}
-      propertyPath: actionButton
-      value: 
-      objectReference: {fileID: 5445935463837583858, guid: c9ced5543a662724592dcb641889a12d,
-        type: 3}
-    - target: {fileID: 8696412263360463079, guid: 48e7618d9905c24489849679a0b9adca,
-        type: 3}
-      propertyPath: m_Name
-      value: MinigameHandler
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 48e7618d9905c24489849679a0b9adca, type: 3}
 --- !u!1001 &1076309442
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -933,12 +724,6 @@ MonoBehaviour:
   anim: {fileID: 2076256761}
   _tentacleBoatReference: {fileID: 0}
   player: {fileID: 0}
---- !u!1 &2088235088 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5159874366048841009, guid: 3851e0bf4a7d38044ba5a3993a819b47,
-    type: 3}
-  m_PrefabInstance: {fileID: 284871962}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -948,6 +733,4 @@ SceneRoots:
   - {fileID: 246560213}
   - {fileID: 947331569}
   - {fileID: 2076256762}
-  - {fileID: 284871962}
-  - {fileID: 1042514129}
   - {fileID: 1076309442}
