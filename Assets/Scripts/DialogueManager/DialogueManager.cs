@@ -13,6 +13,8 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private TextMeshProUGUI displayNameText;
+    [SerializeField] private Animator portraitAnimator;
+    [SerializeField] private Animator layoutAnimator;
     
     [Header("Choices UI")]
     [SerializeField] private GameObject[] choices;
@@ -26,7 +28,7 @@ public class DialogueManager : MonoBehaviour
     private static DialogueManager _instance;
     private PlayerInputActions _playerInput;
     
-    private const string SPEAKER_TAG = "speaker";
+    private const string SpeakerTag = "Speaker";
 
     private void Awake()
     {
@@ -39,6 +41,8 @@ public class DialogueManager : MonoBehaviour
         dialoguePanel = GameObject.Find("DialoguePanel");
         dialogueText = GameObject.Find("DialogueText").GetComponent<TextMeshProUGUI>();
         displayNameText = GameObject.Find("DisplayNameText").GetComponent<TextMeshProUGUI>();
+        portraitAnimator = GameObject.Find("PortraitImage").GetComponent<Animator>();
+        layoutAnimator = dialoguePanel.GetComponent<Animator>();
         
         //Get all the choices text
         _choicesText = new TextMeshProUGUI[choices.Length];
@@ -93,6 +97,11 @@ public class DialogueManager : MonoBehaviour
         _currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
+        
+        //Reset portrait, layout and speaker
+        displayNameText.text = "???";
+        portraitAnimator.Play("Default");
+        layoutAnimator.Play("NPC");
     }
 
     private IEnumerator ExitDialogueMode()
@@ -125,28 +134,42 @@ public class DialogueManager : MonoBehaviour
     {
         foreach (string tag in currentTags)
         {
-            //Parse the tag
+            // Parse the tag
             string[] splitTag = tag.Split(":");
             if (splitTag.Length != 2)
             {
                 Debug.LogError("Tag could not be parsed: " + tag);
+                return; // Exit early if the tag is invalid
             }
-            //Trim is used to clean out any whitespace
+
+            // Trim to remove any extra whitespace
             string tagKey = splitTag[0].Trim();
             string tagValue = splitTag[1].Trim();
-            
-            //Handle the tag
-            if (tagKey == SPEAKER_TAG)
+
+            // Handle the tag
+            if (tagKey == SpeakerTag)
             {
+                // Determine layout animation based on speaker
+                if (tagValue == "Cleo")
+                {
+                    layoutAnimator.Play("Player");
+                }
+                else
+                {
+                    layoutAnimator.Play("NPC");
+                }
+                
+                // Determine the text and portrait based on speaker
                 displayNameText.text = tagValue;
+                portraitAnimator.Play(tagValue);
             }
             else
             {
                 Debug.LogWarning("Tag came in but is not currently being handled: " + tagKey);
             }
-
         }
     }
+
 
     private void DisplayChoices()
     {

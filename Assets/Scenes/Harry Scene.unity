@@ -720,6 +720,7 @@ GameObject:
   - component: {fileID: 461196297}
   - component: {fileID: 461196299}
   - component: {fileID: 461196298}
+  - component: {fileID: 461196300}
   m_Layer: 5
   m_Name: PortraitImage
   m_TagString: Untagged
@@ -766,7 +767,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 3fb1697f628e2fa4abea591784da5ab0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -784,6 +785,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 461196296}
   m_CullTransparentMesh: 1
+--- !u!95 &461196300
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 461196296}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a5e5f1f1c2ad0bb48b7a3e8f382583c0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &482420549
 GameObject:
   m_ObjectHideFlags: 0
@@ -1070,6 +1092,10 @@ MonoBehaviour:
   dialoguePanel: {fileID: 0}
   dialogueText: {fileID: 0}
   displayNameText: {fileID: 0}
+  portraitAnimator: {fileID: 0}
+  layoutAnimator: {fileID: 0}
+  characterNames:
+  - 
   choices:
   - {fileID: 1914413844}
   - {fileID: 487455358}
@@ -1085,6 +1111,7 @@ GameObject:
   - component: {fileID: 611301129}
   - component: {fileID: 611301131}
   - component: {fileID: 611301130}
+  - component: {fileID: 611301132}
   m_Layer: 5
   m_Name: DialoguePanel
   m_TagString: Untagged
@@ -1153,6 +1180,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 611301128}
   m_CullTransparentMesh: 1
+--- !u!95 &611301132
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 611301128}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 65486b32bbd60d641b82b2a0cf0e7d5d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &714732637
 GameObject:
   m_ObjectHideFlags: 0
@@ -1864,7 +1912,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 20, y: -20}
-  m_SizeDelta: {x: 703.3881, y: 109.7139}
+  m_SizeDelta: {x: 700, y: 110}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1493896695
 MonoBehaviour:
@@ -2434,7 +2482,7 @@ PrefabInstance:
     - target: {fileID: 964106899243683150, guid: e038b92317793124db4f814ca362de46,
         type: 3}
       propertyPath: m_Name
-      value: NPC 1
+      value: Ulrich
       objectReference: {fileID: 0}
     - target: {fileID: 5672551112512614370, guid: e038b92317793124db4f814ca362de46,
         type: 3}
