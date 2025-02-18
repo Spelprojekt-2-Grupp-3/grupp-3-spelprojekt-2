@@ -36,11 +36,19 @@ public class InventoryController : MonoBehaviour
    private SubMenu subMenu;
 
    private Vector2Int markerPosition;
+   [SerializeField] private float markerMoveCooldown;
+   private float actualCooldown;
+   [SerializeField] private GameObject slotHighlightObject;
    
    private void Awake()
    {
        playerControls = new PlayerInputActions();
        subMenu = subMenuObject.GetComponent<SubMenu>();
+   }
+
+   private void Start()
+   {
+       markerPosition = mainGrid.FirstSlot();
    }
 
    private void OnEnable()
@@ -52,7 +60,6 @@ public class InventoryController : MonoBehaviour
        middleClick = playerControls.UI.MiddleClick;
        markerMovement = playerControls.UI.Navigate;
        EnableControls();
-       markerPosition = mainGrid.FirstSlot();
    }
 
    private void OnDisable()
@@ -155,14 +162,23 @@ public class InventoryController : MonoBehaviour
            }
        }
    }
-
+   
    void GuiMovement()
    {
-      Vector2Int direction = markerMovement.ReadValue<Vector2Int>();
-      if (direction != Vector2Int.zero)
-      {
-          markerPosition = mainGrid.NextSlot(markerPosition, direction);
-      }
+       if (actualCooldown<markerMoveCooldown)
+       {
+           actualCooldown += Time.deltaTime;
+       }
+       Vector2 direction = markerMovement.ReadValue<Vector2>();
+       if (direction != Vector2.zero && actualCooldown >= markerMoveCooldown)
+       {
+           markerPosition = mainGrid.NextSlot(markerPosition, new Vector2Int((int)direction.x, (int)direction.y));
+           actualCooldown = 0;
+       }
+       
+
+       Vector2 vector = markerPosition;
+       slotHighlightObject.GetComponent<RectTransform>().position = vector;
    }
    
    void InteractClick()
