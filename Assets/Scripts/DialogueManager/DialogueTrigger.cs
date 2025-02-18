@@ -9,10 +9,6 @@ public class DialogueTrigger : MonoBehaviour, IClick
    [Tooltip("Drag the corresponding Ink JSON file for this NPC's dialogue. Each NPC should have a unique file.")]
    [SerializeField] private TextAsset inkJSON;
    
-   [Header("NPC Information")]
-   [Tooltip("Name of the NPC. This is just for organization and does not affect the game.")]
-   [SerializeField] private string npcName;
-   
    //Checks if the player is close to NPC
    private bool playerInRange;
 

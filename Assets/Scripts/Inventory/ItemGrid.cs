@@ -11,8 +11,6 @@ public class ItemGrid : MonoBehaviour
     [SerializeField] private int inventorySizeX;
     [SerializeField] private int inventorySizeY;
 
-    //[SerializeField] private GameObject itemPrefab;
-    
     RectTransform rectTransform;
     private Vector2 positionOnGrid = new Vector2();
     private Vector2Int tileGridPosition = new Vector2Int();
@@ -20,14 +18,14 @@ public class ItemGrid : MonoBehaviour
     //keeps track of the inventory slots
     private InventoryItem[,] packageSlot;
 
-    private void Start()
+    private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
+    }
+
+    private void Start()
+    {
         Init(inventorySizeX, inventorySizeY);
-        
-        //Creates an object directly on grid. Prefab requires Data beforehand. Does not scale automatically with size
-        //InventoryItem item = Instantiate(itemPrefab).GetComponent<InventoryItem>();
-        //PlaceItemWithChecks(item,5, 2);
     }
 
     public Vector2Int GetTileGridPosition(Vector2 mousePosition)
@@ -54,26 +52,36 @@ public class ItemGrid : MonoBehaviour
 
     public Vector2Int FirstSlot()
     {
-        return packageSlot[0, 0].onGridPosition;
+        int xPos = (int)(rectTransform.position.x);
+        int yPos = (int)(rectTransform.position.y);
+        
+        return new Vector2Int(xPos,yPos);
     }
 
-    public Vector2Int NextSlot(Vector2Int position ,Vector2Int direction)
+    public Vector2Int NextSlot(Vector2Int position, Vector2Int direction)
     {
         Vector2Int toReturn = position;
-        if (position.x >= inventorySizeX && position.y >= inventorySizeY && position.x <= 0 && position.y <= 0)
-            return toReturn;
+       
         switch (direction.x)
         {
-            case 0 when direction.y == 1:
-                toReturn = packageSlot[position.x, position.y + 1].onGridPosition;
+            case 1 when position.x < rectTransform.position.x+(tileSizeWidth*inventorySizeX-tileSizeWidth):
+                toReturn.x += (int)tileSizeWidth;
                 break;
-            case 1 when direction.y == 0:
-                toReturn = packageSlot[position.x + 1, position.y].onGridPosition;
-                break;
-            case 1 when direction.y == 1:
-                toReturn = packageSlot[position.x + 1, position.y + 1].onGridPosition;
+            case -1 when position.x > rectTransform.position.x:
+                toReturn.x -= (int)tileSizeWidth;
                 break;
         }
+
+        switch (direction.y)
+        {
+            case 1 when position.y < rectTransform.position.y:
+                toReturn.y += (int)tileSizeHeight;
+                break;
+            case -1 when position.y > rectTransform.position.y-(tileSizeHeight*inventorySizeY-tileSizeHeight):
+                toReturn.y -= (int)tileSizeHeight;
+                break;
+        }
+
         return toReturn;
     }
     

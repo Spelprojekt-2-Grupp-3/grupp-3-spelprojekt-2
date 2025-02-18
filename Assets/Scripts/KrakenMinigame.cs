@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -17,6 +18,7 @@ public class KrakenMinigame : Minigames
     private Camera camera;
     private PlayerInputActions playerControls;
     private InputAction minigame;
+    private GameObject krakenInstance;
 
     private void OnEnable()
     {
@@ -45,39 +47,31 @@ public class KrakenMinigame : Minigames
         Events.stopBoat?.Invoke();
         var canvasInst = Instantiate(canvas);
         canvasInst.GetComponent<Canvas>().worldCamera = camera;
+        
+        Vector3 krakenPos = FindObjectOfType<BoatMovement>().transform.position;
+        
+        krakenInstance = Instantiate(kraken, krakenPos, kraken.transform.rotation);
 
-        for (int i = 0; i < tentacleCount; i++)
+        if (krakenInstance.transform.childCount != 4)
         {
-            Vector3 krakenPos = new Vector3();
-            var boatObjTransform = FindObjectOfType<BoatMovement>().transform;
-            switch (i)
-            {
-                case 0:
-                    krakenPos = new Vector3(boatObjTransform.position.x + 5, boatObjTransform.position.y,
-                        boatObjTransform.position.z);
-                    break;
-                case 1:
-                    krakenPos = new Vector3(boatObjTransform.position.x - 5, boatObjTransform.position.y,
-                        boatObjTransform.position.z);
-                    break;
-                case 2:
-                    krakenPos = new Vector3(boatObjTransform.position.x, boatObjTransform.position.y,
-                        boatObjTransform.position.z + 5);
-                    break;
-                case 3:
-                    krakenPos = new Vector3(boatObjTransform.position.x, boatObjTransform.position.y,
-                        boatObjTransform.position.z - 5);
-                    break;
-                    
-            }
-            var krakenInstance = Instantiate(kraken, krakenPos, kraken.transform.rotation);
-            Vector3 barPos = new Vector3(krakenInstance.transform.position.x, krakenInstance.transform.position.y + 15, krakenInstance.transform.position.z);
+            Debug.Log("There need to be exactly 4 children in the kraken object.");
+            return;
+        }
+
+
+        for (int i = 0; i < krakenInstance.transform.childCount; i++)
+        {
+            var child = krakenInstance.transform.GetChild(i);
+            child.transform.LookAt(krakenPos);
+            Vector3 barPos = child.transform.position;
+            barPos.y += 15;
             var hpBarInst = Instantiate(hpBar, barPos, hpBar.transform.rotation, canvasInst.transform);
-            var tentacle = krakenInstance.AddComponent<Tentacle>();
+            var tentacle = child.AddComponent<Tentacle>();
             tentacle.hpBar = hpBarInst;
             hpBarInst.GetComponent<Image>().fillAmount = tentacle.hp / tentacle.maxHp;
             tentacles.Add(tentacle);
         }
+        
     }
 
     public override void StopMinigame()
@@ -93,26 +87,22 @@ public class KrakenMinigame : Minigames
         }
 
         if (minigame.WasPerformedThisFrame())
-        { 
+        {
             switch (minigame.ReadValue<Vector2>())
             {
-                case Vector2 v when(v.x > 0):
-                    Debug.Log("right");
+                case Vector2 v when(v.x < 0):
                     tentacles[0].hp -= 1;
                     tentacles[0].UpdateHealthBar();
                     break;
-                case Vector2 v when(v.x < 0):
-                    Debug.Log("left");
+                case Vector2 v when(v.x > 0):
                     tentacles[1].hp -= 1;
                     tentacles[1].UpdateHealthBar();
                     break;
                 case Vector2 v when(v.y > 0):
-                    Debug.Log("up");
                     tentacles[2].hp -= 1;
                     tentacles[2].UpdateHealthBar();
                     break;
                 case Vector2 v when(v.y < 0):
-                    Debug.Log("down");
                     tentacles[3].hp -= 1;
                     tentacles[3].UpdateHealthBar();
                     break;
