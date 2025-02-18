@@ -23,6 +23,8 @@ public class InventoryController : MonoBehaviour
    private PlayerInputActions playerControls;
    private InputAction lClick;
    private InputAction rClick;
+   private InputAction cancel;
+   private InputAction confirm;
    private InputAction shift;
    private InputAction pointerPosition;
    private InputAction middleClick;
@@ -55,6 +57,8 @@ public class InventoryController : MonoBehaviour
    {
        lClick = playerControls.UI.Click;
        rClick = playerControls.UI.RightClick;
+       confirm = playerControls.UI.Submit;
+       cancel = playerControls.UI.Cancel;
        shift = playerControls.UI.ModifierButton;
        pointerPosition = playerControls.UI.Point;
        middleClick = playerControls.UI.MiddleClick;
@@ -71,6 +75,8 @@ public class InventoryController : MonoBehaviour
    {
        lClick.Enable();
        rClick.Enable();
+       cancel.Enable();
+       confirm.Enable();
        shift.Enable();
        middleClick.Enable();
        pointerPosition.Enable();
@@ -81,7 +87,9 @@ public class InventoryController : MonoBehaviour
    {
        lClick.Disable();
        rClick.Disable();
+       cancel.Disable();
        shift.Disable();
+       confirm.Disable();
        middleClick.Disable();
        pointerPosition.Disable();
        markerMovement.Disable();
@@ -91,13 +99,17 @@ public class InventoryController : MonoBehaviour
    {
        //item drag
        if (selectedPackage != null)
-           packageRectTransform.position = Mouse.current.position.ReadValue();
-       if (rClick.WasPressedThisFrame() && selectedPackage!=null && prevGrid!=null)
+       {
+           Vector2 temp = markerPosition;
+           packageRectTransform.position = temp;
+       }
+           
+       if ((cancel.WasPressedThisFrame()|| rClick.WasPressedThisFrame()) && selectedPackage!=null && prevGrid!=null)
            CancelPickup();
        
        GuiMovement();
        
-       if(selectedGrid==null){return;}
+       if(mainGrid==null){return;}
        GuiClicking();
    }
    
@@ -142,10 +154,20 @@ public class InventoryController : MonoBehaviour
        {
            InteractClick();
        }
-
+       
        if (rClick.WasPressedThisFrame())
        {
            AltInteractClick();
+       }
+       
+       if (confirm.WasPressedThisFrame())
+       {
+           ControllerInteractClick();
+       }
+
+       if (cancel.WasPressedThisFrame())
+       {
+           ControllerAltInteract();
        }
        
        //Dev thingies
@@ -185,7 +207,7 @@ public class InventoryController : MonoBehaviour
    {
        //TODO: change mousePosition to markerPosition
        Vector2 mousePosition = Mouse.current.position.ReadValue();
-       
+
        //Corrects position of package
        if (selectedPackage != null)
        {
@@ -250,6 +272,47 @@ public class InventoryController : MonoBehaviour
        }
    }
 
+   void ControllerAltInteract()
+   {
+       Vector2Int posOnGrid = mainGrid.GetTileGridPosition(markerPosition);
+       if (selectedPackage == null)
+       {
+           InventoryItem hoveredItem = mainGrid.GetItem(posOnGrid.x, posOnGrid.y);
+           //open alternatives gui, like package info and drop package or smt
+           subMenu.ShowInformation(hoveredItem.packageData);
+           Debug.Log("'Opened' sub-menu");
+       }
+   }
+
+   void ControllerInteractClick()
+   {
+       Vector2Int posOnGrid = mainGrid.GetTileGridPosition(markerPosition);
+
+       //Picking up item
+       if (selectedPackage == null)
+       {
+           selectedPackage = mainGrid.PickUpItem(posOnGrid.x, posOnGrid.y);
+
+           if (selectedPackage != null)
+           {
+               prevGrid = mainGrid;
+               packageRectTransform = selectedPackage.GetComponent<RectTransform>();
+               packageRectTransform.SetParent(canvasTransform);
+           }
+       }
+       //Placing item
+       else
+       {   
+           bool success = mainGrid.PlaceItemWithChecks(selectedPackage, posOnGrid.x, posOnGrid.y);
+           if (success)
+           {
+               selectedPackage = null;
+               prevGrid = null;
+               //packageRectTransform.SetAsLastSibling();
+           }
+       }
+   }
+   
    void CancelPickup()
    {
        prevGrid.PlaceItem(selectedPackage, selectedPackage.onGridPosition.x, selectedPackage.onGridPosition.y);
