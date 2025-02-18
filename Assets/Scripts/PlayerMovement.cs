@@ -43,10 +43,10 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         //If there is an active dialogue, freeze the player
-        if (DialogueManager.GetInstance().dialogueIsPlaying)
-        {
-            return;
-        }
+        //if (DialogueManager.GetInstance().dialogueIsPlaying)
+        //{
+        //    return;
+        //}
         
         if (!move.inProgress) return;
         moveDirection = move.ReadValue<Vector2>();
