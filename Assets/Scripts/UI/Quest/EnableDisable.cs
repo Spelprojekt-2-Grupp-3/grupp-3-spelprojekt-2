@@ -10,6 +10,11 @@ public class EnableDisable : MonoBehaviour
 
     private PlayerInputActions playerInputActions;
 
+    private void Awake()
+    {
+        playerInputActions = new PlayerInputActions();
+    }
+
     public void SwitchState()
     {
         if (gameObject.activeInHierarchy)

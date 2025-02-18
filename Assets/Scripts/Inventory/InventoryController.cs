@@ -26,16 +26,21 @@ public class InventoryController : MonoBehaviour
    private InputAction shift;
    private InputAction pointerPosition;
    private InputAction middleClick;
+   private InputAction markerMovement;
    
    
    [SerializeField, Tooltip("For randomly generated packages, currently only dev functions")] private List<PackageData> packageTypes;
    [SerializeField, Tooltip("The object to instantiate")] private GameObject packagePrefab;
    [SerializeField, Tooltip("Reference to the canvas that holds the grid")] private Transform canvasTransform;
-   [SerializeField, Tooltip("Reference to the submenu")]private GameObject subMenu;
+   [SerializeField, Tooltip("Reference to the submenu")]private GameObject subMenuObject;
+   private SubMenu subMenu;
 
+   private Vector2Int markerPosition;
+   
    private void Awake()
    {
        playerControls = new PlayerInputActions();
+       subMenu = subMenuObject.GetComponent<SubMenu>();
    }
 
    private void OnEnable()
@@ -45,7 +50,9 @@ public class InventoryController : MonoBehaviour
        shift = playerControls.UI.ModifierButton;
        pointerPosition = playerControls.UI.Point;
        middleClick = playerControls.UI.MiddleClick;
+       markerMovement = playerControls.UI.Navigate;
        EnableControls();
+       markerPosition = mainGrid.FirstSlot();
    }
 
    private void OnDisable()
@@ -60,6 +67,7 @@ public class InventoryController : MonoBehaviour
        shift.Enable();
        middleClick.Enable();
        pointerPosition.Enable();
+       markerMovement.Enable();
    }
 
    void DisableControls()
@@ -69,6 +77,7 @@ public class InventoryController : MonoBehaviour
        shift.Disable();
        middleClick.Disable();
        pointerPosition.Disable();
+       markerMovement.Disable();
    }
 
    private void Update()
@@ -79,9 +88,10 @@ public class InventoryController : MonoBehaviour
        if (rClick.WasPressedThisFrame() && selectedPackage!=null && prevGrid!=null)
            CancelPickup();
        
+       GuiMovement();
+       
        if(selectedGrid==null){return;}
        GuiClicking();
-       
    }
    
    /// <summary>
@@ -121,7 +131,6 @@ public class InventoryController : MonoBehaviour
    }
    void GuiClicking()
    {
-       //TODO: Controller support
        if (lClick.WasPressedThisFrame())
        {
            InteractClick();
@@ -146,8 +155,19 @@ public class InventoryController : MonoBehaviour
            }
        }
    }
+
+   void GuiMovement()
+   {
+      Vector2Int direction = markerMovement.ReadValue<Vector2Int>();
+      if (direction != Vector2Int.zero)
+      {
+          markerPosition = mainGrid.NextSlot(markerPosition, direction);
+      }
+   }
+   
    void InteractClick()
    {
+       //TODO: change mousePosition to markerPosition
        Vector2 mousePosition = Mouse.current.position.ReadValue();
        
        //Corrects position of package
@@ -200,7 +220,6 @@ public class InventoryController : MonoBehaviour
            }
        }
    }
-
    void AltInteractClick()
    {
        Vector2 mousePosition = Mouse.current.position.ReadValue();
@@ -208,8 +227,10 @@ public class InventoryController : MonoBehaviour
        
        if (selectedPackage == null)
        {
+           InventoryItem hoveredItem = selectedGrid.GetItem(posOnGrid.x, posOnGrid.y);
            //open alternatives gui, like package info and drop package or smt
-           Debug.Log("Opened sub-menu");
+           subMenu.ShowInformation(hoveredItem.packageData);
+           Debug.Log("'Opened' sub-menu");
        }
    }
 
@@ -238,7 +259,6 @@ public class InventoryController : MonoBehaviour
        selectedGrid.PlaceItem(itemToInsert, gridPos.Value.x, gridPos.Value.y);
        return true;
    }
-
    
    /// <summary>
    /// Creates and inserts an item into the main inventory

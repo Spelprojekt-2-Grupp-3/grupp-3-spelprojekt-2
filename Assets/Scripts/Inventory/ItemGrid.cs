@@ -52,6 +52,31 @@ public class ItemGrid : MonoBehaviour
         rectTransform.sizeDelta = size;
     }
 
+    public Vector2Int FirstSlot()
+    {
+        return packageSlot[0, 0].onGridPosition;
+    }
+
+    public Vector2Int NextSlot(Vector2Int position ,Vector2Int direction)
+    {
+        Vector2Int toReturn = position;
+        if (position.x >= inventorySizeX && position.y >= inventorySizeY && position.x <= 0 && position.y <= 0)
+            return toReturn;
+        switch (direction.x)
+        {
+            case 0 when direction.y == 1:
+                toReturn = packageSlot[position.x, position.y + 1].onGridPosition;
+                break;
+            case 1 when direction.y == 0:
+                toReturn = packageSlot[position.x + 1, position.y].onGridPosition;
+                break;
+            case 1 when direction.y == 1:
+                toReturn = packageSlot[position.x + 1, position.y + 1].onGridPosition;
+                break;
+        }
+        return toReturn;
+    }
+    
     public bool PlaceItemWithChecks(InventoryItem package, int xPos, int yPos)
     {
         if (!CheckBoundry(xPos,yPos,package.packageData.gridSize.x, package.packageData.gridSize.y))
@@ -200,5 +225,15 @@ public class ItemGrid : MonoBehaviour
                 }
             }
         }
+    }
+
+    public InventoryItem GetItem(int xPos, int yPos)
+    {
+        InventoryItem toReturn = packageSlot[xPos,yPos];
+
+        if (toReturn == null)
+        { return null;}
+
+        return toReturn;
     }
 }
