@@ -44,7 +44,7 @@ public class BuoyantObject : MonoBehaviour
     public float angularDrag = 0.5f;
 
     [Header("Effectors")]
-    //public Transform effectorParent;
+    public Transform effectorParent;
     public Transform[] effectors;
 
     private Rigidbody rb;
@@ -52,16 +52,19 @@ public class BuoyantObject : MonoBehaviour
 
     private void Awake()
     {
-       /* List<Transform> stuff = new List<Transform>();
-        foreach (Transform child in effectorParent)
+        if (effectorParent != null)
         {
-            stuff.Add(child);
+            List<Transform> stuff = new List<Transform>();
+            foreach (Transform child in effectorParent)
+            {
+                stuff.Add(child);
+            }
+            effectors = new Transform[stuff.Count];
+            for (int i = 0; i < effectors.Length; i++)
+            {
+                effectors[i] = stuff[i];
+            }
         }
-        effectors = new Transform[stuff.Count];
-        for (int i = 0; i < effectors.Length; i++)
-        {
-            effectors[i] = stuff[i];
-        }*/
 
         // Get rigidbody
         rb = GetComponent<Rigidbody>();

@@ -62,7 +62,7 @@ public class KrakenLocation : MonoBehaviour
             {
                 GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY;
                 moving = false;
-                StartCoroutine(Timer(1, SpawnTent));
+                StartCoroutine(Timer(3f, SpawnTent));
             }
         }
     }
