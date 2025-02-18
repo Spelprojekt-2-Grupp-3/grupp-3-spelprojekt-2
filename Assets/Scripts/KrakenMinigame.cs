@@ -13,6 +13,7 @@ public class KrakenMinigame : Minigames
     [SerializeField] private KrakenDifficulty krakenDifficulty;
     [SerializeField] private GameObject canvas;
     [SerializeField] private GameObject hpBar;
+    [SerializeField] private GameObject actionButton;
     private List<Tentacle> tentacles = new List<Tentacle>();
     private Camera camera;
     private PlayerInputActions playerControls;
@@ -66,9 +67,14 @@ public class KrakenMinigame : Minigames
             //child.transform.LookAt(krakenPos);
             Vector3 barPos = child.transform.position;
             barPos.y += 15;
+            Vector3 actionButtonPos = child.transform.position;
+            barPos.y += 30;
             var hpBarInst = Instantiate(hpBar, barPos, hpBar.transform.rotation, canvasInst.transform);
+            var actionButtonInst = Instantiate(actionButton, actionButtonPos, actionButton.transform.rotation,
+                canvasInst.transform);
             var tentacle = child.AddComponent<Tentacle>();
             tentacle.hpBar = hpBarInst;
+            tentacle.actionButton = actionButtonInst;
             hpBarInst.GetComponent<Image>().fillAmount = tentacle.hp / tentacle.maxHp;
             tentacles.Add(tentacle);
         }
@@ -90,6 +96,9 @@ public class KrakenMinigame : Minigames
             tentacles[i].hpBar.transform.position = new Vector3(tentacles[i].transform.position.x,
                 tentacles[i].transform.position.y + 15, tentacles[i].transform.position.z);
             tentacles[i].hpBar.transform.LookAt(camera.transform.position);
+            tentacles[i].actionButton.transform.position = new Vector3(tentacles[i].transform.position.x,
+                tentacles[i].transform.position.y + 20, tentacles[i].transform.position.z);
+            tentacles[i].actionButton.transform.LookAt(camera.transform.position);
         }
 
         if (minigame.WasPerformedThisFrame())
@@ -114,6 +123,7 @@ public class Tentacle : MonoBehaviour
     public int maxHp = 15;
     public int hp;
     public GameObject hpBar;
+    public GameObject actionButton;
 
     private void Awake()
     {
