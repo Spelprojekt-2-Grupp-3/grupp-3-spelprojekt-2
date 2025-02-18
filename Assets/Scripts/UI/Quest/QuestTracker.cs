@@ -24,6 +24,9 @@ public class QuestTracker : MonoBehaviour
         RemoveQuest("Do something evil", "You dropped grandma's stroller in the sea, she was very mad");
         AddQuest("Do something ugly", "Test");
         UpdateQuest("Find the Kraken", "1/1 kraken found, talk to Bengt");
+        //Ger info i console om det inte hittar
+        UpdateQuest("Kill", "HEHE");
+        RemoveQuest("Kill them", "Quest haha");
     }
 
     //Lägger till quest i quest log
@@ -46,25 +49,39 @@ public class QuestTracker : MonoBehaviour
     //Används för att uppdatera quest som har flera steg
     void UpdateQuest(string questName, string edit)
     {
-        GameObject questFinish = GameObject.Find(questName);
-        questFinish.transform.Find("Quest_Text").GetComponent<TMP_Text>().SetText(edit);
+        if (gameObject.transform.Find(questName) == null)
+        {
+            Debug.Log("Quest '"+ questName + "' was not found");
+        }
+        else
+        {
+            GameObject questFinish = GameObject.Find(questName);
+            questFinish.transform.Find("Quest_Text").GetComponent<TMP_Text>().SetText(edit);
+        }
     }
 
     //Avslutar quest i quest log
     void RemoveQuest(string questName, string edit)
     {
-        //Hittar questen som du letar efter
-        GameObject questFinish = GameObject.Find(questName);
-        questFinish.transform.Find("Quest_Text").GetComponent<TMP_Text>().SetText(edit);
-        //Sätter den längst ner i hierarkin för quest log
-        questFinish.transform.SetAsLastSibling();
-        //Minskar värdet på variabeln
-        questIndex--;
-        /*//Hittar komponenten tmp_text
-        TMP_Text edit = questFinish.GetComponent<TMP_Text>();
-        //Stryker över texten
-        edit.SetText("<s>" + questName + "</s>");
-        edit.color = Color.black;*/
-        bool questToggle = questFinish.GetComponentInChildren<Toggle>().isOn = true;
+        if (gameObject.transform.Find(questName) == null)
+        {
+            Debug.Log("Quest '" + questName + "' was not found");
+        }
+        else
+        {
+            //Hittar questen som du letar efter
+            GameObject questFinish = GameObject.Find(questName);
+            questFinish.transform.Find("Quest_Text").GetComponent<TMP_Text>().SetText(edit);
+            //Sätter den längst ner i hierarkin för quest log
+            questFinish.transform.SetAsLastSibling();
+            //Minskar värdet på variabeln
+            questIndex--;
+            /*//Hittar komponenten tmp_text
+            TMP_Text edit = questFinish.GetComponent<TMP_Text>();
+            //Stryker över texten
+            edit.SetText("<s>" + questName + "</s>");
+            edit.color = Color.black;*/
+            bool questToggle = questFinish.GetComponentInChildren<Toggle>().isOn = true;
+        }
     }
 }
