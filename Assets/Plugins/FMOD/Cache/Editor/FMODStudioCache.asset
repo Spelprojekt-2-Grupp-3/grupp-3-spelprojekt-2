@@ -174,7 +174,7 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/Banks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638751427669747574
+  lastModified: 638754207095879952
   FileSizes: []
   Exists: 1
 --- !u!114 &-5318540042652159637
@@ -192,10 +192,10 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/Banks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638751427669757581
+  lastModified: 638754207095908350
   FileSizes:
   - Name: 
-    Value: 1504
+    Value: 1490
   Exists: 1
 --- !u!114 &-4396167063528810861
 MonoBehaviour:
@@ -302,7 +302,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 74266
---- !u!114 &-2386564496093812909
+--- !u!114 &-1510131185383917114
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -312,23 +312,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/AudioTest
+  m_Name: event:/Sound/SFX/VoiceNPC
   m_EditorClassIdentifier: 
-  Path: event:/Music/AudioTest
+  Path: event:/Sound/SFX/VoiceNPC
   Guid:
-    Data1: 1591503772
-    Data2: 1179883141
-    Data3: 647911323
-    Data4: 1116788225
+    Data1: 735726957
+    Data2: 1204751498
+    Data3: 416861847
+    Data4: -981471183
   Banks:
   - {fileID: -6721119066295411739}
-  IsStream: 1
-  Is3D: 0
+  IsStream: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 156428
+  Length: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,7 +350,6 @@ MonoBehaviour:
   - {fileID: -7473529925723539405}
   - {fileID: 6358829065574769093}
   - {fileID: -8088677994447882389}
-  - {fileID: -2386564496093812909}
   - {fileID: 5827804432365801762}
   - {fileID: -3058218393577031697}
   - {fileID: -8479292062464010260}
@@ -360,12 +359,13 @@ MonoBehaviour:
   - {fileID: -4396167063528810861}
   - {fileID: -8704859117449681888}
   - {fileID: 8690386429321988405}
+  - {fileID: -1510131185383917114}
   EditorParameters: []
   MasterBanks:
   - {fileID: -6721119066295411739}
   StringsBanks:
   - {fileID: -5318540042652159637}
-  cacheTime: 638751427669757581
+  cacheTime: 638754207095908350
   cacheVersion: 131622
 --- !u!114 &5827804432365801762
 MonoBehaviour:
@@ -387,13 +387,13 @@ MonoBehaviour:
     Data4: 94305972
   Banks:
   - {fileID: -6721119066295411739}
-  IsStream: 0
+  IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 70034
 --- !u!114 &6358829065574769093
 MonoBehaviour:
   m_ObjectHideFlags: 0
