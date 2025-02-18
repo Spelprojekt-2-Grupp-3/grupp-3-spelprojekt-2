@@ -7,7 +7,7 @@ public class Port : MonoBehaviour
 {
     [SerializeField] private string Inhabitant;
     [SerializeField] private IslandersListData islanders;
-    private List<string> otherRecipients;
+    private List<string> otherRecipients = new List<string>();
 
     private InventoryController inventoryController;
     private Player player;

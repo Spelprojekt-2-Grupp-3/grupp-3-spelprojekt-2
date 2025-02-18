@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
@@ -43,6 +44,7 @@ public class BuoyantObject : MonoBehaviour
     public float angularDrag = 0.5f;
 
     [Header("Effectors")]
+    //public Transform effectorParent;
     public Transform[] effectors;
 
     private Rigidbody rb;
@@ -50,6 +52,17 @@ public class BuoyantObject : MonoBehaviour
 
     private void Awake()
     {
+       /* List<Transform> stuff = new List<Transform>();
+        foreach (Transform child in effectorParent)
+        {
+            stuff.Add(child);
+        }
+        effectors = new Transform[stuff.Count];
+        for (int i = 0; i < effectors.Length; i++)
+        {
+            effectors[i] = stuff[i];
+        }*/
+
         // Get rigidbody
         rb = GetComponent<Rigidbody>();
         rb.useGravity = false;

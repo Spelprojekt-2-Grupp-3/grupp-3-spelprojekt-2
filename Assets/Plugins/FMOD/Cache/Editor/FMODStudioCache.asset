@@ -174,7 +174,7 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/Banks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638754207095879952
+  lastModified: 638754220265872103
   FileSizes: []
   Exists: 1
 --- !u!114 &-5318540042652159637
@@ -192,7 +192,7 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/Banks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638754207095908350
+  lastModified: 638754220265882375
   FileSizes:
   - Name: 
     Value: 1490
@@ -302,33 +302,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 74266
---- !u!114 &-1510131185383917114
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Sound/SFX/VoiceNPC
-  m_EditorClassIdentifier: 
-  Path: event:/Sound/SFX/VoiceNPC
-  Guid:
-    Data1: 735726957
-    Data2: 1204751498
-    Data3: 416861847
-    Data4: -981471183
-  Banks:
-  - {fileID: -6721119066295411739}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,14 +332,41 @@ MonoBehaviour:
   - {fileID: -4396167063528810861}
   - {fileID: -8704859117449681888}
   - {fileID: 8690386429321988405}
-  - {fileID: -1510131185383917114}
+  - {fileID: 3926034930326376216}
   EditorParameters: []
   MasterBanks:
   - {fileID: -6721119066295411739}
   StringsBanks:
   - {fileID: -5318540042652159637}
-  cacheTime: 638754207095908350
+  cacheTime: 638754220265882375
   cacheVersion: 131622
+--- !u!114 &3926034930326376216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound/SFX/VoiceNPC
+  m_EditorClassIdentifier: 
+  Path: event:/Sound/SFX/VoiceNPC
+  Guid:
+    Data1: 735726957
+    Data2: 1204751498
+    Data3: 416861847
+    Data4: -981471183
+  Banks:
+  - {fileID: -6721119066295411739}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &5827804432365801762
 MonoBehaviour:
   m_ObjectHideFlags: 0

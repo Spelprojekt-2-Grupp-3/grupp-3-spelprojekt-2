@@ -11,7 +11,7 @@ public class CameraMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        Vector3 targetPosition = cameraReference.transform.position - cameraReference.transform.right * cameraPos.z;
+        Vector3 targetPosition = cameraReference.transform.position - cameraReference.transform.forward * cameraPos.z;
         targetPosition.y = cameraPos.y;
         transform.position = Vector3.Lerp(transform.position, targetPosition, cameraSmoothing);
         transform.LookAt(cameraReference.transform);
