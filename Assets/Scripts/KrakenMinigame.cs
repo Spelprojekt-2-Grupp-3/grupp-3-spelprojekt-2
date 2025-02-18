@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -12,7 +13,7 @@ public class KrakenMinigame : Minigames
     [SerializeField] private GameObject canvas;
     [SerializeField] private GameObject hpBar;
     [SerializeField] private int tentacleCount;
-    private List<GameObject> hpBarInstances = new List<GameObject>();
+    private List<Tentacle> tentacles = new List<Tentacle>();
     private Camera camera;
     private PlayerInputActions playerControls;
     private InputAction minigame;
@@ -47,12 +48,35 @@ public class KrakenMinigame : Minigames
 
         for (int i = 0; i < tentacleCount; i++)
         {
-            var krakenInstance = Instantiate(kraken, new Vector3(10*i, 0, 0), kraken.transform.rotation);
+            Vector3 krakenPos = new Vector3();
+            var boatObjTransform = FindObjectOfType<BoatMovement>().transform;
+            switch (i)
+            {
+                case 0:
+                    krakenPos = new Vector3(boatObjTransform.position.x + 5, boatObjTransform.position.y,
+                        boatObjTransform.position.z);
+                    break;
+                case 1:
+                    krakenPos = new Vector3(boatObjTransform.position.x - 5, boatObjTransform.position.y,
+                        boatObjTransform.position.z);
+                    break;
+                case 2:
+                    krakenPos = new Vector3(boatObjTransform.position.x, boatObjTransform.position.y,
+                        boatObjTransform.position.z + 5);
+                    break;
+                case 3:
+                    krakenPos = new Vector3(boatObjTransform.position.x, boatObjTransform.position.y,
+                        boatObjTransform.position.z - 5);
+                    break;
+                    
+            }
+            var krakenInstance = Instantiate(kraken, krakenPos, kraken.transform.rotation);
             Vector3 barPos = new Vector3(krakenInstance.transform.position.x, krakenInstance.transform.position.y + 15, krakenInstance.transform.position.z);
             var hpBarInst = Instantiate(hpBar, barPos, hpBar.transform.rotation, canvasInst.transform);
             var tentacle = krakenInstance.AddComponent<Tentacle>();
+            tentacle.hpBar = hpBarInst;
             hpBarInst.GetComponent<Image>().fillAmount = tentacle.hp / tentacle.maxHp;
-            hpBarInstances.Add(hpBarInst);
+            tentacles.Add(tentacle);
         }
     }
 
@@ -63,9 +87,9 @@ public class KrakenMinigame : Minigames
 
     private void Update()
     {
-        foreach (var hpBarInst in hpBarInstances)
+        foreach (var tentacleHealthBar in tentacles)
         {
-            hpBarInst.transform.LookAt(camera.transform.position);
+            tentacleHealthBar.hpBar.transform.LookAt(camera.transform.position);
         }
 
         if (minigame.WasPerformedThisFrame())
@@ -74,15 +98,23 @@ public class KrakenMinigame : Minigames
             {
                 case Vector2 v when(v.x > 0):
                     Debug.Log("right");
+                    tentacles[0].hp -= 1;
+                    tentacles[0].UpdateHealthBar();
                     break;
                 case Vector2 v when(v.x < 0):
                     Debug.Log("left");
+                    tentacles[1].hp -= 1;
+                    tentacles[1].UpdateHealthBar();
                     break;
                 case Vector2 v when(v.y > 0):
                     Debug.Log("up");
+                    tentacles[2].hp -= 1;
+                    tentacles[2].UpdateHealthBar();
                     break;
                 case Vector2 v when(v.y < 0):
                     Debug.Log("down");
+                    tentacles[3].hp -= 1;
+                    tentacles[3].UpdateHealthBar();
                     break;
             }
         }
@@ -93,9 +125,19 @@ public class Tentacle : MonoBehaviour
 {
     public int maxHp = 15;
     public int hp;
+    public GameObject hpBar;
 
     private void Awake()
     {
         hp = maxHp;
+    }
+
+    public void UpdateHealthBar()
+    {
+        hpBar.GetComponent<Image>().fillAmount = (float) hp / maxHp;
+        if (hp < 0)
+        {
+            hp = 0;
+        }
     }
 }
