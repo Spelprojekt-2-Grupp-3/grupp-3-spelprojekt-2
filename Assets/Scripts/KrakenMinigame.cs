@@ -13,12 +13,12 @@ public class KrakenMinigame : Minigames
     [SerializeField] private KrakenDifficulty krakenDifficulty;
     [SerializeField] private GameObject canvas;
     [SerializeField] private GameObject hpBar;
-    [SerializeField] private int tentacleCount;
     private List<Tentacle> tentacles = new List<Tentacle>();
     private Camera camera;
     private PlayerInputActions playerControls;
     private InputAction minigame;
     private GameObject krakenInstance;
+    private BoatMovement boatMovement;
 
     private void OnEnable()
     {
@@ -39,22 +39,23 @@ public class KrakenMinigame : Minigames
     private void Start()
     {
         camera = Camera.main;
+        boatMovement = FindObjectOfType<BoatMovement>();
         StartMinigame();
     }
 
     public override void StartMinigame()
     {
-        Events.stopBoat?.Invoke();
+        //Events.stopBoat?.Invoke();
         var canvasInst = Instantiate(canvas);
         canvasInst.GetComponent<Canvas>().worldCamera = camera;
         
-        Vector3 krakenPos = FindObjectOfType<BoatMovement>().transform.position;
+        Vector3 krakenPos = boatMovement.transform.position;
         
         krakenInstance = Instantiate(kraken, krakenPos, kraken.transform.rotation);
 
-        if (krakenInstance.transform.childCount != 4)
+        if (krakenInstance.transform.childCount != 2)
         {
-            Debug.Log("There need to be exactly 4 children in the kraken object.");
+            Debug.Log("There need to be exactly 2 children in the kraken object.");
             return;
         }
 
@@ -62,7 +63,7 @@ public class KrakenMinigame : Minigames
         for (int i = 0; i < krakenInstance.transform.childCount; i++)
         {
             var child = krakenInstance.transform.GetChild(i);
-            child.transform.LookAt(krakenPos);
+            //child.transform.LookAt(krakenPos);
             Vector3 barPos = child.transform.position;
             barPos.y += 15;
             var hpBarInst = Instantiate(hpBar, barPos, hpBar.transform.rotation, canvasInst.transform);
@@ -81,9 +82,14 @@ public class KrakenMinigame : Minigames
 
     private void Update()
     {
-        foreach (var tentacleHealthBar in tentacles)
+        krakenInstance.transform.position = boatMovement.transform.position;
+        krakenInstance.transform.rotation = boatMovement.transform.rotation;
+
+        for (int i = 0; i < tentacles.Count; i++)
         {
-            tentacleHealthBar.hpBar.transform.LookAt(camera.transform.position);
+            tentacles[i].hpBar.transform.position = new Vector3(tentacles[i].transform.position.x,
+                tentacles[i].transform.position.y + 15, tentacles[i].transform.position.z);
+            tentacles[i].hpBar.transform.LookAt(camera.transform.position);
         }
 
         if (minigame.WasPerformedThisFrame())
@@ -97,14 +103,6 @@ public class KrakenMinigame : Minigames
                 case Vector2 v when(v.x > 0):
                     tentacles[1].hp -= 1;
                     tentacles[1].UpdateHealthBar();
-                    break;
-                case Vector2 v when(v.y > 0):
-                    tentacles[2].hp -= 1;
-                    tentacles[2].UpdateHealthBar();
-                    break;
-                case Vector2 v when(v.y < 0):
-                    tentacles[3].hp -= 1;
-                    tentacles[3].UpdateHealthBar();
                     break;
             }
         }
