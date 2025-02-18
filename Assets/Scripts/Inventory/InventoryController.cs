@@ -31,6 +31,7 @@ public class InventoryController : MonoBehaviour
    [SerializeField, Tooltip("For randomly generated packages, currently only dev functions")] private List<PackageData> packageTypes;
    [SerializeField, Tooltip("The object to instantiate")] private GameObject packagePrefab;
    [SerializeField, Tooltip("Reference to the canvas that holds the grid")] private Transform canvasTransform;
+   [SerializeField, Tooltip("Reference to the submenu")]private GameObject subMenu;
 
    private void Awake()
    {
