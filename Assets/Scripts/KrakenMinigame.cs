@@ -23,7 +23,7 @@ public class KrakenMinigame : Minigames
     private GameObject hpBar;
 
     [SerializeField]
-    private GameObject actionButton;
+    private GameObject[] actionButton;
     private List<Tentacle> tentacles = new List<Tentacle>();
     private Camera camera;
     private PlayerInputActions playerControls;
@@ -89,9 +89,9 @@ public class KrakenMinigame : Minigames
                 canvasInst.transform
             );
             var actionButtonInst = Instantiate(
-                actionButton,
+                actionButton[i],
                 actionButtonPos,
-                actionButton.transform.rotation,
+                actionButton[i].transform.rotation,
                 canvasInst.transform
             );
             var tentacle = child.AddComponent<Tentacle>();
@@ -100,8 +100,6 @@ public class KrakenMinigame : Minigames
             hpBarInst.GetComponent<Image>().fillAmount = tentacle.hp / tentacle.maxHp;
             tentacles.Add(tentacle);
         }
-
-        //        tentacles[1].actionButton.GetComponent<GamepadIconsExampleNew>();
     }
 
     public override void StopMinigame()
