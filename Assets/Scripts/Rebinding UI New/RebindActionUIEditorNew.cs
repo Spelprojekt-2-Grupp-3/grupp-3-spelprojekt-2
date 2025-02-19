@@ -10,7 +10,7 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
     /// A custom inspector for <see cref="RebindActionUI"/> which provides a more convenient way for
     /// picking the binding which to rebind.
     /// </summary>
-    [CustomEditor(typeof(RebindActionUI))]
+    [CustomEditor(typeof(RebindActionUINew))]
     public class RebindActionUIEditor : UnityEditor.Editor
     {
         protected void OnEnable()

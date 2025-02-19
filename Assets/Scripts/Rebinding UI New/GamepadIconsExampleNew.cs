@@ -1,18 +1,22 @@
 using System;
 using UnityEditor.VersionControl;
+using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 ////TODO: have updateBindingUIEvent receive a control path string, too (in addition to the device layout name)
 
-namespace UnityEngine.InputSystem.Samples.RebindUI
+/// <summary>
+/// This is an example for how to override the default display behavior of bindings. The component
+/// hooks into <see cref="RebindActionUI.updateBindingUIEvent"/> which is triggered when UI display
+/// of a binding should be refreshed. It then checks whether we have an icon for the current binding
+/// and if so, replaces the default text display with an icon.
+/// </summary>
+///
+
+namespace Rebinding_UI_New
 {
-    /// <summary>
-    /// This is an example for how to override the default display behavior of bindings. The component
-    /// hooks into <see cref="RebindActionUI.updateBindingUIEvent"/> which is triggered when UI display
-    /// of a binding should be refreshed. It then checks whether we have an icon for the current binding
-    /// and if so, replaces the default text display with an icon.
-    /// </summary>
-    public class GamepadIconsExample : MonoBehaviour
+    public class GamepadIconsExampleNew : MonoBehaviour
     {
         public GamepadIcons xbox;
         public GamepadIcons ps4;
@@ -32,7 +36,7 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
 
         private void Start()
         {
-            var rebindUIComponents = transform.GetComponentsInChildren<RebindActionUI>();
+            var rebindUIComponents = transform.GetComponentsInChildren<RebindActionUINew>();
             foreach (var component in rebindUIComponents)
             {
                 component.updateBindingUIEvent.AddListener(OnUpdateBindingDisplay);
@@ -42,7 +46,7 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
 
         private void Update()
         {
-            var rebindUIComponents = transform.GetComponentsInChildren<RebindActionUI>();
+            var rebindUIComponents = transform.GetComponentsInChildren<RebindActionUINew>();
             foreach (var component in rebindUIComponents)
             {
                 component.updateBindingUIEvent.AddListener(OnUpdateBindingDisplay);
@@ -50,7 +54,8 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
             }
         }
 
-        protected void OnUpdateBindingDisplay(RebindActionUI component, string bindingDisplayString, string deviceLayoutName, string controlPath)
+        protected void OnUpdateBindingDisplay(RebindActionUINew component, string bindingDisplayString,
+            string deviceLayoutName, string controlPath)
         {
             if (string.IsNullOrEmpty(deviceLayoutName) || string.IsNullOrEmpty(controlPath))
                 return;
@@ -66,7 +71,9 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
             // Grab Image component.
             var imageGO = textComponent.transform.parent.Find("ActionBindingIcon");
             var imageComponent = imageGO.GetComponent<Image>();
-            
+
+            icon = ps4.GetSprite(controlPath);
+
             if (icon != null)
             {
                 textComponent.gameObject.SetActive(false);
@@ -129,6 +136,7 @@ namespace UnityEngine.InputSystem.Samples.RebindUI
                     case "leftStickPress": return leftStickPress;
                     case "rightStickPress": return rightStickPress;
                 }
+
                 return null;
             }
         }
