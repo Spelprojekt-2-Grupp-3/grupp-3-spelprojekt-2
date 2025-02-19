@@ -34,7 +34,7 @@ public class InventoryController : MonoBehaviour
    [SerializeField, Tooltip("For randomly generated packages, currently only dev functions")] private List<PackageData> packageTypes;
    [SerializeField, Tooltip("The object to instantiate")] private GameObject packagePrefab;
    [SerializeField, Tooltip("Reference to the canvas that holds the grid")] private Transform canvasTransform;
-   [SerializeField, Tooltip("Reference to the submenu")]private GameObject subMenuObject;
+   //[SerializeField, Tooltip("Reference to the submenu")]private GameObject subMenuObject;
    private SubMenu subMenu;
 
    private Vector2Int markerPosition;
@@ -45,7 +45,7 @@ public class InventoryController : MonoBehaviour
    private void Awake()
    {
        playerControls = new PlayerInputActions();
-       subMenu = subMenuObject.GetComponent<SubMenu>();
+       //subMenu = subMenuObject.GetComponent<SubMenu>();
    }
 
    private void Start()
@@ -97,6 +97,9 @@ public class InventoryController : MonoBehaviour
 
    private void Update()
    {
+       if(!markerMovement.enabled){return;}
+       
+       
        //item drag
        if (selectedPackage != null)
        {
@@ -108,9 +111,16 @@ public class InventoryController : MonoBehaviour
            CancelPickup();
        
        GuiMovement();
-       
-       if(mainGrid==null){return;}
-       GuiClicking();
+
+       if (mainGrid != null)
+       {
+           GuiClicking();
+       }
+
+       if (selectedGrid != null)
+       {
+           MouseGuiClicking();
+       }
    }
    
    /// <summary>
@@ -150,16 +160,6 @@ public class InventoryController : MonoBehaviour
    }
    void GuiClicking()
    {
-       if (lClick.WasPressedThisFrame())
-       {
-           InteractClick();
-       }
-       
-       if (rClick.WasPressedThisFrame())
-       {
-           AltInteractClick();
-       }
-       
        if (confirm.WasPressedThisFrame())
        {
            ControllerInteractClick();
@@ -182,6 +182,19 @@ public class InventoryController : MonoBehaviour
                selectedPackage = null;
                InsertItem(toInsert);
            }
+       }
+   }
+
+   void MouseGuiClicking()
+   {
+       if (lClick.WasPressedThisFrame())
+       {
+           InteractClick();
+       }
+       
+       if (rClick.WasPressedThisFrame())
+       {
+           AltInteractClick();
        }
    }
    
