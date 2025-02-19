@@ -17,6 +17,9 @@ public class DialogueTrigger : MonoBehaviour, IClick
       playerInRange = false;
    }
 
+   //Temporary
+
+   //playerInRange isn't in the if-statement atm
    public void OnClick()
    {
       //Starts dialogue if player is in range and no other dialogue is active

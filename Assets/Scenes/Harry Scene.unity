@@ -1655,6 +1655,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7699805644616880295, guid: 2e276a08a236d8e4d98865b0ea90db32,
+        type: 3}
+      propertyPath: showRaysOnClick
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2984,7 +2989,7 @@ PrefabInstance:
     - target: {fileID: 964106899243683150, guid: e038b92317793124db4f814ca362de46,
         type: 3}
       propertyPath: m_Name
-      value: Ulrich
+      value: NPC
       objectReference: {fileID: 0}
     - target: {fileID: 5672551112512614370, guid: e038b92317793124db4f814ca362de46,
         type: 3}
