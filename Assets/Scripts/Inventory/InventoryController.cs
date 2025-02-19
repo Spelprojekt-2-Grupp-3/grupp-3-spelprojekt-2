@@ -267,7 +267,7 @@ public class InventoryController : MonoBehaviour
        {
            InventoryItem hoveredItem = selectedGrid.GetItem(posOnGrid.x, posOnGrid.y);
            //open alternatives gui, like package info and drop package or smt
-           subMenu.ShowInformation(hoveredItem.packageData);
+           //ubMenu.ShowInformation(hoveredItem.packageData);
            Debug.Log("'Opened' sub-menu");
        }
    }
@@ -279,7 +279,7 @@ public class InventoryController : MonoBehaviour
        {
            InventoryItem hoveredItem = mainGrid.GetItem(posOnGrid.x, posOnGrid.y);
            //open alternatives gui, like package info and drop package or smt
-           subMenu.ShowInformation(hoveredItem.packageData);
+           //subMenu.ShowInformation(hoveredItem.packageData);
            Debug.Log("'Opened' sub-menu");
        }
    }
