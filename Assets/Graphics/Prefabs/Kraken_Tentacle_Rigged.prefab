@@ -96,10 +96,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1463214134673134848}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7a4c4b519243caf46b5398c3ac27f8b9,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2369586744212077913}
   m_SourcePrefab: {fileID: 100100000, guid: 7a4c4b519243caf46b5398c3ac27f8b9, type: 3}
 --- !u!1 &8045453876476168611 stripped
 GameObject:
@@ -128,18 +124,3 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2369586744212077913
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8045453876476168611}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91fe46b99b0eeab46a8fb0303b067ed1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  anim: {fileID: 1463214134673134848}
-  _tentacleBoatReference: {fileID: 0}
-  player: {fileID: 0}
