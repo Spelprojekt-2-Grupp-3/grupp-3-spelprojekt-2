@@ -12889,6 +12889,23 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1052977905}
     m_Modifications:
+    - target: {fileID: 486511978813826018, guid: 16302b987b5399e4292d92870eed1c4b,
+        type: 3}
+      propertyPath: shipment
+      value: 
+      objectReference: {fileID: 3340886325030941076, guid: d1862948bb1ad224e8c8c2fdc096c050,
+        type: 3}
+    - target: {fileID: 486511978813826018, guid: 16302b987b5399e4292d92870eed1c4b,
+        type: 3}
+      propertyPath: islanders
+      value: 
+      objectReference: {fileID: 11400000, guid: 7ee6350dd399da04187fa6726c5e05af,
+        type: 2}
+    - target: {fileID: 486511978813826018, guid: 16302b987b5399e4292d92870eed1c4b,
+        type: 3}
+      propertyPath: Inhabitant
+      value: Bengt
+      objectReference: {fileID: 0}
     - target: {fileID: 5009378927720057513, guid: 16302b987b5399e4292d92870eed1c4b,
         type: 3}
       propertyPath: m_LocalPosition.x
