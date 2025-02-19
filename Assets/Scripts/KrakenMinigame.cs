@@ -143,6 +143,7 @@ public class KrakenMinigame : Minigames
 
         if (!tentacles[0].gameObject.activeSelf && !tentacles[1].gameObject.activeSelf)
         {
+            StopMinigame();
             Destroy(krakenInstance);
         }
     }
