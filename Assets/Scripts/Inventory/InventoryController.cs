@@ -53,6 +53,8 @@ public class InventoryController : MonoBehaviour
    private void Start()
    {
        markerPosition = mainGrid.FirstSlot();
+       
+       mainGrid.gameObject.SetActive(false);
    }
 
    private void OnEnable()
