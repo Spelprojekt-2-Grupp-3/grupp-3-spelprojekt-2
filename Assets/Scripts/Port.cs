@@ -55,7 +55,7 @@ public class Port : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (interact.WasPressedThisFrame() && other.GetComponent<Player>() && !hasBeenPickedUp)
+        if (interact.WasPressedThisFrame() && other.GetComponent<Player>() && !hasBeenPickedUp && shipment!=null)
         {
             Pickup();
         }
