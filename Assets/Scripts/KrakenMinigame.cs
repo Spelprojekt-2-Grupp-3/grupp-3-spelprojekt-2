@@ -78,6 +78,7 @@ public class KrakenMinigame : Minigames
             hpBarInst.GetComponent<Image>().fillAmount = tentacle.hp / tentacle.maxHp;
             tentacles.Add(tentacle);
         }
+        //tentacles[1].actionButton.GetComponent<>()
         
     }
 
@@ -93,6 +94,7 @@ public class KrakenMinigame : Minigames
 
         for (int i = 0; i < tentacles.Count; i++)
         {
+            if (tentacles[i] == null) return;
             tentacles[i].hpBar.transform.position = new Vector3(tentacles[i].transform.position.x,
                 tentacles[i].transform.position.y + 15, tentacles[i].transform.position.z);
             tentacles[i].hpBar.transform.LookAt(camera.transform.position);
@@ -107,11 +109,11 @@ public class KrakenMinigame : Minigames
             {
                 case Vector2 v when(v.x < 0):
                     tentacles[0].hp -= 1;
-                    tentacles[0].UpdateHealthBar();
+                    tentacles[0].UpdateHealthBar(tentacles[0]);
                     break;
                 case Vector2 v when(v.x > 0):
                     tentacles[1].hp -= 1;
-                    tentacles[1].UpdateHealthBar();
+                    tentacles[1].UpdateHealthBar(tentacles[1]);
                     break;
             }
         }
@@ -130,12 +132,14 @@ public class Tentacle : MonoBehaviour
         hp = maxHp;
     }
 
-    public void UpdateHealthBar()
+    public void UpdateHealthBar(Tentacle tentacle)
     {
         hpBar.GetComponent<Image>().fillAmount = (float) hp / maxHp;
-        if (hp < 0)
+        if (hp <= 0)
         {
-            hp = 0;
+            Destroy(tentacle.hpBar);
+            Destroy(tentacle.actionButton);
+            Destroy(tentacle.gameObject);
         }
     }
 }
