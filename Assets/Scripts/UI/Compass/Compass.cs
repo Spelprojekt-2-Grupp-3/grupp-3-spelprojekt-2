@@ -6,14 +6,17 @@ public class Compass : MonoBehaviour
 
     RectTransform rt;
 
+    private Camera camera;
+
     void Start()
     {
         rt = GetComponent<RectTransform>();
+        camera = Camera.main;
     }
 
     void Update()
     {
-        Vector3 objScreenPos = Camera.main.WorldToScreenPoint(Goal.transform.position);
+        Vector3 objScreenPos = camera.WorldToScreenPoint(Goal.transform.position);
         
         Vector3 dir = (objScreenPos - rt.position).normalized;
         
