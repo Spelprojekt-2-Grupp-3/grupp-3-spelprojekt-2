@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Compass : MonoBehaviour
 {
-    public GameObject Goal;
+    public GameObject goal;
 
     RectTransform rt;
 
@@ -16,20 +16,22 @@ public class Compass : MonoBehaviour
 
     void Update()
     {
-        Vector3 objScreenPos = camera.WorldToScreenPoint(Goal.transform.position);
+        Vector3 objScreenPos = camera.WorldToScreenPoint(goal.transform.position);
         
         Vector3 dir = (objScreenPos - rt.position).normalized;
+
+        if (objScreenPos.z < 0)
+        {
+            dir = -dir;
+        }
         
-        float angle = Mathf.Rad2Deg * Mathf.Acos(Vector3.Dot(dir, Vector3.up));
+        float angle = Mathf.Rad2Deg * Mathf.Atan2(dir.y, dir.x);
         
-        Vector3 cross = Vector3.Cross(dir, Vector3.up);
-        angle = -Mathf.Sign(cross.z) * angle;
-        
-        rt.localEulerAngles = new Vector3(rt.localEulerAngles.x, rt.localEulerAngles.y, angle);
+        rt.localEulerAngles = new Vector3(0, 0, angle - 90);
     }
 
     void SwitchQuest(GameObject currentQuest)
     {
-        Goal = currentQuest;
+        goal = currentQuest;
     }
 }
