@@ -14,6 +14,8 @@ public class SceneManager : MonoBehaviour
     private InputAction navigate;
     private InputDevice inputDevice;
     [SerializeField] private GameObject firstSelected;
+    [SerializeField] private GameObject credits;
+    [SerializeField] private GameObject exit;
     private InputDevice previousDevice = null;
 
     private void Awake()
@@ -34,7 +36,7 @@ public class SceneManager : MonoBehaviour
         navigate.Disable();
         navigate.performed -= CheckInputDevice;
     }
-
+    
     public void Load(string s)
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(s);
@@ -71,13 +73,8 @@ public class SceneManager : MonoBehaviour
         {
             EventSystem.current.SetSelectedGameObject(null);
         }
-        else if (Gamepad.current != null && Gamepad.current.buttonSouth.wasPressedThisFrame || // A (Xbox) / Cross (PS)
-                 Gamepad.current.buttonNorth.wasPressedThisFrame || // Y / Triangle
-                 Gamepad.current.buttonEast.wasPressedThisFrame || // B / Circle
-                 Gamepad.current.buttonWest.wasPressedThisFrame || // X / Square
-                 Gamepad.current.leftStick.ReadValue() != Vector2.zero || // Left Stick Move
-                 Gamepad.current.rightStick.ReadValue() != Vector2.zero || // Right Stick Move
-                 Gamepad.current.dpad.ReadValue() != Vector2.zero)
+        else if (EventSystem.current.currentSelectedGameObject == null && Gamepad.current != null &&
+                 Gamepad.current.leftStick.ReadValue() != Vector2.zero)
         {
             EventSystem.current.SetSelectedGameObject(firstSelected);
         }
