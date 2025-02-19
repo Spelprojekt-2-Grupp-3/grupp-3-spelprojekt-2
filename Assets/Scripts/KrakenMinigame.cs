@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -51,7 +52,7 @@ public class KrakenMinigame : Minigames
     {
         camera = Camera.main;
         boatMovement = FindObjectOfType<BoatMovement>();
-        //  StartMinigame();
+        //StartMinigame();
     }
 
     public override void StartMinigame()
@@ -63,8 +64,9 @@ public class KrakenMinigame : Minigames
 
         boatMovement = FindObjectOfType<BoatMovement>();
         Vector3 krakenPos = boatMovement.transform.position;
-
+        
         krakenInstance = Instantiate(kraken, krakenPos, boatMovement.transform.rotation);
+        Debug.Log("krakeninstance" + krakenInstance);
 
         if (krakenInstance.transform.childCount != 2)
         {
@@ -77,9 +79,8 @@ public class KrakenMinigame : Minigames
             var child = krakenInstance.transform.GetChild(i);
             //child.transform.LookAt(krakenPos);
             Vector3 barPos = child.transform.position;
-            barPos.y += 15;
+            barPos.y += 5;
             Vector3 actionButtonPos = child.transform.position;
-            barPos.y += 30;
             var hpBarInst = Instantiate(
                 hpBar,
                 barPos,
@@ -110,7 +111,9 @@ public class KrakenMinigame : Minigames
     private void Update()
     {
         if (krakenInstance == null)
+        {
             return;
+        }
         krakenInstance.transform.position = boatMovement.transform.position;
         krakenInstance.transform.rotation = boatMovement.transform.rotation;
 
@@ -118,13 +121,13 @@ public class KrakenMinigame : Minigames
         {
             tentacles[i].hpBar.transform.position = new Vector3(
                 tentacles[i].transform.position.x,
-                tentacles[i].transform.position.y + 15,
+                tentacles[i].transform.position.y + 5,
                 tentacles[i].transform.position.z
             );
             tentacles[i].hpBar.transform.LookAt(camera.transform.position);
             tentacles[i].actionButton.transform.position = new Vector3(
                 tentacles[i].transform.position.x,
-                tentacles[i].transform.position.y + 20,
+                tentacles[i].transform.position.y + 5,
                 tentacles[i].transform.position.z
             );
             tentacles[i].actionButton.transform.LookAt(camera.transform.position);

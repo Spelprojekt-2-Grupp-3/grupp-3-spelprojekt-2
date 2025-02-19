@@ -12,7 +12,7 @@ public class KrakenLocation : MonoBehaviour
 
     private bool moving = false;
 
-    public KrakenMinigame krakenMinigame;
+    public GameObject krakenMinigame;
 
     void Update()
     {
@@ -53,7 +53,8 @@ public class KrakenLocation : MonoBehaviour
 
     private void SpawnTent()
     {
-        krakenMinigame.StartMinigame();
+        var k = Instantiate(krakenMinigame);
+        k.GetComponent<KrakenMinigame>().StartMinigame();
         gameObject.SetActive(false);
     }
 }

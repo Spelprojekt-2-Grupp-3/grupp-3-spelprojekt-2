@@ -22655,6 +22655,31 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1862584212627316059, guid: 3c99b2349eddffe43ab0303c65e0f0ec,
+        type: 3}
+      propertyPath: boatSoundEvent.Path
+      value: event:/Sound/SFX/Engine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862584212627316059, guid: 3c99b2349eddffe43ab0303c65e0f0ec,
+        type: 3}
+      propertyPath: boatSoundEvent.Guid.Data1
+      value: -1194958024
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862584212627316059, guid: 3c99b2349eddffe43ab0303c65e0f0ec,
+        type: 3}
+      propertyPath: boatSoundEvent.Guid.Data2
+      value: 1340215152
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862584212627316059, guid: 3c99b2349eddffe43ab0303c65e0f0ec,
+        type: 3}
+      propertyPath: boatSoundEvent.Guid.Data3
+      value: 154919050
+      objectReference: {fileID: 0}
+    - target: {fileID: 1862584212627316059, guid: 3c99b2349eddffe43ab0303c65e0f0ec,
+        type: 3}
+      propertyPath: boatSoundEvent.Guid.Data4
+      value: -935636229
+      objectReference: {fileID: 0}
     - target: {fileID: 5030653476263118679, guid: 3c99b2349eddffe43ab0303c65e0f0ec,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -22811,7 +22836,7 @@ PrefabInstance:
         type: 3}
       propertyPath: krakenMinigame
       value: 
-      objectReference: {fileID: 6765604044985407211, guid: 48e7618d9905c24489849679a0b9adca,
+      objectReference: {fileID: 8696412263360463079, guid: 48e7618d9905c24489849679a0b9adca,
         type: 3}
     - target: {fileID: 6451874751275499859, guid: 55fa2bcf596ade34c90fed46fc31016e,
         type: 3}
