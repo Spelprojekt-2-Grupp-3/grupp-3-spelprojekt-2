@@ -106,19 +106,17 @@ public class KrakenMinigame : Minigames
 
     private void Update()
     {
+        if (krakenInstance == null) return;
         krakenInstance.transform.position = boatMovement.transform.position;
         krakenInstance.transform.rotation = boatMovement.transform.rotation;
 
         for (int i = 0; i < tentacles.Count; i++)
         {
-            if (tentacles[i] == null)
-                return;
             tentacles[i].hpBar.transform.position = new Vector3(
                 tentacles[i].transform.position.x,
                 tentacles[i].transform.position.y + 15,
                 tentacles[i].transform.position.z
             );
-            Debug.Log(camera);
             tentacles[i].hpBar.transform.LookAt(camera.transform.position);
             tentacles[i].actionButton.transform.position = new Vector3(
                 tentacles[i].transform.position.x,
@@ -142,6 +140,11 @@ public class KrakenMinigame : Minigames
                     break;
             }
         }
+
+        if (!tentacles[0].gameObject.activeSelf && !tentacles[1].gameObject.activeSelf)
+        {
+            Destroy(krakenInstance);
+        }
     }
 }
 
@@ -162,9 +165,9 @@ public class Tentacle : MonoBehaviour
         hpBar.GetComponent<Image>().fillAmount = (float)hp / maxHp;
         if (hp <= 0)
         {
-            Destroy(tentacle.hpBar);
-            Destroy(tentacle.actionButton);
-            Destroy(tentacle.gameObject);
+            tentacle.hpBar.gameObject.SetActive(false);
+            tentacle.actionButton.gameObject.SetActive(false);
+            tentacle.gameObject.SetActive(false);
         }
     }
 }
