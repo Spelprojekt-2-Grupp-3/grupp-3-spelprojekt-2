@@ -28,6 +28,7 @@ public class KrakenMinigame : Minigames
     private PlayerInputActions playerControls;
     private InputAction minigame;
     private GameObject krakenInstance;
+
     private BoatMovement boatMovement;
 
     private void OnEnable()
@@ -50,15 +51,17 @@ public class KrakenMinigame : Minigames
     {
         camera = Camera.main;
         boatMovement = FindObjectOfType<BoatMovement>();
-        StartMinigame();
+        //  StartMinigame();
     }
 
     public override void StartMinigame()
     {
-        Events.stopBoat?.Invoke();
+        camera = Camera.main;
+      //  Events.stopBoat?.Invoke();
         var canvasInst = Instantiate(canvas);
         canvasInst.GetComponent<Canvas>().worldCamera = camera;
 
+        boatMovement = FindObjectOfType<BoatMovement>();
         Vector3 krakenPos = boatMovement.transform.position;
 
         krakenInstance = Instantiate(kraken, krakenPos, kraken.transform.rotation);
@@ -96,7 +99,7 @@ public class KrakenMinigame : Minigames
             tentacles.Add(tentacle);
         }
 
-        tentacles[1].actionButton.GetComponent<GamepadIconsExampleNew>();
+//        tentacles[1].actionButton.GetComponent<GamepadIconsExampleNew>();
     }
 
     public override void StopMinigame()
@@ -106,7 +109,8 @@ public class KrakenMinigame : Minigames
 
     private void Update()
     {
-        if (krakenInstance == null) return;
+        if (krakenInstance == null)
+            return;
         krakenInstance.transform.position = boatMovement.transform.position;
         krakenInstance.transform.rotation = boatMovement.transform.rotation;
 

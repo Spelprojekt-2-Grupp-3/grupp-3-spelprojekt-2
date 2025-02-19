@@ -12766,7 +12766,7 @@ GameObject:
   - component: {fileID: 846291495}
   m_Layer: 0
   m_Name: FreeLook Camera
-  m_TagString: MainCamera
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21494,7 +21494,7 @@ GameObject:
   - component: {fileID: 1857660166}
   m_Layer: 0
   m_Name: MainCamera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -22797,46 +22797,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2998565856272906140, guid: 55fa2bcf596ade34c90fed46fc31016e,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -32.91
-      objectReference: {fileID: 0}
-    - target: {fileID: 2998565856272906140, guid: 55fa2bcf596ade34c90fed46fc31016e,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2998565856272906140, guid: 55fa2bcf596ade34c90fed46fc31016e,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -1.15
-      objectReference: {fileID: 0}
     - target: {fileID: 4533343228916572894, guid: 55fa2bcf596ade34c90fed46fc31016e,
         type: 3}
       propertyPath: m_Name
       value: Obstacle
-      objectReference: {fileID: 0}
-    - target: {fileID: 5616982992415625341, guid: 55fa2bcf596ade34c90fed46fc31016e,
-        type: 3}
-      propertyPath: ShapeModule.radius.value
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5616982992415625341, guid: 55fa2bcf596ade34c90fed46fc31016e,
-        type: 3}
-      propertyPath: EmissionModule.rateOverTime.scalar
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 5616982992415625341, guid: 55fa2bcf596ade34c90fed46fc31016e,
-        type: 3}
-      propertyPath: EmissionModule.rateOverTime.minScalar
-      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6451874751275499859, guid: 55fa2bcf596ade34c90fed46fc31016e,
         type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 5159874365665236846}
+    - target: {fileID: 6451874751275499859, guid: 55fa2bcf596ade34c90fed46fc31016e,
+        type: 3}
+      propertyPath: krakenMinigame
+      value: 
+      objectReference: {fileID: 6765604044985407211, guid: 48e7618d9905c24489849679a0b9adca,
+        type: 3}
     - target: {fileID: 6451874751275499859, guid: 55fa2bcf596ade34c90fed46fc31016e,
         type: 3}
       propertyPath: _tentacleRefLeft
