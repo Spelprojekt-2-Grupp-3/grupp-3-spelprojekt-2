@@ -80,7 +80,8 @@ public class KrakenMinigame : Minigames
             //child.transform.LookAt(krakenPos);
             Vector3 barPos = child.transform.position;
             barPos.y += 5;
-            Vector3 actionButtonPos = child.transform.position;
+            Vector3 actionButtonPos = barPos;
+            actionButtonPos.y += 5;
             var hpBarInst = Instantiate(
                 hpBar,
                 barPos,
@@ -127,7 +128,7 @@ public class KrakenMinigame : Minigames
             tentacles[i].hpBar.transform.LookAt(camera.transform.position);
             tentacles[i].actionButton.transform.position = new Vector3(
                 tentacles[i].transform.position.x,
-                tentacles[i].transform.position.y + 5,
+                tentacles[i].transform.position.y + 10,
                 tentacles[i].transform.position.z
             );
             tentacles[i].actionButton.transform.LookAt(camera.transform.position);
