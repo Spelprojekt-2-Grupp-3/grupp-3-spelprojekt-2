@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f1fb42526bed3144996b84e90a3b16f9
+guid: 2cfce84ef619e6443a22641db57244fd
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,91 +121,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: IrmaPortrait
-      rect:
-        serializedVersion: 2
-        x: 712
-        y: 119
-        width: 934
-        height: 1197
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8827f9784b67d444290757b3b9a55f70
-      internalID: 962869949
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BengtPortrait
-      rect:
-        serializedVersion: 2
-        x: 2788
-        y: 27
-        width: 948
-        height: 1207
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a71a6bd287944b6458fca75103e57322
-      internalID: -1366805973
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: CleoPortrait
-      rect:
-        serializedVersion: 2
-        x: 6
-        y: 188
-        width: 555
-        height: 900
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f16559ec893f82f4c8e659eb3a3f2186
-      internalID: -2069645052
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SigridPortrait
-      rect:
-        serializedVersion: 2
-        x: 1735
-        y: 137
-        width: 874
-        height: 1045
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6f7f2eb3fc47459429e696c9ee354363
-      internalID: -1987956403
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -216,14 +132,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      BengtPortrait: -1366805973
-      CleoPortrait: -2069645052
-      IrmaPortrait: 962869949
-      SigridPortrait: -1987956403
-      characther_profile_placeholders_0: -720235823
-      characther_profile_placeholders_2: -1464018367
-      characther_profile_placeholders_6: -240937639
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
