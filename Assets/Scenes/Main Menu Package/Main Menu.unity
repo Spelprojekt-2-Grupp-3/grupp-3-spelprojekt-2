@@ -313,7 +313,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: GAME TITLE
+  m_text: "Ja pierdole \u015Blimak"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -669,7 +669,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1424125908}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.5359747
+  m_Size: 0.40791026
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -800,7 +800,7 @@ GameObject:
   - component: {fileID: 641909175}
   - component: {fileID: 641909174}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Credits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -968,7 +968,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 528.01}
+  m_SizeDelta: {x: 0, y: 693.78}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &680639045
 MonoBehaviour:
@@ -1134,7 +1134,7 @@ GameObject:
   - component: {fileID: 992576507}
   - component: {fileID: 992576506}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Exit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1775,7 +1775,7 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 739715930}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.46402532}
+  m_AnchorMin: {x: 0, y: 0.5920898}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
@@ -1852,8 +1852,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 251.5, y: -264.005}
-  m_SizeDelta: {x: 493, y: 518.01}
+  m_AnchoredPosition: {x: 251.5, y: -346.89}
+  m_SizeDelta: {x: 493, y: 683.78}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1425583356
 MonoBehaviour:
@@ -1875,11 +1875,65 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Package by Max Larsson\n\n[replace with group members]\n\n[MADE UP STUDIO
-    INTERACTIVE]\n\nDesign by:\nDaniel Design\nD\xE9sir\xE9e von D\xE9signi\xE9rs\n\nProgramming
-    by:\nPatricia Programmerarsson\nProggar Putte\n\n2D art by:\nArvid van der Art\nArtyom
-    the cat\n\n3D art by:\nThe one who whispers \nAlicia Konstvetare\n\nAnimation
-    by;\nAndy Animation\nAisha Movement\n"
+  m_text: '
+
+    [MADE UP STUDIO INTERACTIVE]
+
+
+    Design by:
+
+    Loke
+
+
+    Programming
+    by:
+
+    Hannes
+
+    Gabriel
+
+    Harry
+
+
+    2D art by:
+
+    Sara
+
+
+    3D art
+    by:
+
+    Lina
+
+
+    Animation by;
+
+    Max
+
+
+    Technical Art:
+
+    Max
+
+
+    Art
+    Direction by:
+
+    Lina
+
+
+    Project Lead:
+
+    Max
+
+
+    Project Manager:
+
+    Loke
+
+
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2157,6 +2211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7323831e99eba1f4f9369c5a5d789439, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firstSelected: {fileID: 0}
 --- !u!4 &1725474654
 Transform:
   m_ObjectHideFlags: 0
@@ -2185,7 +2240,7 @@ GameObject:
   - component: {fileID: 1814626958}
   - component: {fileID: 1814626957}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Start
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2244,7 +2299,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: MainScene
+          m_StringArgument: Intro Scene
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1814626958
