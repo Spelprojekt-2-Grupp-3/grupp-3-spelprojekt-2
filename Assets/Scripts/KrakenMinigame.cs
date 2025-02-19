@@ -64,7 +64,7 @@ public class KrakenMinigame : Minigames
 
         boatMovement = FindObjectOfType<BoatMovement>();
         Vector3 krakenPos = boatMovement.transform.position;
-        
+
         krakenInstance = Instantiate(kraken, krakenPos, boatMovement.transform.rotation);
         Debug.Log("krakeninstance" + krakenInstance);
 
@@ -169,14 +169,25 @@ public class Tentacle : MonoBehaviour
         hp = maxHp;
     }
 
+    private Tentacle tentacoloses;
+
     public void UpdateHealthBar(Tentacle tentacle)
     {
+        tentacoloses = tentacle;
+
         hpBar.GetComponent<Image>().fillAmount = (float)hp / maxHp;
         if (hp <= 0)
         {
-            tentacle.hpBar.gameObject.SetActive(false);
-            tentacle.actionButton.gameObject.SetActive(false);
-            tentacle.gameObject.SetActive(false);
+            tentacoloses.hpBar.gameObject.SetActive(false);
+            tentacoloses.actionButton.gameObject.SetActive(false);
+            Timer t = new Timer();
+            GetComponent<Animator>().SetTrigger("Death");
+            StartCoroutine(t.ExecuteAfterTime(1.9f, cunt));
         }
+    }
+
+    private void cunt()
+    {
+        tentacoloses.gameObject.SetActive(false);
     }
 }
