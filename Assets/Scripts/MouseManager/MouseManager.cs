@@ -15,7 +15,7 @@ public class MouseManager : MonoBehaviour
     void Awake()
     {
         _playerController = new PlayerInputActions();
-        _mainCamera = Camera.main;
+        _mainCamera = GameObject.Find("CameraBrain")?.GetComponent<Camera>();
         
         _playerController.Player.Interact.performed += _ => PerformedClick();
 
