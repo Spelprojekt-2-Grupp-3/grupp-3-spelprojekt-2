@@ -20580,6 +20580,77 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1359446423}
   m_LocalEulerAnglesHint: {x: -170.909, y: -137.305, z: -215.092}
+--- !u!1001 &1762240408
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1352730740294475437, guid: 3864945a9e03c8c4683af472ebef048f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 283.839
+      objectReference: {fileID: 0}
+    - target: {fileID: 1352730740294475437, guid: 3864945a9e03c8c4683af472ebef048f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 367.1988
+      objectReference: {fileID: 0}
+    - target: {fileID: 1352730740294475437, guid: 3864945a9e03c8c4683af472ebef048f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -131.38998
+      objectReference: {fileID: 0}
+    - target: {fileID: 1352730740294475437, guid: 3864945a9e03c8c4683af472ebef048f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1352730740294475437, guid: 3864945a9e03c8c4683af472ebef048f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1352730740294475437, guid: 3864945a9e03c8c4683af472ebef048f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1352730740294475437, guid: 3864945a9e03c8c4683af472ebef048f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1352730740294475437, guid: 3864945a9e03c8c4683af472ebef048f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1352730740294475437, guid: 3864945a9e03c8c4683af472ebef048f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1352730740294475437, guid: 3864945a9e03c8c4683af472ebef048f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7364101057223045348, guid: 3864945a9e03c8c4683af472ebef048f,
+        type: 3}
+      propertyPath: m_Name
+      value: Compass with quest UI
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4325853596027707242, guid: 3864945a9e03c8c4683af472ebef048f, type: 3}
+    - {fileID: 4504874270291785328, guid: 3864945a9e03c8c4683af472ebef048f, type: 3}
+    - {fileID: 1292210013370876368, guid: 3864945a9e03c8c4683af472ebef048f, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3864945a9e03c8c4683af472ebef048f, type: 3}
 --- !u!1001 &1771210395
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23001,3 +23072,4 @@ SceneRoots:
   - {fileID: 1771210395}
   - {fileID: 1323031277}
   - {fileID: 610871161840748601}
+  - {fileID: 1762240408}
