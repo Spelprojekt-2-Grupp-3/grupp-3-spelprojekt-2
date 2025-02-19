@@ -47,7 +47,7 @@ public class Port : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<Player>())
+        if (other.GetComponent<BoatMovement>())
         {
             Delivery();
         }
@@ -55,7 +55,7 @@ public class Port : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (interact.WasPressedThisFrame() && other.GetComponent<Player>() && !hasBeenPickedUp && shipment!=null)
+        if (interact.WasPressedThisFrame() && other.GetComponent<BoatMovement>() && !hasBeenPickedUp && shipment!=null)
         {
             Pickup();
         }
