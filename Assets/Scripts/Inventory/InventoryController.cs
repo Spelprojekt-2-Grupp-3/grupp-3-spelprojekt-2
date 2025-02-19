@@ -29,7 +29,9 @@ public class InventoryController : MonoBehaviour
    private InputAction pointerPosition;
    private InputAction middleClick;
    private InputAction markerMovement;
-   
+   private InputAction openInventory;
+
+   private bool isOpen;
    
    [SerializeField, Tooltip("For randomly generated packages, currently only dev functions")] private List<PackageData> packageTypes;
    [SerializeField, Tooltip("The object to instantiate")] private GameObject packagePrefab;
@@ -63,12 +65,17 @@ public class InventoryController : MonoBehaviour
        pointerPosition = playerControls.UI.Point;
        middleClick = playerControls.UI.MiddleClick;
        markerMovement = playerControls.UI.Navigate;
+       openInventory = playerControls.UI.Inventory;
+       
+       openInventory.Enable();
+       
        EnableControls();
    }
 
    private void OnDisable()
    {
        DisableControls();
+       openInventory.Disable();
    }
 
    void EnableControls()
@@ -97,6 +104,16 @@ public class InventoryController : MonoBehaviour
 
    private void Update()
    {
+       if (openInventory.WasPressedThisFrame())
+       {
+           isOpen = !isOpen;
+           mainGrid.gameObject.SetActive(isOpen);
+           if (isOpen)
+               EnableControls();
+           else
+               DisableControls();
+       }
+
        if(!markerMovement.enabled){return;}
        
        
