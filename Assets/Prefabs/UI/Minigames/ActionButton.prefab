@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: Square
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -92,8 +92,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 4
+  m_fontSizeBase: 4
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -218,7 +218,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8595627881987699526}
-  - component: {fileID: 5585163941733747412}
+  - component: {fileID: 7267699585176910415}
   m_Layer: 5
   m_Name: ActionButton
   m_TagString: Untagged
@@ -247,7 +247,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &5585163941733747412
+--- !u!114 &7267699585176910415
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -259,8 +259,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c9c15151dc7ff346bfa4a6ae8cf6779, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Action: {fileID: 0}
-  m_BindingId: 
+  m_Action: {fileID: 3411689151731815935, guid: 1f866763a0b1b7e43ba6a4e833c4fed9,
+    type: 3}
+  m_BindingId: 50db29e2-ac13-4821-b69a-46db64cf2787
   m_DisplayStringOptions: 0
   m_ActionLabel: {fileID: 0}
   m_BindingText: {fileID: 613146914303101668}
