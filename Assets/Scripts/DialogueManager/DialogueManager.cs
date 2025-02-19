@@ -45,12 +45,20 @@ public class DialogueManager : MonoBehaviour
         layoutAnimator = dialoguePanel.GetComponent<Animator>();
         
         //Get all the choices text
-        _choicesText = new TextMeshProUGUI[choices.Length];
-        int index = 0;
-        foreach (GameObject choice in choices)
+        GameObject choicesParent = GameObject.Find("DialogueChoices");
+
+        if (choicesParent != null)
         {
-            _choicesText[index] = choice.GetComponentInChildren<TextMeshProUGUI>();
-            index++;
+            // Get all child objects of DialogueChoices
+            int childCount = choicesParent.transform.childCount;
+            choices = new GameObject[childCount];
+            _choicesText = new TextMeshProUGUI[childCount];
+
+            for (int i = 0; i < childCount; i++)
+            {
+                choices[i] = choicesParent.transform.GetChild(i).gameObject;
+                _choicesText[i] = choices[i].GetComponentInChildren<TextMeshProUGUI>();
+            }
         }
         
         _playerInput = new PlayerInputActions();

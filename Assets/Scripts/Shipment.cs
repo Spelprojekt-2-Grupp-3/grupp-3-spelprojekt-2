@@ -17,23 +17,30 @@ public class Shipment : MonoBehaviour, IClick
 
     private void Awake()
     {
-        _player = FindObjectOfType<Player>();
+        
         inventoryController = FindObjectOfType<InventoryController>();
+    }
+
+    private void Start()
+    {
+        
     }
 
     public void OnClick()
     {
-        Pickup();
+       //Pickup();
     }
 
     public void Pickup()
     {
+        inventoryController = FindObjectOfType<InventoryController>();
+        _player = FindObjectOfType<Player>();
         if (inventoryController.InsertItem(packageData))
         {
             Debug.Log("You have picked up a shipment!");
             _player.shipmentCount++;
             _player.shipments.Add(GetComponent<Shipment>());
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
         else
         {
