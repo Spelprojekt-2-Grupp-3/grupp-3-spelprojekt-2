@@ -356,6 +356,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 920097291706465985, guid: cb739613743c4bc408f55638fb0d1ea4,
+        type: 3}
+      propertyPath: m_text
+      value: "\n\nDesign by:\nLoke\n\nProgramming by:\nHannes\nGabriel\nHarry\n\n2D
+        art by:\nSara\n\n3D art by:\nLina\n\nAnimation by;\nMax\n\nTech Art by:\nMax\n\nArt
+        Lead: \nLine\n\nProject Lead:\nMax\n\nProject Manager:\nLoke"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2981456185626184178, guid: cb739613743c4bc408f55638fb0d1ea4,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+      value: Main Scene
+      objectReference: {fileID: 0}
     - target: {fileID: 5699981413655980266, guid: cb739613743c4bc408f55638fb0d1ea4,
         type: 3}
       propertyPath: m_Pivot.x
