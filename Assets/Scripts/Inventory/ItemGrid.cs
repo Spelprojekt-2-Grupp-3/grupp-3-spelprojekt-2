@@ -234,6 +234,29 @@ public class ItemGrid : MonoBehaviour
             }
         }
     }
+    
+    /// <summary>
+    /// Finds and returns a list of PackageData from the grid based on who the package is for
+    /// </summary>
+    /// <param name="recipient">Who the package is for</param>
+    /// <returns>A List of PackageData</returns>
+    public List<PackageData> FindItemsByRecipient(string recipient)
+    {
+        List<PackageData> toReturn = new List<PackageData>();
+        for (int x = 0; x < inventorySizeX; x++)
+        {
+            for (int y = 0; y < inventorySizeY; y++)
+            {
+                if (packageSlot[x, y] != null && packageSlot[x, y].packageData.recipient == recipient)
+                {
+                    if(!toReturn.Contains(packageSlot[x,y].packageData))
+                        toReturn.Add(packageSlot[x,y].packageData);
+                }
+            }
+        }
+
+        return toReturn;
+    }
 
     public InventoryItem GetItem(int xPos, int yPos)
     {

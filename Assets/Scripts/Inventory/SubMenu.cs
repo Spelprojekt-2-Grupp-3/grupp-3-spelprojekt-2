@@ -6,9 +6,9 @@ public class SubMenu : MonoBehaviour
 {
     private Button infoButton;
     private Button button2;
-    private TMP_Text infoText;
+    [SerializeField] private TMP_Text infoText;
 
-    private PackageData data;
+    //private PackageData data;
     
     public void ShowInformation(PackageData data)
     {
