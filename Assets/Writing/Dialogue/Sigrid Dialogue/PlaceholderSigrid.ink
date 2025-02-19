@@ -4,7 +4,11 @@
 
 Hey. I'm Sigrid. #Speaker:Sigrid
 
-Got any questions for me? #Speaker:Sigrid
+Sigrid? I have a package for you. #Speaker:Cleo
+
+Oh? Much appreciated. #Speaker:Sigrid.
+
+Anything else? #Speaker:Sigrid
 
 -> questions
 
@@ -42,7 +46,23 @@ Got any questions for me? #Speaker:Sigrid
     
     -> questions
     
-    + [Actually, I should go.]
+    + [Do you need anything?]
+    
+    Now that you mention it, I could use some help. #Speaker:Sigrid
+    
+    I have this package that needs to get to Irma. Want to take it on for me? #Speaker:Sigrid
+    
+    -+ [Absolutely!]
+    
+    -Great. It's nice to have some help.
+    
+    She lives to the southwest of here. #Speaker:Sigrid
+    
+    You can tell her island apart by the big antannae. #Speaker:Sigrid
+    
+    Also the rocks. There are a lot of rocks. #Speaker:Sigrid
+    
+    Roger that! #Speaker:Cleo
     
     Good luck out there. #Speaker:Sigrid
 

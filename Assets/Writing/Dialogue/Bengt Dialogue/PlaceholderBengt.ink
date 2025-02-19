@@ -42,8 +42,20 @@ If you got any questions for me, go ahead and ask 'em! #Speaker:Bengt
     
     -> questions
         
-    + [I'll be leaving now.]
+    + [Do you need any help?]
     
+    Actually, I do! Could you deliver this package for me? #Speaker:Bengt
+
+    -* [Sure, why not?]
+    
+    -You're a lifesaver! #Speaker:Bengt
+        
+    I'd like you to head just west of here, to Sigrid's island. #Speaker:Bengt
+    
+    It has a huge lighthouse on it, you can't miss it! #Speaker:Bengt
+    
+    I'll get going, then. #Speaker:Cleo
+
     See you around! #Speaker:Bengt
     
 -> END

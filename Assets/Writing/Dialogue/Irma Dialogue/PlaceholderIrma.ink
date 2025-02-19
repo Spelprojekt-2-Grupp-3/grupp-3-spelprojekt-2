@@ -8,6 +8,12 @@ Sorry about that, I was busy tinkering with something. #Speaker:Irma
 
 What's up? #Speaker:Irma
 
+I have a package for you. #Speaker:Cleo
+
+Oh! Thanks! #Speaker:Irma
+
+I have to get back to inside soon, is there anything else? #Speaker:Irma
+
 -> questions
 
 = questions
@@ -42,7 +48,17 @@ What's up? #Speaker:Irma
     
     -> questions
     
-    + [I need to head out.]
+    + [Do you need any help?]
+    
+    Not that I can think of, but thanks for the offer. #Speaker:Irma
+    
+    I guess I'm officially out of work. #Speaker:Cleo
+    
+    There'll be more opportunities in the future, don't worry. #Speaker:Irma
+    
+    For now, just sail around and explore, yeah? #Speaker:Irma
+    
+    I'll be heading out then. #Speaker:Cleo
     
     Don't be a stranger. #Speaker:Irma
     
