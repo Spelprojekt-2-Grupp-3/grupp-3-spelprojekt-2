@@ -78,8 +78,8 @@ public class KrakenMinigame : Minigames
             hpBarInst.GetComponent<Image>().fillAmount = tentacle.hp / tentacle.maxHp;
             tentacles.Add(tentacle);
         }
-        
-        //tentacles[1].actionButton.GetComponent<gamepadi>()
+
+        tentacles[1].actionButton.GetComponent<GamepadIconsExampleNew>();
 
     }
 
