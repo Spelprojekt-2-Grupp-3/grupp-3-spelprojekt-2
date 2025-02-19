@@ -262,6 +262,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-49126104497157244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound/SFX/Tentacle Splash
+  m_EditorClassIdentifier: 
+  Path: event:/Sound/SFX/Tentacle Splash
+  Guid:
+    Data1: 697550857
+    Data2: 1166412508
+    Data3: -1553437036
+    Data4: 1169694547
+  Banks:
+  - {fileID: 3641245667579219406}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1373
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,12 +320,14 @@ MonoBehaviour:
   - {fileID: 2159201525565120270}
   - {fileID: -3474922781561470818}
   - {fileID: -8614225831950068125}
+  - {fileID: -49126104497157244}
+  - {fileID: 3849762807927894298}
   EditorParameters: []
   MasterBanks:
   - {fileID: 3641245667579219406}
   StringsBanks:
   - {fileID: 8573797972098898880}
-  cacheTime: 638754982654363789
+  cacheTime: 638755753473006763
   cacheVersion: 131622
 --- !u!114 &49985666265910251
 MonoBehaviour:
@@ -396,9 +425,36 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/Banks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638754982654348132
+  lastModified: 638755753472936434
   FileSizes: []
   Exists: 1
+--- !u!114 &3849762807927894298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound/SFX/Tentacle Grab
+  m_EditorClassIdentifier: 
+  Path: event:/Sound/SFX/Tentacle Grab
+  Guid:
+    Data1: 944872972
+    Data2: 1183600279
+    Data3: -2073140549
+    Data4: 1444098698
+  Banks:
+  - {fileID: 3641245667579219406}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1420
 --- !u!114 &5372324733448613982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -551,8 +607,8 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/Banks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638754982654363789
+  lastModified: 638755753473006763
   FileSizes:
   - Name: 
-    Value: 1540
+    Value: 1634
   Exists: 1
