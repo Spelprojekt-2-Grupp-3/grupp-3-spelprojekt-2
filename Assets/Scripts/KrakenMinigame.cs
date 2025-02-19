@@ -57,14 +57,14 @@ public class KrakenMinigame : Minigames
     public override void StartMinigame()
     {
         camera = Camera.main;
-      //  Events.stopBoat?.Invoke();
+        //  Events.stopBoat?.Invoke();
         var canvasInst = Instantiate(canvas);
         canvasInst.GetComponent<Canvas>().worldCamera = camera;
 
         boatMovement = FindObjectOfType<BoatMovement>();
         Vector3 krakenPos = boatMovement.transform.position;
 
-        krakenInstance = Instantiate(kraken, krakenPos, kraken.transform.rotation);
+        krakenInstance = Instantiate(kraken, krakenPos, boatMovement.transform.rotation);
 
         if (krakenInstance.transform.childCount != 2)
         {
@@ -99,7 +99,7 @@ public class KrakenMinigame : Minigames
             tentacles.Add(tentacle);
         }
 
-//        tentacles[1].actionButton.GetComponent<GamepadIconsExampleNew>();
+        //        tentacles[1].actionButton.GetComponent<GamepadIconsExampleNew>();
     }
 
     public override void StopMinigame()
