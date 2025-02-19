@@ -173,7 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -742,10 +742,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 20361650}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 130, y: 130}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &461196298
 MonoBehaviour:
@@ -1094,8 +1094,6 @@ MonoBehaviour:
   displayNameText: {fileID: 0}
   portraitAnimator: {fileID: 0}
   layoutAnimator: {fileID: 0}
-  characterNames:
-  - 
   choices:
   - {fileID: 1914413844}
   - {fileID: 487455358}
@@ -2538,7 +2536,7 @@ PrefabInstance:
         type: 3}
       propertyPath: inkJSON
       value: 
-      objectReference: {fileID: 4900000, guid: 734b6b41a003ab04b820f9cccc160452, type: 3}
+      objectReference: {fileID: 4900000, guid: 4d34bb1b61a62aa499c3313f02203046, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
