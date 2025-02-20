@@ -4877,10 +4877,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3ff46f88141c194f86cc669762ed43c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kraken: {fileID: 8045453876476168611, guid: d0885509e07378a41970234c3a3b0ff8, type: 3}
-  _tentacleRefLeft: {fileID: 0}
-  _tentacleRefRight: {fileID: 0}
   player: {fileID: 0}
+  krakenMinigame: {fileID: 0}
 --- !u!54 &1017313782574794995
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4990,7 +4988,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 15
+  m_Radius: 35
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6628786411602773288
 MonoBehaviour:
