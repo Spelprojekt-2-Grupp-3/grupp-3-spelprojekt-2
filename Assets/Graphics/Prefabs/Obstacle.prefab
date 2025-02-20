@@ -4878,7 +4878,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  krakenMinigame: {fileID: 0}
+  krakenMinigame: {fileID: 8696412263360463079, guid: 48e7618d9905c24489849679a0b9adca,
+    type: 3}
 --- !u!54 &1017313782574794995
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4918,7 +4919,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd9ac3ef6a1f0f24ea6805a1d3aa8210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waterHeight: 0
+  waterHeight: 11
   shaderMaterial: {fileID: 2100000, guid: eb3a6ac3bbf1eff498ec8d5092ef397e, type: 2}
   steepness: 0
   wavelength: 0

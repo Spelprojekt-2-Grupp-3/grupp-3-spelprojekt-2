@@ -60,8 +60,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 210432323285407387}
-  - {fileID: 2608921027649449673}
   - {fileID: 4955088777359170890}
   - {fileID: 821874276974361461}
   m_Father: {fileID: 5030653476263118679}
@@ -175,9 +173,10 @@ GameObject:
   - component: {fileID: 8989689068626960059}
   - component: {fileID: 1862584212627316059}
   - component: {fileID: 7422248955742938948}
+  - component: {fileID: 9223300789363573830}
   m_Layer: 0
   m_Name: boat (1)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -190,7 +189,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5892994079683017244}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0.00000020861623}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -63.67692, y: 5.65, z: -63.920486}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 0
@@ -309,7 +308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd9ac3ef6a1f0f24ea6805a1d3aa8210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waterHeight: 0
+  waterHeight: 11
   shaderMaterial: {fileID: 2100000, guid: eb3a6ac3bbf1eff498ec8d5092ef397e, type: 2}
   steepness: 0
   wavelength: 0
@@ -347,7 +346,7 @@ MonoBehaviour:
   acceleration: 100
   rotationSpeed: 1.5
   maxSpeed: 80
-  sideTiltAngle: 35
+  sideTiltAngle: 30
   frontTiltAngle: 0
   tiltSpeed: 3
   boatSoundEvent:
@@ -379,6 +378,20 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 8675452379081041382, guid: 42745bf0b606c9946b4f65eca8327c20, type: 3}
+--- !u!114 &9223300789363573830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5892994079683017244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e06464d2118bbbf4396c7607fcfd3cfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shipmentCount: 0
+  shipments: []
 --- !u!1 &6229892613891358901
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,7 +448,7 @@ Transform:
   m_GameObject: {fileID: 6254749907332225482}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 6042, z: -8031}
+  m_LocalPosition: {x: -0, y: 2842, z: -9546}
   m_LocalScale: {x: 300.00003, y: 300, z: 300.00003}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -471,37 +484,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2632472968060114853}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &7039677712769327271
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2608921027649449673}
-  m_Layer: 0
-  m_Name: KrakenLocator_Right
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2608921027649449673
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7039677712769327271}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 528.0001, y: -237, z: 147.99998}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 860362181557398798}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7622492992936844442
 GameObject:
@@ -5370,34 +5352,3 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!1 &8731303509491892799
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 210432323285407387}
-  m_Layer: 0
-  m_Name: KrakenLocator_Left
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &210432323285407387
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8731303509491892799}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -528.0001, y: -237, z: 148}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 860362181557398798}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
