@@ -19,7 +19,7 @@ public class DialogueManager : MonoBehaviour
     [Header("Choices UI")]
     [SerializeField] private GameObject[] choices;
     
-    [SerializeField] private InventoryController inventoryController;
+    //[SerializeField] private InventoryController inventoryController;
     
     private TextMeshProUGUI[] _choicesText;
     
@@ -114,7 +114,7 @@ public class DialogueManager : MonoBehaviour
         portraitAnimator.Play("Default");
         layoutAnimator.Play("NPC");
         
-        inventoryController.gameObject.SetActive(false);
+        //inventoryController.gameObject.SetActive(false);
     }
 
     private IEnumerator ExitDialogueMode()
@@ -140,7 +140,7 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
-            inventoryController.gameObject.SetActive(false);
+            //inventoryController.gameObject.SetActive(false);
             StartCoroutine(ExitDialogueMode());
             
         }
