@@ -35,16 +35,16 @@ public class Shipment : MonoBehaviour, IClick
     {
         inventoryController = FindObjectOfType<InventoryController>();
         _player = FindObjectOfType<Player>();
-        if (inventoryController.InsertItem(packageData))
-        {
+        //if (inventoryController.InsertItem(packageData))
+        //{
             Debug.Log("You have picked up a shipment!");
             _player.shipmentCount++;
             _player.shipments.Add(GetComponent<Shipment>());
             //Destroy(gameObject);
-        }
-        else
-        {
-            Debug.Log("Inventory full");
-        }
+        //}
+        //else
+        //{
+           // Debug.Log("Inventory full");
+        //}
     }
 }

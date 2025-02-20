@@ -32,6 +32,8 @@ public class InventoryController : MonoBehaviour
    private InputAction openInventory;
 
    private bool isOpen;
+
+   //[HideInInspector]public List<InventoryItem> inventoryItems;
    
    [SerializeField, Tooltip("For randomly generated packages, currently only dev functions")] private List<PackageData> packageTypes;
    [SerializeField, Tooltip("The object to instantiate")] private GameObject packagePrefab;
@@ -43,6 +45,8 @@ public class InventoryController : MonoBehaviour
    [SerializeField] private float markerMoveCooldown;
    private float actualCooldown;
    [SerializeField] private GameObject slotHighlightObject;
+
+   [SerializeField] private DialogueManager dialogueManager;
    
    private void Awake()
    {
@@ -53,7 +57,7 @@ public class InventoryController : MonoBehaviour
    private void Start()
    {
        markerPosition = mainGrid.FirstSlot();
-       
+       //inventoryItems = new List<InventoryItems>();
        mainGrid.gameObject.SetActive(false);
    }
 
@@ -80,7 +84,7 @@ public class InventoryController : MonoBehaviour
        openInventory.Disable();
    }
 
-   void EnableControls()
+   public void EnableControls()
    {
        lClick.Enable();
        rClick.Enable();
@@ -106,15 +110,16 @@ public class InventoryController : MonoBehaviour
 
    private void Update()
    {
-       if (openInventory.WasPressedThisFrame())
-       {
-           isOpen = !isOpen;
-           mainGrid.gameObject.SetActive(isOpen);
-           if (isOpen)
-               EnableControls();
-           else
-               DisableControls();
-       }
+       //if (openInventory.WasPressedThisFrame())
+       //{
+       //    isOpen = !isOpen;
+       //    //mainGrid.gameObject.SetActive(isOpen);
+       //    dialogueManager.gameObject.SetActive(!isOpen);
+       //    if (isOpen)
+       //        EnableControls();
+       //    else
+       //        DisableControls();
+       //}
 
        if(!markerMovement.enabled){return;}
        

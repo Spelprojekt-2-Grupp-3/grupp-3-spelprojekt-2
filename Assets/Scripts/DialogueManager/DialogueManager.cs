@@ -18,6 +18,9 @@ public class DialogueManager : MonoBehaviour
     
     [Header("Choices UI")]
     [SerializeField] private GameObject[] choices;
+    
+    [SerializeField] private InventoryController inventoryController;
+    
     private TextMeshProUGUI[] _choicesText;
     
     private Story _currentStory;
@@ -110,10 +113,13 @@ public class DialogueManager : MonoBehaviour
         displayNameText.text = "???";
         portraitAnimator.Play("Default");
         layoutAnimator.Play("NPC");
+        
+        inventoryController.gameObject.SetActive(false);
     }
 
     private IEnumerator ExitDialogueMode()
     {
+        
         //Small delay before closing UI to avoid double clicks
         yield return new WaitForSeconds(0.2f);
         dialogueIsPlaying = false;
@@ -134,7 +140,9 @@ public class DialogueManager : MonoBehaviour
         }
         else
         {
+            inventoryController.gameObject.SetActive(false);
             StartCoroutine(ExitDialogueMode());
+            
         }
     }
 

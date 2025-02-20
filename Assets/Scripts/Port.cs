@@ -45,13 +45,13 @@ public class Port : MonoBehaviour
         interact.Disable();
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.GetComponent<BoatMovement>())
-        {
-            Delivery();
-        }
-    }
+    //private void OnTriggerStay(Collider other)
+    //{
+    //    if (other.GetComponent<BoatMovement>())
+    //    {
+    //        Delivery();
+    //    }
+    //}
 
     private void OnTriggerStay(Collider other)
     {
@@ -59,22 +59,40 @@ public class Port : MonoBehaviour
         {
             Pickup();
         }
+        else if (other.GetComponent<BoatMovement>())
+        {
+            Delivery();
+        }
     }
 
     void Pickup()
     {
+        hasBeenPickedUp = true;
         shipment.Pickup();
+        Debug.Log("added package");
     }
 
     void Delivery()
     {
-        foreach (var shipment in player.shipments)
+
+        for (int i = 0; i < player.shipments.Count; i++)
         {
-            if (shipment.packageData.recipient == Inhabitant)
+            if (player.shipments[i].packageData.recipient == Inhabitant)
             {
-                player.shipments.Remove(shipment);
+                Debug.Log("FoundPackage");
+                player.shipments.RemoveAt(i);
             }
+                
         }
-        inventoryController.mainGrid.RemoveItemsByRecipient(Inhabitant);
+        //foreach (var shipment in player.shipments)
+        //{
+        //    if (shipment.packageData.recipient == Inhabitant)
+        //    {
+        //        Debug.Log("Found package");
+        //        //player.shipments.Remove(shipment);
+        //        //    Debug.Log("Removed package");
+        //    }
+        //}
+        //inventoryController.mainGrid.RemoveItemsByRecipient(Inhabitant);
     }
 }
