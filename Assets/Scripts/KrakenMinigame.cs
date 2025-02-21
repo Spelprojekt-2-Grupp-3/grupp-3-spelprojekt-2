@@ -37,6 +37,7 @@ public class KrakenMinigame : Minigames
     {
         minigame = playerControls.Boat.Minigame;
         minigame.Enable();
+        Events.updateIcons.AddListener(UpdateIcons);
     }
 
     private void OnDisable()
@@ -67,7 +68,6 @@ public class KrakenMinigame : Minigames
         Vector3 krakenPos = boatMovement.transform.position;
 
         krakenInstance = Instantiate(kraken, krakenPos, boatMovement.transform.rotation);
-        Debug.Log("krakeninstance" + krakenInstance);
 
         if (krakenInstance.transform.childCount != 2)
         {
@@ -97,17 +97,21 @@ public class KrakenMinigame : Minigames
             );
             var tentacle = child.AddComponent<Tentacle>();
             tentacle.hpBar = hpBarInst;
-            if (i == 0)
-            {
-                actionButtonInst.GetComponent<Image>().sprite = inputIcons.currentInputDevice.buttonWest;
-            }
-            else
-            {
-                actionButtonInst.GetComponent<Image>().sprite = inputIcons.currentInputDevice.buttonEast;
-            }
             tentacle.actionButton = actionButtonInst;
             hpBarInst.GetComponent<Image>().fillAmount = tentacle.hp / tentacle.maxHp;
             tentacles.Add(tentacle);
+        }
+        
+        for (int i = 0; i < tentacles.Count; i++)
+        {
+            if (i == 0)
+            {
+                tentacles[i].actionButton.GetComponent<Image>().sprite = inputIcons.currentInputDevice.buttonWest;
+            }
+            else
+            {
+                tentacles[i].actionButton.GetComponent<Image>().sprite = inputIcons.currentInputDevice.buttonEast;
+            }
         }
     }
 
@@ -164,6 +168,21 @@ public class KrakenMinigame : Minigames
         {
             StopMinigame();
             Destroy(krakenInstance);
+        }
+    }
+
+    private void UpdateIcons()
+    {
+        for (int i = 0; i < tentacles.Count; i++)
+        {
+            if (i == 0)
+            {
+                tentacles[i].actionButton.GetComponent<Image>().sprite = inputIcons.currentInputDevice.buttonWest;
+            }
+            else
+            {
+                tentacles[i].actionButton.GetComponent<Image>().sprite = inputIcons.currentInputDevice.buttonEast;
+            }
         }
     }
 }

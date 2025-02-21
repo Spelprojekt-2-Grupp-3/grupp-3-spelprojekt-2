@@ -24,12 +24,12 @@ public class CurrentInputIcons : ScriptableObject
         Events.checkInputEvent.RemoveListener(ChangeInputDevice);
     }
 
-    public void ChangeInputDevice(PlayerInput sentInputDevice)
+    private void ChangeInputDevice(PlayerInput sentInputDevice)
     {
-        Debug.Log(sentInputDevice.currentControlScheme);
         string deviceName = "";
         if (sentInputDevice.currentControlScheme.ToLower().Contains("keyboard"))
         {
+            deviceName = "Keyboard";
             currentInputDevice = keyboard;
             Debug.Log(deviceName);
         }
@@ -44,9 +44,11 @@ public class CurrentInputIcons : ScriptableObject
             }
             else
             {
+                currentInputDevice = xbox;
                 Debug.Log("Prob xbox");
             }
         }
+        Events.updateIcons?.Invoke();
     }
 }
 
@@ -54,8 +56,10 @@ public class CurrentInputIcons : ScriptableObject
 public class CurrentInputDevice
 {
     public Sprite moveSprite;
+    public Sprite moveCameraSprite;
     public Sprite interactSprite;
     public Sprite gasSprite;
+    public Sprite boostSprite;
     public Sprite reverseSprite;
     public Sprite buttonSouth;
     public Sprite buttonNorth;
