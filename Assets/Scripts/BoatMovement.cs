@@ -133,7 +133,7 @@ public class BoatMovement : MonoBehaviour
             {
                 Debug.Log(deviceName);
             }
-            else if (deviceName.Contains("Xbox"))
+            else
             {
                 Debug.Log(deviceName);
             }
