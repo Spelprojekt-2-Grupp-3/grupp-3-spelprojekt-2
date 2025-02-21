@@ -129,13 +129,16 @@ public class BoatMovement : MonoBehaviour
         if (input.currentControlScheme == "Gamepad")
         {
             string deviceName = Gamepad.current.description.product;
+            string manufacturer = Gamepad.current.description.manufacturer;
             if (deviceName.Contains("DualSense"))
             {
                 Debug.Log(deviceName);
+                Debug.Log(manufacturer);
             }
             else
             {
                 Debug.Log(deviceName);
+                Debug.Log(manufacturer);
             }
         }
     }
