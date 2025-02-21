@@ -126,6 +126,17 @@ public class BoatMovement : MonoBehaviour
 
     private void ChangeDevice(PlayerInput input)
     {
-        Debug.Log(input.currentControlScheme);
+        if (input.currentControlScheme == "Gamepad")
+        {
+            string deviceName = Gamepad.current.description.product;
+            if (deviceName.Contains("DualSense"))
+            {
+                Debug.Log(deviceName);
+            }
+            else if (deviceName.Contains("Xbox"))
+            {
+                Debug.Log(deviceName);
+            }
+        }
     }
 }
