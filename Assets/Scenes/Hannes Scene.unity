@@ -565,6 +565,16 @@ PrefabInstance:
       propertyPath: boatSoundEvent.Guid.Data4
       value: -935636229
       objectReference: {fileID: 0}
+    - target: {fileID: 4191074751727839792, guid: 3c99b2349eddffe43ab0303c65e0f0ec,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 180277990}
+    - target: {fileID: 4191074751727839792, guid: 3c99b2349eddffe43ab0303c65e0f0ec,
+        type: 3}
+      propertyPath: m_UIInputModule
+      value: 
+      objectReference: {fileID: 947331570}
     - target: {fileID: 5030653476263118679, guid: 3c99b2349eddffe43ab0303c65e0f0ec,
         type: 3}
       propertyPath: m_LocalScale.x

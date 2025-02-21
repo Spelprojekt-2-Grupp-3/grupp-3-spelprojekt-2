@@ -32,11 +32,13 @@ public class BoatMovement : MonoBehaviour
     private InputAction look;
     private int moveDirection;
     private Rigidbody rb;
+    private PlayerInput playerInput;
     
     
     private void Awake()
     {
         playerControls = new PlayerInputActions();
+        playerInput = GetComponent<PlayerInput>();
         moveSpeed = baseMoveSpeed;
     }
 
@@ -50,6 +52,7 @@ public class BoatMovement : MonoBehaviour
         look.Enable();
         Events.startBoat.AddListener(AllowMovement);
         Events.stopBoat.AddListener(DisallowMovement);
+        playerInput.onControlsChanged += ChangeDevice;
     }
 
     private void OnDisable()
@@ -58,6 +61,7 @@ public class BoatMovement : MonoBehaviour
         gas.Disable();
         Events.startBoat.RemoveListener(AllowMovement);
         Events.stopBoat.RemoveListener(DisallowMovement);
+        playerInput.onControlsChanged -= ChangeDevice;
     }
 
     void Start()
@@ -118,5 +122,10 @@ public class BoatMovement : MonoBehaviour
     {
         move.Disable();
         gas.Disable();
+    }
+
+    private void ChangeDevice(PlayerInput input)
+    {
+        Debug.Log(input.currentControlScheme);
     }
 }
