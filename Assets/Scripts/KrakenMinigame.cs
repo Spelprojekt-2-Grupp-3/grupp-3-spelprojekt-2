@@ -23,12 +23,13 @@ public class KrakenMinigame : Minigames
     private GameObject hpBar;
 
     [SerializeField]
-    private GameObject[] actionButton;
+    private GameObject actionButton;
     private List<Tentacle> tentacles = new List<Tentacle>();
     private Camera camera;
     private PlayerInputActions playerControls;
     private InputAction minigame;
     private GameObject krakenInstance;
+    [SerializeField] private CurrentInputIcons inputIcons;
 
     private BoatMovement boatMovement;
 
@@ -89,13 +90,21 @@ public class KrakenMinigame : Minigames
                 canvasInst.transform
             );
             var actionButtonInst = Instantiate(
-                actionButton[i],
+                actionButton,
                 actionButtonPos,
-                actionButton[i].transform.rotation,
+                actionButton.transform.rotation,
                 canvasInst.transform
             );
             var tentacle = child.AddComponent<Tentacle>();
             tentacle.hpBar = hpBarInst;
+            if (i == 0)
+            {
+                actionButtonInst.GetComponent<Image>().sprite = inputIcons.currentInputDevice.buttonWest;
+            }
+            else
+            {
+                actionButtonInst.GetComponent<Image>().sprite = inputIcons.currentInputDevice.buttonEast;
+            }
             tentacle.actionButton = actionButtonInst;
             hpBarInst.GetComponent<Image>().fillAmount = tentacle.hp / tentacle.maxHp;
             tentacles.Add(tentacle);
@@ -126,10 +135,14 @@ public class KrakenMinigame : Minigames
             tentacles[i].hpBar.transform.LookAt(camera.transform.position);
             tentacles[i].actionButton.transform.position = new Vector3(
                 tentacles[i].transform.position.x,
-                tentacles[i].transform.position.y + 10,
+                tentacles[i].transform.position.y + 12,
                 tentacles[i].transform.position.z
             );
             tentacles[i].actionButton.transform.LookAt(camera.transform.position);
+            var euler = tentacles[i].actionButton.transform.localEulerAngles;
+            euler.x += 45;
+            euler.y -= 180;
+            tentacles[i].actionButton.transform.rotation = Quaternion.Euler(euler);
         }
 
         if (minigame.WasPerformedThisFrame())

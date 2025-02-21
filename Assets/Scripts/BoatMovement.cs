@@ -34,7 +34,6 @@ public class BoatMovement : MonoBehaviour
     private Rigidbody rb;
     private PlayerInput playerInput;
     
-    
     private void Awake()
     {
         playerControls = new PlayerInputActions();
@@ -126,20 +125,6 @@ public class BoatMovement : MonoBehaviour
 
     private void ChangeDevice(PlayerInput input)
     {
-        if (input.currentControlScheme == "Gamepad")
-        {
-            string deviceName = Gamepad.current.description.product;
-            string manufacturer = Gamepad.current.description.manufacturer;
-            if (deviceName.Contains("DualSense"))
-            {
-                Debug.Log(deviceName);
-                Debug.Log(manufacturer);
-            }
-            else
-            {
-                Debug.Log(deviceName);
-                Debug.Log(manufacturer);
-            }
-        }
+        Events.checkInputEvent?.Invoke(input);
     }
 }
