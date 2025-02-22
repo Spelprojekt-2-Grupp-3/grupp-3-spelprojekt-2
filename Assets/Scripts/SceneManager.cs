@@ -10,31 +10,33 @@ using UnityEngine.EventSystems;
 public class SceneManager : MonoBehaviour
 {
     private string s = "";
-    private PlayerInputActions playerInput;
+    private PlayerInputActions playerInputActions;
     private InputAction navigate;
     private InputDevice inputDevice;
     [SerializeField] private GameObject firstSelected;
     [SerializeField] private GameObject credits;
     [SerializeField] private GameObject exit;
     private InputDevice previousDevice = null;
+    private PlayerInput playerInput;
 
     private void Awake()
     {
-        playerInput = new PlayerInputActions();
+        playerInputActions = new PlayerInputActions();
+        playerInput = GetComponent<PlayerInput>();
         EventSystem.current.SetSelectedGameObject(null);
     }
 
     private void OnEnable()
     {
-        navigate = playerInput.UI.Navigate;
+        navigate = playerInputActions.UI.Navigate;
         navigate.Enable();
-        navigate.performed += CheckInputDevice;
+        playerInput.onControlsChanged += CheckInputDevice;
     }
 
     private void OnDisable()
     {
         navigate.Disable();
-        navigate.performed -= CheckInputDevice;
+        playerInput.onControlsChanged -= CheckInputDevice;
     }
     
     public void Load(string s)
@@ -63,18 +65,13 @@ public class SceneManager : MonoBehaviour
         tmp.GetComponent<TextMeshProUGUI>().text = s;
     }
 
-    private void CheckInputDevice(InputAction.CallbackContext context)
+    private void CheckInputDevice(PlayerInput input)
     {
-        if (Mouse.current != null && 
-            (Mouse.current.leftButton.wasPressedThisFrame ||
-             Mouse.current.rightButton.wasPressedThisFrame ||
-             Mouse.current.middleButton.wasPressedThisFrame ||
-             Mouse.current.delta.ReadValue() != Vector2.zero)) // Detect movement
+        if (input.currentControlScheme.ToLower().Contains("mouse"))
         {
             EventSystem.current.SetSelectedGameObject(null);
         }
-        else if (EventSystem.current.currentSelectedGameObject == null && Gamepad.current != null &&
-                 Gamepad.current.leftStick.ReadValue() != Vector2.zero)
+        else
         {
             EventSystem.current.SetSelectedGameObject(firstSelected);
         }

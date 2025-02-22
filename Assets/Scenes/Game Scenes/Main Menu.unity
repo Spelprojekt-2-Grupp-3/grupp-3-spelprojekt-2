@@ -363,10 +363,45 @@ PrefabInstance:
         art by:\nSara\n\n3D art by:\nLina\n\nAnimation by;\nMax\n\nTech Art by:\nMax\n\nArt
         Lead: \nLine\n\nProject Lead:\nMax\n\nProject Manager:\nLoke"
       objectReference: {fileID: 0}
+    - target: {fileID: 2514437087394831685, guid: cb739613743c4bc408f55638fb0d1ea4,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -798
+      objectReference: {fileID: 0}
+    - target: {fileID: 2514437087394831685, guid: cb739613743c4bc408f55638fb0d1ea4,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 227.00005
+      objectReference: {fileID: 0}
     - target: {fileID: 2981456185626184178, guid: cb739613743c4bc408f55638fb0d1ea4,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
       value: Intro Scene
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023241864407062381, guid: cb739613743c4bc408f55638fb0d1ea4,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -798
+      objectReference: {fileID: 0}
+    - target: {fileID: 4023241864407062381, guid: cb739613743c4bc408f55638fb0d1ea4,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 347
+      objectReference: {fileID: 0}
+    - target: {fileID: 4988185577686041671, guid: cb739613743c4bc408f55638fb0d1ea4,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1406196163}
+    - target: {fileID: 4988185577686041671, guid: cb739613743c4bc408f55638fb0d1ea4,
+        type: 3}
+      propertyPath: m_UIInputModule
+      value: 
+      objectReference: {fileID: 199998674}
+    - target: {fileID: 4988185577686041671, guid: cb739613743c4bc408f55638fb0d1ea4,
+        type: 3}
+      propertyPath: m_DefaultActionMap
+      value: 06e7e9f8-86a4-4161-9d72-3aadc97b4054
       objectReference: {fileID: 0}
     - target: {fileID: 5699981413655980266, guid: cb739613743c4bc408f55638fb0d1ea4,
         type: 3}
@@ -467,6 +502,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7233251949848599628, guid: cb739613743c4bc408f55638fb0d1ea4,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -798
+      objectReference: {fileID: 0}
+    - target: {fileID: 7233251949848599628, guid: cb739613743c4bc408f55638fb0d1ea4,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 287.00006
       objectReference: {fileID: 0}
     - target: {fileID: 8910569189690870689, guid: cb739613743c4bc408f55638fb0d1ea4,
         type: 3}

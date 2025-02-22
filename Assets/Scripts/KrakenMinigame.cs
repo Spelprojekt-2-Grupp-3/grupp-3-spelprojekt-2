@@ -161,6 +161,12 @@ public class KrakenMinigame : Minigames
                     tentacles[1].hp -= 1;
                     tentacles[1].UpdateHealthBar(tentacles[1]);
                     break;
+                case Vector2 v when (v.x == 0):
+                    tentacles[0].hp -= 1;
+                    tentacles[0].UpdateHealthBar(tentacles[0]);
+                    tentacles[1].hp -= 1;
+                    tentacles[1].UpdateHealthBar(tentacles[1]);
+                    break;
             }
         }
 
