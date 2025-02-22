@@ -27,7 +27,8 @@ public class KrakenMinigame : Minigames
     private List<Tentacle> tentacles = new List<Tentacle>();
     private Camera camera;
     private PlayerInputActions playerControls;
-    private InputAction minigame;
+    private InputAction minigameButtonWest;
+    private InputAction minigameButtonEast;
     private GameObject krakenInstance;
     [SerializeField] private CurrentInputIcons inputIcons;
 
@@ -35,14 +36,17 @@ public class KrakenMinigame : Minigames
 
     private void OnEnable()
     {
-        minigame = playerControls.Boat.Minigame;
-        minigame.Enable();
         Events.updateIcons.AddListener(UpdateIcons);
+        minigameButtonWest = playerControls.Boat.MinigameButtonWest;
+        minigameButtonWest.Enable();
+        minigameButtonEast = playerControls.Boat.MinigameButtonEast;
+        minigameButtonEast.Enable();
     }
 
     private void OnDisable()
     {
-        minigame.Disable();
+        minigameButtonWest.Disable();
+        minigameButtonEast.Disable();
     }
 
     private void Awake()
@@ -52,15 +56,12 @@ public class KrakenMinigame : Minigames
 
     private void Start()
     {
-        camera = Camera.main;
         boatMovement = FindObjectOfType<BoatMovement>();
-        //StartMinigame();
     }
 
     public override void StartMinigame()
     {
         camera = Camera.main;
-        //  Events.stopBoat?.Invoke();
         var canvasInst = Instantiate(canvas);
         canvasInst.GetComponent<Canvas>().worldCamera = camera;
 
@@ -78,7 +79,6 @@ public class KrakenMinigame : Minigames
         for (int i = 0; i < krakenInstance.transform.childCount; i++)
         {
             var child = krakenInstance.transform.GetChild(i);
-            //child.transform.LookAt(krakenPos);
             Vector3 barPos = child.transform.position;
             barPos.y += 5;
             Vector3 actionButtonPos = barPos;
@@ -101,18 +101,8 @@ public class KrakenMinigame : Minigames
             hpBarInst.GetComponent<Image>().fillAmount = tentacle.hp / tentacle.maxHp;
             tentacles.Add(tentacle);
         }
-        
-        for (int i = 0; i < tentacles.Count; i++)
-        {
-            if (i == 0)
-            {
-                tentacles[i].actionButton.GetComponent<Image>().sprite = inputIcons.currentInputDevice.buttonWest;
-            }
-            else
-            {
-                tentacles[i].actionButton.GetComponent<Image>().sprite = inputIcons.currentInputDevice.buttonEast;
-            }
-        }
+        tentacles[0].actionButton.GetComponent<Image>().sprite = inputIcons.currentInputDevice.buttonWest;
+        tentacles[1].actionButton.GetComponent<Image>().sprite = inputIcons.currentInputDevice.buttonEast;
     }
 
     public override void StopMinigame()
@@ -122,52 +112,37 @@ public class KrakenMinigame : Minigames
 
     private void Update()
     {
-        if (krakenInstance == null)
-        {
-            return;
-        }
+        if (krakenInstance is null) return;
         krakenInstance.transform.position = boatMovement.transform.position;
-        krakenInstance.transform.rotation = boatMovement.transform.rotation;
+        var camPos = camera.transform.position;
 
         for (int i = 0; i < tentacles.Count; i++)
         {
-            tentacles[i].hpBar.transform.position = new Vector3(
-                tentacles[i].transform.position.x,
-                tentacles[i].transform.position.y + 5,
-                tentacles[i].transform.position.z
-            );
-            tentacles[i].hpBar.transform.LookAt(camera.transform.position);
-            tentacles[i].actionButton.transform.position = new Vector3(
-                tentacles[i].transform.position.x,
-                tentacles[i].transform.position.y + 12,
-                tentacles[i].transform.position.z
-            );
-            tentacles[i].actionButton.transform.LookAt(camera.transform.position);
+            var tentaclePos = tentacles[i].transform.position;
+            Vector3 barPos = tentaclePos;
+            Vector3 actionBtnPos = tentaclePos;
+            barPos.y += 5;
+            actionBtnPos.y += 12;
+            tentacles[i].hpBar.transform.position = barPos;
+            tentacles[i].hpBar.transform.LookAt(camPos);
+            tentacles[i].actionButton.transform.position = actionBtnPos;
+            tentacles[i].actionButton.transform.LookAt(camPos);
             var euler = tentacles[i].actionButton.transform.localEulerAngles;
             euler.x += 45;
             euler.y -= 180;
             tentacles[i].actionButton.transform.rotation = Quaternion.Euler(euler);
         }
 
-        if (minigame.WasPerformedThisFrame())
+        if (minigameButtonWest.WasPressedThisFrame())
         {
-            switch (minigame.ReadValue<Vector2>())
-            {
-                case Vector2 v when (v.x < 0):
-                    tentacles[0].hp -= 1;
-                    tentacles[0].UpdateHealthBar(tentacles[0]);
-                    break;
-                case Vector2 v when (v.x > 0):
-                    tentacles[1].hp -= 1;
-                    tentacles[1].UpdateHealthBar(tentacles[1]);
-                    break;
-                case Vector2 v when (v.x == 0):
-                    tentacles[0].hp -= 1;
-                    tentacles[0].UpdateHealthBar(tentacles[0]);
-                    tentacles[1].hp -= 1;
-                    tentacles[1].UpdateHealthBar(tentacles[1]);
-                    break;
-            }
+            tentacles[0].hp -= 1;
+            tentacles[0].UpdateHealthBar(tentacles[0]);
+        }
+
+        if (minigameButtonEast.WasPerformedThisFrame())
+        {
+            tentacles[1].hp -= 1;
+            tentacles[1].UpdateHealthBar(tentacles[1]);
         }
 
         if (!tentacles[0].gameObject.activeSelf && !tentacles[1].gameObject.activeSelf)
@@ -204,26 +179,22 @@ public class Tentacle : MonoBehaviour
     {
         hp = maxHp;
     }
-
-    private Tentacle tentacoloses;
-
+    
     public void UpdateHealthBar(Tentacle tentacle)
     {
-        tentacoloses = tentacle;
-
         hpBar.GetComponent<Image>().fillAmount = (float)hp / maxHp;
-        if (hp <= 0)
+        if (hp <= 0 && gameObject.activeSelf)
         {
-            tentacoloses.hpBar.gameObject.SetActive(false);
-            tentacoloses.actionButton.gameObject.SetActive(false);
+            tentacle.hpBar.SetActive(false);
+            tentacle.actionButton.SetActive(false);
             Timer t = new Timer();
             GetComponent<Animator>().SetTrigger("Death");
-            StartCoroutine(t.ExecuteAfterTime(1.9f, cunt));
+            StartCoroutine(t.ExecuteAfterTime(1.9f, SetInactive));
         }
     }
 
-    private void cunt()
+    private void SetInactive()
     {
-        tentacoloses.gameObject.SetActive(false);
+        gameObject.SetActive(false);
     }
 }

@@ -297,9 +297,36 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Minigame"",
+                    ""name"": ""MinigameButtonWest"",
                     ""type"": ""Button"",
-                    ""id"": ""1361d867-40c9-4138-be23-0ef104b225ca"",
+                    ""id"": ""0597b41f-2a66-4e97-9d78-61f45576ca6a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MinigameButtonEast"",
+                    ""type"": ""Button"",
+                    ""id"": ""408218b2-f532-4be2-8373-102747eb492a"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MinigameButtonNorth"",
+                    ""type"": ""Button"",
+                    ""id"": ""0c7f13c8-b790-4a40-92a8-29bb5f4a79f6"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""MinigameButtonSouth"",
+                    ""type"": ""Button"",
+                    ""id"": ""40e28b9d-1dc3-466b-a9c4-15266c9895ee"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -539,158 +566,92 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""Keyboard"",
-                    ""id"": ""166e57bb-e7a1-47c6-bc82-f56699afd9a2"",
-                    ""path"": ""Dpad"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Minigame"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""cf9a1c80-bb42-4faa-83c4-e54903e04a10"",
-                    ""path"": ""<Keyboard>/w"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Minigame"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""ad30a73d-cb47-438e-8b97-a9de90e87788"",
-                    ""path"": ""<Keyboard>/upArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Minigame"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""80aa256a-9bd3-4f63-bcee-4915ce8fa5a2"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Minigame"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""563f02a7-117e-40de-9b26-dad39c103982"",
-                    ""path"": ""<Keyboard>/downArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Minigame"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""88b764c9-7ec0-4497-9290-28c5a03c4ddb"",
-                    ""path"": ""<Keyboard>/a"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Minigame"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""97e7ca3b-674f-4873-bf92-7e85234d8133"",
-                    ""path"": ""<Keyboard>/leftArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Minigame"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""99768f02-7a47-49c9-afff-892d2965526f"",
-                    ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Minigame"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""ac74affc-c723-4373-8e4b-5e3b76e4befe"",
-                    ""path"": ""<Keyboard>/rightArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Minigame"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Controller"",
-                    ""id"": ""365c7bbc-a035-432a-af0a-04720332861c"",
-                    ""path"": ""Dpad"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""Minigame"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""98af58b3-9ab4-4533-a6a1-af315091da5e"",
-                    ""path"": ""<Gamepad>/buttonNorth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Minigame"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""a121d705-1287-453d-8519-d416a42469d0"",
-                    ""path"": ""<Gamepad>/buttonSouth"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Minigame"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""50db29e2-ac13-4821-b69a-46db64cf2787"",
+                    ""name"": """",
+                    ""id"": ""24ac5e05-9084-4dbf-adf5-88fb0971a99d"",
                     ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Minigame"",
+                    ""groups"": """",
+                    ""action"": ""MinigameButtonWest"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
+                    ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""right"",
-                    ""id"": ""288b35de-998a-4f4b-a22a-e3bbbf7c212b"",
+                    ""name"": """",
+                    ""id"": ""17f93ade-bada-4eb4-8db4-d680627e19b7"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MinigameButtonWest"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8aab79e7-f860-4316-bb10-ccf5ba20acd4"",
                     ""path"": ""<Gamepad>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Minigame"",
+                    ""groups"": """",
+                    ""action"": ""MinigameButtonEast"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""408c5053-bd86-4dc4-8852-59b1ee65d9b5"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MinigameButtonEast"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""36b73808-de74-448c-8d04-19a4978f8e4d"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MinigameButtonNorth"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""db4191cd-8b65-4481-853d-86c5ccf67039"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MinigameButtonNorth"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""759da2d7-7b15-4668-8b9c-e8d55b86c0b3"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MinigameButtonSouth"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""86cf62c7-bbad-4c9a-b99b-e5318e762a62"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""MinigameButtonSouth"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -1345,7 +1306,10 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Boat_Move = m_Boat.FindAction("Move", throwIfNotFound: true);
         m_Boat_Gas = m_Boat.FindAction("Gas", throwIfNotFound: true);
         m_Boat_Look = m_Boat.FindAction("Look", throwIfNotFound: true);
-        m_Boat_Minigame = m_Boat.FindAction("Minigame", throwIfNotFound: true);
+        m_Boat_MinigameButtonWest = m_Boat.FindAction("MinigameButtonWest", throwIfNotFound: true);
+        m_Boat_MinigameButtonEast = m_Boat.FindAction("MinigameButtonEast", throwIfNotFound: true);
+        m_Boat_MinigameButtonNorth = m_Boat.FindAction("MinigameButtonNorth", throwIfNotFound: true);
+        m_Boat_MinigameButtonSouth = m_Boat.FindAction("MinigameButtonSouth", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1495,7 +1459,10 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Boat_Move;
     private readonly InputAction m_Boat_Gas;
     private readonly InputAction m_Boat_Look;
-    private readonly InputAction m_Boat_Minigame;
+    private readonly InputAction m_Boat_MinigameButtonWest;
+    private readonly InputAction m_Boat_MinigameButtonEast;
+    private readonly InputAction m_Boat_MinigameButtonNorth;
+    private readonly InputAction m_Boat_MinigameButtonSouth;
     public struct BoatActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -1503,7 +1470,10 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_Boat_Move;
         public InputAction @Gas => m_Wrapper.m_Boat_Gas;
         public InputAction @Look => m_Wrapper.m_Boat_Look;
-        public InputAction @Minigame => m_Wrapper.m_Boat_Minigame;
+        public InputAction @MinigameButtonWest => m_Wrapper.m_Boat_MinigameButtonWest;
+        public InputAction @MinigameButtonEast => m_Wrapper.m_Boat_MinigameButtonEast;
+        public InputAction @MinigameButtonNorth => m_Wrapper.m_Boat_MinigameButtonNorth;
+        public InputAction @MinigameButtonSouth => m_Wrapper.m_Boat_MinigameButtonSouth;
         public InputActionMap Get() { return m_Wrapper.m_Boat; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1522,9 +1492,18 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Look.started += instance.OnLook;
             @Look.performed += instance.OnLook;
             @Look.canceled += instance.OnLook;
-            @Minigame.started += instance.OnMinigame;
-            @Minigame.performed += instance.OnMinigame;
-            @Minigame.canceled += instance.OnMinigame;
+            @MinigameButtonWest.started += instance.OnMinigameButtonWest;
+            @MinigameButtonWest.performed += instance.OnMinigameButtonWest;
+            @MinigameButtonWest.canceled += instance.OnMinigameButtonWest;
+            @MinigameButtonEast.started += instance.OnMinigameButtonEast;
+            @MinigameButtonEast.performed += instance.OnMinigameButtonEast;
+            @MinigameButtonEast.canceled += instance.OnMinigameButtonEast;
+            @MinigameButtonNorth.started += instance.OnMinigameButtonNorth;
+            @MinigameButtonNorth.performed += instance.OnMinigameButtonNorth;
+            @MinigameButtonNorth.canceled += instance.OnMinigameButtonNorth;
+            @MinigameButtonSouth.started += instance.OnMinigameButtonSouth;
+            @MinigameButtonSouth.performed += instance.OnMinigameButtonSouth;
+            @MinigameButtonSouth.canceled += instance.OnMinigameButtonSouth;
         }
 
         private void UnregisterCallbacks(IBoatActions instance)
@@ -1538,9 +1517,18 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Look.started -= instance.OnLook;
             @Look.performed -= instance.OnLook;
             @Look.canceled -= instance.OnLook;
-            @Minigame.started -= instance.OnMinigame;
-            @Minigame.performed -= instance.OnMinigame;
-            @Minigame.canceled -= instance.OnMinigame;
+            @MinigameButtonWest.started -= instance.OnMinigameButtonWest;
+            @MinigameButtonWest.performed -= instance.OnMinigameButtonWest;
+            @MinigameButtonWest.canceled -= instance.OnMinigameButtonWest;
+            @MinigameButtonEast.started -= instance.OnMinigameButtonEast;
+            @MinigameButtonEast.performed -= instance.OnMinigameButtonEast;
+            @MinigameButtonEast.canceled -= instance.OnMinigameButtonEast;
+            @MinigameButtonNorth.started -= instance.OnMinigameButtonNorth;
+            @MinigameButtonNorth.performed -= instance.OnMinigameButtonNorth;
+            @MinigameButtonNorth.canceled -= instance.OnMinigameButtonNorth;
+            @MinigameButtonSouth.started -= instance.OnMinigameButtonSouth;
+            @MinigameButtonSouth.performed -= instance.OnMinigameButtonSouth;
+            @MinigameButtonSouth.canceled -= instance.OnMinigameButtonSouth;
         }
 
         public void RemoveCallbacks(IBoatActions instance)
@@ -1757,7 +1745,10 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnGas(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
-        void OnMinigame(InputAction.CallbackContext context);
+        void OnMinigameButtonWest(InputAction.CallbackContext context);
+        void OnMinigameButtonEast(InputAction.CallbackContext context);
+        void OnMinigameButtonNorth(InputAction.CallbackContext context);
+        void OnMinigameButtonSouth(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

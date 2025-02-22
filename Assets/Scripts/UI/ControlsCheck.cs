@@ -12,6 +12,11 @@ public class ControlsCheck : MonoBehaviour
     [SerializeField] private GameObject gasControls;
     [SerializeField] private CurrentInputIcons inputIcons;
 
+    private void Awake()
+    {
+        UpdateIcons();
+    }
+
     private void OnEnable()
     {
         Events.updateIcons.AddListener(UpdateIcons);
