@@ -16,6 +16,7 @@ public class Events : MonoBehaviour
     public static UnityEvent stopBoat = new UnityEvent();
     public static UnityEvent updateIcons = new UnityEvent();
     public static CheckInputEvent checkInputEvent = new CheckInputEvent();
+    public static UnityEvent updateBoostMeter = new UnityEvent();
 
     private void OnEnable()
     {

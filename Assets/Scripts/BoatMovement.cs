@@ -16,7 +16,10 @@ public class BoatMovement : MonoBehaviour
     private float acceleration = 100;
     [SerializeField, Range(1, 100)] [Tooltip("Acceleration when reversing")]
     private float reverseAcceleration = 50;
-    
+
+    [SerializeField, Range(0f, 20f), Tooltip("Max duration for the boost in seconds")] private float maxBoostDuration;
+    [SerializeField, Range(0f, 1f), Tooltip("How many seconds of boost will get refilled in a second")] private float boostRefillPerSecond;
+    private float boostMeter;
     [SerializeField, Range(0f, 100f), Tooltip("Rotationspeed")] private float rotationSpeed = 1f;
     [SerializeField, Range(0f, 2500f)] private float maxSpeed = 2000f;
     [SerializeField, Range(-1250, 0f)] private float maxReverseSpeed = 1000f;
@@ -24,13 +27,12 @@ public class BoatMovement : MonoBehaviour
     [SerializeField, Range(0, 90)] private int frontTiltAngle = 25;
     [SerializeField, Range(0f, 10f)] private float tiltSpeed = 1f;
     public FMODUnity.EventReference boatSoundEvent;
+
+    private bool fillMeter;
     
     private FMOD.Studio.EventInstance boatSound;
     private PlayerInputActions playerControls;
-    private InputAction move;
-    private InputAction gas;
-    private InputAction reverse;
-    private InputAction look;
+    private InputAction move, gas, reverse, boost, look;
     private int moveDirection;
     private Rigidbody rb;
     private PlayerInput playerInput;
@@ -40,6 +42,8 @@ public class BoatMovement : MonoBehaviour
         playerControls = new PlayerInputActions();
         playerInput = GetComponent<PlayerInput>();
         moveSpeed = 0;
+        boostMeter = maxBoostDuration;
+        fillMeter = false;
     }
 
     private void OnEnable()
@@ -50,6 +54,8 @@ public class BoatMovement : MonoBehaviour
         gas.Enable();
         reverse = playerControls.Boat.Reverse;
         reverse.Enable();
+        boost = playerControls.Boat.Boost;
+        boost.Enable();
         look = playerControls.Boat.Look;
         look.Enable();
         Events.startBoat.AddListener(AllowMovement);
@@ -63,6 +69,7 @@ public class BoatMovement : MonoBehaviour
         move.Disable();
         gas.Disable();
         reverse.Disable();
+        boost.Disable();
         Events.startBoat.RemoveListener(AllowMovement);
         Events.stopBoat.RemoveListener(DisallowMovement);
         playerInput.onControlsChanged -= ChangeDevice;
@@ -78,12 +85,34 @@ public class BoatMovement : MonoBehaviour
     void Update()
     {
         boatSound.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject, rb));
-        if (gas.inProgress && !reverse.inProgress)
+        if (!boost.inProgress || boostMeter < 0f) fillMeter = true;
+        
+        if (boost.inProgress && boostMeter > Time.deltaTime)
         {
-            moveSpeed += acceleration * gas.ReadValue<float>() * Time.deltaTime;
-            if (moveSpeed > maxSpeed)
+            fillMeter = false;
+            boostMeter -= Time.deltaTime;
+            Events.updateBoostMeter?.Invoke();
+            moveSpeed += acceleration * 4 * Time.deltaTime;
+            if (moveSpeed > maxSpeed * 3)
             {
-                moveSpeed = maxSpeed;
+                moveSpeed = maxSpeed * 3;
+            }
+
+            if (boostMeter < 0f)
+            {
+                fillMeter = true;
+            }
+        }
+        
+        else if (gas.inProgress && !reverse.inProgress)
+        {
+            if (moveSpeed < maxSpeed)
+            {
+                moveSpeed += acceleration * gas.ReadValue<float>() * Time.deltaTime;
+            }
+            else
+            {
+                moveSpeed = Mathf.Lerp(moveSpeed, maxSpeed, 0.8f * Time.deltaTime);
             }
         }
         else if (reverse.inProgress && !gas.inProgress)
@@ -96,8 +125,17 @@ public class BoatMovement : MonoBehaviour
         }
         else
         {
-            //moveSpeed -= acceleration * Time.deltaTime;
-            moveSpeed = Mathf.Lerp(moveSpeed, 0, acceleration * Time.deltaTime);
+            moveSpeed = Mathf.Lerp(moveSpeed, 0, 0.8f * Time.deltaTime);
+        }
+
+        if (fillMeter)
+        {
+            boostMeter += Time.deltaTime * boostRefillPerSecond;
+            Events.updateBoostMeter?.Invoke();
+            if (boostMeter > maxBoostDuration)
+            {
+                boostMeter = maxBoostDuration;
+            }
         }
         float boatSpeed = moveSpeed * 15 / maxSpeed;
         boatSound.setParameterByName("Speed", boatSpeed);
@@ -107,14 +145,19 @@ public class BoatMovement : MonoBehaviour
     {
         Vector3 euler = transform.localEulerAngles;
 
-        float targetAngleX = moveSpeed * frontTiltAngle / maxSpeed;
+        float tiltMoveSpeed = moveSpeed;
+        if (tiltMoveSpeed > maxSpeed)
+        {
+            tiltMoveSpeed = maxSpeed;
+        }
+        float targetAngleX = tiltMoveSpeed * frontTiltAngle / maxSpeed;
         float targetRot = -targetAngleX;
         euler.x = Mathf.LerpAngle(euler.x, targetRot, tiltSpeed*Time.deltaTime);
 
         float targetRotationSpeed = moveSpeed * rotationSpeed / maxSpeed;
         euler.y += targetRotationSpeed * move.ReadValue<Vector2>().x;
 
-        float targetAngleZ = -moveSpeed * sideTiltAngle * move.ReadValue<Vector2>().x / maxSpeed;
+        float targetAngleZ = -tiltMoveSpeed * sideTiltAngle * move.ReadValue<Vector2>().x / maxSpeed;
         euler.z = Mathf.LerpAngle(euler.z, targetAngleZ, tiltSpeed * Time.deltaTime);
         rb.rotation = Quaternion.Euler(euler);
         

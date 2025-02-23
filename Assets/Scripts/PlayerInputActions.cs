@@ -297,6 +297,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
+                    ""name"": ""Boost"",
+                    ""type"": ""Button"",
+                    ""id"": ""88318c70-930e-4f42-b33f-76ade71dd323"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""Look"",
                     ""type"": ""Value"",
                     ""id"": ""20d7eb05-7da8-4fe7-87ea-2b8d57086dd4"",
@@ -637,6 +646,28 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Reverse"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e83fcf28-c0a4-4252-ada7-6ff0b9f8caf8"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Boost"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""4e0d8f81-e41d-47b5-ba53-57e109312986"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Boost"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1293,6 +1324,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Boat_Move = m_Boat.FindAction("Move", throwIfNotFound: true);
         m_Boat_Gas = m_Boat.FindAction("Gas", throwIfNotFound: true);
         m_Boat_Reverse = m_Boat.FindAction("Reverse", throwIfNotFound: true);
+        m_Boat_Boost = m_Boat.FindAction("Boost", throwIfNotFound: true);
         m_Boat_Look = m_Boat.FindAction("Look", throwIfNotFound: true);
         m_Boat_MinigameButtonWest = m_Boat.FindAction("MinigameButtonWest", throwIfNotFound: true);
         m_Boat_MinigameButtonEast = m_Boat.FindAction("MinigameButtonEast", throwIfNotFound: true);
@@ -1447,6 +1479,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Boat_Move;
     private readonly InputAction m_Boat_Gas;
     private readonly InputAction m_Boat_Reverse;
+    private readonly InputAction m_Boat_Boost;
     private readonly InputAction m_Boat_Look;
     private readonly InputAction m_Boat_MinigameButtonWest;
     private readonly InputAction m_Boat_MinigameButtonEast;
@@ -1459,6 +1492,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_Boat_Move;
         public InputAction @Gas => m_Wrapper.m_Boat_Gas;
         public InputAction @Reverse => m_Wrapper.m_Boat_Reverse;
+        public InputAction @Boost => m_Wrapper.m_Boat_Boost;
         public InputAction @Look => m_Wrapper.m_Boat_Look;
         public InputAction @MinigameButtonWest => m_Wrapper.m_Boat_MinigameButtonWest;
         public InputAction @MinigameButtonEast => m_Wrapper.m_Boat_MinigameButtonEast;
@@ -1482,6 +1516,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Reverse.started += instance.OnReverse;
             @Reverse.performed += instance.OnReverse;
             @Reverse.canceled += instance.OnReverse;
+            @Boost.started += instance.OnBoost;
+            @Boost.performed += instance.OnBoost;
+            @Boost.canceled += instance.OnBoost;
             @Look.started += instance.OnLook;
             @Look.performed += instance.OnLook;
             @Look.canceled += instance.OnLook;
@@ -1510,6 +1547,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Reverse.started -= instance.OnReverse;
             @Reverse.performed -= instance.OnReverse;
             @Reverse.canceled -= instance.OnReverse;
+            @Boost.started -= instance.OnBoost;
+            @Boost.performed -= instance.OnBoost;
+            @Boost.canceled -= instance.OnBoost;
             @Look.started -= instance.OnLook;
             @Look.performed -= instance.OnLook;
             @Look.canceled -= instance.OnLook;
@@ -1741,6 +1781,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnGas(InputAction.CallbackContext context);
         void OnReverse(InputAction.CallbackContext context);
+        void OnBoost(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
         void OnMinigameButtonWest(InputAction.CallbackContext context);
         void OnMinigameButtonEast(InputAction.CallbackContext context);
