@@ -96,6 +96,8 @@ public class KrakenMinigame : Minigames
                 canvasInst.transform
             );
             var tentacle = child.AddComponent<Tentacle>();
+            tentacle.maxHp = krakenDifficulty.hp;
+            tentacle.regenPerSecond = krakenDifficulty.regenPerSecond;
             tentacle.hpBar = hpBarInst;
             tentacle.actionButton = actionButtonInst;
             hpBarInst.GetComponent<Image>().fillAmount = tentacle.hp / tentacle.maxHp;
@@ -112,9 +114,22 @@ public class KrakenMinigame : Minigames
 
     private void Update()
     {
-        if (krakenInstance is null) return;
+        if (krakenInstance is null)
+        {
+            return;
+        }
         krakenInstance.transform.position = boatMovement.transform.position;
         var camPos = camera.transform.position;
+        
+        if (minigameButtonWest.WasPressedThisFrame())
+        {
+            tentacles[0].hp -= 1;
+        }
+
+        if (minigameButtonEast.WasPerformedThisFrame())
+        {
+            tentacles[1].hp -= 1;
+        }
 
         for (int i = 0; i < tentacles.Count; i++)
         {
@@ -131,24 +146,15 @@ public class KrakenMinigame : Minigames
             euler.x += 45;
             euler.y -= 180;
             tentacles[i].actionButton.transform.rotation = Quaternion.Euler(euler);
-        }
-
-        if (minigameButtonWest.WasPressedThisFrame())
-        {
-            tentacles[0].hp -= 1;
-            tentacles[0].UpdateHealthBar(tentacles[0]);
-        }
-
-        if (minigameButtonEast.WasPerformedThisFrame())
-        {
-            tentacles[1].hp -= 1;
-            tentacles[1].UpdateHealthBar(tentacles[1]);
+            tentacles[i].hp += tentacles[i].regenPerSecond * Time.deltaTime;
+            tentacles[i].UpdateHealthBar(tentacles[i]);
         }
 
         if (!tentacles[0].gameObject.activeSelf && !tentacles[1].gameObject.activeSelf)
         {
             StopMinigame();
-            Destroy(krakenInstance);
+            DestroyImmediate(krakenInstance);
+            DestroyImmediate(gameObject);
         }
     }
 
@@ -170,19 +176,20 @@ public class KrakenMinigame : Minigames
 
 public class Tentacle : MonoBehaviour
 {
-    public int maxHp = 15;
-    public int hp;
-    public GameObject hpBar;
-    public GameObject actionButton;
+    public float maxHp;
+    public float hp;
+    public float regenPerSecond;
+    [HideInInspector] public GameObject hpBar;
+    [HideInInspector] public GameObject actionButton;
 
-    private void Awake()
+    private void Start()
     {
         hp = maxHp;
     }
     
     public void UpdateHealthBar(Tentacle tentacle)
     {
-        hpBar.GetComponent<Image>().fillAmount = (float)hp / maxHp;
+        hpBar.GetComponent<Image>().fillAmount = hp / maxHp;
         if (hp <= 0 && gameObject.activeSelf)
         {
             tentacle.hpBar.SetActive(false);
@@ -190,6 +197,10 @@ public class Tentacle : MonoBehaviour
             Timer t = new Timer();
             GetComponent<Animator>().SetTrigger("Death");
             StartCoroutine(t.ExecuteAfterTime(1.9f, SetInactive));
+        }
+        else if (hp > maxHp)
+        {
+            hp = maxHp;
         }
     }
 
