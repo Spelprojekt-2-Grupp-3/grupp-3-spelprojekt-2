@@ -619,31 +619,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1862584212627316059, guid: 3c99b2349eddffe43ab0303c65e0f0ec,
-        type: 3}
-      propertyPath: boatSoundEvent.Path
-      value: event:/Sound/SFX/Engine
-      objectReference: {fileID: 0}
-    - target: {fileID: 1862584212627316059, guid: 3c99b2349eddffe43ab0303c65e0f0ec,
-        type: 3}
-      propertyPath: boatSoundEvent.Guid.Data1
-      value: -1194958024
-      objectReference: {fileID: 0}
-    - target: {fileID: 1862584212627316059, guid: 3c99b2349eddffe43ab0303c65e0f0ec,
-        type: 3}
-      propertyPath: boatSoundEvent.Guid.Data2
-      value: 1340215152
-      objectReference: {fileID: 0}
-    - target: {fileID: 1862584212627316059, guid: 3c99b2349eddffe43ab0303c65e0f0ec,
-        type: 3}
-      propertyPath: boatSoundEvent.Guid.Data3
-      value: 154919050
-      objectReference: {fileID: 0}
-    - target: {fileID: 1862584212627316059, guid: 3c99b2349eddffe43ab0303c65e0f0ec,
-        type: 3}
-      propertyPath: boatSoundEvent.Guid.Data4
-      value: -935636229
-      objectReference: {fileID: 0}
     - target: {fileID: 4191074751727839792, guid: 3c99b2349eddffe43ab0303c65e0f0ec,
         type: 3}
       propertyPath: m_Camera

@@ -343,10 +343,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 726bc1c2d0558b84781d79126ef960ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMoveSpeed: 0
   acceleration: 100
+  reverseAcceleration: 50
   rotationSpeed: 1.5
   maxSpeed: 80
+  maxReverseSpeed: -40
   sideTiltAngle: 30
   frontTiltAngle: 0
   tiltSpeed: 3

@@ -11,15 +11,15 @@ using Debug = UnityEngine.Debug;
 [RequireComponent(typeof(Rigidbody), typeof(Animator), typeof(BuoyantObject))]
 public class BoatMovement : MonoBehaviour
 {
-    [SerializeField, Range(0, 100)] [Tooltip("Always slows down until at this value when not pressing the gas")] 
-    private float baseMoveSpeed = 10;
-    
     public float moveSpeed {get; private set; }
     [SerializeField, Range(1, 200)] [Tooltip("Acceleration")]
     private float acceleration = 100;
+    [SerializeField, Range(1, 100)] [Tooltip("Acceleration when reversing")]
+    private float reverseAcceleration = 50;
     
     [SerializeField, Range(0f, 100f), Tooltip("Rotationspeed")] private float rotationSpeed = 1f;
     [SerializeField, Range(0f, 2500f)] private float maxSpeed = 2000f;
+    [SerializeField, Range(-1250, 0f)] private float maxReverseSpeed = 1000f;
     [SerializeField, Range(0, 90)] private int sideTiltAngle = 25;
     [SerializeField, Range(0, 90)] private int frontTiltAngle = 25;
     [SerializeField, Range(0f, 10f)] private float tiltSpeed = 1f;
@@ -29,6 +29,7 @@ public class BoatMovement : MonoBehaviour
     private PlayerInputActions playerControls;
     private InputAction move;
     private InputAction gas;
+    private InputAction reverse;
     private InputAction look;
     private int moveDirection;
     private Rigidbody rb;
@@ -38,7 +39,7 @@ public class BoatMovement : MonoBehaviour
     {
         playerControls = new PlayerInputActions();
         playerInput = GetComponent<PlayerInput>();
-        moveSpeed = baseMoveSpeed;
+        moveSpeed = 0;
     }
 
     private void OnEnable()
@@ -47,6 +48,8 @@ public class BoatMovement : MonoBehaviour
         move.Enable();
         gas = playerControls.Boat.Gas;
         gas.Enable();
+        reverse = playerControls.Boat.Reverse;
+        reverse.Enable();
         look = playerControls.Boat.Look;
         look.Enable();
         Events.startBoat.AddListener(AllowMovement);
@@ -59,6 +62,7 @@ public class BoatMovement : MonoBehaviour
     {
         move.Disable();
         gas.Disable();
+        reverse.Disable();
         Events.startBoat.RemoveListener(AllowMovement);
         Events.stopBoat.RemoveListener(DisallowMovement);
         playerInput.onControlsChanged -= ChangeDevice;
@@ -74,7 +78,7 @@ public class BoatMovement : MonoBehaviour
     void Update()
     {
         boatSound.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject, rb));
-        if (gas.inProgress)
+        if (gas.inProgress && !reverse.inProgress)
         {
             moveSpeed += acceleration * gas.ReadValue<float>() * Time.deltaTime;
             if (moveSpeed > maxSpeed)
@@ -82,10 +86,18 @@ public class BoatMovement : MonoBehaviour
                 moveSpeed = maxSpeed;
             }
         }
+        else if (reverse.inProgress && !gas.inProgress)
+        {
+            moveSpeed -= reverseAcceleration * reverse.ReadValue<float>() * Time.deltaTime;
+            if (moveSpeed < maxReverseSpeed)
+            {
+                moveSpeed = maxReverseSpeed;
+            }
+        }
         else
         {
-            moveSpeed -= acceleration * Time.deltaTime;
-            if (moveSpeed < baseMoveSpeed) moveSpeed = baseMoveSpeed;
+            //moveSpeed -= acceleration * Time.deltaTime;
+            moveSpeed = Mathf.Lerp(moveSpeed, 0, acceleration * Time.deltaTime);
         }
         float boatSpeed = moveSpeed * 15 / maxSpeed;
         boatSound.setParameterByName("Speed", boatSpeed);

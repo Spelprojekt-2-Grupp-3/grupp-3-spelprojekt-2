@@ -288,6 +288,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
+                    ""name"": ""Reverse"",
+                    ""type"": ""Button"",
+                    ""id"": ""68a8ca59-cdb3-4b6b-a2e8-99a981d64b72"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""Look"",
                     ""type"": ""Value"",
                     ""id"": ""20d7eb05-7da8-4fe7-87ea-2b8d57086dd4"",
@@ -355,50 +364,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Move"",
                     ""isComposite"": true,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""f7cbccc6-4160-4171-9b1f-13134e50972d"",
-                    ""path"": ""<Keyboard>/w"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""8032e404-75f0-4838-9d5e-4e1ce5ab65fa"",
-                    ""path"": ""<Keyboard>/upArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""0273037b-b4ad-468e-a7d0-b1ce637ff815"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""69ab2bad-66c9-4221-a807-c3735ca4e7c0"",
-                    ""path"": ""<Keyboard>/downArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Move"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
                 },
                 {
                     ""name"": ""left"",
@@ -480,7 +445,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""522ed4df-adf3-4ff4-8296-d9da342cf89d"",
-                    ""path"": ""<Keyboard>/shift"",
+                    ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
@@ -650,6 +615,28 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""MinigameButtonSouth"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""05ffdfe8-80ff-4861-bf50-db1136ebb326"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Reverse"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""587e42fc-f226-46c9-9f07-f43134e7159f"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Reverse"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1305,6 +1292,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Boat = asset.FindActionMap("Boat", throwIfNotFound: true);
         m_Boat_Move = m_Boat.FindAction("Move", throwIfNotFound: true);
         m_Boat_Gas = m_Boat.FindAction("Gas", throwIfNotFound: true);
+        m_Boat_Reverse = m_Boat.FindAction("Reverse", throwIfNotFound: true);
         m_Boat_Look = m_Boat.FindAction("Look", throwIfNotFound: true);
         m_Boat_MinigameButtonWest = m_Boat.FindAction("MinigameButtonWest", throwIfNotFound: true);
         m_Boat_MinigameButtonEast = m_Boat.FindAction("MinigameButtonEast", throwIfNotFound: true);
@@ -1458,6 +1446,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private List<IBoatActions> m_BoatActionsCallbackInterfaces = new List<IBoatActions>();
     private readonly InputAction m_Boat_Move;
     private readonly InputAction m_Boat_Gas;
+    private readonly InputAction m_Boat_Reverse;
     private readonly InputAction m_Boat_Look;
     private readonly InputAction m_Boat_MinigameButtonWest;
     private readonly InputAction m_Boat_MinigameButtonEast;
@@ -1469,6 +1458,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public BoatActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Boat_Move;
         public InputAction @Gas => m_Wrapper.m_Boat_Gas;
+        public InputAction @Reverse => m_Wrapper.m_Boat_Reverse;
         public InputAction @Look => m_Wrapper.m_Boat_Look;
         public InputAction @MinigameButtonWest => m_Wrapper.m_Boat_MinigameButtonWest;
         public InputAction @MinigameButtonEast => m_Wrapper.m_Boat_MinigameButtonEast;
@@ -1489,6 +1479,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Gas.started += instance.OnGas;
             @Gas.performed += instance.OnGas;
             @Gas.canceled += instance.OnGas;
+            @Reverse.started += instance.OnReverse;
+            @Reverse.performed += instance.OnReverse;
+            @Reverse.canceled += instance.OnReverse;
             @Look.started += instance.OnLook;
             @Look.performed += instance.OnLook;
             @Look.canceled += instance.OnLook;
@@ -1514,6 +1507,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @Gas.started -= instance.OnGas;
             @Gas.performed -= instance.OnGas;
             @Gas.canceled -= instance.OnGas;
+            @Reverse.started -= instance.OnReverse;
+            @Reverse.performed -= instance.OnReverse;
+            @Reverse.canceled -= instance.OnReverse;
             @Look.started -= instance.OnLook;
             @Look.performed -= instance.OnLook;
             @Look.canceled -= instance.OnLook;
@@ -1744,6 +1740,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     {
         void OnMove(InputAction.CallbackContext context);
         void OnGas(InputAction.CallbackContext context);
+        void OnReverse(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
         void OnMinigameButtonWest(InputAction.CallbackContext context);
         void OnMinigameButtonEast(InputAction.CallbackContext context);

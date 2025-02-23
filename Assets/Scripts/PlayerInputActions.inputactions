@@ -266,6 +266,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Reverse",
+                    "type": "Button",
+                    "id": "68a8ca59-cdb3-4b6b-a2e8-99a981d64b72",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Look",
                     "type": "Value",
                     "id": "20d7eb05-7da8-4fe7-87ea-2b8d57086dd4",
@@ -333,50 +342,6 @@
                     "action": "Move",
                     "isComposite": true,
                     "isPartOfComposite": false
-                },
-                {
-                    "name": "up",
-                    "id": "f7cbccc6-4160-4171-9b1f-13134e50972d",
-                    "path": "<Keyboard>/w",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "up",
-                    "id": "8032e404-75f0-4838-9d5e-4e1ce5ab65fa",
-                    "path": "<Keyboard>/upArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "0273037b-b4ad-468e-a7d0-b1ce637ff815",
-                    "path": "<Keyboard>/s",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "69ab2bad-66c9-4221-a807-c3735ca4e7c0",
-                    "path": "<Keyboard>/downArrow",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": true
                 },
                 {
                     "name": "left",
@@ -458,7 +423,7 @@
                 {
                     "name": "",
                     "id": "522ed4df-adf3-4ff4-8296-d9da342cf89d",
-                    "path": "<Keyboard>/shift",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
@@ -628,6 +593,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "MinigameButtonSouth",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "05ffdfe8-80ff-4861-bf50-db1136ebb326",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Reverse",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "587e42fc-f226-46c9-9f07-f43134e7159f",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Reverse",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
