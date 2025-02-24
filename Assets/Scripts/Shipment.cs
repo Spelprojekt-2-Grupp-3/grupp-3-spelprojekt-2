@@ -34,7 +34,7 @@ public class Shipment : MonoBehaviour, IClick
     {
         inventoryController = FindObjectOfType<InventoryController>();
         _player = FindObjectOfType<Player>();
-        if (inventoryController.InsertItem(packageData))
+        if (inventoryController.InsertNewItem(packageData))
         {
             Debug.Log("You have picked up a shipment!");
             _player.shipmentCount++;

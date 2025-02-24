@@ -46,7 +46,7 @@ public class InventoryController : MonoBehaviour
    private float actualCooldown;
    [SerializeField] private GameObject slotHighlightObject;
 
-   [SerializeField] private DialogueManager dialogueManager;
+   //[SerializeField] private DialogueManager dialogueManager;
    
    private void Awake()
    {
@@ -147,11 +147,12 @@ public class InventoryController : MonoBehaviour
        }
    }
    
+  
    /// <summary>
    /// Creates a Package based on packages List. It becomes the selectedPackage.
    /// </summary>
-   /// <param name="package">which package in the list should be generated</param>
-   public void CreateRandomItem()
+   /// <param name="recipient">A list of recipients</param>
+   public void CreateRandomItem(List<string> recipients)
    {
        if(selectedPackage!=null)
            return;
@@ -163,6 +164,7 @@ public class InventoryController : MonoBehaviour
        packageRectTransform.SetAsLastSibling();
        
        item.Set(packageTypes[Random.Range(0,packageTypes.Count)]);
+       item.packageData.recipient = recipients[Random.Range(0,recipients.Count)];
    }
 
    /// <summary>
@@ -199,7 +201,7 @@ public class InventoryController : MonoBehaviour
        {
            if (selectedGrid == null) { return;}
 
-           CreateRandomItem();  
+           CreateRandomItem(new List<string>());  
            if (shift.inProgress)
            {
                InventoryItem toInsert = selectedPackage;
@@ -358,30 +360,29 @@ public class InventoryController : MonoBehaviour
    }
    
    /// <summary>
-   /// old InsertItem, remains for dev purposes
+   /// Inserts item into grid
    /// </summary>
    /// <param name="itemToInsert">what item is attempted to be inserted</param>
    /// <returns>true if successful, false if not</returns>
-   bool InsertItem(InventoryItem itemToInsert)
+   public bool InsertItem(InventoryItem itemToInsert)
    {
-       Vector2Int? gridPos = selectedGrid.FindSpace(itemToInsert);
+       Vector2Int? gridPos = mainGrid.FindSpace(itemToInsert);
 
        if (gridPos == null)
        {
-           Destroy(itemToInsert.gameObject);
            return false;
        }
 
-       selectedGrid.PlaceItem(itemToInsert, gridPos.Value.x, gridPos.Value.y);
+       mainGrid.PlaceItem(itemToInsert, gridPos.Value.x, gridPos.Value.y);
        return true;
    }
    
    /// <summary>
-   /// Creates and inserts an item into the main inventory
+   /// Creates a new item and inserts it into the main inventory
    /// </summary>
    /// <param name="data">what data the created package should have</param>
    /// <returns>true if successful, false if not</returns>
-   public bool InsertItem(PackageData data)
+   public bool InsertNewItem(PackageData data)
    {
        CreateItem(data);
        

@@ -9,7 +9,7 @@ public class InventoryItem : MonoBehaviour
     public PackageData packageData;
 
     [HideInInspector] public Vector2Int onGridPosition;
-
+    
     internal void Set(PackageData data)
     {
         packageData = data;
@@ -20,14 +20,9 @@ public class InventoryItem : MonoBehaviour
         size.y = data.gridSize.y * ItemGrid.tileSizeHeight;
         GetComponent<RectTransform>().sizeDelta = size;
     }
-
-    /// <summary>
-    /// Only use this when using prefabs that includes InventoryItem
-    /// </summary>
-    public void OnPickup()
+    
+    public void Set()
     {
         Set(packageData);
-        
-        
     }
 }

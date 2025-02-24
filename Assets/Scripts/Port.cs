@@ -48,6 +48,7 @@ public class Port : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
+        //TODO: move these into dialogue system
         if (interact.WasPressedThisFrame() && other.GetComponent<Player>() && !hasBeenPickedUp && item!=null)
         {
             Pickup();
@@ -61,23 +62,34 @@ public class Port : MonoBehaviour
     void Pickup()
     {
         hasBeenPickedUp = true;
-        item.OnPickup();
-        //shipment.Pickup();
-        Debug.Log("added package");
+        item.Set();
+        if (inventoryController.InsertItem(item))
+        {
+            Debug.Log("added package");
+        }
+        else 
+            Debug.Log("Failed to insert, probably full");
     }
 
-    void Delivery()
+    bool Delivery()
     {
-        for (int i = 0; i < player.items.Count; i++)
+        bool success = false;
+        List<InventoryItem> toRemove = new List<InventoryItem>();
+        foreach (var item in player.items)
         {
-            foreach (var item in player.items)
+            if (item.packageData.recipient == Inhabitant)
             {
-                if (item.packageData.recipient == Inhabitant)
-                {
-                    player.items.Remove(item);
-                    inventoryController.mainGrid.RemoveItem(item);
-                }
+                toRemove.Add(item);
+                inventoryController.mainGrid.RemoveItem(item);
+                success = true;
             }
         }
+
+        foreach (var item in toRemove)
+        {
+            player.items.Remove(item);
+        }
+
+        return success;
     }
 }
