@@ -195,7 +195,7 @@ public class InventoryController : MonoBehaviour
        }
        
        //Dev thingies
-       if (middleClick.WasPressedThisFrame() && devving)
+       if (devving && middleClick.WasPressedThisFrame())
        {
            if (selectedGrid == null) { return;}
 

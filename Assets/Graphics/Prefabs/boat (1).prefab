@@ -175,6 +175,7 @@ GameObject:
   - component: {fileID: 7422248955742938948}
   - component: {fileID: 9223300789363573830}
   - component: {fileID: 4191074751727839792}
+  - component: {fileID: 3322766815813569387}
   m_Layer: 0
   m_Name: boat (1)
   m_TagString: Player
@@ -309,7 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd9ac3ef6a1f0f24ea6805a1d3aa8210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waterHeight: 11
+  waterHeight: 0
   shaderMaterial: {fileID: 2100000, guid: eb3a6ac3bbf1eff498ec8d5092ef397e, type: 2}
   steepness: 0
   wavelength: 0
@@ -322,7 +323,7 @@ MonoBehaviour:
   strength: 1
   objectDepth: 5.5
   velocityDrag: 0.99
-  angularDrag: 0.5
+  angularDrag: 10
   effectorParent: {fileID: 2632472968060114853}
   effectors:
   - {fileID: 0}
@@ -331,6 +332,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  scalarValue: 0.1
+  scalarThreshold: 2
 --- !u!114 &1862584212627316059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -345,6 +348,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   acceleration: 100
   reverseAcceleration: 50
+  maxBoostDuration: 0
+  boostRefillPerSecond: 0
   rotationSpeed: 1.5
   maxSpeed: 80
   maxReverseSpeed: -40
@@ -375,7 +380,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
@@ -521,6 +526,27 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!65 &3322766815813569387
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5892994079683017244}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 825.90704, y: 522.18665, z: 1503.1769}
+  m_Center: {x: 0, y: -175.49782, z: 0}
 --- !u!1 &6229892613891358901
 GameObject:
   m_ObjectHideFlags: 0
@@ -639,7 +665,7 @@ Transform:
   m_GameObject: {fileID: 7622492992936844442}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.7535365, z: -0, w: 0.6574061}
-  m_LocalPosition: {x: 0, y: -102, z: 0}
+  m_LocalPosition: {x: 0, y: -21, z: 0}
   m_LocalScale: {x: 30000.004, y: 30000, z: 30000.004}
   m_ConstrainProportionsScale: 0
   m_Children:

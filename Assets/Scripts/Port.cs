@@ -16,7 +16,8 @@ public class Port : MonoBehaviour
     private InventoryController inventoryController;
     private Player player;
 
-    [SerializeField, Tooltip("quest shipment or smth dunno yet")] private Shipment shipment;
+    //[SerializeField, Tooltip("quest shipment or smth dunno yet")] private Shipment shipment;
+    public InventoryItem item;
 
     private bool hasBeenPickedUp;
 
@@ -45,21 +46,13 @@ public class Port : MonoBehaviour
         interact.Disable();
     }
 
-    //private void OnTriggerStay(Collider other)
-    //{
-    //    if (other.GetComponent<BoatMovement>())
-    //    {
-    //        Delivery();
-    //    }
-    //}
-
     private void OnTriggerStay(Collider other)
     {
-        if (interact.WasPressedThisFrame() && other.GetComponent<BoatMovement>() && !hasBeenPickedUp && shipment!=null)
+        if (interact.WasPressedThisFrame() && other.GetComponent<Player>() && !hasBeenPickedUp && item!=null)
         {
             Pickup();
         }
-        else if (other.GetComponent<BoatMovement>())
+        else if (other.GetComponent<Player>())
         {
             Delivery();
         }
@@ -68,31 +61,23 @@ public class Port : MonoBehaviour
     void Pickup()
     {
         hasBeenPickedUp = true;
-        shipment.Pickup();
+        item.OnPickup();
+        //shipment.Pickup();
         Debug.Log("added package");
     }
 
     void Delivery()
     {
-
-        for (int i = 0; i < player.shipments.Count; i++)
+        for (int i = 0; i < player.items.Count; i++)
         {
-            if (player.shipments[i].packageData.recipient == Inhabitant)
+            foreach (var item in player.items)
             {
-                Debug.Log("FoundPackage");
-                player.shipments.RemoveAt(i);
+                if (item.packageData.recipient == Inhabitant)
+                {
+                    player.items.Remove(item);
+                    inventoryController.mainGrid.RemoveItem(item);
+                }
             }
-                
         }
-        //foreach (var shipment in player.shipments)
-        //{
-        //    if (shipment.packageData.recipient == Inhabitant)
-        //    {
-        //        Debug.Log("Found package");
-        //        //player.shipments.Remove(shipment);
-        //        //    Debug.Log("Removed package");
-        //    }
-        //}
-        //inventoryController.mainGrid.RemoveItemsByRecipient(Inhabitant);
     }
 }

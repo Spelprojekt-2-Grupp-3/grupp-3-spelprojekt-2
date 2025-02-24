@@ -37,6 +37,8 @@ public class BuoyantObject : MonoBehaviour
     [Range(1, 8)]
     public float strength = 1f;
 
+    private float defaultStrength;
+
     [Range(0.2f, 10)]
     public float objectDepth = 1f;
 
@@ -44,6 +46,7 @@ public class BuoyantObject : MonoBehaviour
     public float angularDrag = 0.5f;
 
     [Header("Effectors")]
+    [Tooltip("Do not assign if not all effectors are children of this object")]
     public Transform effectorParent;
     public Transform[] effectors;
 
@@ -52,6 +55,7 @@ public class BuoyantObject : MonoBehaviour
 
     private void Awake()
     {
+        defaultStrength = strength;
         if (effectorParent != null)
         {
             List<Transform> stuff = new List<Transform>();
@@ -88,6 +92,14 @@ public class BuoyantObject : MonoBehaviour
         rb.useGravity = true;
     }
 
+    [SerializeField]
+    [Range(0.0f, 0.5f)]
+    [Tooltip("Scalar value for how strongly the force increases")]
+    private float scalarValue = 0.1f;
+
+    [SerializeField]
+    private float scalarThreshold = 2;
+
     private void FixedUpdate()
     {
         var effectorAmount = effectors.Length;
@@ -102,26 +114,53 @@ public class BuoyantObject : MonoBehaviour
                 + GerstnerWaveDisplacement
                     .GetWaveDisplacement(effectorPosition, steepness, wavelength, speed, directions)
                     .y;
+            var waveHeight = effectorProjections[i].y;
 
+            //height of each effector
+            var effectorHeight = effectorPosition.y;
+
+            float distanceY = Mathf.Abs(effectorHeight + 0.6f - waveHeight);
+            float test = 1;
+            if (distanceY >= scalarThreshold && transform.CompareTag("Player"))
+            {
+                test = 1 + scalarValue * distanceY;
+            }
+            //  Debug.Log($"Scalar velocity {test}");
             // gravity
             rb.AddForceAtPosition(
-                Physics.gravity / effectorAmount,
+                (Physics.gravity / effectorAmount) * test,
                 effectorPosition,
                 ForceMode.Acceleration
             );
 
-            var waveHeight = effectorProjections[i].y;
-            var effectorHeight = effectorPosition.y;
+            //Active wave height for each effector
 
+            //  Debug.Log($"distance {i}: " + distanceY);
+            //if the effector height is below the waves continue
             if (!(effectorHeight < waveHeight))
+            {
+                if (transform.CompareTag("Player"))
+                {
+                    strength = defaultStrength;
+                }
                 continue; // submerged
+            }
+            else
+            {
+                Debug.Log("submerged");
+                strength = 3;
+                //strength = defaultStrength;
+            }
 
             var submersion = Mathf.Clamp01(waveHeight - effectorHeight) / objectDepth;
+
+            //  float BoatOffset = 2.8f;
+
+
             var buoyancy = Mathf.Abs(Physics.gravity.y) * submersion * strength;
 
             // buoyancy
             rb.AddForceAtPosition(Vector3.up * buoyancy, effectorPosition, ForceMode.Acceleration);
-
             // drag
             rb.AddForce(
                 -rb.velocity * (velocityDrag * Time.fixedDeltaTime),
