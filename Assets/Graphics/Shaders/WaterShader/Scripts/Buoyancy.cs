@@ -100,6 +100,8 @@ public class BuoyantObject : MonoBehaviour
     [SerializeField]
     private float scalarThreshold = 2;
 
+    bool subm = false;
+
     private void FixedUpdate()
     {
         var effectorAmount = effectors.Length;
@@ -124,6 +126,7 @@ public class BuoyantObject : MonoBehaviour
             if (distanceY >= scalarThreshold && transform.CompareTag("Player"))
             {
                 test = 1 + scalarValue * distanceY;
+                subm = false;
             }
             //  Debug.Log($"Scalar velocity {test}");
             // gravity
@@ -152,6 +155,16 @@ public class BuoyantObject : MonoBehaviour
                 //strength = defaultStrength;
             }
 
+            if (
+                transform.position.y <= waterHeight + 0.4f
+                && transform.CompareTag("Player")
+                && !subm
+            )
+            {
+                strength = 25;
+                rb.velocity = rb.velocity / 1.1f;
+                subm = true;
+            }
             var submersion = Mathf.Clamp01(waveHeight - effectorHeight) / objectDepth;
 
             //  float BoatOffset = 2.8f;
