@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5477314655761820178}
-  - component: {fileID: 3340886325030941076}
+  - component: {fileID: -8891707068277023596}
   m_Layer: 0
   m_Name: UlrichPaket
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3340886325030941076
+--- !u!114 &-8891707068277023596
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,7 +41,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 9017055587902722692}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0a1bfe4f34d32a42b94172cd4ae36f8, type: 3}
+  m_Script: {fileID: 11500000, guid: f987e4e0940091549b3e33d20e851a02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   packageData: {fileID: 11400000, guid: c6b5b8b000184ed458980fded4b398ba, type: 2}
+  onGridPosition: {x: 0, y: 0}
