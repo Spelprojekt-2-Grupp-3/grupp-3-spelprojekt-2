@@ -160,7 +160,11 @@ public class BuoyantObject : MonoBehaviour
             var buoyancy = Mathf.Abs(Physics.gravity.y) * submersion * strength;
 
             // buoyancy
-            rb.AddForceAtPosition(Vector3.up * buoyancy, effectorPosition, ForceMode.Acceleration);
+            rb.AddForceAtPosition(
+                Vector3.up * buoyancy * (test * 0.85f),
+                effectorPosition,
+                ForceMode.Acceleration
+            );
             // drag
             rb.AddForce(
                 -rb.velocity * (velocityDrag * Time.fixedDeltaTime),
