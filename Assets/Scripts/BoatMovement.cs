@@ -93,9 +93,9 @@ public class BoatMovement : MonoBehaviour
             boostMeter -= Time.deltaTime;
             Events.updateBoostMeter?.Invoke();
             moveSpeed += acceleration * 4 * Time.deltaTime;
-            if (moveSpeed > maxSpeed * 3)
+            if (moveSpeed > maxSpeed * 2)
             {
-                moveSpeed = maxSpeed * 3;
+                moveSpeed = maxSpeed * 2;
             }
 
             if (boostMeter < 0f)
