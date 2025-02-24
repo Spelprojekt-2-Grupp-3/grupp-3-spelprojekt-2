@@ -5629,6 +5629,56 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &762883315
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 762883317}
+  - component: {fileID: 762883316}
+  m_Layer: 0
+  m_Name: QTETimingMinigame
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &762883316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762883315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c02ee105a506229449053e9dd917e146, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvas: {fileID: 642318916011621992, guid: 9541a31cfca683b42aebfaba8fc8ae91, type: 3}
+  inputIcons: {fileID: 11400000, guid: 7f7fd9995c4435f488f7df319f651fb7, type: 2}
+  sliderObj: {fileID: 6989961724453217889, guid: 6edd0670347515143aecabd70687dc4d,
+    type: 3}
+  maxTime: 5
+  sliderMaxValue: 2
+--- !u!4 &762883317
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762883315}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 291.377, y: 147.15558, z: -232.18835}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &861334389
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7215,3 +7265,4 @@ SceneRoots:
   - {fileID: 1555999092}
   - {fileID: 1028148961}
   - {fileID: 520854633}
+  - {fileID: 762883317}

@@ -36,9 +36,11 @@ public class BoatMovement : MonoBehaviour
     private int moveDirection;
     private Rigidbody rb;
     private PlayerInput playerInput;
+    private BuoyantObject buoyancy;
     
     private void Awake()
     {
+        buoyancy = GetComponent<BuoyantObject>();
         playerControls = new PlayerInputActions();
         playerInput = GetComponent<PlayerInput>();
         moveSpeed = 0;
@@ -161,7 +163,7 @@ public class BoatMovement : MonoBehaviour
         euler.z = Mathf.LerpAngle(euler.z, targetAngleZ, tiltSpeed * Time.deltaTime);
         rb.rotation = Quaternion.Euler(euler);
         
-        if (moveSpeed == 0) return;
+        if (moveSpeed == 0 && !buoyancy.subm) return;
         rb.velocity = new Vector3(
              moveSpeed * transform.forward.x, rb.velocity.y,
              moveSpeed * transform.forward.z);

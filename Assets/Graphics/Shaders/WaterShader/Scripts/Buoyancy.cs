@@ -100,7 +100,7 @@ public class BuoyantObject : MonoBehaviour
     [SerializeField]
     private float scalarThreshold = 2;
 
-    bool subm = false;
+    public bool subm = false;
 
     private void FixedUpdate()
     {

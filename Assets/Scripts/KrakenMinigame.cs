@@ -31,8 +31,9 @@ public class KrakenMinigame : Minigames
     private InputAction minigameButtonEast;
     private GameObject krakenInstance;
     [SerializeField] private CurrentInputIcons inputIcons;
-
     private BoatMovement boatMovement;
+    [SerializeField] private float maxTime;
+    private float timer;
 
     private void OnEnable()
     {
@@ -155,6 +156,12 @@ public class KrakenMinigame : Minigames
             StopMinigame();
             DestroyImmediate(krakenInstance);
             DestroyImmediate(gameObject);
+        }
+
+        timer += Time.deltaTime;
+        if (timer >= maxTime)
+        {
+            Debug.Log("you lost");
         }
     }
 
