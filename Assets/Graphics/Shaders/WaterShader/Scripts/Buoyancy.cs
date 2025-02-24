@@ -150,7 +150,7 @@ public class BuoyantObject : MonoBehaviour
             }
             else
             {
-                Debug.Log("submerged");
+//                Debug.Log("submerged");
                 strength = 3;
                 //strength = defaultStrength;
             }
