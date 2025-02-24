@@ -20,4 +20,14 @@ public class InventoryItem : MonoBehaviour
         size.y = data.gridSize.y * ItemGrid.tileSizeHeight;
         GetComponent<RectTransform>().sizeDelta = size;
     }
+
+    /// <summary>
+    /// Only use this when using prefabs that includes InventoryItem
+    /// </summary>
+    public void OnPickup()
+    {
+        Set(packageData);
+        
+        
+    }
 }
