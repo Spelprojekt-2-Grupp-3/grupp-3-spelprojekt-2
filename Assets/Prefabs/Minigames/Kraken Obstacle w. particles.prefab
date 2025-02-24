@@ -322,7 +322,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2
+      scalar: 5
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -641,7 +641,7 @@ ParticleSystem:
     gravitySource: 0
     maxNumParticles: 1000
     customEmitterVelocity: {x: 0, y: 0, z: 0}
-    size3D: 1
+    size3D: 0
     rotation3D: 0
     gravityModifier:
       serializedVersion: 2
@@ -786,7 +786,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 10
+      value: 60
       mode: 0
       spread: 0
       speed:
@@ -905,8 +905,8 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 15
-      minScalar: 10
+      scalar: 40
+      minScalar: 25
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -4936,6 +4936,8 @@ MonoBehaviour:
   effectorParent: {fileID: 0}
   effectors:
   - {fileID: 1086402264812635037}
+  scalarValue: 0.1
+  scalarThreshold: 2
 --- !u!1 &4533343228916572894
 GameObject:
   m_ObjectHideFlags: 0
