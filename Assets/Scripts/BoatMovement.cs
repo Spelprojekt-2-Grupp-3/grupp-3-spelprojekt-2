@@ -67,7 +67,6 @@ public class BoatMovement : MonoBehaviour
         Events.startBoat.AddListener(AllowMovement);
         Events.stopBoat.AddListener(DisallowMovement);
         playerInput.onControlsChanged += ChangeDevice;
-        Events.checkInputEvent?.Invoke(playerInput);
     }
 
     private void OnDisable()
@@ -83,6 +82,7 @@ public class BoatMovement : MonoBehaviour
 
     void Start()
     {
+        Events.checkInputEvent?.Invoke(playerInput);
         rb = GetComponent<Rigidbody>();
         boatSound = FMODUnity.RuntimeManager.CreateInstance(boatSoundEvent);
         boatSound.start();
