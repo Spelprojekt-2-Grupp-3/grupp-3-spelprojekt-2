@@ -334,6 +334,7 @@ MonoBehaviour:
   - {fileID: 0}
   scalarValue: 0.1
   scalarThreshold: 2
+  subm: 0
 --- !u!114 &1862584212627316059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -351,8 +352,8 @@ MonoBehaviour:
   maxBoostDuration: 10
   boostRefillPerSecond: 0.2
   rotationSpeed: 1
-  maxSpeed: 250
-  maxReverseSpeed: -125
+  maxSpeed: 200
+  maxReverseSpeed: -100
   sideTiltAngle: 30
   frontTiltAngle: 0
   tiltSpeed: 3
@@ -363,6 +364,7 @@ MonoBehaviour:
       Data3: 154919050
       Data4: -935636229
     Path: event:/Sound/SFX/Engine
+  boostMeterObj: {fileID: 0}
 --- !u!64 &7422248955742938948
 MeshCollider:
   m_ObjectHideFlags: 0

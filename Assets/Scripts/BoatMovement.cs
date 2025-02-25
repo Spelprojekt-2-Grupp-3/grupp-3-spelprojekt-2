@@ -6,6 +6,7 @@ using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using FMOD;
+using UnityEngine.UI;
 using Debug = UnityEngine.Debug;
 
 [RequireComponent(typeof(Rigidbody), typeof(Animator), typeof(BuoyantObject))]
@@ -37,9 +38,12 @@ public class BoatMovement : MonoBehaviour
     private Rigidbody rb;
     private PlayerInput playerInput;
     private BuoyantObject buoyancy;
+    [SerializeField] private GameObject boostMeterObj;
+    private Image boostMeterImage;
     
     private void Awake()
     {
+        boostMeterImage = boostMeterObj.GetComponent<Image>();
         buoyancy = GetComponent<BuoyantObject>();
         playerControls = new PlayerInputActions();
         playerInput = GetComponent<PlayerInput>();
@@ -94,6 +98,7 @@ public class BoatMovement : MonoBehaviour
             fillMeter = false;
             boostMeter -= Time.deltaTime;
             Events.updateBoostMeter?.Invoke();
+            boostMeterImage.fillAmount = boostMeter / maxBoostDuration;
             moveSpeed += acceleration * 4 * Time.deltaTime;
             if (moveSpeed > maxSpeed * 2)
             {
@@ -133,6 +138,7 @@ public class BoatMovement : MonoBehaviour
         if (fillMeter)
         {
             boostMeter += Time.deltaTime * boostRefillPerSecond;
+            boostMeterImage.fillAmount = boostMeter / maxBoostDuration;
             Events.updateBoostMeter?.Invoke();
             if (boostMeter > maxBoostDuration)
             {
