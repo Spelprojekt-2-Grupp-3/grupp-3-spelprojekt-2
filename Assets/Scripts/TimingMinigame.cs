@@ -1,9 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class TimingMinigame : Minigames
 {
@@ -19,6 +21,9 @@ public class TimingMinigame : Minigames
     private Sprite iconSprite;
     [SerializeField] private float maxTime;
     private float timer;
+    private Vector2 goalPos;
+    private GameObject handle;
+    private GameObject goal;
 
     [SerializeField, Range(0f, 10f), Tooltip("Amount of seconds it takes for the handle on the slider to go from the bottom to the top")]
     private float sliderMaxValue;
@@ -51,10 +56,30 @@ public class TimingMinigame : Minigames
         sliderInst = Instantiate(sliderObj, canvasInst.transform);
         slider = sliderInst.GetComponent<Slider>();
         slider.maxValue = sliderMaxValue;
-        iconSprite = GameObject.Find("Handle").GetComponent<Image>().sprite;
+        handle = sliderInst.transform.Find("Handle Slide Area").transform.Find("Handle").gameObject;
+        iconSprite = handle.GetComponent<Image>().sprite;
+        goal = sliderInst.transform.Find("Goal").gameObject;
+        var rectHeight = sliderInst.GetComponent<RectTransform>().rect.height;
+        goalPos = new Vector2(goal.transform.localPosition.x, Random.Range(-rectHeight / 2, rectHeight / 2));
+        goal.transform.localPosition = goalPos;
     }
 
     private void Update()
+    {
+        UpdateSliderPos();
+        //Debug.Log(sliderInst.transform.Find("Handle Slide Area").transform.Find("Handle").transform.position.y);
+        //Debug.Log(sliderInst.transform.Find("Goal").gameObject.transform.position.y);
+        if (handle.transform.position.y <=
+            goal.transform.position.y + 5 &&
+            handle.transform.position.y >=
+            goal.transform.position.y - 5)
+        {
+            Debug.Log("hit");
+        }
+        timer += Time.deltaTime;
+    }
+
+    private void UpdateSliderPos()
     {
         if (increasing)
         {
@@ -72,7 +97,6 @@ public class TimingMinigame : Minigames
                 increasing = true;
             }
         }
-        timer += Time.deltaTime;
     }
 
     private void UpdateIcons()
