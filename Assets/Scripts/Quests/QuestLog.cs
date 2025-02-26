@@ -5,14 +5,14 @@ using UnityEngine;
 
 public class QuestLog : MonoBehaviour
 {
-    [SerializeField] private GameObject questBox;
-    [SerializeField] private GameObject questContainer;
+    private GameObject questBox;
+    private GameObject questContainer;
     private List<Quest> questList;
 
 
     void AddQuest(QuestData data)
     {
-        var prefab = Instantiate(questBox, questContainer.transform);
+        var prefab = Instantiate(questBox,questContainer.transform);
 
         var quest = prefab.GetComponent<Quest>();
         
@@ -20,11 +20,11 @@ public class QuestLog : MonoBehaviour
         questList.Add(quest);
     }
 
-    void UpdateQuest(Quest quest, QuestData updatedData, int step)
+    void UpdateQuest(Quest quest, QuestData updatedData)
     {
         if (questList.Contains(quest))
         {
-            quest.Set(updatedData, step);
+            quest.Set(updatedData);
         }
         else
         {
