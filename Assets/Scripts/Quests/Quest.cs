@@ -7,19 +7,27 @@ public class Quest : MonoBehaviour
 {
     public TMP_Text titleText;
     public TMP_Text infoText;
+    [HideInInspector] public QuestData data;
 
-    public void Set(QuestData data, int currentStep =0)
+    public void Set(QuestData setData, int currentStep =0)
     {
-        if (data.steps > 0)
+        if(setData.steps == 0 && currentStep >0)
+            Debug.Log("Attempted to progress to next step in step-less quest");
+        if (setData.steps > 0)
         {
-            infoText.text = currentStep + "/" + data.steps + data.questText;
+            infoText.text = currentStep + "/" + setData.steps + setData.questText;
+            if (data != null && setData != data)
+            {
+                titleText.text = setData.questTitle;
+            }
         }
-        else
+        else if(data != null && setData != data)
         {
-            infoText.text = data.questText;
+            titleText.text = setData.questTitle;
+            infoText.text = setData.questText;
         }
         
-        titleText.text = data.questTitle;
+        data = setData;
     }
 
     public void Set(string updatedInfo, string updatedTitle)
@@ -28,4 +36,8 @@ public class Quest : MonoBehaviour
         infoText.text = updatedInfo;
     }
 
+    void NextStep()
+    {
+        
+    }
 }

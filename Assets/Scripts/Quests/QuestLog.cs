@@ -20,7 +20,13 @@ public class QuestLog : MonoBehaviour
         questList.Add(quest);
     }
 
-    void UpdateQuest(Quest quest, QuestData updatedData, int step)
+    /// <summary>
+    /// For updating quests with more than one step
+    /// </summary>
+    /// <param name="quest">The quest that is updated</param>
+    /// <param name="step">What step the quest should be on</param>
+    /// <param name="updatedData">the new data, if any (just send old data if no new)</param>
+    void UpdateQuest(Quest quest, int step, QuestData updatedData)
     {
         if (questList.Contains(quest))
         {
