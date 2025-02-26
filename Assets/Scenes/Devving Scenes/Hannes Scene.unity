@@ -8216,6 +8216,11 @@ PrefabInstance:
       propertyPath: boostMeterObj
       value: 
       objectReference: {fileID: 1358497758}
+    - target: {fileID: 1862584212627316059, guid: 3c99b2349eddffe43ab0303c65e0f0ec,
+        type: 3}
+      propertyPath: frontTiltAngle
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 3465921050470120776, guid: 3c99b2349eddffe43ab0303c65e0f0ec,
         type: 3}
       propertyPath: UVModule.mode
@@ -10102,6 +10107,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6765604044985407211, guid: 48e7618d9905c24489849679a0b9adca,
+        type: 3}
+      propertyPath: maxTime
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8696412263360463079, guid: 48e7618d9905c24489849679a0b9adca,
         type: 3}

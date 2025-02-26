@@ -45,6 +45,7 @@ public class BoatMovement : MonoBehaviour
     {
         boostMeterImage = boostMeterObj.GetComponent<Image>();
         buoyancy = GetComponent<BuoyantObject>();
+        rb = GetComponent<Rigidbody>();
         playerControls = new PlayerInputActions();
         playerInput = GetComponent<PlayerInput>();
         moveSpeed = 0;
@@ -83,7 +84,6 @@ public class BoatMovement : MonoBehaviour
     void Start()
     {
         Events.checkInputEvent?.Invoke(playerInput);
-        rb = GetComponent<Rigidbody>();
         boatSound = FMODUnity.RuntimeManager.CreateInstance(boatSoundEvent);
         boatSound.start();
     }

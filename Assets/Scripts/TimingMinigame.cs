@@ -10,25 +10,19 @@ using Random = UnityEngine.Random;
 public class TimingMinigame : Minigames
 {
     [SerializeField] private GameObject canvas;
-    private GameObject canvasInst;
+    private GameObject canvasInst, handle, goal, sliderInst;
     private Camera camera;
     private PlayerInputActions playerControls;
     private InputAction minigameButtonSouth;
     [SerializeField] private CurrentInputIcons inputIcons;
     [SerializeField] private GameObject sliderObj;
-    private GameObject sliderInst;
     private Slider slider;
     private Image iconSprite;
-    [SerializeField] private float maxTime;
-    private float timer;
+    [SerializeField, Tooltip("Max time for the minigame to play, after this time you lose")] private float maxTime;
     private Vector2 goalPos;
-    private GameObject handle;
-    private GameObject goal;
-    private float goalHeight;
-    private float sliderSpeed;
+    private float goalHeight, sliderSpeed, timer;
     [SerializeField, Range(0f, 10f), Tooltip("Initial amount of seconds it takes for the handle on the slider to go from the bottom to the top")]
     private float sliderMaxValue;
-
     private bool increasing;
 
     private void OnEnable()
@@ -70,10 +64,10 @@ public class TimingMinigame : Minigames
 
     private void RandomizeGoalPosition()
     {
-        var rectHeight = sliderInst.GetComponent<RectTransform>().rect.height;
-        goalPos = new Vector2(goal.transform.localPosition.x, Random.Range(-rectHeight / 2, rectHeight / 2));
-        goal.transform.localPosition = goalPos;
         goalHeight = goal.GetComponent<RectTransform>().rect.height;
+        var rectHeight = sliderInst.GetComponent<RectTransform>().rect.height;
+        goalPos = new Vector2(goal.transform.localPosition.x, Random.Range(-rectHeight / 2 + goalHeight / 2, rectHeight / 2 - goalHeight / 2));
+        goal.transform.localPosition = goalPos;
     }
 
     private void Update()
@@ -81,7 +75,7 @@ public class TimingMinigame : Minigames
         UpdateSliderPos();
         if (minigameButtonSouth.WasPressedThisFrame())
         {
-            if (handle.transform.position.y <= goal.transform.position.y + goalHeight/3 && handle.transform.position.y >= goal.transform.position.y - goalHeight/3) // idk why divided by 3 is necessary tbh
+            if (handle.transform.position.y <= goal.transform.position.y + goalHeight/2 && handle.transform.position.y >= goal.transform.position.y - goalHeight/2) // idk why divided by 3 is necessary tbh
             {
                 Debug.Log("hit");
                 sliderSpeed *= 1.2f;
