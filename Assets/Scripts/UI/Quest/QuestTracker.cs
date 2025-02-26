@@ -34,14 +34,19 @@ public class QuestTracker : MonoBehaviour
     {
         //Instansierar en quest i quest log
         questBox = Instantiate(questBox,questContainer.transform);
+        
         //Ändrar namnet på objektet, viktigt för att hitta det
         questBox.name = questName;
+        
         //Hittar tmp_text komponent
         questBox.GetComponent<TMP_Text>().SetText(questName);
+        
         //Ändrar texten på quest_text, reflekterar vilket stadie questen är i
         questBox.gameObject.transform.Find("Quest_Text").GetComponent<TMP_Text>().SetText(questText);
+        
         //Sätter vart questen ska vara
         questBox.gameObject.transform.SetSiblingIndex(questIndex);
+        
         //Ökar värdet på den variabeln
         questIndex++;
     }
@@ -72,10 +77,13 @@ public class QuestTracker : MonoBehaviour
             //Hittar questen som du letar efter
             GameObject questFinish = GameObject.Find(questName);
             questFinish.transform.Find("Quest_Text").GetComponent<TMP_Text>().SetText(edit);
+            
             //Sätter den längst ner i hierarkin för quest log
             questFinish.transform.SetAsLastSibling();
+            
             //Minskar värdet på variabeln
             questIndex--;
+            
             /*//Hittar komponenten tmp_text
             TMP_Text edit = questFinish.GetComponent<TMP_Text>();
             //Stryker över texten
