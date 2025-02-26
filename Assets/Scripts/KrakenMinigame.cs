@@ -27,8 +27,7 @@ public class KrakenMinigame : Minigames
     private List<Tentacle> tentacles = new List<Tentacle>();
     private Camera camera;
     private PlayerInputActions playerControls;
-    private InputAction minigameButtonWest;
-    private InputAction minigameButtonEast;
+    private InputAction minigameButtonWest, minigameButtonEast;
     private GameObject krakenInstance;
     [SerializeField] private CurrentInputIcons inputIcons;
     private BoatMovement boatMovement;
@@ -46,6 +45,7 @@ public class KrakenMinigame : Minigames
 
     private void OnDisable()
     {
+        Events.updateIcons.RemoveListener(UpdateIcons);
         minigameButtonWest.Disable();
         minigameButtonEast.Disable();
     }
@@ -53,10 +53,6 @@ public class KrakenMinigame : Minigames
     private void Awake()
     {
         playerControls = new PlayerInputActions();
-    }
-
-    private void Start()
-    {
         boatMovement = FindObjectOfType<BoatMovement>();
     }
 
@@ -65,8 +61,6 @@ public class KrakenMinigame : Minigames
         camera = Camera.main;
         var canvasInst = Instantiate(canvas);
         canvasInst.GetComponent<Canvas>().worldCamera = camera;
-
-        boatMovement = FindObjectOfType<BoatMovement>();
         Vector3 krakenPos = boatMovement.transform.position;
 
         krakenInstance = Instantiate(kraken, krakenPos, boatMovement.transform.rotation);
@@ -104,8 +98,7 @@ public class KrakenMinigame : Minigames
             hpBarInst.GetComponent<Image>().fillAmount = tentacle.hp / tentacle.maxHp;
             tentacles.Add(tentacle);
         }
-        tentacles[0].actionButton.GetComponent<Image>().sprite = inputIcons.currentInputDevice.buttonWest;
-        tentacles[1].actionButton.GetComponent<Image>().sprite = inputIcons.currentInputDevice.buttonEast;
+        UpdateIcons();
     }
 
     public override void StopMinigame()
