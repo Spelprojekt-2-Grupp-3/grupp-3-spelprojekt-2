@@ -48,15 +48,7 @@ public class Port : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        //TODO: move these into dialogue system
-        if (interact.WasPressedThisFrame() && other.GetComponent<Player>() && !hasBeenPickedUp && item!=null)
-        {
-            Pickup();
-        }
-        else if (other.GetComponent<Player>())
-        {
-            Delivery();
-        }
+        
     }
 
     void Pickup()
