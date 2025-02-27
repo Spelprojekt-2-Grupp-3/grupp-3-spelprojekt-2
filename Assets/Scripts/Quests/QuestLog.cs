@@ -8,8 +8,9 @@ public class QuestLog : MonoBehaviour
     [SerializeField] private GameObject questBox;
     [SerializeField] private GameObject questContainer;
     private List<Quest> questList;
+    private List<Quest> finishedQuests;
 
-
+    private int siblingIndex;
     void AddQuest(QuestData data)
     {
         var prefab = Instantiate(questBox, questContainer.transform);
@@ -18,15 +19,18 @@ public class QuestLog : MonoBehaviour
         
         quest.Set(data);
         questList.Add(quest);
+        prefab.transform.SetSiblingIndex(siblingIndex);
+
+        siblingIndex++;
     }
 
     /// <summary>
-    /// For updating quests with more than one step
+    /// For updating a quest already on the list
     /// </summary>
     /// <param name="quest">The quest that is updated</param>
-    /// <param name="step">What step the quest should be on</param>
     /// <param name="updatedData">the new data, if any (just send old data if no new)</param>
-    void UpdateQuest(Quest quest, int step, QuestData updatedData)
+    /// <param name="step">What step the quest should be on</param>
+    void UpdateQuest(Quest quest, QuestData updatedData, int step = 0)
     {
         if (questList.Contains(quest))
         {
@@ -38,13 +42,26 @@ public class QuestLog : MonoBehaviour
         }
     }
 
-    void CompleteQuest(Quest quest, QuestData data)
+    void CompleteQuest(Quest quest, QuestData data = null)
     {
-        
+        if (questList.Contains(quest))
+        {
+            if (data != null)
+                quest.data = data;
+            siblingIndex--;
+            quest.transform.SetAsLastSibling();
+        }
     }
 
-    void RemoveQuest()
+    void RemoveQuest(Quest toRemove)
     {
-        
+        if (questList.Contains(toRemove))
+        {
+            questList.Remove(toRemove);
+            siblingIndex--;
+        }
+            
+        else
+            Debug.Log("Tried to remove a quest that wasn't in the quest-log");
     }
 }
