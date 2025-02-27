@@ -17,9 +17,11 @@ public class KrakenLocation : MonoBehaviour
     {
         if (moving) //this hombrero sombrero doth not work MEGALUL
         {
+            float e = Vector3.Distance(transform.position, player.transform.position);
+            float woah = 1 + (e / 10);
             Vector3 dir = (player.transform.position - transform.position).normalized;
             //  transform.position += (dir * 20f * Time.deltaTime);
-            transform.Translate(dir * 20 * Time.deltaTime, Space.World);
+            transform.Translate(dir * 20 * woah * Time.deltaTime, Space.World);
             Debug.DrawRay(transform.position, dir, Color.red);
             if (Vector3.Distance(transform.position, player.transform.position) <= 0.5f)
             {
