@@ -267,4 +267,9 @@ public class ItemGrid : MonoBehaviour
 
         return toReturn;
     }
+
+    public void SetAsParent(InventoryItem item)
+    {
+        item.GetComponent<RectTransform>().SetParent(rectTransform);
+    }
 }

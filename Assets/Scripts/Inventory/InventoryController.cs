@@ -59,6 +59,7 @@ public class InventoryController : MonoBehaviour
        markerPosition = mainGrid.FirstSlot();
        //inventoryItems = new List<InventoryItems>();
        mainGrid.gameObject.SetActive(false);
+       DisableControls();
    }
 
    private void OnEnable()
@@ -110,16 +111,15 @@ public class InventoryController : MonoBehaviour
 
    private void Update()
    {
-       //if (openInventory.WasPressedThisFrame())
-       //{
-       //    isOpen = !isOpen;
-       //    //mainGrid.gameObject.SetActive(isOpen);
-       //    dialogueManager.gameObject.SetActive(!isOpen);
-       //    if (isOpen)
-       //        EnableControls();
-       //    else
-       //        DisableControls();
-       //}
+       if (openInventory.WasPressedThisFrame())
+       {
+           isOpen = !isOpen;
+           mainGrid.gameObject.SetActive(isOpen);
+           if (isOpen)
+               EnableControls();
+           else
+               DisableControls();
+       }
 
        if(!markerMovement.enabled){return;}
        
@@ -367,6 +367,7 @@ public class InventoryController : MonoBehaviour
    public bool InsertItem(InventoryItem itemToInsert)
    {
        Vector2Int? gridPos = mainGrid.FindSpace(itemToInsert);
+       mainGrid.SetAsParent(itemToInsert);
 
        if (gridPos == null)
        {

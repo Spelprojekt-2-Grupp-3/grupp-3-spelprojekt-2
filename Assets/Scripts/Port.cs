@@ -48,19 +48,27 @@ public class Port : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        
+        //if (interact.WasPressedThisFrame())
+        //{
+        //    Pickup();
+        //}
     }
 
     void Pickup()
     {
-        hasBeenPickedUp = true;
+        Instantiate(item.gameObject);
         item.Set();
         if (inventoryController.InsertItem(item))
         {
             Debug.Log("added package");
+            hasBeenPickedUp = true;
         }
-        else 
+        else
+        {
             Debug.Log("Failed to insert, probably full");
+            Destroy(item.gameObject);
+        }
+           
     }
 
     bool Delivery()
