@@ -4919,7 +4919,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd9ac3ef6a1f0f24ea6805a1d3aa8210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waterHeight: 11
+  waterHeight: 222
   shaderMaterial: {fileID: 2100000, guid: eb3a6ac3bbf1eff498ec8d5092ef397e, type: 2}
   steepness: 0
   wavelength: 0
@@ -4938,6 +4938,7 @@ MonoBehaviour:
   - {fileID: 1086402264812635037}
   scalarValue: 0.1
   scalarThreshold: 2
+  subm: 0
 --- !u!1 &4533343228916572894
 GameObject:
   m_ObjectHideFlags: 0
