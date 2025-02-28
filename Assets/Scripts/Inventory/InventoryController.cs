@@ -72,9 +72,9 @@ public class InventoryController : MonoBehaviour
        pointerPosition = playerControls.UI.Point;
        middleClick = playerControls.UI.MiddleClick;
        markerMovement = playerControls.UI.Navigate;
-       openInventory = playerControls.UI.Inventory;
+       //openInventory = playerControls.UI.Inventory;
        
-       openInventory.Enable();
+       //openInventory.Enable();
        
        EnableControls();
    }
@@ -82,7 +82,7 @@ public class InventoryController : MonoBehaviour
    private void OnDisable()
    {
        DisableControls();
-       openInventory.Disable();
+       //openInventory.Disable();
    }
 
    public void EnableControls()
@@ -111,15 +111,15 @@ public class InventoryController : MonoBehaviour
 
    private void Update()
    {
-       if (openInventory.WasPressedThisFrame())
-       {
-           isOpen = !isOpen;
-           mainGrid.gameObject.SetActive(isOpen);
-           if (isOpen)
-               EnableControls();
-           else
-               DisableControls();
-       }
+       //if (openInventory.WasPressedThisFrame())
+       //{
+       //    isOpen = !isOpen;
+       //    mainGrid.gameObject.SetActive(isOpen);
+       //    if (isOpen)
+       //        EnableControls();
+       //    else
+       //        DisableControls();
+       //}
 
        if(!markerMovement.enabled){return;}
        
