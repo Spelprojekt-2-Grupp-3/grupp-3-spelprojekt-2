@@ -777,18 +777,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Quest"",
+                    ""name"": ""Journal"",
                     ""type"": ""Button"",
-                    ""id"": ""8d0cdb50-f44b-4d5f-b91f-d95a6ef9df09"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Inventory"",
-                    ""type"": ""Button"",
-                    ""id"": ""253b4127-230e-4e2d-96f0-7c37e79c8549"",
+                    ""id"": ""f5602de7-154d-4c7e-a8d4-fac9e05e0c4f"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -1216,34 +1207,23 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""024004db-0096-41b6-87d9-2907af449124"",
-                    ""path"": ""<Keyboard>/j"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Quest"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""d0c0102f-ba87-4d52-9c81-b0969a94b205"",
-                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""id"": ""e46234ac-3f43-426b-b323-3c1320a06e3a"",
+                    ""path"": ""<Gamepad>/select"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
-                    ""action"": ""Inventory"",
+                    ""action"": ""Journal"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
                     ""name"": """",
-                    ""id"": ""9ca97964-474f-4e7b-ba9a-5bd4a3b8e555"",
-                    ""path"": ""<Keyboard>/i"",
+                    ""id"": ""c767aead-a6bd-4682-8161-7baa921e3276"",
+                    ""path"": ""<Keyboard>/tab"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Inventory"",
+                    ""action"": ""Journal"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1343,8 +1323,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_UI_TrackedDevicePosition = m_UI.FindAction("TrackedDevicePosition", throwIfNotFound: true);
         m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
         m_UI_ModifierButton = m_UI.FindAction("ModifierButton", throwIfNotFound: true);
-        m_UI_Quest = m_UI.FindAction("Quest", throwIfNotFound: true);
-        m_UI_Inventory = m_UI.FindAction("Inventory", throwIfNotFound: true);
+        m_UI_Journal = m_UI.FindAction("Journal", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1597,8 +1576,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_UI_TrackedDevicePosition;
     private readonly InputAction m_UI_TrackedDeviceOrientation;
     private readonly InputAction m_UI_ModifierButton;
-    private readonly InputAction m_UI_Quest;
-    private readonly InputAction m_UI_Inventory;
+    private readonly InputAction m_UI_Journal;
     public struct UIActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -1614,8 +1592,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @TrackedDevicePosition => m_Wrapper.m_UI_TrackedDevicePosition;
         public InputAction @TrackedDeviceOrientation => m_Wrapper.m_UI_TrackedDeviceOrientation;
         public InputAction @ModifierButton => m_Wrapper.m_UI_ModifierButton;
-        public InputAction @Quest => m_Wrapper.m_UI_Quest;
-        public InputAction @Inventory => m_Wrapper.m_UI_Inventory;
+        public InputAction @Journal => m_Wrapper.m_UI_Journal;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1658,12 +1635,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @ModifierButton.started += instance.OnModifierButton;
             @ModifierButton.performed += instance.OnModifierButton;
             @ModifierButton.canceled += instance.OnModifierButton;
-            @Quest.started += instance.OnQuest;
-            @Quest.performed += instance.OnQuest;
-            @Quest.canceled += instance.OnQuest;
-            @Inventory.started += instance.OnInventory;
-            @Inventory.performed += instance.OnInventory;
-            @Inventory.canceled += instance.OnInventory;
+            @Journal.started += instance.OnJournal;
+            @Journal.performed += instance.OnJournal;
+            @Journal.canceled += instance.OnJournal;
         }
 
         private void UnregisterCallbacks(IUIActions instance)
@@ -1701,12 +1675,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @ModifierButton.started -= instance.OnModifierButton;
             @ModifierButton.performed -= instance.OnModifierButton;
             @ModifierButton.canceled -= instance.OnModifierButton;
-            @Quest.started -= instance.OnQuest;
-            @Quest.performed -= instance.OnQuest;
-            @Quest.canceled -= instance.OnQuest;
-            @Inventory.started -= instance.OnInventory;
-            @Inventory.performed -= instance.OnInventory;
-            @Inventory.canceled -= instance.OnInventory;
+            @Journal.started -= instance.OnJournal;
+            @Journal.performed -= instance.OnJournal;
+            @Journal.canceled -= instance.OnJournal;
         }
 
         public void RemoveCallbacks(IUIActions instance)
@@ -1801,7 +1772,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnTrackedDevicePosition(InputAction.CallbackContext context);
         void OnTrackedDeviceOrientation(InputAction.CallbackContext context);
         void OnModifierButton(InputAction.CallbackContext context);
-        void OnQuest(InputAction.CallbackContext context);
-        void OnInventory(InputAction.CallbackContext context);
+        void OnJournal(InputAction.CallbackContext context);
     }
 }
