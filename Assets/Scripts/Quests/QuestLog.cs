@@ -12,12 +12,29 @@ public class QuestLog : MonoBehaviour
 
     private int siblingIndex;
 
+    private PlayerInputActions playerControls;
+    private InputAction openQuestLog;
+
+    bool isOpen;
+
+    private void Awake()
+    {
+        playerControls = new PlayerInputActions();
+        
+    }
+    private void OnEnable()
+    {
+        openQuestLog = playerControls.UI.Journal;
+        openQuestLog.Enable();
+    }
+    private void OnDisable()
+    {
+        openQuestLog.Disable();
+    }
+
     void Start()
     {
-        //AddQuest("testTitle", "testText");
-        //UpdateQuest(0,"updatedText","updatedText");
-        //AddQuest("title2","text2");
-        //CompleteQuest(0);
+        
     }
 
     void AddQuest(QuestData data)
