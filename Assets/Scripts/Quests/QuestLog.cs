@@ -7,10 +7,19 @@ public class QuestLog : MonoBehaviour
 {
     [SerializeField] private GameObject questBox;
     [SerializeField] private GameObject questContainer;
-    private List<Quest> questList;
-    private List<Quest> finishedQuests;
+    private List<Quest> questList = new List<Quest>();
+    private List<Quest> finishedQuests = new List<Quest>();
 
     private int siblingIndex;
+
+    void Start()
+    {
+        //AddQuest("testTitle", "testText");
+        //UpdateQuest(0,"updatedText","updatedText");
+        //AddQuest("title2","text2");
+        //CompleteQuest(0);
+    }
+
     void AddQuest(QuestData data)
     {
         var prefab = Instantiate(questBox, questContainer.transform);
@@ -18,6 +27,19 @@ public class QuestLog : MonoBehaviour
         var quest = prefab.GetComponent<Quest>();
         
         quest.Set(data);
+        questList.Add(quest);
+        prefab.transform.SetSiblingIndex(siblingIndex);
+
+        siblingIndex++;
+    }
+
+    public void AddQuest(string questTitle, string questText)
+    {
+        var prefab = Instantiate(questBox, questContainer.transform);
+
+        var quest = prefab.GetComponent<Quest>();
+
+        quest.Set(questText, questTitle);
         questList.Add(quest);
         prefab.transform.SetSiblingIndex(siblingIndex);
 
@@ -42,6 +64,18 @@ public class QuestLog : MonoBehaviour
         }
     }
 
+    void UpdateQuest(int questIndex, string Title, string info, int step = 0)
+    {
+        if (questList.Contains(questList[questIndex]))
+        {
+            questList[questIndex].Set(info, Title);
+        }
+        else
+        {
+            Debug.LogWarning("Attempted to Update a quest that has not been added to quest-log");
+        }
+    }
+
     void CompleteQuest(Quest quest, QuestData data = null)
     {
         if (questList.Contains(quest))
@@ -53,11 +87,23 @@ public class QuestLog : MonoBehaviour
         }
     }
 
-    void RemoveQuest(Quest toRemove)
+    void CompleteQuest(int questIndex)
     {
-        if (questList.Contains(toRemove))
+        if(questList.Contains(questList[questIndex]))
         {
-            questList.Remove(toRemove);
+            siblingIndex--;
+            questList[questIndex].transform.SetAsLastSibling();
+        }
+    }
+
+    void RemoveQuest(int questIndex)
+    {
+        
+        if (questList.Contains(questList[questIndex]))
+        {
+            Destroy(questList[questIndex].gameObject);
+            questList.Remove(questList[questIndex]);
+
             siblingIndex--;
         }
             
