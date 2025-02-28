@@ -85,8 +85,6 @@ public class VolumeController : MonoBehaviour
     private void SetMasterVolume(float volume)
     {
         // Again, checks if VCA is valid before attempting to change anything (the volume in this case)
-        Debug.Log("setttingmastervolume");
-
         if (_masterVCA.isValid())
         {
             _masterVCA.setVolume(volume);
