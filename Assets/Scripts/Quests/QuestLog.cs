@@ -33,9 +33,13 @@ public class QuestLog : MonoBehaviour
         openQuestLog.Disable();
     }
 
-    void Start()
+    private void Update()
     {
-        
+        if(openQuestLog.WasPressedThisFrame())
+        {
+            isOpen = !isOpen;
+            questContainer.gameObject.SetActive(isOpen);
+        }
     }
 
     void AddQuest(QuestData data)
