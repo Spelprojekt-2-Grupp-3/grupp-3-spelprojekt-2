@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8806006946437296460}
   - component: {fileID: 7044014104194552984}
   - component: {fileID: 1907289192812614008}
+  - component: {fileID: 6718987366762343927}
   m_Layer: 5
   m_Name: AudioCanvas
   m_TagString: Untagged
@@ -31,12 +32,12 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 5073840089713828514}
+  - {fileID: 5903768146387880678}
+  - {fileID: 5307381842199717167}
   - {fileID: 4714145501564852575}
   - {fileID: 1820128828250921022}
   - {fileID: 8616102994251800021}
-  - {fileID: 5307381842199717167}
-  - {fileID: 5903768146387880678}
-  - {fileID: 5073840089713828514}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -107,6 +108,24 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &6718987366762343927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 149260773109580274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ead346f88cc6404f965577375b1293a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _masterVCAName: vca:/Master
+  masterVolumeSlider: {fileID: 1860336596419473402}
+  _musicVCAName: vca:/Music
+  musicVolumeSlider: {fileID: 2203909675293922282}
+  _sfxVCAName: vca:/SFX
+  sfxVolumeSlider: {fileID: 5357725765672548365}
 --- !u!1 &646983016385829607
 GameObject:
   m_ObjectHideFlags: 0
@@ -228,7 +247,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4714145501564852575}
   - component: {fileID: 1860336596419473402}
-  - component: {fileID: 676189190081045422}
   m_Layer: 5
   m_Name: Master_Slider
   m_TagString: Untagged
@@ -309,20 +327,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &676189190081045422
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1031294755019251480}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ead346f88cc6404f965577375b1293a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _masterVCAName: vca:/Master
-  volumeSlider: {fileID: 1860336596419473402}
 --- !u!1 &1680748694564604305
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,7 +456,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: 33.645203}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -468,7 +472,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1820128828250921022}
   - component: {fileID: 2203909675293922282}
-  - component: {fileID: 5338137918996252851}
   m_Layer: 5
   m_Name: Music_Slider
   m_TagString: Untagged
@@ -549,20 +552,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &5338137918996252851
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1946427642954006451}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1bd03ec368099604cab437553fbd123a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _musicVCAName: vca:/Music
-  volumeSlider: {fileID: 2203909675293922282}
 --- !u!1 &2851995557625178690
 GameObject:
   m_ObjectHideFlags: 0
@@ -867,7 +856,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8616102994251800021}
   - component: {fileID: 5357725765672548365}
-  - component: {fileID: 7624594134496044910}
   m_Layer: 5
   m_Name: SFX_Slider
   m_TagString: Untagged
@@ -948,20 +936,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &7624594134496044910
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5170055596892959478}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9efedd468c1f99646881f6f809fd31dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _sfxVCAName: vca:/SFX
-  volumeSlider: {fileID: 5357725765672548365}
 --- !u!1 &5444374317117421868
 GameObject:
   m_ObjectHideFlags: 0

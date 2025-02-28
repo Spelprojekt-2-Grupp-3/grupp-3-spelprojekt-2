@@ -66,7 +66,7 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/Banks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638763509538768613
+  lastModified: 638763656024759515
   FileSizes:
   - Name: 
     Value: 2132
@@ -137,7 +137,7 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/Banks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638763509538698425
+  lastModified: 638763656024749502
   FileSizes: []
   Exists: 1
 --- !u!114 &-8006905775015740717
@@ -162,11 +162,12 @@ MonoBehaviour:
   - {fileID: -8216781428189137652}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 1
-  Parameters: []
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -3562635114114512864}
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 70000
 --- !u!114 &-7687564101592464241
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -216,11 +217,12 @@ MonoBehaviour:
   - {fileID: -8216781428189137652}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 1
-  Parameters: []
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -6231870737977156240}
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 70000
 --- !u!114 &-6794082021486705117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,6 +270,30 @@ MonoBehaviour:
   ID:
     data1: 226552861
     data2: 2170712596
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-6231870737977156240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_Ulrich/PauseMenu
+  m_EditorClassIdentifier: 
+  Name: PauseMenu
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1636272863
+    data2: 1689507438
   Type: 0
   IsGlobal: 0
   Labels: []
@@ -351,6 +377,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1373
+--- !u!114 &-3562635114114512864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_Vera/PauseMenu
+  m_EditorClassIdentifier: 
+  Name: PauseMenu
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1636272863
+    data2: 1689507438
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-3245530317234694307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -498,8 +548,32 @@ MonoBehaviour:
   - {fileID: -8216781428189137652}
   StringsBanks:
   - {fileID: -8570510105584572133}
-  cacheTime: 638763509538768613
+  cacheTime: 638763656024759515
   cacheVersion: 131622
+--- !u!114 &297272446851774300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_Irma/PauseMenu
+  m_EditorClassIdentifier: 
+  Name: PauseMenu
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1636272863
+    data2: 1689507438
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &868390025571328640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -527,6 +601,30 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &1329583354677880501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_Sigrid/FadeOut
+  m_EditorClassIdentifier: 
+  Name: FadeOut
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1405755521
+    data2: 2591893151
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &3425671089779441488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -611,6 +709,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &3753810778474068436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_Irma/FadeOut
+  m_EditorClassIdentifier: 
+  Name: FadeOut
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1405755521
+    data2: 2591893151
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &4516155920827347370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -657,11 +779,13 @@ MonoBehaviour:
   - {fileID: -8216781428189137652}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 1
-  Parameters: []
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 1329583354677880501}
+  - {fileID: 9192119937569749617}
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 70000
 --- !u!114 &5524680218552727556
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -789,11 +913,13 @@ MonoBehaviour:
   - {fileID: -8216781428189137652}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 1
-  Parameters: []
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 3753810778474068436}
+  - {fileID: 297272446851774300}
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 70000
 --- !u!114 &8598043957462037804
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -814,6 +940,30 @@ MonoBehaviour:
   ID:
     data1: 4037080723
     data2: 3788307725
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &9192119937569749617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_Sigrid/PauseMenu
+  m_EditorClassIdentifier: 
+  Name: PauseMenu
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1636272863
+    data2: 1689507438
   Type: 0
   IsGlobal: 0
   Labels: []
