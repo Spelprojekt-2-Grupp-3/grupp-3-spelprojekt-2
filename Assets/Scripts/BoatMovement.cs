@@ -35,7 +35,6 @@ public class BoatMovement : MonoBehaviour
     private FMOD.Studio.EventInstance boatSound;
     private PlayerInputActions playerControls;
     private InputAction move, gas, reverse, boost, look;
-    private InputAction pause;
     private int moveDirection;
     private Rigidbody rb;
     private PlayerInput playerInput;
@@ -67,8 +66,6 @@ public class BoatMovement : MonoBehaviour
         boost.Enable();
         look = playerControls.Boat.Look;
         look.Enable();
-        pause = playerControls.UI.Pause;
-        pause.Enable();
         Events.startBoat.AddListener(AllowMovement);
         Events.stopBoat.AddListener(DisallowMovement);
         playerInput.onControlsChanged += ChangeDevice;
@@ -80,7 +77,6 @@ public class BoatMovement : MonoBehaviour
         gas.Disable();
         reverse.Disable();
         boost.Disable();
-        pause.Disable();
         Events.startBoat.RemoveListener(AllowMovement);
         Events.stopBoat.RemoveListener(DisallowMovement);
         playerInput.onControlsChanged -= ChangeDevice;
@@ -96,16 +92,7 @@ public class BoatMovement : MonoBehaviour
     void Update()
     {
         boatSound.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject, rb));
-
-        if(pause.WasPressedThisFrame()) {
-            if(Time.timeScale == 0) {
-                //Time.timeScale = 1;
-            }
-            else {
-                //Time.timeScale = 0;
-            }
-            pauseMenu.SetActive(!pauseMenu.activeSelf);
-        }
+        
         if (!boost.inProgress || boostMeter < 0f) fillMeter = true;
         
         if (boost.inProgress && boostMeter > Time.deltaTime)
