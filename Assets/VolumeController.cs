@@ -6,7 +6,7 @@ using FMOD.Studio;
 public class VolumeController : MonoBehaviour
 {
 
-    // This script as a whole is used to put on a slider to control the master volume of the whole game. This is connected to the masterVCA in FMOD Studio.
+    // This script is used to put on a slider to control the master volume of the whole game. This is connected to the masterVCA in FMOD Studio.
 
     // Path to Master VCA in FMOD
     [SerializeField]

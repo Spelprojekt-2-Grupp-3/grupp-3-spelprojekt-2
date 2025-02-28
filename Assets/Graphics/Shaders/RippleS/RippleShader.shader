@@ -47,6 +47,10 @@ Shader "Custom/Shader"
             o.Smoothness = _Glossiness;
             o.Alpha = c.a;
         }
+
+        void mainImage(out vec4 fragColor, in vec2 fragCoord){
+            
+        }
         ENDCG
     }
     FallBack "Diffuse"
