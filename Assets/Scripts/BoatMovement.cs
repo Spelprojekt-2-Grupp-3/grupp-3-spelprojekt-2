@@ -29,6 +29,7 @@ public class BoatMovement : MonoBehaviour
     [SerializeField, Range(0f, 10f)] private float tiltSpeed = 1f;
     public FMODUnity.EventReference boatSoundEvent;
     [SerializeField] private GameObject pauseMenu;
+    [SerializeField] private GameObject cameraReference;
 
     private bool fillMeter;
     
@@ -136,6 +137,7 @@ public class BoatMovement : MonoBehaviour
         {
             moveSpeed = Mathf.Lerp(moveSpeed, 0, 0.8f * Time.deltaTime);
         }
+        
 
         if (fillMeter)
         {
