@@ -4,14 +4,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Rigidbody), typeof(Animator))]
+[RequireComponent(typeof(Rigidbody), typeof(Animator), typeof(BoxCollider))]
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField, Range(0, 2000)] private float moveSpeed = 100;
+    private float moveSpeed = 0;
     private PlayerInputActions playerControls;
     private InputAction move;
+    [SerializeField, Range(0, 2000)] float maxMoveSpeed;
+    [SerializeField, Range(0, 300)] private float acceleration;
     private InputAction interact;
-    private Vector3 moveDirection = new Vector3();
     private Rigidbody rb;
     
     private void Awake()
@@ -49,15 +50,28 @@ public class PlayerMovement : MonoBehaviour
         //}
         
         if (!move.inProgress) return;
-        moveDirection = move.ReadValue<Vector2>();
-        rb.velocity = new Vector3(
-            moveDirection.x * moveSpeed * Time.deltaTime,
-            rb.velocity.y,
-            moveDirection.y * moveSpeed * Time.deltaTime);
-        if (moveDirection.magnitude > 0.0f) // Roterar inte om man inte kollar åt nån riktning
+        if (moveSpeed < maxMoveSpeed)
         {
-            rb.rotation = Quaternion.Slerp(rb.rotation, Quaternion.LookRotation(new Vector3(moveDirection.x, 0, moveDirection.y)), 0.01f);
+            moveSpeed += acceleration * move.ReadValue<Vector2>().y;
+            if (moveSpeed > maxMoveSpeed)
+            {
+                moveSpeed = maxMoveSpeed;
+            }
         }
+    }
+
+    private void FixedUpdate()
+    {
+        Vector3 euler = transform.localEulerAngles;
+        
+        float targetRotationSpeed = 10f;
+        euler.y += targetRotationSpeed * move.ReadValue<Vector2>().x;
+        rb.rotation = Quaternion.Euler(euler);
+        
+        if (moveSpeed == 0) return;
+        rb.velocity = new Vector3(
+            moveSpeed * transform.forward.x, rb.velocity.y,
+            moveSpeed * transform.forward.z);
     }
 
     private void Interact(InputAction.CallbackContext context)
