@@ -6,7 +6,6 @@ using Ink.Parsed;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
-using UnityEngine.UI;
 using Random = System.Random;
 
 public class UlrichMinigme : Minigames
@@ -15,11 +14,10 @@ public class UlrichMinigme : Minigames
     private GameObject incorrectOrder;
     [SerializeField] private GameObject correctOrder;
     private PlayerInputActions playerControls;
-    private InputAction submit, buttonWest;
+    private InputAction submit;
     List<GameObject> objects = new List<GameObject>();
     [SerializeField] private CurrentInputIcons currentInput;
     private GameObject selectedObject;
-    [SerializeField] private Image selectIcon;
 
     private void Start()
     {
@@ -29,19 +27,14 @@ public class UlrichMinigme : Minigames
     private void OnEnable()
     {
         submit = playerControls.UI.Submit;
-        buttonWest = playerControls.Boat.MinigameButtonWest;
         submit.Enable();
-        buttonWest.Enable();
         Events.checkInputEvent.AddListener(SelectionHandler);
-        Events.updateIcons.AddListener(UpdateIcons);
     }
 
     private void OnDisable()
     {
         submit.Disable();
-        buttonWest.Disable();
         Events.checkInputEvent.RemoveListener(SelectionHandler);
-        Events.updateIcons.RemoveListener(UpdateIcons);
     }
 
     private void Awake()
@@ -79,11 +72,6 @@ public class UlrichMinigme : Minigames
         EventSystem.current.SetSelectedGameObject(objects[0]);
     }
 
-    public override void StopMinigame()
-    {
-        Debug.Log("Joever");
-    }
-
     private void Update()
     {
         if (submit.WasPerformedThisFrame())
@@ -92,36 +80,15 @@ public class UlrichMinigme : Minigames
             {
                 selectedObject = EventSystem.current.currentSelectedGameObject;
                 selectedObject.transform.position = new Vector3(selectedObject.transform.position.x,
-                    selectedObject.transform.position.y + 10, selectedObject.transform.position.z);
+                    selectedObject.transform.position.y, selectedObject.transform.position.z);
             }
             else
             {
-                selectedObject.transform.position = new Vector3(selectedObject.transform.position.x,
-                    selectedObject.transform.position.y - 10, selectedObject.transform.position.z);
                 (EventSystem.current.currentSelectedGameObject.transform.position, selectedObject.transform.position) 
                     = (selectedObject.transform.position, EventSystem.current.currentSelectedGameObject.transform.position);
                 selectedObject = null;
             }
         }
-
-        if (buttonWest.WasPerformedThisFrame())
-        {
-            for (int i = 0; i < correctOrder.transform.childCount; i++)
-            {
-                var name = correctOrder.transform.GetChild(i).name;
-                if (incorrectOrder.transform.Find(name).transform.localPosition !=
-                    correctOrder.transform.GetChild(i).transform.localPosition)
-                {
-                    return;
-                }
-            }
-            StopMinigame();
-        }
-    }
-
-    private void UpdateIcons()
-    {
-        selectIcon.sprite = currentInput.currentInputDevice.buttonSouth;
     }
 
     private void SelectionHandler(PlayerInput sentInputDevice)
