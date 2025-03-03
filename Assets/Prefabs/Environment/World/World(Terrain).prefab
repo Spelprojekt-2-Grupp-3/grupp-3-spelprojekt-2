@@ -98,6 +98,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4910658209719317209}
+  - {fileID: 9137114727609081427}
   - {fileID: 2223575721613703220}
   - {fileID: 2760316399230723457}
   m_Father: {fileID: 8651814130271841412}
@@ -8090,37 +8091,37 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2223575721613703220}
+    m_TransformParent: {fileID: 3459537010612803206}
     m_Modifications:
     - target: {fileID: 4332302065246881055, guid: c88693a52a06ff64b9e0d3e59898b8ae,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4332302065246881055, guid: c88693a52a06ff64b9e0d3e59898b8ae,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4332302065246881055, guid: c88693a52a06ff64b9e0d3e59898b8ae,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4332302065246881055, guid: c88693a52a06ff64b9e0d3e59898b8ae,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.2001953
+      value: -337.7837
       objectReference: {fileID: 0}
     - target: {fileID: 4332302065246881055, guid: c88693a52a06ff64b9e0d3e59898b8ae,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 292.4
+      value: 363.6814
       objectReference: {fileID: 0}
     - target: {fileID: 4332302065246881055, guid: c88693a52a06ff64b9e0d3e59898b8ae,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4
+      value: -270.5
       objectReference: {fileID: 0}
     - target: {fileID: 4332302065246881055, guid: c88693a52a06ff64b9e0d3e59898b8ae,
         type: 3}
@@ -10000,11 +10001,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 5500792952511969356, guid: e9825023c6bc01d44a8535b06cda5a08,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 9137114727609081427}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e9825023c6bc01d44a8535b06cda5a08, type: 3}
 --- !u!4 &2223575721613703220 stripped
