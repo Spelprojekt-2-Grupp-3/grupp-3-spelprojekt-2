@@ -14,10 +14,12 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField, Range(0, 300)] private float acceleration;
     private InputAction interact;
     private Rigidbody rb;
+    private PlayerInput playerInput;
     
     private void Awake()
     {
         playerControls = new PlayerInputActions();
+        playerInput = GetComponent<PlayerInput>();
     }
 
     private void OnEnable()
@@ -27,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
         interact = playerControls.Player.Interact;
         interact.Enable();
         interact.performed += Interact;
+        playerInput.onControlsChanged += ChangeDevice;
     }
 
     private void OnDisable()
@@ -34,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
         move.Disable();
         interact.performed -= Interact;
         interact.Disable();
+        playerInput.onControlsChanged -= ChangeDevice;
     }
 
     void Start()
@@ -77,5 +81,10 @@ public class PlayerMovement : MonoBehaviour
     private void Interact(InputAction.CallbackContext context)
     {
         //Debug.Log("interacted");
+    }
+    
+    private void ChangeDevice(PlayerInput input)
+    {
+        Events.checkInputEvent?.Invoke(input);
     }
 }
