@@ -71,6 +71,33 @@ MonoBehaviour:
   - Name: 
     Value: 2132
   Exists: 1
+--- !u!114 &-8514212946851185794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/Music_VolumeDuck
+  m_EditorClassIdentifier: 
+  Path: snapshot:/Music_VolumeDuck
+  Guid:
+    Data1: 976346016
+    Data2: 1326289275
+    Data3: 1951528099
+    Data4: -1481453128
+  Banks:
+  - {fileID: 3641245667579219406}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &-8394225107374170697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,6 +277,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 70000
+--- !u!114 &-7639507978150142221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/SFX_VolumeDuck
+  m_EditorClassIdentifier: 
+  Path: snapshot:/SFX_VolumeDuck
+  Guid:
+    Data1: -1224651094
+    Data2: 1327162061
+    Data3: -1100374140
+    Data4: -1169738802
+  Banks:
+  - {fileID: 3641245667579219406}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &-7609530818742980000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -352,6 +406,35 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-5592020429147623375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Music_Islands/Music_Bengt
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Music_Islands/Music_Bengt
+  Guid:
+    Data1: 379753180
+    Data2: 1115994219
+    Data3: 1481368232
+    Data4: 94305972
+  Banks:
+  - {fileID: 3641245667579219406}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 7339426015973676201}
+  - {fileID: 599865625389190884}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 70034
 --- !u!114 &-5582731992742969435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -380,6 +463,59 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-5440012358202034171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Music_Islands/Music_Sigrid
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Music_Islands/Music_Sigrid
+  Guid:
+    Data1: 1909713232
+    Data2: 1216234396
+    Data3: 1760100784
+    Data4: -1499934461
+  Banks:
+  - {fileID: 3641245667579219406}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 4280579146437138939}
+  - {fileID: -1331992398680610539}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 70000
+--- !u!114 &-5417917215804367014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Boat Water/Speed
+  m_EditorClassIdentifier: 
+  Name: Speed
+  StudioPath: 
+  Min: 0
+  Max: 15
+  Default: 0
+  ID:
+    data1: 3768441920
+    data2: 825613701
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-5102336826447426411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -481,7 +617,31 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 157
+--- !u!114 &-3745028191695366816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_FullOcean/Ocean
+  m_EditorClassIdentifier: 
+  Name: Ocean
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2852421592
+    data2: 3676271723
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-3562635114114512864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -502,6 +662,30 @@ MonoBehaviour:
   ID:
     data1: 1636272863
     data2: 1689507438
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-3337114413085285814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_FullOcean/Storm
+  m_EditorClassIdentifier: 
+  Name: Storm
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 226552861
+    data2: 2170712596
   Type: 0
   IsGlobal: 0
   Labels: []
@@ -584,6 +768,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-2357719605196239014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_FullOcean/Kraken
+  m_EditorClassIdentifier: 
+  Name: Kraken
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3707995890
+    data2: 1357744987
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-2266197531760082859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -611,6 +819,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-1879852379093581294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_FullOcean/Rain
+  m_EditorClassIdentifier: 
+  Name: Rain
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 4037080723
+    data2: 3788307725
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-1642044554117138103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -640,6 +872,54 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 70034
+--- !u!114 &-1331992398680610539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_Sigrid/PauseMenu
+  m_EditorClassIdentifier: 
+  Name: PauseMenu
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1636272863
+    data2: 1689507438
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-1315529513777448193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_Ulrich/PauseMenu
+  m_EditorClassIdentifier: 
+  Name: PauseMenu
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1636272863
+    data2: 1689507438
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-459554508816728993
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -694,6 +974,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-163621788813079995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound/SFX/Boat Water
+  m_EditorClassIdentifier: 
+  Path: event:/Sound/SFX/Boat Water
+  Guid:
+    Data1: -1903622087
+    Data2: 1163013786
+    Data3: 1852199096
+    Data4: 1561139202
+  Banks:
+  - {fileID: 3641245667579219406}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -5417917215804367014}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -720,16 +1028,27 @@ MonoBehaviour:
   - {fileID: -8324423887501695967}
   - {fileID: -2266197531760082859}
   - {fileID: -3905149736860296851}
-  - {fileID: 4420094938984292459}
   - {fileID: 3990610056521939902}
   - {fileID: 5284261743753672026}
   - {fileID: -2568065986608218116}
+  - {fileID: 3969452890630864473}
+  - {fileID: 7912563144886168737}
+  - {fileID: -163621788813079995}
+  - {fileID: -5440012358202034171}
+  - {fileID: -8514212946851185794}
+  - {fileID: -7639507978150142221}
+  - {fileID: 1807518260638087544}
+  - {fileID: -5592020429147623375}
+  - {fileID: 7981520791492152037}
+  - {fileID: 5126711483151747721}
+  - {fileID: 2203695407265395966}
+  - {fileID: 8721146281951024784}
   EditorParameters: []
   MasterBanks:
   - {fileID: 3641245667579219406}
   StringsBanks:
   - {fileID: 8573797972098898880}
-  cacheTime: 638766181529633807
+  cacheTime: 638767133304029277
   cacheVersion: 131622
 --- !u!114 &49985666265910251
 MonoBehaviour:
@@ -751,7 +1070,7 @@ MonoBehaviour:
     Data4: 247216486
   Banks:
   - {fileID: 3641245667579219406}
-  IsStream: 1
+  IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters: []
@@ -769,6 +1088,30 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
   m_Name: parameter:/Music_Irma/PauseMenu
+  m_EditorClassIdentifier: 
+  Name: PauseMenu
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1636272863
+    data2: 1689507438
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &599865625389190884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_Bengt/PauseMenu
   m_EditorClassIdentifier: 
   Name: PauseMenu
   StudioPath: 
@@ -829,6 +1172,89 @@ MonoBehaviour:
   ID:
     data1: 1405755521
     data2: 2591893151
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &1807518260638087544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound/SFX/Interface/Menu_ScreenApper
+  m_EditorClassIdentifier: 
+  Path: event:/Sound/SFX/Interface/Menu_ScreenApper
+  Guid:
+    Data1: 468876220
+    Data2: 1138487133
+    Data3: 1801704102
+    Data4: 1346725335
+  Banks:
+  - {fileID: 3641245667579219406}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &2203695407265395966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Music_Ocean/Music_FullOcean
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Music_Ocean/Music_FullOcean
+  Guid:
+    Data1: 925081330
+    Data2: 1196434389
+    Data3: 1616138641
+    Data4: -603118079
+  Banks:
+  - {fileID: 3641245667579219406}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -3337114413085285814}
+  - {fileID: 6073391643730621904}
+  - {fileID: -2357719605196239014}
+  - {fileID: -1879852379093581294}
+  - {fileID: -3745028191695366816}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 280284
+--- !u!114 &2470751507305924481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_Irma/PauseMenu
+  m_EditorClassIdentifier: 
+  Name: PauseMenu
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1636272863
+    data2: 1689507438
   Type: 0
   IsGlobal: 0
   Labels: []
@@ -904,7 +1330,7 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/Banks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638766181529541479
+  lastModified: 638767133304018187
   FileSizes: []
   Exists: 1
 --- !u!114 &3692166981550539910
@@ -959,6 +1385,33 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &3969452890630864473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound/SFX/Interface/Menu_MoveCursor
+  m_EditorClassIdentifier: 
+  Path: event:/Sound/SFX/Interface/Menu_MoveCursor
+  Guid:
+    Data1: 2116855810
+    Data2: 1186396337
+    Data3: 279828399
+    Data4: 619564290
+  Banks:
+  - {fileID: 3641245667579219406}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 241
 --- !u!114 &3990610056521939902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -986,7 +1439,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &4420094938984292459
+--- !u!114 &4280579146437138939
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -995,24 +1448,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Sound/SFX/Interface/Menu_Screen
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_Sigrid/FadeOut
   m_EditorClassIdentifier: 
-  Path: event:/Sound/SFX/Interface/Menu_Screen
-  Guid:
-    Data1: 468876220
-    Data2: 1138487133
-    Data3: 1801704102
-    Data4: 1346725335
-  Banks:
-  - {fileID: 3641245667579219406}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
+  Name: FadeOut
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1405755521
+    data2: 2591893151
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &4516155920827347370
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1037,6 +1487,33 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &5126711483151747721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/PauseMenu
+  m_EditorClassIdentifier: 
+  Path: snapshot:/PauseMenu
+  Guid:
+    Data1: -1233621788
+    Data2: 1165402871
+    Data3: 1603071907
+    Data4: 2046773842
+  Banks:
+  - {fileID: 3641245667579219406}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &5284261743753672026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1113,7 +1590,7 @@ MonoBehaviour:
     Data4: 155210153
   Banks:
   - {fileID: 3641245667579219406}
-  IsStream: 1
+  IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters: []
@@ -1140,6 +1617,30 @@ MonoBehaviour:
   ID:
     data1: 3707995890
     data2: 1357744987
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &6073391643730621904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_FullOcean/FadeOut
+  m_EditorClassIdentifier: 
+  Name: FadeOut
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1405755521
+    data2: 2591893151
   Type: 0
   IsGlobal: 0
   Labels: []
@@ -1252,6 +1753,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &7339426015973676201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_Bengt/FadeOut
+  m_EditorClassIdentifier: 
+  Name: FadeOut
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1405755521
+    data2: 2591893151
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &7767605275386448371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1279,6 +1804,111 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1420
+--- !u!114 &7912563144886168737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Music_Islands/Music_Vera
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Music_Islands/Music_Vera
+  Guid:
+    Data1: 478698255
+    Data2: 1302970450
+    Data3: -1772362348
+    Data4: -242738092
+  Banks:
+  - {fileID: 3641245667579219406}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 8024741419046332024}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 70000
+--- !u!114 &7980305863595859124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_Irma/FadeOut
+  m_EditorClassIdentifier: 
+  Name: FadeOut
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1405755521
+    data2: 2591893151
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &7981520791492152037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Music_Islands/Music_Irma
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Music_Islands/Music_Irma
+  Guid:
+    Data1: -36581410
+    Data2: 1315348623
+    Data3: 2119045789
+    Data4: -1800962889
+  Banks:
+  - {fileID: 3641245667579219406}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 7980305863595859124}
+  - {fileID: 2470751507305924481}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 70000
+--- !u!114 &8024741419046332024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_Vera/PauseMenu
+  m_EditorClassIdentifier: 
+  Name: PauseMenu
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1636272863
+    data2: 1689507438
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &8244670857086730132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1351,10 +1981,10 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/Banks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638766181529633807
+  lastModified: 638767133304029277
   FileSizes:
   - Name: 
-    Value: 1838
+    Value: 2426
   Exists: 1
 --- !u!114 &8598043957462037804
 MonoBehaviour:
@@ -1380,6 +2010,34 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &8721146281951024784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Music_Islands/Music_Ulrich
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Music_Islands/Music_Ulrich
+  Guid:
+    Data1: -1073368322
+    Data2: 1197654800
+    Data3: 213240497
+    Data4: 240607490
+  Banks:
+  - {fileID: 3641245667579219406}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -1315529513777448193}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 70000
 --- !u!114 &9192119937569749617
 MonoBehaviour:
   m_ObjectHideFlags: 0
