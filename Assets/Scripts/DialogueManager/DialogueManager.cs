@@ -79,7 +79,6 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
-        BindExternal();
     }
 
     void BindExternal()
@@ -150,6 +149,8 @@ public class DialogueManager : MonoBehaviour
         _currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
+        
+        BindExternal();
         
         //Reset portrait, layout and speaker
         displayNameText.text = "???";
