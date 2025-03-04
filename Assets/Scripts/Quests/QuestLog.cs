@@ -86,7 +86,7 @@ public class QuestLog : MonoBehaviour
         }
     }
 
-    void UpdateQuest(int questIndex, string Title, string info, int step = 0)
+    public void UpdateQuest(int questIndex, string Title, string info, int step = 0)
     {
         if (questList.Contains(questList[questIndex]))
         {
@@ -109,7 +109,7 @@ public class QuestLog : MonoBehaviour
         }
     }
 
-    void CompleteQuest(int questIndex)
+    public void CompleteQuest(int questIndex)
     {
         if(questList.Contains(questList[questIndex]))
         {
@@ -118,9 +118,8 @@ public class QuestLog : MonoBehaviour
         }
     }
 
-    void RemoveQuest(int questIndex)
+    public void RemoveQuest(int questIndex)
     {
-        
         if (questList.Contains(questList[questIndex]))
         {
             Destroy(questList[questIndex].gameObject);
@@ -128,7 +127,6 @@ public class QuestLog : MonoBehaviour
 
             siblingIndex--;
         }
-            
         else
             Debug.Log("Tried to remove a quest that wasn't in the quest-log");
     }

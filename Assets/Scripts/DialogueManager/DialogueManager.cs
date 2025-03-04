@@ -6,6 +6,7 @@ using UnityEngine;
 using Ink.Runtime;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
+using UnityEngine.Serialization;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -24,7 +25,14 @@ public class DialogueManager : MonoBehaviour
     private TextMeshProUGUI[] _choicesText;
     
     private Story _currentStory;
-    
+
+    [Header("Quest/Inventory Managers")]
+    [SerializeField] private QuestLog questLog;
+    [SerializeField] private InventoryController inventoryController;
+    [FormerlySerializedAs("packages")]
+    [Header("Package data list")]
+    [SerializeField] private List<PackageData> packageDatas;
+
     //Readonly (I dont know why)
     public bool dialogueIsPlaying { get; private set; }
     
@@ -69,10 +77,45 @@ public class DialogueManager : MonoBehaviour
 
     private void Start()
     {
+        BindExternal();
+        
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
     }
 
+    void BindExternal()
+    {
+        _currentStory.BindExternalFunction("AddQuest", (string questTitle, string questInfo) =>
+        {
+            questLog.AddQuest(questTitle,questInfo);
+        });
+        
+        _currentStory.BindExternalFunction("EditQuest", (string questTitle, string questInfo, int questIndex) =>
+        {
+            questLog.UpdateQuest(questIndex,questTitle,questInfo);
+        });
+        
+        _currentStory.BindExternalFunction("FinishQuest", (int questIndex) =>
+        {
+            questLog.CompleteQuest(questIndex);
+        });
+        
+        _currentStory.BindExternalFunction("InsertItem", (int packageIndex) =>
+        {
+            if (packageIndex<=packageDatas.Count && packageDatas[packageIndex])
+                if (inventoryController.InsertNewItem(packageDatas[packageIndex]))
+                {
+                    return true;
+                }
+                else
+                    Debug.Log("Inventory full",this);
+            else
+                Debug.LogWarning("Item not found or out of index",this);
+
+            return false;
+        });
+    }
+    
     private void Update()
     {
         //return if dialogue isn't playing

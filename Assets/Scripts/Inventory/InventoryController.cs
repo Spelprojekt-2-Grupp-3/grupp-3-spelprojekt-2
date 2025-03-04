@@ -379,10 +379,10 @@ public class InventoryController : MonoBehaviour
    }
    
    /// <summary>
-   /// Creates a new item and inserts it into the main inventory
+   /// Creates a new item and attempts to inserts it into the main inventory
    /// </summary>
    /// <param name="data">what data the created package should have</param>
-   /// <returns>true if successful, false if not</returns>
+   /// <returns>true if successfully inserted, false if not</returns>
    public bool InsertNewItem(PackageData data)
    {
        CreateItem(data);
