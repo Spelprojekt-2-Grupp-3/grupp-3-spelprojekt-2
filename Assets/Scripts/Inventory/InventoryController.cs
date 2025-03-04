@@ -199,7 +199,7 @@ public class InventoryController : MonoBehaviour
        //Dev thingies
        if (devving && middleClick.WasPressedThisFrame())
        {
-           if (selectedGrid == null) { return;}
+           if (mainGrid == null) { return;}
 
            CreateRandomItem(new List<string>());  
            if (shift.inProgress)

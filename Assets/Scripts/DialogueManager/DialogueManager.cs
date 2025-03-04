@@ -77,10 +77,9 @@ public class DialogueManager : MonoBehaviour
 
     private void Start()
     {
-        BindExternal();
-        
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
+        BindExternal();
     }
 
     void BindExternal()
