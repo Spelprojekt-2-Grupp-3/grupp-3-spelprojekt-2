@@ -15,7 +15,7 @@ MonoBehaviour:
   active: 1
   mode:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
   neutralHDRRangeReductionMode:
     m_OverrideState: 0
     m_Value: 2
@@ -228,7 +228,7 @@ MonoBehaviour:
     m_Value: 0
   saturation:
     m_OverrideState: 1
-    m_Value: 5
+    m_Value: 21
 --- !u!114 &5137724737554431146
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -247,10 +247,10 @@ MonoBehaviour:
     m_Value: {x: 0.81533855, y: 0.89177, z: 1, w: -0.24944289}
   midtones:
     m_OverrideState: 1
-    m_Value: {x: 0.7422939, y: 0.8204753, z: 1, w: 0}
+    m_Value: {x: 0.7422939, y: 0.8204753, z: 1, w: -0.12711866}
   highlights:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 0.9361065, z: 0.9060249, w: 0.073952824}
+    m_Value: {x: 1, y: 0.9361065, z: 0.9060249, w: -0.0000000030521439}
   shadowsStart:
     m_OverrideState: 0
     m_Value: 0
