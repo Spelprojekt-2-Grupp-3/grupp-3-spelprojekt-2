@@ -1,5 +1,4 @@
-EXTERNAL AddQuest(questName, questText)
-EXTERNAL UpdateQuest(questName, edit)
+EXTERNAL AddQuest(questTitle, questText)
 
 -> intro
 
@@ -7,7 +6,15 @@ EXTERNAL UpdateQuest(questName, edit)
 
 Whoa, hey there! #Speaker:Bengt
 
-[The stranger looks to be rather dumbfounded.] #Speaker:Bengt
+    * [<color=\#29c445>Skip (testing)</color>] 
+    
+    ~AddQuest("Windward", "Get all boat upgrades")
+    
+    -> END
+    
+    * [Continue dialogue]
+
+-[The stranger looks to be rather dumbfounded.] #Speaker:Bengt
 
 [Then again, so are you.] #Speaker:Bengt
 
@@ -98,33 +105,47 @@ That boat belonged to your parents, then? #Speaker:Bengt
 
 I guess I owe it to you to give it back, but it’s in bad shape. #Speaker:Bengt
 
-It still works, but I don’t recommend taking it outside the archipelago. It might not hold out for very long. #Speaker:Bengt
+It still works, but I don’t recommend taking it outside the archipelago. #Speaker:Bengt
+
+The Kraken has a mean habit of preventing anyone from leaving. #Speaker:Bengt
+
+We'll want to make sure your boat can withstand some pushback before you try to leave. #Speaker:Bengt
 
     * [Can you help?] 
     
--You mentioned you’re a mechanic. Could you repair it for me? #Speaker:Cleo
+-You mentioned you’re a mechanic. Could you improve the boat for me? #Speaker:Cleo
     
 Some work for these idle hands? Why, I’d be happy to help you! #Speaker:Bengt
 
-Thing is, if I’m going to repair that boat for you, I’ll need materials. #Speaker:Bengt
+In fact, there's one upgrade I can work in for you right now. #Speaker:Bengt
 
-I have some right here on this island, but most of what I need is elsewhere. #Speaker:Bengt
+It's common around here for our boats to have gliders attached. #Speaker:Bengt
 
-How about we work out a deal? I’ll give you your parents’ boat and repair it as much as I’m able, as long as you bring me the materials I need. #Speaker:Bengt
+Ride over a ramp, and you'll be soaring a good while! #Speaker:Bengt
+
+You can even use it to evade the Kraken, if necessary. It could come in handy when you leave. #Speaker:Bengt
+
+    * [Sounds good.]
+    
+-That sounds helpful, thanks! #Speaker:Cleo
+
+I'll go ahead and add that on now, then. #Speaker:Bengt
+
+Give me a moment! I'll be right back. #Speaker:Bengt
+
+[Bengt disappears into his workshop.] #Speaker:Bengt
+
+[You hear a collection of bangs and clanks until he pops back out, wiping sweat off his brow.] #Speaker:Bengt
+
+All done! #Speaker:Bengt
+
+But there are several more upgrades you'll need, and I won't be able to help you with all of them. #Speaker:Bengt
+
+You'll have to seek out my friends for that. #Speaker:Bengt
+
+They each have different skillsets they could put to use for you. #Speaker:Bengt
 
 - (questions1)
-    * [<color=\#29c445>Why me?</color>]
-    
-    Why don’t you get them yourself and I’ll just pay you? #Speaker:Cleo
-
-    Collecting materials can be pretty time-consuming, and I've got work to do! I'd be better off staying put. #Speaker:Bengt
-
-    And frankly, I don’t need payment. We get by with favors around here, as you'll most likely find out for yourself. #Speaker:Bengt
-    
-    [It sounds like there’s a very close-knit community among the residents here.] #Speaker:Bengt
-    
-    So, what do you say? #Speaker:Bengt
-    -> questions1
     
     * [<color=\#29c445>But the Kraken...</color>]
     
@@ -145,74 +166,12 @@ How about we work out a deal? I’ll give you your parents’ boat and repair it
     
     * [Alright.]
 
--Alright, I’m in. I'll get some materials for you. #Speaker:Cleo
+-Alright, sounds good. I'll look for them. #Speaker:Cleo
 
-Sweet!#Speaker:Bengt
+Sweet! #Speaker:Bengt
 
-The boat has been collecting dust in my workshop for a long while now. I’ll show it to you. #Speaker:Bengt
+Good luck out there. And come see me anytime you feel like chatting! #Speaker:Bengt
 
-Just head on over to the building with the big wrench on it when you’re ready! #Speaker:Bengt
-
-[You follow Bengt to his workshop.] #Speaker:Bengt
-
-~AddQuest("Getting started", "Check on your parents' boat")
-
--> tutorial
-
-=== tutorial ===
-
-Not looking too good, right? Well, no worries, we’ll get it fixed up one step at a time! #Speaker:Bengt
-
-(Blah blah blah tutorial on the upgrading system.) #Speaker:Bengt
-
-We’ll want to start off by repairing that compass of yours. Luckily, I already have the materials we need. #Speaker:Bengt
-
-Give me a sec and I'll get straight to it! #Speaker:Bengt
-
-[Bengt spends the next several minutes fixing your compass] #Speaker:Bengt
-
-[When he finishes, he presents it to you with a big smile on his face.] #Speaker:Bengt
-
-All done! #Speaker:Bengt
-
-Next up is the X. We’ll need Y for this one. #Speaker:Bengt
-
-Sigrid, our lighthouse keeper, has some Y on her island. Why don’t you give her a visit? #Speaker:Bengt
-
-It’s just west of here. You can use your newly repaired compass, it'll point the way. #Speaker:Bengt
-
-Oh, and Sigrid might be alarmed if she sees a stranger rummaging through her turf. #Speaker:Bengt
-
-So please do talk to her before you do anything! #Speaker:Bengt
-
-Just let her know I sent you and you should be good to go. #Speaker:Bengt
-
-I'll write a letter for you to show her, just in case. #Speaker:Bengt
-
-    * [Got it.]
-    
--Head west and talk to Sigrid, got it. Anything else? #Speaker:Cleo
-
-Hmm… I think that’s everything! Off you go now, and good luck! #Speaker:Bengt
-
-[Bengt gives you a pap on the shoulder and disappears into his workshop.] #Speaker:Bengt
-
-[...] #Speaker:Cleo
-
-[You can’t help but feel like you’ve been sent out on a goosechase. Coming here was a bad idea.] #Speaker:Cleo
-
-[But your parents’ boat confirms to you that this might be where they went missing.] #Speaker:Cleo
-
-[Where else could they have gone without it?] #Speaker:Cleo
-
-[And if Sigrid is this archipelago’s lighthouse keeper, she might’ve seen them at some point.] #Speaker:Cleo
-
-[You’ve long since lost hope that your parents could be alive...] #Speaker:Cleo
-
-[...but it might bring you some peace of mind to at least find out what happened to them.] #Speaker:Cleo
-
-[For now, you’re stuck here regardless. Thanks, Kraken.] #Speaker:Cleo
-
-~UpdateQuest("Getting started", "Talk to Sigrid")
+~AddQuest("Windward", "Get all boat upgrades")
 
 -> END
