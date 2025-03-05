@@ -24035,6 +24035,13 @@ MonoBehaviour:
       Data3: 154919050
       Data4: -935636229
     Path: event:/Sound/SFX/Engine
+  boatWaterSoundEvent:
+    Guid:
+      Data1: -1903622087
+      Data2: 1163013786
+      Data3: 1852199096
+      Data4: 1561139202
+    Path: event:/Sound/SFX/Boat Water
   boostMeterObj: {fileID: 641931065}
 --- !u!114 &982887880
 MonoBehaviour:
@@ -53150,7 +53157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nonRigidbodyVelocity: 0
-  attenuationObject: {fileID: 0}
+  attenuationObject: {fileID: 982887878}
 --- !u!114 &1188633979693982337
 MonoBehaviour:
   m_ObjectHideFlags: 3
