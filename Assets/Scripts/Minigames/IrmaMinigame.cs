@@ -14,7 +14,7 @@ public class IrmaMinigame : Minigames
     private PlayerInputActions playerControls;
     private InputAction leftStick, rightStick, submit;
     [SerializeField] private Canvas irmaMinigameCanvas;
-    private Image leftStickIcon, rightStickIcon;
+    private Image leftStickIcon, rightStickIcon, submitIcon;
     private int targetValueLeft, targetValueRight, currentValueLeft, currentValueRight;
     [SerializeField] private CurrentInputIcons currentInput;
     [SerializeField, Range(0, 100f)] private int numberRange;
@@ -58,6 +58,7 @@ public class IrmaMinigame : Minigames
         currentValueRightInst = bg.Find("RightValue").GetComponent<TextMeshProUGUI>();
         leftStickIcon = bg.Find("LeftStickIcon").GetComponent<Image>();
         rightStickIcon = bg.Find("RightStickIcon").GetComponent<Image>();
+        submitIcon = bg.Find("SubmitIcon").GetComponent<Image>();
         targetValueLeft = Random.Range(0, numberRange);
         targetValueRight = Random.Range(0, numberRange);
         currentValueLeft = 0;
@@ -127,5 +128,6 @@ public class IrmaMinigame : Minigames
     {
         leftStickIcon.sprite = currentInput.currentInputDevice.moveSprite;
         rightStickIcon.sprite = currentInput.currentInputDevice.moveCameraSprite;
+        submitIcon.sprite = currentInput.currentInputDevice.interactSprite;
     }
 }
