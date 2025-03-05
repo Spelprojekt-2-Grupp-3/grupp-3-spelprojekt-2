@@ -168,12 +168,14 @@ public class ItemGrid : MonoBehaviour
         return null;
     }
     
-    bool CheckPosition(int xPos, int yPos)
+    bool CheckBoundry(int xPos, int yPos, int width, int height)
     {
         if (xPos < 0 || yPos < 0)
         {
             return false;
         }
+        xPos += width-1;
+        yPos += height-1;
         if (xPos >= inventorySizeX || yPos >= inventorySizeY)
         {
             return false;
@@ -182,20 +184,20 @@ public class ItemGrid : MonoBehaviour
         return true;
     }
 
-    bool CheckBoundry(int xPos, int yPos, int width, int height)
-    {
-        if (!CheckPosition(xPos, yPos))
-            return false;
-
-        xPos += width-1;
-        yPos += height-1;
-        
-        if (!CheckPosition(xPos, yPos))
-            return false;
-        
-        
-        return true;
-    }
+    //bool CheckBoundry(int xPos, int yPos, int width, int height)
+    //{
+    //    if (!CheckPosition(xPos, yPos))
+    //        return false;
+//
+    //    xPos += width-1;
+    //    yPos += height-1;
+    //    
+    //    if (!CheckPosition(xPos, yPos))
+    //        return false;
+    //    
+    //    
+    //    return true;
+    //}
 
     bool CheckOverlap(int xPos, int yPos, int width, int height)
     {
