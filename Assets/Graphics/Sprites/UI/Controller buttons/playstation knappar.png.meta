@@ -93,20 +93,296 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: playstation knappar_3
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 730
+        width: 190
+        height: 191
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ccaa640616b65d4aba5b37952534916
+      internalID: -2064701903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation knappar_4
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 731
+        width: 190
+        height: 191
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12e9ae6085677864280bbd677476ba84
+      internalID: -1991309424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation knappar_5
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 643
+        width: 188
+        height: 191
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e623aa52f01e4d43b88e5efbcdc4d3f
+      internalID: -1732151317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation knappar_10
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 520
+        width: 190
+        height: 190
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee436fd684ea61440b7a29584e6e96ef
+      internalID: 1962534682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation knappar_11
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 520
+        width: 190
+        height: 190
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56a2041f301a29645a839360bead36a5
+      internalID: 273837688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation knappar_12
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 376
+        width: 190
+        height: 190
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 382f0ddcf33f45140b686aa06c712954
+      internalID: 760263726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation knappar_13
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 324
+        width: 243
+        height: 169
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a658fe320b612a46ad9c5ee8bc6a753
+      internalID: 310718700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation knappar_14
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 324
+        width: 243
+        height: 169
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f8acf63a34772d43837dcc3ffe8f292
+      internalID: 737565928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation knappar_15
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 134
+        width: 190
+        height: 190
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb22f162b1300794096592ab8fc169f3
+      internalID: 1857607744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation knappar_16
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 89
+        width: 200
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1483162a812e4584d9d0fadf638d1287
+      internalID: -748458646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: playstation knappar_17
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 91
+        width: 200
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ee8f0cd87d43984981118e87afbf317
+      internalID: -767650885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 2b67a449fd865f145beed2c104601760
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      playstation knappar_0: 2020430762
+      playstation knappar_1: 897460157
+      playstation knappar_10: 1962534682
+      playstation knappar_11: 273837688
+      playstation knappar_12: 760263726
+      playstation knappar_13: 310718700
+      playstation knappar_14: 737565928
+      playstation knappar_15: 1857607744
+      playstation knappar_16: -748458646
+      playstation knappar_17: -767650885
+      playstation knappar_18: -2143070139
+      playstation knappar_2: -1520872281
+      playstation knappar_3: -2064701903
+      playstation knappar_4: -1991309424
+      playstation knappar_5: -1732151317
+      playstation knappar_6: 1501816432
+      playstation knappar_7: 648415462
+      playstation knappar_8: 203338537
+      playstation knappar_9: -968348954
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -93,20 +93,296 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: xbox knappar_3
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 730
+        width: 190
+        height: 191
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bfc6b7c00e2bb8458a3ef6bd08bc6de
+      internalID: -1128214565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox knappar_4
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 731
+        width: 190
+        height: 191
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5988fa9f0792407489be2eb9686f7d93
+      internalID: 99494007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox knappar_5
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 643
+        width: 188
+        height: 191
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0037369980ebb79498fa9f24f56ac806
+      internalID: 381580466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox knappar_10
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 520
+        width: 190
+        height: 190
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6f20ae128289504b8d9415a953f0e5b
+      internalID: 1328712246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox knappar_11
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 520
+        width: 190
+        height: 190
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1007337a4d5a51542913375298d45b02
+      internalID: -1793503070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox knappar_12
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 376
+        width: 190
+        height: 190
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 458c051e5a670924caa06d374083a949
+      internalID: -640039223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox knappar_13
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 324
+        width: 243
+        height: 169
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f204c5419e5420943abe4c7487ce3173
+      internalID: -331069867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox knappar_14
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 324
+        width: 243
+        height: 169
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e33a312c517384542a5dd799fab4ba58
+      internalID: -1457975010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox knappar_15
+      rect:
+        serializedVersion: 2
+        x: 142
+        y: 134
+        width: 190
+        height: 190
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bc8d009c4de4c346a97c4e1ea0382d8
+      internalID: -447451983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox knappar_16
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 89
+        width: 200
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b79b47bbbf4163c4587768385c5dfc63
+      internalID: -1242068616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: xbox knappar_17
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 91
+        width: 200
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 273e46a7848019640af4677967cce5c0
+      internalID: 227949700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 1095e390ab5346d4a9009a8020d04548
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      xbox knappar_0: 1743027606
+      xbox knappar_1: -808284767
+      xbox knappar_10: 1328712246
+      xbox knappar_11: -1793503070
+      xbox knappar_12: -640039223
+      xbox knappar_13: -331069867
+      xbox knappar_14: -1457975010
+      xbox knappar_15: -447451983
+      xbox knappar_16: -1242068616
+      xbox knappar_17: 227949700
+      xbox knappar_18: 1427555501
+      xbox knappar_2: -1057737556
+      xbox knappar_3: -1128214565
+      xbox knappar_4: 99494007
+      xbox knappar_5: 381580466
+      xbox knappar_6: 595903946
+      xbox knappar_7: 407238366
+      xbox knappar_8: 1002649104
+      xbox knappar_9: -1563379259
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
