@@ -27,11 +27,11 @@ public class BoatMovement : MonoBehaviour
     [SerializeField, Range(0, 90)] private int sideTiltAngle = 25;
     [SerializeField, Range(0, 90)] private int frontTiltAngle = 25;
     [SerializeField, Range(0f, 10f)] private float tiltSpeed = 1f;
-    public FMODUnity.EventReference boatSoundEvent;
+    public FMODUnity.EventReference boatSoundEvent, boatWaterSoundEvent;
 
     private bool fillMeter;
     
-    private FMOD.Studio.EventInstance boatSound;
+    private FMOD.Studio.EventInstance boatSound, boatWaterSound;
     private PlayerInputActions playerControls;
     private InputAction move, gas, reverse, boost, look;
     private int moveDirection;
@@ -80,12 +80,15 @@ public class BoatMovement : MonoBehaviour
     void Start()
     {
         boatSound = FMODUnity.RuntimeManager.CreateInstance(boatSoundEvent);
+        boatWaterSound = FMODUnity.RuntimeManager.CreateInstance(boatWaterSoundEvent);
         boatSound.start();
+        boatWaterSound.start();
     }
     
     void Update()
     {
         boatSound.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject, rb));
+        boatWaterSound.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject, rb));
         
         if (!boost.inProgress || boostMeter < 0f) fillMeter = true;
         
@@ -144,6 +147,7 @@ public class BoatMovement : MonoBehaviour
         }
         float boatSpeed = moveSpeed * 15 / maxSpeed;
         boatSound.setParameterByName("Speed", boatSpeed);
+        boatWaterSound.setParameterByName("Speed", boatSpeed);
     }
 
     private void FixedUpdate()
