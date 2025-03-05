@@ -195,4 +195,9 @@ public class BoatMovement : MonoBehaviour
     {
         Events.checkInputEvent?.Invoke(input);
     }
+    
+    void OnCollisionEnter(Collision collision)
+    {
+        moveSpeed = rb.velocity.magnitude;
+    }
 }
