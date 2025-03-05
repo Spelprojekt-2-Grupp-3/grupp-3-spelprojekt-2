@@ -205,7 +205,6 @@ public class InventoryController : MonoBehaviour
            if (shift.inProgress)
            {
                InventoryItem toInsert = selectedPackage;
-               selectedPackage = null;
                InsertItem(toInsert);
            }
        }
@@ -375,6 +374,7 @@ public class InventoryController : MonoBehaviour
        }
 
        mainGrid.PlaceItem(itemToInsert, gridPos.Value.x, gridPos.Value.y);
+       selectedPackage = null;
        return true;
    }
    
@@ -392,10 +392,11 @@ public class InventoryController : MonoBehaviour
        if (gridPos == null)
        {
            Destroy(selectedPackage.gameObject);
+           selectedPackage = null;
            return false;
        }
-       
        mainGrid.PlaceItem(selectedPackage, gridPos.Value.x, gridPos.Value.y);
+       selectedPackage = null;
        return true;
    }
 

@@ -28,8 +28,6 @@ public class BoatMovement : MonoBehaviour
     [SerializeField, Range(0, 90)] private int frontTiltAngle = 25;
     [SerializeField, Range(0f, 10f)] private float tiltSpeed = 1f;
     public FMODUnity.EventReference boatSoundEvent;
-    [SerializeField] private GameObject pauseMenu;
-    [SerializeField] private GameObject cameraReference;
 
     private bool fillMeter;
     
@@ -38,7 +36,6 @@ public class BoatMovement : MonoBehaviour
     private InputAction move, gas, reverse, boost, look;
     private int moveDirection;
     private Rigidbody rb;
-    private PlayerInput playerInput;
     private BuoyantObject buoyancy;
     [SerializeField] private GameObject boostMeterObj;
     private Image boostMeterImage;
@@ -49,7 +46,6 @@ public class BoatMovement : MonoBehaviour
         buoyancy = GetComponent<BuoyantObject>();
         rb = GetComponent<Rigidbody>();
         playerControls = new PlayerInputActions();
-        playerInput = GetComponent<PlayerInput>();
         moveSpeed = 0;
         boostMeter = maxBoostDuration;
         fillMeter = false;
@@ -69,7 +65,6 @@ public class BoatMovement : MonoBehaviour
         look.Enable();
         Events.startBoat.AddListener(AllowMovement);
         Events.stopBoat.AddListener(DisallowMovement);
-        playerInput.onControlsChanged += ChangeDevice;
     }
 
     private void OnDisable()
@@ -80,12 +75,10 @@ public class BoatMovement : MonoBehaviour
         boost.Disable();
         Events.startBoat.RemoveListener(AllowMovement);
         Events.stopBoat.RemoveListener(DisallowMovement);
-        playerInput.onControlsChanged -= ChangeDevice;
     }
 
     void Start()
     {
-        Events.checkInputEvent?.Invoke(playerInput);
         boatSound = FMODUnity.RuntimeManager.CreateInstance(boatSoundEvent);
         boatSound.start();
     }
@@ -190,9 +183,9 @@ public class BoatMovement : MonoBehaviour
         move.Disable();
         gas.Disable();
     }
-
-    private void ChangeDevice(PlayerInput input)
+    
+    void OnCollisionEnter(Collision collision)
     {
-        Events.checkInputEvent?.Invoke(input);
+        moveSpeed = rb.velocity.magnitude;
     }
 }

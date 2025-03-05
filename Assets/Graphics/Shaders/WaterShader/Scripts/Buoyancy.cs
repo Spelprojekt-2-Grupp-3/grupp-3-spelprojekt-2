@@ -72,7 +72,7 @@ public class BuoyantObject : MonoBehaviour
 
         // Get rigidbody
         rb = GetComponent<Rigidbody>();
-        rb.useGravity = false;
+        //rb.useGravity = false;
 
         steepness = shaderMaterial.GetFloat("_Wave_Steepness");
         wavelength = shaderMaterial.GetFloat("_Wave_Length");

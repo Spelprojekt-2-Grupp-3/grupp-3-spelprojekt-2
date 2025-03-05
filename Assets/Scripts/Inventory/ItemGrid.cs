@@ -168,12 +168,14 @@ public class ItemGrid : MonoBehaviour
         return null;
     }
     
-    bool CheckPosition(int xPos, int yPos)
+    bool CheckBoundry(int xPos, int yPos, int width, int height)
     {
         if (xPos < 0 || yPos < 0)
         {
             return false;
         }
+        xPos += width-1;
+        yPos += height-1;
         if (xPos >= inventorySizeX || yPos >= inventorySizeY)
         {
             return false;
@@ -182,20 +184,20 @@ public class ItemGrid : MonoBehaviour
         return true;
     }
 
-    bool CheckBoundry(int xPos, int yPos, int width, int height)
-    {
-        if (!CheckPosition(xPos, yPos))
-            return false;
-
-        xPos += width-1;
-        yPos += height-1;
-        
-        if (!CheckPosition(xPos, yPos))
-            return false;
-        
-        
-        return true;
-    }
+    //bool CheckBoundry(int xPos, int yPos, int width, int height)
+    //{
+    //    if (!CheckPosition(xPos, yPos))
+    //        return false;
+//
+    //    xPos += width-1;
+    //    yPos += height-1;
+    //    
+    //    if (!CheckPosition(xPos, yPos))
+    //        return false;
+    //    
+    //    
+    //    return true;
+    //}
 
     bool CheckOverlap(int xPos, int yPos, int width, int height)
     {
@@ -221,8 +223,9 @@ public class ItemGrid : MonoBehaviour
         return true;
     }
 
-    public void RemoveItemsByRecipient(string recipient)
+    public bool RemoveItemsByRecipient(string recipient)
     {
+        bool hasRemoved = false;
         for (int x = 0; x < inventorySizeX; x++)
         {
             for (int y = 0; y < inventorySizeY; y++)
@@ -230,9 +233,12 @@ public class ItemGrid : MonoBehaviour
                 if (packageSlot[x, y] != null && packageSlot[x, y].packageData.recipient == recipient)
                 {
                     RemoveItem(packageSlot[x, y]);
+                    hasRemoved = true;
                 }
             }
         }
+
+        return hasRemoved;
     }
     
     /// <summary>

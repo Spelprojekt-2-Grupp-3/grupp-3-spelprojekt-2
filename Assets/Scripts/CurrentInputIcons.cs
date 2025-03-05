@@ -6,6 +6,7 @@ using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 [CreateAssetMenu(menuName = "Scriptable Objects/Current Input")]
+
 public class CurrentInputIcons : ScriptableObject
 {
     [HideInInspector] public CurrentInputDevice currentInputDevice = new CurrentInputDevice();
@@ -49,6 +50,11 @@ public class CurrentInputIcons : ScriptableObject
             }
         }
         Events.updateIcons?.Invoke();
+    }
+    
+    private void ChangeDevice(PlayerInput input)
+    {
+        Events.checkInputEvent?.Invoke(input);
     }
 }
 

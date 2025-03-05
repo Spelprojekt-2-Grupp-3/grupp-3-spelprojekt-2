@@ -112,6 +112,8 @@ public class DialogueManager : MonoBehaviour
 
             return false;
         });
+        
+        _currentStory.BindExternalFunction("DeliverPackage",(string recipient)=> inventoryController.mainGrid.RemoveItemsByRecipient(recipient));
     }
     
     private void Update()
