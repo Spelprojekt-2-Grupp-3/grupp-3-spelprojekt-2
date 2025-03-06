@@ -7,13 +7,18 @@ using Ink.Runtime;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
 using UnityEngine.Serialization;
+using Image = UnityEngine.UI.Image;
 
 public class DialogueManager : MonoBehaviour
 {
+    [Header("Parameters")]
+    [SerializeField] private float typingSpeed = 0.04f;
+    
     [Header("Dialogue UI")]
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private TextMeshProUGUI displayNameText;
+    [SerializeField] private GameObject continueIcon;
     [SerializeField] private Animator portraitAnimator;
     [SerializeField] private Animator layoutAnimator;
     
@@ -23,8 +28,14 @@ public class DialogueManager : MonoBehaviour
     //[SerializeField] private InventoryController inventoryController;
     
     private TextMeshProUGUI[] _choicesText;
-    
     private Story _currentStory;
+    //Readonly (I dont know why)
+    public bool dialogueIsPlaying { get; private set; }
+    private static DialogueManager _instance;
+    private PlayerInputActions _playerInput;
+    private const string SpeakerTag = "Speaker";
+    private Coroutine _displayLineCoroutine;
+    private bool _canContinueToNextLine = false;
 
     [Header("Quest/Inventory Managers")]
     [SerializeField] private QuestLog questLog;
@@ -32,14 +43,6 @@ public class DialogueManager : MonoBehaviour
     [FormerlySerializedAs("packages")]
     [Header("Package data list")]
     [SerializeField] private List<PackageData> packageDatas;
-
-    //Readonly (I dont know why)
-    public bool dialogueIsPlaying { get; private set; }
-    
-    private static DialogueManager _instance;
-    private PlayerInputActions _playerInput;
-    
-    private const string SpeakerTag = "Speaker";
 
     private void Awake()
     {
@@ -52,6 +55,7 @@ public class DialogueManager : MonoBehaviour
         dialoguePanel = GameObject.Find("DialoguePanel");
         dialogueText = GameObject.Find("DialogueText").GetComponent<TextMeshProUGUI>();
         displayNameText = GameObject.Find("DisplayNameText").GetComponent<TextMeshProUGUI>();
+        continueIcon = GameObject.Find("ContinueIcon");
         portraitAnimator = GameObject.Find("PortraitImage").GetComponent<Animator>();
         layoutAnimator = dialoguePanel.GetComponent<Animator>();
         
@@ -125,7 +129,7 @@ public class DialogueManager : MonoBehaviour
         }
         
         //Continue to the next line of the dialogue when click
-        if (_currentStory.currentChoices.Count == 0 && _playerInput.Player.Interact.WasPressedThisFrame()) 
+        if (_canContinueToNextLine && _currentStory.currentChoices.Count == 0 && _playerInput.Player.Interact.WasPressedThisFrame()) 
         {
             ContinueStory();
         }
@@ -159,6 +163,8 @@ public class DialogueManager : MonoBehaviour
         portraitAnimator.Play("Default");
         layoutAnimator.Play("NPC");
         
+        ContinueStory();
+        
         //inventoryController.gameObject.SetActive(false);
     }
 
@@ -176,10 +182,13 @@ public class DialogueManager : MonoBehaviour
     {
         if (_currentStory.canContinue)
         {
-            //Set text for the current dialogeu line
-            dialogueText.text = _currentStory.Continue();
-            //Display the choices if this dialogue has any
-            DisplayChoices();
+            //Set text for the current dialogue line
+            if (_displayLineCoroutine != null)
+            {
+                StopCoroutine(_displayLineCoroutine);
+            }
+            _displayLineCoroutine = StartCoroutine(DisplayLine(_currentStory.Continue()));
+
             //Handle tags
             HandleTags(_currentStory.currentTags);
         }
@@ -188,6 +197,40 @@ public class DialogueManager : MonoBehaviour
             //inventoryController.gameObject.SetActive(false);
             StartCoroutine(ExitDialogueMode());
             
+        }
+    }
+
+    private IEnumerator DisplayLine(string line)
+    {
+        // empty the dialogue text
+        dialogueText.text = "";
+        
+        // hide some ui while text is typing
+        continueIcon.SetActive(false);
+        HideChoices();
+
+        _canContinueToNextLine = false;
+            
+        // display each letter one at a time (typewriter effect)
+        foreach (char letter in line.ToCharArray())
+        {
+            dialogueText.text += letter;
+            yield return new WaitForSeconds(typingSpeed);
+        }
+        
+        // show some ui when text is done typing
+        continueIcon.SetActive(true);
+        //Display the choices if this dialogue has any
+        DisplayChoices();
+        
+        _canContinueToNextLine = true;
+    }
+
+    private void HideChoices()
+    {
+        foreach (GameObject choiceButton in choices)
+        {
+            choiceButton.SetActive(false);
         }
     }
 
@@ -241,6 +284,7 @@ public class DialogueManager : MonoBehaviour
         {
             Debug.LogWarning("More choices were given than the UI can support. Number of choices given: " 
                              + currentChoices.Count);
+            
         }
 
         int index = 0;
@@ -270,7 +314,10 @@ public class DialogueManager : MonoBehaviour
 
     public void MakeChoice(int choiceIndex)
     {
-        _currentStory.ChooseChoiceIndex(choiceIndex);
-        ContinueStory();
+        if (_canContinueToNextLine)
+        {
+            _currentStory.ChooseChoiceIndex(choiceIndex);
+            ContinueStory();
+        }
     }
 }
