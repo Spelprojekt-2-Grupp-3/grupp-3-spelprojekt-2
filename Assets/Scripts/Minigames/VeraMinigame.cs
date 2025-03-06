@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class VeraMinigame : Minigames
 {
@@ -11,12 +12,14 @@ public class VeraMinigame : Minigames
     private InputAction submit, leftJoyStick;
     [SerializeField] private GameObject canvasPrefab;
     [SerializeField] private GameObject shellPrefab;
-
+    [SerializeField] private CurrentInputIcons currentInput;
     [SerializeField, Range(0, 6)] private int shellAmount; 
     private GameObject canvasInstance;
     private GameObject shellInstance;
     private GameObject currentlySelected;
     private List<GameObject> shells = new List<GameObject>();
+    [SerializeField] private GameObject mouseMarker;
+    private GameObject mouseMarkerInstance;
 
     private void Awake()
     {
@@ -29,12 +32,14 @@ public class VeraMinigame : Minigames
         submit.Enable();
         leftJoyStick = playerControls.Player.Move;
         leftJoyStick.Enable();
+        Events.updateIcons.AddListener(UpdateIcons);
     }
 
     private void OnDisable()
     {
         submit.Disable();
         leftJoyStick.Disable();
+        Events.updateIcons.RemoveListener(UpdateIcons);
     }
 
     private void Start()
@@ -55,12 +60,14 @@ public class VeraMinigame : Minigames
             shellComponent.dirtyLevel = 4;
             shells.Add(shell);
         }
+        mouseMarkerInstance = Instantiate(mouseMarker, canvasInstance.transform);
         
         EventSystem.current.firstSelectedGameObject = shells[0];
     }
 
     private void Update()
     {
+        if (canvasInstance is null) return;
         if (submit.WasPerformedThisFrame())
         {
             if (currentlySelected is null)
@@ -69,7 +76,6 @@ public class VeraMinigame : Minigames
                 if (shell is not null) // We only want to grab shells
                 {
                     currentlySelected = shell.gameObject;
-                    Debug.Log("Currentlyselected" + currentlySelected);
                     var pos = currentlySelected.transform.position;
                     pos.y += 5;
                     currentlySelected.transform.position = pos;
@@ -88,11 +94,21 @@ public class VeraMinigame : Minigames
                 }
                 else if (EventSystem.current.currentSelectedGameObject.name == "Bucket" && currentlySelected.GetComponent<Shell>().dirtyLevel <= 0)
                 {
+                    shells.Remove(currentlySelected);
                     currentlySelected = null;
+                    if (shells.Count <= 0)
+                    {
+                        StopMinigame();
+                    }
+                }
+                else if (EventSystem.current.currentSelectedGameObject.name == "Bucket" &&
+                         currentlySelected.GetComponent<Shell>().dirtyLevel > 0)
+                {
+                    Debug.Log("That object is not clean");
                 }
             }
         }
-
+        
         if (leftJoyStick.IsInProgress() && currentlySelected is not null)
         {
             var pos = currentlySelected.transform.position;
@@ -103,11 +119,23 @@ public class VeraMinigame : Minigames
         {
             currentlySelected.transform.position = EventSystem.current.currentSelectedGameObject.transform.position;
         }
+
+        if (leftJoyStick.IsInProgress() && EventSystem.current.currentSelectedGameObject is not null)
+        {
+            mouseMarkerInstance.transform.position = EventSystem.current.currentSelectedGameObject.transform.position;
+        }
     }
 
     public override void StopMinigame()
     {
-        base.StopMinigame();
+        Destroy(canvasInstance);
+        canvasInstance = null;
+    }
+    
+    private void UpdateIcons()
+    {
+        if (mouseMarkerInstance is null || canvasInstance is null) return;
+        mouseMarkerInstance.GetComponent<Image>().sprite = currentInput.currentInputDevice.interactSprite;
     }
 }
 

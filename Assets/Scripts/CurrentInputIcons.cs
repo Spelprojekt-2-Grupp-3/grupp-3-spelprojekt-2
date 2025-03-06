@@ -51,11 +51,6 @@ public class CurrentInputIcons : ScriptableObject
         }
         Events.updateIcons?.Invoke();
     }
-    
-    private void ChangeDevice(PlayerInput input)
-    {
-        Events.checkInputEvent?.Invoke(input);
-    }
 }
 
 [Serializable]
