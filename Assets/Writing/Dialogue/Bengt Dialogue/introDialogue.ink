@@ -10,6 +10,14 @@ Whoa, hey there! #Speaker:Bengt
     
     ~AddQuest("Windward", "Get all boat upgrades")
     
+    ~AddQuest("The lighthouse keeper", "Get an upgrade from Sigrid")
+
+    ~AddQuest("The tech expert", "Get an upgrade from Irma")
+
+    ~AddQuest("The florist", "Get an upgrade from Ulrich")
+
+    ~AddQuest("The head of the union", "Get an upgrade from Vera")
+    
     -> END
     
     * [Continue dialogue]
@@ -87,15 +95,6 @@ Well, we did find a boat, but that was a whole decade ago. #Speaker:Bengt
 Sorry, letters are… not very easy to send out from here. #Speaker:Bengt
 
 Whoever wrote this might’ve been trying to reach you for a very long time by now. #Speaker:Bengt
-
-- (questions)
-    * [<color=\#29c445>Do you know anything?</color>] 
-    
-    Did you happen to see my parents at all, back then? Do you know where they were going?#Speaker:Cleo
-    
-    Err, no... I can't really help you there, unfortunately. #Speaker:Bengt
-
-    -> questions
     
     * [I see...] 
     
@@ -103,13 +102,13 @@ Whoever wrote this might’ve been trying to reach you for a very long time by n
 
 That boat belonged to your parents, then? #Speaker:Bengt
 
-I guess I owe it to you to give it back, but it’s in bad shape. #Speaker:Bengt
+I guess I owe it to you to give it back, but it’s not very... well-suited for a journey outta here right now. #Speaker:Bengt
 
-It still works, but I don’t recommend taking it outside the archipelago. #Speaker:Bengt
+It works, mind you! But I don’t recommend taking it outside the archipelago. #Speaker:Bengt
 
 The Kraken has a mean habit of preventing anyone from leaving. #Speaker:Bengt
 
-We'll want to make sure your boat can withstand some pushback before you try to leave. #Speaker:Bengt
+You'll want to make sure your boat can withstand some pushback before you try to leave. #Speaker:Bengt
 
     * [Can you help?] 
     
@@ -145,33 +144,37 @@ You'll have to seek out my friends for that. #Speaker:Bengt
 
 They each have different skillsets they could put to use for you. #Speaker:Bengt
 
-- (questions1)
-    
-    * [<color=\#29c445>But the Kraken...</color>]
-    
-    Won't the Kraken make that difficult? #Speaker:Cleo
-
-    Oh, right! Let me tell you how to avoid that meddlesome thing. #Speaker:Bengt
-    
-    You can tell it's nearby by looking at the water. #Speaker:Bengt
-    
-    If there's a spot where it bubbles, that's where the Kraken is lurking. #Speaker:Bengt
-    
-    Just go around it and you'll be fine. Easy as pie! #Speaker:Bengt
-    
-    Should you happen to run into it, swat at its tentacles! That oughta drive it away. #Speaker:Bengt
-    
-    Anything else? #Speaker:Bengt
-    -> questions1
-    
     * [Alright.]
 
 -Alright, sounds good. I'll look for them. #Speaker:Cleo
 
-Sweet! #Speaker:Bengt
+Sweet! There are four others... #Speaker:Bengt
+
+There's Sigrid, our lighthouse keeper. #Speaker:Bengt
+
+Irma, our tech expert. #Speaker:Bengt
+
+Ulrich, a florist and gardener. #Speaker:Bengt
+
+And Vera, the head of the fishing union! #Speaker:Bengt
+
+Talk to all of them and they'll hook you up with those handy upgrades. #Speaker:Bengt
+
+Thing is, we operate by trading favors around here. They might ask you to help them out in return. #Speaker:Bengt
+
+Oh, but don't worry! Mine's on the house. See it as a welcome present. #Speaker:Bengt
 
 Good luck out there. And come see me anytime you feel like chatting! #Speaker:Bengt
 
 ~AddQuest("Windward", "Get all boat upgrades")
+
+~AddQuest("The lighthouse keeper", "Get an upgrade from Sigrid")
+
+~AddQuest("The tech expert", "Get an upgrade from Irma")
+
+~AddQuest("The florist", "Get an upgrade from Ulrich")
+
+~AddQuest("The head of the union", "Get an upgrade from Vera")
+
 
 -> END
