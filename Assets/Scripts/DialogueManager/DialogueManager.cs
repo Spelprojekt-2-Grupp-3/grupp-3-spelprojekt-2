@@ -36,6 +36,8 @@ public class DialogueManager : MonoBehaviour
     private const string SpeakerTag = "Speaker";
     private Coroutine _displayLineCoroutine;
     private bool _canContinueToNextLine = false;
+    private bool canSkip = false;
+    private bool submitSkip = false;
 
     [Header("Quest/Inventory Managers")]
     [SerializeField] private QuestLog questLog;
@@ -122,18 +124,25 @@ public class DialogueManager : MonoBehaviour
     
     private void Update()
     {
-        //return if dialogue isn't playing
+        if (_playerInput.Player.Interact.WasPressedThisFrame())
+        {
+            submitSkip = true;  // Register input in update to avoid missing it
+        }
+
+        // Return if dialogue isn't playing
         if (!dialogueIsPlaying)
         {
             return;
         }
-        
-        //Continue to the next line of the dialogue when click
-        if (_canContinueToNextLine && _currentStory.currentChoices.Count == 0 && _playerInput.Player.Interact.WasPressedThisFrame()) 
+
+        // If player presses interact and can continue, go to the next line
+        if (submitSkip && _canContinueToNextLine && _currentStory.currentChoices.Count == 0)
         {
+            submitSkip = false; // Reset input buffer
             ContinueStory();
         }
     }
+
     
     private void OnEnable()
     {
@@ -202,29 +211,43 @@ public class DialogueManager : MonoBehaviour
 
     private IEnumerator DisplayLine(string line)
     {
-        // empty the dialogue text
-        dialogueText.text = "";
-        
-        // hide some ui while text is typing
+        dialogueText.text = ""; // Clear previous text
         continueIcon.SetActive(false);
         HideChoices();
 
         _canContinueToNextLine = false;
-            
-        // display each letter one at a time (typewriter effect)
+        submitSkip = false;  // Reset input buffer
+
+        StartCoroutine(CanSkip());  // Start skipping delay
+
         foreach (char letter in line.ToCharArray())
         {
+            if (canSkip && submitSkip) // If player presses interact AFTER the delay, show full text
+            {
+                submitSkip = false;
+                dialogueText.text = line;
+                break;
+            }
+
             dialogueText.text += letter;
             yield return new WaitForSeconds(typingSpeed);
         }
-        
-        // show some ui when text is done typing
+
         continueIcon.SetActive(true);
-        //Display the choices if this dialogue has any
         DisplayChoices();
-        
+
         _canContinueToNextLine = true;
+        canSkip = false; // Reset skipping permission
     }
+
+    
+    private IEnumerator CanSkip()
+    {
+        canSkip = false;  // Prevent skipping immediately
+        yield return new WaitForSeconds(0.05f); // Small delay to allow typewriter effect to start
+        canSkip = true;   // Now skipping is allowed
+    }
+
 
     private void HideChoices()
     {
