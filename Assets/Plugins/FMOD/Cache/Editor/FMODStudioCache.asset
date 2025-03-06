@@ -331,6 +331,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1420
+--- !u!114 &-7561523372549531316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound/SFX/Boost_Activate
+  m_EditorClassIdentifier: 
+  Path: event:/Sound/SFX/Boost_Activate
+  Guid:
+    Data1: 1576984144
+    Data2: 1281408162
+    Data3: 1775801216
+    Data4: -1790253072
+  Banks:
+  - {fileID: 3641245667579219406}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-6794082021486705117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1043,12 +1070,13 @@ MonoBehaviour:
   - {fileID: 5126711483151747721}
   - {fileID: 2203695407265395966}
   - {fileID: 8721146281951024784}
+  - {fileID: -7561523372549531316}
   EditorParameters: []
   MasterBanks:
   - {fileID: 3641245667579219406}
   StringsBanks:
   - {fileID: 8573797972098898880}
-  cacheTime: 638767792553129991
+  cacheTime: 638767937989194539
   cacheVersion: 131622
 --- !u!114 &49985666265910251
 MonoBehaviour:
@@ -1330,7 +1358,7 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/Banks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638767792553006095
+  lastModified: 638767937989128428
   FileSizes: []
   Exists: 1
 --- !u!114 &3692166981550539910
@@ -1981,10 +2009,10 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/Banks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638767792553129991
+  lastModified: 638767937989194539
   FileSizes:
   - Name: 
-    Value: 2426
+    Value: 2482
   Exists: 1
 --- !u!114 &8598043957462037804
 MonoBehaviour:

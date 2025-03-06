@@ -11641,6 +11641,91 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7325860295c8075488db5455ce471cce, type: 3}
+--- !u!1001 &505974781
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: f1e638f8dedc6a3489ed6e57ad2f38ec,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1468.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f1e638f8dedc6a3489ed6e57ad2f38ec,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 232.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f1e638f8dedc6a3489ed6e57ad2f38ec,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2134.3
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f1e638f8dedc6a3489ed6e57ad2f38ec,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.0000002533197
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f1e638f8dedc6a3489ed6e57ad2f38ec,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f1e638f8dedc6a3489ed6e57ad2f38ec,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f1e638f8dedc6a3489ed6e57ad2f38ec,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f1e638f8dedc6a3489ed6e57ad2f38ec,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f1e638f8dedc6a3489ed6e57ad2f38ec,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: f1e638f8dedc6a3489ed6e57ad2f38ec,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f1e638f8dedc6a3489ed6e57ad2f38ec,
+        type: 3}
+      propertyPath: m_Name
+      value: BaseHumanoid
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: f1e638f8dedc6a3489ed6e57ad2f38ec,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 0a53a67e95190eb43af293e3d1ef9343, type: 2}
+    - target: {fileID: 5866666021909216657, guid: f1e638f8dedc6a3489ed6e57ad2f38ec,
+        type: 3}
+      propertyPath: m_WarningMessage
+      value: "\nBinding warning: Some generic clip(s) animate transforms that are
+        already bound by a Humanoid avatar. These transforms can only be changed
+        by Humanoid clips.\n\tTransform 'L_Collar_Jnt'\n\tTransform 'Root_Jnt'\n\tTransform
+        'R_Collar_Jnt'\n\tTransform 'R_Knee_Jnt'\n\tTransform 'L_Foot_Jnt'\n\tTransform
+        'R_Foot_Jnt'\n\tTransform 'L_Ball_Jnt'\n\tTransform 'R_Hip_Jnt'\n\tTransform
+        'L_Hip_Jnt'\n\tTransform 'L_Knee_Jnt'\n\tand more ...\n\tFrom animation clip
+        '200 units movement'\n\tFrom animation clip '400 units loco'\n\tFrom animation
+        clip '800 units loco'\n\tFrom animation clip '1000 units loco'"
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f1e638f8dedc6a3489ed6e57ad2f38ec, type: 3}
 --- !u!1001 &506345454
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14043,8 +14128,13 @@ MonoBehaviour:
       Data3: 154919050
       Data4: -935636229
     Path: event:/Sound/SFX/Engine
-  pauseMenu: {fileID: 0}
-  cameraReference: {fileID: 0}
+  boatWaterSoundEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   boostMeterObj: {fileID: 6984901}
 --- !u!114 &596335647
 MonoBehaviour:
@@ -44832,8 +44922,13 @@ MonoBehaviour:
       Data3: 154919050
       Data4: -935636229
     Path: event:/Sound/SFX/Engine
-  pauseMenu: {fileID: 0}
-  cameraReference: {fileID: 0}
+  boatWaterSoundEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   boostMeterObj: {fileID: 6984901}
 --- !u!114 &2007918480
 MonoBehaviour:
@@ -47341,3 +47436,4 @@ SceneRoots:
   - {fileID: 596335642}
   - {fileID: 599137168}
   - {fileID: 1659850110}
+  - {fileID: 505974781}
