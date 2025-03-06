@@ -8,7 +8,7 @@ That solves it. Thanks. #Speaker:Sigrid
 
     * [<color=\#29c445>Skip (testing)</color>] 
     
-~ CompleteQuest(2)
+~ CompleteQuest(1)
     
     -> END
 

@@ -8,7 +8,7 @@ EXTERNAL UpdateQuest(questIndex, Title, info, step)
 
     * [<color=\#29c445>Skip (testing)</color>] 
     
-    ~ UpdateQuest(2, "The lighthouse keeper", "Help Sigrid", 1)
+    ~ UpdateQuest(1, "The lighthouse keeper", "Help Sigrid", 1)
     
     -> END
 
