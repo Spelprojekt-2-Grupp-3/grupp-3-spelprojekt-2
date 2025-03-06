@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: WaterDepthFade
+  m_Name: WaterMaterial
   m_Shader: {fileID: -6465566751694194690, guid: 291e80e29df84124d80604236dcaca60,
     type: 3}
   m_Parent: {fileID: 0}
@@ -166,9 +166,9 @@ Material:
     - _Surface_Foam_Distortion: 1.1
     - _Surface_Foam_Speed: 0.168
     - _Transparency: 0.9
-    - _Wave_Length: 7.38
-    - _Wave_Speed: 1.42
-    - _Wave_Steepness: 0.502
+    - _Wave_Length: 3.73
+    - _Wave_Speed: 0.76
+    - _Wave_Steepness: 0.5
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
