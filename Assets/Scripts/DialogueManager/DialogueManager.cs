@@ -36,8 +36,8 @@ public class DialogueManager : MonoBehaviour
     private const string SpeakerTag = "Speaker";
     private Coroutine _displayLineCoroutine;
     private bool _canContinueToNextLine = false;
-    private bool canSkip = false;
-    private bool submitSkip = false;
+    private bool _canSkip = false;
+    private bool _submitSkip = false;
 
     [Header("Quest/Inventory Managers")]
     [SerializeField] private QuestLog questLog;
@@ -126,7 +126,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (_playerInput.Player.Interact.WasPressedThisFrame())
         {
-            submitSkip = true;  // Register input in update to avoid missing it
+            _submitSkip = true; 
         }
 
         // Return if dialogue isn't playing
@@ -135,10 +135,10 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        // If player presses interact and can continue, go to the next line
-        if (submitSkip && _canContinueToNextLine && _currentStory.currentChoices.Count == 0)
+        // If player clicks and can continue, go to the next line
+        if (_submitSkip && _canContinueToNextLine && _currentStory.currentChoices.Count == 0)
         {
-            submitSkip = false; // Reset input buffer
+            _submitSkip = false; // Reset input buffer
             ContinueStory();
         }
     }
@@ -168,7 +168,7 @@ public class DialogueManager : MonoBehaviour
         BindExternal();
         
         //Reset portrait, layout and speaker
-        displayNameText.text = "???";
+        displayNameText.text = "Name";
         portraitAnimator.Play("Default");
         layoutAnimator.Play("NPC");
         
@@ -216,15 +216,15 @@ public class DialogueManager : MonoBehaviour
         HideChoices();
 
         _canContinueToNextLine = false;
-        submitSkip = false;  // Reset input buffer
+        _submitSkip = false;  // Reset input buffer
 
         StartCoroutine(CanSkip());  // Start skipping delay
 
         foreach (char letter in line.ToCharArray())
         {
-            if (canSkip && submitSkip) // If player presses interact AFTER the delay, show full text
+            if (_canSkip && _submitSkip) // If player clicks AFTER the delay, show full text
             {
-                submitSkip = false;
+                _submitSkip = false;
                 dialogueText.text = line;
                 break;
             }
@@ -237,15 +237,15 @@ public class DialogueManager : MonoBehaviour
         DisplayChoices();
 
         _canContinueToNextLine = true;
-        canSkip = false; // Reset skipping permission
+        _canSkip = false; // Reset skipping permission
     }
 
     
     private IEnumerator CanSkip()
     {
-        canSkip = false;  // Prevent skipping immediately
-        yield return new WaitForSeconds(0.05f); // Small delay to allow typewriter effect to start
-        canSkip = true;   // Now skipping is allowed
+        _canSkip = false;
+        yield return new WaitForSeconds(0.05f); // small delay to allow typewriter effect to start
+        _canSkip = true;
     }
 
 
