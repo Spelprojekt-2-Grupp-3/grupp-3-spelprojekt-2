@@ -79,8 +79,16 @@ public class VeraMinigame : Minigames
             {
                 if (EventSystem.current.currentSelectedGameObject.name == "Water")
                 {
+                    currentlySelected.GetComponent<Shell>().dirtyLevel -= 1;
                     Debug.Log("scrub scrub");
-                    
+                    if (currentlySelected.GetComponent<Shell>().dirtyLevel <= 0)
+                    {
+                        Debug.Log("clean");
+                    }
+                }
+                else if (EventSystem.current.currentSelectedGameObject.name == "Bucket" && currentlySelected.GetComponent<Shell>().dirtyLevel <= 0)
+                {
+                    currentlySelected = null;
                 }
             }
         }
