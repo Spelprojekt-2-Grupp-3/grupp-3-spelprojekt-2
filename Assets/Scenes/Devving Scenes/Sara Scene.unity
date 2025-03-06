@@ -363,6 +363,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5360910194334910843, guid: ab36ad02cb3d0dc468a478ceeab7dfc5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 15.000092
+      objectReference: {fileID: 0}
     - target: {fileID: 5575231297095644009, guid: ab36ad02cb3d0dc468a478ceeab7dfc5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -386,13 +391,13 @@ PrefabInstance:
     - target: {fileID: 5970605157246799629, guid: ab36ad02cb3d0dc468a478ceeab7dfc5,
         type: 3}
       propertyPath: m_Type
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5970605157246799629, guid: ab36ad02cb3d0dc468a478ceeab7dfc5,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -837151832, guid: 569c385bd573822469ad872269717522,
+      objectReference: {fileID: -1941044389, guid: ef8c1221379767549873317b5c77808e,
         type: 3}
     - target: {fileID: 5970605157246799629, guid: ab36ad02cb3d0dc468a478ceeab7dfc5,
         type: 3}
@@ -402,22 +407,27 @@ PrefabInstance:
     - target: {fileID: 5970605157246799629, guid: ab36ad02cb3d0dc468a478ceeab7dfc5,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.9528302
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5970605157246799629, guid: ab36ad02cb3d0dc468a478ceeab7dfc5,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.9528302
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5970605157246799629, guid: ab36ad02cb3d0dc468a478ceeab7dfc5,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.9528302
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5970605157246799629, guid: ab36ad02cb3d0dc468a478ceeab7dfc5,
+        type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6066997301965680070, guid: ab36ad02cb3d0dc468a478ceeab7dfc5,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6117620223907606300, guid: ab36ad02cb3d0dc468a478ceeab7dfc5,
         type: 3}
@@ -531,13 +541,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7324786147287874014, guid: ab36ad02cb3d0dc468a478ceeab7dfc5,
         type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 559.105
+      objectReference: {fileID: 0}
+    - target: {fileID: 7324786147287874014, guid: ab36ad02cb3d0dc468a478ceeab7dfc5,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 175.9076
+      objectReference: {fileID: 0}
+    - target: {fileID: 7324786147287874014, guid: ab36ad02cb3d0dc468a478ceeab7dfc5,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.0393999
+      objectReference: {fileID: 0}
+    - target: {fileID: 7324786147287874014, guid: ab36ad02cb3d0dc468a478ceeab7dfc5,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.0393999
+      objectReference: {fileID: 0}
+    - target: {fileID: 7324786147287874014, guid: ab36ad02cb3d0dc468a478ceeab7dfc5,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.0393999
+      objectReference: {fileID: 0}
+    - target: {fileID: 7324786147287874014, guid: ab36ad02cb3d0dc468a478ceeab7dfc5,
+        type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 85.44034
       objectReference: {fileID: 0}
     - target: {fileID: 7324786147287874014, guid: ab36ad02cb3d0dc468a478ceeab7dfc5,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 65
+      value: 70.643005
       objectReference: {fileID: 0}
     - target: {fileID: 8406753694797800020, guid: ab36ad02cb3d0dc468a478ceeab7dfc5,
         type: 3}
@@ -666,7 +701,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1839400068
 RectTransform:
   m_ObjectHideFlags: 0
