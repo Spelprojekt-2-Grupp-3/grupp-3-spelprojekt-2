@@ -14,7 +14,7 @@ That solves it. Thanks. #Speaker:Sigrid
 
     * [Continue dialogue]
 
-I'll get you your upgrade. #Speaker:Sigrid
+-I'll get you your upgrade. #Speaker:Sigrid
 
 [Blah blah your boat was upgraded.] #Speaker:Sigrid
 

@@ -15,7 +15,7 @@ Thanks a bunch! I'll install your upgrade, as promised. #Speaker:Irma
 
     * [Continue dialogue]
 
-...? #Speaker:Irma
+-...? #Speaker:Irma
 
 Hey, this boat... #Speaker:Irma
 

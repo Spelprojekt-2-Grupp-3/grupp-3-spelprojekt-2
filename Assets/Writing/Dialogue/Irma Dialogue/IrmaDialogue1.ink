@@ -14,7 +14,7 @@ EXTERNAL UpdateQuest(questIndex, Title, info, step)
 
     * [Continue dialogue]
 
-[You hear a voice coming from inside.] #Speaker:Cleo
+-[You hear a voice coming from inside.] #Speaker:Cleo
 
 One sec! #Speaker:Irma
 

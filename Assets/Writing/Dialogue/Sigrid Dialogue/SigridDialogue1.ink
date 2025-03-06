@@ -14,7 +14,7 @@ EXTERNAL UpdateQuest(questIndex, Title, info, step)
 
     * [Continue dialogue]
 
-[...but someone opens the door before your fist can reach it.] #Speaker:Cleo
+-[...but someone opens the door before your fist can reach it.] #Speaker:Cleo
 
 Hey. #Speaker:Sigrid
 
