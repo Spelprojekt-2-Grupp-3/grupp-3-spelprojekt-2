@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6a8b049416651c4489198645aba77cc6
+guid: 1b3acf1892ba3db499f1735da23769fe
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -15,18 +15,19 @@ ModelImporter:
     resampleCurves: 1
     optimizeGameObjects: 0
     removeConstantScaleCurves: 0
-    motionNodeName: 
+    motionNodeName: Root_Jnt
     rigImportErrors: 
     rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Bone length in
       copied configuration does not match position in animation file:\n\t'L_Hip_Jnt'
-      : position error = 114.893745 mm\n\t'R_Hip_Jnt' : position error = 37.577900
+      : position error = 171.520676 mm\n\t'R_Hip_Jnt' : position error = 171.520477
       mm\n"
     animationImportErrors: 
-    animationImportWarnings: "\nClip 'Idle01' has import animation warnings that
-      might lower retargeting quality:\nNote: Activate translation DOF on avatar
-      to improve retargeting quality.\n\t'L_Collar_Jnt' has translation animation
-      that will be discarded.\n\t'R_Collar_Jnt' has translation animation that will
-      be discarded.\n"
+    animationImportWarnings: "\nClip 'Run' has import animation warnings that might
+      lower retargeting quality:\nNote: Activate translation DOF on avatar to improve
+      retargeting quality.\n\t'L_Collar_Jnt' has translation animation that will
+      be discarded.\n\t'R_Collar_Jnt' has translation animation that will be discarded.\n\t'L_Hip_Jnt'
+      has translation animation that will be discarded.\n\t'R_Hip_Jnt' has translation
+      animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -40,26 +41,26 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Idle01
-      takeName: Idle01
-      internalID: 2646724620217826704
-      firstFrame: 325
-      lastFrame: 400
+      name: Run
+      takeName: Run
+      internalID: 5522812681064789136
+      firstFrame: 300
+      lastFrame: 324
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
-      cycleOffset: 0
+      cycleOffset: 12
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
       loopBlend: 1
       loopBlendOrientation: 0
-      loopBlendPositionY: 1
+      loopBlendPositionY: 0
       loopBlendPositionXZ: 0
       keepOriginalOrientation: 0
-      keepOriginalPositionY: 0
+      keepOriginalPositionY: 1
       keepOriginalPositionXZ: 0
-      heightFromFeet: 1
+      heightFromFeet: 0
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
@@ -67,7 +68,7 @@ ModelImporter:
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 325
+      additiveReferencePoseFrame: 300
     isReadable: 0
   meshes:
     lODScreenPercentages: []
