@@ -14,9 +14,15 @@ public class SigridMinigame : Minigames
         pickedObject = null;
     }
 
+    private void Start()
+    {
+        StartMinigame();
+    }
+
     public override void StartMinigame()
     {
         base.StartMinigame();
+        EventSystem.current.firstSelectedGameObject = transform.Find("Background").transform.Find("Fuse").gameObject;
     }
 
     public override void StopMinigame()

@@ -49,7 +49,7 @@ public class VeraMinigame : Minigames
 
     public override void StartMinigame()
     {
-        canvasInstance = Instantiate(canvasPrefab);
+        canvasInstance = gameObject;
         var yPos = 0f;
         for (int i = 0; i < shellAmount; i++)
         {
