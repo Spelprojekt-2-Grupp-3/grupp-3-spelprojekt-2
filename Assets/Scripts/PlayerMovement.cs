@@ -19,11 +19,13 @@ public class PlayerMovement : MonoBehaviour
     private float acceleration;
     private InputAction interact;
     private Rigidbody rb;
+    private Camera camera;
 
     private void Awake()
     {
         _aniControl = GetComponent<Animator>();
         playerControls = new PlayerInputActions();
+        camera = Camera.main.GetComponent<Camera>();
     }
 
     private void OnEnable()
@@ -59,6 +61,7 @@ public class PlayerMovement : MonoBehaviour
             return;*/
 
         Vector2 movementVector = move.ReadValue<Vector2>().normalized;
+        moveSpeed += acceleration * Time.deltaTime * move.ReadValue<Vector2>().y;
         _aniControl.SetFloat("X", movementVector.x);
         _aniControl.SetFloat("Y", movementVector.y);
         /* if (moveSpeed < maxMoveSpeed)
@@ -73,19 +76,21 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        /* Vector3 euler = transform.localEulerAngles;
+        Vector3 euler = transform.localEulerAngles;
  
          float targetRotationSpeed = 10f;
-         euler.y += targetRotationSpeed * move.ReadValue<Vector2>().x;
+         euler.y = camera.transform.eulerAngles.y * move.ReadValue<Vector2>().y;
          rb.rotation = Quaternion.Euler(euler);
  
+         
          if (moveSpeed == 0)
              return;
          rb.velocity = new Vector3(
              moveSpeed * transform.forward.x,
              rb.velocity.y,
              moveSpeed * transform.forward.z
-         );*/
+         );
+         
     }
 
     private void Interact(InputAction.CallbackContext context)
