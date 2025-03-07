@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8c806c415acd4db4cb6d7484c341da4f
+guid: 1e0b3908a05eecc429e2e6512675ac28
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -19,10 +19,10 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: "Copied Avatar Rig Configuration mis-match. Bone length in
       copied configuration does not match position in animation file:\n\t'L_Hip_Jnt'
-      : position error = 171.520691 mm\n\t'R_Hip_Jnt' : position error = 171.520493
+      : position error = 171.520676 mm\n\t'R_Hip_Jnt' : position error = 171.520477
       mm\n"
     animationImportErrors: 
-    animationImportWarnings: "\nClip 'RunTest' has import animation warnings that
+    animationImportWarnings: "\nClip 'Strafe90' has import animation warnings that
       might lower retargeting quality:\nNote: Activate translation DOF on avatar
       to improve retargeting quality.\n\t'L_Collar_Jnt' has translation animation
       that will be discarded.\n\t'R_Collar_Jnt' has translation animation that will
@@ -41,11 +41,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: RunTest
-      takeName: RunTest
-      internalID: 4769195246114860628
-      firstFrame: 300
-      lastFrame: 324
+      name: Strafe90
+      takeName: Strafe90
+      internalID: -160052325473129015
+      firstFrame: 350
+      lastFrame: 374
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -68,7 +68,7 @@ ModelImporter:
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 300
+      additiveReferencePoseFrame: 349.8
     isReadable: 0
   meshes:
     lODScreenPercentages: []
@@ -296,29 +296,29 @@ ModelImporter:
         length: 0
         modified: 0
     skeleton:
-    - name: BaseHumanoid(Clone)
+    - name: CharacterBase(Clone)
       parentName: 
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
-    - name: retopo01
-      parentName: BaseHumanoid(Clone)
+    - name: BaseMesh
+      parentName: CharacterBase(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Root_Jnt
-      parentName: BaseHumanoid(Clone)
+      parentName: CharacterBase(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Pelvis_Jnt
       parentName: Root_Jnt
-      position: {x: -1.7763565e-16, y: 0.7953682, z: 8.5265116e-16}
+      position: {x: -1.7763565e-16, y: 0.7953682, z: 8.348876e-16}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Spine01_Jnt
       parentName: Pelvis_Jnt
-      position: {x: -0, y: 0.12837157, z: 2.8421706e-16}
+      position: {x: 6.3948843e-16, y: 0.12837157, z: 4.440891e-16}
       rotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
       scale: {x: 1, y: 1, z: 1}
     - name: Spine02_Jnt
@@ -353,7 +353,7 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
     - name: L_Collar_Jnt
       parentName: Spine02_Jnt1
-      position: {x: -0.18369447, y: -0.18038711, z: -5.665676e-16}
+      position: {x: -0.18369447, y: -0.18038711, z: 2.0170663e-16}
       rotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
       scale: {x: 1, y: 1, z: 1}
     - name: L_Shoulder_Jnt
@@ -364,7 +364,7 @@ ModelImporter:
     - name: L_Elbow_Jnt
       parentName: L_Shoulder_Jnt
       position: {x: -0.28434926, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
+      rotation: {x: -0.032595996, y: 0, z: -0, w: 0.9994686}
       scale: {x: 1, y: 1, z: 1}
     - name: L_Forearm_Jnt
       parentName: L_Elbow_Jnt
@@ -383,8 +383,8 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
     - name: R_Collar_Jnt
       parentName: Spine02_Jnt1
-      position: {x: -0.1836966, y: 0.18038698, z: -5.665676e-16}
-      rotation: {x: 0.7071068, y: 0.7071068, z: -4.3297806e-17, w: -4.3297806e-17}
+      position: {x: -0.1836966, y: 0.18038698, z: 3.5713784e-16}
+      rotation: {x: 0.70710576, y: 0.7071078, z: -4.329774e-17, w: -4.3297866e-17}
       scale: {x: 1, y: 1, z: 1}
     - name: R_Shoulder_Jnt
       parentName: R_Collar_Jnt
@@ -404,7 +404,7 @@ ModelImporter:
     - name: R_Wrist_Jnt
       parentName: R_Forearm_Jnt
       position: {x: 0.08701699, y: 0, z: 0}
-      rotation: {x: 0, y: -0, z: -0, w: 1}
+      rotation: {x: 0, y: -0, z: -0.0000014415931, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: R_Hand_Jnt
       parentName: R_Wrist_Jnt
@@ -429,7 +429,7 @@ ModelImporter:
     - name: L_Ball_Jnt
       parentName: L_Foot_Jnt
       position: {x: -0.103284486, y: -4.936725e-17, z: 5.3290697e-17}
-      rotation: {x: -9.799094e-11, y: 0.10063301, z: 7.7151245e-12, w: 0.99492365}
+      rotation: {x: -9.7991434e-11, y: 0.10063301, z: 7.71351e-12, w: 0.99492365}
       scale: {x: 1, y: 1, z: 1}
     - name: L_Toe_Jnt
       parentName: L_Ball_Jnt
@@ -454,7 +454,7 @@ ModelImporter:
     - name: R_Ball_Jnt
       parentName: R_Foot_Jnt
       position: {x: 0.103284255, y: -0.000000009838859, z: -0.0000004906924}
-      rotation: {x: -0.000000008593602, y: 0.10063301, z: -0.000000009537956, w: 0.99492365}
+      rotation: {x: -0.0000000043360426, y: 0.10063301, z: -0.00000000594254, w: 0.99492365}
       scale: {x: 1, y: 1, z: 1}
     - name: R_Toe_Jnt
       parentName: R_Ball_Jnt
@@ -469,11 +469,11 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     globalScale: 1
-    rootMotionBoneName: Root_Jnt
+    rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 1
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: f1e638f8dedc6a3489ed6e57ad2f38ec,
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 641cff9c56884cd42a82559aea08c6d1,
     type: 3}
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 3
