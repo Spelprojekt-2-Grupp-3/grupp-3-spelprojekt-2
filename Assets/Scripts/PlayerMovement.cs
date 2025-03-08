@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private Animator _aniControl;
     private float moveSpeed = 0;
     private PlayerInputActions playerControls;
-    private InputAction move;
+    private InputAction move, moveCam;
 
     [SerializeField, Range(0, 2000)]
     float maxMoveSpeed;
@@ -20,12 +20,16 @@ public class PlayerMovement : MonoBehaviour
     private InputAction interact;
     private Rigidbody rb;
     private Camera camera;
+    private Vector3 currentForward;
+    private Vector3 currentRight;
 
     private void Awake()
     {
         _aniControl = GetComponent<Animator>();
         playerControls = new PlayerInputActions();
         camera = Camera.main.GetComponent<Camera>();
+        currentForward = camera.transform.forward;
+        currentRight = camera.transform.right;
     }
 
     private void OnEnable()
@@ -35,6 +39,8 @@ public class PlayerMovement : MonoBehaviour
         interact = playerControls.Player.Interact;
         interact.Enable();
         interact.performed += Interact;
+        moveCam = playerControls.Player.Look;
+        moveCam.Enable();
     }
 
     private void OnDisable()
@@ -42,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
         move.Disable();
         interact.performed -= Interact;
         interact.Disable();
+        moveCam.Disable();
     }
 
     void Start()
@@ -59,7 +66,11 @@ public class PlayerMovement : MonoBehaviour
 
         /*if (!move.inProgress)
             return;*/
-
+        if (moveCam.IsInProgress())
+        {
+            currentForward = camera.transform.forward;
+            currentRight = camera.transform.right;
+        }
         Vector2 movementVector = move.ReadValue<Vector2>().normalized;
         
         /* if (moveSpeed < maxMoveSpeed)
@@ -75,7 +86,7 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
          float targetRotationSpeed = 10f;
-         Vector3 moveDirection = (camera.transform.forward * move.ReadValue<Vector2>().y) + (camera.transform.right * move.ReadValue<Vector2>().x);
+         Vector3 moveDirection = (currentForward * move.ReadValue<Vector2>().y) + (currentRight * move.ReadValue<Vector2>().x);
 
          if (moveDirection.sqrMagnitude > 0.01f)
          {
