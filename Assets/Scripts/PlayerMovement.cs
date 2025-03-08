@@ -74,17 +74,23 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
- 
          float targetRotationSpeed = 10f;
          Vector3 moveDirection = (camera.transform.forward * move.ReadValue<Vector2>().y) + (camera.transform.right * move.ReadValue<Vector2>().x);
-         
-         float targetYRotation = Mathf.Atan2(moveDirection.x, moveDirection.z) * Mathf.Rad2Deg;
-         rb.rotation =  Quaternion.Euler(0, targetYRotation, 0);
 
-         Vector3 euler = transform.localEulerAngles;
+         if (moveDirection.sqrMagnitude > 0.01f)
+         {
+             float targetYRotation = Mathf.Atan2(moveDirection.x, moveDirection.z) * Mathf.Rad2Deg;
+             rb.rotation =  Quaternion.Euler(0, targetYRotation, 0);
+             Vector3 euler = transform.localEulerAngles;
          
-         _aniControl.SetFloat("X", euler.x);
-         _aniControl.SetFloat("Y", euler.y);
+             _aniControl.SetFloat("X", euler.x);
+             _aniControl.SetFloat("Y", euler.y);
+         }
+         else
+         {
+             _aniControl.SetFloat("X", 0);
+             _aniControl.SetFloat("Y", 0);
+         }
          
          if (moveSpeed == 0)
              return;
