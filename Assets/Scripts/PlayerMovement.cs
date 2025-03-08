@@ -66,13 +66,14 @@ public class PlayerMovement : MonoBehaviour
 
         /*if (!move.inProgress)
             return;*/
+        Vector2 movementVector = move.ReadValue<Vector2>();
         if (moveCam.IsInProgress())
         {
             currentForward = camera.transform.forward;
             currentRight = camera.transform.right;
+            return;
         }
-        Vector2 movementVector = move.ReadValue<Vector2>().normalized;
-        
+
         /* if (moveSpeed < maxMoveSpeed)
          {
              moveSpeed += acceleration * move.ReadValue<Vector2>().y;
@@ -87,15 +88,16 @@ public class PlayerMovement : MonoBehaviour
     {
          float targetRotationSpeed = 10f;
          Vector3 moveDirection = (currentForward * move.ReadValue<Vector2>().y) + (currentRight * move.ReadValue<Vector2>().x);
+         Debug.Log(moveDirection.x);
 
          if (moveDirection.sqrMagnitude > 0.01f)
          {
              float targetYRotation = Mathf.Atan2(moveDirection.x, moveDirection.z) * Mathf.Rad2Deg;
-             rb.rotation =  Quaternion.Euler(0, targetYRotation, 0);
+             //rb.rotation =  Quaternion.Euler(0, targetYRotation, 0);
              Vector3 euler = transform.localEulerAngles;
          
-             _aniControl.SetFloat("X", euler.x);
-             _aniControl.SetFloat("Y", euler.y);
+             _aniControl.SetFloat("X", -moveDirection.x);
+             _aniControl.SetFloat("Y", -moveDirection.z);
          }
          else
          {
@@ -112,7 +114,6 @@ public class PlayerMovement : MonoBehaviour
              1* transform.forward.z
          );
          */
-         
     }
 
     private void Interact(InputAction.CallbackContext context)
