@@ -61,7 +61,6 @@ public class PlayerMovement : MonoBehaviour
             return;*/
 
         Vector2 movementVector = move.ReadValue<Vector2>().normalized;
-        moveSpeed += acceleration * Time.deltaTime * move.ReadValue<Vector2>().y;
         _aniControl.SetFloat("X", movementVector.x);
         _aniControl.SetFloat("Y", movementVector.y);
         /* if (moveSpeed < maxMoveSpeed)
@@ -79,17 +78,20 @@ public class PlayerMovement : MonoBehaviour
         Vector3 euler = transform.localEulerAngles;
  
          float targetRotationSpeed = 10f;
-         euler.y = camera.transform.eulerAngles.y * move.ReadValue<Vector2>().y;
-         rb.rotation = Quaternion.Euler(euler);
- 
+         Vector3 moveDirection = (camera.transform.forward * move.ReadValue<Vector2>().y) + (camera.transform.right * move.ReadValue<Vector2>().x);
+         
+         float targetYRotation = Mathf.Atan2(moveDirection.x, moveDirection.z) * Mathf.Rad2Deg;
+         rb.rotation =  Quaternion.Euler(0, targetYRotation, 0);
          
          if (moveSpeed == 0)
              return;
+         /*
          rb.velocity = new Vector3(
-             moveSpeed * transform.forward.x,
+             1 * transform.forward.x,
              rb.velocity.y,
-             moveSpeed * transform.forward.z
+             1* transform.forward.z
          );
+         */
          
     }
 
