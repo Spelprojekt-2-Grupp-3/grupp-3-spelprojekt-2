@@ -92,12 +92,12 @@ public class PlayerMovement : MonoBehaviour
 
          if (moveDirection.sqrMagnitude > 0.01f)
          {
-             float targetYRotation = Mathf.Atan2(moveDirection.x, moveDirection.z) * Mathf.Rad2Deg;
-             //rb.rotation =  Quaternion.Euler(0, targetYRotation, 0);
              Vector3 euler = transform.localEulerAngles;
+             float targetYRotation = Mathf.Atan2(moveDirection.x, moveDirection.z) * Mathf.Rad2Deg;
+             rb.rotation =  Quaternion.Euler(0, targetYRotation, 0);
          
-             _aniControl.SetFloat("X", -moveDirection.x);
-             _aniControl.SetFloat("Y", -moveDirection.z);
+             _aniControl.SetFloat("X", euler.x);
+             _aniControl.SetFloat("Y", euler.y);
          }
          else
          {
