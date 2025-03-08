@@ -71,7 +71,6 @@ public class PlayerMovement : MonoBehaviour
         {
             currentForward = camera.transform.forward;
             currentRight = camera.transform.right;
-            return;
         }
 
         /* if (moveSpeed < maxMoveSpeed)
@@ -88,7 +87,6 @@ public class PlayerMovement : MonoBehaviour
     {
          float targetRotationSpeed = 10f;
          Vector3 moveDirection = (currentForward * move.ReadValue<Vector2>().y) + (currentRight * move.ReadValue<Vector2>().x);
-         Debug.Log(moveDirection.x);
 
          if (moveDirection.sqrMagnitude > 0.01f)
          {
