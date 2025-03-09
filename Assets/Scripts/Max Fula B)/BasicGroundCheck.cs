@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class BasicGroundCheck : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject target;
     public float force;
     public LayerMask groundLayer;
 
