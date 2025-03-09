@@ -172,7 +172,6 @@ GameObject:
   - component: {fileID: 8981857285127251655}
   - component: {fileID: 5761179113655266856}
   - component: {fileID: 8041290631682163091}
-  - component: {fileID: 4916301357309666184}
   m_Layer: 0
   m_Name: DepthMask_3
   m_TagString: Untagged
@@ -245,27 +244,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4916301357309666184
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2324168833397451843}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2602362995576793084
 GameObject:
   m_ObjectHideFlags: 0
@@ -5171,7 +5149,6 @@ GameObject:
   - component: {fileID: 1471762593555889432}
   - component: {fileID: 5731594058145822352}
   - component: {fileID: 5375599484053315721}
-  - component: {fileID: 9180195877061677832}
   m_Layer: 0
   m_Name: DepthMask_1
   m_TagString: Untagged
@@ -5244,27 +5221,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &9180195877061677832
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4179451624482523565}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4515107808411788683
 GameObject:
   m_ObjectHideFlags: 0
@@ -5312,7 +5268,6 @@ GameObject:
   - component: {fileID: 2943616798518894178}
   - component: {fileID: 7207379995125473363}
   - component: {fileID: 3789065775320750977}
-  - component: {fileID: 1933665890534887056}
   m_Layer: 0
   m_Name: DepthMask_5
   m_TagString: Untagged
@@ -5385,27 +5340,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1933665890534887056
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4796075183139599251}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5161016867973550245
 GameObject:
   m_ObjectHideFlags: 0
@@ -10381,7 +10315,6 @@ GameObject:
   - component: {fileID: 7791122668250325585}
   - component: {fileID: 4648695309564070289}
   - component: {fileID: 153046256070778810}
-  - component: {fileID: 1462395414949486648}
   m_Layer: 0
   m_Name: DepthMask_4
   m_TagString: Untagged
@@ -10454,27 +10387,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1462395414949486648
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7629486584234939709}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7774657751002411101
 GameObject:
   m_ObjectHideFlags: 0
@@ -10674,7 +10586,6 @@ GameObject:
   - component: {fileID: 3956900989073481663}
   - component: {fileID: 3792683335992634482}
   - component: {fileID: 3464168883906474660}
-  - component: {fileID: 5853452759262708716}
   m_Layer: 0
   m_Name: DepthMask_2
   m_TagString: Untagged
@@ -10747,27 +10658,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5853452759262708716
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8659491705514337284}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &9023005707602923315
 GameObject:
   m_ObjectHideFlags: 0
