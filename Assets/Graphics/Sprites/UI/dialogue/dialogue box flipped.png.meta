@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3fb1697f628e2fa4abea591784da5ab0
+guid: f62194473fc09c04c80f6e02810ab387
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,7 +121,49 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: dialogue box flipped_0
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 115
+        width: 804
+        height: 610
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efc85cddea736764881634817d5aae06
+      internalID: -217109385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dialogue box flipped_1
+      rect:
+        serializedVersion: 2
+        x: 1272
+        y: 117
+        width: 1741
+        height: 609
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 668064e7baa3fd440952f96fc6b85b9a
+      internalID: -1640547215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +174,9 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      dialogue box flipped_0: -217109385
+      dialogue box flipped_1: -1640547215
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
