@@ -1,15 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
+using System.IO;
+using UnityEditor;
 using UnityEngine;
 
 public class ScreenshotScript : MonoBehaviour
 {
-    bool screnshotInProgress = false;
+    bool screnshotInProgress;
     [SerializeField] bool screenshotEnabled;
     private int index = 1;
 
     [SerializeField] int secondsBetweenShots;
-    
+
+    private void Start()
+    {
+        if (!Directory.Exists(Application.dataPath + "/screenshots"))
+        {
+            Directory.CreateDirectory(Application.dataPath + "/screenshots");
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -22,8 +31,8 @@ public class ScreenshotScript : MonoBehaviour
 
     void Screenshot()
     {
-        ScreenCapture.CaptureScreenshot(Application.dataPath +"/screenshots/" + "Test"+ index + ".png");
-        Debug.Log("Screenshot saved in " + Application.dataPath + "/screenshots/" + "Test" + + index + ".png");
+        ScreenCapture.CaptureScreenshot(Application.dataPath +"/screenshots/" + DateTime.Now.ToString("yyyy-MM-dd HH-mm-ss") + ".png");
+        Debug.Log("Screenshot saved in " + Application.dataPath + "/screenshots/" + DateTime.Now.ToString("yyyy-MM-dd_HH-mm-ss") + ".png");
         index++;
         screnshotInProgress = false;
     }
