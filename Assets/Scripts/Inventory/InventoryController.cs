@@ -29,7 +29,7 @@ public class InventoryController : MonoBehaviour
    private InputAction pointerPosition;
    private InputAction middleClick;
    private InputAction markerMovement;
-   private InputAction openInventory;
+   //private InputAction openInventory;
 
    private bool isOpen;
 
@@ -47,7 +47,7 @@ public class InventoryController : MonoBehaviour
    [SerializeField] private GameObject slotHighlightObject;
 
    //[SerializeField] private DialogueManager dialogueManager;
-   
+
    private void Awake()
    {
        playerControls = new PlayerInputActions();
@@ -57,12 +57,11 @@ public class InventoryController : MonoBehaviour
    private void Start()
    {
        markerPosition = mainGrid.FirstSlot();
-       //inventoryItems = new List<InventoryItems>();
        mainGrid.gameObject.SetActive(false);
        DisableControls();
    }
 
-   private void OnEnable()
+   void CreateControls()
    {
        lClick = playerControls.UI.Click;
        rClick = playerControls.UI.RightClick;
@@ -72,17 +71,17 @@ public class InventoryController : MonoBehaviour
        pointerPosition = playerControls.UI.Point;
        middleClick = playerControls.UI.MiddleClick;
        markerMovement = playerControls.UI.Navigate;
-       openInventory = playerControls.UI.Inventory;
-       
-       openInventory.Enable();
-       
+   }
+   
+   private void OnEnable()
+   {
+       CreateControls();
        EnableControls();
    }
 
    private void OnDisable()
    {
        DisableControls();
-       //openInventory.Disable();
    }
 
    public void EnableControls()
@@ -97,7 +96,7 @@ public class InventoryController : MonoBehaviour
        markerMovement.Enable();
    }
 
-   void DisableControls()
+   public void DisableControls()
    {
        lClick.Disable();
        rClick.Disable();
@@ -109,20 +108,19 @@ public class InventoryController : MonoBehaviour
        markerMovement.Disable();
    }
 
+   public void SetEnableState(bool state)
+   {
+       if(state)
+           EnableControls();
+       else 
+           DisableControls();
+       mainGrid.gameObject.SetActive(state);
+   }
+   
+   
    private void Update()
    {
-       if (openInventory.WasPressedThisFrame())
-       {
-           isOpen = !isOpen;
-           mainGrid.gameObject.SetActive(isOpen);
-           if (isOpen)
-               EnableControls();
-           else
-               DisableControls();
-       }
-
        if(!markerMovement.enabled){return;}
-       
        
        //item drag
        if (selectedPackage != null)

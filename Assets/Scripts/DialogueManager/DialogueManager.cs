@@ -42,7 +42,7 @@ public class DialogueManager : MonoBehaviour
     [Header("Quest/Inventory Managers")]
     [SerializeField] private QuestLog questLog;
     [SerializeField] private InventoryController inventoryController;
-    [FormerlySerializedAs("packages")]
+    [SerializeField] private InventoryMenu inventoryMenu;
     [Header("Package data list")]
     [SerializeField] private List<PackageData> packageDatas;
 
@@ -167,6 +167,8 @@ public class DialogueManager : MonoBehaviour
         
         BindExternal();
         
+        inventoryMenu.DisableControls();
+        
         //Reset portrait, layout and speaker
         displayNameText.text = "Name";
         portraitAnimator.Play("Default");
@@ -179,6 +181,7 @@ public class DialogueManager : MonoBehaviour
 
     private IEnumerator ExitDialogueMode()
     {
+        inventoryMenu.EnableControls();
         
         //Small delay before closing UI to avoid double clicks
         yield return new WaitForSeconds(0.2f);

@@ -1,47 +1,27 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class QuestLog : MonoBehaviour
 {
     [SerializeField] private GameObject questBox;
     [SerializeField] private GameObject questContainer;
+    [SerializeField] private GameObject questMenuTextObject;
     private List<Quest> questList = new List<Quest>();
     private List<Quest> finishedQuests = new List<Quest>();
 
     private int siblingIndex;
 
-    private PlayerInputActions playerControls;
-    private InputAction openQuestLog;
-
-    bool isOpen;
-
-    private void Awake()
+    private void Start()
     {
-        playerControls = new PlayerInputActions();
-        
-    }
-    private void OnEnable()
-    {
-        openQuestLog = playerControls.UI.Journal;
-        openQuestLog.Enable();
-    }
-    private void OnDisable()
-    {
-        openQuestLog.Disable();
+        AddQuest("tempQuest","tempquest");
     }
 
-    private void Update()
+    public void SetEnableState(bool state)
     {
-        if(openQuestLog.WasPressedThisFrame())
-        {
-            isOpen = !isOpen;
-            questContainer.gameObject.SetActive(isOpen);
-        }
+        questContainer.SetActive(state);
+        questMenuTextObject.SetActive(state);
     }
-
     void AddQuest(QuestData data)
     {
         var prefab = Instantiate(questBox, questContainer.transform);
