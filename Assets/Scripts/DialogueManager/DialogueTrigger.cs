@@ -3,12 +3,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 public class DialogueTrigger : MonoBehaviour
 {
     [Header("Dialogue Settings")]
-    [Tooltip("Drag the corresponding Ink JSON file for this NPC's dialogue. Each NPC should have a unique file.")]
+    [Tooltip("Drag the corresponding Ink JSON file for this NPC's dialogue. This one is the default/backup text")]
     [SerializeField] private TextAsset inkJSON;
+    [Tooltip("Text file for the first interaction"), SerializeField] private TextAsset introTextJSON;
+    [Tooltip("Text file for the quest Dialogue"), SerializeField] private TextAsset questTextJSON;
+    [Tooltip("For if the character has an extra quest"), SerializeField] private TextAsset extraQuestJSON;
+
+    [Header("Related Quest settings")] 
+    [SerializeField] private QuestData questData;
+    [SerializeField] private QuestData extraQuestData;
+    
+    private QuestLog questLog;
+    
+    private bool firstTalk;
    
     // Checks if the player is close to NPC
     private bool playerInRange;
@@ -16,6 +28,7 @@ public class DialogueTrigger : MonoBehaviour
 
     private void Awake()
     {
+        questLog = FindObjectOfType<QuestLog>();
         playerInRange = false;
         _playerInput = new PlayerInputActions();
     }
@@ -43,7 +56,23 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (!DialogueManager.GetInstance().dialogueIsPlaying)
         {
-            DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
+            if (firstTalk && introTextJSON)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(introTextJSON);
+                firstTalk = false;
+            }
+            else if (questLog.TestForQuest(questData.questTitle, questData.questText) && questTextJSON)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(questTextJSON);
+            }
+            else if(inkJSON)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
+            }
+            else if (extraQuestJSON && extraQuestData)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(extraQuestJSON);
+            }
         }
     }
 
