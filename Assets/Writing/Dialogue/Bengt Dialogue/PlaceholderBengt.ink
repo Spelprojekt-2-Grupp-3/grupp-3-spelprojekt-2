@@ -22,6 +22,16 @@ If you got any questions for me, go ahead and ask 'em! #Speaker:Bengt
     
     For now, do you have any more questions for me? #Speaker:Bengt
     
+      + [Test]
+    
+    This is just a test option. #Speaker:Bengt
+    
+    Nothing much to say here, really. #Speaker:Bengt
+    
+    Do you have anything else to ask? #Speaker:Bengt
+    
+    -> questions
+    
     -> questions
     
     + [Any hobbies?]
