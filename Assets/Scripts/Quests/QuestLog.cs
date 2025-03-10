@@ -22,7 +22,7 @@ public class QuestLog : MonoBehaviour
     public void SetEnableState(bool state)
     {
         questContainer.SetActive(state);
-        if (devving)
+        if(questMenuTextObject)
             questMenuTextObject.SetActive(state);
     }
     void AddQuest(QuestData data)
