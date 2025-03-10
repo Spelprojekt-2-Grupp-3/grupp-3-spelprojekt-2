@@ -1,16 +1,22 @@
-EXTERNAL CompleteQuest(questIndex)
+EXTERNAL FinishQuest(questIndex)
+EXTERNAL DeliverPackage(recipient)
 
 -> IrmaDialogue2
 
 === IrmaDialogue2 ===
 
-Thanks a bunch! I'll install your upgrade, as promised. #Speaker:Irma
+~ DeliverPackage("Irma")
 
+Whoa, I did NOT need this many! #Speaker:Irma
+
+I should've specified what size I needed. Gosh. #Speaker:Irma
+
+Anyway, thanks a bunch! I'll install your upgrade, as promised. #Speaker:Irma
 
     * [<color=\#29c445>Skip (testing)</color>] 
     
-    ~ CompleteQuest(2)
-
+    ~ FinishQuest(2)
+    
     -> END
 
     * [Continue dialogue]
@@ -91,6 +97,6 @@ I gotta head back inside now, but please, talk to me whenever! #Speaker:Irma
     
 -Will do. #Speaker:Cleo
 
-~ CompleteQuest(2)
+~ FinishQuest(2)
 
 -> END

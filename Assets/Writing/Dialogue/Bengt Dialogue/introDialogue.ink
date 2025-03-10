@@ -1,4 +1,4 @@
-EXTERNAL AddQuest(questTitle, questText)
+EXTERNAL AddQuest(questTitle, questInfo)
 
 -> intro
 

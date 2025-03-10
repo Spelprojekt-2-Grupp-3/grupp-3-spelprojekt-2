@@ -1,14 +1,17 @@
-EXTERNAL CompleteQuest(questIndex)
+EXTERNAL FinishQuest(questIndex)
+EXTERNAL DeliverPackage(recipient)
 
 -> SigridDialogue2
 
 === SigridDialogue2 ===
 
-That solves it. Thanks. #Speaker:Sigrid
+~ DeliverPackage("Sigrid")
+
+That solves my problem. Thanks. #Speaker:Sigrid
 
     * [<color=\#29c445>Skip (testing)</color>] 
     
-~ CompleteQuest(1)
+~ FinishQuest(1)
     
     -> END
 
@@ -16,7 +19,9 @@ That solves it. Thanks. #Speaker:Sigrid
 
 -I'll get you your upgrade. #Speaker:Sigrid
 
-[Blah blah your boat was upgraded.] #Speaker:Sigrid
+[Sigrid gets straight to work on installing your new upgrade.] #Speaker:Sigrid
+
+[When she finishes, she dusts her palms off and looks at you.] #Speaker:Sigrid
 
 Is there anything else? #Speaker:Sigrid
 
@@ -60,6 +65,6 @@ I don't have much else for you. #Speaker:Sigrid
 
 No problem. #Speaker:Sigrid
 
-~ CompleteQuest(1)
+~ FinishQuest(1)
 
 -> END
