@@ -220,8 +220,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 11027644}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.004719825, y: 0.9793847, z: -0.20063038, w: 0.023040002}
-  m_LocalPosition: {x: -2006.8171, y: -246.50394, z: 3057.1475}
+  m_LocalRotation: {x: 0.19037393, y: -0.3099909, z: 0.063502714, w: 0.9293174}
+  m_LocalPosition: {x: -1893.9174, y: -246.50394, z: 2743.4646}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -25032,6 +25032,7 @@ MonoBehaviour:
   questBox: {fileID: 6178242590833898513, guid: b95693f5638181c498508d72a9e2fd0e,
     type: 3}
   questContainer: {fileID: 1340810620}
+  questMenuTextObject: {fileID: 0}
 --- !u!1001 &1093032997
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28545,6 +28546,7 @@ MonoBehaviour:
   - {fileID: 0}
   questLog: {fileID: 0}
   inventoryController: {fileID: 0}
+  inventoryMenu: {fileID: 0}
   packageDatas: []
 --- !u!1001 &1260393691
 PrefabInstance:
@@ -31230,7 +31232,7 @@ Transform:
   m_GameObject: {fileID: 1393572420}
   serializedVersion: 2
   m_LocalRotation: {x: 0.08894384, y: -0, z: -0, w: 0.9960367}
-  m_LocalPosition: {x: -2006.8171, y: -246.50394, z: 3057.1475}
+  m_LocalPosition: {x: -1893.9174, y: -246.50394, z: 2743.4646}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -41203,7 +41205,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1851238293}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.0026518418, y: 0.9576582, z: -0.2869454, w: 0.02336839}
+  m_LocalRotation: {x: 0.10696229, y: -0.30311364, z: 0.090822645, w: 0.942567}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

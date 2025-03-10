@@ -336,10 +336,10 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/Banks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638768668187061138
+  lastModified: 638772094791265625
   FileSizes:
   - Name: 
-    Value: 2482
+    Value: 2642
   Exists: 1
 --- !u!114 &-4238647381637108379
 MonoBehaviour:
@@ -365,33 +365,6 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-4061733386985762134
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Sound/SFX/Rope_Squeak
-  m_EditorClassIdentifier: 
-  Path: event:/Sound/SFX/Rope_Squeak
-  Guid:
-    Data1: -838679025
-    Data2: 1200093090
-    Data3: 1040106401
-    Data4: 1028794862
-  Banks:
-  - {fileID: 8182886605034168985}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &-4055353369233749306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -406,14 +379,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Sound/SFX/VoiceNPC
   Guid:
-    Data1: 735726957
-    Data2: 1204751498
-    Data3: 416861847
-    Data4: -981471183
+    Data1: -275653017
+    Data2: 1317806926
+    Data3: 1964889254
+    Data4: 82491761
   Banks:
   - {fileID: 8182886605034168985}
   IsStream: 0
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -525,6 +498,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 300
+--- !u!114 &-1001392705813010797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound/SFX/VoiceNPC test
+  m_EditorClassIdentifier: 
+  Path: event:/Sound/SFX/VoiceNPC test
+  Guid:
+    Data1: 735726957
+    Data2: 1204751498
+    Data3: 416861847
+    Data4: -981471183
+  Banks:
+  - {fileID: 8182886605034168985}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-627711117640200546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -654,7 +654,6 @@ MonoBehaviour:
   - {fileID: 5771894838142449976}
   - {fileID: 4297265589376150557}
   - {fileID: -6671031553100068287}
-  - {fileID: -4061733386985762134}
   - {fileID: 7291550314405049521}
   - {fileID: -250624915859917479}
   - {fileID: -1169465165376337325}
@@ -676,12 +675,16 @@ MonoBehaviour:
   - {fileID: -6962750528215305504}
   - {fileID: 5319061321277538971}
   - {fileID: -2843654852930572703}
+  - {fileID: 1085835330467700353}
+  - {fileID: -1001392705813010797}
+  - {fileID: 6159877881167757589}
+  - {fileID: 7094714485086334506}
   EditorParameters: []
   MasterBanks:
   - {fileID: 8182886605034168985}
   StringsBanks:
   - {fileID: -4265464848103356742}
-  cacheTime: 638771985601264014
+  cacheTime: 638772094791265625
   cacheVersion: 131622
 --- !u!114 &327449618085299828
 MonoBehaviour:
@@ -734,6 +737,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 157
+--- !u!114 &1085835330467700353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound/SFX/Foley/Rope_Squeak
+  m_EditorClassIdentifier: 
+  Path: event:/Sound/SFX/Foley/Rope_Squeak
+  Guid:
+    Data1: -838679025
+    Data2: 1200093090
+    Data3: 1040106401
+    Data4: 1028794862
+  Banks:
+  - {fileID: 8182886605034168985}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &1275294741000381001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1046,6 +1076,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1373
+--- !u!114 &6159877881167757589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound/SFX/Foley/PlayerFootsteps v1.1
+  m_EditorClassIdentifier: 
+  Path: event:/Sound/SFX/Foley/PlayerFootsteps v1.1
+  Guid:
+    Data1: -136685455
+    Data2: 1305429518
+    Data3: 577962135
+    Data4: 24673059
+  Banks:
+  - {fileID: 8182886605034168985}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &6543101404860579153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1094,6 +1151,33 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &7094714485086334506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound/SFX/Foley/PlayerFootsteps v1.0
+  m_EditorClassIdentifier: 
+  Path: event:/Sound/SFX/Foley/PlayerFootsteps v1.0
+  Guid:
+    Data1: -94389070
+    Data2: 1155828152
+    Data3: 1385128341
+    Data4: 1733531145
+  Banks:
+  - {fileID: 8182886605034168985}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &7155238255842091075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1161,6 +1245,6 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/Banks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638771985601264014
+  lastModified: 638772094791255686
   FileSizes: []
   Exists: 1

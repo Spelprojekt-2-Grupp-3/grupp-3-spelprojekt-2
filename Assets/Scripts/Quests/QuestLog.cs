@@ -10,17 +10,20 @@ public class QuestLog : MonoBehaviour
     private List<Quest> questList = new List<Quest>();
     private List<Quest> finishedQuests = new List<Quest>();
 
+    [SerializeField] private bool devving;
     private int siblingIndex;
 
     private void Start()
     {
-        AddQuest("tempQuest","tempquest");
+        if(devving)
+            AddQuest("tempQuest","tempquest");
     }
 
     public void SetEnableState(bool state)
     {
         questContainer.SetActive(state);
-        questMenuTextObject.SetActive(state);
+        if(questMenuTextObject)
+            questMenuTextObject.SetActive(state);
     }
     void AddQuest(QuestData data)
     {
