@@ -98,6 +98,7 @@ public class QuestLog : MonoBehaviour
         {
             siblingIndex--;
             questList[questIndex].transform.SetAsLastSibling();
+            finishedQuests.Add(questList[questIndex]);
         }
     }
 
@@ -112,5 +113,34 @@ public class QuestLog : MonoBehaviour
         }
         else
             Debug.Log("Tried to remove a quest that wasn't in the quest-log");
+    }
+
+    public bool TestForQuest(string title, string description)
+    {
+        bool toReturn = false;
+        foreach (var quest in questList)
+        {
+            if (quest.titleText.text == title && quest.infoText.text == description)
+            {
+                toReturn = true;
+            }
+        }
+
+        return toReturn;
+    }
+
+    public bool TestForCompletedQuest(string title, string description)
+    {
+        bool toReturn = false;
+
+        foreach (var quest in finishedQuests)
+        {
+            if (quest.titleText.text == title && quest.infoText.text == description)
+            {
+                toReturn = true;
+            }
+        }
+
+        return toReturn;
     }
 }

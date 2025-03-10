@@ -8,11 +8,15 @@ public class InventoryMenu : MonoBehaviour
 {
     [SerializeField] private InventoryController inventoryController;
     [SerializeField] private QuestLog questLog;
+    [SerializeField] private List<GameObject> tabObjects;
+
     private PlayerInputActions playerInput;
     private InputAction openJournal;
     private InputAction tabRight;
     private InputAction tabLeft;
 
+    private float scaleIncrease;
+    
     private int selectedMenuIndex;
 
     [SerializeField] private GameObject menuObject;
@@ -21,7 +25,6 @@ public class InventoryMenu : MonoBehaviour
     private void Awake()
     {
         playerInput = new PlayerInputActions();
-        //inventoryController.CreateControls();
     }
 
     private void OnEnable()
@@ -101,6 +104,7 @@ public class InventoryMenu : MonoBehaviour
             {
                 case 0:
                     inventoryController.SetEnableState(true);
+                    SelectTab(tabObjects[0]);
                     questLog.SetEnableState(false);
                     break;
                 case 1:
@@ -115,4 +119,20 @@ public class InventoryMenu : MonoBehaviour
             questLog.SetEnableState(false);
         }
     }
+
+    void SelectTab(GameObject tab)
+    {
+        foreach (var flik in tabObjects)
+        {
+            if (flik == tab)
+            {
+                tab.transform.localScale *= scaleIncrease;
+            }
+            else
+            {
+                tab.transform.localScale = new Vector3(1,1,1);
+            }
+        }
+    }
+    
 }
