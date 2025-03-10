@@ -28,6 +28,7 @@ public class DialogueTrigger : MonoBehaviour
 
     private void Awake()
     {
+        firstTalk = true;
         questLog = FindObjectOfType<QuestLog>();
         playerInRange = false;
         _playerInput = new PlayerInputActions();

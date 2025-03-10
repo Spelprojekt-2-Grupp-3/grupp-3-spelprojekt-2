@@ -170,7 +170,7 @@ public class DialogueManager : MonoBehaviour
         
         BindExternal();
         
-        inventoryMenu.DisableControls();
+      //  inventoryMenu.DisableControls();
         
         //Reset portrait, layout and speaker
         displayNameText.text = "Name";
@@ -184,7 +184,7 @@ public class DialogueManager : MonoBehaviour
 
     private IEnumerator ExitDialogueMode()
     {
-        inventoryMenu.EnableControls();
+     //   inventoryMenu.EnableControls();
         
         //Small delay before closing UI to avoid double clicks
         yield return new WaitForSeconds(0.2f);
