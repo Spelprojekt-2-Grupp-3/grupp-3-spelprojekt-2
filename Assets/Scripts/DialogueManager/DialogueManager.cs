@@ -1,37 +1,57 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Ink.Runtime;
 using TMPro;
 using UnityEngine;
-using Ink.Runtime;
-using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
 using Image = UnityEngine.UI.Image;
 
 public class DialogueManager : MonoBehaviour
 {
     [Header("Parameters")]
-    [SerializeField] private float typingSpeed = 0.04f;
-    
+    [SerializeField]
+    private float typingSpeed = 0.04f;
+
     [Header("Dialogue UI")]
-    [SerializeField] private GameObject dialogueUI;
-    [SerializeField] private GameObject dialoguePanel;
-    [SerializeField] private TextMeshProUGUI dialogueText;
-    [SerializeField] private TextMeshProUGUI displayNameText;
-    [SerializeField] private GameObject continueIcon;
-    [SerializeField] private Animator portraitAnimator;
-    [SerializeField] private Animator layoutAnimator;
-    
+    [SerializeField]
+    private GameObject dialogueUI;
+
+    [SerializeField]
+    private GameObject dialoguePanel;
+
+    [SerializeField]
+    private TextMeshProUGUI dialogueText;
+
+    [SerializeField]
+    private TextMeshProUGUI displayNameText;
+
+    [SerializeField]
+    private GameObject continueIcon;
+
+    [SerializeField]
+    private Animator portraitAnimator;
+
+    [SerializeField]
+    private Animator layoutAnimator;
+
     [Header("Choices UI")]
-    [SerializeField] private GameObject choicesPanel;
-    [SerializeField] private GameObject choicesParent;
-    [SerializeField] private GameObject[] choices;
-    
+    [SerializeField]
+    private GameObject choicesPanel;
+
+    [SerializeField]
+    private GameObject choicesParent;
+
+    [SerializeField]
+    private GameObject[] choices;
+
     //[SerializeField] private InventoryController inventoryController;
-    
+
     private TextMeshProUGUI[] _choicesText;
     private Story _currentStory;
+
     //Readonly (I dont know why)
     public bool dialogueIsPlaying { get; private set; }
     private static DialogueManager _instance;
@@ -41,12 +61,17 @@ public class DialogueManager : MonoBehaviour
     private bool _canContinueToNextLine = false;
     private bool _canSkip = false;
     private bool _submitSkip = false;
-    
-    // private QuestLog questLog;
-    // private InventoryController inventoryController;
-    // private InventoryMenu inventoryMenu;
+
+    private QuestLog questLog;
+
+    private InventoryController inventoryController;
+    private InventoryMenu inventoryMenu;
+
     [Header("Package data list")]
-    [SerializeField] private List<PackageData> packageDatas;
+    [SerializeField]
+    private List<PackageData> packageDatas;
+
+    private DialogueQuestUpdate InkQuestIntegrationUpdater;
 
     private void Awake()
     {
@@ -55,7 +80,7 @@ public class DialogueManager : MonoBehaviour
             Debug.LogWarning("More than one Dialogue Manager in scene!");
         }
         _instance = this;
-        
+
         dialogueUI = GameObject.Find("DialogueUI");
         dialoguePanel = GameObject.Find("DialoguePanel");
         dialogueText = GameObject.Find("DialogueText").GetComponent<TextMeshProUGUI>();
@@ -64,13 +89,13 @@ public class DialogueManager : MonoBehaviour
         portraitAnimator = GameObject.Find("PortraitImage").GetComponent<Animator>();
         layoutAnimator = dialogueUI.GetComponent<Animator>();
         choicesPanel = GameObject.Find("ChoicesPanel");
-        
+
         //Get all the choices text
         choicesParent = GameObject.Find("Choices");
 
-        // questLog = FindObjectOfType<QuestLog>();
-        // inventoryController = FindObjectOfType<InventoryController>();
-        // inventoryMenu = FindObjectOfType<InventoryMenu>();
+        questLog = FindObjectOfType<QuestLog>();
+        inventoryController = FindObjectOfType<InventoryController>();
+        inventoryMenu = FindObjectOfType<InventoryMenu>();
 
         if (choicesParent != null)
         {
@@ -85,7 +110,7 @@ public class DialogueManager : MonoBehaviour
                 _choicesText[i] = choices[i].GetComponentInChildren<TextMeshProUGUI>();
             }
         }
-        
+
         _playerInput = new PlayerInputActions();
     }
 
@@ -95,46 +120,63 @@ public class DialogueManager : MonoBehaviour
         dialogueUI.SetActive(false);
     }
 
-    // void BindExternal()
-    // {
-    //     _currentStory.BindExternalFunction("AddQuest", (string questTitle, string questInfo) =>
-    //     {
-    //         questLog.AddQuest(questTitle,questInfo);
-    //     });
-    //     
-    //     _currentStory.BindExternalFunction("EditQuest", (string questTitle, string questInfo, int questIndex) =>
-    //     {
-    //         questLog.UpdateQuest(questIndex,questTitle,questInfo);
-    //     });
-    //     
-    //     _currentStory.BindExternalFunction("FinishQuest", (int questIndex) =>
-    //     {
-    //         questLog.CompleteQuest(questIndex);
-    //     });
-    //     
-    //     _currentStory.BindExternalFunction("InsertItem", (int packageIndex) =>
-    //     {
-    //         if (packageIndex<=packageDatas.Count && packageDatas[packageIndex])
-    //             if (inventoryController.InsertNewItem(packageDatas[packageIndex]))
-    //             {
-    //                 return true;
-    //             }
-    //             else
-    //                 Debug.Log("Inventory full",this);
-    //         else
-    //             Debug.LogWarning("Item not found or out of index",this);
-    //
-    //         return false;
-    //     });
-    //     
-    //     _currentStory.BindExternalFunction("DeliverPackage",(string recipient)=> inventoryController.mainGrid.RemoveItemsByRecipient(recipient));
-    // }
-    
+    void BindExternal()
+    {
+        _currentStory.BindExternalFunction(
+            "AddQuest",
+            (string questTitle, string questInfo) =>
+            {
+                questLog.AddQuest(questTitle, questInfo);
+            }
+        );
+
+        _currentStory.BindExternalFunction(
+            "EditQuest",
+            (string questTitle, string questInfo, int questIndex) =>
+            {
+                questLog.UpdateQuest(questIndex, questTitle, questInfo);
+            }
+        );
+
+        _currentStory.BindExternalFunction(
+            "FinishQuest",
+            (int questIndex) =>
+            {
+                questLog.CompleteQuest(questIndex);
+            }
+        );
+
+        _currentStory.BindExternalFunction(
+            "InsertItem",
+            (int packageIndex) =>
+            {
+                if (packageIndex <= packageDatas.Count && packageDatas[packageIndex])
+                    if (inventoryController.InsertNewItem(packageDatas[packageIndex]))
+                    {
+                        return true;
+                    }
+                    else
+                        Debug.Log("Inventory full", this);
+                else
+                    Debug.LogWarning("Item not found or out of index", this);
+
+                return false;
+            }
+        );
+
+        _currentStory.BindExternalFunction(
+            "DeliverPackage",
+            (string recipient) => inventoryController.mainGrid.RemoveItemsByRecipient(recipient)
+        );
+
+        _currentStory.BindExternalFunction("SetQuest", () => { });
+    }
+
     private void Update()
     {
         if (_playerInput.Player.Interact.WasPressedThisFrame())
         {
-            _submitSkip = true; 
+            _submitSkip = true;
         }
 
         // Return if dialogue isn't playing
@@ -151,7 +193,6 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    
     private void OnEnable()
     {
         _playerInput.Enable();
@@ -172,25 +213,25 @@ public class DialogueManager : MonoBehaviour
         _currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
         dialogueUI.SetActive(true);
-        
-        // BindExternal();
+
+        BindExternal();
         //
         // inventoryMenu.DisableControls();
-        
+
         //Reset portrait, layout and speaker
         displayNameText.text = "Name";
         portraitAnimator.Play("Default");
         layoutAnimator.Play("NPC");
-        
+
         ContinueStory();
-        
+
         //inventoryController.gameObject.SetActive(false);
     }
 
     private IEnumerator ExitDialogueMode()
     {
         // inventoryMenu.EnableControls();
-        
+
         //Small delay before closing UI to avoid double clicks
         yield return new WaitForSeconds(0.2f);
         dialogueIsPlaying = false;
@@ -216,7 +257,6 @@ public class DialogueManager : MonoBehaviour
         {
             //inventoryController.gameObject.SetActive(false);
             StartCoroutine(ExitDialogueMode());
-            
         }
     }
 
@@ -227,9 +267,9 @@ public class DialogueManager : MonoBehaviour
         HideChoices();
 
         _canContinueToNextLine = false;
-        _submitSkip = false;  // Reset input buffer
+        _submitSkip = false; // Reset input buffer
 
-        StartCoroutine(CanSkip());  // Start skipping delay
+        StartCoroutine(CanSkip()); // Start skipping delay
 
         foreach (char letter in line.ToCharArray())
         {
@@ -251,14 +291,12 @@ public class DialogueManager : MonoBehaviour
         _canSkip = false; // Reset skipping permission
     }
 
-    
     private IEnumerator CanSkip()
     {
         _canSkip = false;
         yield return new WaitForSeconds(0.05f); // small delay to allow typewriter effect to start
         _canSkip = true;
     }
-
 
     private void HideChoices()
     {
@@ -298,7 +336,7 @@ public class DialogueManager : MonoBehaviour
                 {
                     layoutAnimator.Play("NPC");
                 }
-                
+
                 // Determine the text and portrait based on speaker
                 displayNameText.text = tagValue;
                 portraitAnimator.Play(tagValue);
@@ -310,7 +348,6 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-
     private void DisplayChoices()
     {
         List<Choice> currentChoices = _currentStory.currentChoices;
@@ -318,22 +355,23 @@ public class DialogueManager : MonoBehaviour
         //Check to make sure the UI can support the amount of choices coming in
         if (currentChoices.Count > choices.Length)
         {
-            Debug.LogWarning("More choices were given than the UI can support. Number of choices given: " 
-                             + currentChoices.Count);
-            
+            Debug.LogWarning(
+                "More choices were given than the UI can support. Number of choices given: "
+                    + currentChoices.Count
+            );
         }
 
         int index = 0;
-        
+
         foreach (Choice choice in currentChoices)
         {
             choices[index].gameObject.SetActive(true);
             _choicesText[index].text = choice.text;
             index++;
         }
-        
+
         // Enable the choices panel only if there are choices available
-        if (currentChoices.Count > 0) 
+        if (currentChoices.Count > 0)
         {
             choicesParent.SetActive(true);
             choicesPanel.SetActive(true);
@@ -343,7 +381,7 @@ public class DialogueManager : MonoBehaviour
         {
             choices[i].gameObject.SetActive(false);
         }
-        
+
         StartCoroutine(SelectFirstChoice());
     }
 
@@ -357,6 +395,7 @@ public class DialogueManager : MonoBehaviour
 
     public void MakeChoice(int choiceIndex)
     {
+        Debug.Log(choiceIndex);
         if (_canContinueToNextLine)
         {
             _currentStory.ChooseChoiceIndex(choiceIndex);

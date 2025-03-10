@@ -8,15 +8,15 @@ Whoa, hey there! #Speaker:Bengt
 
     * [<color=\#29c445>Skip (testing)</color>] 
     
-    ~AddQuest("Windward", "Get all boat upgrades")
+ //   ~AddQuest("Windward", "Get all boat upgrades")
     
     ~AddQuest("The lighthouse keeper", "Get an upgrade from Sigrid")
 
-    ~AddQuest("The tech expert", "Get an upgrade from Irma")
+ //   ~AddQuest("The tech expert", "Get an upgrade from Irma")
 
-    ~AddQuest("The florist", "Get an upgrade from Ulrich")
+//    ~AddQuest("The florist", "Get an upgrade from Ulrich")
 
-    ~AddQuest("The head of the union", "Get an upgrade from Vera")
+ //   ~AddQuest("The head of the union", "Get an upgrade from Vera")
     
     -> END
     

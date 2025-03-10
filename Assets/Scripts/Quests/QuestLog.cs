@@ -4,33 +4,40 @@ using UnityEngine;
 
 public class QuestLog : MonoBehaviour
 {
-    [SerializeField] private GameObject questBox;
-    [SerializeField] private GameObject questContainer;
-    [SerializeField] private GameObject questMenuTextObject;
+    [SerializeField]
+    private GameObject questBox;
+
+    [SerializeField]
+    private GameObject questContainer;
+
+    [SerializeField]
+    private GameObject questMenuTextObject;
     private List<Quest> questList = new List<Quest>();
     private List<Quest> finishedQuests = new List<Quest>();
 
-    [SerializeField] private bool devving;
+    [SerializeField]
+    private bool devving;
     private int siblingIndex;
 
     private void Start()
     {
-        if(devving)
-            AddQuest("tempQuest","tempquest");
+        if (devving)
+            AddQuest("tempQuest", "tempquest");
     }
 
     public void SetEnableState(bool state)
     {
         questContainer.SetActive(state);
-        if(questMenuTextObject)
+        if (questMenuTextObject)
             questMenuTextObject.SetActive(state);
     }
+
     void AddQuest(QuestData data)
     {
         var prefab = Instantiate(questBox, questContainer.transform);
 
         var quest = prefab.GetComponent<Quest>();
-        
+
         quest.Set(data);
         questList.Add(quest);
         prefab.transform.SetSiblingIndex(siblingIndex);
@@ -40,6 +47,7 @@ public class QuestLog : MonoBehaviour
 
     public void AddQuest(string questTitle, string questText)
     {
+        // Debug.Log(questText);
         var prefab = Instantiate(questBox, questContainer.transform);
 
         var quest = prefab.GetComponent<Quest>();
@@ -94,7 +102,7 @@ public class QuestLog : MonoBehaviour
 
     public void CompleteQuest(int questIndex)
     {
-        if(questList.Contains(questList[questIndex]))
+        if (questList.Contains(questList[questIndex]))
         {
             siblingIndex--;
             questList[questIndex].transform.SetAsLastSibling();
@@ -131,16 +139,15 @@ public class QuestLog : MonoBehaviour
 
     public bool TestForCompletedQuest(string title, string description)
     {
-        bool toReturn = false;
-
         foreach (var quest in finishedQuests)
         {
+            //if the quest log contains a quest matching name and description go ahead with quest dialogue
             if (quest.titleText.text == title && quest.infoText.text == description)
             {
-                toReturn = true;
+                return true;
             }
         }
 
-        return toReturn;
+        return false;
     }
 }
