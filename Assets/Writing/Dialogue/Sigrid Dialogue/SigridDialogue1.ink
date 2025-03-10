@@ -1,4 +1,4 @@
-EXTERNAL UpdateQuest(questIndex, Title, info, step)
+EXTERNAL EditQuest(string questTitle, string questInfo, int questIndex)
 
 -> SigridDialogue1
 
@@ -8,7 +8,7 @@ EXTERNAL UpdateQuest(questIndex, Title, info, step)
 
     * [<color=\#29c445>Skip (testing)</color>] 
     
-    ~ UpdateQuest(1, "The lighthouse keeper", "Help Sigrid", 1)
+    ~ EditQuest("The lighthouse keeper", "Get coffee from Bengt", 1)
     
     -> END
 
@@ -46,14 +46,20 @@ Hmm... yeah, that works. #Speaker:Sigrid
 
 Lucky you, I do need help with something right now. #Speaker:Sigrid
 
-Blah blah minigame stuff. #Speaker:Sigrid
+I stay up late a lot, and for me to do that, I need coffee. #Speaker:Sigrid
 
-Think you're up for it? #Speaker:Sigrid
+And I'm fresh out. #Speaker:Sigrid
+
+Bengt has the best coffee around here. I refuse to drink anything else. #Speaker:Sigrid
+
+I want you to head to Bengt and get me some from him. Think you're up for it? #Speaker:Sigrid
 
     * [Yes.]
     
--Blah blah, got it. I'll help! #Speaker:Cleo
+- I'll get you that coffee! #Speaker:Cleo
 
-~ UpdateQuest(1, "The lighthouse keeper", "Help Sigrid", 1)
+'Preciate it. #Speaker:Sigrid
+
+~ EditQuest("The lighthouse keeper", "Get coffee from Bengt", 1)
 
 -> END

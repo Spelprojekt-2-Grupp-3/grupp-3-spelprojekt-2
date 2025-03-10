@@ -8,7 +8,7 @@ Hey there, stanger! #Speaker:Vera
 
     * [<color=\#29c445>Skip (testing)</color>] 
     
-    ~ UpdateQuest(3, "The head of the union", "Help Vera", 1)
+    ~ UpdateQuest(4, "The head of the union", "Help Vera", 1)
     
     -> END
 
@@ -54,6 +54,6 @@ Think you're up for it? #Speaker:Vera
 
 That's the spirit! #Speaker:Vera
 
-~ UpdateQuest(3, "The head of the union", "Help Vera", 1)
+~ UpdateQuest(4, "The head of the union", "Help Vera", 1)
 
 -> END

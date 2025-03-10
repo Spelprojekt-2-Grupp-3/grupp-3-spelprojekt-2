@@ -1,4 +1,4 @@
-EXTERNAL UpdateQuest(questIndex, Title, info, step)
+EXTERNAL EditQuest(string questTitle, string questInfo, int questIndex)
 
 -> IrmaDialogue1
 
@@ -8,7 +8,7 @@ EXTERNAL UpdateQuest(questIndex, Title, info, step)
 
     * [<color=\#29c445>Skip (testing)</color>] 
     
-    ~ UpdateQuest(2, "The tech expert", "Help Irma", 1)
+    ~ EditQuest("The tech expert", "Get a cog from Sigrid", 2)
     
     -> END
 
@@ -60,18 +60,18 @@ You've definitely come to the right place, then! #Speaker:Irma
 
 There's just one teeny problem. #Speaker:Irma
 
-[Blah blah minigame and quest stuff.] #Speaker:Irma
+I'm in desperate need of a cog! It's for a project of mine. #Speaker:Irma
 
-I'm gonna need you to help me out before I can fix that radio of yours. #Speaker:Irma
+Sigrid has a bunch of spare cogs for her lighthouse. #Speaker:Irma
 
-If you're up for it, that is. #Speaker:Irma
+If you're up for it, I'd like you to go and borrow one for me. #Speaker:Irma
 
-    * [I am.]
+    * [I'm in.]
     
--I'll help you with the minigame. #Speaker:Cleo
+-I'll get you a cog. #Speaker:Cleo
     
-Perfect! Meet me there. #Speaker:Irma
+Perfect! I'll be waiting here. #Speaker:Irma
 
-~ UpdateQuest(2, "The tech expert", "Help Irma", 1)
+~ EditQuest("The tech expert", "Get a cog from Sigrid", 2)
 
 -> END
