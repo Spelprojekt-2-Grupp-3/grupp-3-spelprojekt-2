@@ -20,6 +20,7 @@ public class VeraMinigame : Minigames
     private List<GameObject> shells = new List<GameObject>();
     [SerializeField] private GameObject mouseMarker;
     private GameObject mouseMarkerInstance;
+    [SerializeField] private Sprite cleanerShell, moreCleanShell, fullyCleanShell;
 
     private void Awake()
     {
@@ -57,7 +58,7 @@ public class VeraMinigame : Minigames
             shell.transform.position = new Vector3(shell.transform.position.x, shell.transform.position.y + yPos);
             yPos += 105f;
             var shellComponent = shell.AddComponent<Shell>();
-            shellComponent.dirtyLevel = 4;
+            shellComponent.dirtyLevel = 3;
             shells.Add(shell);
         }
         mouseMarkerInstance = Instantiate(mouseMarker, canvasInstance.transform);
@@ -86,14 +87,22 @@ public class VeraMinigame : Minigames
                 if (EventSystem.current.currentSelectedGameObject.name == "Water")
                 {
                     currentlySelected.GetComponent<Shell>().dirtyLevel -= 1;
-                    Debug.Log("scrub scrub");
+                    if (currentlySelected.GetComponent<Shell>().dirtyLevel == 2)
+                    {
+                        currentlySelected.GetComponent<Image>().sprite = cleanerShell;
+                    }
+                    if (currentlySelected.GetComponent<Shell>().dirtyLevel == 1)
+                    {
+                        currentlySelected.GetComponent<Image>().sprite = moreCleanShell;
+                    }
                     if (currentlySelected.GetComponent<Shell>().dirtyLevel <= 0)
                     {
-                        Debug.Log("clean");
+                        currentlySelected.GetComponent<Image>().sprite = fullyCleanShell;
                     }
                 }
                 else if (EventSystem.current.currentSelectedGameObject.name == "Bucket" && currentlySelected.GetComponent<Shell>().dirtyLevel <= 0)
                 {
+                    currentlySelected.SetActive(false);
                     shells.Remove(currentlySelected);
                     currentlySelected = null;
                     if (shells.Count <= 0)

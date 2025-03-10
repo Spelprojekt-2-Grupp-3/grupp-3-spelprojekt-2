@@ -103,15 +103,15 @@ RectTransform:
   m_GameObject: {fileID: 4256674244124105245}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 5493665582256820262}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 646.4, y: -172.2}
-  m_SizeDelta: {x: 250, y: 400}
+  m_AnchoredPosition: {x: 594, y: -207}
+  m_SizeDelta: {x: 904, y: 1005}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &120816240438073633
 CanvasRenderer:
@@ -134,16 +134,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 1631b87102fa1624db5f2b3f6a70258e, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -220,15 +220,15 @@ RectTransform:
   m_GameObject: {fileID: 7520103461036532408}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.35, y: 0.35, z: 0.35}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 5493665582256820262}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 300, y: 400}
+  m_SizeDelta: {x: 1636, y: 727}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &270371734825844235
 CanvasRenderer:
@@ -251,16 +251,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.30015132, g: 0.59994316, b: 0.8962264, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 0d89a4f6aef06144a9dcd09169ee6f40, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -321,6 +321,7 @@ GameObject:
   - component: {fileID: 3519829426199257430}
   - component: {fileID: 9067181165374378630}
   - component: {fileID: 3170114649927142914}
+  - component: {fileID: 2443814094181758632}
   m_Layer: 5
   m_Name: VeraMinigameCanvas
   m_TagString: Untagged
@@ -413,3 +414,22 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &2443814094181758632
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8658222586063144398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a87410c1c0b113439bf31b4c7c6a7d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasPrefab: {fileID: 8658222586063144398}
+  shellPrefab: {fileID: 3365458794043395927, guid: f14dea796a55c214092d7dbf5782ee18,
+    type: 3}
+  currentInput: {fileID: 11400000, guid: 7f7fd9995c4435f488f7df319f651fb7, type: 2}
+  shellAmount: 4
+  mouseMarker: {fileID: 4938528864402250286, guid: 2831c38ea92f0ae438c3500cbffae20b,
+    type: 3}
