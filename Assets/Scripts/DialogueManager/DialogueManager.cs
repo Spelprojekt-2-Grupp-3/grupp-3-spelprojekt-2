@@ -15,6 +15,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private float typingSpeed = 0.04f;
     
     [Header("Dialogue UI")]
+    [SerializeField] private GameObject dialogueUI;
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI dialogueText;
     [SerializeField] private TextMeshProUGUI displayNameText;
@@ -23,6 +24,8 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private Animator layoutAnimator;
     
     [Header("Choices UI")]
+    [SerializeField] private GameObject choicesPanel;
+    [SerializeField] private GameObject choicesParent;
     [SerializeField] private GameObject[] choices;
     
     //[SerializeField] private InventoryController inventoryController;
@@ -53,23 +56,25 @@ public class DialogueManager : MonoBehaviour
         }
         _instance = this;
         
+        dialogueUI = GameObject.Find("DialogueUI");
         dialoguePanel = GameObject.Find("DialoguePanel");
         dialogueText = GameObject.Find("DialogueText").GetComponent<TextMeshProUGUI>();
         displayNameText = GameObject.Find("DisplayNameText").GetComponent<TextMeshProUGUI>();
         continueIcon = GameObject.Find("ContinueIcon");
         portraitAnimator = GameObject.Find("PortraitImage").GetComponent<Animator>();
-        layoutAnimator = dialoguePanel.GetComponent<Animator>();
+        layoutAnimator = dialogueUI.GetComponent<Animator>();
+        choicesPanel = GameObject.Find("ChoicesPanel");
+        
+        //Get all the choices text
+        choicesParent = GameObject.Find("Choices");
 
         questLog = FindObjectOfType<QuestLog>();
         inventoryController = FindObjectOfType<InventoryController>();
         inventoryMenu = FindObjectOfType<InventoryMenu>();
 
-        //Get all the choices text
-        GameObject choicesParent = GameObject.Find("DialogueChoices");
-
         if (choicesParent != null)
         {
-            // Get all child objects of DialogueChoices
+            // Get all child objects of ChoicesPanel
             int childCount = choicesParent.transform.childCount;
             choices = new GameObject[childCount];
             _choicesText = new TextMeshProUGUI[childCount];
@@ -87,7 +92,7 @@ public class DialogueManager : MonoBehaviour
     private void Start()
     {
         dialogueIsPlaying = false;
-        dialoguePanel.SetActive(false);
+        dialogueUI.SetActive(false);
     }
 
     void BindExternal()
@@ -118,7 +123,7 @@ public class DialogueManager : MonoBehaviour
                     Debug.Log("Inventory full",this);
             else
                 Debug.LogWarning("Item not found or out of index",this);
-
+    
             return false;
         });
         
@@ -166,11 +171,11 @@ public class DialogueManager : MonoBehaviour
     {
         _currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
-        dialoguePanel.SetActive(true);
+        dialogueUI.SetActive(true);
         
         BindExternal();
         
-      //  inventoryMenu.DisableControls();
+        inventoryMenu.DisableControls();
         
         //Reset portrait, layout and speaker
         displayNameText.text = "Name";
@@ -184,12 +189,12 @@ public class DialogueManager : MonoBehaviour
 
     private IEnumerator ExitDialogueMode()
     {
-     //   inventoryMenu.EnableControls();
+        // inventoryMenu.EnableControls();
         
         //Small delay before closing UI to avoid double clicks
         yield return new WaitForSeconds(0.2f);
         dialogueIsPlaying = false;
-        dialoguePanel.SetActive(false);
+        dialogueUI.SetActive(false);
         dialogueText.text = "";
     }
 
@@ -260,6 +265,8 @@ public class DialogueManager : MonoBehaviour
         foreach (GameObject choiceButton in choices)
         {
             choiceButton.SetActive(false);
+            choicesParent.SetActive(false);
+            choicesPanel.SetActive(false);
         }
     }
 
@@ -317,12 +324,19 @@ public class DialogueManager : MonoBehaviour
         }
 
         int index = 0;
-
+        
         foreach (Choice choice in currentChoices)
         {
             choices[index].gameObject.SetActive(true);
             _choicesText[index].text = choice.text;
             index++;
+        }
+        
+        // Enable the choices panel only if there are choices available
+        if (currentChoices.Count > 0) 
+        {
+            choicesParent.SetActive(true);
+            choicesPanel.SetActive(true);
         }
 
         for (int i = index; i < choices.Length; i++)
