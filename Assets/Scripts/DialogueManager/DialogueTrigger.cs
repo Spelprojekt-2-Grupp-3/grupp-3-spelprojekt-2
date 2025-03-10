@@ -62,10 +62,12 @@ public class DialogueTrigger : MonoBehaviour
                 DialogueManager.GetInstance().EnterDialogueMode(introTextJSON);
                 firstTalk = false;
             }
-            else if (questLog.TestForQuest(questData.questTitle, questData.questText) && questTextJSON)
-            {
-                DialogueManager.GetInstance().EnterDialogueMode(questTextJSON);
-            }
+            else if(questData != null){
+                if (questLog.TestForQuest(questData.questTitle, questData.questText) && questTextJSON)
+                {
+                    DialogueManager.GetInstance().EnterDialogueMode(questTextJSON);
+                }
+            }             
             else if(inkJSON)
             {
                 DialogueManager.GetInstance().EnterDialogueMode(inkJSON);
