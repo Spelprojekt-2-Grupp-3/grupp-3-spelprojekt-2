@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 52, y: 95.5}
+  m_AnchoredPosition: {x: 50, y: 95.5}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &781410148337620223
@@ -65,10 +65,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Select
+  m_text: Confirm
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 745cdbe49441834478ac46e127d8a952, type: 2}
+  m_sharedMaterial: {fileID: -5543663865001063889, guid: 745cdbe49441834478ac46e127d8a952,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -99,7 +100,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -331,7 +332,7 @@ MonoBehaviour:
   correctOrder: {fileID: 5219723993203585934, guid: 83951744c8b0da342bae9f5f7eb88659,
     type: 3}
   currentInput: {fileID: 11400000, guid: 7f7fd9995c4435f488f7df319f651fb7, type: 2}
-  selectIcon: {fileID: 8943471928636066412}
+  confirmIcon: {fileID: 8943471928636066412}
   hoverMarker: {fileID: 3455135334304100437}
 --- !u!1 &7512253902529548657
 GameObject:
@@ -345,7 +346,7 @@ GameObject:
   - component: {fileID: 2559720958360478462}
   - component: {fileID: 8943471928636066412}
   m_Layer: 5
-  m_Name: Select
+  m_Name: Confirm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

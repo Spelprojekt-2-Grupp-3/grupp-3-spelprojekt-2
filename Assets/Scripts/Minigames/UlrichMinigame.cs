@@ -19,7 +19,7 @@ public class UlrichMinigme : Minigames
     List<GameObject> objects = new List<GameObject>();
     [SerializeField] private CurrentInputIcons currentInput;
     private GameObject selectedObject;
-    [SerializeField] private Image selectIcon;
+    [SerializeField] private Image confirmIcon;
     [SerializeField] private GameObject hoverMarker;
 
     private void Start()
@@ -86,7 +86,7 @@ public class UlrichMinigme : Minigames
 
     private void Update()
     {
-        //if (EventSystem.current.currentSelectedGameObject is null) return;
+        if (EventSystem.current.currentSelectedGameObject is null) return;
         if (submit.WasPerformedThisFrame())
         {
             if (selectedObject is null)
@@ -112,8 +112,8 @@ public class UlrichMinigme : Minigames
             for (int i = 0; i < correctOrder.transform.childCount; i++)
             {
                 var name = correctOrder.transform.GetChild(i).name;
-                if (incorrectOrder.transform.Find(name).transform.localPosition !=
-                    correctOrder.transform.GetChild(i).transform.localPosition)
+                if (incorrectOrder.transform.Find(name).transform.localPosition.x !=
+                    correctOrder.transform.GetChild(i).transform.localPosition.x)
                 {
                     return;
                 }
@@ -124,7 +124,7 @@ public class UlrichMinigme : Minigames
 
     private void UpdateIcons()
     {
-        selectIcon.sprite = currentInput.currentInputDevice.buttonSouth;
+        confirmIcon.sprite = currentInput.currentInputDevice.buttonWest;
         hoverMarker.GetComponent<Image>().sprite = currentInput.currentInputDevice.buttonSouth;
     }
 
