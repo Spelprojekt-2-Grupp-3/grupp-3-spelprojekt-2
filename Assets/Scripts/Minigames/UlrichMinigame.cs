@@ -12,7 +12,7 @@ using Random = System.Random;
 public class UlrichMinigme : Minigames
 {
     private List<Vector3> correctPositions;
-    private GameObject incorrectOrder;
+    [SerializeField] private GameObject incorrectOrder;
     [SerializeField] private GameObject correctOrder;
     private PlayerInputActions playerControls;
     private InputAction submit, buttonWest;
@@ -20,6 +20,7 @@ public class UlrichMinigme : Minigames
     [SerializeField] private CurrentInputIcons currentInput;
     private GameObject selectedObject;
     [SerializeField] private Image selectIcon;
+    [SerializeField] private GameObject hoverMarker;
 
     private void Start()
     {
@@ -51,7 +52,6 @@ public class UlrichMinigme : Minigames
 
     public override void StartMinigame()
     {
-        incorrectOrder = Instantiate(correctOrder, transform);
         incorrectOrder.name = "Incorrect Order";
         List<Vector3> shuffledList = new List<Vector3>();
         for (int i = 0; i < incorrectOrder.transform.childCount; i++)
@@ -86,6 +86,7 @@ public class UlrichMinigme : Minigames
 
     private void Update()
     {
+        //if (EventSystem.current.currentSelectedGameObject is null) return;
         if (submit.WasPerformedThisFrame())
         {
             if (selectedObject is null)
@@ -103,6 +104,8 @@ public class UlrichMinigme : Minigames
                 selectedObject = null;
             }
         }
+
+        hoverMarker.transform.position = EventSystem.current.currentSelectedGameObject.transform.position;
 
         if (buttonWest.WasPerformedThisFrame())
         {
@@ -122,6 +125,7 @@ public class UlrichMinigme : Minigames
     private void UpdateIcons()
     {
         selectIcon.sprite = currentInput.currentInputDevice.buttonSouth;
+        hoverMarker.GetComponent<Image>().sprite = currentInput.currentInputDevice.buttonSouth;
     }
 
     private void SelectionHandler(PlayerInput sentInputDevice)
