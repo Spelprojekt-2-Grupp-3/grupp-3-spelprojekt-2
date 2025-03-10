@@ -38,11 +38,10 @@ public class DialogueManager : MonoBehaviour
     private bool _canContinueToNextLine = false;
     private bool _canSkip = false;
     private bool _submitSkip = false;
-
-    [Header("Quest/Inventory Managers")]
-    [SerializeField] private QuestLog questLog;
-    [SerializeField] private InventoryController inventoryController;
-    [SerializeField] private InventoryMenu inventoryMenu;
+    
+    private QuestLog questLog;
+    private InventoryController inventoryController;
+    private InventoryMenu inventoryMenu;
     [Header("Package data list")]
     [SerializeField] private List<PackageData> packageDatas;
 
@@ -60,7 +59,11 @@ public class DialogueManager : MonoBehaviour
         continueIcon = GameObject.Find("ContinueIcon");
         portraitAnimator = GameObject.Find("PortraitImage").GetComponent<Animator>();
         layoutAnimator = dialoguePanel.GetComponent<Animator>();
-        
+
+        questLog = FindObjectOfType<QuestLog>();
+        inventoryController = FindObjectOfType<InventoryController>();
+        inventoryMenu = FindObjectOfType<InventoryMenu>();
+
         //Get all the choices text
         GameObject choicesParent = GameObject.Find("DialogueChoices");
 
