@@ -18,14 +18,14 @@ public class AnimationIdleAlternator : MonoBehaviour
         if (i == 5)
         {
             _ani.SetTrigger("Fidget");
-            Debug.Log("Fidget");
+           // Debug.Log("Fidget");
         }
         else
         {
             float f = Random.Range(8, 12) / 10f;
             _ani.SetFloat("IdleSpeed", f);
-            Debug.Log(f);
-            Debug.Log("Repeat");
+          //  Debug.Log(f);
+           // Debug.Log("Repeat");
         }
     }
 }
