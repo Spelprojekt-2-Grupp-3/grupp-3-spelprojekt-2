@@ -42,9 +42,9 @@ public class DialogueManager : MonoBehaviour
     private bool _canSkip = false;
     private bool _submitSkip = false;
     
-    private QuestLog questLog;
-    private InventoryController inventoryController;
-    private InventoryMenu inventoryMenu;
+    // private QuestLog questLog;
+    // private InventoryController inventoryController;
+    // private InventoryMenu inventoryMenu;
     [Header("Package data list")]
     [SerializeField] private List<PackageData> packageDatas;
 
@@ -68,9 +68,9 @@ public class DialogueManager : MonoBehaviour
         //Get all the choices text
         choicesParent = GameObject.Find("Choices");
 
-        questLog = FindObjectOfType<QuestLog>();
-        inventoryController = FindObjectOfType<InventoryController>();
-        inventoryMenu = FindObjectOfType<InventoryMenu>();
+        // questLog = FindObjectOfType<QuestLog>();
+        // inventoryController = FindObjectOfType<InventoryController>();
+        // inventoryMenu = FindObjectOfType<InventoryMenu>();
 
         if (choicesParent != null)
         {
@@ -95,40 +95,40 @@ public class DialogueManager : MonoBehaviour
         dialogueUI.SetActive(false);
     }
 
-    void BindExternal()
-    {
-        _currentStory.BindExternalFunction("AddQuest", (string questTitle, string questInfo) =>
-        {
-            questLog.AddQuest(questTitle,questInfo);
-        });
-        
-        _currentStory.BindExternalFunction("EditQuest", (string questTitle, string questInfo, int questIndex) =>
-        {
-            questLog.UpdateQuest(questIndex,questTitle,questInfo);
-        });
-        
-        _currentStory.BindExternalFunction("FinishQuest", (int questIndex) =>
-        {
-            questLog.CompleteQuest(questIndex);
-        });
-        
-        _currentStory.BindExternalFunction("InsertItem", (int packageIndex) =>
-        {
-            if (packageIndex<=packageDatas.Count && packageDatas[packageIndex])
-                if (inventoryController.InsertNewItem(packageDatas[packageIndex]))
-                {
-                    return true;
-                }
-                else
-                    Debug.Log("Inventory full",this);
-            else
-                Debug.LogWarning("Item not found or out of index",this);
-    
-            return false;
-        });
-        
-        _currentStory.BindExternalFunction("DeliverPackage",(string recipient)=> inventoryController.mainGrid.RemoveItemsByRecipient(recipient));
-    }
+    // void BindExternal()
+    // {
+    //     _currentStory.BindExternalFunction("AddQuest", (string questTitle, string questInfo) =>
+    //     {
+    //         questLog.AddQuest(questTitle,questInfo);
+    //     });
+    //     
+    //     _currentStory.BindExternalFunction("EditQuest", (string questTitle, string questInfo, int questIndex) =>
+    //     {
+    //         questLog.UpdateQuest(questIndex,questTitle,questInfo);
+    //     });
+    //     
+    //     _currentStory.BindExternalFunction("FinishQuest", (int questIndex) =>
+    //     {
+    //         questLog.CompleteQuest(questIndex);
+    //     });
+    //     
+    //     _currentStory.BindExternalFunction("InsertItem", (int packageIndex) =>
+    //     {
+    //         if (packageIndex<=packageDatas.Count && packageDatas[packageIndex])
+    //             if (inventoryController.InsertNewItem(packageDatas[packageIndex]))
+    //             {
+    //                 return true;
+    //             }
+    //             else
+    //                 Debug.Log("Inventory full",this);
+    //         else
+    //             Debug.LogWarning("Item not found or out of index",this);
+    //
+    //         return false;
+    //     });
+    //     
+    //     _currentStory.BindExternalFunction("DeliverPackage",(string recipient)=> inventoryController.mainGrid.RemoveItemsByRecipient(recipient));
+    // }
     
     private void Update()
     {
@@ -173,9 +173,9 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying = true;
         dialogueUI.SetActive(true);
         
-        BindExternal();
-        
-        inventoryMenu.DisableControls();
+        // BindExternal();
+        //
+        // inventoryMenu.DisableControls();
         
         //Reset portrait, layout and speaker
         displayNameText.text = "Name";
