@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
-public class TimingMinigame : Minigames
+public class BengtMinigame : Minigames
 {
     private GameObject canvasInst, handle, goal;
     [SerializeField] private GameObject sliderInst;
