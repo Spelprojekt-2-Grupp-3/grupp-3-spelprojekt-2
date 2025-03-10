@@ -1,4 +1,4 @@
-EXTERNAL UpdateQuest(questIndex, Title, info, step)
+EXTERNAL EditQuest(string questTitle, string questInfo, int questIndex)
 
 -> VeraDialogue1
 
@@ -8,7 +8,7 @@ Hey there, stanger! #Speaker:Vera
 
     * [<color=\#29c445>Skip (testing)</color>] 
     
-    ~ UpdateQuest(4, "The head of the union", "Help Vera", 1)
+    ~ EditQuest("The head of the union", "Talk to Ulrich about Vera's condition", 4)
     
     -> END
 
@@ -44,16 +44,28 @@ Saves me the trouble of explaining it, then! #Speaker:Vera
 
 You see, I have a favor to ask of you first. #Speaker:Vera
 
-[Blah blah help me with this.] #Speaker:Vera
+I was diving nearby when a nasty little thing swum by and stung me! #Speaker:Vera
+
+    * [What?!]
+    
+-You were stung?! By what? Is it dangerous? #Speaker:Cleo
+
+Ha! It's nothing serious, thankfully. But I'm not in a mood to spend the next few hours puking my guts out. #Speaker:Vera
+
+How is that not serious?! #Speaker:Cleo
+
+Anyway, if you could head on over to Ulrich and let him know what happened... #Speaker:Vera
+
+... I'm sure he'll think of some plant that could dissolve the toxin before it really kicks in. #Speaker:Vera
 
 Think you're up for it? #Speaker:Vera
 
     * [Yes.]
     
--Sure am! #Speaker:Cleo
+-Of course! Yeah! Geez... #Speaker:Cleo
 
 That's the spirit! #Speaker:Vera
 
-~ UpdateQuest(4, "The head of the union", "Help Vera", 1)
+~ EditQuest("The head of the union", "Talk to Ulrich about Vera's condition", 4)
 
 -> END
