@@ -13,12 +13,13 @@ public class IrmaMinigame : Minigames
 {
     private PlayerInputActions playerControls;
     private InputAction leftStick, rightStick, submit;
-    [SerializeField] private Canvas irmaMinigameCanvas;
-    private Image leftStickIcon, rightStickIcon, submitIcon;
-    private int targetValueLeft, targetValueRight, currentValueLeft, currentValueRight;
+    [SerializeField] private Image leftStickIcon, rightStickIcon, submitIcon;
+    private float currentValueLeft, currentValueRight;
+    private int targetValueLeft, targetValueRight;
     [SerializeField] private CurrentInputIcons currentInput;
-    [SerializeField, Range(0, 100f)] private int numberRange;
-    private TextMeshProUGUI currentValueLeftInst, currentValueRightInst, targetLeftInst, targetRightInst;
+    [SerializeField, Range(0, 100)] private int numberRange;
+    [SerializeField] private TextMeshProUGUI currentValueLeftInst, currentValueRightInst, targetLeftInst, targetRightInst;
+    [SerializeField] private RectTransform  leftStickControl, rightStickControl;
     private bool hasStarted = false;
 
     private void OnEnable()
@@ -52,17 +53,9 @@ public class IrmaMinigame : Minigames
 
     public override void StartMinigame()
     {
-        var canvasInst = Instantiate(irmaMinigameCanvas);
-        var bg = canvasInst.transform.Find("Background");
-        targetLeftInst = bg.Find("TargetValueLeft").GetComponent<TextMeshProUGUI>();
-        targetRightInst = bg.Find("TargetValueRight").GetComponent<TextMeshProUGUI>();
-        currentValueLeftInst = bg.Find("LeftValue").GetComponent<TextMeshProUGUI>();
-        currentValueRightInst = bg.Find("RightValue").GetComponent<TextMeshProUGUI>();
-        leftStickIcon = bg.Find("LeftStickIcon").GetComponent<Image>();
-        rightStickIcon = bg.Find("RightStickIcon").GetComponent<Image>();
-        submitIcon = bg.Find("SubmitIcon").GetComponent<Image>();
-        targetValueLeft = Random.Range(0, numberRange);
-        targetValueRight = Random.Range(0, numberRange);
+        var canvasInst = gameObject;
+        targetValueLeft = Random.Range(1, numberRange);
+        targetValueRight = Random.Range(1, numberRange);
         currentValueLeft = 0;
         currentValueRight = 0;
         UpdateText();
@@ -78,7 +71,7 @@ public class IrmaMinigame : Minigames
     {
         if (submit.WasPerformedThisFrame())
         {
-            if (currentValueLeft == targetValueLeft && currentValueRight == targetValueRight)
+            if (Mathf.RoundToInt(currentValueLeft) == targetValueLeft && Mathf.RoundToInt(currentValueRight) == targetValueRight)
             {
                 StopMinigame();
             }
@@ -91,38 +84,52 @@ public class IrmaMinigame : Minigames
         if (leftStick.IsInProgress())
         {
             currentValueLeft += Mathf.RoundToInt(leftStick.ReadValue<Vector2>().x);
+            
             if (currentValueLeft > numberRange)
-            {
-                currentValueLeft = 0;
-            }
-            else if (currentValueLeft < 0)
             {
                 currentValueLeft = numberRange;
             }
+            else if (currentValueLeft < 0)
+            {
+                currentValueLeft = 0;
+            }
             UpdateText();
         }
+        
+        var euler = leftStickControl.rotation.eulerAngles;
+        
+        euler.z = Mathf.Lerp(141f, -141f, currentValueLeft / numberRange);
+
+        leftStickControl.rotation = Quaternion.Euler(euler);
 
         if (rightStick.IsInProgress())
         {
             currentValueRight += Mathf.RoundToInt(rightStick.ReadValue<Vector2>().x);
             if (currentValueRight > numberRange)
             {
-                currentValueRight = 0;
+                currentValueRight = numberRange;
             }
             else if (currentValueRight < 0)
             {
-                currentValueRight = numberRange;
+                currentValueRight = 0;
             }
             UpdateText();
         }
+        
+        euler = rightStickControl.rotation.eulerAngles;
+        
+        euler.z = Mathf.Lerp(141f, -141f, currentValueRight / numberRange);
+
+        rightStickControl.rotation = Quaternion.Euler(euler);
     }
 
     private void UpdateText()
     {
         targetLeftInst.text = targetValueLeft.ToString();
         targetRightInst.text = targetValueRight.ToString();
-        currentValueLeftInst.text = currentValueLeft.ToString();
-        currentValueRightInst.text = currentValueRight.ToString();
+        currentValueLeftInst.text = Mathf.RoundToInt(currentValueLeft).ToString();
+        currentValueRightInst.text = Mathf.RoundToInt(currentValueRight).ToString();
+        
     }
 
 
