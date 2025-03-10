@@ -336,10 +336,10 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/Banks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638772091020812065
+  lastModified: 638772219561678223
   FileSizes:
   - Name: 
-    Value: 2642
+    Value: 2720
   Exists: 1
 --- !u!114 &-4238647381637108379
 MonoBehaviour:
@@ -679,12 +679,13 @@ MonoBehaviour:
   - {fileID: -1001392705813010797}
   - {fileID: 6159877881167757589}
   - {fileID: 7094714485086334506}
+  - {fileID: 6314701053669530753}
   EditorParameters: []
   MasterBanks:
   - {fileID: 8182886605034168985}
   StringsBanks:
   - {fileID: -4265464848103356742}
-  cacheTime: 638772091020812065
+  cacheTime: 638772219561678223
   cacheVersion: 131622
 --- !u!114 &327449618085299828
 MonoBehaviour:
@@ -1103,6 +1104,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &6314701053669530753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound/AMB/natureAMB
+  m_EditorClassIdentifier: 
+  Path: event:/Sound/AMB/natureAMB
+  Guid:
+    Data1: 849417797
+    Data2: 1081477484
+    Data3: -320635207
+    Data4: 1558050774
+  Banks:
+  - {fileID: 8182886605034168985}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 25580
 --- !u!114 &6543101404860579153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1245,6 +1273,6 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/Banks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638772091020695598
+  lastModified: 638772219561607558
   FileSizes: []
   Exists: 1
