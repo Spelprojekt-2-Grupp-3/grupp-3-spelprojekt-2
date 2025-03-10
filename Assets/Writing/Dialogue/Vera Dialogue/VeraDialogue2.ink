@@ -1,8 +1,11 @@
 EXTERNAL FinishQuest(questIndex)
+EXTERNAL DeliverPackage(recipient)
 
 -> VeraDialogue2
 
 === VeraDialogue2 ===
+
+~ DeliverPackage("Vera")
 
 Phew, you're back! #Speaker:Vera
 
