@@ -9,8 +9,8 @@ using Random = UnityEngine.Random;
 
 public class TimingMinigame : Minigames
 {
-    [SerializeField] private GameObject canvas;
-    private GameObject canvasInst, handle, goal, sliderInst;
+    private GameObject canvasInst, handle, goal;
+    [SerializeField] private GameObject sliderInst;
     private Camera camera;
     private PlayerInputActions playerControls;
     private InputAction minigameButtonSouth;
@@ -42,18 +42,22 @@ public class TimingMinigame : Minigames
     private void Awake()
     {
         playerControls = new PlayerInputActions();
+        canvasInst = gameObject;
         StartMinigame();
+    }
+
+    private void Start()
+    {
+        
     }
 
     public override void StartMinigame()
     {
         sliderSpeed = 1.5f;
         increasing = true;
-        canvasInst = Instantiate(canvas);
-        var canvasComponent = canvasInst.GetComponent<Canvas>();
+        var canvasComponent = GetComponent<Canvas>();
         canvasComponent.worldCamera = camera;
         canvasComponent.renderMode = RenderMode.ScreenSpaceOverlay;
-        sliderInst = Instantiate(sliderObj, canvasInst.transform);
         slider = sliderInst.GetComponent<Slider>();
         slider.maxValue = sliderMaxValue;
         handle = sliderInst.transform.Find("Handle Slide Area").transform.Find("Handle").gameObject;
