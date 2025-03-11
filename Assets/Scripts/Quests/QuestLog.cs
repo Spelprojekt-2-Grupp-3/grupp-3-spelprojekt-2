@@ -52,9 +52,6 @@ public class QuestLog : MonoBehaviour
                 quest.NextStep();
                 Debug.Log(quest.ID);
             }
-                
-            
-
         }
     }
 
