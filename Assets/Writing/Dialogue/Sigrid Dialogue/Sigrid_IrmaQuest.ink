@@ -1,5 +1,4 @@
-EXTERNAL EditQuest(questTitle, questInfo, questIndex)
-EXTERNAL InsertItem(packageIndex)
+EXTERNAL EditQuest(int ID)
 
 -> SigridDialogueIrma
 
@@ -29,7 +28,6 @@ Anyway, thanks! I'll be going now. #Speaker:Cleo
 
 Bye. #Speaker:Sigrid
 
-~ EditQuest("The tech expert", "Deliver the cogs to Irma", 2)
-~ InsertItem(1)
+~ EditQuest(2)
 
 -> END

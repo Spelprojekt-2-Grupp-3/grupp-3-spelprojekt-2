@@ -1,4 +1,4 @@
-EXTERNAL EditQuest(string questTitle, string questInfo, int questIndex)
+EXTERNAL EditQuest(int ID)
 
 -> UlrichDialogue1
 
@@ -52,6 +52,6 @@ Hrmnrhgh. Heerhmnmngh Jemhgmh. Vrrha! #Speaker:Ulrich
 
 Hrnm! #Speaker:Ulrich
 
-~ EditQuest("The florist", "Get medicine from Vera", 3)
+~ EditQuest(3)
 
 -> END

@@ -1,5 +1,4 @@
-EXTERNAL EditQuest(string questTitle, string questInfo, int questIndex)
-EXTERNAL InsertItem(packageIndex)
+EXTERNAL EditQuest(int ID)
 
 -> VeraDialogueUlrich
 
@@ -31,7 +30,6 @@ Here ya go! #Speaker:Vera
 
 You best be off now. Don't leave poor Ulrich sniffling too much longer! #Speaker:Vera
 
-~ EditQuest("The florist", "Deliver the medicine to Ulrich", 3)
-~ InsertItem(2)
+~ EditQuest(3)
 
 -> END

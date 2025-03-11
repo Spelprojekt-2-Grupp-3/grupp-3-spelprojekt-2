@@ -1,11 +1,8 @@
-EXTERNAL EditQuest(string questTitle, string questInfo, int questIndex)
-EXTERNAL DeliverPackage(recipient)
+EXTERNAL EditQuest(int ID)
 
 -> IrmaDialogueEndgame
 
 === IrmaDialogueEndgame ===
-
-~ DeliverPackage("Irma")
 
 Cleo! Found anything out? #Speaker:Irma
 
@@ -49,6 +46,6 @@ So just stay safe, yeah? I don't know what I'd do if yet another person went mis
 
 Gosh, your confidence is rubbing off on me... I'll be cheering you on from here! #Speaker:Irma
 
-~ EditQuest("Windward", "Find the whirlpool", 0)
+~ EditQuest(0)
 
 -> END
