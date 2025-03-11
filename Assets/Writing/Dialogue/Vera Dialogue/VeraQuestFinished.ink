@@ -1,11 +1,8 @@
-EXTERNAL FinishQuest(questIndex)
-EXTERNAL DeliverPackage(recipient)
+EXTERNAL EditQuest(int ID)
 
 -> VeraDialogue2
 
 === VeraDialogue2 ===
-
-~ DeliverPackage("Vera")
 
 Phew, you're back! #Speaker:Vera
 
@@ -63,6 +60,6 @@ No problem! Let me know if there's anything else I could help you with. #Speaker
 
 Don't be a stranger! #Speaker:Vera
 
-~ FinishQuest(4)
+~ EditQuest(4)
 
 -> END

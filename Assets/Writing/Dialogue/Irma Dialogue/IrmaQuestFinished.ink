@@ -1,11 +1,9 @@
-EXTERNAL FinishQuest(questIndex)
-EXTERNAL DeliverPackage(recipient)
+EXTERNAL EditQuest(int ID)
+
 
 -> IrmaDialogue2
 
 === IrmaDialogue2 ===
-
-~ DeliverPackage("Irma")
 
 Whoa, I did NOT need this many! #Speaker:Irma
 
@@ -15,7 +13,7 @@ Anyway, thanks a bunch! I'll install your upgrade, as promised. #Speaker:Irma
 
     * [<color=\#29c445>Skip (testing)</color>] 
     
-    ~ FinishQuest(2)
+    ~ EditQuest(2)
     
     -> END
 
@@ -97,6 +95,6 @@ I gotta head back inside now, but please, talk to me whenever! #Speaker:Irma
     
 -Will do. #Speaker:Cleo
 
-~ FinishQuest(2)
+~ EditQuest(2)
 
 -> END

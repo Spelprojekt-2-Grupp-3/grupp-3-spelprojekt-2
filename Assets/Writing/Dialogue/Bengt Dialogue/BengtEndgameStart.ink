@@ -1,5 +1,4 @@
-EXTERNAL EditQuest(string questTitle, string questInfo, int questIndex)
-EXTERNAL InsertItem(packageIndex)
+EXTERNAL EditQuest(int ID)
 
 -> BengtDialogue2
 
@@ -107,8 +106,6 @@ I'll owe her big time for making her wait this long, though. #Speaker:Bengt
 
 But off you go! I'm rooting for you! #Speaker:Bengt
 
-~ EditQuest("Windward", "Take the letter to Irma", 0)
-~ InsertItem(4)
-
+~ EditQuest(0)
 
 -> END

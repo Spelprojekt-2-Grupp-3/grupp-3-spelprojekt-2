@@ -1,6 +1,4 @@
-EXTERNAL EditQuest(questTitle, questInfo, questIndex)
-EXTERNAL InsertItem(packageIndex)
-
+EXTERNAL EditQuest(int ID)
 
 -> BengtDialogueSigrid
 
@@ -30,7 +28,6 @@ I'd offer you some as well, but... well, I think you'd be awake for a week strai
 
 But thanks! #Speaker:Cleo
 
-~ EditQuest("The lighthouse keeper", "Deliver the coffee to Sigrid", 1)
-~ InsertItem(0)
+    ~ EditQuest(1)
 
 -> END

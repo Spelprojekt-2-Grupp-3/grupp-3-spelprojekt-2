@@ -1,5 +1,4 @@
-EXTERNAL FinishQuest(questIndex)
-EXTERNAL DeliverPackage(recipient)
+EXTERNAL EditQuest(int ID)
 
 -> UlrichDialogue2
 
@@ -63,7 +62,6 @@ I'll get going, then. #Speaker:Cleo
 
 Hrm. #Speaker:Ulrich
 
-~ FinishQuest(3)
-~ DeliverPackage("Ulrich")
+~ EditQuest(3)
 
 -> END

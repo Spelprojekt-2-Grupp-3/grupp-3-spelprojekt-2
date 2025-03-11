@@ -1,17 +1,15 @@
-EXTERNAL FinishQuest(questIndex)
-EXTERNAL DeliverPackage(recipient)
+EXTERNAL EditQuest(int ID)
 
 -> SigridDialogue2
 
 === SigridDialogue2 ===
 
-~ DeliverPackage("Sigrid")
 
 That solves my problem. Thanks. #Speaker:Sigrid
 
     * [<color=\#29c445>Skip (testing)</color>] 
     
-~ FinishQuest(1)
+    ~ EditQuest(1)
     
     -> END
 
@@ -65,6 +63,6 @@ I don't have much else for you. #Speaker:Sigrid
 
 No problem. #Speaker:Sigrid
 
-~ FinishQuest(1)
+    ~ EditQuest(1)
 
 -> END

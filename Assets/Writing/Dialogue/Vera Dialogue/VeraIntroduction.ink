@@ -1,4 +1,4 @@
-EXTERNAL EditQuest(string questTitle, string questInfo, int questIndex)
+EXTERNAL EditQuest(int ID)
 
 -> VeraDialogue1
 
@@ -8,7 +8,7 @@ Hey there, stanger! #Speaker:Vera
 
     * [<color=\#29c445>Skip (testing)</color>] 
     
-    ~ EditQuest("The head of the union", "Talk to Ulrich about Vera's condition", 4)
+    ~ EditQuest(4)
     
     -> END
 
@@ -66,6 +66,6 @@ Think you're up for it? #Speaker:Vera
 
 That's the spirit! #Speaker:Vera
 
-~ EditQuest("The head of the union", "Talk to Ulrich about Vera's condition", 4)
+~ EditQuest(4)
 
 -> END

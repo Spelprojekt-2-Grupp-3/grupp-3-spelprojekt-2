@@ -1,5 +1,4 @@
-EXTERNAL EditQuest(questTitle, questInfo, questIndex)
-EXTERNAL InsertItem(packageIndex)
+EXTERNAL EditQuest(int ID)
 
 -> UlrichDialogueVera
 
@@ -37,7 +36,6 @@ Thanks, Ulrich! #Speaker:Cleo
 
 Hrnm. #Speaker:Ulrich
 
-~ EditQuest("The head of the union", "Deliver the flower to Vera", 4)
-~ InsertItem(3)
+~ EditQuest(4)
 
 -> END

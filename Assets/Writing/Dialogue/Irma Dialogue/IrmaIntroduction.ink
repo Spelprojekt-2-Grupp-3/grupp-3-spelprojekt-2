@@ -1,4 +1,4 @@
-EXTERNAL EditQuest(string questTitle, string questInfo, int questIndex)
+EXTERNAL EditQuest(int ID)
 
 -> IrmaDialogue1
 
@@ -7,8 +7,8 @@ EXTERNAL EditQuest(string questTitle, string questInfo, int questIndex)
 [You approach the hut on the island and knock on the door.] #Speaker:Cleo
 
     * [<color=\#29c445>Skip (testing)</color>] 
-    
-    ~ EditQuest("The tech expert", "Get a cog from Sigrid", 2)
+        
+    ~ EditQuest(2)
     
     -> END
 
@@ -72,6 +72,6 @@ If you're up for it, I'd like you to go and borrow one for me. #Speaker:Irma
     
 Perfect! I'll be waiting here. #Speaker:Irma
 
-~ EditQuest("The tech expert", "Get a cog from Sigrid", 2)
+~ EditQuest(2)
 
 -> END
