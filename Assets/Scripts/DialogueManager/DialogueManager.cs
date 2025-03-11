@@ -81,17 +81,17 @@ public class DialogueManager : MonoBehaviour
         }
         _instance = this;
 
-        //dialogueUI = GameObject.Find("General UI Canvas");
-        //dialoguePanel = GameObject.Find("DialoguePanel");
+        dialogueUI = GameObject.Find("DialogueUI");
+        dialoguePanel = GameObject.Find("DialoguePanel");
         dialogueText = GameObject.Find("DialogueText").GetComponent<TextMeshProUGUI>();
         displayNameText = GameObject.Find("DisplayNameText").GetComponent<TextMeshProUGUI>();
         continueIcon = GameObject.Find("ContinueIcon");
         portraitAnimator = GameObject.Find("PortraitImage").GetComponent<Animator>();
-        layoutAnimator = dialoguePanel.GetComponent<Animator>();
-        //choicesPanel = GameObject.Find("ChoicesPanel");
+        layoutAnimator = dialogueUI.GetComponent<Animator>();
+        choicesPanel = GameObject.Find("ChoicesPanel");
 
         //Get all the choices text
-        //choicesParent = GameObject.Find("Choices");
+        choicesParent = GameObject.Find("Choices");
 
         questLog = FindObjectOfType<QuestLog>();
         inventoryController = FindObjectOfType<InventoryController>();
@@ -212,7 +212,7 @@ public class DialogueManager : MonoBehaviour
     {
         _currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
-        dialoguePanel.SetActive(true);
+        dialogueUI.SetActive(true);
 
         BindExternal();
         //
