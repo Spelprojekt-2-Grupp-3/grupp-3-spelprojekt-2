@@ -81,7 +81,7 @@ public class UlrichMinigme : Minigames
 
     public override void StopMinigame()
     {
-        Debug.Log("Joever");
+        Destroy(gameObject);
     }
 
     private void Update()
