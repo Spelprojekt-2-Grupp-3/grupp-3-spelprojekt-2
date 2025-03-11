@@ -80,23 +80,20 @@ public class DialogueManager : MonoBehaviour
             Debug.LogWarning("More than one Dialogue Manager in scene!");
         }
         _instance = this;
-
-        dialogueUI = GameObject.Find("DialogueUI");
-        dialoguePanel = GameObject.Find("DialoguePanel");
-        dialogueText = GameObject.Find("DialogueText").GetComponent<TextMeshProUGUI>();
-        displayNameText = GameObject.Find("DisplayNameText").GetComponent<TextMeshProUGUI>();
-        continueIcon = GameObject.Find("ContinueIcon");
-        portraitAnimator = GameObject.Find("PortraitImage").GetComponent<Animator>();
+        
+        dialogueUI = transform.Find("DialogueUI").gameObject;
+        
+        dialoguePanel = dialogueUI.transform.Find("DialoguePanel").gameObject;
+        dialogueText = dialogueUI.transform.Find("DialogueText").GetComponent<TextMeshProUGUI>();
+        displayNameText = dialogueUI.transform.Find("DisplayNameText").GetComponent<TextMeshProUGUI>();
+        continueIcon = dialogueUI.transform.Find("ContinueIcon").gameObject;
+        
+        portraitAnimator = dialogueUI.transform.Find("PortraitFrame/PortraitImage").GetComponent<Animator>();
         layoutAnimator = dialogueUI.GetComponent<Animator>();
-        choicesPanel = GameObject.Find("ChoicesPanel");
-
-        //Get all the choices text
-        choicesParent = GameObject.Find("Choices");
-
-        questLog = FindObjectOfType<QuestLog>();
-        inventoryController = FindObjectOfType<InventoryController>();
-        inventoryMenu = FindObjectOfType<InventoryMenu>();
-
+        
+        choicesPanel = dialogueUI.transform.Find("ChoicesPanel").gameObject;
+        choicesParent = dialogueUI.transform.Find("Choices").gameObject;
+        
         if (choicesParent != null)
         {
             // Get all child objects of ChoicesPanel
@@ -110,6 +107,10 @@ public class DialogueManager : MonoBehaviour
                 _choicesText[i] = choices[i].GetComponentInChildren<TextMeshProUGUI>();
             }
         }
+        
+        questLog = FindObjectOfType<QuestLog>();
+        inventoryController = FindObjectOfType<InventoryController>();
+        inventoryMenu = FindObjectOfType<InventoryMenu>();
 
         _playerInput = new PlayerInputActions();
     }
