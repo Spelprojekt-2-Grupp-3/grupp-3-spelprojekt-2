@@ -135,15 +135,35 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogueManager
       objectReference: {fileID: 0}
+    - target: {fileID: 5715069621187912541, guid: f67b1942a5244d943bbdf59098a13cc7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6531581124029817212, guid: f67b1942a5244d943bbdf59098a13cc7,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6531581124029817212, guid: f67b1942a5244d943bbdf59098a13cc7,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6531581124029817212, guid: f67b1942a5244d943bbdf59098a13cc7,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6531581124029817212, guid: f67b1942a5244d943bbdf59098a13cc7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -399.99997
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6531581124029817212, guid: f67b1942a5244d943bbdf59098a13cc7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -224.99998
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6531581124029817212, guid: f67b1942a5244d943bbdf59098a13cc7,
         type: 3}
@@ -158,17 +178,17 @@ PrefabInstance:
     - target: {fileID: 6531581124029817212, guid: f67b1942a5244d943bbdf59098a13cc7,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6531581124029817212, guid: f67b1942a5244d943bbdf59098a13cc7,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6531581124029817212, guid: f67b1942a5244d943bbdf59098a13cc7,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6531581124029817212, guid: f67b1942a5244d943bbdf59098a13cc7,
         type: 3}
@@ -183,6 +203,16 @@ PrefabInstance:
     - target: {fileID: 6531581124029817212, guid: f67b1942a5244d943bbdf59098a13cc7,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8883633447582407316, guid: f67b1942a5244d943bbdf59098a13cc7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8883633447582407316, guid: f67b1942a5244d943bbdf59098a13cc7,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -507,7 +537,7 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
