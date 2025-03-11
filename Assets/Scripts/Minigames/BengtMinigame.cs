@@ -81,7 +81,7 @@ public class BengtMinigame : Minigames
         {
             if (handle.transform.position.y <= goal.transform.position.y + goalHeight/2 && handle.transform.position.y >= goal.transform.position.y - goalHeight/2) // idk why divided by 3 is necessary tbh
             {
-                Debug.Log("hit");
+                Events.BengtMinigameHit?.Invoke();
                 sliderSpeed *= 1.2f;
                 RandomizeGoalPosition();
             }

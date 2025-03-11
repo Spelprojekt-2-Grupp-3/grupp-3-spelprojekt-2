@@ -17,6 +17,7 @@ public class Events : MonoBehaviour
     public static UnityEvent updateIcons = new UnityEvent();
     public static CheckInputEvent checkInputEvent = new CheckInputEvent();
     public static UnityEvent updateBoostMeter = new UnityEvent();
+    public static UnityEvent BengtMinigameHit = new UnityEvent();
 
     private void OnEnable()
     {
