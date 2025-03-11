@@ -11,13 +11,13 @@ public class Quest : MonoBehaviour
 
     public void Set(QuestData setData, int currentStep = 0)
     {
-        if (setData.steps == 0 && currentStep > 0)
+        if (setData.step == 0 && currentStep > 0)
             Debug.Log("Attempted to progress to next step in step-less quest");
         
         //Text update for when the quest has multiple steps
-        if (setData.steps > 0)
+        if (setData.step > 0)
         {
-            infoText.text = currentStep + "/" + setData.steps + setData.questText;
+            infoText.text = currentStep + "/" + setData.step + setData.questText;
             if (data != null && setData != data)
             {
                 titleText.text = setData.questTitle;

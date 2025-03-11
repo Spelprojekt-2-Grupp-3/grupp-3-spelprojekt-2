@@ -1,4 +1,4 @@
-EXTERNAL EditQuest(string questTitle, string questInfo, int questIndex)
+EXTERNAL EditQuest(int ID)
 
 -> SigridDialogue1
 
@@ -8,7 +8,7 @@ EXTERNAL EditQuest(string questTitle, string questInfo, int questIndex)
 
     * [<color=\#29c445>Skip (testing)</color>] 
     
-    ~ EditQuest("The lighthouse keeper", "Get coffee from Bengt", 1)
+    ~ EditQuest(1)
     
     -> END
 
@@ -60,6 +60,6 @@ I want you to head to Bengt and get me some from him. Think you're up for it? #S
 
 'Preciate it. #Speaker:Sigrid
 
-~ EditQuest("The lighthouse keeper", "Get coffee from Bengt", 0)
+~ EditQuest(1)
 
 -> END

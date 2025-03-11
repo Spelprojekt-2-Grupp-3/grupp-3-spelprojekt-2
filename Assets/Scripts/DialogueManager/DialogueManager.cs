@@ -81,17 +81,17 @@ public class DialogueManager : MonoBehaviour
         }
         _instance = this;
 
-        dialogueUI = GameObject.Find("DialogueUI");
-        dialoguePanel = GameObject.Find("DialoguePanel");
+        //dialogueUI = GameObject.Find("General UI Canvas");
+        //dialoguePanel = GameObject.Find("DialoguePanel");
         dialogueText = GameObject.Find("DialogueText").GetComponent<TextMeshProUGUI>();
         displayNameText = GameObject.Find("DisplayNameText").GetComponent<TextMeshProUGUI>();
         continueIcon = GameObject.Find("ContinueIcon");
         portraitAnimator = GameObject.Find("PortraitImage").GetComponent<Animator>();
-        layoutAnimator = dialogueUI.GetComponent<Animator>();
-        choicesPanel = GameObject.Find("ChoicesPanel");
+        layoutAnimator = dialoguePanel.GetComponent<Animator>();
+        //choicesPanel = GameObject.Find("ChoicesPanel");
 
         //Get all the choices text
-        choicesParent = GameObject.Find("Choices");
+        //choicesParent = GameObject.Find("Choices");
 
         questLog = FindObjectOfType<QuestLog>();
         inventoryController = FindObjectOfType<InventoryController>();
@@ -117,24 +117,24 @@ public class DialogueManager : MonoBehaviour
     private void Start()
     {
         dialogueIsPlaying = false;
-        dialogueUI.SetActive(false);
+        //dialogueUI.SetActive(false);
     }
 
     void BindExternal()
     {
         _currentStory.BindExternalFunction(
             "AddQuest",
-            (string questTitle, string questInfo) =>
+            () =>
             {
-                questLog.AddQuest(questTitle, questInfo);
+                questLog.AddQuest();
             }
         );
 
         _currentStory.BindExternalFunction(
             "EditQuest",
-            (string questTitle, string questInfo, int questIndex) =>
+            (int ID) =>
             {
-                questLog.UpdateQuest(questIndex, questTitle, questInfo);
+                questLog.UpdateQuest(ID);
             }
         );
 
@@ -200,7 +200,7 @@ public class DialogueManager : MonoBehaviour
 
     private void OnDisable()
     {
-        _playerInput.Disable();
+       // _playerInput.Disable();
     }
 
     public static DialogueManager GetInstance()
@@ -212,7 +212,7 @@ public class DialogueManager : MonoBehaviour
     {
         _currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
-        dialogueUI.SetActive(true);
+        dialoguePanel.SetActive(true);
 
         BindExternal();
         //

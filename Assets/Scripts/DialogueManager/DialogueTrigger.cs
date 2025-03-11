@@ -71,6 +71,7 @@ public class DialogueTrigger : MonoBehaviour
 
     private void StartDialogue()
     {
+        Debug.Log("Started check");
         //We first make sure no dialogue is active
         if (!DialogueManager.GetInstance().dialogueIsPlaying)
         {

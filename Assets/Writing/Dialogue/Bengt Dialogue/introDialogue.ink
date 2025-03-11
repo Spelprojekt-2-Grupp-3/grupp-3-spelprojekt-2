@@ -1,4 +1,4 @@
-EXTERNAL AddQuest(questTitle, questInfo)
+EXTERNAL AddQuest()
 
 -> intro
 
@@ -10,7 +10,7 @@ Whoa, hey there! #Speaker:Bengt
     
  //   ~AddQuest("Windward", "Get all boat upgrades")
     
-    ~AddQuest("The lighthouse keeper", "Get an upgrade from Sigrid")
+    ~AddQuest()
 
  //   ~AddQuest("The tech expert", "Get an upgrade from Irma")
 
@@ -166,15 +166,15 @@ Oh, but don't worry! Mine's on the house. See it as a welcome present. #Speaker:
 
 Good luck out there. And come see me anytime you feel like chatting! #Speaker:Bengt
 
-~AddQuest("Windward", "Get all boat upgrades")
+~AddQuest()
 
-~AddQuest("The lighthouse keeper", "Get an upgrade from Sigrid")
+//~AddQuest("The lighthouse keeper", "Get an upgrade from Sigrid")
 
-~AddQuest("The tech expert", "Get an upgrade from Irma")
+//~AddQuest("The tech expert", "Get an upgrade from Irma")
 
-~AddQuest("The florist", "Get an upgrade from Ulrich")
+//~AddQuest("The florist", "Get an upgrade from Ulrich")
 
-~AddQuest("The head of the union", "Get an upgrade from Vera")
+//~AddQuest("The head of the union", "Get an upgrade from Vera")
 
 
 -> END
