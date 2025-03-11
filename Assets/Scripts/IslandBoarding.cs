@@ -79,25 +79,35 @@ public class IslandBoarding : MonoBehaviour
     {
         if (allowIslandBoard)
         {
-            islandThemeInstance.start();
-            Events.stopBoat?.Invoke();
-            playerCharacter.transform.position = playerBoardingLocation.position;
-            boatCamera.SetActive(false);
-            playerCamera.SetActive(true);
-            playerCharacter.SetActive(true);
-            allowIslandBoard = false;
-            allowBoatBoard = true;
+            BoardIsland();
         }
         
         else if (allowBoatBoard)
         {
-            islandThemeInstance.stop(0);
-            Events.startBoat?.Invoke();
-            playerCharacter.SetActive(false);
-            playerCamera.SetActive(false);
-            boatCamera.SetActive(true);
-            allowBoatBoard = false;
-            allowIslandBoard = true;
+            BoardBoat();
         }
+    }
+
+    public void BoardIsland()
+    {
+        islandThemeInstance.start();
+        Events.stopBoat?.Invoke();
+        playerCharacter.transform.position = playerBoardingLocation.position;
+        boatCamera.SetActive(false);
+        playerCamera.SetActive(true);
+        playerCharacter.SetActive(true);
+        allowIslandBoard = false;
+        allowBoatBoard = true;
+    }
+
+    public void BoardBoat()
+    {
+        islandThemeInstance.stop(0);
+        Events.startBoat?.Invoke();
+        playerCharacter.SetActive(false);
+        playerCamera.SetActive(false);
+        boatCamera.SetActive(true);
+        allowBoatBoard = false;
+        allowIslandBoard = true;
     }
 }
