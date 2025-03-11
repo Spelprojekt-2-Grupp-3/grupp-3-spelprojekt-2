@@ -72,7 +72,6 @@ public class PlayerMovement : MonoBehaviour
             currentForward = camera.transform.forward;
             currentRight = camera.transform.right;
         }
-
         /* if (moveSpeed < maxMoveSpeed)
          {
              moveSpeed += acceleration * move.ReadValue<Vector2>().y;

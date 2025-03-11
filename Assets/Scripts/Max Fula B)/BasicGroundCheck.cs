@@ -27,7 +27,6 @@ public class BasicGroundCheck : MonoBehaviour
         animator.SetBool("Grounded", grounded);
         if (!grounded)
         {
-            Debug.Log("Adding Force");
             GetComponent<Rigidbody>().AddForce(Vector3.down * force, ForceMode.Acceleration);
         }
     }
