@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using Unity.VisualScripting;
 using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
@@ -33,7 +34,7 @@ public class BoatMovement : MonoBehaviour
     
     private FMOD.Studio.EventInstance boatSound, boatWaterSound;
     private PlayerInputActions playerControls;
-    private InputAction move, gas, reverse, boost, look;
+    private InputAction move, gas, reverse, boost;
     private int moveDirection;
     private Rigidbody rb;
     private BuoyantObject buoyancy;
@@ -61,8 +62,6 @@ public class BoatMovement : MonoBehaviour
         reverse.Enable();
         boost = playerControls.Boat.Boost;
         boost.Enable();
-        look = playerControls.Boat.Look;
-        look.Enable();
         Events.startBoat.AddListener(AllowMovement);
         Events.stopBoat.AddListener(DisallowMovement);
     }
@@ -180,16 +179,21 @@ public class BoatMovement : MonoBehaviour
     {
         move.Enable();
         gas.Enable();
+        reverse.Enable();
+        boost.Enable();
     }
 
     public void DisallowMovement()
     {
         move.Disable();
         gas.Disable();
+        reverse.Disable();
+        boost.Disable();
     }
     
     void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.tag == "Ramp") return;
         moveSpeed = rb.velocity.magnitude;
     }
 }
