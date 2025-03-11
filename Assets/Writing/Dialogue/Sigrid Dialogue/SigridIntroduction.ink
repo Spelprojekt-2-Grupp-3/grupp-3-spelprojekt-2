@@ -60,6 +60,6 @@ I want you to head to Bengt and get me some from him. Think you're up for it? #S
 
 'Preciate it. #Speaker:Sigrid
 
-~ EditQuest("The lighthouse keeper", "Get coffee from Bengt", 1)
+~ EditQuest("The lighthouse keeper", "Get coffee from Bengt", 0)
 
 -> END
