@@ -1,23 +1,28 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class IslandBoarding : MonoBehaviour
 {
-    [SerializeField] private GameObject playerPrefab;
-    private GameObject playerInst;
+    [SerializeField] private GameObject playerCharacter;
     private PlayerInputActions playerControls;
     private InputAction board;
     [SerializeField, Tooltip("Location for where the player spawns when boarding")] private Transform playerBoardingLocation;
     [SerializeField] private bool isBoarded;
     [SerializeField] private GameObject boatCamera;
+    [SerializeField] private GameObject playerCamera;
     private bool allowIslandBoard;
     private bool allowBoatBoard;
+    public FMODUnity.EventReference islandTheme;
+
+    private FMOD.Studio.EventInstance islandThemeInstance;
 
     private void Awake()
     {
+        islandThemeInstance = FMODUnity.RuntimeManager.CreateInstance(islandTheme);
         playerControls = new PlayerInputActions();
         allowIslandBoard = false;
         allowBoatBoard = false;
@@ -35,12 +40,11 @@ public class IslandBoarding : MonoBehaviour
 
     void Update()
     {
-        
+        islandThemeInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("test");
         board.Enable();
         board.performed += TryBoarding;
         
@@ -75,19 +79,25 @@ public class IslandBoarding : MonoBehaviour
     {
         if (allowIslandBoard)
         {
+            islandThemeInstance.start();
             Events.stopBoat?.Invoke();
-            playerInst = Instantiate(playerPrefab, playerBoardingLocation.position, playerPrefab.transform.rotation);
+            playerCharacter.transform.position = playerBoardingLocation.position;
             boatCamera.SetActive(false);
+            playerCamera.SetActive(true);
+            playerCharacter.SetActive(true);
+            allowIslandBoard = false;
+            allowBoatBoard = true;
         }
         
-        
-        if (allowBoatBoard)
+        else if (allowBoatBoard)
         {
-            if (playerInst is not null)
-            {
-                Destroy(playerInst);
-            }
+            islandThemeInstance.stop(0);
+            Events.startBoat?.Invoke();
+            playerCharacter.SetActive(false);
+            playerCamera.SetActive(false);
+            boatCamera.SetActive(true);
+            allowBoatBoard = false;
+            allowIslandBoard = true;
         }
-        
     }
 }
