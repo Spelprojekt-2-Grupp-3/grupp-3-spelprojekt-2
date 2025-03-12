@@ -75,6 +75,7 @@ public class BengtMinigame : Minigames
     public override void StopMinigame()
     {
         Events.startPlayer?.Invoke();
+        Destroy(gameObject);
     }
 
     private void RandomizeGoalPosition()
@@ -104,6 +105,7 @@ public class BengtMinigame : Minigames
                         break;
                     case 3:
                         RuntimeManager.PlayOneShot(engineStage3);
+                        StopMinigame();
                         break;
                 }
                 sliderSpeed *= 1.2f;

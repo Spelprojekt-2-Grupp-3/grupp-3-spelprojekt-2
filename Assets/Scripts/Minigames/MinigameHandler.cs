@@ -9,12 +9,13 @@ public class MinigameHandler : MonoBehaviour
     private PlayerInputActions playerInput;
     private InputAction interact;
     [SerializeField] private GameObject minigameCanvasPrefab;
-
     private bool allowStartMinigame;
+    private bool hasBeenPlayed;
 
 
     private void Awake()
     {
+        hasBeenPlayed = false;
         playerInput = new PlayerInputActions();
         allowStartMinigame = false;
     }
@@ -34,8 +35,9 @@ public class MinigameHandler : MonoBehaviour
 
     private void InstantiateMinigame(InputAction.CallbackContext context)
     {
-        if (!allowStartMinigame) return;
+        if (!allowStartMinigame || hasBeenPlayed) return;
         Instantiate(minigameCanvasPrefab);
+        hasBeenPlayed = true;
     }
 
     private void OnTriggerEnter(Collider other)
