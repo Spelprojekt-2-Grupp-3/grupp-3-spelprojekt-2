@@ -6,15 +6,7 @@ EXTERNAL EditQuest(int ID, int step)
 
 [You prepare to knock on the lighthouse entrance...] #Speaker:Cleo
 
-    * [<color=\#29c445>Skip (testing)</color>] 
-    
-    ~ EditQuest(1, 0)
-    
-    -> END
-
-    * [Continue dialogue]
-
--[...but someone opens the door before your fist can reach it.] #Speaker:Cleo
+[...but someone opens the door before your fist can reach it.] #Speaker:Cleo
 
 Hey. #Speaker:Sigrid
 
