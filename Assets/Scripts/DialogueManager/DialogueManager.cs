@@ -1,10 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using FMODUnityResonance;
 using Ink.Runtime;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using FMODUnity;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
 using Image = UnityEngine.UI.Image;
@@ -261,6 +263,8 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+//ljudreferens
+public EventReference dialogueSound; 
     private IEnumerator DisplayLine(string line)
     {
         dialogueText.text = ""; // Clear previous text
@@ -282,6 +286,8 @@ public class DialogueManager : MonoBehaviour
             }
 
             dialogueText.text += letter;
+            //hopefully rätt???
+            RuntimeManager.PlayOneShot(dialogueSound, Camera.main.transform.position);
             yield return new WaitForSeconds(typingSpeed);
         }
 
