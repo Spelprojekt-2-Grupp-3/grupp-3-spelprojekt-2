@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     private Camera camera;
     private Vector3 currentForward;
     private Vector3 currentRight;
+    private bool movePlayer;
 
     private void Awake()
     {
@@ -34,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnEnable()
     {
+        movePlayer = true;
         move = playerControls.Player.Move;
         move.Enable();
         interact = playerControls.Player.Interact;
@@ -88,6 +90,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!movePlayer) return;
          float targetRotationSpeed = 10f;
          Vector3 moveDirection = (currentForward * move.ReadValue<Vector2>().y) + (currentRight * move.ReadValue<Vector2>().x);
 
@@ -124,6 +127,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void StartPlayer()
     {
+        movePlayer = true;
         move.Enable();
         moveCam.Enable();
         interact.Enable();
@@ -131,6 +135,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void StopPlayer()
     {
+        movePlayer = false;
         Debug.Log("stopped player");
         move.Disable();
         moveCam.Disable();
