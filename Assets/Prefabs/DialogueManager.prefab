@@ -87,6 +87,7 @@ GameObject:
   - component: {fileID: 2316782904026705235}
   - component: {fileID: 5454580391467560921}
   - component: {fileID: 9106850147816469087}
+  - component: {fileID: 8140642813841909061}
   m_Layer: 5
   m_Name: Choice3
   m_TagString: Untagged
@@ -208,6 +209,25 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8140642813841909061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 895661536755787654}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7f689f70444d184b9a32cd6c08d36f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectSound:
+    Guid:
+      Data1: 2116855810
+      Data2: 1186396337
+      Data3: 279828399
+      Data4: 619564290
+    Path: event:/Sound/SFX/Interface/Menu_MoveCursor
 --- !u!1 &1171570869966875005
 GameObject:
   m_ObjectHideFlags: 0
@@ -673,6 +693,13 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   packageDatas: []
+  dialogueSound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!1 &2637964399017784217
 GameObject:
   m_ObjectHideFlags: 0
@@ -858,6 +885,7 @@ GameObject:
   - component: {fileID: 1615527045841200800}
   - component: {fileID: 1714394519190465516}
   - component: {fileID: 3139799813174341439}
+  - component: {fileID: 5753812763296028718}
   m_Layer: 5
   m_Name: Choice4
   m_TagString: Untagged
@@ -979,6 +1007,25 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5753812763296028718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2832132248585925222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7f689f70444d184b9a32cd6c08d36f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectSound:
+    Guid:
+      Data1: 2116855810
+      Data2: 1186396337
+      Data3: 279828399
+      Data4: 619564290
+    Path: event:/Sound/SFX/Interface/Menu_MoveCursor
 --- !u!1 &3681401183493852506
 GameObject:
   m_ObjectHideFlags: 0
@@ -1126,6 +1173,7 @@ GameObject:
   - component: {fileID: 107045442837997496}
   - component: {fileID: 7512579674616833269}
   - component: {fileID: 5129146325745622802}
+  - component: {fileID: 1823363308127895462}
   m_Layer: 5
   m_Name: Choice2
   m_TagString: Untagged
@@ -1247,6 +1295,25 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1823363308127895462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4260591735553327846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7f689f70444d184b9a32cd6c08d36f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectSound:
+    Guid:
+      Data1: 2116855810
+      Data2: 1186396337
+      Data3: 279828399
+      Data4: 619564290
+    Path: event:/Sound/SFX/Interface/Menu_MoveCursor
 --- !u!1 &4990650820468531243
 GameObject:
   m_ObjectHideFlags: 0
@@ -1707,6 +1774,7 @@ GameObject:
   - component: {fileID: 2629492932692515431}
   - component: {fileID: 8131028648796090187}
   - component: {fileID: 1485013164160268748}
+  - component: {fileID: 27689382169995808}
   m_Layer: 5
   m_Name: Choice1
   m_TagString: Untagged
@@ -1828,6 +1896,25 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &27689382169995808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7081787117974074119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7f689f70444d184b9a32cd6c08d36f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectSound:
+    Guid:
+      Data1: 2116855810
+      Data2: 1186396337
+      Data3: 279828399
+      Data4: 619564290
+    Path: event:/Sound/SFX/Interface/Menu_MoveCursor
 --- !u!1 &7250258723487086447
 GameObject:
   m_ObjectHideFlags: 0
