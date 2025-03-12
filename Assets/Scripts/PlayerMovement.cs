@@ -90,7 +90,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(!movePlayer) return:
+        if (!movePlayer) return;
          float targetRotationSpeed = 10f;
          Vector3 moveDirection = (currentForward * move.ReadValue<Vector2>().y) + (currentRight * move.ReadValue<Vector2>().x);
 
