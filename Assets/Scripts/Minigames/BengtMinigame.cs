@@ -69,6 +69,7 @@ public class BengtMinigame : Minigames
         iconSprite = handle.GetComponent<Image>();
         goal = sliderInst.transform.Find("Goal").gameObject;
         RandomizeGoalPosition();
+        UpdateIcons();
         Events.stopBoat?.Invoke();
     }
 
