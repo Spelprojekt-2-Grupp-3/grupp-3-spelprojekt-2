@@ -79,45 +79,45 @@ public class InventoryMenu : MonoBehaviour
         {
             isOpen = !isOpen;
             menuObject.SetActive(isOpen);
-            if(isOpen)
-                EnableOther();
-            else 
-                DisableOther();
+            //if(isOpen)
+            //    EnableOther();
+            //else 
+            //    DisableOther();
         }
 
-        if (isOpen)
-        {
-            if (tabRight.WasPressedThisFrame())
-            {
-                selectedMenuIndex++;
-                if (selectedMenuIndex > 1)
-                    selectedMenuIndex = 0;
-            }
-            else if (tabLeft.WasPressedThisFrame())
-            {
-                selectedMenuIndex--;
-                if (selectedMenuIndex < 0)
-                    selectedMenuIndex = 1;
-            }
-            
-            switch (selectedMenuIndex)
-            {
-                case 0:
-                    inventoryController.SetEnableState(true);
-                    SelectTab(tabObjects[0]);
-                    questLog.SetEnableState(false);
-                    break;
-                case 1:
-                    inventoryController.SetEnableState(false);
-                    questLog.SetEnableState(true);
-                    break;
-            }
-        }
-        else
-        {
-            inventoryController.SetEnableState(false);
-            questLog.SetEnableState(false);
-        }
+        //if (isOpen)
+        //{
+        //    if (tabRight.WasPressedThisFrame())
+        //    {
+        //        selectedMenuIndex++;
+        //        if (selectedMenuIndex > 1)
+        //            selectedMenuIndex = 0;
+        //    }
+        //    else if (tabLeft.WasPressedThisFrame())
+        //    {
+        //        selectedMenuIndex--;
+        //        if (selectedMenuIndex < 0)
+        //            selectedMenuIndex = 1;
+        //    }
+        //    
+        //    switch (selectedMenuIndex)
+        //    {
+        //        case 0:
+        //            inventoryController.SetEnableState(true);
+        //            SelectTab(tabObjects[0]);
+        //            questLog.SetEnableState(false);
+        //            break;
+        //        case 1:
+        //            inventoryController.SetEnableState(false);
+        //            questLog.SetEnableState(true);
+        //            break;
+        //    }
+        //}
+        //else
+        //{
+        //    inventoryController.SetEnableState(false);
+        //    questLog.SetEnableState(false);
+        //}
     }
 
     void SelectTab(GameObject tab)
