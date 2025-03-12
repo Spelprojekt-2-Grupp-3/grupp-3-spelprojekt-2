@@ -11,6 +11,7 @@ public class ControlsCheck : MonoBehaviour
     [SerializeField] private GameObject interactControls;
     [SerializeField] private GameObject gasControls;
     [SerializeField] private CurrentInputIcons inputIcons;
+    [SerializeField] private List<Image> interactIcons = new List<Image>();
 
     private void Awake()
     {
@@ -27,5 +28,9 @@ public class ControlsCheck : MonoBehaviour
         moveControls.GetComponent<Image>().sprite = inputIcons.currentInputDevice.moveSprite;
         interactControls.GetComponent<Image>().sprite = inputIcons.currentInputDevice.interactSprite;
         gasControls.GetComponent<Image>().sprite = inputIcons.currentInputDevice.gasSprite;
+        foreach (var icon in interactIcons)
+        {
+            icon.sprite = inputIcons.currentInputDevice.interactSprite;
+        }
     }
 }
