@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using Cinemachine;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -53,6 +54,8 @@ public class IrmaMinigame : Minigames
 
     public override void StartMinigame()
     {
+        var brain = Camera.main.GetComponent<CinemachineBrain>(); 
+        brain.enabled = false;
         Events.stopPlayer?.Invoke();
         var canvasInst = gameObject;
         targetValueLeft = Random.Range(1, numberRange);
@@ -65,6 +68,8 @@ public class IrmaMinigame : Minigames
 
     public override void StopMinigame()
     {
+        var brain = Camera.main.GetComponent<CinemachineBrain>(); 
+        brain.enabled = true;
         Events.startPlayer?.Invoke();
         Destroy(gameObject);
     }

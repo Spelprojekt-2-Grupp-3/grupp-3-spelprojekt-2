@@ -32,7 +32,7 @@ public class BengtMinigame : Minigames
     {
         camera = Camera.main;
         Events.updateIcons.AddListener(UpdateIcons);
-        minigameButtonSouth = playerControls.Boat.MinigameButtonSouth;
+        minigameButtonSouth = playerControls.UI.Submit;
         minigameButtonSouth.Enable();
     }
 

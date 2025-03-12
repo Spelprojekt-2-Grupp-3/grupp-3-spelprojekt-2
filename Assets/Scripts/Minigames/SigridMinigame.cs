@@ -47,7 +47,7 @@ public class SigridMinigame : Minigames
     {
         base.StartMinigame();
         Events.stopPlayer?.Invoke();
-        EventSystem.current.firstSelectedGameObject = transform.Find("Fuse").gameObject;
+        EventSystem.current.SetSelectedGameObject(transform.Find("Fuse").gameObject);
         emptyFuses = gameObject.transform.Find("EmptyFuses").GetComponentsInChildren<EmptyFuse>();
         fuses = gameObject.transform.Find("Background").GetComponentsInChildren<Fuse>();
         for (int i = 0; i < 6; i++)
@@ -64,6 +64,7 @@ public class SigridMinigame : Minigames
             emptyFuses[pos].GetComponent<Image>().color = Color.grey;
             emptyFuses[pos].voltage = Random.Range(0, 80f);
         }
+        UpdateIcons();
     }
 
     public override void StopMinigame()

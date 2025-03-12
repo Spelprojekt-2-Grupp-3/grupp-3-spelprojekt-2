@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
         moveCam = playerControls.Player.Look;
         moveCam.Enable();
         Events.startPlayer.AddListener(StartPlayer);
-        Events.stopBoat.AddListener(StopPlayer);
+        Events.stopPlayer.AddListener(StopPlayer);
     }
 
     private void OnDisable()
@@ -54,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
         interact.Disable();
         moveCam.Disable();
         Events.startPlayer.RemoveListener(StartPlayer);
-        Events.stopBoat.RemoveListener(StopPlayer);
+        Events.stopPlayer.RemoveListener(StopPlayer);
     }
 
     void Start()
@@ -73,19 +73,9 @@ public class PlayerMovement : MonoBehaviour
         /*if (!move.inProgress)
             return;*/
         Vector2 movementVector = move.ReadValue<Vector2>();
-        if (moveCam.IsInProgress())
-        {
-            currentForward = camera.transform.forward;
-            currentRight = camera.transform.right;
-        }
-        /* if (moveSpeed < maxMoveSpeed)
-         {
-             moveSpeed += acceleration * move.ReadValue<Vector2>().y;
-             if (moveSpeed > maxMoveSpeed)
-             {
-                 moveSpeed = maxMoveSpeed;
-             }
-         }*/
+        
+        currentForward = camera.transform.forward;
+        currentRight = camera.transform.right;
     }
 
     private void FixedUpdate()

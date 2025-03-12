@@ -10,12 +10,11 @@ public class VeraMinigame : Minigames
 {
     private PlayerInputActions playerControls;
     private InputAction submit, leftJoyStick;
-    [SerializeField] private GameObject canvasPrefab;
     [SerializeField] private GameObject shellPrefab;
     [SerializeField] private CurrentInputIcons currentInput;
+    [SerializeField] private GameObject water;
     [SerializeField, Range(0, 6)] private int shellAmount; 
     private GameObject canvasInstance;
-    private GameObject shellInstance;
     private GameObject currentlySelected;
     private List<GameObject> shells = new List<GameObject>();
     [SerializeField] private GameObject mouseMarker;
@@ -31,9 +30,11 @@ public class VeraMinigame : Minigames
     {
         submit = playerControls.UI.Submit;
         submit.Enable();
-        leftJoyStick = playerControls.Player.Move;
+        leftJoyStick = playerControls.UI.Navigate;
         leftJoyStick.Enable();
         Events.updateIcons.AddListener(UpdateIcons);
+        
+        EventSystem.current.firstSelectedGameObject = transform.Find("Water").gameObject;
     }
 
     private void OnDisable()
@@ -55,16 +56,16 @@ public class VeraMinigame : Minigames
         var yPos = 0f;
         for (int i = 0; i < shellAmount; i++)
         {
-            var shell = Instantiate(shellPrefab, canvasInstance.transform);
+            GameObject shell = Instantiate(shellPrefab, canvasInstance.transform);
             shell.transform.position = new Vector3(shell.transform.position.x, shell.transform.position.y + yPos);
             yPos += 105f;
             var shellComponent = shell.AddComponent<Shell>();
             shellComponent.dirtyLevel = 3;
             shells.Add(shell);
         }
-        mouseMarkerInstance = Instantiate(mouseMarker, canvasInstance.transform);
-        
-        EventSystem.current.firstSelectedGameObject = shells[0];
+        mouseMarkerInstance = Instantiate(mouseMarker, transform);
+
+        EventSystem.current.SetSelectedGameObject(shells[0]);
     }
 
     private void Update()
@@ -130,7 +131,7 @@ public class VeraMinigame : Minigames
             currentlySelected.transform.position = EventSystem.current.currentSelectedGameObject.transform.position;
         }
 
-        if (leftJoyStick.IsInProgress() && EventSystem.current.currentSelectedGameObject is not null)
+        if (EventSystem.current.currentSelectedGameObject is not null)
         {
             mouseMarkerInstance.transform.position = EventSystem.current.currentSelectedGameObject.transform.position;
         }

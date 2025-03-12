@@ -78,6 +78,7 @@ public class UlrichMinigme : Minigames
             j++;
         }
         EventSystem.current.SetSelectedGameObject(objects[0]);
+        UpdateIcons();
     }
 
     public override void StopMinigame()
