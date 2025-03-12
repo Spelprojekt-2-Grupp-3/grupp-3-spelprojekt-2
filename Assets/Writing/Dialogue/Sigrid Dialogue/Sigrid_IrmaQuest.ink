@@ -28,6 +28,6 @@ Anyway, thanks! I'll be going now. #Speaker:Cleo
 
 Bye. #Speaker:Sigrid
 
-~ EditQuest(2, 2)
+~ EditQuest(2, 1)
 
 -> END

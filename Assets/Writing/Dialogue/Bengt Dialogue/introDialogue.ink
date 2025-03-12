@@ -1,4 +1,3 @@
-EXTERNAL AddQuest()
 
 -> intro
 
@@ -6,23 +5,7 @@ EXTERNAL AddQuest()
 
 Whoa, hey there! #Speaker:Bengt
 
-    * [<color=\#29c445>Skip (testing)</color>] 
-    
- //   ~AddQuest("Windward", "Get all boat upgrades")
-    
-    ~AddQuest()
-
- //   ~AddQuest("The tech expert", "Get an upgrade from Irma")
-
-//    ~AddQuest("The florist", "Get an upgrade from Ulrich")
-
- //   ~AddQuest("The head of the union", "Get an upgrade from Vera")
-    
-    -> END
-    
-    * [Continue dialogue]
-
--[The stranger looks to be rather dumbfounded.] #Speaker:Bengt
+[The stranger looks to be rather dumbfounded.] #Speaker:Bengt
 
 [Then again, so are you.] #Speaker:Bengt
 
@@ -165,16 +148,6 @@ Thing is, we operate by trading favors around here. They might ask you to help t
 Oh, but don't worry! Mine's on the house. See it as a welcome present. #Speaker:Bengt
 
 Good luck out there. And come see me anytime you feel like chatting! #Speaker:Bengt
-
-~AddQuest()
-
-//~AddQuest("The lighthouse keeper", "Get an upgrade from Sigrid")
-
-//~AddQuest("The tech expert", "Get an upgrade from Irma")
-
-//~AddQuest("The florist", "Get an upgrade from Ulrich")
-
-//~AddQuest("The head of the union", "Get an upgrade from Vera")
 
 
 -> END

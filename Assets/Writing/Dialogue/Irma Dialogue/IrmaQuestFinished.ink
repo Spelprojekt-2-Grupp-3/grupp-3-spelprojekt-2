@@ -11,15 +11,7 @@ I should've specified what size I needed. Gosh. #Speaker:Irma
 
 Anyway, thanks a bunch! I'll install your upgrade, as promised. #Speaker:Irma
 
-    * [<color=\#29c445>Skip (testing)</color>] 
-    
-    ~ EditQuest(2, 2)
-    
-    -> END
-
-    * [Continue dialogue]
-
--...? #Speaker:Irma
+...? #Speaker:Irma
 
 Hey, this boat... #Speaker:Irma
 
