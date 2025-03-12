@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using FMODUnity;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
@@ -10,10 +12,11 @@ public class SlideshowManager : MonoBehaviour
 {
     [SerializeField] private Image image;
     [SerializeField] private Sprite[] panels;
+    public EventReference selectSound;
     private SceneManager sceneManager;
     private int currentPanelIndex = 0;
     private PlayerInputActions _playerInput;
-
+    
     private void Awake()
     {
         _playerInput = new PlayerInputActions();
@@ -54,11 +57,13 @@ public class SlideshowManager : MonoBehaviour
         {
             currentPanelIndex++;
             image.sprite = panels[currentPanelIndex];
+            OnSelect();
         }
         else
         {
             sceneManager.Load("Main Scene");
             Debug.Log("Slideshow finished!");
+            OnSelect();
         }
     }
     
@@ -68,6 +73,12 @@ public class SlideshowManager : MonoBehaviour
         {
             currentPanelIndex--;
             image.sprite = panels[currentPanelIndex];
+            OnSelect();
         }
+    }
+    
+    public void OnSelect() 
+    {
+        RuntimeManager.PlayOneShot(selectSound);
     }
 }
