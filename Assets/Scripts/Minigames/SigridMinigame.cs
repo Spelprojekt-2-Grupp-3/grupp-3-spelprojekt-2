@@ -46,6 +46,7 @@ public class SigridMinigame : Minigames
     public override void StartMinigame()
     {
         base.StartMinigame();
+        Events.stopPlayer?.Invoke();
         EventSystem.current.firstSelectedGameObject = transform.Find("Fuse").gameObject;
         emptyFuses = gameObject.transform.Find("EmptyFuses").GetComponentsInChildren<EmptyFuse>();
         fuses = gameObject.transform.Find("Background").GetComponentsInChildren<Fuse>();
@@ -67,6 +68,7 @@ public class SigridMinigame : Minigames
 
     public override void StopMinigame()
     {
+        Events.startPlayer?.Invoke();
         Destroy(gameObject);
     }
 

@@ -52,6 +52,7 @@ public class UlrichMinigme : Minigames
 
     public override void StartMinigame()
     {
+        Events.stopPlayer?.Invoke();
         incorrectOrder.name = "Incorrect Order";
         List<Vector3> shuffledList = new List<Vector3>();
         for (int i = 0; i < incorrectOrder.transform.childCount; i++)
@@ -81,6 +82,7 @@ public class UlrichMinigme : Minigames
 
     public override void StopMinigame()
     {
+        Events.startPlayer?.Invoke();
         Destroy(gameObject);
     }
 

@@ -50,6 +50,7 @@ public class VeraMinigame : Minigames
 
     public override void StartMinigame()
     {
+        Events.stopPlayer?.Invoke();
         canvasInstance = gameObject;
         var yPos = 0f;
         for (int i = 0; i < shellAmount; i++)
@@ -137,6 +138,7 @@ public class VeraMinigame : Minigames
 
     public override void StopMinigame()
     {
+        Events.startPlayer?.Invoke();
         Destroy(canvasInstance);
         canvasInstance = null;
     }

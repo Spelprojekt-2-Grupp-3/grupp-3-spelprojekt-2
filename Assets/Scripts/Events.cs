@@ -14,6 +14,8 @@ public class Events : MonoBehaviour
     public static UnityEvent exampleEvent = new UnityEvent();
     public static UnityEvent startBoat = new UnityEvent();
     public static UnityEvent stopBoat = new UnityEvent();
+    public static UnityEvent startPlayer = new UnityEvent();
+    public static UnityEvent stopPlayer = new UnityEvent();
     public static UnityEvent updateIcons = new UnityEvent();
     public static CheckInputEvent checkInputEvent = new CheckInputEvent();
     public static UnityEvent updateBoostMeter = new UnityEvent();

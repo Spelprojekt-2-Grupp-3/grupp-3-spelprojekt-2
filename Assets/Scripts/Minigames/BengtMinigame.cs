@@ -56,6 +56,7 @@ public class BengtMinigame : Minigames
 
     public override void StartMinigame()
     {
+        Events.stopPlayer?.Invoke();
         engineStage = 0;
         sliderSpeed = 1.5f;
         increasing = true;
@@ -68,6 +69,12 @@ public class BengtMinigame : Minigames
         iconSprite = handle.GetComponent<Image>();
         goal = sliderInst.transform.Find("Goal").gameObject;
         RandomizeGoalPosition();
+        Events.stopBoat?.Invoke();
+    }
+
+    public override void StopMinigame()
+    {
+        Events.startPlayer?.Invoke();
     }
 
     private void RandomizeGoalPosition()

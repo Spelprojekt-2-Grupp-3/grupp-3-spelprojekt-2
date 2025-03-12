@@ -41,6 +41,8 @@ public class PlayerMovement : MonoBehaviour
         interact.performed += Interact;
         moveCam = playerControls.Player.Look;
         moveCam.Enable();
+        Events.startPlayer.AddListener(StartPlayer);
+        Events.stopBoat.AddListener(StopPlayer);
     }
 
     private void OnDisable()
@@ -49,6 +51,8 @@ public class PlayerMovement : MonoBehaviour
         interact.performed -= Interact;
         interact.Disable();
         moveCam.Disable();
+        Events.startPlayer.RemoveListener(StartPlayer);
+        Events.stopBoat.RemoveListener(StopPlayer);
     }
 
     void Start()
@@ -116,5 +120,19 @@ public class PlayerMovement : MonoBehaviour
     private void Interact(InputAction.CallbackContext context)
     {
         //Debug.Log("interacted");
+    }
+
+    private void StartPlayer()
+    {
+        move.Enable();
+        moveCam.Enable();
+        interact.Enable();
+    }
+
+    private void StopPlayer()
+    {
+        move.Disable();
+        moveCam.Disable();
+        interact.Disable();
     }
 }

@@ -53,6 +53,7 @@ public class IrmaMinigame : Minigames
 
     public override void StartMinigame()
     {
+        Events.stopPlayer?.Invoke();
         var canvasInst = gameObject;
         targetValueLeft = Random.Range(1, numberRange);
         targetValueRight = Random.Range(1, numberRange);
@@ -64,7 +65,8 @@ public class IrmaMinigame : Minigames
 
     public override void StopMinigame()
     {
-        Debug.Log("winner winner chicken dinner");
+        Events.startPlayer?.Invoke();
+        Destroy(gameObject);
     }
 
     private void Update()
