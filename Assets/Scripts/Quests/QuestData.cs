@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -32,7 +33,7 @@ public class QuestData : ScriptableObject
     }
 }
 
-[System.Serializable]
+[Serializable]
 public class QuestTest
 {
     public string questName;

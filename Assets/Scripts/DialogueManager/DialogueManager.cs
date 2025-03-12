@@ -77,6 +77,8 @@ public class DialogueManager : MonoBehaviour
 
     [HideInInspector]public List<TextAsset> dialogueQueue;
     
+    
+    
     private void Awake()
     {
         if (_instance != null)
@@ -117,6 +119,8 @@ public class DialogueManager : MonoBehaviour
         inventoryMenu = FindObjectOfType<InventoryMenu>();
 
         _playerInput = new PlayerInputActions();
+        
+        questLog.AddQuest();
     }
 
     private void Start()
