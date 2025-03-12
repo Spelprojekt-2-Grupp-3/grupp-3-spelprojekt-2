@@ -1,4 +1,4 @@
-EXTERNAL EditQuest(int ID)
+EXTERNAL EditQuest(int ID, int step)
 
 -> VeraDialogueUlrich
 
@@ -30,6 +30,6 @@ Here ya go! #Speaker:Vera
 
 You best be off now. Don't leave poor Ulrich sniffling too much longer! #Speaker:Vera
 
-~ EditQuest(3)
+~ EditQuest(3, 2)
 
 -> END

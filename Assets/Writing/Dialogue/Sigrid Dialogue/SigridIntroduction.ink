@@ -1,4 +1,4 @@
-EXTERNAL EditQuest(int ID)
+EXTERNAL EditQuest(int ID, int step)
 
 -> SigridDialogue1
 
@@ -8,7 +8,7 @@ EXTERNAL EditQuest(int ID)
 
     * [<color=\#29c445>Skip (testing)</color>] 
     
-    ~ EditQuest(1)
+    ~ EditQuest(1, 1)
     
     -> END
 
@@ -60,6 +60,6 @@ I want you to head to Bengt and get me some from him. Think you're up for it? #S
 
 'Preciate it. #Speaker:Sigrid
 
-~ EditQuest(1)
+~ EditQuest(1, 1)
 
 -> END

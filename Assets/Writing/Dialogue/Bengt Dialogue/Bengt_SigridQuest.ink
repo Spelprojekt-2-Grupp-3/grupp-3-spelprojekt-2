@@ -1,4 +1,4 @@
-EXTERNAL EditQuest(int ID)
+EXTERNAL EditQuest(int ID, int step)
 
 -> BengtDialogueSigrid
 
@@ -28,6 +28,6 @@ I'd offer you some as well, but... well, I think you'd be awake for a week strai
 
 But thanks! #Speaker:Cleo
 
-    ~ EditQuest(1)
+    ~ EditQuest(1, 2)
 
 -> END

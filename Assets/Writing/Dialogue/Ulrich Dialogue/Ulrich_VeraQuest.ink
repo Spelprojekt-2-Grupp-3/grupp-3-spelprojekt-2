@@ -1,4 +1,4 @@
-EXTERNAL EditQuest(int ID)
+EXTERNAL EditQuest(int ID, int step)
 
 -> UlrichDialogueVera
 
@@ -36,6 +36,6 @@ Thanks, Ulrich! #Speaker:Cleo
 
 Hrnm. #Speaker:Ulrich
 
-~ EditQuest(4)
+~ EditQuest(4, 2)
 
 -> END

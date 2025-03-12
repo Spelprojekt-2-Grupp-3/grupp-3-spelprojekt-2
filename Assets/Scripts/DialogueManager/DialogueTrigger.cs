@@ -23,17 +23,13 @@ public class DialogueTrigger : MonoBehaviour
     [Tooltip("For if the character has an extra quest"), SerializeField]
     private TextAsset extraQuestJSON;
 
-    [Header("Related Quest settings")]
-    [SerializeField]
-    public QuestData questData;
-
-    [SerializeField]
-    private QuestData extraQuestData;
+    [Header("Related Quest settings")] 
+    [SerializeField] private List<int> questIDs;
+    [SerializeField]private List<int> questSteps;
 
     private QuestLog questLog;
-
     private bool firstTalk;
-
+    
     // Checks if the player is close to NPC
     private bool playerInRange;
     private PlayerInputActions _playerInput;
@@ -74,28 +70,42 @@ public class DialogueTrigger : MonoBehaviour
         Debug.Log("Started check");
         //We first make sure no dialogue is active
         if (!DialogueManager.GetInstance().dialogueIsPlaying)
-        {
+        { 
+            bool foundValidDialogue = false;
             //If it's the first time talking to someone, we'll play their introductory file
             if (firstTalk && introductionDialogueJSON)
             {
-                DialogueManager.GetInstance().EnterDialogueMode(introductionDialogueJSON);
+                DialogueManager.GetInstance().dialogueQueue.Add(introductionDialogueJSON);
                 firstTalk = false;
+                foundValidDialogue = true;
             }
-            //If it's not the first time, we first check to make sure there is a quest
-            else if (questData != null)
+            //Check to make sure there is a quest
+            if (questTextJSON&& extraQuestJSON)
             {
-                //Checks if the quest log contains a quest with the appropriate title and description and returns true, else false
-                if (
-                    questLog.TestForQuest(questData.questTitle, questData.questText)
-                    && questTextJSON
-                )
+                foreach (var ID in questIDs)
                 {
-                    DialogueManager.GetInstance().EnterDialogueMode(questTextJSON);
+                    foreach (var step in questSteps)
+                    {
+                        if(questLog.TestForQuest(ID,step))
+                        {
+                            if(!DialogueManager.GetInstance().dialogueQueue.Contains(questTextJSON))
+                                DialogueManager.GetInstance().dialogueQueue.Add(questTextJSON);
+                            
+                            else if(!DialogueManager.GetInstance().dialogueQueue.Contains(extraQuestJSON))
+                                DialogueManager.GetInstance().dialogueQueue.Add(extraQuestJSON);
+                            
+                            else
+                                Debug.LogWarning("Found third valid quest",this);
+                            foundValidDialogue = true;
+                        }
+                    }
                 }
-                else if (extraQuestJSON && extraQuestData)
-                {
-                    DialogueManager.GetInstance().EnterDialogueMode(extraQuestJSON);
-                }
+            }
+
+            if (foundValidDialogue)
+            {
+                DialogueManager.GetInstance().EnterDialogueMode(DialogueManager.GetInstance().dialogueQueue[0]);
+                DialogueManager.GetInstance().dialogueQueue.Remove(DialogueManager.GetInstance().dialogueQueue[0]);
             }
             //Else we default to filler dialogue, as long as there is a valid asset
             else if (fillerDialogueJSON)
@@ -105,6 +115,9 @@ public class DialogueTrigger : MonoBehaviour
         }
     }
 
+   
+    
+    
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))

@@ -1,4 +1,4 @@
-EXTERNAL EditQuest(int ID)
+EXTERNAL EditQuest(int ID, int step)
 
 -> VeraDialogue1
 
@@ -8,7 +8,7 @@ Hey there, stanger! #Speaker:Vera
 
     * [<color=\#29c445>Skip (testing)</color>] 
     
-    ~ EditQuest(4)
+    ~ EditQuest(4, 1)
     
     -> END
 
@@ -66,6 +66,6 @@ Think you're up for it? #Speaker:Vera
 
 That's the spirit! #Speaker:Vera
 
-~ EditQuest(4)
+~ EditQuest(4, 1)
 
 -> END

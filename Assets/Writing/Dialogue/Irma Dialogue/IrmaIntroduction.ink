@@ -1,4 +1,4 @@
-EXTERNAL EditQuest(int ID)
+EXTERNAL EditQuest(int ID, int step)
 
 -> IrmaDialogue1
 
@@ -8,7 +8,7 @@ EXTERNAL EditQuest(int ID)
 
     * [<color=\#29c445>Skip (testing)</color>] 
         
-    ~ EditQuest(2)
+    ~ EditQuest(2, 1)
     
     -> END
 
@@ -72,6 +72,6 @@ If you're up for it, I'd like you to go and borrow one for me. #Speaker:Irma
     
 Perfect! I'll be waiting here. #Speaker:Irma
 
-~ EditQuest(2)
+~ EditQuest(2, 1)
 
 -> END
