@@ -36,6 +36,6 @@ Thanks, Ulrich! #Speaker:Cleo
 
 Hrnm. #Speaker:Ulrich
 
-~ EditQuest(4, 2)
+~ EditQuest(4, 1)
 
 -> END

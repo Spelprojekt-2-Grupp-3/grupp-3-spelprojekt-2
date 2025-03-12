@@ -30,6 +30,6 @@ Here ya go! #Speaker:Vera
 
 You best be off now. Don't leave poor Ulrich sniffling too much longer! #Speaker:Vera
 
-~ EditQuest(3, 2)
+~ EditQuest(3, 1)
 
 -> END

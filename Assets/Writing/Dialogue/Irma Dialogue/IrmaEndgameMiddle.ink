@@ -46,6 +46,6 @@ So just stay safe, yeah? I don't know what I'd do if yet another person went mis
 
 Gosh, your confidence is rubbing off on me... I'll be cheering you on from here! #Speaker:Irma
 
-~ EditQuest(0, 2)
+~ EditQuest(0, 1)
 
 -> END
