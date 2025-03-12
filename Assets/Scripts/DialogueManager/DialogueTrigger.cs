@@ -23,9 +23,8 @@ public class DialogueTrigger : MonoBehaviour
     [Tooltip("For if the character has an extra quest"), SerializeField]
     private TextAsset extraQuestJSON;
 
-    [Header("Related Quest settings")] 
-    [SerializeField] private List<int> questIDs;
-    [SerializeField]private List<int> questSteps;
+    [Header("Related Quest settings")] [SerializeField]
+    private List<InfoToSearch> infoToSearch = new List<InfoToSearch>();
 
     private QuestLog questLog;
     private bool firstTalk;
@@ -80,26 +79,20 @@ public class DialogueTrigger : MonoBehaviour
                 foundValidDialogue = true;
             }
             //Check to make sure there is a quest
-            if (questTextJSON&& extraQuestJSON)
+            if (questTextJSON && questLog.TestForQuest(infoToSearch[0].ID, infoToSearch[0].step))
             {
-                foreach (var ID in questIDs)
-                {
-                    foreach (var step in questSteps)
-                    {
-                        if(questLog.TestForQuest(ID,step))
-                        {
-                            if(!DialogueManager.GetInstance().dialogueQueue.Contains(questTextJSON))
-                                DialogueManager.GetInstance().dialogueQueue.Add(questTextJSON);
-                            
-                            else if(!DialogueManager.GetInstance().dialogueQueue.Contains(extraQuestJSON))
-                                DialogueManager.GetInstance().dialogueQueue.Add(extraQuestJSON);
-                            
-                            else
-                                Debug.LogWarning("Found third valid quest",this);
-                            foundValidDialogue = true;
-                        }
-                    }
-                }
+
+                if (!DialogueManager.GetInstance().dialogueQueue.Contains(questTextJSON))
+                    DialogueManager.GetInstance().dialogueQueue.Add(questTextJSON);
+                foundValidDialogue = true;
+            }
+            if (extraQuestJSON && questLog.TestForQuest(infoToSearch[1].ID, infoToSearch[1].step))
+            {
+                if (!DialogueManager.GetInstance().dialogueQueue.Contains(extraQuestJSON))
+                    DialogueManager.GetInstance().dialogueQueue.Add(extraQuestJSON);
+                foundValidDialogue = true;
+                
+                Debug.Log("Found quest ID: " + infoToSearch[1].ID + "with step: "+infoToSearch[1].step);
             }
 
             if (foundValidDialogue)
@@ -114,9 +107,6 @@ public class DialogueTrigger : MonoBehaviour
             }
         }
     }
-
-   
-    
     
     private void OnTriggerEnter(Collider other)
     {
@@ -133,4 +123,11 @@ public class DialogueTrigger : MonoBehaviour
             playerInRange = false;
         }
     }
+}
+
+[Serializable]
+public class InfoToSearch
+{
+    public int ID;
+    public int step;
 }
