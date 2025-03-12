@@ -53,10 +53,6 @@ Something on your mind? #Speaker:Irma
     
     And then, y'know, some things happened and now I'm here without her. #Speaker:Irma
     
-    But I'll find her! And you'll find your parents. #Speaker:Irma
-    
-    We'll make sure of that, yeah? #Speaker:Irma
-    
     Anyway, let's move on. Got any other questions? #Speaker:Irma
 
     -> irmaQuestions

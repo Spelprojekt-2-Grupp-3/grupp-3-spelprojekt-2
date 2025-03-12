@@ -98,8 +98,6 @@ Something on your mind? #Speaker:Bengt
     
     I'd say we've become decent friends since then as well. #Speaker:Bengt
     
-    She still prefers to be alone most of the time, but she gladly welcomes me whenever I visit. #Speaker:Bengt
-    
     Granted, I do bring her coffee. #Speaker:Bengt
     
     Anyone else? #Speaker:Bengt

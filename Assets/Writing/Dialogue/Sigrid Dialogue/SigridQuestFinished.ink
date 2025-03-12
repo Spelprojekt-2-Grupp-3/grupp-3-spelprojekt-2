@@ -4,18 +4,15 @@ EXTERNAL EditQuest(int ID, int step)
 
 === SigridDialogue2 ===
 
+Hey. #Speaker:Sigrid
+
+    * [I got coffee.]
+    
+-I got your coffee for you! #Speaker:Cleo
 
 That solves my problem. Thanks. #Speaker:Sigrid
 
-    * [<color=\#29c445>Skip (testing)</color>] 
-    
-    ~ EditQuest(1, 2)
-    
-    -> END
-
-    * [Continue dialogue]
-
--I'll get you your upgrade. #Speaker:Sigrid
+I'll get you your upgrade. #Speaker:Sigrid
 
 [Sigrid gets straight to work on installing your new upgrade.] #Speaker:Sigrid
 

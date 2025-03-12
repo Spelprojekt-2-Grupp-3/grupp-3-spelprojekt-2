@@ -32,7 +32,7 @@ Hmrbnmr... hermem. Hrrlghgh! #Speaker:Ulrich
     
 -I, uh... don't understand... #Speaker:Cleo
 
-[Bengt did mention Ulrich was very congested...] #Speaker:Cleo
+[Is he just... really, really congested?] #Speaker:Cleo
 
 [Maybe he needs medicine?] #Speaker:Cleo
 

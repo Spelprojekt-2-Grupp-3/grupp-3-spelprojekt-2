@@ -8,7 +8,7 @@ EXTERNAL EditQuest(int ID, int step)
 
 [A few coughs and sniffs later, he clears his throat.] #Speaker:Ulrich
 
-Scheize! Good riddance! #Speaker:Ulrich
+Scheiße! Good riddance! #Speaker:Ulrich
 
 Any longer and I would've suffocated to death like some sad sack of- #Speaker:Ulrich
 

@@ -22,7 +22,7 @@ I don't know what size she needs, so I packed them all in there. #Speaker:Cleo
 
     * [Thanks.]
     
--Oh, gee! That's heavy. #Speaker:Cleo
+-Oh, gee! That's heavy! #Speaker:Cleo
 
 Anyway, thanks! I'll be going now. #Speaker:Cleo
 

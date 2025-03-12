@@ -1,4 +1,3 @@
-
 -> intro
 
 === intro ===
@@ -65,7 +64,7 @@ What brings you here, anyway? #Speaker:Bengt
     
 -I was sent this letter by someone who claims to live around here. #Speaker:Cleo
 
-Bengt: Oh? Let me see… #Speaker:Bengt
+Oh? Let me see… #Speaker:Bengt
 
 [You hand Bengt the letter.] #Speaker:Bengt
 
@@ -121,9 +120,13 @@ Give me a moment! I'll be right back. #Speaker:Bengt
 
 All done! #Speaker:Bengt
 
-But there are several more upgrades you'll need, and I won't be able to help you with all of them. #Speaker:Bengt
+But there are several more fixes you'll need, and I won't be able to help you with all of them. #Speaker:Bengt
 
-You'll have to seek out my friends for that. #Speaker:Bengt
+I doubt you'd notice any difference, as long as you're just going around the archipelago... #Speaker:Bengt
+
+But when it's time to head out, those tiny details can really mess with your journey. #Speaker:Bengt
+
+You'll have to seek out my friends for those upgrades. #Speaker:Bengt
 
 They each have different skillsets they could put to use for you. #Speaker:Bengt
 
@@ -147,7 +150,6 @@ Thing is, we operate by trading favors around here. They might ask you to help t
 
 Oh, but don't worry! Mine's on the house. See it as a welcome present. #Speaker:Bengt
 
-Good luck out there. And come see me anytime you feel like chatting! #Speaker:Bengt
-
+Good luck out there. And come see me if you have any questions or if you feel like chatting! #Speaker:Bengt
 
 -> END
