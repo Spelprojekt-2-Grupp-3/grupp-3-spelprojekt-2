@@ -8,7 +8,7 @@ Hey there, stanger! #Speaker:Vera
 
     * [<color=\#29c445>Skip (testing)</color>] 
     
-    ~ EditQuest(4, 1)
+    ~ EditQuest(4, 0)
     
     -> END
 
@@ -66,6 +66,6 @@ Think you're up for it? #Speaker:Vera
 
 That's the spirit! #Speaker:Vera
 
-~ EditQuest(4, 1)
+~ EditQuest(4, 0)
 
 -> END

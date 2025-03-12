@@ -52,6 +52,6 @@ Hrmnrhgh. Heerhmnmngh Jemhgmh. Vrrha! #Speaker:Ulrich
 
 Hrnm! #Speaker:Ulrich
 
-~ EditQuest(3, 1)
+~ EditQuest(3, 0)
 
 -> END

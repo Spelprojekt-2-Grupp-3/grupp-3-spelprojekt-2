@@ -8,7 +8,7 @@ EXTERNAL EditQuest(int ID, int step)
 
     * [<color=\#29c445>Skip (testing)</color>] 
         
-    ~ EditQuest(2, 1)
+    ~ EditQuest(2, 0)
     
     -> END
 
@@ -72,6 +72,6 @@ If you're up for it, I'd like you to go and borrow one for me. #Speaker:Irma
     
 Perfect! I'll be waiting here. #Speaker:Irma
 
-~ EditQuest(2, 1)
+~ EditQuest(2, 0)
 
 -> END

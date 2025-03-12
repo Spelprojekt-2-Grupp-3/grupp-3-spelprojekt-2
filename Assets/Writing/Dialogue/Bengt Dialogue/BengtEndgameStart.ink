@@ -106,6 +106,6 @@ I'll owe her big time for making her wait this long, though. #Speaker:Bengt
 
 But off you go! I'm rooting for you! #Speaker:Bengt
 
-~ EditQuest(0, 1)
+~ EditQuest(0, 0)
 
 -> END

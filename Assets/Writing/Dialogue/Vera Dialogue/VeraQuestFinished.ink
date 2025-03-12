@@ -60,6 +60,6 @@ No problem! Let me know if there's anything else I could help you with. #Speaker
 
 Don't be a stranger! #Speaker:Vera
 
-~ EditQuest(4, 3)
+~ EditQuest(4, 2)
 
 -> END

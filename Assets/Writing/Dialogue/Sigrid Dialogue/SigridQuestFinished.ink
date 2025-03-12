@@ -9,7 +9,7 @@ That solves my problem. Thanks. #Speaker:Sigrid
 
     * [<color=\#29c445>Skip (testing)</color>] 
     
-    ~ EditQuest(1, 3)
+    ~ EditQuest(1, 2)
     
     -> END
 
@@ -63,6 +63,6 @@ I don't have much else for you. #Speaker:Sigrid
 
 No problem. #Speaker:Sigrid
 
-    ~ EditQuest(1, 3)
+    ~ EditQuest(1, 2)
 
 -> END

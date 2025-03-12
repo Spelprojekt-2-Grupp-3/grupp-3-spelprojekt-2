@@ -62,6 +62,6 @@ I'll get going, then. #Speaker:Cleo
 
 Hrm. #Speaker:Ulrich
 
-~ EditQuest(3, 3)
+~ EditQuest(3, 2)
 
 -> END

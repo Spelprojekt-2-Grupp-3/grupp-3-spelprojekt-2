@@ -13,7 +13,7 @@ Anyway, thanks a bunch! I'll install your upgrade, as promised. #Speaker:Irma
 
     * [<color=\#29c445>Skip (testing)</color>] 
     
-    ~ EditQuest(2, 3)
+    ~ EditQuest(2, 2)
     
     -> END
 
@@ -95,6 +95,6 @@ I gotta head back inside now, but please, talk to me whenever! #Speaker:Irma
     
 -Will do. #Speaker:Cleo
 
-~ EditQuest(2, 3)
+~ EditQuest(2, 2)
 
 -> END

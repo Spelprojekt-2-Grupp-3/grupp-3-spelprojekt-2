@@ -18,15 +18,11 @@ public class QuestLog : MonoBehaviour
 
     public List<QuestData> questsData = new List<QuestData>();
 
+    private List<Quest> questObjectList = new List<Quest>();
+
     [SerializeField]
     private bool devving;
     private int siblingIndex;
-
-    private void Start()
-    {
-        //if (devving)
-            //AddQuest("tempQuest", "tempquest");
-    }
 
     public void SetEnableState(bool state)
     {
@@ -41,19 +37,29 @@ public class QuestLog : MonoBehaviour
         {
             Debug.Log("Added quest");
             questList.Add(quest);
+            //var questVisual = Instantiate(questBoxPrefab).GetComponent<Quest>();
+            //questVisual.gameObject.
+            //questObjectList.Add(questVisual);
+            //questVisual.Set(quest);
         }
     }
 
-    public void UpdateQuest(int questID)
+    public void UpdateQuest(int questID, int step)
     {
-        
         foreach (var quest in questList)
         {
-            if (quest.ID == questID)
+            Debug.Log("looped questList");
+            if (quest.ID == questID && quest.step == step)
             {
+                Debug.Log("Updated quest with ID: "+ questID);
                 if (!quest.NextStep())
                     CompleteQuest(quest);
                 Debug.Log(quest.ID);
+                foreach (var questObject in questObjectList)
+                {
+                    if(questID == questObject.ID)
+                        questObject.UpdateText(quest);
+                }
             }
         }
         RemoveQuests();
