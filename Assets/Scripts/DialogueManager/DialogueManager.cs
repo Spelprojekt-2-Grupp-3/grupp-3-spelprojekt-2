@@ -198,6 +198,8 @@ public class DialogueManager : MonoBehaviour
         displayNameText.text = "Name";
         portraitAnimator.Play("Default");
         layoutAnimator.Play("NPC");
+        
+        Events.stopPlayer?.Invoke();
 
         ContinueStory();
 
@@ -213,6 +215,7 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying = false;
         dialogueUI.SetActive(false);
         dialogueText.text = "";
+        Events.startPlayer?.Invoke();
         MultipleDialogueStart();
     }
 

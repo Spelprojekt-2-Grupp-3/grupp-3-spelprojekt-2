@@ -20,6 +20,9 @@ public class QuestLog : MonoBehaviour
 
     private List<Quest> questObjectList = new List<Quest>();
 
+    public TextAsset congratulations;
+    
+    
     [SerializeField]
     private bool devving;
     private int siblingIndex;
@@ -30,17 +33,28 @@ public class QuestLog : MonoBehaviour
         if (questMenuTextObject)
             questMenuTextObject.SetActive(state);
     }
-    
+
+
+    private void Update()
+    {
+        if (finishedQuests.Count == 4)
+        {
+            UpdateQuest(0,0);
+            DialogueManager.GetInstance().EnterDialogueMode(congratulations);
+        }
+    }
+
     public void AddQuest()
     {
         foreach (var quest in questsData)
         {
             Debug.Log("Added quest");
             questList.Add(quest);
-            //var questVisual = Instantiate(questBoxPrefab).GetComponent<Quest>();
-            //questVisual.gameObject.
-            //questObjectList.Add(questVisual);
-            //questVisual.Set(quest);
+            quest.step = 0;
+            var questVisual = Instantiate(questBoxPrefab).GetComponent<Quest>();
+            questVisual.gameObject.transform.SetParent(questContainer.transform);
+            questObjectList.Add(questVisual);
+            questVisual.Set(quest);
         }
     }
 
