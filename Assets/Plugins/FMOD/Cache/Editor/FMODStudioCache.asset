@@ -493,10 +493,10 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/Banks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638773854019494930
+  lastModified: 638773911272616321
   FileSizes:
   - Name: 
-    Value: 2942
+    Value: 3020
   Exists: 1
 --- !u!114 &-4238647381637108379
 MonoBehaviour:
@@ -723,33 +723,6 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-2579292335958908224
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Sound/SFX/Minigames/Generator
-  m_EditorClassIdentifier: 
-  Path: event:/Sound/SFX/Minigames/Generator
-  Guid:
-    Data1: -1378046364
-    Data2: 1307614145
-    Data3: 34943379
-    Data4: -1360093464
-  Banks:
-  - {fileID: 8182886605034168985}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &-2361143166162784656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -811,9 +784,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Sound/SFX/Minigames/SparkPlug
+  m_Name: event:/Sound/SFX/minigames/SparkPlug
   m_EditorClassIdentifier: 
-  Path: event:/Sound/SFX/Minigames/SparkPlug
+  Path: event:/Sound/SFX/minigames/SparkPlug
   Guid:
     Data1: 601376897
     Data2: 1121801758
@@ -865,9 +838,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Sound/SFX/Minigames/Radio (test)
+  m_Name: event:/Sound/SFX/minigames/Radio (test)
   m_EditorClassIdentifier: 
-  Path: event:/Sound/SFX/Minigames/Radio (test)
+  Path: event:/Sound/SFX/minigames/Radio (test)
   Guid:
     Data1: 506138914
     Data2: 1138198446
@@ -1271,16 +1244,18 @@ MonoBehaviour:
   - {fileID: 4643199824973972166}
   - {fileID: 4135419831565066106}
   - {fileID: -1618434354723901096}
-  - {fileID: -2579292335958908224}
   - {fileID: -2182606775142456496}
   - {fileID: 8422063921757146920}
   - {fileID: -3229296133250831553}
+  - {fileID: 8073522480153099546}
+  - {fileID: 7394008082403591485}
+  - {fileID: 1341928315392115948}
   EditorParameters: []
   MasterBanks:
   - {fileID: 8182886605034168985}
   StringsBanks:
   - {fileID: -4265464848103356742}
-  cacheTime: 638773858673921142
+  cacheTime: 638773937318530906
   cacheVersion: 131622
 --- !u!114 &327449618085299828
 MonoBehaviour:
@@ -1467,6 +1442,33 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &1341928315392115948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound/SFX/minigames/Generator2
+  m_EditorClassIdentifier: 
+  Path: event:/Sound/SFX/minigames/Generator2
+  Guid:
+    Data1: -1378046364
+    Data2: 1307614145
+    Data3: 34943379
+    Data4: -1360093464
+  Banks:
+  - {fileID: 8182886605034168985}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1560
 --- !u!114 &1381664454641189200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1839,9 +1841,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Sound/SFX/Misc/Tentacle_Grab
+  m_Name: event:/Sound/SFX/misc/Tentacle_Grab
   m_EditorClassIdentifier: 
-  Path: event:/Sound/SFX/Misc/Tentacle_Grab
+  Path: event:/Sound/SFX/misc/Tentacle_Grab
   Guid:
     Data1: 944872972
     Data2: 1183600279
@@ -1890,9 +1892,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Sound/SFX/Misc/Tentacle_Splash
+  m_Name: event:/Sound/SFX/misc/Tentacle_Splash
   m_EditorClassIdentifier: 
-  Path: event:/Sound/SFX/Misc/Tentacle_Splash
+  Path: event:/Sound/SFX/misc/Tentacle_Splash
   Guid:
     Data1: 697550857
     Data2: 1166412508
@@ -2431,6 +2433,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &7394008082403591485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound/SFX/minigames/Generator1
+  m_EditorClassIdentifier: 
+  Path: event:/Sound/SFX/minigames/Generator1
+  Guid:
+    Data1: -1748314797
+    Data2: 1079832383
+    Data3: -403201897
+    Data4: -1918268794
+  Banks:
+  - {fileID: 8182886605034168985}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 800
 --- !u!114 &7908067405339230305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2455,6 +2484,33 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &8073522480153099546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound/SFX/minigames/Generator3
+  m_EditorClassIdentifier: 
+  Path: event:/Sound/SFX/minigames/Generator3
+  Guid:
+    Data1: 274304259
+    Data2: 1172100368
+    Data3: 2016688542
+    Data4: -636885200
+  Banks:
+  - {fileID: 8182886605034168985}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3540
 --- !u!114 &8182886605034168985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2470,7 +2526,7 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/Banks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638773858673921142
+  lastModified: 638773937318530906
   FileSizes: []
   Exists: 1
 --- !u!114 &8247415871218049302
@@ -2512,9 +2568,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Sound/SFX/Misc/WaterSplash (basic)
+  m_Name: event:/Sound/SFX/misc/WaterSplash (basic)
   m_EditorClassIdentifier: 
-  Path: event:/Sound/SFX/Misc/WaterSplash (basic)
+  Path: event:/Sound/SFX/misc/WaterSplash (basic)
   Guid:
     Data1: 1438354628
     Data2: 1205493381
