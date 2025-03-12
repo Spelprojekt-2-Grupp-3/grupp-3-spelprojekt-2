@@ -18,7 +18,15 @@ public class IslandBoarding : MonoBehaviour
     private bool allowBoatBoard;
     public FMODUnity.EventReference islandTheme;
 
+    private MusicManager musicManager;
+
     private FMOD.Studio.EventInstance islandThemeInstance;
+    private FMOD.Studio.EventInstance musicOceanInstance;
+
+    private void Start()
+    {
+        musicManager = FindObjectOfType<MusicManager>();
+    }
 
     private void Awake()
     {
@@ -98,16 +106,19 @@ public class IslandBoarding : MonoBehaviour
         playerCharacter.SetActive(true);
         allowIslandBoard = false;
         allowBoatBoard = true;
+        musicManager.StopOceanMusic();
     }
 
     public void BoardBoat()
     {
         islandThemeInstance.stop(0);
         Events.startBoat?.Invoke();
+        musicOceanInstance.start();
         playerCharacter.SetActive(false);
         playerCamera.SetActive(false);
         boatCamera.SetActive(true);
         allowBoatBoard = false;
         allowIslandBoard = true;
+        musicManager.StartOceanMusic();
     }
 }
