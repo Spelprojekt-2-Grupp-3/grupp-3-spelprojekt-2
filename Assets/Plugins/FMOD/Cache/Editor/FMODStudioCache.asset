@@ -78,30 +78,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 8000
---- !u!114 &-7762240588468097995
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Music_Ulrich/Fade
-  m_EditorClassIdentifier: 
-  Name: Fade
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 1269444803
-    data2: 2966028889
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
 --- !u!114 &-7511163899894503196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,7 +157,6 @@ MonoBehaviour:
   IsOneShot: 0
   Parameters:
   - {fileID: 3163526644147488979}
-  - {fileID: 2643657738007766557}
   MinDistance: 1
   MaxDistance: 20
   Length: 70000
@@ -291,7 +266,6 @@ MonoBehaviour:
   IsOneShot: 0
   Parameters:
   - {fileID: 1290660628471242611}
-  - {fileID: -5933255069031634272}
   MinDistance: 1
   MaxDistance: 20
   Length: 75000
@@ -403,30 +377,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 8000
---- !u!114 &-5933255069031634272
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Music_Vera/Fade
-  m_EditorClassIdentifier: 
-  Name: Fade
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 1269444803
-    data2: 2966028889
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
 --- !u!114 &-5536738145390493873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -447,30 +397,6 @@ MonoBehaviour:
   ID:
     data1: 1636272863
     data2: 1689507438
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &-5382807564420235865
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Music_Bengt/Fade
-  m_EditorClassIdentifier: 
-  Name: Fade
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 1269444803
-    data2: 2966028889
   Type: 0
   IsGlobal: 0
   Labels: []
@@ -566,10 +492,10 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/Banks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638774077390681078
+  lastModified: 638774108835668435
   FileSizes:
   - Name: 
-    Value: 3016
+    Value: 3020
   Exists: 1
 --- !u!114 &-4055353369233749306
 MonoBehaviour:
@@ -745,7 +671,6 @@ MonoBehaviour:
   IsOneShot: 0
   Parameters:
   - {fileID: -8626926425918914729}
-  - {fileID: -7762240588468097995}
   MinDistance: 1
   MaxDistance: 20
   Length: 144000
@@ -1249,30 +1174,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 300
---- !u!114 &-53995514682206188
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Music_FullOcean/Fade
-  m_EditorClassIdentifier: 
-  Name: Fade
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 1269444803
-    data2: 2966028889
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1329,7 +1230,7 @@ MonoBehaviour:
   - {fileID: 8182886605034168985}
   StringsBanks:
   - {fileID: -4265464848103356742}
-  cacheTime: 638774077390681078
+  cacheTime: 638774108835668435
   cacheVersion: 131622
 --- !u!114 &459774145964946755
 MonoBehaviour:
@@ -1464,7 +1365,6 @@ MonoBehaviour:
   IsOneShot: 0
   Parameters:
   - {fileID: 6543101404860579153}
-  - {fileID: 4439652867315080118}
   MinDistance: 1
   MaxDistance: 20
   Length: 70000
@@ -1720,30 +1620,6 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &2643657738007766557
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Music_Irma/Fade
-  m_EditorClassIdentifier: 
-  Name: Fade
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 1269444803
-    data2: 2966028889
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
 --- !u!114 &2775605908048910623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1908,30 +1784,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1420
---- !u!114 &4439652867315080118
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Music_Sigrid/Fade
-  m_EditorClassIdentifier: 
-  Name: Fade
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 1269444803
-    data2: 2966028889
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
 --- !u!114 &4484955660969178201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2008,7 +1860,6 @@ MonoBehaviour:
   IsOneShot: 0
   Parameters:
   - {fileID: -2825553941649141065}
-  - {fileID: -5382807564420235865}
   MinDistance: 1
   MaxDistance: 20
   Length: 70034
@@ -2091,10 +1942,34 @@ MonoBehaviour:
   - {fileID: 2633292186352102988}
   - {fileID: 7155238255842091075}
   - {fileID: 4484955660969178201}
-  - {fileID: -53995514682206188}
+  - {fileID: 5503345112169115755}
   MinDistance: 1
   MaxDistance: 20
   Length: 280284
+--- !u!114 &5503345112169115755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_FullOcean/FadeOut
+  m_EditorClassIdentifier: 
+  Name: FadeOut
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1405755521
+    data2: 2591893151
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &5655193152269694373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2576,7 +2451,7 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/Banks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638774077390611061
+  lastModified: 638774108835618395
   FileSizes: []
   Exists: 1
 --- !u!114 &8247415871218049302
