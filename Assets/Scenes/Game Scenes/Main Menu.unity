@@ -197,6 +197,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 10160331}
   m_CullTransparentMesh: 1
+--- !u!1 &45498707 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3376916459619951906, guid: cb739613743c4bc408f55638fb0d1ea4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1720575654}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &45498708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45498707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7f689f70444d184b9a32cd6c08d36f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectSound:
+    Guid:
+      Data1: 2116855810
+      Data2: 1186396337
+      Data3: 279828399
+      Data4: 619564290
+    Path: event:/Sound/SFX/Interface/Menu_MoveCursor
 --- !u!1 &117567238
 GameObject:
   m_ObjectHideFlags: 0
@@ -314,7 +339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 45498707}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &199998673
@@ -370,7 +395,7 @@ MonoBehaviour:
     type: 3}
   m_TrackedDeviceOrientationAction: {fileID: -6173852052323338566, guid: 1f866763a0b1b7e43ba6a4e833c4fed9,
     type: 3}
-  m_DeselectOnBackgroundClick: 1
+  m_DeselectOnBackgroundClick: 0
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
 --- !u!224 &296180892 stripped
@@ -604,6 +629,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 665925065}
   m_CullTransparentMesh: 1
+--- !u!1 &686701230 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7795323506327709384, guid: cb739613743c4bc408f55638fb0d1ea4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1720575654}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &686701231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686701230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7f689f70444d184b9a32cd6c08d36f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectSound:
+    Guid:
+      Data1: 2116855810
+      Data2: 1186396337
+      Data3: 279828399
+      Data4: 619564290
+    Path: event:/Sound/SFX/Interface/Menu_MoveCursor
 --- !u!1 &793539901
 GameObject:
   m_ObjectHideFlags: 0
@@ -1078,6 +1128,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1131276205 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4572057475627855856, guid: cb739613743c4bc408f55638fb0d1ea4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1720575654}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1131276206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1131276205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7f689f70444d184b9a32cd6c08d36f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectSound:
+    Guid:
+      Data1: 2116855810
+      Data2: 1186396337
+      Data3: 279828399
+      Data4: 619564290
+    Path: event:/Sound/SFX/Interface/Menu_MoveCursor
 --- !u!1 &1406196161
 GameObject:
   m_ObjectHideFlags: 0
@@ -1966,7 +2041,19 @@ PrefabInstance:
         type: 3}
       insertIndex: 4
       addedObject: {fileID: 857590755}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3376916459619951906, guid: cb739613743c4bc408f55638fb0d1ea4,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 45498708}
+    - targetCorrespondingSourceObject: {fileID: 7795323506327709384, guid: cb739613743c4bc408f55638fb0d1ea4,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 686701231}
+    - targetCorrespondingSourceObject: {fileID: 4572057475627855856, guid: cb739613743c4bc408f55638fb0d1ea4,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1131276206}
   m_SourcePrefab: {fileID: 100100000, guid: cb739613743c4bc408f55638fb0d1ea4, type: 3}
 --- !u!1 &1736527961
 GameObject:
