@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using FMODUnity;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -24,6 +25,8 @@ public class BengtMinigame : Minigames
     [SerializeField, Range(0f, 10f), Tooltip("Initial amount of seconds it takes for the handle on the slider to go from the bottom to the top")]
     private float sliderMaxValue;
     private bool increasing;
+    public EventReference engineStage1, engineStage2, engineStage3;
+    private int engineStage;
 
     private void OnEnable()
     {
@@ -53,6 +56,7 @@ public class BengtMinigame : Minigames
 
     public override void StartMinigame()
     {
+        engineStage = 0;
         sliderSpeed = 1.5f;
         increasing = true;
         var canvasComponent = GetComponent<Canvas>();
@@ -79,9 +83,22 @@ public class BengtMinigame : Minigames
         UpdateSliderPos();
         if (minigameButtonSouth.WasPressedThisFrame())
         {
-            if (handle.transform.position.y <= goal.transform.position.y + goalHeight/2 && handle.transform.position.y >= goal.transform.position.y - goalHeight/2) // idk why divided by 3 is necessary tbh
+            if (handle.transform.position.y <= goal.transform.position.y + goalHeight && handle.transform.position.y >= goal.transform.position.y - goalHeight) // idk why divided by 3 is necessary tbh
             {
                 Events.BengtMinigameHit?.Invoke();
+                engineStage++;
+                switch (engineStage)
+                {
+                    case 1:
+                        RuntimeManager.PlayOneShot(engineStage1);
+                        break;
+                    case 2:
+                        RuntimeManager.PlayOneShot(engineStage2);
+                        break;
+                    case 3:
+                        RuntimeManager.PlayOneShot(engineStage3);
+                        break;
+                }
                 sliderSpeed *= 1.2f;
                 RandomizeGoalPosition();
             }
