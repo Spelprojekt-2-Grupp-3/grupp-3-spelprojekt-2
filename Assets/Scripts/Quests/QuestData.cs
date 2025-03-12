@@ -24,7 +24,7 @@ public class QuestData : ScriptableObject
         if (step < quest.steps.Count)
         {
             step++;
-            questTitle = quest.questName;
+            questText= quest.questInfo;
             successful = true;
         }
 

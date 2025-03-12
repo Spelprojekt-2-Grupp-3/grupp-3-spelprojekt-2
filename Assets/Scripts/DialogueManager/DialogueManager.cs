@@ -137,44 +137,11 @@ public class DialogueManager : MonoBehaviour
 
         _currentStory.BindExternalFunction(
             "EditQuest",
-            (int ID) =>
+            (int ID, int step) =>
             {
-                questLog.UpdateQuest(ID);
+                questLog.UpdateQuest(ID, step);
             }
         );
-
-        //_currentStory.BindExternalFunction(
-        //    "FinishQuest",
-        //    (int questIndex) =>
-        //    {
-        //        questLog.CompleteQuest(questIndex);
-        //    }
-        //);
-//
-        //_currentStory.BindExternalFunction(
-        //    "InsertItem",
-        //    (int packageIndex) =>
-        //    {
-        //        if (packageIndex <= packageDatas.Count && packageDatas[packageIndex])
-        //            if (inventoryController.InsertNewItem(packageDatas[packageIndex]))
-        //            {
-        //                return true;
-        //            }
-        //            else
-        //                Debug.Log("Inventory full", this);
-        //        else
-        //            Debug.LogWarning("Item not found or out of index", this);
-//
-        //        return false;
-        //    }
-        //);
-//
-        //_currentStory.BindExternalFunction(
-        //    "DeliverPackage",
-        //    (string recipient) => inventoryController.mainGrid.RemoveItemsByRecipient(recipient)
-        //);
-//
-        //_currentStory.BindExternalFunction("SetQuest", () => { });
     }
 
     private void Update()

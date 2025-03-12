@@ -7,16 +7,17 @@ public class Quest : MonoBehaviour
 {
     public TMP_Text titleText;
     public TMP_Text infoText;
-    [HideInInspector] public QuestData questData;
+    [HideInInspector] public int ID;
     
-    public void Set()
+    public void Set(QuestData data)
     {
-        
+        ID = data.ID;
+        titleText.text = data.questTitle;
+        infoText.text = data.questText;
     }
 
-    public void Set(string updatedInfo, string updatedTitle)
+    public void UpdateText(QuestData data)
     {
-        titleText.text = updatedTitle;
-        infoText.text = updatedInfo;
+        infoText.text = data.questText;
     }
 }
