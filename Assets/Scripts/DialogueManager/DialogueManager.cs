@@ -75,6 +75,8 @@ public class DialogueManager : MonoBehaviour
 
     private DialogueQuestUpdate InkQuestIntegrationUpdater;
 
+    [HideInInspector]public List<TextAsset> dialogueQueue;
+    
     private void Awake()
     {
         if (_instance != null)
@@ -141,38 +143,38 @@ public class DialogueManager : MonoBehaviour
             }
         );
 
-        _currentStory.BindExternalFunction(
-            "FinishQuest",
-            (int questIndex) =>
-            {
-                questLog.CompleteQuest(questIndex);
-            }
-        );
-
-        _currentStory.BindExternalFunction(
-            "InsertItem",
-            (int packageIndex) =>
-            {
-                if (packageIndex <= packageDatas.Count && packageDatas[packageIndex])
-                    if (inventoryController.InsertNewItem(packageDatas[packageIndex]))
-                    {
-                        return true;
-                    }
-                    else
-                        Debug.Log("Inventory full", this);
-                else
-                    Debug.LogWarning("Item not found or out of index", this);
-
-                return false;
-            }
-        );
-
-        _currentStory.BindExternalFunction(
-            "DeliverPackage",
-            (string recipient) => inventoryController.mainGrid.RemoveItemsByRecipient(recipient)
-        );
-
-        _currentStory.BindExternalFunction("SetQuest", () => { });
+        //_currentStory.BindExternalFunction(
+        //    "FinishQuest",
+        //    (int questIndex) =>
+        //    {
+        //        questLog.CompleteQuest(questIndex);
+        //    }
+        //);
+//
+        //_currentStory.BindExternalFunction(
+        //    "InsertItem",
+        //    (int packageIndex) =>
+        //    {
+        //        if (packageIndex <= packageDatas.Count && packageDatas[packageIndex])
+        //            if (inventoryController.InsertNewItem(packageDatas[packageIndex]))
+        //            {
+        //                return true;
+        //            }
+        //            else
+        //                Debug.Log("Inventory full", this);
+        //        else
+        //            Debug.LogWarning("Item not found or out of index", this);
+//
+        //        return false;
+        //    }
+        //);
+//
+        //_currentStory.BindExternalFunction(
+        //    "DeliverPackage",
+        //    (string recipient) => inventoryController.mainGrid.RemoveItemsByRecipient(recipient)
+        //);
+//
+        //_currentStory.BindExternalFunction("SetQuest", () => { });
     }
 
     private void Update()
@@ -240,8 +242,18 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying = false;
         dialogueUI.SetActive(false);
         dialogueText.text = "";
+        MultipleDialogueStart();
     }
 
+    private void MultipleDialogueStart()
+    {
+        if(dialogueQueue.Count==0) return;
+        
+        EnterDialogueMode(dialogueQueue[0]);
+        dialogueQueue.Remove(dialogueQueue[0]);
+    }
+    
+    
     private void ContinueStory()
     {
         if (_currentStory.canContinue)

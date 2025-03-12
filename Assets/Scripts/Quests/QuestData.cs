@@ -17,13 +17,18 @@ public class QuestData : ScriptableObject
 
     public QuestTest quest = new QuestTest();
 
-    public void NextStep()
+    public bool NextStep()
     {
+        bool successful = false;
+        
         if (step < quest.steps.Count)
         {
             step++;
             questTitle = quest.questName;
+            successful = true;
         }
+
+        return successful;
     }
 }
 
