@@ -34,6 +34,7 @@ public class MinigameHandler : MonoBehaviour
 
     private void InstantiateMinigame(InputAction.CallbackContext context)
     {
+        if (!allowStartMinigame) return;
         Instantiate(minigameCanvasPrefab);
     }
 
