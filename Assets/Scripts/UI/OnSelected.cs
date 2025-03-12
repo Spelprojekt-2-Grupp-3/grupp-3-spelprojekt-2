@@ -7,7 +7,7 @@ using UnityEngine.EventSystems;
 
 public class OnSelected : MonoBehaviour, ISelectHandler
 {
-    public FMODUnity.EventReference selectSound;
+    public EventReference selectSound;
 
     public void OnSelect (BaseEventData eventData) 
     {

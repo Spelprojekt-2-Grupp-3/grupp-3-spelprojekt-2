@@ -5,7 +5,7 @@ using UnityEngine;
 public class QuestLog : MonoBehaviour
 {
     [SerializeField]
-    private GameObject questBox;
+    private GameObject questBoxPrefab;
 
     [SerializeField]
     private GameObject questContainer;
@@ -14,6 +14,7 @@ public class QuestLog : MonoBehaviour
     private GameObject questMenuTextObject;
     private List<QuestData> questList = new List<QuestData>();
     private List<QuestData> finishedQuests = new List<QuestData>();
+    private List<QuestData> toRemove = new List<QuestData>();
 
     public List<QuestData> questsData = new List<QuestData>();
 
@@ -45,49 +46,47 @@ public class QuestLog : MonoBehaviour
 
     public void UpdateQuest(int questID)
     {
+        
         foreach (var quest in questList)
         {
             if (quest.ID == questID)
             {
-                quest.NextStep();
+                if (!quest.NextStep())
+                    CompleteQuest(quest);
                 Debug.Log(quest.ID);
             }
         }
+        RemoveQuests();
     }
 
-    public void CompleteQuest(int questIndex)
+    private void CompleteQuest(QuestData quest)
     {
-       //if (questList.Contains(questList[questIndex]))
-       //{
-       //    siblingIndex--;
-       //    questList[questIndex].transform.SetAsLastSibling();
-       //    finishedQuests.Add(questList[questIndex]);
-       //}
+        Debug.Log("Completed quest:" + quest.ID);
+        finishedQuests.Add(quest);
+        toRemove.Add(quest);
     }
 
-    public void RemoveQuest(int questIndex)
+    private void RemoveQuests()
     {
-        //if (questList.Contains(questList[questIndex]))
-        //{
-        //    Destroy(questList[questIndex].gameObject);
-        //    questList.Remove(questList[questIndex]);
-//
-        //    siblingIndex--;
-        //}
-        //else
-        //    Debug.Log("Tried to remove a quest that wasn't in the quest-log");
+        if(toRemove==null) return;
+        foreach (var quest in toRemove)
+        {
+            questList.Remove(quest);
+        }
+        toRemove.Clear();
     }
 
-    public bool TestForQuest(string title, string description)
+    public bool TestForQuest(int ID, int step)
     {
        bool toReturn = false;
-       //foreach (var quest in questList)
-       //{
-       //    if (quest.titleText.text == title && quest.infoText.text == description)
-       //    {
-       //        toReturn = true;
-       //    }
-       //}
+       
+       foreach (var quest in questList)
+       {
+           if (quest.ID == ID && quest.step == step)
+           {
+               toReturn = true;
+           }
+       }
 
        return toReturn;
     }
