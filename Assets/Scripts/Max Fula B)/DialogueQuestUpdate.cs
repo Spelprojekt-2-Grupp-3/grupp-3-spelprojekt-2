@@ -15,10 +15,10 @@ public class DialogueQuestUpdate : MonoBehaviour
     {
         GameObject g = GameObject.Find(recipient + "Dialogue");
         Debug.Log(g);
-        g.GetComponent<DialogueTrigger>().questData = new QuestData()
-        {
-            questTitle = questName,
-            questText = questDescription,
-        };
+        //g.GetComponent<DialogueTrigger>().questData = new QuestData()
+        //{
+        //    questTitle = questName,
+        //    questText = questDescription,
+        //};
     }
 }
