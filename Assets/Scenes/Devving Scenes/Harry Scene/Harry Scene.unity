@@ -135,6 +135,81 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogueManager
       objectReference: {fileID: 0}
+    - target: {fileID: 3139799813174341439, guid: f67b1942a5244d943bbdf59098a13cc7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3139799813174341439, guid: f67b1942a5244d943bbdf59098a13cc7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3139799813174341439, guid: f67b1942a5244d943bbdf59098a13cc7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3139799813174341439, guid: f67b1942a5244d943bbdf59098a13cc7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3139799813174341439, guid: f67b1942a5244d943bbdf59098a13cc7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3139799813174341439, guid: f67b1942a5244d943bbdf59098a13cc7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3139799813174341439, guid: f67b1942a5244d943bbdf59098a13cc7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3139799813174341439, guid: f67b1942a5244d943bbdf59098a13cc7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: DialogueManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3139799813174341439, guid: f67b1942a5244d943bbdf59098a13cc7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3139799813174341439, guid: f67b1942a5244d943bbdf59098a13cc7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3159187288051400254, guid: f67b1942a5244d943bbdf59098a13cc7,
+        type: 3}
+      propertyPath: dialogueSound.Path
+      value: event:/Sound/SFX/VoiceNPC
+      objectReference: {fileID: 0}
+    - target: {fileID: 3159187288051400254, guid: f67b1942a5244d943bbdf59098a13cc7,
+        type: 3}
+      propertyPath: dialogueSound.Guid.Data1
+      value: -275653017
+      objectReference: {fileID: 0}
+    - target: {fileID: 3159187288051400254, guid: f67b1942a5244d943bbdf59098a13cc7,
+        type: 3}
+      propertyPath: dialogueSound.Guid.Data2
+      value: 1317806926
+      objectReference: {fileID: 0}
+    - target: {fileID: 3159187288051400254, guid: f67b1942a5244d943bbdf59098a13cc7,
+        type: 3}
+      propertyPath: dialogueSound.Guid.Data3
+      value: 1964889254
+      objectReference: {fileID: 0}
+    - target: {fileID: 3159187288051400254, guid: f67b1942a5244d943bbdf59098a13cc7,
+        type: 3}
+      propertyPath: dialogueSound.Guid.Data4
+      value: 82491761
+      objectReference: {fileID: 0}
     - target: {fileID: 5715069621187912541, guid: f67b1942a5244d943bbdf59098a13cc7,
         type: 3}
       propertyPath: m_IsActive
@@ -218,7 +293,23 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7081787117974074119, guid: f67b1942a5244d943bbdf59098a13cc7,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1026625887}
+    - targetCorrespondingSourceObject: {fileID: 4260591735553327846, guid: f67b1942a5244d943bbdf59098a13cc7,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1475960597}
+    - targetCorrespondingSourceObject: {fileID: 895661536755787654, guid: f67b1942a5244d943bbdf59098a13cc7,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1740172477}
+    - targetCorrespondingSourceObject: {fileID: 2832132248585925222, guid: f67b1942a5244d943bbdf59098a13cc7,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1486815757}
   m_SourcePrefab: {fileID: 100100000, guid: f67b1942a5244d943bbdf59098a13cc7, type: 3}
 --- !u!4 &50242819 stripped
 Transform:
@@ -588,6 +679,43 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1026625882 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7081787117974074119, guid: f67b1942a5244d943bbdf59098a13cc7,
+    type: 3}
+  m_PrefabInstance: {fileID: 50242818}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1026625887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026625882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 2116855810
+      Data2: 1186396337
+      Data3: 279828399
+      Data4: 619564290
+    Path: event:/Sound/SFX/Interface/Menu_MoveCursor
+  Event: 
+  EventPlayTrigger: 17
+  EventStopTrigger: 18
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &1393402302
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -666,6 +794,43 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e276a08a236d8e4d98865b0ea90db32, type: 3}
+--- !u!1 &1475960592 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4260591735553327846, guid: f67b1942a5244d943bbdf59098a13cc7,
+    type: 3}
+  m_PrefabInstance: {fileID: 50242818}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1475960597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1475960592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 2116855810
+      Data2: 1186396337
+      Data3: 279828399
+      Data4: 619564290
+    Path: event:/Sound/SFX/Interface/Menu_MoveCursor
+  Event: 
+  EventPlayTrigger: 17
+  EventStopTrigger: 18
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1486453094
 GameObject:
   m_ObjectHideFlags: 0
@@ -879,6 +1044,43 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1486815752 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2832132248585925222, guid: f67b1942a5244d943bbdf59098a13cc7,
+    type: 3}
+  m_PrefabInstance: {fileID: 50242818}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1486815757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486815752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 2116855810
+      Data2: 1186396337
+      Data3: 279828399
+      Data4: 619564290
+    Path: event:/Sound/SFX/Interface/Menu_MoveCursor
+  Event: 
+  EventPlayTrigger: 17
+  EventStopTrigger: 18
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1612345036
 GameObject:
   m_ObjectHideFlags: 0
@@ -997,6 +1199,43 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!1 &1740172472 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 895661536755787654, guid: f67b1942a5244d943bbdf59098a13cc7,
+    type: 3}
+  m_PrefabInstance: {fileID: 50242818}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1740172477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740172472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 2116855810
+      Data2: 1186396337
+      Data3: 279828399
+      Data4: 619564290
+    Path: event:/Sound/SFX/Interface/Menu_MoveCursor
+  Event: 
+  EventPlayTrigger: 17
+  EventStopTrigger: 18
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &6219407739258295048
 PrefabInstance:
   m_ObjectHideFlags: 0
