@@ -144,7 +144,11 @@ public class BoatMovement : MonoBehaviour
                 boostMeter = maxBoostDuration;
             }
         }
-        float boatSpeed = moveSpeed * 15 / maxSpeed;
+        float boatSpeed = moveSpeed * 10 / maxSpeed;
+        if (boatSpeed > 15)
+        {
+            boatSpeed = 15;
+        }
         boatSound.setParameterByName("Speed", boatSpeed);
         boatWaterSound.setParameterByName("Speed", boatSpeed);
     }
