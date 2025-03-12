@@ -131,6 +131,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void StopPlayer()
     {
+        Debug.Log("stopped player");
         move.Disable();
         moveCam.Disable();
         interact.Disable();
