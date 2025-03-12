@@ -1,4 +1,4 @@
-EXTERNAL EditQuest(int ID)
+EXTERNAL EditQuest(int ID, int step)
 
 -> VeraDialogue2
 
@@ -60,6 +60,6 @@ No problem! Let me know if there's anything else I could help you with. #Speaker
 
 Don't be a stranger! #Speaker:Vera
 
-~ EditQuest(4)
+~ EditQuest(4, 3)
 
 -> END
