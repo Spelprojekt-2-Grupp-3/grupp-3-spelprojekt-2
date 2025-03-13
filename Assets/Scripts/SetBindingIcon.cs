@@ -81,6 +81,9 @@ public class SetBindingIcon : MonoBehaviour
                     case "w": 
                         image.sprite = inputDevice.gasSprite;
                         return;
+                    case "e":
+                        image.sprite = inputDevice.interactSprite;
+                        return;
                     case "d": 
                     case "a": 
                         image.sprite = inputDevice.moveSprite;
