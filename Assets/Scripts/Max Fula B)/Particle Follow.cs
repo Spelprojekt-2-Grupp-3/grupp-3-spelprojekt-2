@@ -24,15 +24,14 @@ public class ParticleFollow : MonoBehaviour
     float scalarValue;
     private Quaternion defaultRotation;
 
-
-
-    [SerializeField][Tooltip("Clamps particle motion to never go below this world Y value")]
+    [SerializeField]
+    [Tooltip("Clamps particle motion to never go below this world Y value")]
     private float lowerLimit;
 
     // Update is called once per frame
     void Update()
     {
-        //We get the active movement speed of the player 
+        //We get the active movement speed of the player
         playerMovementSpeed = player.GetComponent<BoatMovement>().moveSpeed;
         if (playerMovementSpeed > 0.1f)
         {
@@ -45,9 +44,8 @@ public class ParticleFollow : MonoBehaviour
             particleSystem.startLifetime = defaultLifetime * (1.25f - scalarValue); //We do basically the same with lifetime but reversed. The faster you move the faster your particles die
 
             //Clamp particle movement
-            if (transform.position.y < lowerLimit)
+            if (transform.position.y < lowerLimit || transform.position.y > lowerLimit + 1.5f)
             {
-
                 transform.position = new Vector3(
                     transform.position.x,
                     lowerLimit,
