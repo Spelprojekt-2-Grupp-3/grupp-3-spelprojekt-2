@@ -37,8 +37,7 @@ public class CurrentInputIcons : ScriptableObject
         else if (sentInputDevice.currentControlScheme == "Gamepad")
         {
             deviceName = Gamepad.current.description.product;
-            Debug.Log(Gamepad.current.description.manufacturer);
-            if (deviceName.ToLower().Contains("dualsense"))
+            if (deviceName.ToLower().Contains("dualsense") || Gamepad.current.description.manufacturer.ToLower().Contains("sony"))
             {
                 currentInputDevice = playstation;
             }
