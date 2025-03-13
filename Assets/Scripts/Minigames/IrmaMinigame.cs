@@ -31,7 +31,6 @@ public class IrmaMinigame : Minigames
         rightStick.Enable();
         submit = playerControls.UI.Submit;
         submit.Enable();
-        Events.updateIcons.AddListener(UpdateIcons);
     }
 
     private void OnDisable()
@@ -39,7 +38,6 @@ public class IrmaMinigame : Minigames
         leftStick.Disable();
         rightStick.Disable();
         submit.Disable();
-        Events.updateIcons.RemoveListener(UpdateIcons);
     }
 
     private void Awake()

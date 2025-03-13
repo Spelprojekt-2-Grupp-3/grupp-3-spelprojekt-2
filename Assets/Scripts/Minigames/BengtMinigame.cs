@@ -31,14 +31,12 @@ public class BengtMinigame : Minigames
     private void OnEnable()
     {
         camera = Camera.main;
-        Events.updateIcons.AddListener(UpdateIcons);
         minigameButtonSouth = playerControls.UI.Submit;
         minigameButtonSouth.Enable();
     }
 
     private void OnDisable()
     {
-        Events.updateIcons.RemoveListener(UpdateIcons);
         minigameButtonSouth.Disable();
     }
 
@@ -69,7 +67,6 @@ public class BengtMinigame : Minigames
         iconSprite = handle.GetComponent<Image>();
         goal = sliderInst.transform.Find("Goal").gameObject;
         RandomizeGoalPosition();
-        UpdateIcons();
         Events.stopBoat?.Invoke();
     }
 
@@ -134,10 +131,5 @@ public class BengtMinigame : Minigames
                 increasing = true;
             }
         }
-    }
-
-    private void UpdateIcons()
-    {
-        iconSprite.sprite = inputIcons.currentInputDevice.buttonSouth;
     }
 }

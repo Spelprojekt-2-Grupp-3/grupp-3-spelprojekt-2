@@ -16,6 +16,11 @@ public class SetBindingIcon : MonoBehaviour
         Events.setIcons.AddListener(SetIcon);
     }
 
+    private void OnDisable()
+    {
+        Events.setIcons.RemoveListener(SetIcon);
+    }
+
     private void SetIcon(CurrentInputDevice inputDevice, PlayerInput input)
     {
         var deviceLayoutName = default(string);

@@ -36,7 +36,6 @@ public class KrakenMinigame : Minigames
 
     private void OnEnable()
     {
-        Events.updateIcons.AddListener(UpdateIcons);
         minigameButtonWest = playerControls.Boat.MinigameButtonWest;
         minigameButtonWest.Enable();
         minigameButtonEast = playerControls.Boat.MinigameButtonEast;
@@ -45,7 +44,6 @@ public class KrakenMinigame : Minigames
 
     private void OnDisable()
     {
-        Events.updateIcons.RemoveListener(UpdateIcons);
         minigameButtonWest.Disable();
         minigameButtonEast.Disable();
     }

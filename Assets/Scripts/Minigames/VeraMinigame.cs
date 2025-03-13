@@ -32,8 +32,6 @@ public class VeraMinigame : Minigames
         submit.Enable();
         leftJoyStick = playerControls.UI.Navigate;
         leftJoyStick.Enable();
-        Events.updateIcons.AddListener(UpdateIcons);
-        
         EventSystem.current.firstSelectedGameObject = transform.Find("Water").gameObject;
     }
 
@@ -41,7 +39,6 @@ public class VeraMinigame : Minigames
     {
         submit.Disable();
         leftJoyStick.Disable();
-        Events.updateIcons.RemoveListener(UpdateIcons);
     }
 
     private void Start()

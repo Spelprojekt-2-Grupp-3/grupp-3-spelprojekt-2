@@ -37,6 +37,7 @@ public class CurrentInputIcons : ScriptableObject
         else if (sentInputDevice.currentControlScheme == "Gamepad")
         {
             deviceName = Gamepad.current.description.product;
+            Debug.Log(deviceName);
             if (deviceName.ToLower().Contains("dualsense"))
             {
                 currentInputDevice = playstation;
@@ -47,7 +48,6 @@ public class CurrentInputIcons : ScriptableObject
                 Debug.Log("Prob xbox");
             }
         }
-        Events.updateIcons?.Invoke();
         Events.setIcons.Invoke(currentInputDevice, sentInputDevice);
     }
 }

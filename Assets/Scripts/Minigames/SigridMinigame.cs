@@ -21,14 +21,12 @@ public class SigridMinigame : Minigames
 
     private void OnEnable()
     {
-        Events.updateIcons.AddListener(UpdateIcons);
         submit = playerControls.UI.Submit;
         submit.Enable();
     }
 
     private void OnDisable()
     {
-        Events.updateIcons.AddListener(UpdateIcons);
         submit.Disable();
     }
 

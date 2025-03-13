@@ -34,7 +34,6 @@ public class UlrichMinigme : Minigames
         submit.Enable();
         buttonWest.Enable();
         Events.checkInputEvent.AddListener(SelectionHandler);
-        Events.updateIcons.AddListener(UpdateIcons);
     }
 
     private void OnDisable()
@@ -42,7 +41,6 @@ public class UlrichMinigme : Minigames
         submit.Disable();
         buttonWest.Disable();
         Events.checkInputEvent.RemoveListener(SelectionHandler);
-        Events.updateIcons.RemoveListener(UpdateIcons);
     }
 
     private void Awake()
