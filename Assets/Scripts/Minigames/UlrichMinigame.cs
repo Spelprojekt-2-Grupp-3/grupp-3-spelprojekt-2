@@ -30,7 +30,7 @@ public class UlrichMinigme : Minigames
     private void OnEnable()
     {
         submit = playerControls.UI.Submit;
-        buttonWest = playerControls.Boat.MinigameButtonWest;
+        buttonWest = playerControls.UI.ButtonWest;
         submit.Enable();
         buttonWest.Enable();
         Events.checkInputEvent.AddListener(SelectionHandler);
@@ -115,8 +115,11 @@ public class UlrichMinigme : Minigames
             for (int i = 0; i < correctOrder.transform.childCount; i++)
             {
                 var name = correctOrder.transform.GetChild(i).name;
-                if (incorrectOrder.transform.Find(name).transform.localPosition.x !=
-                    correctOrder.transform.GetChild(i).transform.localPosition.x)
+
+                
+            
+                if (Mathf.RoundToInt(incorrectOrder.transform.Find(name).transform.localPosition.x) !=
+                    Mathf.RoundToInt(correctOrder.transform.Find(name).transform.localPosition.x))
                 {
                     return;
                 }

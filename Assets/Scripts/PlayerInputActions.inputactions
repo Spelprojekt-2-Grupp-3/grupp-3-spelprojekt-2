@@ -816,6 +816,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "ButtonWest",
+                    "type": "Button",
+                    "id": "b918fcaf-96e9-49b1-a8b1-d34f62f924b1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1500,6 +1509,17 @@
                     "action": "NavigateLeft",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "9fe581ce-db93-4376-8769-845d0fc8f03c",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ButtonWest",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

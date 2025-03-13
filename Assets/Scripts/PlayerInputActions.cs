@@ -838,6 +838,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ButtonWest"",
+                    ""type"": ""Button"",
+                    ""id"": ""b918fcaf-96e9-49b1-a8b1-d34f62f924b1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -1522,6 +1531,17 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""NavigateLeft"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9fe581ce-db93-4376-8769-845d0fc8f03c"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ButtonWest"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -1626,6 +1646,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_UI_MenuLeft = m_UI.FindAction("MenuLeft", throwIfNotFound: true);
         m_UI_NavigateRight = m_UI.FindAction("NavigateRight", throwIfNotFound: true);
         m_UI_NavigateLeft = m_UI.FindAction("NavigateLeft", throwIfNotFound: true);
+        m_UI_ButtonWest = m_UI.FindAction("ButtonWest", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1885,6 +1906,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_UI_MenuLeft;
     private readonly InputAction m_UI_NavigateRight;
     private readonly InputAction m_UI_NavigateLeft;
+    private readonly InputAction m_UI_ButtonWest;
     public struct UIActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -1907,6 +1929,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @MenuLeft => m_Wrapper.m_UI_MenuLeft;
         public InputAction @NavigateRight => m_Wrapper.m_UI_NavigateRight;
         public InputAction @NavigateLeft => m_Wrapper.m_UI_NavigateLeft;
+        public InputAction @ButtonWest => m_Wrapper.m_UI_ButtonWest;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1970,6 +1993,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @NavigateLeft.started += instance.OnNavigateLeft;
             @NavigateLeft.performed += instance.OnNavigateLeft;
             @NavigateLeft.canceled += instance.OnNavigateLeft;
+            @ButtonWest.started += instance.OnButtonWest;
+            @ButtonWest.performed += instance.OnButtonWest;
+            @ButtonWest.canceled += instance.OnButtonWest;
         }
 
         private void UnregisterCallbacks(IUIActions instance)
@@ -2028,6 +2054,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @NavigateLeft.started -= instance.OnNavigateLeft;
             @NavigateLeft.performed -= instance.OnNavigateLeft;
             @NavigateLeft.canceled -= instance.OnNavigateLeft;
+            @ButtonWest.started -= instance.OnButtonWest;
+            @ButtonWest.performed -= instance.OnButtonWest;
+            @ButtonWest.canceled -= instance.OnButtonWest;
         }
 
         public void RemoveCallbacks(IUIActions instance)
@@ -2129,5 +2158,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnMenuLeft(InputAction.CallbackContext context);
         void OnNavigateRight(InputAction.CallbackContext context);
         void OnNavigateLeft(InputAction.CallbackContext context);
+        void OnButtonWest(InputAction.CallbackContext context);
     }
 }
