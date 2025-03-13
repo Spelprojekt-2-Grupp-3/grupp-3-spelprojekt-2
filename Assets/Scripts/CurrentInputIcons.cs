@@ -13,7 +13,7 @@ public class CurrentInputIcons : ScriptableObject
     public CurrentInputDevice playstation = new CurrentInputDevice();
     public CurrentInputDevice xbox = new CurrentInputDevice();
     public CurrentInputDevice keyboard = new CurrentInputDevice();
-
+    
     private void OnEnable()
     {
         Events.checkInputEvent.AddListener(ChangeInputDevice);
@@ -32,7 +32,6 @@ public class CurrentInputIcons : ScriptableObject
         {
             deviceName = "Keyboard";
             currentInputDevice = keyboard;
-            Debug.Log(deviceName);
         }
         
         else if (sentInputDevice.currentControlScheme == "Gamepad")
@@ -41,7 +40,6 @@ public class CurrentInputIcons : ScriptableObject
             if (deviceName.ToLower().Contains("dualsense"))
             {
                 currentInputDevice = playstation;
-                Debug.Log(deviceName);
             }
             else
             {
@@ -50,6 +48,7 @@ public class CurrentInputIcons : ScriptableObject
             }
         }
         Events.updateIcons?.Invoke();
+        Events.setIcons.Invoke(currentInputDevice, sentInputDevice);
     }
 }
 
@@ -66,4 +65,13 @@ public class CurrentInputDevice
     public Sprite buttonNorth;
     public Sprite buttonWest;
     public Sprite buttonEast;
+    public Sprite startSprite;
+    public Sprite selectSprite;
+    public Sprite leftTriggerSprite;
+    public Sprite rightTriggerSprite;
+    public Sprite leftShoulderSprite;
+    public Sprite rightShoulderSprite;
+    public Sprite dpadSprite;
+    public Sprite leftStickSprite;
+    public Sprite rightStickSprite;    
 }

@@ -199,7 +199,7 @@ public class RebindActionUINew : MonoBehaviour
         {
             var bindingIndex = action.bindings.IndexOf(x => x.id.ToString() == m_BindingId);
             if (bindingIndex != -1)
-                displayString = action.GetBindingDisplayString(bindingIndex, out deviceLayoutName, out controlPath, displayStringOptions);
+                displayString = action.GetBindingDisplayString(0, out deviceLayoutName, out controlPath, displayStringOptions);
         }
 
         // Set on label (if any).

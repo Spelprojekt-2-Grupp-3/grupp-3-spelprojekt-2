@@ -20,6 +20,7 @@ public class Events : MonoBehaviour
     public static CheckInputEvent checkInputEvent = new CheckInputEvent();
     public static UnityEvent updateBoostMeter = new UnityEvent();
     public static UnityEvent BengtMinigameHit = new UnityEvent();
+    public static UnityEvent<CurrentInputDevice, PlayerInput> setIcons = new UnityEvent<CurrentInputDevice, PlayerInput>();
 
     private void OnEnable()
     {
