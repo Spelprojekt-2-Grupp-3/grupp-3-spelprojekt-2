@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 9050426063295358467}
   - component: {fileID: 5819704262042182328}
   - component: {fileID: 5575108364243560031}
+  - component: {fileID: 8273413877025467445}
   m_Layer: 0
   m_Name: Interact
   m_TagString: Untagged
@@ -190,6 +191,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8273413877025467445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111301640902906791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3be472479889f942aea1741b784f228, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Action: {fileID: -3041630986963086799, guid: 1f866763a0b1b7e43ba6a4e833c4fed9,
+    type: 3}
 --- !u!1 &4032758326855707745
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,6 +352,7 @@ GameObject:
   - component: {fileID: 8664500665043892185}
   - component: {fileID: 6899409235277335171}
   - component: {fileID: 2242634852948484545}
+  - component: {fileID: 124950751485769989}
   m_Layer: 0
   m_Name: Reverse
   m_TagString: Untagged
@@ -402,6 +418,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &124950751485769989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4347501737243966597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3be472479889f942aea1741b784f228, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Action: {fileID: -5520085360483208776, guid: 1f866763a0b1b7e43ba6a4e833c4fed9,
+    type: 3}
 --- !u!1 &4511860480835138998
 GameObject:
   m_ObjectHideFlags: 0
@@ -547,6 +577,7 @@ GameObject:
   - component: {fileID: 2702630575965318624}
   - component: {fileID: 8112006234270759319}
   - component: {fileID: 8160151602082539471}
+  - component: {fileID: 1347915734942423825}
   m_Layer: 0
   m_Name: Steer
   m_TagString: Untagged
@@ -612,6 +643,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1347915734942423825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4690446059364018492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3be472479889f942aea1741b784f228, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Action: {fileID: -8891947229002662070, guid: 1f866763a0b1b7e43ba6a4e833c4fed9,
+    type: 3}
 --- !u!1 &5656704314856550331
 GameObject:
   m_ObjectHideFlags: 0
@@ -621,7 +666,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9083113802874823265}
-  - component: {fileID: 2185525550222414246}
   m_Layer: 0
   m_Name: Controls
   m_TagString: Untagged
@@ -653,24 +697,6 @@ RectTransform:
   m_AnchoredPosition: {x: -22, y: -282.25}
   m_SizeDelta: {x: 1876, y: 515.5}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2185525550222414246
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5656704314856550331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17fb13461267dd74fa23f6f310ed30d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveControls: {fileID: 4690446059364018492}
-  interactControls: {fileID: 2111301640902906791}
-  gasControls: {fileID: 5850989366824243774}
-  reverseControls: {fileID: 0}
-  inputIcons: {fileID: 11400000, guid: 7f7fd9995c4435f488f7df319f651fb7, type: 2}
-  interactIcons: []
 --- !u!1 &5850989366824243774
 GameObject:
   m_ObjectHideFlags: 0
@@ -682,6 +708,7 @@ GameObject:
   - component: {fileID: 6459483616770084191}
   - component: {fileID: 7846158447492066377}
   - component: {fileID: 8536707910933918392}
+  - component: {fileID: 2585587345381600396}
   m_Layer: 0
   m_Name: Gas
   m_TagString: Untagged
@@ -747,6 +774,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2585587345381600396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5850989366824243774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3be472479889f942aea1741b784f228, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Action: {fileID: -553405992795321234, guid: 1f866763a0b1b7e43ba6a4e833c4fed9,
+    type: 3}
 --- !u!1 &7156519499536526102
 GameObject:
   m_ObjectHideFlags: 0

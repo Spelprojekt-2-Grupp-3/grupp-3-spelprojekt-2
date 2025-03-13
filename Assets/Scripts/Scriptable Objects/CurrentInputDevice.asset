@@ -13,17 +13,26 @@ MonoBehaviour:
   m_Name: CurrentInputDevice
   m_EditorClassIdentifier: 
   currentInputDevice:
-    moveSprite: {fileID: 1857607744, guid: 042e908dff1e4904787f23d31d37d0e4, type: 3}
-    moveCameraSprite: {fileID: 760263726, guid: 042e908dff1e4904787f23d31d37d0e4,
+    moveSprite: {fileID: 21300000, guid: 131fed28ec1fe0f4e8fb802987c286cb, type: 3}
+    moveCameraSprite: {fileID: -1687450975, guid: 1fa35af712aa3c546b7303ceeeeb5748,
       type: 3}
-    interactSprite: {fileID: 1962534682, guid: 042e908dff1e4904787f23d31d37d0e4, type: 3}
-    gasSprite: {fileID: -767650885, guid: 042e908dff1e4904787f23d31d37d0e4, type: 3}
-    boostSprite: {fileID: 737565928, guid: 042e908dff1e4904787f23d31d37d0e4, type: 3}
-    reverseSprite: {fileID: -748458646, guid: 042e908dff1e4904787f23d31d37d0e4, type: 3}
-    buttonSouth: {fileID: 1962534682, guid: 042e908dff1e4904787f23d31d37d0e4, type: 3}
-    buttonNorth: {fileID: -1991309424, guid: 042e908dff1e4904787f23d31d37d0e4, type: 3}
-    buttonWest: {fileID: -2064701903, guid: 042e908dff1e4904787f23d31d37d0e4, type: 3}
-    buttonEast: {fileID: 273837688, guid: 042e908dff1e4904787f23d31d37d0e4, type: 3}
+    interactSprite: {fileID: 1172463180, guid: 10466f0308243cc4cb6b2ee9883e6d2c, type: 3}
+    gasSprite: {fileID: 1963317846, guid: 10466f0308243cc4cb6b2ee9883e6d2c, type: 3}
+    boostSprite: {fileID: -1825204540, guid: dd0ee7f80c62b1e4ba54fc19b636ce6a, type: 3}
+    reverseSprite: {fileID: -1807836684, guid: 10466f0308243cc4cb6b2ee9883e6d2c, type: 3}
+    buttonSouth: {fileID: -1807836684, guid: 10466f0308243cc4cb6b2ee9883e6d2c, type: 3}
+    buttonNorth: {fileID: 1963317846, guid: 10466f0308243cc4cb6b2ee9883e6d2c, type: 3}
+    buttonWest: {fileID: -1023558987, guid: 10466f0308243cc4cb6b2ee9883e6d2c, type: 3}
+    buttonEast: {fileID: 1870959739, guid: 10466f0308243cc4cb6b2ee9883e6d2c, type: 3}
+    startSprite: {fileID: 0}
+    selectSprite: {fileID: 0}
+    leftTriggerSprite: {fileID: 0}
+    rightTriggerSprite: {fileID: 0}
+    leftShoulderSprite: {fileID: 0}
+    rightShoulderSprite: {fileID: 0}
+    dpadSprite: {fileID: 0}
+    leftStickSprite: {fileID: 0}
+    rightStickSprite: {fileID: 0}
   playstation:
     moveSprite: {fileID: 1857607744, guid: 042e908dff1e4904787f23d31d37d0e4, type: 3}
     moveCameraSprite: {fileID: 760263726, guid: 042e908dff1e4904787f23d31d37d0e4,
@@ -36,6 +45,19 @@ MonoBehaviour:
     buttonNorth: {fileID: -1991309424, guid: 042e908dff1e4904787f23d31d37d0e4, type: 3}
     buttonWest: {fileID: -2064701903, guid: 042e908dff1e4904787f23d31d37d0e4, type: 3}
     buttonEast: {fileID: 273837688, guid: 042e908dff1e4904787f23d31d37d0e4, type: 3}
+    startSprite: {fileID: 0}
+    selectSprite: {fileID: 0}
+    leftTriggerSprite: {fileID: -748458646, guid: 042e908dff1e4904787f23d31d37d0e4,
+      type: 3}
+    rightTriggerSprite: {fileID: -767650885, guid: 042e908dff1e4904787f23d31d37d0e4,
+      type: 3}
+    leftShoulderSprite: {fileID: 310718700, guid: 042e908dff1e4904787f23d31d37d0e4,
+      type: 3}
+    rightShoulderSprite: {fileID: 737565928, guid: 042e908dff1e4904787f23d31d37d0e4,
+      type: 3}
+    dpadSprite: {fileID: 0}
+    leftStickSprite: {fileID: 0}
+    rightStickSprite: {fileID: 0}
   xbox:
     moveSprite: {fileID: -447451983, guid: 279e382b872079c4f9c063611697ed68, type: 3}
     moveCameraSprite: {fileID: -640039223, guid: 279e382b872079c4f9c063611697ed68,
@@ -49,6 +71,15 @@ MonoBehaviour:
     buttonNorth: {fileID: 99494007, guid: 279e382b872079c4f9c063611697ed68, type: 3}
     buttonWest: {fileID: -1128214565, guid: 279e382b872079c4f9c063611697ed68, type: 3}
     buttonEast: {fileID: 1328712246, guid: 279e382b872079c4f9c063611697ed68, type: 3}
+    startSprite: {fileID: 0}
+    selectSprite: {fileID: 0}
+    leftTriggerSprite: {fileID: 0}
+    rightTriggerSprite: {fileID: 0}
+    leftShoulderSprite: {fileID: 0}
+    rightShoulderSprite: {fileID: 0}
+    dpadSprite: {fileID: 0}
+    leftStickSprite: {fileID: 0}
+    rightStickSprite: {fileID: 0}
   keyboard:
     moveSprite: {fileID: 21300000, guid: 131fed28ec1fe0f4e8fb802987c286cb, type: 3}
     moveCameraSprite: {fileID: -1687450975, guid: 1fa35af712aa3c546b7303ceeeeb5748,
@@ -61,3 +92,12 @@ MonoBehaviour:
     buttonNorth: {fileID: 1963317846, guid: 10466f0308243cc4cb6b2ee9883e6d2c, type: 3}
     buttonWest: {fileID: -1023558987, guid: 10466f0308243cc4cb6b2ee9883e6d2c, type: 3}
     buttonEast: {fileID: 1870959739, guid: 10466f0308243cc4cb6b2ee9883e6d2c, type: 3}
+    startSprite: {fileID: 0}
+    selectSprite: {fileID: 0}
+    leftTriggerSprite: {fileID: 0}
+    rightTriggerSprite: {fileID: 0}
+    leftShoulderSprite: {fileID: 0}
+    rightShoulderSprite: {fileID: 0}
+    dpadSprite: {fileID: 0}
+    leftStickSprite: {fileID: 0}
+    rightStickSprite: {fileID: 0}
