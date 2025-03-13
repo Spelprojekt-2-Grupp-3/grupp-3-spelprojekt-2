@@ -103,6 +103,9 @@ public class SetBindingIcon : MonoBehaviour
             {
                 switch (controlPath)
                 {
+                    case "e":
+                        image.sprite = inputDevice.interactSprite;
+                        return;
                     case "s":
                         image.sprite = inputDevice.buttonSouth;
                         return;

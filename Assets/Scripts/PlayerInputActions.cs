@@ -244,7 +244,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""05f6913d-c316-48b2-a6bb-e225f14c7960"",
-                    ""path"": ""<Mouse>/leftButton"",
+                    ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Keyboard&Mouse"",
@@ -349,6 +349,15 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""700bcca6-70ac-40ad-8097-b7deee29fdd3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -446,7 +455,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/rightTrigger"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Gamepad"",
+                    ""groups"": ""Gamepad;Joystick"",
                     ""action"": ""Gas"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -668,6 +677,17 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard&Mouse"",
                     ""action"": ""Boost"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a646953a-f0f3-4315-b536-f223805d3315"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad;Joystick"",
+                    ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1626,6 +1646,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_Boat_MinigameButtonEast = m_Boat.FindAction("MinigameButtonEast", throwIfNotFound: true);
         m_Boat_MinigameButtonNorth = m_Boat.FindAction("MinigameButtonNorth", throwIfNotFound: true);
         m_Boat_MinigameButtonSouth = m_Boat.FindAction("MinigameButtonSouth", throwIfNotFound: true);
+        m_Boat_Interact = m_Boat.FindAction("Interact", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1787,6 +1808,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Boat_MinigameButtonEast;
     private readonly InputAction m_Boat_MinigameButtonNorth;
     private readonly InputAction m_Boat_MinigameButtonSouth;
+    private readonly InputAction m_Boat_Interact;
     public struct BoatActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -1800,6 +1822,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @MinigameButtonEast => m_Wrapper.m_Boat_MinigameButtonEast;
         public InputAction @MinigameButtonNorth => m_Wrapper.m_Boat_MinigameButtonNorth;
         public InputAction @MinigameButtonSouth => m_Wrapper.m_Boat_MinigameButtonSouth;
+        public InputAction @Interact => m_Wrapper.m_Boat_Interact;
         public InputActionMap Get() { return m_Wrapper.m_Boat; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1836,6 +1859,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @MinigameButtonSouth.started += instance.OnMinigameButtonSouth;
             @MinigameButtonSouth.performed += instance.OnMinigameButtonSouth;
             @MinigameButtonSouth.canceled += instance.OnMinigameButtonSouth;
+            @Interact.started += instance.OnInteract;
+            @Interact.performed += instance.OnInteract;
+            @Interact.canceled += instance.OnInteract;
         }
 
         private void UnregisterCallbacks(IBoatActions instance)
@@ -1867,6 +1893,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @MinigameButtonSouth.started -= instance.OnMinigameButtonSouth;
             @MinigameButtonSouth.performed -= instance.OnMinigameButtonSouth;
             @MinigameButtonSouth.canceled -= instance.OnMinigameButtonSouth;
+            @Interact.started -= instance.OnInteract;
+            @Interact.performed -= instance.OnInteract;
+            @Interact.canceled -= instance.OnInteract;
         }
 
         public void RemoveCallbacks(IBoatActions instance)
@@ -2137,6 +2166,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnMinigameButtonEast(InputAction.CallbackContext context);
         void OnMinigameButtonNorth(InputAction.CallbackContext context);
         void OnMinigameButtonSouth(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
