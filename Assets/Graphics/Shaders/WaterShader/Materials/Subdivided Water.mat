@@ -125,11 +125,11 @@ Material:
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
     - _Float: 0
-    - _Foam_Blend: 0.101
+    - _Foam_Blend: 0.009
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _HorizonDistance: 10
+    - _HorizonDistance: 30
     - _Intersection_Foam_Blend: 0.368
     - _Intersection_Foam_Cutoff: 1.57
     - _Intersection_Foam_Depth: 2.6
@@ -174,12 +174,12 @@ Material:
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DeepColour: {r: 0.2745098, g: 0.46217245, b: 0.77254903, a: 1}
+    - _DeepColour: {r: 0.14217694, g: 0.30654347, b: 0.4245283, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FoamColour: {r: 1, g: 1, b: 1, a: 0}
-    - _HorizonColour: {r: 1, g: 0.55607474, b: 0, a: 0}
+    - _HorizonColour: {r: 1, g: 0.6752494, b: 0.3254717, a: 0}
     - _Intersection_Foam_Colour: {r: 1, g: 1, b: 1, a: 0}
-    - _ShallowColour: {r: 0.34376112, g: 0.68953353, b: 0.9716981, a: 1}
+    - _ShallowColour: {r: 0.35617658, g: 0.63763803, b: 0.8679245, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _Specular_Colour: {r: 1, g: 1, b: 1, a: 0.1764706}
     - _Wave_Directions: {r: 0, g: 0.5, b: 1, a: 0.2}
