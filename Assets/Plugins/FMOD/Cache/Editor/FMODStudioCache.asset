@@ -492,10 +492,10 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/Banks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638774269107025316
+  lastModified: 638774275610099376
   FileSizes:
   - Name: 
-    Value: 3062
+    Value: 3016
   Exists: 1
 --- !u!114 &-4055353369233749306
 MonoBehaviour:
@@ -1255,7 +1255,7 @@ MonoBehaviour:
   - {fileID: 8182886605034168985}
   StringsBanks:
   - {fileID: -4265464848103356742}
-  cacheTime: 638774269107025316
+  cacheTime: 638774275610099376
   cacheVersion: 131622
 --- !u!114 &459774145964946755
 MonoBehaviour:
@@ -1670,6 +1670,30 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &3059679636739871165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_FullOcean/Fade
+  m_EditorClassIdentifier: 
+  Name: Fade
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3813424906
+    data2: 1999398737
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &3107178793023101214
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1993,34 +2017,10 @@ MonoBehaviour:
   - {fileID: 2633292186352102988}
   - {fileID: 7155238255842091075}
   - {fileID: 4484955660969178201}
-  - {fileID: 5503345112169115755}
+  - {fileID: 3059679636739871165}
   MinDistance: 1
   MaxDistance: 20
   Length: 280284
---- !u!114 &5503345112169115755
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Music_FullOcean/FadeOut
-  m_EditorClassIdentifier: 
-  Name: FadeOut
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 1405755521
-    data2: 2591893151
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
 --- !u!114 &5655193152269694373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2502,7 +2502,7 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/Banks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638774269106965253
+  lastModified: 638774275610049323
   FileSizes: []
   Exists: 1
 --- !u!114 &8247415871218049302
