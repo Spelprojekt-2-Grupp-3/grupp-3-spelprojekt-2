@@ -152,14 +152,14 @@ MonoBehaviour:
     Data4: -1800962889
   Banks:
   - {fileID: 8182886605034168985}
-  IsStream: 0
+  IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
   - {fileID: 3163526644147488979}
   MinDistance: 1
   MaxDistance: 20
-  Length: 70000
+  Length: 57600
 --- !u!114 &-6989165873705748848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -492,10 +492,10 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/Banks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638774126439353625
+  lastModified: 638774269107025316
   FileSizes:
   - Name: 
-    Value: 3020
+    Value: 3062
   Exists: 1
 --- !u!114 &-4055353369233749306
 MonoBehaviour:
@@ -1174,6 +1174,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 300
+--- !u!114 &-32430702327052921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_Bengt/Fade
+  m_EditorClassIdentifier: 
+  Name: Fade
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3813424906
+    data2: 1999398737
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1225,12 +1249,13 @@ MonoBehaviour:
   - {fileID: 8073522480153099546}
   - {fileID: 7394008082403591485}
   - {fileID: 1341928315392115948}
-  EditorParameters: []
+  EditorParameters:
+  - {fileID: 4258373662463232916}
   MasterBanks:
   - {fileID: 8182886605034168985}
   StringsBanks:
   - {fileID: -4265464848103356742}
-  cacheTime: 638774126439353625
+  cacheTime: 638774269107025316
   cacheVersion: 131622
 --- !u!114 &459774145964946755
 MonoBehaviour:
@@ -1360,14 +1385,15 @@ MonoBehaviour:
     Data4: -1499934461
   Banks:
   - {fileID: 8182886605034168985}
-  IsStream: 0
+  IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
   - {fileID: 6543101404860579153}
+  - {fileID: 8484243242885721635}
   MinDistance: 1
   MaxDistance: 20
-  Length: 70000
+  Length: 76800
 --- !u!114 &1290660628471242611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1784,6 +1810,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1420
+--- !u!114 &4258373662463232916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Fade
+  m_EditorClassIdentifier: 
+  Name: Fade
+  StudioPath: parameter:/Fade
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3813424906
+    data2: 1999398737
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &4484955660969178201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1860,6 +1910,7 @@ MonoBehaviour:
   IsOneShot: 0
   Parameters:
   - {fileID: -2825553941649141065}
+  - {fileID: -32430702327052921}
   MinDistance: 1
   MaxDistance: 20
   Length: 70034
@@ -2451,7 +2502,7 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/Banks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638774126439343664
+  lastModified: 638774269106965253
   FileSizes: []
   Exists: 1
 --- !u!114 &8247415871218049302
@@ -2510,6 +2561,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &8484243242885721635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music_Sigrid/Fade
+  m_EditorClassIdentifier: 
+  Name: Fade
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3813424906
+    data2: 1999398737
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &8695176056675701637
 MonoBehaviour:
   m_ObjectHideFlags: 0

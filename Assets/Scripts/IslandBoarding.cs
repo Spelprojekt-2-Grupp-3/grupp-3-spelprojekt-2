@@ -17,10 +17,12 @@ public class IslandBoarding : MonoBehaviour
     private bool allowIslandBoard;
     private bool allowBoatBoard;
     public FMODUnity.EventReference islandTheme;
+    public FMODUnity.EventReference ambiance;
 
     private MusicManager musicManager;
 
     private FMOD.Studio.EventInstance islandThemeInstance;
+    private FMOD.Studio.EventInstance ambianceInstance;
     private FMOD.Studio.EventInstance musicOceanInstance;
 
     private void Start()
@@ -31,6 +33,7 @@ public class IslandBoarding : MonoBehaviour
     private void Awake()
     {
         islandThemeInstance = FMODUnity.RuntimeManager.CreateInstance(islandTheme);
+        ambianceInstance = FMODUnity.RuntimeManager.CreateInstance(ambiance);
         playerControls = new PlayerInputActions();
         allowIslandBoard = false;
         allowBoatBoard = false;
@@ -49,6 +52,7 @@ public class IslandBoarding : MonoBehaviour
     void Update()
     {
         islandThemeInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+        ambianceInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
     }
 
     private void OnTriggerEnter(Collider other)
@@ -99,6 +103,7 @@ public class IslandBoarding : MonoBehaviour
     public void BoardIsland()
     {
         islandThemeInstance.start();
+        ambianceInstance.start();
         Events.stopBoat?.Invoke();
         playerCharacter.transform.position = playerBoardingLocation.position;
         boatCamera.SetActive(false);
@@ -112,6 +117,7 @@ public class IslandBoarding : MonoBehaviour
     public void BoardBoat()
     {
         islandThemeInstance.stop(0);
+        ambianceInstance.stop(0);
         Events.startBoat?.Invoke();
         musicOceanInstance.start();
         playerCharacter.SetActive(false);
