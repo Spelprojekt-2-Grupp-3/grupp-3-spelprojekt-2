@@ -10904,14 +10904,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   acceleration: 100
-  reverseAcceleration: 75
+  reverseAcceleration: 100
   maxBoostDuration: 3
   boostRefillPerSecond: 0.2
   rotationSpeed: 1.5
   maxSpeed: 350
   maxReverseSpeed: -150
   sideTiltAngle: 15
-  frontTiltAngle: 7
+  frontTiltAngle: 3
   tiltSpeed: 3
   boatSoundEvent:
     Guid:
