@@ -5,9 +5,7 @@ using UnityEngine;
 
 public class ParticleFollow : MonoBehaviour
 {
-    public Vector3 offset;
     public GameObject player;
-    public Transform playerTransform;
 
     private ParticleSystem particleSystem;
 
@@ -26,29 +24,30 @@ public class ParticleFollow : MonoBehaviour
     float scalarValue;
     private Quaternion defaultRotation;
 
-    [SerializeField]
+
+
+    [SerializeField][Tooltip("Clamps particle motion to never go below this world Y value")]
     private float lowerLimit;
 
     // Update is called once per frame
     void Update()
     {
-        
+        //We get the active movement speed of the player 
         playerMovementSpeed = player.GetComponent<BoatMovement>().moveSpeed;
-        // transform.position = playerTransform.position + offset;
         if (playerMovementSpeed > 0.1f)
         {
+            //We create a scalar value from the maximum possible boat speed (boosting)
             scalarValue = playerMovementSpeed / 700;
-            //particleSystem.emission.SetBurst(0, )
-            particleSystem.enableEmission = true;
-            //            Debug.Log("we movign blyat");
-            //   Debug.Log(playerMovementSpeed);
-            var emi = particleSystem.emission;
-            emi.rateOverTime = defaultEmissionRate * scalarValue;
+            particleSystem.enableEmission = true; //legacy particle code because it fucking works
+            var emi = particleSystem.emission; //we reference the emission
+            emi.rateOverTime = defaultEmissionRate * scalarValue; //we update the emmission based on movement speed, faster speed means faster emmission
 
-            Debug.Log(emi.rateOverTime.constant);
-            particleSystem.startLifetime = defaultLifetime * (1.25f - scalarValue);
+            particleSystem.startLifetime = defaultLifetime * (1.25f - scalarValue); //We do basically the same with lifetime but reversed. The faster you move the faster your particles die
+
+            //Clamp particle movement
             if (transform.position.y < lowerLimit)
             {
+
                 transform.position = new Vector3(
                     transform.position.x,
                     lowerLimit,
@@ -58,6 +57,7 @@ public class ParticleFollow : MonoBehaviour
         }
         else
         {
+            //if we're not moving, don't emit
             particleSystem.enableEmission = false;
         }
     }

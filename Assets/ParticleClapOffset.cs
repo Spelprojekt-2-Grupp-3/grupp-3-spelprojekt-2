@@ -21,7 +21,8 @@ public class ParticleClapOffset : MonoBehaviour
         partSys.GetParticles(particles);
         for (int i = 0; i < partSys.particleCount; i++)
         {
-            Debug.Log(particles[i].position.y);
+         //   Debug.Log(particles[i].position.y);
+            //this script used to do shit. I keep it to reference how the fuck I access all particles in a system.
         }
     }
 }
