@@ -47,10 +47,10 @@ public class SetBindingIcon : MonoBehaviour
                 image.sprite = inputDevice.selectSprite;
                 return;
             case "leftTrigger": 
-                image.sprite = inputDevice.leftTriggerSprite;
+                image.sprite = inputDevice.reverseSprite;
                 return;
             case "rightTrigger": 
-                image.sprite = inputDevice.rightTriggerSprite;
+                image.sprite = inputDevice.gasSprite;
                 return;
             case "leftShoulder": 
                 image.sprite = inputDevice.leftShoulderSprite;
