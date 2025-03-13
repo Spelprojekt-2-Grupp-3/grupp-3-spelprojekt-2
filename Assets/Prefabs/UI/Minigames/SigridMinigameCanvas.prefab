@@ -140,7 +140,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Match the target voltage with the right amount of fuses
+  m_text: Put in all the fuses in the empty sockets
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -297,6 +297,8 @@ GameObject:
   - component: {fileID: 3074851773025104607}
   - component: {fileID: 8780102800047204491}
   - component: {fileID: 168040356409214863}
+  - component: {fileID: 5181417779806371923}
+  - component: {fileID: 327159858045293745}
   m_Layer: 5
   m_Name: SigridMinigameCanvas
   m_TagString: Untagged
@@ -414,6 +416,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentInput: {fileID: 11400000, guid: 7f7fd9995c4435f488f7df319f651fb7, type: 2}
   hoverMarker: {fileID: 3893645919411594546}
+--- !u!222 &5181417779806371923
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5153954323272075228}
+  m_CullTransparentMesh: 1
+--- !u!114 &327159858045293745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5153954323272075228}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.764151, g: 0.764151, b: 0.764151, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 9d90f24c520700744b4f07ba7b652b11, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!1 &6272052988953784735
 GameObject:
   m_ObjectHideFlags: 0
@@ -660,6 +700,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Empty Fuse (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7677240529515834151, guid: 0a6c5a1ff7027a0498f8999bbca38ff3,
+        type: 3}
+      propertyPath: emptyFuse
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
