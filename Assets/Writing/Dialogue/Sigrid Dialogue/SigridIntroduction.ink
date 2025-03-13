@@ -20,7 +20,7 @@ I don't recognize you at all. You new here? #Speaker:Sigrid
     
 Alright then. I'm Sigrid. #Speaker:Sigrid
 
-What brings you here? I'm not usually one to receive guests. #Speaker:Sigrid
+What brings you here? I'm not usually one to receive guests. #Speaker:Sigrid 
 
     * [My boat...]
     

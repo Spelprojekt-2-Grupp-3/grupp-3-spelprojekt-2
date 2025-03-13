@@ -18,7 +18,7 @@ And who are you? Do I know you? #Speaker:Ulrich
     
 -You wouldn't recognize me, I'm new here. The name's Cleo. #Speaker:Cleo
 
-Well, Cleo, I appreciate the medicine. #Speaker:Ulrich
+Well, Cleo... I appreciate the medicine. #Speaker:Ulrich
 
 I guess I owe you now, so what do you want? #Speaker:Ulrich
 
@@ -29,6 +29,8 @@ I guess I owe you now, so what do you want? #Speaker:Ulrich
 Right, right. You're here about the upgrade. I'm on it. #Speaker:Ulrich
 
 Wait here, will you? #Speaker:Ulrich
+
+[Ulrich shuffles over to your boat and installs the upgrade.] #Speaker:Ulrich 
 
 There. #Speaker:Ulrich
 

@@ -26,11 +26,11 @@ Lemme tell ya, I got nervous for a sec there! #Speaker:Vera
 
 I appreciate the help! You're a good sort. #Speaker:Vera
 
-So, what was it you needed? A boat upgrade, right? #Speaker:Vera
+So, what was it you needed? A boat upgrade, right? #Speaker:Vera 
 
 Give me a sec and I'll hook you up. #Speaker:Vera
 
-[Vera downs her tea before she gets to work on installing your upgrade.]
+[Vera downs her tea before she gets to work on installing your upgrade.] #Speaker:Vera
 
 .... All done! #Speaker:Vera
 

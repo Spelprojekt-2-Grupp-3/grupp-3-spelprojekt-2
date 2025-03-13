@@ -4,17 +4,7 @@ EXTERNAL EditQuest(int ID, int step)
 
 === IrmaDialogue1 ===
 
-[You approach the hut on the island and knock on the door.] #Speaker:Cleo
-
-    * [<color=\#29c445>Skip (testing)</color>] 
-        
-    ~ EditQuest(2, 0)
-    
-    -> END
-
-    * [Continue dialogue]
-
--[You hear a voice coming from inside.] #Speaker:Cleo
+Hi, I'm looking for... #Speaker:Cleo 
 
 One sec! #Speaker:Irma
 
@@ -26,15 +16,11 @@ One sec! #Speaker:Irma
 
     * [Hello?]
     
--Hello? Is anyone in there? #Speaker:Cleo
+-Uh, hello? I'm here for- #Speaker:Cleo
 
-[You knock again.] #Speaker:Cleo
-
-Shoot- I'll be right there! #Speaker:Irma
+Shoot- I'll be right with you! #Speaker:Irma
 
 [...] #Speaker:Cleo
-
-[A few more seconds pass until the door finally opens.] #Speaker:Cleo
 
 Sorry, sorry, I was busy doing something and... #Speaker:Irma
 
@@ -54,7 +40,7 @@ You're speaking to her right now! How can I help you? #Speaker:Irma
 
     * [My boat...]
     
--I need to get some upgrades for my boat. I was told you could help me fix my radio. #Speaker:Cleo
+-I need to get some upgrades for my boat. I was told you could help me with that. #Speaker:Cleo
 
 You've definitely come to the right place, then! #Speaker:Irma
 

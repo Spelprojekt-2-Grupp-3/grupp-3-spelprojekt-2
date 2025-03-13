@@ -14,7 +14,7 @@ He sent me here... I think? He's tough to decipher. #Speaker:Cleo
 
 Ha! Old Ulrich giving you a hard time? Don't worry, you've come to the right place. #Speaker:Vera
 
-We make him a nasal spray out of some special algae we forage around here. #Speaker:Vera
+I make him a nasal spray out of some special algae we forage around here. #Speaker:Vera
 
 I could whip you up a batch right now, if you're willing to deliver it to Ulrich yourself. #Speaker:Vera
 

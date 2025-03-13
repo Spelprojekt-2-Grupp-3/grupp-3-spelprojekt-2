@@ -24,7 +24,7 @@ I'd offer you some as well, but... well, I think you'd be awake for a week strai
 
     * [Thanks.]
     
--I definitely won't be drinking this, then... #Speaker:Cleo
+-I definitely won't be drinking this, then... #Speaker:Cleo 
 
 But thanks! #Speaker:Cleo
 

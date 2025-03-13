@@ -161,7 +161,7 @@ How's it hanging? #Speaker:Vera
     
     Frankly, it all went in one ear and out the other. #Speaker:Vera
     
-    Got anyone else in mind?
+    Got anyone else in mind? #Speaker:Vera
     
     -> characters2
     

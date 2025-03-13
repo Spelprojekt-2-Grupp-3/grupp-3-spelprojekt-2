@@ -8,7 +8,7 @@ Hrnemrm? #Speaker:Ulrich
 
     * [About Vera...]
     
--Hi! Uh, Vera was stung by... something. In the water. #Speaker:Cleo
+-Uh, Vera was stung by... something. In the water. #Speaker:Cleo 
 
 She says she's gonna puke like crazy if she doesn't get treatment! #Speaker:Cleo
 
@@ -16,7 +16,7 @@ Do you have anything that could help? #Speaker:Cleo
 
 Hejrm mrmrnh ghrhn... Hrmn!! #Speaker:Ulrich
 
-[Ulrich shuffles over to a patch of flowers and picks a few.] #Speaker:Ulrich
+[Ulrich walks over to a patch of flowers and picks a few.] #Speaker:Ulrich
 
 Hrrgnmm! #Speaker:Ulrich
 

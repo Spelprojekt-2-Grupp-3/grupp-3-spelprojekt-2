@@ -6,15 +6,7 @@ EXTERNAL EditQuest(int ID, int step)
 
 Hey there, stanger! #Speaker:Vera
 
-    * [<color=\#29c445>Skip (testing)</color>] 
-    
-    ~ EditQuest(4, 0)
-    
-    -> END
-
-    * [Continue dialogue]
-
--You look like a fish fresh out of water! Guessing you're new around here. #Speaker:Vera
+You look like a fish fresh out of water! Guessing you're new around here. #Speaker:Vera
 
     * [I'm Cleo.]
     
@@ -34,7 +26,7 @@ Bengt told me you'd be willing to upgrade my boat. #Speaker:Cleo
 
 'Course I'm willing! #Speaker:Vera
 
-Are you familiar with our little system? #Speaker:Vera
+Are you familiar with our little system? #Speaker:Vera 
 
     * [Yes.]
     

@@ -20,7 +20,7 @@ Hrm. #Speaker:Ulrich
 
     * [My boat...]
     
--Bengt told me to come see you for a boat upgrade. #Speaker:Cleo
+-Bengt told me to come see you for a boat upgrade. #Speaker:Cleo 
 
 Hmrnmr. Hnehn. Hmrnghh! #Speaker:Ulrich
 

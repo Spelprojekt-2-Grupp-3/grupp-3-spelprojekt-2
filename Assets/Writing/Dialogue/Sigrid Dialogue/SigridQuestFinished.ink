@@ -4,11 +4,7 @@ EXTERNAL EditQuest(int ID, int step)
 
 === SigridDialogue2 ===
 
-Hey. #Speaker:Sigrid
-
-    * [I got coffee.]
-    
--I got your coffee for you! #Speaker:Cleo
+I got your coffee for you! #Speaker:Cleo
 
 That solves my problem. Thanks. #Speaker:Sigrid
 
@@ -32,7 +28,7 @@ If a pair of outsiders passed by here, I would've noticed. You sure you're at th
     
 [You hand Sigrid the letter.]
 
-[She glances at your boat in the harbor.] #Speaker:Sigrid
+[She glances at your boat in the harbor.] #Speaker:Sigrid 
 
 That boat was your parents'? #Speaker:Sigrid
 

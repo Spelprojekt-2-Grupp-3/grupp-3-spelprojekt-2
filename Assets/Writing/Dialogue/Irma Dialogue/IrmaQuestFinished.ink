@@ -5,6 +5,8 @@ EXTERNAL EditQuest(int ID, int step)
 
 === IrmaDialogue2 ===
 
+I've got some cogs for you... #Speaker:Cleo
+
 Whoa, I did NOT need this many! #Speaker:Irma
 
 I should've specified what size I needed. Gosh. #Speaker:Irma
@@ -41,7 +43,7 @@ And I'm sorry to say, I don't know anything about your parents' whereabouts. #Sp
 
 I mean, I have a theory. #Speaker:Irma
 
-You see, I have a sister. #Speaker:Irma
+You see, it's about my sister. #Speaker:Irma
 
 She disappeared a while back... I haven't seen her for years now. #Speaker:Irma
 
@@ -59,7 +61,7 @@ I tried to ask the others if they knew anything, but they play dumb. #Speaker:Ir
 
     * [How can you tell?]
     
--What do you mean, they play dumb? What if they really don't know? #Speaker:Cleo
+-What do you mean, they play dumb? What if they really don't know? #Speaker:Cleo 
 
 Some of them have been here their whole lives, and those who haven't have lived here longer than I have! #Speaker:Irma
 
@@ -77,7 +79,7 @@ I just want to make sure I'm not missing out on something that could lead me to 
 
     * [Got it.]
     
--Okay. I'll let you know any information I find. #Speaker:Irma
+-Okay. I'll let you know any information I find. #Speaker:Cleo
 
 Thank you! Really, thank you so much! #Speaker:Irma
 

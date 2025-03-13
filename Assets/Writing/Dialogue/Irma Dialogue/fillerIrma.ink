@@ -163,7 +163,7 @@ Something on your mind? #Speaker:Irma
     
     What about Vera? #Speaker:Cleo
     
-    I'm totally lost on all this ecosystem stuff she's so passionate about. #Speaker:Irma
+    I'm totally lost on all this ecosystem stuff she's so passionate about... #Speaker:Irma
     
     I can see why it's important, and I make sure to dispose of my electronic scraps safely so I don't mess it up! #Speaker:Irma
     

@@ -6,8 +6,6 @@ Whoa, hey there! #Speaker:Bengt
 
 [The stranger looks to be rather dumbfounded.] #Speaker:Bengt
 
-[Then again, so are you.] #Speaker:Bengt
-
 Sorry, I’m a bit shocked! #Speaker:Bengt
 
 We, uh… don’t get a whole lot of visitors. #Speaker:Bengt
@@ -20,21 +18,27 @@ We, uh… don’t get a whole lot of visitors. #Speaker:Bengt
     
 I’m Bengt, resident mechanic! #Speaker:Bengt
 
-I’d offer to help fix up that boat of yours, but… #Speaker:Bengt
+I see your boat over there has some damage... #Speaker:Bengt
+
+... I’d offer to help fix it up, but… #Speaker:Bengt
 
 [Bengt shifts awkwardly before he continues on.] #Speaker:Bengt
 
-I’m sorry to say, I don’t think it can be salvaged. #Speaker:Bengt
+From the looks of it, I don’t think it can be salvaged. #Speaker:Bengt
 
     * [Great...]
     
 -That's just great... #Speaker:Cleo
 
-But, hey! You’re in one piece, at least! No need to look so glum! #Speaker:Bengt
+Could I ask what happened to it? #Speaker:Bengt
 
-    * [What was that creature?]
+    * [Something attacked me.]
     
--Anyway, what happened just now? What was that... thing that attacked me? #Speaker:Cleo
+-Something weird attacked me! #Speaker:Cleo
+
+I was on my way here when a TENTACLE suddenly popped out of the water and hit my hull! #Speaker:Cleo
+
+What was that... thing?! #Speaker:Cleo
     
 Uhh… how do I explain… #Speaker:Bengt
 
@@ -58,17 +62,19 @@ When you’ve lived here as long as me, you just sorta get used to it! #Speaker:
 
 [You’re at a complete loss for words, but Bengt just laughs heartily.] #Speaker:Bengt
 
+But, hey! You’re in one piece, at least! No need to look so glum! #Speaker:Bengt
+
 What brings you here, anyway? #Speaker:Bengt
 
     * [This letter…]
     
 -I was sent this letter by someone who claims to live around here. #Speaker:Cleo
 
+It says my parents' boat was found here and, well, I'm looking to find out what happened to them. #Speaker:Cleo
+
 Oh? Let me see… #Speaker:Bengt
 
 [You hand Bengt the letter.] #Speaker:Bengt
-
-A boat…? #Speaker:Bengt
 
 [Bengt ponders for a moment before his eyes widen.] #Speaker:Bengt
 
@@ -100,12 +106,6 @@ Some work for these idle hands? Why, I’d be happy to help you! #Speaker:Bengt
 
 In fact, there's one upgrade I can work in for you right now. #Speaker:Bengt
 
-It's common around here for our boats to have gliders attached. #Speaker:Bengt
-
-Ride over a ramp, and you'll be soaring a good while! #Speaker:Bengt
-
-You can even use it to evade the Kraken, if necessary. It could come in handy when you leave. #Speaker:Bengt
-
     * [Sounds good.]
     
 -That sounds helpful, thanks! #Speaker:Cleo
@@ -124,11 +124,9 @@ But there are several more fixes you'll need, and I won't be able to help you wi
 
 I doubt you'd notice any difference, as long as you're just going around the archipelago... #Speaker:Bengt
 
-But when it's time to head out, those tiny details can really mess with your journey. #Speaker:Bengt
+But when it's time to head outta here, those tiny details can really make or break your journey. #Speaker:Bengt
 
-You'll have to seek out my friends for those upgrades. #Speaker:Bengt
-
-They each have different skillsets they could put to use for you. #Speaker:Bengt
+You'll have to seek out my friends for those other upgrades. #Speaker:Bengt
 
     * [Alright.]
 
