@@ -28,6 +28,10 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 currentRight;
     private bool movePlayer;
 
+    [SerializeField]
+    [Range(0, 1)]
+    private float _idleInterpolationSpeed;
+
     private void Awake()
     {
         _aniControl = GetComponent<Animator>();
@@ -100,12 +104,13 @@ public class PlayerMovement : MonoBehaviour
                 Quaternion.Euler(0, targetYRotation, 0),
                 rotationLerpSpeed
             );
-            
+
             _aniControl.SetFloat("Speed", moveDirection.sqrMagnitude);
         }
         else
         {
-            moveDirection = Vector2.Lerp(moveDirection, new Vector2(0, 0), 0.5f);
+            Debug.Log(moveDirection);
+            moveDirection = Vector2.Lerp(moveDirection, new Vector2(0, 0), _idleInterpolationSpeed);
             _aniControl.SetFloat("Speed", moveDirection.sqrMagnitude);
         }
 
