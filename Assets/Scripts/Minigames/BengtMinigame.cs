@@ -10,18 +10,16 @@ using Random = UnityEngine.Random;
 
 public class BengtMinigame : Minigames
 {
-    private GameObject canvasInst, handle, goal;
+    [SerializeField] private GameObject handle, goal;
     [SerializeField] private GameObject sliderInst;
     private Camera camera;
     private PlayerInputActions playerControls;
-    private InputAction minigameButtonSouth;
-    [SerializeField] private CurrentInputIcons inputIcons;
-    [SerializeField] private GameObject sliderObj;
+    private InputAction minigameButtonSouth, minigameButtonEast;
     private Slider slider;
     private Image iconSprite;
     [SerializeField, Tooltip("Max time for the minigame to play, after this time you lose")] private float maxTime;
     private Vector2 goalPos;
-    private float goalHeight, sliderSpeed, timer;
+    private float goalHeight, sliderSpeed;
     [SerializeField, Range(0f, 10f), Tooltip("Initial amount of seconds it takes for the handle on the slider to go from the bottom to the top")]
     private float sliderMaxValue;
     private bool increasing;
@@ -30,41 +28,32 @@ public class BengtMinigame : Minigames
 
     private void OnEnable()
     {
-        camera = Camera.main;
         minigameButtonSouth = playerControls.UI.Submit;
         minigameButtonSouth.Enable();
+        minigameButtonEast = playerControls.UI.ButtonEast;
+        minigameButtonEast.Enable();
+        Events.stopPlayer?.Invoke();
     }
 
     private void OnDisable()
     {
         minigameButtonSouth.Disable();
+        minigameButtonEast.Disable();
     }
 
     private void Awake()
     {
         playerControls = new PlayerInputActions();
-        canvasInst = gameObject;
         StartMinigame();
-    }
-
-    private void Start()
-    {
-        
     }
 
     public override void StartMinigame()
     {
-        Events.stopPlayer?.Invoke();
         engineStage = 0;
         sliderSpeed = 1.5f;
         increasing = true;
-        var canvasComponent = GetComponent<Canvas>();
-        canvasComponent.worldCamera = camera;
-        canvasComponent.renderMode = RenderMode.ScreenSpaceOverlay;
         slider = sliderInst.GetComponent<Slider>();
         slider.maxValue = sliderMaxValue;
-        handle = sliderInst.transform.Find("Handle Slide Area").transform.Find("Handle").gameObject;
-        iconSprite = handle.GetComponent<Image>();
         goal = sliderInst.transform.Find("Goal").gameObject;
         RandomizeGoalPosition();
         Events.stopBoat?.Invoke();
@@ -76,11 +65,17 @@ public class BengtMinigame : Minigames
         Destroy(gameObject);
     }
 
+    public override void CloseMinigame()
+    {
+        Events.startPlayer?.Invoke();
+        gameObject.SetActive(false);
+    }
+
     private void RandomizeGoalPosition()
     {
         goalHeight = goal.GetComponent<RectTransform>().rect.height;
         var rectHeight = sliderInst.GetComponent<RectTransform>().rect.height;
-        goalPos = new Vector2(goal.transform.localPosition.x, Random.Range(-rectHeight / 2 + goalHeight / 2, rectHeight / 2 - goalHeight / 2));
+        goalPos = new Vector2(goal.transform.localPosition.x, Random.Range(-rectHeight / 2 + goalHeight, rectHeight / 2 - goalHeight));
         goal.transform.localPosition = goalPos;
     }
 
@@ -89,7 +84,7 @@ public class BengtMinigame : Minigames
         UpdateSliderPos();
         if (minigameButtonSouth.WasPressedThisFrame())
         {
-            if (handle.transform.position.y <= goal.transform.position.y + goalHeight && handle.transform.position.y >= goal.transform.position.y - goalHeight) // idk why divided by 3 is necessary tbh
+            if (handle.transform.position.y <= goal.transform.position.y + goalHeight && handle.transform.position.y >= goal.transform.position.y - goalHeight)
             {
                 Events.BengtMinigameHit?.Invoke();
                 engineStage++;
@@ -110,7 +105,11 @@ public class BengtMinigame : Minigames
                 RandomizeGoalPosition();
             }
         }
-        timer += Time.deltaTime;
+
+        if (minigameButtonEast.WasPressedThisFrame())
+        {
+            CloseMinigame();
+        }
     }
 
     private void UpdateSliderPos()

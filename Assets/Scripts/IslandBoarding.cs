@@ -11,7 +11,7 @@ public class IslandBoarding : MonoBehaviour
     private PlayerInputActions playerControls;
     private InputAction board;
     [SerializeField, Tooltip("Location for where the player spawns when boarding")] private Transform playerBoardingLocation;
-    [SerializeField] private bool isBoarded;
+    [SerializeField] private bool isOnBoat;
     [SerializeField] private GameObject boatCamera;
     [SerializeField] private GameObject playerCamera;
     private bool allowIslandBoard;
@@ -37,6 +37,7 @@ public class IslandBoarding : MonoBehaviour
         playerControls = new PlayerInputActions();
         allowIslandBoard = false;
         allowBoatBoard = false;
+        isOnBoat = false;
     }
 
     private void OnEnable()
@@ -60,12 +61,12 @@ public class IslandBoarding : MonoBehaviour
         board.Enable();
         board.performed += TryBoarding;
         
-        if (other.gameObject.tag == "Boat")
+        if (other.gameObject.tag == "Boat" && isOnBoat)
         {
             allowIslandBoard = true;
         }
 
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" && !isOnBoat)
         {
             allowBoatBoard = true;
         }
@@ -89,12 +90,12 @@ public class IslandBoarding : MonoBehaviour
 
     private void TryBoarding(InputAction.CallbackContext context)
     {
-        if (allowIslandBoard)
+        if (allowIslandBoard && isOnBoat)
         {
             BoardIsland();
         }
         
-        else if (allowBoatBoard)
+        else if (allowBoatBoard && !isOnBoat)
         {
             BoardBoat();
         }

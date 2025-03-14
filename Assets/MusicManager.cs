@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,10 +7,28 @@ public class MusicManager : MonoBehaviour
 {
     private FMOD.Studio.EventInstance musicOceanInstance;
     private bool isPlaying = false;
+    private bool isBengtPlaying = false;
 
-    void Start()
+    private void Start()
     {
-        StartOceanMusic();
+        StartBengtMusic();
+    }
+
+    public void StartBengtMusic()
+    {
+        if (isBengtPlaying) return;
+
+        musicOceanInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Music/Music_Islands/Music_Bengt");
+        musicOceanInstance.start();
+        isBengtPlaying = true;
+    }
+
+    public void StopBengtMusic()
+    {
+        if (!isBengtPlaying) return;
+
+        musicOceanInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        isBengtPlaying = false;
     }
 
     public void StartOceanMusic()
