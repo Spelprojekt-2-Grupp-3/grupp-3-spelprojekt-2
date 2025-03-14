@@ -55,23 +55,17 @@ public class BoatMovement : MonoBehaviour
     private void OnEnable()
     {
         move = playerControls.Boat.Move;
-        move.Enable();
         gas = playerControls.Boat.Gas;
-        gas.Enable();
         reverse = playerControls.Boat.Reverse;
-        reverse.Enable();
         boost = playerControls.Boat.Boost;
-        boost.Enable();
+        AllowMovement();
         Events.startBoat.AddListener(AllowMovement);
         Events.stopBoat.AddListener(DisallowMovement);
     }
 
     private void OnDisable()
     {
-        move.Disable();
-        gas.Disable();
-        reverse.Disable();
-        boost.Disable();
+        DisallowMovement();
         Events.startBoat.RemoveListener(AllowMovement);
         Events.stopBoat.RemoveListener(DisallowMovement);
     }
@@ -82,6 +76,7 @@ public class BoatMovement : MonoBehaviour
         boatWaterSound = FMODUnity.RuntimeManager.CreateInstance(boatWaterSoundEvent);
         boatSound.start();
         boatWaterSound.start();
+        DisallowMovement();
     }
     
     void Update()

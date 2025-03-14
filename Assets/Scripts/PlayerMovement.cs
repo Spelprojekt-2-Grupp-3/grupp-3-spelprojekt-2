@@ -100,29 +100,17 @@ public class PlayerMovement : MonoBehaviour
                 Quaternion.Euler(0, targetYRotation, 0),
                 rotationLerpSpeed
             );
-
-            //_aniControl.SetFloat("X", euler.x);
-            // _aniControl.SetFloat("Y", euler.y);
+            
             _aniControl.SetFloat("Speed", moveDirection.sqrMagnitude);
-            //    Debug.Log(moveDirection.sqrMagnitude);
         }
         else
         {
+            moveDirection = Vector2.Lerp(moveDirection, new Vector2(0, 0), 0.5f);
             _aniControl.SetFloat("Speed", moveDirection.sqrMagnitude);
-
-            //     _aniControl.SetFloat("X", 0);
-            //    _aniControl.SetFloat("Y", 0);
         }
 
         if (moveSpeed == 0)
             return;
-        /*
-        rb.velocity = new Vector3(
-            1 * transform.forward.x,
-            rb.velocity.y,
-            1* transform.forward.z
-        );
-        */
     }
 
     private void Interact(InputAction.CallbackContext context)
