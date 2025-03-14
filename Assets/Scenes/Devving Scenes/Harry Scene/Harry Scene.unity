@@ -471,6 +471,60 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!1 &181270656
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 181270658}
+  - component: {fileID: 181270657}
+  m_Layer: 0
+  m_Name: QuestController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &181270657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181270656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09055e026ca6d9f47ab9931af9dc07f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questBoxPrefab: {fileID: 0}
+  questContainer: {fileID: 0}
+  questMenuTextObject: {fileID: 0}
+  questsData:
+  - {fileID: 11400000, guid: 5d43f6937b46fab449ee1daed6ea6d04, type: 2}
+  - {fileID: 11400000, guid: 980f6e31cc99ad84c91a91ca9c42f3e9, type: 2}
+  - {fileID: 11400000, guid: 61e0b2a112f722d4491e965634f2c850, type: 2}
+  - {fileID: 11400000, guid: e3808117f7369b54083f2161f815efd7, type: 2}
+  - {fileID: 11400000, guid: 2534530bf1cdd50469c5d8e802071755, type: 2}
+  devving: 0
+--- !u!4 &181270658
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181270656}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1040.957, y: 54.21924, z: -137.69043}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &482420549
 GameObject:
   m_ObjectHideFlags: 0
@@ -945,29 +999,85 @@ MonoBehaviour:
     m_ActionId: 9ec8a368-441f-40c3-83d2-571633aa7b0a
     m_ActionName: UI/ModifierButton[/Keyboard/shift]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: EnableDisable, Assembly-CSharp
-        m_MethodName: SwitchState
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 1
-    m_ActionId: 8d0cdb50-f44b-4d5f-b91f-d95a6ef9df09
-    m_ActionName: UI/Quest[/Keyboard/j]
-  - m_PersistentCalls:
       m_Calls: []
     m_ActionId: 0f45313f-ae00-41ca-ab6b-10757909d0ba
     m_ActionName: Player/Debug[/Keyboard/space]
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 1361d867-40c9-4138-be23-0ef104b225ca
-    m_ActionName: Boat/Minigame[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
+    m_ActionId: 68a8ca59-cdb3-4b6b-a2e8-99a981d64b72
+    m_ActionName: Boat/Reverse[/Keyboard/s]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 88318c70-930e-4f42-b33f-76ade71dd323
+    m_ActionName: Boat/Boost[/Keyboard/shift]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0597b41f-2a66-4e97-9d78-61f45576ca6a
+    m_ActionName: Boat/MinigameButtonWest[/Keyboard/a]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 408218b2-f532-4be2-8373-102747eb492a
+    m_ActionName: Boat/MinigameButtonEast[/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0c7f13c8-b790-4a40-92a8-29bb5f4a79f6
+    m_ActionName: Boat/MinigameButtonNorth[/Keyboard/w]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 40e28b9d-1dc3-466b-a9c4-15266c9895ee
+    m_ActionName: Boat/MinigameButtonSouth[/Keyboard/s]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 700bcca6-70ac-40ad-8097-b7deee29fdd3
+    m_ActionName: Boat/Interact[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f5602de7-154d-4c7e-a8d4-fac9e05e0c4f
+    m_ActionName: UI/Journal[/Keyboard/tab]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 1e9f7761-91ad-48c7-a1fa-44b0d1f19eee
+    m_ActionName: UI/Pause[/Keyboard/escape]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 228bcbdb-d9b9-4eef-bb52-585bc06e27c9
+    m_ActionName: UI/Inventory[/Keyboard/i]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5e4a0a3b-9ce7-468e-a114-065600f85891
+    m_ActionName: UI/MenuRight[/Keyboard/quote]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 72aac73a-1260-476a-88d8-96d4fb15f050
+    m_ActionName: UI/MenuLeft[/Keyboard/semicolon]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b3062f7a-fb59-48dc-93e3-2066cda9f301
+    m_ActionName: UI/NavigateRight[/Keyboard/d,/Keyboard/rightArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 40337703-fb46-4b02-8b12-b7da85f3c3f8
+    m_ActionName: UI/NavigateLeft[/Keyboard/a,/Keyboard/leftArrow]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b918fcaf-96e9-49b1-a8b1-d34f62f924b1
+    m_ActionName: UI/ButtonWest[/Keyboard/a]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5025b276-8f6a-44f5-a753-4c981e71d033
+    m_ActionName: UI/ButtonEast[/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 05314301-83bb-4ce5-afc4-d90882ee46ec
+    m_ActionName: UI/ButtonNorth[/Keyboard/w]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 6a62659c-dfce-4e67-b2e5-afcf0f068ccb
+    m_ActionName: UI/ButtonSouth[/Keyboard/s]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ad677ac3-9168-409f-80c1-9ded18aafc4c
+    m_ActionName: UI/RightJoystick[/Mouse/delta]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Keyboard&Mouse
   m_DefaultActionMap: UI
@@ -1308,7 +1418,7 @@ PrefabInstance:
         type: 3}
       propertyPath: fillerDialogueJSON
       value: 
-      objectReference: {fileID: 4900000, guid: 550b69b9155b0054bb668e82b13bf273, type: 3}
+      objectReference: {fileID: 4900000, guid: 9780a56458f3ccb4888a1e44095056f7, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1324,4 +1434,5 @@ SceneRoots:
   - {fileID: 1393402302}
   - {fileID: 6219407739258295048}
   - {fileID: 719082927}
+  - {fileID: 181270658}
   - {fileID: 1486453098}
