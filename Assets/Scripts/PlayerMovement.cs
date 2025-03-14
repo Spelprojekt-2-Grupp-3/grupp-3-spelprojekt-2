@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private float moveSpeed = 0;
     private PlayerInputActions playerControls;
     private InputAction move, moveCam;
+    [SerializeField, Range(0, 1f)] private float rotationLerpSpeed;
 
     [SerializeField, Range(0, 2000)]
     float maxMoveSpeed;
@@ -88,7 +89,7 @@ public class PlayerMovement : MonoBehaviour
          {
              Vector3 euler = transform.localEulerAngles;
              float targetYRotation = Mathf.Atan2(moveDirection.x, moveDirection.z) * Mathf.Rad2Deg;
-             rb.rotation =  Quaternion.Euler(0, targetYRotation, 0);
+             rb.rotation =  Quaternion.Slerp(rb.rotation, Quaternion.Euler(0, targetYRotation, 0), rotationLerpSpeed);
          
              _aniControl.SetFloat("X", euler.x);
              _aniControl.SetFloat("Y", euler.y);
@@ -130,5 +131,7 @@ public class PlayerMovement : MonoBehaviour
         move.Disable();
         moveCam.Disable();
         interact.Disable();
+        _aniControl.SetFloat("X", 0);
+        _aniControl.SetFloat("Y", 0);
     }
 }
