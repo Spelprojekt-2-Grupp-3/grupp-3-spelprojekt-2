@@ -11,13 +11,15 @@ public class MinigameHandler : MonoBehaviour
     [SerializeField] private GameObject minigameCanvasPrefab;
     private bool allowStartMinigame;
     private bool hasBeenPlayed;
-
+    private bool minigameQuestStart;
+    [SerializeField] private int questID, step;
 
     private void Awake()
     {
         hasBeenPlayed = false;
         playerInput = new PlayerInputActions();
         allowStartMinigame = false;
+        minigameQuestStart = false;
     }
 
     private void OnEnable()
@@ -35,7 +37,7 @@ public class MinigameHandler : MonoBehaviour
 
     private void InstantiateMinigame(InputAction.CallbackContext context)
     {
-        if (!allowStartMinigame || hasBeenPlayed) return;
+        if (!allowStartMinigame || hasBeenPlayed || !minigameQuestStart) return;
         Instantiate(minigameCanvasPrefab);
         hasBeenPlayed = true;
     }
@@ -48,5 +50,13 @@ public class MinigameHandler : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         allowStartMinigame = false;
+    }
+
+    public void MinigameQuestStart(int ID, int currentStep)
+    {
+        if (ID == questID && currentStep == step)
+        {
+            minigameQuestStart = true;
+        }
     }
 }

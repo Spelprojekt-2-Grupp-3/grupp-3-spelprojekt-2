@@ -53,6 +53,7 @@ public class DialogueManager : MonoBehaviour
 
     private TextMeshProUGUI[] _choicesText;
     private Story _currentStory;
+    private MinigameHandler[] minigameHandlers;
 
     //Readonly (I dont know why)
     public bool dialogueIsPlaying { get; private set; }
@@ -99,6 +100,8 @@ public class DialogueManager : MonoBehaviour
         
         choicesPanel = dialogueUI.transform.Find("ChoicesPanel").gameObject;
         choicesParent = dialogueUI.transform.Find("Choices").gameObject;
+
+        minigameHandlers = FindObjectsOfType<MinigameHandler>();
         
         if (choicesParent != null)
         {
@@ -146,6 +149,17 @@ public class DialogueManager : MonoBehaviour
                 questLog.UpdateQuest(ID, step);
             }
         );
+
+        foreach (var minigameHandler in minigameHandlers)
+        {
+            _currentStory.BindExternalFunction(
+                "MinigameQuest",
+                (int ID, int step) =>
+                {
+                    minigameHandler.MinigameQuestStart(ID, step);
+                }
+            );
+        }
     }
 
     private void Update()
