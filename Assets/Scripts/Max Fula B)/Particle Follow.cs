@@ -7,7 +7,8 @@ public class ParticleFollow : MonoBehaviour
 {
     public GameObject player;
 
-    public float defaultX = 0;
+
+public float defaultX = 0;
     private ParticleSystem particleSystem;
 
     // Start is called before the first frame update
@@ -33,6 +34,9 @@ public class ParticleFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        
+
         //We get the active movement speed of the player
         playerMovementSpeed = player.GetComponent<BoatMovement>().moveSpeed;
         if (playerMovementSpeed > 0.1f)
@@ -48,7 +52,11 @@ public class ParticleFollow : MonoBehaviour
             //Clamp particle movement
             if (transform.position.y < lowerLimit || transform.position.y > lowerLimit + 1.5f)
             {
-                transform.position = new Vector3(defaultX, lowerLimit, transform.position.z);
+                transform.position = new Vector3(
+                    transform.position.x,
+                    lowerLimit,
+                    transform.position.z
+                );
             }
         }
         else
