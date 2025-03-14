@@ -10,8 +10,11 @@ public class PlayerMovement : MonoBehaviour
     private Animator _aniControl;
     private float moveSpeed = 0;
     private PlayerInputActions playerControls;
-    private InputAction move, moveCam;
-    [SerializeField, Range(0, 1f)] private float rotationLerpSpeed;
+    private InputAction move,
+        moveCam;
+
+    [SerializeField, Range(0, 1f)]
+    private float rotationLerpSpeed;
 
     [SerializeField, Range(0, 2000)]
     float maxMoveSpeed;
@@ -74,41 +77,52 @@ public class PlayerMovement : MonoBehaviour
         /*if (!move.inProgress)
             return;*/
         Vector2 movementVector = move.ReadValue<Vector2>();
-        
+
         currentForward = camera.transform.forward;
         currentRight = camera.transform.right;
     }
 
     private void FixedUpdate()
     {
-        if (!movePlayer) return;
-         float targetRotationSpeed = 10f;
-         Vector3 moveDirection = (currentForward * move.ReadValue<Vector2>().y) + (currentRight * move.ReadValue<Vector2>().x);
+        if (!movePlayer)
+            return;
+        float targetRotationSpeed = 10f;
+        Vector3 moveDirection =
+            (currentForward * move.ReadValue<Vector2>().y)
+            + (currentRight * move.ReadValue<Vector2>().x);
 
-         if (moveDirection.sqrMagnitude > 0.01f)
-         {
-             Vector3 euler = transform.localEulerAngles;
-             float targetYRotation = Mathf.Atan2(moveDirection.x, moveDirection.z) * Mathf.Rad2Deg;
-             rb.rotation =  Quaternion.Slerp(rb.rotation, Quaternion.Euler(0, targetYRotation, 0), rotationLerpSpeed);
-         
-             _aniControl.SetFloat("X", euler.x);
-             _aniControl.SetFloat("Y", euler.y);
-         }
-         else
-         {
-             _aniControl.SetFloat("X", 0);
-             _aniControl.SetFloat("Y", 0);
-         }
-         
-         if (moveSpeed == 0)
-             return;
-         /*
-         rb.velocity = new Vector3(
-             1 * transform.forward.x,
-             rb.velocity.y,
-             1* transform.forward.z
-         );
-         */
+        if (moveDirection.sqrMagnitude > 0.01f)
+        {
+            Vector3 euler = transform.localEulerAngles;
+            float targetYRotation = Mathf.Atan2(moveDirection.x, moveDirection.z) * Mathf.Rad2Deg;
+            rb.rotation = Quaternion.Slerp(
+                rb.rotation,
+                Quaternion.Euler(0, targetYRotation, 0),
+                rotationLerpSpeed
+            );
+
+            //_aniControl.SetFloat("X", euler.x);
+            // _aniControl.SetFloat("Y", euler.y);
+            _aniControl.SetFloat("Speed", moveDirection.sqrMagnitude);
+            //    Debug.Log(moveDirection.sqrMagnitude);
+        }
+        else
+        {
+            _aniControl.SetFloat("Speed", moveDirection.sqrMagnitude);
+
+            //     _aniControl.SetFloat("X", 0);
+            //    _aniControl.SetFloat("Y", 0);
+        }
+
+        if (moveSpeed == 0)
+            return;
+        /*
+        rb.velocity = new Vector3(
+            1 * transform.forward.x,
+            rb.velocity.y,
+            1* transform.forward.z
+        );
+        */
     }
 
     private void Interact(InputAction.CallbackContext context)
