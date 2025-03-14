@@ -7,6 +7,7 @@ public class ParticleFollow : MonoBehaviour
 {
     public GameObject player;
 
+    public float defaultX = 0;
     private ParticleSystem particleSystem;
 
     // Start is called before the first frame update
@@ -16,6 +17,7 @@ public class ParticleFollow : MonoBehaviour
         defaultLifetime = particleSystem.startLifetime;
         defaultEmissionRate = particleSystem.emissionRate;
         defaultRotation = particleSystem.transform.rotation;
+        defaultX = transform.position.x;
     }
 
     float defaultLifetime;
@@ -46,11 +48,7 @@ public class ParticleFollow : MonoBehaviour
             //Clamp particle movement
             if (transform.position.y < lowerLimit || transform.position.y > lowerLimit + 1.5f)
             {
-                transform.position = new Vector3(
-                    transform.position.x,
-                    lowerLimit,
-                    transform.position.z
-                );
+                transform.position = new Vector3(defaultX, lowerLimit, transform.position.z);
             }
         }
         else
