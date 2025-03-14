@@ -66,11 +66,4 @@ public class CurrentInputDevice
     public Sprite buttonEast;
     public Sprite startSprite;
     public Sprite selectSprite;
-    public Sprite leftTriggerSprite;
-    public Sprite rightTriggerSprite;
-    public Sprite leftShoulderSprite;
-    public Sprite rightShoulderSprite;
-    public Sprite dpadSprite;
-    public Sprite leftStickSprite;
-    public Sprite rightStickSprite;    
 }

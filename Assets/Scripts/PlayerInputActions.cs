@@ -878,6 +878,42 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ButtonEast"",
+                    ""type"": ""Button"",
+                    ""id"": ""5025b276-8f6a-44f5-a753-4c981e71d033"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ButtonNorth"",
+                    ""type"": ""Button"",
+                    ""id"": ""05314301-83bb-4ce5-afc4-d90882ee46ec"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ButtonSouth"",
+                    ""type"": ""Button"",
+                    ""id"": ""6a62659c-dfce-4e67-b2e5-afcf0f068ccb"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RightJoystick"",
+                    ""type"": ""Button"",
+                    ""id"": ""ad677ac3-9168-409f-80c1-9ded18aafc4c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -1573,6 +1609,116 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""ButtonWest"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d78eeb5f-e848-408f-b906-c1124c416b80"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse;Touch"",
+                    ""action"": ""ButtonWest"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""020cdc5e-0ee4-4465-b440-1a356702c99a"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""ButtonEast"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d9e65c2b-d6cb-44d9-9c32-44d62e5c1e7b"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Touch;Keyboard&Mouse"",
+                    ""action"": ""ButtonEast"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ec041dd9-02a9-4b4c-a84b-497af1b6077c"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""ButtonNorth"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b85bdf6d-c53b-43e5-ade9-211b88f87e4e"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse;Touch"",
+                    ""action"": ""ButtonNorth"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c27ae086-e573-45a3-94cd-1632b078a403"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""ButtonSouth"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b0f181fe-f941-493a-8f9d-c23d025eeece"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse;Touch"",
+                    ""action"": ""ButtonSouth"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""907bad4d-8cb3-4fc2-a9a9-e48abcfbadc5"",
+                    ""path"": ""<Joystick>/{Hatswitch}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Joystick"",
+                    ""action"": ""RightJoystick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8932602f-54e1-4697-95cd-503a4295a988"",
+                    ""path"": ""<Pointer>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse;Touch"",
+                    ""action"": ""RightJoystick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""f6603549-05cc-4237-8e6c-0abb28991239"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""RightJoystick"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -1679,6 +1825,10 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_UI_NavigateRight = m_UI.FindAction("NavigateRight", throwIfNotFound: true);
         m_UI_NavigateLeft = m_UI.FindAction("NavigateLeft", throwIfNotFound: true);
         m_UI_ButtonWest = m_UI.FindAction("ButtonWest", throwIfNotFound: true);
+        m_UI_ButtonEast = m_UI.FindAction("ButtonEast", throwIfNotFound: true);
+        m_UI_ButtonNorth = m_UI.FindAction("ButtonNorth", throwIfNotFound: true);
+        m_UI_ButtonSouth = m_UI.FindAction("ButtonSouth", throwIfNotFound: true);
+        m_UI_RightJoystick = m_UI.FindAction("RightJoystick", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1947,6 +2097,10 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_UI_NavigateRight;
     private readonly InputAction m_UI_NavigateLeft;
     private readonly InputAction m_UI_ButtonWest;
+    private readonly InputAction m_UI_ButtonEast;
+    private readonly InputAction m_UI_ButtonNorth;
+    private readonly InputAction m_UI_ButtonSouth;
+    private readonly InputAction m_UI_RightJoystick;
     public struct UIActions
     {
         private @PlayerInputActions m_Wrapper;
@@ -1970,6 +2124,10 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @NavigateRight => m_Wrapper.m_UI_NavigateRight;
         public InputAction @NavigateLeft => m_Wrapper.m_UI_NavigateLeft;
         public InputAction @ButtonWest => m_Wrapper.m_UI_ButtonWest;
+        public InputAction @ButtonEast => m_Wrapper.m_UI_ButtonEast;
+        public InputAction @ButtonNorth => m_Wrapper.m_UI_ButtonNorth;
+        public InputAction @ButtonSouth => m_Wrapper.m_UI_ButtonSouth;
+        public InputAction @RightJoystick => m_Wrapper.m_UI_RightJoystick;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -2036,6 +2194,18 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @ButtonWest.started += instance.OnButtonWest;
             @ButtonWest.performed += instance.OnButtonWest;
             @ButtonWest.canceled += instance.OnButtonWest;
+            @ButtonEast.started += instance.OnButtonEast;
+            @ButtonEast.performed += instance.OnButtonEast;
+            @ButtonEast.canceled += instance.OnButtonEast;
+            @ButtonNorth.started += instance.OnButtonNorth;
+            @ButtonNorth.performed += instance.OnButtonNorth;
+            @ButtonNorth.canceled += instance.OnButtonNorth;
+            @ButtonSouth.started += instance.OnButtonSouth;
+            @ButtonSouth.performed += instance.OnButtonSouth;
+            @ButtonSouth.canceled += instance.OnButtonSouth;
+            @RightJoystick.started += instance.OnRightJoystick;
+            @RightJoystick.performed += instance.OnRightJoystick;
+            @RightJoystick.canceled += instance.OnRightJoystick;
         }
 
         private void UnregisterCallbacks(IUIActions instance)
@@ -2097,6 +2267,18 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @ButtonWest.started -= instance.OnButtonWest;
             @ButtonWest.performed -= instance.OnButtonWest;
             @ButtonWest.canceled -= instance.OnButtonWest;
+            @ButtonEast.started -= instance.OnButtonEast;
+            @ButtonEast.performed -= instance.OnButtonEast;
+            @ButtonEast.canceled -= instance.OnButtonEast;
+            @ButtonNorth.started -= instance.OnButtonNorth;
+            @ButtonNorth.performed -= instance.OnButtonNorth;
+            @ButtonNorth.canceled -= instance.OnButtonNorth;
+            @ButtonSouth.started -= instance.OnButtonSouth;
+            @ButtonSouth.performed -= instance.OnButtonSouth;
+            @ButtonSouth.canceled -= instance.OnButtonSouth;
+            @RightJoystick.started -= instance.OnRightJoystick;
+            @RightJoystick.performed -= instance.OnRightJoystick;
+            @RightJoystick.canceled -= instance.OnRightJoystick;
         }
 
         public void RemoveCallbacks(IUIActions instance)
@@ -2200,5 +2382,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnNavigateRight(InputAction.CallbackContext context);
         void OnNavigateLeft(InputAction.CallbackContext context);
         void OnButtonWest(InputAction.CallbackContext context);
+        void OnButtonEast(InputAction.CallbackContext context);
+        void OnButtonNorth(InputAction.CallbackContext context);
+        void OnButtonSouth(InputAction.CallbackContext context);
+        void OnRightJoystick(InputAction.CallbackContext context);
     }
 }

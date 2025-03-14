@@ -146,6 +146,7 @@ GameObject:
   - component: {fileID: 7031295993480095075}
   - component: {fileID: 6132833176307870633}
   - component: {fileID: 2065148909909636662}
+  - component: {fileID: 1312646184492506659}
   m_Layer: 5
   m_Name: HoverMarker
   m_TagString: Untagged
@@ -210,6 +211,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1312646184492506659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3455135334304100437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3be472479889f942aea1741b784f228, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Action: {fileID: 8229239753850169767, guid: 1f866763a0b1b7e43ba6a4e833c4fed9,
+    type: 3}
 --- !u!1 &4887070699293240769
 GameObject:
   m_ObjectHideFlags: 0
@@ -422,6 +437,7 @@ GameObject:
   - component: {fileID: 1793979811861020196}
   - component: {fileID: 2559720958360478462}
   - component: {fileID: 8943471928636066412}
+  - component: {fileID: 7169732602589840942}
   m_Layer: 5
   m_Name: Confirm
   m_TagString: Untagged
@@ -487,6 +503,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7169732602589840942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7512253902529548657}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3be472479889f942aea1741b784f228, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Action: {fileID: 8356555422446955334, guid: 1f866763a0b1b7e43ba6a4e833c4fed9,
+    type: 3}
 --- !u!1 &9124464329266176285
 GameObject:
   m_ObjectHideFlags: 0

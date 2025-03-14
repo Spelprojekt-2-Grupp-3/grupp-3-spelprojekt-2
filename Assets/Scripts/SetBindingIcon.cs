@@ -57,14 +57,8 @@ public class SetBindingIcon : MonoBehaviour
             case "rightTrigger": 
                 image.sprite = inputDevice.gasSprite;
                 return;
-            case "leftShoulder": 
-                image.sprite = inputDevice.leftShoulderSprite;
-                return;
             case "rightShoulder": 
-                image.sprite = inputDevice.rightShoulderSprite;
-                return;
-            case "dpad": 
-                image.sprite = inputDevice.dpadSprite;
+                image.sprite = inputDevice.boostSprite;
                 return;
             case "leftStick": 
                 image.sprite = inputDevice.moveSprite;
@@ -103,7 +97,7 @@ public class SetBindingIcon : MonoBehaviour
                         image.sprite = inputDevice.selectSprite;
                         return;
                     case "shift": 
-                        image.sprite = inputDevice.rightShoulderSprite;
+                        image.sprite = inputDevice.boostSprite;
                         return;
                 }
             }
@@ -133,7 +127,7 @@ public class SetBindingIcon : MonoBehaviour
                         image.sprite = inputDevice.selectSprite;
                         return;
                     case "shift": 
-                        image.sprite = inputDevice.rightShoulderSprite;
+                        image.sprite = inputDevice.boostSprite;
                         return;
                 }
             }
