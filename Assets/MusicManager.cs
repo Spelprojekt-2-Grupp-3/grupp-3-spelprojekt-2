@@ -9,28 +9,6 @@ public class MusicManager : MonoBehaviour
     private bool isPlaying = false;
     private bool isBengtPlaying = false;
 
-    private void Start()
-    {
-        StartBengtMusic();
-    }
-
-    public void StartBengtMusic()
-    {
-        if (isBengtPlaying) return;
-
-        musicOceanInstance = FMODUnity.RuntimeManager.CreateInstance("event:/Music/Music_Islands/Music_Bengt");
-        musicOceanInstance.start();
-        isBengtPlaying = true;
-    }
-
-    public void StopBengtMusic()
-    {
-        if (!isBengtPlaying) return;
-
-        musicOceanInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        isBengtPlaying = false;
-    }
-
     public void StartOceanMusic()
     {
         if (isPlaying) return;

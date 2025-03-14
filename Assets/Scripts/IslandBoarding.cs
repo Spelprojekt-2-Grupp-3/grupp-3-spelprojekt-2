@@ -7,6 +7,7 @@ using UnityEngine.InputSystem;
 
 public class IslandBoarding : MonoBehaviour
 {
+    [SerializeField] private bool starterIsland;
     [SerializeField] private GameObject playerCharacter;
     private PlayerInputActions playerControls;
     private InputAction board;
@@ -28,6 +29,10 @@ public class IslandBoarding : MonoBehaviour
     private void Start()
     {
         musicManager = FindObjectOfType<MusicManager>();
+        if (starterIsland)
+        {
+            islandThemeInstance.start();
+        }
     }
 
     private void Awake()
@@ -35,9 +40,19 @@ public class IslandBoarding : MonoBehaviour
         islandThemeInstance = FMODUnity.RuntimeManager.CreateInstance(islandTheme);
         ambianceInstance = FMODUnity.RuntimeManager.CreateInstance(ambiance);
         playerControls = new PlayerInputActions();
-        allowIslandBoard = false;
-        allowBoatBoard = false;
-        isOnBoat = false;
+        
+        if (starterIsland)
+        {
+            isOnBoat = false;
+            allowIslandBoard = false;
+            allowBoatBoard = true;
+        }
+        else
+        {
+            allowIslandBoard = true;
+            allowBoatBoard = false;
+            isOnBoat = true;
+        }
     }
 
     private void OnEnable()
@@ -103,6 +118,7 @@ public class IslandBoarding : MonoBehaviour
 
     public void BoardIsland()
     {
+        isOnBoat = false;
         islandThemeInstance.start();
         ambianceInstance.start();
         Events.stopBoat?.Invoke();
@@ -117,6 +133,7 @@ public class IslandBoarding : MonoBehaviour
 
     public void BoardBoat()
     {
+        isOnBoat = true;
         islandThemeInstance.stop(0);
         ambianceInstance.stop(0);
         Events.startBoat?.Invoke();
