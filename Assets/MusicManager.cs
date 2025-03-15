@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,11 +7,7 @@ public class MusicManager : MonoBehaviour
 {
     private FMOD.Studio.EventInstance musicOceanInstance;
     private bool isPlaying = false;
-
-    void Start()
-    {
-        StartOceanMusic();
-    }
+    private bool isBengtPlaying = false;
 
     public void StartOceanMusic()
     {

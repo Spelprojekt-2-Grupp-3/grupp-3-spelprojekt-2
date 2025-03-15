@@ -138,7 +138,5 @@ public class PlayerMovement : MonoBehaviour
         move.Disable();
         moveCam.Disable();
         interact.Disable();
-        _aniControl.SetFloat("X", 0);
-        _aniControl.SetFloat("Y", 0);
     }
 }

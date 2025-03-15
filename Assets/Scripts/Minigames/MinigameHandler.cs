@@ -10,16 +10,17 @@ public class MinigameHandler : MonoBehaviour
     private InputAction interact;
     [SerializeField] private GameObject minigameCanvasPrefab;
     private bool allowStartMinigame;
-    private bool hasBeenPlayed;
+    private bool hasBeenInstantiated;
     private bool minigameQuestStart;
+    private GameObject minigameInstance;
     [SerializeField] private int questID, step;
 
     private void Awake()
     {
-        hasBeenPlayed = false;
+        hasBeenInstantiated = false;
         playerInput = new PlayerInputActions();
         allowStartMinigame = false;
-        minigameQuestStart = false;
+        minigameQuestStart = true;
     }
 
     private void OnEnable()
@@ -27,19 +28,29 @@ public class MinigameHandler : MonoBehaviour
         interact = playerInput.Player.Interact;
         interact.Enable();
         interact.performed += InstantiateMinigame;
+        interact.performed += ReopenMinigame;
     }
 
     private void OnDisable()
     {
         interact.Disable();
         interact.performed -= InstantiateMinigame;
+        interact.performed -= ReopenMinigame;
     }
 
     private void InstantiateMinigame(InputAction.CallbackContext context)
     {
-        if (!allowStartMinigame || hasBeenPlayed || !minigameQuestStart) return;
-        Instantiate(minigameCanvasPrefab);
-        hasBeenPlayed = true;
+        if (!allowStartMinigame || hasBeenInstantiated || !minigameQuestStart) return;
+        minigameInstance = Instantiate(minigameCanvasPrefab);
+        hasBeenInstantiated = true;
+    }
+
+    private void ReopenMinigame(InputAction.CallbackContext context)
+    {
+        if (hasBeenInstantiated && allowStartMinigame)
+        {
+            minigameInstance.SetActive(true);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
