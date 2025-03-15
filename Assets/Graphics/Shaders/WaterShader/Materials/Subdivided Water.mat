@@ -130,14 +130,14 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _HorizonDistance: 30
-    - _Intersection_Foam_Blend: 0.368
-    - _Intersection_Foam_Cutoff: 1.57
-    - _Intersection_Foam_Depth: 2.6
+    - _Intersection_Foam_Blend: 0.366
+    - _Intersection_Foam_Cutoff: 1
+    - _Intersection_Foam_Depth: 10
     - _Intersection_Foam_Direction: 0.503
-    - _Intersection_Foam_Distortion: 0.66
+    - _Intersection_Foam_Distortion: 0.93
     - _Intersection_Foam_Fade: 1
     - _Intersection_Foam_Speed: 0.287
-    - _Intersection_Foam_Tiling: 17.2
+    - _Intersection_Foam_Tiling: 100
     - _Lighting_Hardness: 0.269
     - _Lighting_Smoothness: 1
     - _Metallic: 0
@@ -146,7 +146,7 @@ Material:
     - _Normals_Strength: 0.266
     - _OcclusionStrength: 1
     - _Parallax: 0.005
-    - _PosterizationSteps: 1000
+    - _PosterizationSteps: 100
     - _PosterizeSteps: 0
     - _QueueControl: 1
     - _QueueOffset: -40
