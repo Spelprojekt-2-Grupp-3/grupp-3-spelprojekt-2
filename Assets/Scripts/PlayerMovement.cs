@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Rigidbody), typeof(Animator), typeof(BoxCollider))]
+[RequireComponent(typeof(Rigidbody), typeof(Animator), typeof(CapsuleCollider))]
 public class PlayerMovement : MonoBehaviour
 {
     private Animator _aniControl;
