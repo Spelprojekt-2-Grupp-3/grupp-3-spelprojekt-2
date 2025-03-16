@@ -17,9 +17,7 @@ public class UlrichMinigme : Minigames
     private PlayerInputActions playerControls;
     private InputAction submit, buttonWest;
     List<GameObject> objects = new List<GameObject>();
-    [SerializeField] private CurrentInputIcons currentInput;
     private GameObject selectedObject;
-    [SerializeField] private Image confirmIcon;
     [SerializeField] private GameObject hoverMarker;
 
     private void Start()
@@ -51,7 +49,6 @@ public class UlrichMinigme : Minigames
     public override void StartMinigame()
     {
         Events.stopPlayer?.Invoke();
-        incorrectOrder.name = "Incorrect Order";
         List<Vector3> shuffledList = new List<Vector3>();
         for (int i = 0; i < incorrectOrder.transform.childCount; i++)
         {
@@ -59,10 +56,17 @@ public class UlrichMinigme : Minigames
         }
         
         correctPositions = shuffledList;
-
+        
         Random random = new Random();
 
-        shuffledList = shuffledList.OrderBy(x => random.Next()).ToList();
+        for (int i = shuffledList.Count - 1; i > 0; i--)
+        {
+            int k = random.Next(i);
+            
+            (shuffledList[i], shuffledList[k]) = (shuffledList[k], shuffledList[i]);
+        }
+
+        //shuffledList = shuffledList.OrderBy(x => random.Next()).ToList();
         
         for (int i = 0; i < incorrectOrder.transform.childCount; i++)
         {
@@ -76,7 +80,6 @@ public class UlrichMinigme : Minigames
             j++;
         }
         EventSystem.current.SetSelectedGameObject(objects[0]);
-        UpdateIcons();
     }
 
     public override void StopMinigame()
@@ -124,12 +127,6 @@ public class UlrichMinigme : Minigames
             }
             StopMinigame();
         }
-    }
-
-    private void UpdateIcons()
-    {
-        confirmIcon.sprite = currentInput.currentInputDevice.buttonWest;
-        hoverMarker.GetComponent<Image>().sprite = currentInput.currentInputDevice.buttonSouth;
     }
 
     private void SelectionHandler(PlayerInput sentInputDevice)

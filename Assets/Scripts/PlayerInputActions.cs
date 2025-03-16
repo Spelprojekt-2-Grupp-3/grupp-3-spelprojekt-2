@@ -1605,7 +1605,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Joystick;Gamepad"",
                     ""action"": ""ButtonWest"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
