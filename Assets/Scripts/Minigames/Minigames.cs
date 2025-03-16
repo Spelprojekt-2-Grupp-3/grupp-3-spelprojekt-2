@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Minigames : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class Minigames : MonoBehaviour
         // Stops the minigame
     }
 
-    public virtual void CloseMinigame()
+    public virtual void CloseMinigame(InputAction.CallbackContext context)
     {
         // Closes minigame
     }

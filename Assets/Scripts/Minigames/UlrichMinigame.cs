@@ -15,7 +15,7 @@ public class UlrichMinigme : Minigames
     [SerializeField] private GameObject incorrectOrder;
     [SerializeField] private GameObject correctOrder;
     private PlayerInputActions playerControls;
-    private InputAction submit, buttonWest;
+    private InputAction submit, buttonWest, buttonEast;
     List<GameObject> objects = new List<GameObject>();
     private GameObject selectedObject;
     [SerializeField] private GameObject hoverMarker;
@@ -29,15 +29,20 @@ public class UlrichMinigme : Minigames
     {
         submit = playerControls.UI.Submit;
         buttonWest = playerControls.UI.ButtonWest;
+        buttonEast = playerControls.UI.ButtonEast;
         submit.Enable();
         buttonWest.Enable();
+        buttonEast.Enable();
         Events.checkInputEvent.AddListener(SelectionHandler);
+        buttonEast.performed += CloseMinigame;
     }
 
     private void OnDisable()
     {
         submit.Disable();
         buttonWest.Disable();
+        buttonEast.Disable();
+        buttonEast.performed -= CloseMinigame;
         Events.checkInputEvent.RemoveListener(SelectionHandler);
     }
 
@@ -65,8 +70,6 @@ public class UlrichMinigme : Minigames
             
             (shuffledList[i], shuffledList[k]) = (shuffledList[k], shuffledList[i]);
         }
-
-        //shuffledList = shuffledList.OrderBy(x => random.Next()).ToList();
         
         for (int i = 0; i < incorrectOrder.transform.childCount; i++)
         {
@@ -80,6 +83,13 @@ public class UlrichMinigme : Minigames
             j++;
         }
         EventSystem.current.SetSelectedGameObject(objects[0]);
+        hoverMarker.transform.position = EventSystem.current.currentSelectedGameObject.transform.position;
+    }
+    
+    public override void CloseMinigame(InputAction.CallbackContext context)
+    {
+        Events.startPlayer?.Invoke();
+        gameObject.SetActive(false);
     }
 
     public override void StopMinigame()

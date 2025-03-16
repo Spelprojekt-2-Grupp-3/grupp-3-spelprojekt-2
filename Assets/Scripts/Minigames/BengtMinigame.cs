@@ -32,6 +32,7 @@ public class BengtMinigame : Minigames
         minigameButtonSouth.Enable();
         minigameButtonEast = playerControls.UI.ButtonEast;
         minigameButtonEast.Enable();
+        minigameButtonEast.performed += CloseMinigame;
         Events.stopPlayer?.Invoke();
     }
 
@@ -39,6 +40,7 @@ public class BengtMinigame : Minigames
     {
         minigameButtonSouth.Disable();
         minigameButtonEast.Disable();
+        minigameButtonEast.performed -= CloseMinigame;
     }
 
     private void Awake()
@@ -65,7 +67,7 @@ public class BengtMinigame : Minigames
         Destroy(gameObject);
     }
 
-    public override void CloseMinigame()
+    public override void CloseMinigame(InputAction.CallbackContext context)
     {
         Events.startPlayer?.Invoke();
         gameObject.SetActive(false);
@@ -104,11 +106,6 @@ public class BengtMinigame : Minigames
                 sliderSpeed *= 1.2f;
                 RandomizeGoalPosition();
             }
-        }
-
-        if (minigameButtonEast.WasPressedThisFrame())
-        {
-            CloseMinigame();
         }
     }
 
