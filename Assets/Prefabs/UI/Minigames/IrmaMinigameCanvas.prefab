@@ -296,7 +296,6 @@ GameObject:
   - component: {fileID: 6413715406847528057}
   - component: {fileID: 6069860097132960367}
   - component: {fileID: 317284509764142949}
-  - component: {fileID: 2021665977728755078}
   m_Layer: 5
   m_Name: ControlLeft
   m_TagString: Untagged
@@ -361,20 +360,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2021665977728755078
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2594744335170187712}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3be472479889f942aea1741b784f228, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Action: {fileID: 2039042274811535439, guid: 1f866763a0b1b7e43ba6a4e833c4fed9,
-    type: 3}
 --- !u!1 &3744639981251781056
 GameObject:
   m_ObjectHideFlags: 0
@@ -386,7 +371,6 @@ GameObject:
   - component: {fileID: 8253809515253767832}
   - component: {fileID: 439122702509002791}
   - component: {fileID: 6780566741753903235}
-  - component: {fileID: 8936556170114130748}
   m_Layer: 5
   m_Name: ControlRight
   m_TagString: Untagged
@@ -451,20 +435,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8936556170114130748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3744639981251781056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a3be472479889f942aea1741b784f228, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Action: {fileID: -3024013104934414787, guid: 1f866763a0b1b7e43ba6a4e833c4fed9,
-    type: 3}
 --- !u!1 &5801957605197126507
 GameObject:
   m_ObjectHideFlags: 0
@@ -983,7 +953,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3be472479889f942aea1741b784f228, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Action: {fileID: 8229239753850169767, guid: 1f866763a0b1b7e43ba6a4e833c4fed9,
+  m_Action: {fileID: 8356555422446955334, guid: 1f866763a0b1b7e43ba6a4e833c4fed9,
     type: 3}
 --- !u!1 &7529672979961055339
 GameObject:
@@ -1370,10 +1340,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e36131e56c7ea646a1595c0a27e060b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasBeenPlayed: 0
   leftStickIcon: {fileID: 7079072249796058690}
   rightStickIcon: {fileID: 6575175703235575192}
   submitIcon: {fileID: 6515140907519381718}
-  currentInput: {fileID: 11400000, guid: 7f7fd9995c4435f488f7df319f651fb7, type: 2}
   numberRange: 100
   currentValueLeftInst: {fileID: 3839627291744630593}
   currentValueRightInst: {fileID: 1015130568638302941}
@@ -1381,3 +1351,10 @@ MonoBehaviour:
   targetRightInst: {fileID: 2052166316970016315}
   leftStickControl: {fileID: 6413715406847528057}
   rightStickControl: {fileID: 8253809515253767832}
+  radioSound:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 

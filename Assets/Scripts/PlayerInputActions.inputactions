@@ -892,6 +892,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "LeftJoyStick",
+                    "type": "Button",
+                    "id": "3dab408e-5a19-4a12-a50a-3af3ec21b44c",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1667,17 +1676,6 @@
                 },
                 {
                     "name": "",
-                    "id": "907bad4d-8cb3-4fc2-a9a9-e48abcfbadc5",
-                    "path": "<Joystick>/{Hatswitch}",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Joystick",
-                    "action": "RightJoystick",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "8932602f-54e1-4697-95cd-503a4295a988",
                     "path": "<Pointer>/delta",
                     "interactions": "",
@@ -1695,6 +1693,17 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "RightJoystick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "64abf86a-6321-4aee-8d33-a63586d66a7f",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "LeftJoyStick",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

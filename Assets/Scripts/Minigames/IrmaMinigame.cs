@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using Cinemachine;
+using FMODUnity;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -17,24 +18,28 @@ public class IrmaMinigame : Minigames
     [SerializeField] private Image leftStickIcon, rightStickIcon, submitIcon;
     private float currentValueLeft, currentValueRight;
     private int targetValueLeft, targetValueRight;
-    [SerializeField] private CurrentInputIcons currentInput;
     [SerializeField, Range(0, 100)] private int numberRange;
     [SerializeField] private TextMeshProUGUI currentValueLeftInst, currentValueRightInst, targetLeftInst, targetRightInst;
     [SerializeField] private RectTransform  leftStickControl, rightStickControl;
+    public EventReference radioSound;
+    private FMOD.Studio.EventInstance radioSoundInstance;
     private bool hasStarted = false;
 
     private void OnEnable()
     {
-        leftStick = playerControls.Player.Move;
+        radioSoundInstance = RuntimeManager.CreateInstance(radioSound);
+        radioSoundInstance.start();
+        leftStick = playerControls.UI.LeftJoyStick;
         leftStick.Enable();
-        rightStick = playerControls.Player.Look;
+        rightStick = playerControls.UI.RightJoystick;
         rightStick.Enable();
-        submit = playerControls.UI.Submit;
+        submit = playerControls.UI.ButtonWest;
         submit.Enable();
     }
 
     private void OnDisable()
     {
+        radioSoundInstance.release();
         leftStick.Disable();
         rightStick.Disable();
         submit.Disable();
@@ -55,7 +60,6 @@ public class IrmaMinigame : Minigames
         var brain = Camera.main.GetComponent<CinemachineBrain>(); 
         brain.enabled = false;
         Events.stopPlayer?.Invoke();
-        var canvasInst = gameObject;
         targetValueLeft = Random.Range(1, numberRange);
         targetValueRight = Random.Range(1, numberRange);
         currentValueLeft = 0;
@@ -81,6 +85,9 @@ public class IrmaMinigame : Minigames
                 StopMinigame();
             }
         }
+
+        var value = currentValueLeft / targetValueLeft * 0.5f + currentValueRight / targetValueRight * 0.5f;
+        radioSoundInstance.setParameterByName("Radio thing", value);
     }
 
     private void FixedUpdate()
@@ -88,6 +95,7 @@ public class IrmaMinigame : Minigames
         if (!hasStarted) return;
         if (leftStick.IsInProgress())
         {
+            Debug.Log("left stick");
             currentValueLeft += Mathf.RoundToInt(leftStick.ReadValue<Vector2>().x);
             
             if (currentValueLeft > numberRange)
@@ -109,6 +117,7 @@ public class IrmaMinigame : Minigames
 
         if (rightStick.IsInProgress())
         {
+            Debug.Log("right stick");
             currentValueRight += Mathf.RoundToInt(rightStick.ReadValue<Vector2>().x);
             if (currentValueRight > numberRange)
             {
@@ -134,14 +143,5 @@ public class IrmaMinigame : Minigames
         targetRightInst.text = targetValueRight.ToString();
         currentValueLeftInst.text = Mathf.RoundToInt(currentValueLeft).ToString();
         currentValueRightInst.text = Mathf.RoundToInt(currentValueRight).ToString();
-        
-    }
-
-
-    private void UpdateIcons()
-    {
-        leftStickIcon.sprite = currentInput.currentInputDevice.moveSprite;
-        rightStickIcon.sprite = currentInput.currentInputDevice.moveCameraSprite;
-        submitIcon.sprite = currentInput.currentInputDevice.interactSprite;
     }
 }
