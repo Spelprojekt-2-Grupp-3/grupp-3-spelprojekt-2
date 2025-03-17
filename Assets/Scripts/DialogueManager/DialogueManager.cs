@@ -155,17 +155,18 @@ public class DialogueManager : MonoBehaviour
                 questLog.UpdateQuest(ID, step);
             }
         );
-
-        foreach (var minigameHandler in minigameHandlers)
-        {
-            _currentStory.BindExternalFunction(
-                "MinigameQuest",
-                (int ID, int step) =>
+        
+        _currentStory.BindExternalFunction(
+            "MinigameQuest",
+            (int ID, int step) =>
+            {
+                foreach (var minigameHandler in minigameHandlers)
                 {
                     minigameHandler.MinigameQuestStart(ID, step);
                 }
-            );
-        }
+            }
+        );
+        
         _currentStory.BindExternalFunction(
             "FadeToBlack",
             (float time) =>
