@@ -118,7 +118,7 @@ public class DialogueManager : MonoBehaviour
 
         _playerInput = new PlayerInputActions();
         
-        inputMaps.Add(_playerInput.Player);
+        //inputMaps.Add(_playerInput.Player);
         inputMaps.Add(_playerInput.Journal);
         inputMaps.Add(_playerInput.Boat);
         
