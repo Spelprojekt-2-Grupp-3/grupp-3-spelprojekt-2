@@ -9,7 +9,7 @@ using UnityEngine.UI;
 public class VeraMinigame : Minigames
 {
     private PlayerInputActions playerControls;
-    private InputAction submit, leftJoyStick;
+    private InputAction submit, leftJoyStick, exit;
     [SerializeField] private GameObject shellPrefab;
     [SerializeField] private CurrentInputIcons currentInput;
     [SerializeField] private GameObject water;
@@ -32,13 +32,17 @@ public class VeraMinigame : Minigames
         submit.Enable();
         leftJoyStick = playerControls.UI.Navigate;
         leftJoyStick.Enable();
-        EventSystem.current.firstSelectedGameObject = transform.Find("Water").gameObject;
+        exit = playerControls.UI.ButtonEast;
+        exit.Enable();
+        exit.performed += CloseMinigame;
     }
 
     private void OnDisable()
     {
         submit.Disable();
         leftJoyStick.Disable();
+        exit.Disable();
+        exit.performed -= CloseMinigame;
     }
 
     private void Start()
@@ -63,6 +67,12 @@ public class VeraMinigame : Minigames
         mouseMarkerInstance = Instantiate(mouseMarker, transform);
 
         EventSystem.current.SetSelectedGameObject(shells[0]);
+    }
+    
+    public override void CloseMinigame(InputAction.CallbackContext context)
+    {
+        Events.startPlayer?.Invoke();
+        gameObject.SetActive(false);
     }
 
     private void Update()
