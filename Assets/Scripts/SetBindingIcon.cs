@@ -10,7 +10,7 @@ public class SetBindingIcon : MonoBehaviour
     [Tooltip("Reference to action that is to be rebound from the UI.")]
     [SerializeField]
     private InputActionReference m_Action;
-    
+
     private void OnEnable()
     {
         Events.setIcons.AddListener(SetIcon);
