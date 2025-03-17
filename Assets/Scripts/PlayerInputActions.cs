@@ -808,15 +808,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
-                    ""name"": ""Journal"",
-                    ""type"": ""Button"",
-                    ""id"": ""f5602de7-154d-4c7e-a8d4-fac9e05e0c4f"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""Pause"",
                     ""type"": ""Button"",
                     ""id"": ""1e9f7761-91ad-48c7-a1fa-44b0d1f19eee"",
@@ -1346,28 +1337,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""e46234ac-3f43-426b-b323-3c1320a06e3a"",
-                    ""path"": ""<Gamepad>/select"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Gamepad"",
-                    ""action"": ""Journal"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""c767aead-a6bd-4682-8161-7baa921e3276"",
-                    ""path"": ""<Keyboard>/tab"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard&Mouse"",
-                    ""action"": ""Journal"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
                     ""id"": ""59a4bc2a-8fb3-4b23-8b11-03b3387f4ef6"",
                     ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",
@@ -1730,6 +1699,45 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Journal"",
+            ""id"": ""1ad49317-9d12-4a8d-9e79-1de757b5c8ea"",
+            ""actions"": [
+                {
+                    ""name"": ""Journal"",
+                    ""type"": ""Button"",
+                    ""id"": ""f336493f-e69b-427e-92ed-4ad5ee870fd2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""c813cbd1-cf26-47ee-9983-79dd1b1ae211"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Journal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""91b959af-c478-494c-a707-26793eb94b10"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Journal"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -1826,7 +1834,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_UI_TrackedDevicePosition = m_UI.FindAction("TrackedDevicePosition", throwIfNotFound: true);
         m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
         m_UI_ModifierButton = m_UI.FindAction("ModifierButton", throwIfNotFound: true);
-        m_UI_Journal = m_UI.FindAction("Journal", throwIfNotFound: true);
         m_UI_Pause = m_UI.FindAction("Pause", throwIfNotFound: true);
         m_UI_Inventory = m_UI.FindAction("Inventory", throwIfNotFound: true);
         m_UI_MenuRight = m_UI.FindAction("MenuRight", throwIfNotFound: true);
@@ -1839,6 +1846,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         m_UI_ButtonSouth = m_UI.FindAction("ButtonSouth", throwIfNotFound: true);
         m_UI_RightJoystick = m_UI.FindAction("RightJoystick", throwIfNotFound: true);
         m_UI_LeftJoyStick = m_UI.FindAction("LeftJoyStick", throwIfNotFound: true);
+        // Journal
+        m_Journal = asset.FindActionMap("Journal", throwIfNotFound: true);
+        m_Journal_Journal = m_Journal.FindAction("Journal", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -2099,7 +2109,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_UI_TrackedDevicePosition;
     private readonly InputAction m_UI_TrackedDeviceOrientation;
     private readonly InputAction m_UI_ModifierButton;
-    private readonly InputAction m_UI_Journal;
     private readonly InputAction m_UI_Pause;
     private readonly InputAction m_UI_Inventory;
     private readonly InputAction m_UI_MenuRight;
@@ -2127,7 +2136,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         public InputAction @TrackedDevicePosition => m_Wrapper.m_UI_TrackedDevicePosition;
         public InputAction @TrackedDeviceOrientation => m_Wrapper.m_UI_TrackedDeviceOrientation;
         public InputAction @ModifierButton => m_Wrapper.m_UI_ModifierButton;
-        public InputAction @Journal => m_Wrapper.m_UI_Journal;
         public InputAction @Pause => m_Wrapper.m_UI_Pause;
         public InputAction @Inventory => m_Wrapper.m_UI_Inventory;
         public InputAction @MenuRight => m_Wrapper.m_UI_MenuRight;
@@ -2182,9 +2190,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @ModifierButton.started += instance.OnModifierButton;
             @ModifierButton.performed += instance.OnModifierButton;
             @ModifierButton.canceled += instance.OnModifierButton;
-            @Journal.started += instance.OnJournal;
-            @Journal.performed += instance.OnJournal;
-            @Journal.canceled += instance.OnJournal;
             @Pause.started += instance.OnPause;
             @Pause.performed += instance.OnPause;
             @Pause.canceled += instance.OnPause;
@@ -2258,9 +2263,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
             @ModifierButton.started -= instance.OnModifierButton;
             @ModifierButton.performed -= instance.OnModifierButton;
             @ModifierButton.canceled -= instance.OnModifierButton;
-            @Journal.started -= instance.OnJournal;
-            @Journal.performed -= instance.OnJournal;
-            @Journal.canceled -= instance.OnJournal;
             @Pause.started -= instance.OnPause;
             @Pause.performed -= instance.OnPause;
             @Pause.canceled -= instance.OnPause;
@@ -2314,6 +2316,52 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         }
     }
     public UIActions @UI => new UIActions(this);
+
+    // Journal
+    private readonly InputActionMap m_Journal;
+    private List<IJournalActions> m_JournalActionsCallbackInterfaces = new List<IJournalActions>();
+    private readonly InputAction m_Journal_Journal;
+    public struct JournalActions
+    {
+        private @PlayerInputActions m_Wrapper;
+        public JournalActions(@PlayerInputActions wrapper) { m_Wrapper = wrapper; }
+        public InputAction @Journal => m_Wrapper.m_Journal_Journal;
+        public InputActionMap Get() { return m_Wrapper.m_Journal; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(JournalActions set) { return set.Get(); }
+        public void AddCallbacks(IJournalActions instance)
+        {
+            if (instance == null || m_Wrapper.m_JournalActionsCallbackInterfaces.Contains(instance)) return;
+            m_Wrapper.m_JournalActionsCallbackInterfaces.Add(instance);
+            @Journal.started += instance.OnJournal;
+            @Journal.performed += instance.OnJournal;
+            @Journal.canceled += instance.OnJournal;
+        }
+
+        private void UnregisterCallbacks(IJournalActions instance)
+        {
+            @Journal.started -= instance.OnJournal;
+            @Journal.performed -= instance.OnJournal;
+            @Journal.canceled -= instance.OnJournal;
+        }
+
+        public void RemoveCallbacks(IJournalActions instance)
+        {
+            if (m_Wrapper.m_JournalActionsCallbackInterfaces.Remove(instance))
+                UnregisterCallbacks(instance);
+        }
+
+        public void SetCallbacks(IJournalActions instance)
+        {
+            foreach (var item in m_Wrapper.m_JournalActionsCallbackInterfaces)
+                UnregisterCallbacks(item);
+            m_Wrapper.m_JournalActionsCallbackInterfaces.Clear();
+            AddCallbacks(instance);
+        }
+    }
+    public JournalActions @Journal => new JournalActions(this);
     private int m_KeyboardMouseSchemeIndex = -1;
     public InputControlScheme KeyboardMouseScheme
     {
@@ -2392,7 +2440,6 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnTrackedDevicePosition(InputAction.CallbackContext context);
         void OnTrackedDeviceOrientation(InputAction.CallbackContext context);
         void OnModifierButton(InputAction.CallbackContext context);
-        void OnJournal(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
         void OnInventory(InputAction.CallbackContext context);
         void OnMenuRight(InputAction.CallbackContext context);
@@ -2405,5 +2452,9 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
         void OnButtonSouth(InputAction.CallbackContext context);
         void OnRightJoystick(InputAction.CallbackContext context);
         void OnLeftJoyStick(InputAction.CallbackContext context);
+    }
+    public interface IJournalActions
+    {
+        void OnJournal(InputAction.CallbackContext context);
     }
 }

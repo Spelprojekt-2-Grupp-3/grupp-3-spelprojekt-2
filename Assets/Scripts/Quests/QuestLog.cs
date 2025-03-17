@@ -37,10 +37,12 @@ public class QuestLog : MonoBehaviour
         {
             Debug.Log("Added quest");
             questList.Add(quest);
-            //var questVisual = Instantiate(questBoxPrefab).GetComponent<Quest>();
-            //questVisual.gameObject.
-            //questObjectList.Add(questVisual);
-            //questVisual.Set(quest);
+            
+            //create the quest in the visual Quest log
+            var questVisual = Instantiate(questBoxPrefab).GetComponent<Quest>();
+            questVisual.gameObject.transform.SetParent(questContainer.transform); //place it in a scroll view for automatic placement beneath each other
+            questObjectList.Add(questVisual); //add it to list for text-updating later
+            questVisual.SetInitial(quest); //set the initial variables for the quest
         }
     }
 

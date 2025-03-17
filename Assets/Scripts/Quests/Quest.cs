@@ -9,11 +9,11 @@ public class Quest : MonoBehaviour
     public TMP_Text infoText;
     [HideInInspector] public int ID;
     
-    public void Set(QuestData data)
+    public void SetInitial(QuestData data)
     {
         ID = data.ID;
         titleText.text = data.questTitle;
-        infoText.text = data.questText;
+        infoText.text = data.initialQuestText;
     }
 
     public void UpdateText(QuestData data)

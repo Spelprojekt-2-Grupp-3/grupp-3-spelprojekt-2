@@ -786,15 +786,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Journal",
-                    "type": "Button",
-                    "id": "f5602de7-154d-4c7e-a8d4-fac9e05e0c4f",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Pause",
                     "type": "Button",
                     "id": "1e9f7761-91ad-48c7-a1fa-44b0d1f19eee",
@@ -1324,28 +1315,6 @@
                 },
                 {
                     "name": "",
-                    "id": "e46234ac-3f43-426b-b323-3c1320a06e3a",
-                    "path": "<Gamepad>/select",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Gamepad",
-                    "action": "Journal",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "c767aead-a6bd-4682-8161-7baa921e3276",
-                    "path": "<Keyboard>/tab",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard&Mouse",
-                    "action": "Journal",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "59a4bc2a-8fb3-4b23-8b11-03b3387f4ef6",
                     "path": "<Keyboard>/escape",
                     "interactions": "",
@@ -1704,6 +1673,45 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "LeftJoyStick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Journal",
+            "id": "1ad49317-9d12-4a8d-9e79-1de757b5c8ea",
+            "actions": [
+                {
+                    "name": "Journal",
+                    "type": "Button",
+                    "id": "f336493f-e69b-427e-92ed-4ad5ee870fd2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "c813cbd1-cf26-47ee-9983-79dd1b1ae211",
+                    "path": "<Gamepad>/select",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "Journal",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "91b959af-c478-494c-a707-26793eb94b10",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "Journal",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
