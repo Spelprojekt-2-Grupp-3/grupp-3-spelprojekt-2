@@ -14,7 +14,7 @@ using Random = UnityEngine.Random;
 public class IrmaMinigame : Minigames
 {
     private PlayerInputActions playerControls;
-    private InputAction leftStick, rightStick, submit;
+    private InputAction leftStick, rightStick, submit, exit;
     [SerializeField] private Image leftStickIcon, rightStickIcon, submitIcon;
     private float currentValueLeft, currentValueRight;
     private int targetValueLeft, targetValueRight;
@@ -35,14 +35,19 @@ public class IrmaMinigame : Minigames
         rightStick.Enable();
         submit = playerControls.UI.ButtonWest;
         submit.Enable();
+        exit = playerControls.UI.ButtonEast;
+        exit.Enable();
+        exit.performed += CloseMinigame;
     }
 
     private void OnDisable()
     {
-        radioSoundInstance.release();
+        radioSoundInstance.stop(0);
         leftStick.Disable();
         rightStick.Disable();
         submit.Disable();
+        exit.Disable();
+        exit.performed -= CloseMinigame;
     }
 
     private void Awake()
@@ -67,6 +72,12 @@ public class IrmaMinigame : Minigames
         UpdateText();
         hasStarted = true;
     }
+    
+    public override void CloseMinigame(InputAction.CallbackContext context)
+    {
+        Events.startPlayer?.Invoke();
+        gameObject.SetActive(false);
+    }
 
     public override void StopMinigame()
     {
@@ -78,6 +89,7 @@ public class IrmaMinigame : Minigames
 
     private void Update()
     {
+        if (!hasStarted) return;
         if (submit.WasPerformedThisFrame())
         {
             if (Mathf.RoundToInt(currentValueLeft) == targetValueLeft && Mathf.RoundToInt(currentValueRight) == targetValueRight)
@@ -86,7 +98,9 @@ public class IrmaMinigame : Minigames
             }
         }
 
-        var value = currentValueLeft / targetValueLeft * 0.5f + currentValueRight / targetValueRight * 0.5f;
+        var value = 0.5f * Mathf.Min(1, currentValueLeft / targetValueLeft) + 
+                    0.5f * Mathf.Min(1, currentValueRight / targetValueRight);
+        Debug.Log(value);
         radioSoundInstance.setParameterByName("Radio thing", value);
     }
 

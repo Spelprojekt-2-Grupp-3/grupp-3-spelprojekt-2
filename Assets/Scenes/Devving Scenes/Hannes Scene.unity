@@ -1061,7 +1061,7 @@ MonoBehaviour:
   - {fileID: 97699531}
   - {fileID: 981018217}
   - {fileID: 1197297595}
---- !u!1001 &1765293809
+--- !u!1001 &1731728767
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1072,16 +1072,6 @@ PrefabInstance:
     - target: {fileID: 92761358505711233, guid: a2279f291cc365f4384fd49bf9a25314,
         type: 3}
       propertyPath: radioSound.Path
-      value: event:/Sound/SFX/minigames/Radio (test)
-      objectReference: {fileID: 0}
-    - target: {fileID: 92761358505711233, guid: a2279f291cc365f4384fd49bf9a25314,
-        type: 3}
-      propertyPath: radioSoundLeft.Path
-      value: event:/Sound/SFX/minigames/Radio (test)
-      objectReference: {fileID: 0}
-    - target: {fileID: 92761358505711233, guid: a2279f291cc365f4384fd49bf9a25314,
-        type: 3}
-      propertyPath: radioSoundRight.Path
       value: event:/Sound/SFX/minigames/Radio (test)
       objectReference: {fileID: 0}
     - target: {fileID: 92761358505711233, guid: a2279f291cc365f4384fd49bf9a25314,
@@ -1102,46 +1092,6 @@ PrefabInstance:
     - target: {fileID: 92761358505711233, guid: a2279f291cc365f4384fd49bf9a25314,
         type: 3}
       propertyPath: radioSound.Guid.Data4
-      value: 717071395
-      objectReference: {fileID: 0}
-    - target: {fileID: 92761358505711233, guid: a2279f291cc365f4384fd49bf9a25314,
-        type: 3}
-      propertyPath: radioSoundLeft.Guid.Data1
-      value: 506138914
-      objectReference: {fileID: 0}
-    - target: {fileID: 92761358505711233, guid: a2279f291cc365f4384fd49bf9a25314,
-        type: 3}
-      propertyPath: radioSoundLeft.Guid.Data2
-      value: 1138198446
-      objectReference: {fileID: 0}
-    - target: {fileID: 92761358505711233, guid: a2279f291cc365f4384fd49bf9a25314,
-        type: 3}
-      propertyPath: radioSoundLeft.Guid.Data3
-      value: -1513102179
-      objectReference: {fileID: 0}
-    - target: {fileID: 92761358505711233, guid: a2279f291cc365f4384fd49bf9a25314,
-        type: 3}
-      propertyPath: radioSoundLeft.Guid.Data4
-      value: 717071395
-      objectReference: {fileID: 0}
-    - target: {fileID: 92761358505711233, guid: a2279f291cc365f4384fd49bf9a25314,
-        type: 3}
-      propertyPath: radioSoundRight.Guid.Data1
-      value: 506138914
-      objectReference: {fileID: 0}
-    - target: {fileID: 92761358505711233, guid: a2279f291cc365f4384fd49bf9a25314,
-        type: 3}
-      propertyPath: radioSoundRight.Guid.Data2
-      value: 1138198446
-      objectReference: {fileID: 0}
-    - target: {fileID: 92761358505711233, guid: a2279f291cc365f4384fd49bf9a25314,
-        type: 3}
-      propertyPath: radioSoundRight.Guid.Data3
-      value: -1513102179
-      objectReference: {fileID: 0}
-    - target: {fileID: 92761358505711233, guid: a2279f291cc365f4384fd49bf9a25314,
-        type: 3}
-      propertyPath: radioSoundRight.Guid.Data4
       value: 717071395
       objectReference: {fileID: 0}
     - target: {fileID: 4137912136811171552, guid: a2279f291cc365f4384fd49bf9a25314,
@@ -1448,5 +1398,5 @@ SceneRoots:
   m_Roots:
   - {fileID: 931229626}
   - {fileID: 1918884918}
-  - {fileID: 1765293809}
   - {fileID: 84502855}
+  - {fileID: 1731728767}
