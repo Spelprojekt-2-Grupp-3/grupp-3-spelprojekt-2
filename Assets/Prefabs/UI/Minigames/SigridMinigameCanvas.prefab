@@ -568,6 +568,20 @@ MonoBehaviour:
   hasBeenPlayed: 0
   currentInput: {fileID: 11400000, guid: 7f7fd9995c4435f488f7df319f651fb7, type: 2}
   hoverMarker: {fileID: 3893645919411594546}
+  pickSound:
+    Guid:
+      Data1: 601376897
+      Data2: 1121801758
+      Data3: 1092410275
+      Data4: -1807714793
+    Path: event:/Sound/SFX/minigames/SparkPlug
+  placeSound:
+    Guid:
+      Data1: 601376897
+      Data2: 1121801758
+      Data3: 1092410275
+      Data4: -1807714793
+    Path: event:/Sound/SFX/minigames/SparkPlug
 --- !u!222 &5181417779806371923
 CanvasRenderer:
   m_ObjectHideFlags: 0

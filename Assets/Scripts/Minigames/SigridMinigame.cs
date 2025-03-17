@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using FMODUnity;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -18,6 +19,7 @@ public class SigridMinigame : Minigames
     private Fuse[] fuses = new Fuse[9];
     private List<int> fusesPos = new List<int>(){0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14};
     [SerializeField] private GameObject hoverMarker;
+    [SerializeField] private EventReference pickSound, placeSound;
 
     private void OnEnable()
     {
@@ -95,6 +97,7 @@ public class SigridMinigame : Minigames
             {
                 if (EventSystem.current.currentSelectedGameObject.GetComponent<EmptyFuse>() && EventSystem.current.currentSelectedGameObject.GetComponent<EmptyFuse>().emptyFuse)
                 {
+                    RuntimeManager.PlayOneShot(placeSound);
                     pickedObject.GetComponent<Button>().enabled = false;
                     pickedObject = null;
                     EventSystem.current.currentSelectedGameObject.GetComponent<EmptyFuse>().emptyFuse = false;
@@ -118,6 +121,7 @@ public class SigridMinigame : Minigames
 
     public void PickUp(GameObject obj)
     {
+        RuntimeManager.PlayOneShot(pickSound);
         pickedObject = obj;
     }
 
