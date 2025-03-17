@@ -114,6 +114,7 @@ Material:
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
+    - _ColourSharpness: 10
     - _Cull: 2
     - _Cutoff: 0.5
     - _DeepAlpha: 0.9
@@ -135,7 +136,7 @@ Material:
     - _Intersection_Foam_Depth: 20
     - _Intersection_Foam_Direction: 0.503
     - _Intersection_Foam_Distortion: 0.93
-    - _Intersection_Foam_Fade: 1
+    - _Intersection_Foam_Fade: 0.299
     - _Intersection_Foam_Speed: 0.287
     - _Intersection_Foam_Tiling: 100
     - _Lighting_Hardness: 0.269
@@ -166,8 +167,8 @@ Material:
     - _Surface_Foam_Distortion: 1.5
     - _Surface_Foam_Speed: 0.168
     - _Transparency: 0.9
-    - _Wave_Length: 5
-    - _Wave_Speed: 1.5
+    - _Wave_Length: 5.79
+    - _Wave_Speed: 1
     - _Wave_Steepness: 2
     - _WorkflowMode: 1
     - _ZWrite: 1
@@ -182,5 +183,6 @@ Material:
     - _ShallowColour: {r: 0.32600567, g: 0.5319293, b: 0.6981132, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _Specular_Colour: {r: 1, g: 1, b: 1, a: 0.078431375}
+    - _WaveColour: {r: 1, g: 1, b: 1, a: 0}
     - _Wave_Directions: {r: 0, g: 0.5, b: 1, a: 0.2}
   m_BuildTextureStacks: []
