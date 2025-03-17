@@ -44,13 +44,9 @@ public class IslandBoarding : MonoBehaviour
         if (starterIsland)
         {
             isOnBoat = false;
-            allowIslandBoard = false;
-            allowBoatBoard = true;
         }
         else
         {
-            allowIslandBoard = true;
-            allowBoatBoard = false;
             isOnBoat = true;
         }
     }
@@ -83,6 +79,7 @@ public class IslandBoarding : MonoBehaviour
 
         if (other.gameObject.tag == "Player" && !isOnBoat)
         {
+            Debug.Log("allow boat board");
             allowBoatBoard = true;
         }
     }

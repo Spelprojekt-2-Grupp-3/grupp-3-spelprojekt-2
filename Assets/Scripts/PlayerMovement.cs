@@ -134,6 +134,7 @@ public class PlayerMovement : MonoBehaviour
     private void StopPlayer()
     {
         movePlayer = false;
+        _aniControl.SetFloat("Speed", 0);
         Debug.Log("stopped player");
         move.Disable();
         moveCam.Disable();
