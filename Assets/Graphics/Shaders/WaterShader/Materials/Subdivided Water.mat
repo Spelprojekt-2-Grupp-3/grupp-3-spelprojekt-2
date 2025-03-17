@@ -167,6 +167,7 @@ Material:
     - _Surface_Foam_Distortion: 1.5
     - _Surface_Foam_Speed: 0.168
     - _Transparency: 0.9
+    - _Wave_Colour_Sharpness: 10
     - _Wave_Length: 5.79
     - _Wave_Speed: 1
     - _Wave_Steepness: 2
@@ -185,4 +186,5 @@ Material:
     - _Specular_Colour: {r: 1, g: 1, b: 1, a: 0.078431375}
     - _WaveColour: {r: 1, g: 1, b: 1, a: 0}
     - _Wave_Directions: {r: 0, g: 0.5, b: 1, a: 0.2}
+    - _Wave_Highlight_Colour: {r: 1, g: 1, b: 1, a: 0}
   m_BuildTextureStacks: []
