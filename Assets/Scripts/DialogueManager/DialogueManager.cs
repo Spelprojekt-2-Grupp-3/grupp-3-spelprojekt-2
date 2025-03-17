@@ -1,12 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using FMODUnity;
 using FMODUnityResonance;
 using Ink.Runtime;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using FMODUnity;
 using UnityEngine.InputSystem;
 using UnityEngine.Serialization;
 using Image = UnityEngine.UI.Image;
@@ -76,10 +76,12 @@ public class DialogueManager : MonoBehaviour
 
     private DialogueQuestUpdate InkQuestIntegrationUpdater;
 
-    [HideInInspector]public List<TextAsset> dialogueQueue;
-    
-    
-    
+    [HideInInspector]
+    public List<TextAsset> dialogueQueue;
+
+    [SerializeField]
+    private Animator FadeToBlackAnimator;
+
     private void Awake()
     {
         if (_instance != null)
@@ -87,22 +89,26 @@ public class DialogueManager : MonoBehaviour
             Debug.LogWarning("More than one Dialogue Manager in scene!");
         }
         _instance = this;
-        
+
         dialogueUI = transform.Find("DialogueUI").gameObject;
-        
+
         dialoguePanel = dialogueUI.transform.Find("DialoguePanel").gameObject;
         dialogueText = dialogueUI.transform.Find("DialogueText").GetComponent<TextMeshProUGUI>();
-        displayNameText = dialogueUI.transform.Find("DisplayNameText").GetComponent<TextMeshProUGUI>();
+        displayNameText = dialogueUI
+            .transform.Find("DisplayNameText")
+            .GetComponent<TextMeshProUGUI>();
         continueIcon = dialogueUI.transform.Find("ContinueIcon").gameObject;
-        
-        portraitAnimator = dialogueUI.transform.Find("PortraitFrame/PortraitImage").GetComponent<Animator>();
+
+        portraitAnimator = dialogueUI
+            .transform.Find("PortraitFrame/PortraitImage")
+            .GetComponent<Animator>();
         layoutAnimator = dialogueUI.GetComponent<Animator>();
-        
+
         choicesPanel = dialogueUI.transform.Find("ChoicesPanel").gameObject;
         choicesParent = dialogueUI.transform.Find("Choices").gameObject;
 
         minigameHandlers = FindObjectsOfType<MinigameHandler>();
-        
+
         if (choicesParent != null)
         {
             // Get all child objects of ChoicesPanel
@@ -116,13 +122,13 @@ public class DialogueManager : MonoBehaviour
                 _choicesText[i] = choices[i].GetComponentInChildren<TextMeshProUGUI>();
             }
         }
-        
+
         questLog = FindObjectOfType<QuestLog>();
         inventoryController = FindObjectOfType<InventoryController>();
         inventoryMenu = FindObjectOfType<InventoryMenu>();
 
         _playerInput = new PlayerInputActions();
-        
+
         questLog.AddQuest();
     }
 
@@ -160,6 +166,13 @@ public class DialogueManager : MonoBehaviour
                 }
             );
         }
+        _currentStory.BindExternalFunction(
+            "FadeToBlack",
+            (float time) =>
+            {
+                FadeToBlack(time);
+            }
+        );
     }
 
     private void Update()
@@ -190,7 +203,7 @@ public class DialogueManager : MonoBehaviour
 
     private void OnDisable()
     {
-       // _playerInput.Disable();
+        // _playerInput.Disable();
     }
 
     public static DialogueManager GetInstance()
@@ -236,13 +249,13 @@ public class DialogueManager : MonoBehaviour
 
     private void MultipleDialogueStart()
     {
-        if(dialogueQueue.Count==0) return;
-        
+        if (dialogueQueue.Count == 0)
+            return;
+
         EnterDialogueMode(dialogueQueue[0]);
         dialogueQueue.Remove(dialogueQueue[0]);
     }
-    
-    
+
     private void ContinueStory()
     {
         if (_currentStory.canContinue)
@@ -264,8 +277,9 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-//ljudreferens
-public EventReference dialogueSound; 
+    //ljudreferens
+    public EventReference dialogueSound;
+
     private IEnumerator DisplayLine(string line)
     {
         dialogueText.text = ""; // Clear previous text
@@ -409,5 +423,10 @@ public EventReference dialogueSound;
             _currentStory.ChooseChoiceIndex(choiceIndex);
             ContinueStory();
         }
+    }
+
+    private void FadeToBlack(float duration)
+    {
+        FadeToBlackAnimator.SetFloat("SpeedParam", 1 / duration);
     }
 }

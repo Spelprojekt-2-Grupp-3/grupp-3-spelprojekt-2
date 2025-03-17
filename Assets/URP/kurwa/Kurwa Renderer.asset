@@ -57,7 +57,7 @@ MonoBehaviour:
   m_Active: 1
   settings:
     passTag: RenderObjects
-    Event: 500
+    Event: 550
     filterSettings:
       RenderQueueType: 1
       LayerMask:
@@ -68,9 +68,9 @@ MonoBehaviour:
     overrideMaterialPassIndex: 1
     overrideShader: {fileID: 0}
     overrideShaderPassIndex: 0
-    overrideMode: 1
+    overrideMode: 0
     overrideDepthState: 1
-    depthCompareFunction: 3
+    depthCompareFunction: 4
     enableWrite: 1
     stencilSettings:
       overrideStencilState: 0
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Active: 1
   settings:
     passTag: RenderObjects
-    Event: 450
+    Event: 500
     filterSettings:
       RenderQueueType: 0
       LayerMask:
