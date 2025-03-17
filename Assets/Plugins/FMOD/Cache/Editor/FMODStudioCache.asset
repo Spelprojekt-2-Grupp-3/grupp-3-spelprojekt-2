@@ -352,6 +352,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1097
+--- !u!114 &-6212709823561838295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound/SFX/minigames/ClearSFX
+  m_EditorClassIdentifier: 
+  Path: event:/Sound/SFX/minigames/ClearSFX
+  Guid:
+    Data1: -96613928
+    Data2: 1150681665
+    Data3: -524366954
+    Data4: 1211439791
+  Banks:
+  - {fileID: 8182886605034168985}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 400
 --- !u!114 &-6034553022081508271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -494,10 +521,10 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/Banks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638774318226605213
+  lastModified: 638778206813380215
   FileSizes:
   - Name: 
-    Value: 3016
+    Value: 3132
   Exists: 1
 --- !u!114 &-4055353369233749306
 MonoBehaviour:
@@ -546,6 +573,60 @@ MonoBehaviour:
   - Name: 
     Value: 2720
   Exists: 1
+--- !u!114 &-3446465654274201420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound/SFX/Foley/PlayerFootsteps
+  m_EditorClassIdentifier: 
+  Path: event:/Sound/SFX/Foley/PlayerFootsteps
+  Guid:
+    Data1: -964883578
+    Data2: 1084394836
+    Data3: 1500936084
+    Data4: -399476887
+  Banks:
+  - {fileID: 8182886605034168985}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-3370568221056332674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound/SFX/minigames/Potts
+  m_EditorClassIdentifier: 
+  Path: event:/Sound/SFX/minigames/Potts
+  Guid:
+    Data1: -352784221
+    Data2: 1103931858
+    Data3: -167139170
+    Data4: 1504689970
+  Banks:
+  - {fileID: 8182886605034168985}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 350
 --- !u!114 &-3348586249923402918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -770,6 +851,33 @@ MonoBehaviour:
     Data2: 1121801758
     Data3: 1092410275
     Data4: -1807714793
+  Banks:
+  - {fileID: 8182886605034168985}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 152
+--- !u!114 &-1682581632539877939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound/AMB/Seagulls
+  m_EditorClassIdentifier: 
+  Path: event:/Sound/AMB/Seagulls
+  Guid:
+    Data1: -363511639
+    Data2: 1196805657
+    Data3: 1330329009
+    Data4: -850142301
   Banks:
   - {fileID: 8182886605034168985}
   IsStream: 0
@@ -1240,8 +1348,6 @@ MonoBehaviour:
   - {fileID: -2843654852930572703}
   - {fileID: 1085835330467700353}
   - {fileID: -1001392705813010797}
-  - {fileID: 6159877881167757589}
-  - {fileID: 7094714485086334506}
   - {fileID: 6314701053669530753}
   - {fileID: 4643199824973972166}
   - {fileID: 4135419831565066106}
@@ -1252,13 +1358,18 @@ MonoBehaviour:
   - {fileID: 8073522480153099546}
   - {fileID: 7394008082403591485}
   - {fileID: 1341928315392115948}
+  - {fileID: -3370568221056332674}
+  - {fileID: -1682581632539877939}
+  - {fileID: 4249449360383835121}
+  - {fileID: -6212709823561838295}
+  - {fileID: -3446465654274201420}
   EditorParameters:
   - {fileID: 4258373662463232916}
   MasterBanks:
   - {fileID: 8182886605034168985}
   StringsBanks:
   - {fileID: -4265464848103356742}
-  cacheTime: 638774318226605213
+  cacheTime: 638778206813380215
   cacheVersion: 131622
 --- !u!114 &459774145964946755
 MonoBehaviour:
@@ -1861,6 +1972,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1420
+--- !u!114 &4249449360383835121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound/SFX/minigames/CleanShells
+  m_EditorClassIdentifier: 
+  Path: event:/Sound/SFX/minigames/CleanShells
+  Guid:
+    Data1: -776276049
+    Data2: 1208534887
+    Data3: -228853080
+    Data4: -1043562546
+  Banks:
+  - {fileID: 8182886605034168985}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &4258373662463232916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2128,33 +2266,6 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &6159877881167757589
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Sound/SFX/Foley/PlayerFootsteps v1.1
-  m_EditorClassIdentifier: 
-  Path: event:/Sound/SFX/Foley/PlayerFootsteps v1.1
-  Guid:
-    Data1: -136685455
-    Data2: 1305429518
-    Data3: 577962135
-    Data4: 24673059
-  Banks:
-  - {fileID: 8182886605034168985}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &6194639861347084245
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2257,33 +2368,6 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
---- !u!114 &7094714485086334506
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Sound/SFX/Foley/PlayerFootsteps v1.0
-  m_EditorClassIdentifier: 
-  Path: event:/Sound/SFX/Foley/PlayerFootsteps v1.0
-  Guid:
-    Data1: -94389070
-    Data2: 1155828152
-    Data3: 1385128341
-    Data4: 1733531145
-  Banks:
-  - {fileID: 8182886605034168985}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &7155238255842091075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2577,7 +2661,7 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/Banks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638774318226501749
+  lastModified: 638778206813335005
   FileSizes: []
   Exists: 1
 --- !u!114 &8247415871218049302
