@@ -100,7 +100,6 @@ public class IrmaMinigame : Minigames
 
         var value = 0.5f * Mathf.Min(1, currentValueLeft / targetValueLeft) + 
                     0.5f * Mathf.Min(1, currentValueRight / targetValueRight);
-        Debug.Log(value);
         radioSoundInstance.setParameterByName("Radio thing", value);
     }
 
