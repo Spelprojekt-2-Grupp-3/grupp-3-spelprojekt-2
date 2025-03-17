@@ -1680,7 +1680,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/leftStick"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Gamepad"",
+                    ""groups"": ""Gamepad;Joystick"",
                     ""action"": ""LeftJoyStick"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
