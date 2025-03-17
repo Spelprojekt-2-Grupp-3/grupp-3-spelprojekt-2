@@ -427,6 +427,7 @@ public class DialogueManager : MonoBehaviour
 
     private void FadeToBlack(float duration)
     {
+        FadeToBlackAnimator.SetTrigger("Fade");
         FadeToBlackAnimator.SetFloat("SpeedParam", 1 / duration);
     }
 }
