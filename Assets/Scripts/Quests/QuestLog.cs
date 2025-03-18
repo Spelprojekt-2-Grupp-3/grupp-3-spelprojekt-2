@@ -40,6 +40,7 @@ public class QuestLog : MonoBehaviour
         {
             Debug.Log("Added quest");
             questList.Add(questsData[i]);
+            questsData[i].step = 0;
             
             //create the quest in the visual Quest log
             var questVisualObject = Instantiate(questBoxPrefab, questContainer.transform);
