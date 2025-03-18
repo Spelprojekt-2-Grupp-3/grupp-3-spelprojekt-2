@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Vector2 = System.Numerics.Vector2;
 
 public class QuestLog : MonoBehaviour
 {
@@ -20,6 +21,8 @@ public class QuestLog : MonoBehaviour
 
     private List<Quest> questObjectList = new List<Quest>();
 
+    [SerializeField] private float offset;
+    
     [SerializeField]
     private bool devving;
     private int siblingIndex;
@@ -33,14 +36,21 @@ public class QuestLog : MonoBehaviour
     
     public void AddQuest()
     {
-        foreach (var quest in questsData)
+        for (int i = 0; i < questsData.Count; i++)
         {
             Debug.Log("Added quest");
-            questList.Add(quest);
-            //var questVisual = Instantiate(questBoxPrefab).GetComponent<Quest>();
-            //questVisual.gameObject.
-            //questObjectList.Add(questVisual);
-            //questVisual.Set(quest);
+            questList.Add(questsData[i]);
+            
+            //create the quest in the visual Quest log
+            var questVisualObject = Instantiate(questBoxPrefab, questContainer.transform);
+            var rect = questVisualObject.GetComponent<RectTransform>();
+
+            rect.transform.position = new Vector3(rect.transform.position.x,  rect.transform.position.y - (rect.sizeDelta.y + offset) * (i - 2));
+            
+            var questVisual = questVisualObject.GetComponent<Quest>();
+            
+            questObjectList.Add(questVisual); //add it to list for text-updating later
+            questVisual.SetInitial(questsData[i]); //set the initial variables for the quest
         }
     }
 

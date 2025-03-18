@@ -6,7 +6,7 @@ using UnityEngine.InputSystem;
 
 public class InventoryMenu : MonoBehaviour
 {
-    [SerializeField] private InventoryController inventoryController;
+    //[SerializeField] private InventoryController inventoryController;
     [SerializeField] private QuestLog questLog;
     [SerializeField] private List<GameObject> tabObjects;
 
@@ -29,7 +29,7 @@ public class InventoryMenu : MonoBehaviour
 
     private void OnEnable()
     {
-        openJournal = playerInput.UI.Journal;
+        openJournal = playerInput.Journal.Journal;
         tabRight = playerInput.UI.MenuRight;
         tabLeft = playerInput.UI.MenuLeft;
         EnableControls();
@@ -49,7 +49,6 @@ public class InventoryMenu : MonoBehaviour
     public void DisableControls()
     {
         DisableOther();
-        //questLog.DisableControls();
         openJournal.Disable();
         isOpen = false;
     }
@@ -57,7 +56,6 @@ public class InventoryMenu : MonoBehaviour
     public void EnableControls()
     {
         EnableOther();
-        //questLog.EnableControls();
         openJournal.Enable();
     }
 

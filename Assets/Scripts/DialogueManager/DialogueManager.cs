@@ -53,7 +53,7 @@ public class DialogueManager : MonoBehaviour
 
     private TextMeshProUGUI[] _choicesText;
     private Story _currentStory;
-    private MinigameHandler[] minigameHandlers;
+    private  MinigameHandler[] minigameHandlers;
 
     //Readonly (I dont know why)
     public bool dialogueIsPlaying { get; private set; }
@@ -67,15 +67,14 @@ public class DialogueManager : MonoBehaviour
 
     private QuestLog questLog;
 
-    private InventoryController inventoryController;
-    private InventoryMenu inventoryMenu;
-
     [Header("Package data list")]
     [SerializeField]
     private List<PackageData> packageDatas;
 
     private DialogueQuestUpdate InkQuestIntegrationUpdater;
-
+    
+    private List<InputActionMap> inputMaps = new List<InputActionMap>();
+    
     [HideInInspector]
     public List<TextAsset> dialogueQueue;
 
@@ -107,6 +106,7 @@ public class DialogueManager : MonoBehaviour
         choicesPanel = dialogueUI.transform.Find("ChoicesPanel").gameObject;
         choicesParent = dialogueUI.transform.Find("Choices").gameObject;
 
+
         minigameHandlers = FindObjectsOfType<MinigameHandler>();
 
         if (choicesParent != null)
@@ -124,10 +124,12 @@ public class DialogueManager : MonoBehaviour
         }
 
         questLog = FindObjectOfType<QuestLog>();
-        inventoryController = FindObjectOfType<InventoryController>();
-        inventoryMenu = FindObjectOfType<InventoryMenu>();
 
         _playerInput = new PlayerInputActions();
+
+        //inputMaps.Add(_playerInput.Player);
+        //inputMaps.Add(_playerInput.Journal);
+        //inputMaps.Add(_playerInput.Boat);
 
         questLog.AddQuest();
     }
@@ -155,7 +157,7 @@ public class DialogueManager : MonoBehaviour
                 questLog.UpdateQuest(ID, step);
             }
         );
-        
+
         _currentStory.BindExternalFunction(
             "MinigameQuest",
             (int ID, int step) =>
@@ -218,9 +220,12 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying = true;
         dialogueUI.SetActive(true);
 
+        foreach (var inputMap in inputMaps)
+        {
+            inputMap.Disable();
+        }
+        
         BindExternal();
-        //
-        // inventoryMenu.DisableControls();
 
         //Reset portrait, layout and speaker
         displayNameText.text = "Name";
@@ -230,14 +235,10 @@ public class DialogueManager : MonoBehaviour
         Events.stopPlayer?.Invoke();
 
         ContinueStory();
-
-        //inventoryController.gameObject.SetActive(false);
     }
 
     private IEnumerator ExitDialogueMode()
     {
-        // inventoryMenu.EnableControls();
-
         //Small delay before closing UI to avoid double clicks
         yield return new WaitForSeconds(0.2f);
         dialogueIsPlaying = false;
@@ -245,6 +246,10 @@ public class DialogueManager : MonoBehaviour
         dialogueText.text = "";
         //Doesnt work yet
         Events.startPlayer?.Invoke();
+        foreach (var inputMap in inputMaps)
+        {
+            inputMap.Enable();
+        }
         MultipleDialogueStart();
     }
 
