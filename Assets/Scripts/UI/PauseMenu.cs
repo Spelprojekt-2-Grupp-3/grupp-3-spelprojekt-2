@@ -10,7 +10,7 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private GameObject firstSelected;
     [SerializeField] private GameObject optionsObject;
     private PlayerInputActions playerControls;
-    private InputAction pause;
+    private InputAction pause, cancel;
     private bool paused;
     [SerializeField] private Camera camera;
     [SerializeField] private RenderTexture renderTexture;
@@ -25,6 +25,8 @@ public class PauseMenu : MonoBehaviour
         pause.Enable();
         cameraBrain = Camera.main;
         playerMovement = GameObject.FindWithTag("Player");
+        cancel = playerControls.UI.Cancel;
+        cancel.Disable();
     }
 
     private void ActivatePauseMenu(InputAction.CallbackContext context)
@@ -41,6 +43,8 @@ public class PauseMenu : MonoBehaviour
 
     private void Pause()
     {
+        cancel.Enable();
+        playerControls.UI.Cancel.performed += TryCancel;
         paused = true;
         if (playerMovement.activeSelf)
         {
@@ -58,6 +62,8 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+        cancel.Disable();
+        playerControls.UI.Cancel.performed -= TryCancel;
         paused = false;
         if (playerMovement.activeSelf)
         {
@@ -81,5 +87,26 @@ public class PauseMenu : MonoBehaviour
     public void Options()
     {
         optionsObject.SetActive(!optionsObject.activeSelf);
+        if (optionsObject.activeSelf)
+        {
+            EventSystem.current.SetSelectedGameObject(optionsObject.transform.GetChild(0).gameObject);
+        }
+    }
+
+    private void TryCancel(InputAction.CallbackContext context)
+    {
+        if (optionsObject.activeSelf)
+        {
+            optionsObject.SetActive(false);
+            EventSystem.current.SetSelectedGameObject(firstSelected);
+        }
+        else if (optionsObject.transform.GetChild(0).gameObject.activeSelf)
+        {
+            optionsObject.transform.GetChild(0).gameObject.SetActive(false);
+        }
+        else if (gameObject.GetComponent<Canvas>().enabled)
+        {
+            Resume();
+        }
     }
 }
