@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using FMODUnity;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -11,23 +12,29 @@ using Random = UnityEngine.Random;
 public class SigridMinigame : Minigames
 {
     private PlayerInputActions playerControls;
-    private InputAction submit;
+    private InputAction submit, exit;
     [SerializeField] private CurrentInputIcons currentInput;
     private GameObject pickedObject;
     private EmptyFuse[] emptyFuses = new EmptyFuse[15];
     private Fuse[] fuses = new Fuse[9];
     private List<int> fusesPos = new List<int>(){0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14};
     [SerializeField] private GameObject hoverMarker;
+    [SerializeField] private EventReference pickSound, placeSound;
 
     private void OnEnable()
     {
         submit = playerControls.UI.Submit;
         submit.Enable();
+        exit = playerControls.UI.ButtonEast;
+        exit.Enable();
+        exit.performed += CloseMinigame;
     }
 
     private void OnDisable()
     {
         submit.Disable();
+        exit.Disable();
+        exit.performed -= CloseMinigame;
     }
 
     private void Awake()
@@ -59,10 +66,17 @@ public class SigridMinigame : Minigames
         foreach (int pos in fusesPos)
         {
             emptyFuses[pos].emptyFuse = true;
-            emptyFuses[pos].GetComponent<Image>().color = Color.grey;
-            emptyFuses[pos].voltage = Random.Range(0, 80f);
+            Color color = Color.white;
+            color.a = 0;
+            emptyFuses[pos].GetComponent<Image>().color = color;
         }
         UpdateIcons();
+    }
+    
+    public override void CloseMinigame(InputAction.CallbackContext context)
+    {
+        Events.startPlayer?.Invoke();
+        gameObject.SetActive(false);
     }
 
     public override void StopMinigame()
@@ -83,6 +97,7 @@ public class SigridMinigame : Minigames
             {
                 if (EventSystem.current.currentSelectedGameObject.GetComponent<EmptyFuse>() && EventSystem.current.currentSelectedGameObject.GetComponent<EmptyFuse>().emptyFuse)
                 {
+                    RuntimeManager.PlayOneShot(placeSound);
                     pickedObject.GetComponent<Button>().enabled = false;
                     pickedObject = null;
                     EventSystem.current.currentSelectedGameObject.GetComponent<EmptyFuse>().emptyFuse = false;
@@ -106,6 +121,7 @@ public class SigridMinigame : Minigames
 
     public void PickUp(GameObject obj)
     {
+        RuntimeManager.PlayOneShot(pickSound);
         pickedObject = obj;
     }
 

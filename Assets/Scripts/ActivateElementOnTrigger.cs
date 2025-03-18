@@ -8,11 +8,25 @@ public class ActivateElementOnTrigger : MonoBehaviour
     [SerializeField] private GameObject obj;
     private void OnTriggerEnter(Collider other)
     {
-        obj.SetActive(true);
+        if (obj.GetComponent<Canvas>())
+        {
+            obj.GetComponent<Canvas>().enabled = true;
+        }
+        else
+        {
+            obj.SetActive(true);
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        obj.SetActive(false);
+        if (obj.GetComponent<Canvas>())
+        {
+            obj.GetComponent<Canvas>().enabled = false;
+        }
+        else
+        {
+            obj.SetActive(false);
+        }
     }
 }

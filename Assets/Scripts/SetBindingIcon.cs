@@ -10,7 +10,7 @@ public class SetBindingIcon : MonoBehaviour
     [Tooltip("Reference to action that is to be rebound from the UI.")]
     [SerializeField]
     private InputActionReference m_Action;
-    
+
     private void OnEnable()
     {
         Events.setIcons.AddListener(SetIcon);
@@ -23,6 +23,7 @@ public class SetBindingIcon : MonoBehaviour
 
     private void SetIcon(CurrentInputDevice inputDevice, PlayerInput input)
     {
+        Debug.Log("set binding icon");
         var deviceLayoutName = default(string);
         var controlPath = default(string);
         var action = m_Action.action;
@@ -34,7 +35,14 @@ public class SetBindingIcon : MonoBehaviour
         switch (controlPath)
         {
             case "buttonSouth":
-                image.sprite = inputDevice.buttonSouth;
+                if (action.actionMap.name.ToLower() == "player")
+                {
+                    image.sprite = inputDevice.interactSprite;
+                }
+                else
+                {
+                    image.sprite = inputDevice.buttonSouth;
+                }
                 return;
             case "buttonNorth": 
                 image.sprite = inputDevice.buttonNorth;
