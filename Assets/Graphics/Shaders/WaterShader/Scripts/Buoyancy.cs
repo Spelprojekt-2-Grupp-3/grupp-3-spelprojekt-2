@@ -95,7 +95,7 @@ public class BuoyantObject : MonoBehaviour
     [SerializeField]
     [Range(0.0f, 1f)]
     [Tooltip("Scalar value for how strongly the force increases")]
-    public float scalarValue = 0.1f;
+    private float scalarValue = 0.1f;
 
     [SerializeField]
     private float scalarThreshold = 2;
