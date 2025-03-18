@@ -123,7 +123,7 @@ public class BuoyantObject : MonoBehaviour
 
             float distanceY = Mathf.Abs(effectorHeight + 0.6f - waveHeight);
             float test = 1;
-            if (distanceY >= scalarThreshold && transform.CompareTag("Player"))
+            if (distanceY >= scalarThreshold && transform.CompareTag("Boat"))
             {
                 test = 1 + scalarValue * distanceY;
                 subm = false;
@@ -142,7 +142,7 @@ public class BuoyantObject : MonoBehaviour
             //if the effector height is below the waves continue
             if (!(effectorHeight < waveHeight))
             {
-                if (transform.CompareTag("Player"))
+                if (transform.CompareTag("Boat"))
                 {
                     strength = defaultStrength;
                 }
@@ -157,7 +157,7 @@ public class BuoyantObject : MonoBehaviour
 
             if (
                 transform.position.y <= waterHeight + 0.4f
-                && transform.CompareTag("Player")
+                && transform.CompareTag("Boat")
                 && !subm
             )
             {
