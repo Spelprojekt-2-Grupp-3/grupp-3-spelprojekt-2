@@ -21,7 +21,7 @@ public class QuestLog : MonoBehaviour
 
     private List<Quest> questObjectList = new List<Quest>();
 
-    [SerializeField] private float offset;
+    [Tooltip("for fine adjustments of the placement of quests on menu"),SerializeField] private float offset;
     
     [SerializeField]
     private bool devving;
