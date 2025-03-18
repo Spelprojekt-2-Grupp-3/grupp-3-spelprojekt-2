@@ -109,7 +109,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-            Debug.Log(moveDirection);
+//            Debug.Log(moveDirection);
             moveDirection = Vector2.Lerp(moveDirection, new Vector2(0, 0), _idleInterpolationSpeed);
             _aniControl.SetFloat("Speed", moveDirection.sqrMagnitude);
         }

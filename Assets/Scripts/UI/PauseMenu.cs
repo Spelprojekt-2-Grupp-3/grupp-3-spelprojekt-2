@@ -2,10 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 public class PauseMenu : MonoBehaviour
 {
+    [SerializeField] private GameObject firstSelected;
+    [SerializeField] private GameObject optionsObject;
     private PlayerInputActions playerControls;
     private InputAction pause;
     private bool paused;
@@ -26,37 +29,57 @@ public class PauseMenu : MonoBehaviour
 
     private void ActivatePauseMenu(InputAction.CallbackContext context)
     {
-        paused = !paused;
-        if (paused)
+        if (!paused)
         {
-            //Time.timeScale = 0;
-            
-            if (playerMovement.activeSelf)
-            {
-                Events.stopPlayer?.Invoke();
-            }
-            else
-            {
-                Events.stopBoat.Invoke();
-            }
-            gameObject.GetComponent<Canvas>().enabled = true;
-            camera.enabled = true;
-            cameraBrain.targetTexture = renderTexture;
+            Pause();
         }
         else
         {
-            //Time.timeScale = 1;
-            if (playerMovement.activeSelf)
-            {
-                Events.startPlayer?.Invoke();
-            }
-            else
-            {
-                Events.startBoat.Invoke();
-            }
-            gameObject.GetComponent<Canvas>().enabled = false;
-            camera.enabled = false;
-            cameraBrain.targetTexture = null;
+            Resume();
         }
+    }
+
+    private void Pause()
+    {
+        paused = true;
+        if (playerMovement.activeSelf)
+        {
+            Events.stopPlayer?.Invoke();
+        }
+        else
+        {
+            Events.stopBoat.Invoke();
+        }
+        gameObject.GetComponent<Canvas>().enabled = true;
+        EventSystem.current.SetSelectedGameObject(firstSelected);
+        camera.enabled = true;
+        cameraBrain.targetTexture = renderTexture;
+    }
+
+    public void Resume()
+    {
+        paused = false;
+        if (playerMovement.activeSelf)
+        {
+            Events.startPlayer?.Invoke();
+        }
+        else
+        {
+            Events.startBoat.Invoke();
+        }
+        gameObject.GetComponent<Canvas>().enabled = false;
+        camera.enabled = false;
+        cameraBrain.targetTexture = null;
+        EventSystem.current.SetSelectedGameObject(null);
+    }
+
+    public void MainMenu()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Main Menu");
+    }
+
+    public void Options()
+    {
+        optionsObject.SetActive(!optionsObject.activeSelf);
     }
 }
