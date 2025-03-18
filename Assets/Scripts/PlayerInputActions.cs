@@ -565,7 +565,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Gamepad;Joystick"",
                     ""action"": ""MinigameButtonSouth"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -576,7 +576,7 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Keyboard&Mouse;Touch"",
                     ""action"": ""MinigameButtonSouth"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false

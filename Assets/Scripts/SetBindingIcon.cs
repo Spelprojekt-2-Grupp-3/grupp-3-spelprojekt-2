@@ -11,14 +11,9 @@ public class SetBindingIcon : MonoBehaviour
     [SerializeField]
     private InputActionReference m_Action;
 
-    private void OnEnable()
+    private void Awake()
     {
         Events.setIcons.AddListener(SetIcon);
-    }
-
-    private void OnDisable()
-    {
-        Events.setIcons.RemoveListener(SetIcon);
     }
 
     private void SetIcon(CurrentInputDevice inputDevice, PlayerInput input)
