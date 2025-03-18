@@ -521,10 +521,10 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/Banks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638778242746635757
+  lastModified: 638779084025756754
   FileSizes:
   - Name: 
-    Value: 3132
+    Value: 3224
   Exists: 1
 --- !u!114 &-4055353369233749306
 MonoBehaviour:
@@ -833,33 +833,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1097
---- !u!114 &-2182606775142456496
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Sound/SFX/minigames/SparkPlug
-  m_EditorClassIdentifier: 
-  Path: event:/Sound/SFX/minigames/SparkPlug
-  Guid:
-    Data1: 601376897
-    Data2: 1121801758
-    Data3: 1092410275
-    Data4: -1807714793
-  Banks:
-  - {fileID: 8182886605034168985}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 152
 --- !u!114 &-1682581632539877939
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1352,7 +1325,6 @@ MonoBehaviour:
   - {fileID: 4643199824973972166}
   - {fileID: 4135419831565066106}
   - {fileID: -1618434354723901096}
-  - {fileID: -2182606775142456496}
   - {fileID: 8422063921757146920}
   - {fileID: -3229296133250831553}
   - {fileID: 8073522480153099546}
@@ -1363,13 +1335,16 @@ MonoBehaviour:
   - {fileID: 4249449360383835121}
   - {fileID: -6212709823561838295}
   - {fileID: -3446465654274201420}
+  - {fileID: 6223120046420076957}
+  - {fileID: 1059533170620124717}
+  - {fileID: 8339037003840245863}
   EditorParameters:
   - {fileID: 4258373662463232916}
   MasterBanks:
   - {fileID: 8182886605034168985}
   StringsBanks:
   - {fileID: -4265464848103356742}
-  cacheTime: 638778266187483794
+  cacheTime: 638779084025756754
   cacheVersion: 131622
 --- !u!114 &459774145964946755
 MonoBehaviour:
@@ -1452,6 +1427,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 157
+--- !u!114 &1059533170620124717
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound/SFX/minigames/SparkPlug_Correct
+  m_EditorClassIdentifier: 
+  Path: event:/Sound/SFX/minigames/SparkPlug_Correct
+  Guid:
+    Data1: -663140645
+    Data2: 1127497738
+    Data3: -1739676258
+    Data4: -1915265652
+  Banks:
+  - {fileID: 8182886605034168985}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 138
 --- !u!114 &1085835330467700353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2293,6 +2295,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 241
+--- !u!114 &6223120046420076957
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound/SFX/minigames/SparkPlug_PickUp
+  m_EditorClassIdentifier: 
+  Path: event:/Sound/SFX/minigames/SparkPlug_PickUp
+  Guid:
+    Data1: 1965917864
+    Data2: 1252406682
+    Data3: -819517819
+    Data4: -28572622
+  Banks:
+  - {fileID: 8182886605034168985}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 140
 --- !u!114 &6314701053669530753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2661,7 +2690,7 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/Banks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638778266187483794
+  lastModified: 638779084025751786
   FileSizes: []
   Exists: 1
 --- !u!114 &8247415871218049302
@@ -2693,6 +2722,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 70000
+--- !u!114 &8339037003840245863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound/SFX/minigames/SparkPlug_Wrong
+  m_EditorClassIdentifier: 
+  Path: event:/Sound/SFX/minigames/SparkPlug_Wrong
+  Guid:
+    Data1: -62283281
+    Data2: 1308349428
+    Data3: -592568182
+    Data4: -1983032645
+  Banks:
+  - {fileID: 8182886605034168985}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 122
 --- !u!114 &8422063921757146920
 MonoBehaviour:
   m_ObjectHideFlags: 0

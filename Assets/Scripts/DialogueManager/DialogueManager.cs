@@ -17,6 +17,9 @@ public class DialogueManager : MonoBehaviour
     [SerializeField]
     private float typingSpeed = 0.04f;
 
+    [Header("Globals Ink File")]
+    [SerializeField] private TextAsset loadGlobalsJSON;
+    
     [Header("Dialogue UI")]
     [SerializeField]
     private GameObject dialogueUI;
@@ -53,7 +56,8 @@ public class DialogueManager : MonoBehaviour
 
     private TextMeshProUGUI[] _choicesText;
     private Story _currentStory;
-    private  MinigameHandler[] minigameHandlers;
+    private MinigameHandler[] minigameHandlers;
+    private DialogueVariables _dialogueVariables;
 
     //Readonly (I dont know why)
     public bool dialogueIsPlaying { get; private set; }
@@ -67,14 +71,15 @@ public class DialogueManager : MonoBehaviour
 
     private QuestLog questLog;
 
+    private InventoryController inventoryController;
+    private InventoryMenu inventoryMenu;
+
     [Header("Package data list")]
     [SerializeField]
     private List<PackageData> packageDatas;
 
     private DialogueQuestUpdate InkQuestIntegrationUpdater;
-    
-    private List<InputActionMap> inputMaps = new List<InputActionMap>();
-    
+
     [HideInInspector]
     public List<TextAsset> dialogueQueue;
 
@@ -106,8 +111,8 @@ public class DialogueManager : MonoBehaviour
         choicesPanel = dialogueUI.transform.Find("ChoicesPanel").gameObject;
         choicesParent = dialogueUI.transform.Find("Choices").gameObject;
 
-
         minigameHandlers = FindObjectsOfType<MinigameHandler>();
+        _dialogueVariables = new DialogueVariables(loadGlobalsJSON);
 
         if (choicesParent != null)
         {
@@ -124,12 +129,10 @@ public class DialogueManager : MonoBehaviour
         }
 
         questLog = FindObjectOfType<QuestLog>();
+        inventoryController = FindObjectOfType<InventoryController>();
+        inventoryMenu = FindObjectOfType<InventoryMenu>();
 
         _playerInput = new PlayerInputActions();
-
-        //inputMaps.Add(_playerInput.Player);
-        //inputMaps.Add(_playerInput.Journal);
-        //inputMaps.Add(_playerInput.Boat);
 
         questLog.AddQuest();
     }
@@ -157,7 +160,7 @@ public class DialogueManager : MonoBehaviour
                 questLog.UpdateQuest(ID, step);
             }
         );
-
+        
         _currentStory.BindExternalFunction(
             "MinigameQuest",
             (int ID, int step) =>
@@ -219,37 +222,35 @@ public class DialogueManager : MonoBehaviour
         _currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
         dialogueUI.SetActive(true);
-
-        foreach (var inputMap in inputMaps)
-        {
-            inputMap.Disable();
-        }
         
+        _dialogueVariables.StartListening(_currentStory);
+
         BindExternal();
+        //
+        // inventoryMenu.DisableControls();
 
         //Reset portrait, layout and speaker
         displayNameText.text = "Name";
         portraitAnimator.Play("Default");
         layoutAnimator.Play("NPC");
-        //Doesnt work yet
         Events.stopPlayer?.Invoke();
 
         ContinueStory();
+
+        //inventoryController.gameObject.SetActive(false);
     }
 
     private IEnumerator ExitDialogueMode()
     {
+        // inventoryMenu.EnableControls();
+
         //Small delay before closing UI to avoid double clicks
         yield return new WaitForSeconds(0.2f);
         dialogueIsPlaying = false;
         dialogueUI.SetActive(false);
         dialogueText.text = "";
-        //Doesnt work yet
+        _dialogueVariables.StopListening(_currentStory);
         Events.startPlayer?.Invoke();
-        foreach (var inputMap in inputMaps)
-        {
-            inputMap.Enable();
-        }
         MultipleDialogueStart();
     }
 
