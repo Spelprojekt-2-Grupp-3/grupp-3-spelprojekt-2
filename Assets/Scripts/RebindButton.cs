@@ -13,9 +13,18 @@ public class RebindButton : MonoBehaviour
     [SerializeField] private GameObject button;
     [SerializeField] private Image icon;
     private InputActionRebindingExtensions.RebindingOperation rebindingOperation;
+    private const string rebinds = "Rebinds";
     private void Awake()
     {
-        
+        // Loads rebinds
+        string rebindString = PlayerPrefs.GetString(rebinds, string.Empty);
+        if (string.IsNullOrEmpty(rebindString)) return;
+        InputListener.Instance.playerInput.actions.LoadBindingOverridesFromJson(rebindString);
+    }
+
+    private void Start()
+    {
+        SetIcon();
     }
 
     public void Pressed()
@@ -28,6 +37,8 @@ public class RebindButton : MonoBehaviour
     private void RebindComplete()
     {
         button.SetActive(true);
+        string rebindString = InputListener.Instance.playerInput.actions.SaveBindingOverridesAsJson();
+        PlayerPrefs.SetString(rebinds, rebindString);
         rebindingOperation.Dispose();
         SetIcon();
     }
@@ -42,8 +53,6 @@ public class RebindButton : MonoBehaviour
         if (bindingIndex == -1) return;
         action.GetBindingDisplayString(bindingIndex, out deviceLayoutName, out controlPath);
         var image = icon;
-        //actionText.text = controlPath;
-        PlayerPrefs.SetString(action.name, controlPath);
 
         switch (controlPath)
         {
