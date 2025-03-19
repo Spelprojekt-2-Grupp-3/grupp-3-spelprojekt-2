@@ -18,9 +18,9 @@ public class RebindButton : MonoBehaviour
     private void Awake()
     {
         // Loads rebinds
-        string rebindString = PlayerPrefs.GetString(rebinds, string.Empty);
-        if (string.IsNullOrEmpty(rebindString)) return;
-        InputListener.Instance.playerInput.actions.LoadBindingOverridesFromJson(rebindString);
+        //string rebindString = PlayerPrefs.GetString(rebinds, string.Empty);
+        //if (string.IsNullOrEmpty(rebindString)) return;
+        //m_Action.action.LoadBindingOverridesFromJson(rebindString);
     }
 
     private void Start()
@@ -32,11 +32,11 @@ public class RebindButton : MonoBehaviour
     {
         button.SetActive(false);
         m_Action.action.Disable();
-        rebindingOperation = m_Action.action.PerformInteractiveRebinding().WithControlsExcluding("Mouse").OnMatchWaitForAnother(0.1f).OnComplete(operation => RebindComplete(rebindingOperation)).Start();
+        rebindingOperation = m_Action.action.PerformInteractiveRebinding().WithControlsExcluding("Mouse").OnMatchWaitForAnother(0.1f).OnComplete(operation => RebindComplete()).Start();
     }
     
 
-    private void RebindComplete(InputActionRebindingExtensions.RebindingOperation operation)
+    private void RebindComplete()
     {
         button.SetActive(true);
         string actionName = m_Action.name;
@@ -75,14 +75,7 @@ public class RebindButton : MonoBehaviour
         switch (controlPath)
         {
             case "buttonSouth":
-                if (action.actionMap.name.ToLower() == "player")
-                {
-                    image.sprite = inputDevice.interactSprite;
-                }
-                else
-                {
                     image.sprite = inputDevice.buttonSouth;
-                }
                 return;
             case "buttonNorth":
                 image.sprite = inputDevice.buttonNorth;
@@ -102,7 +95,13 @@ public class RebindButton : MonoBehaviour
             case "leftTriggerButton":
                 image.sprite = inputDevice.reverseSprite;
                 return;
+            case "leftTrigger":
+                image.sprite = inputDevice.reverseSprite;
+                return;
             case "rightTriggerButton":
+                image.sprite = inputDevice.gasSprite;
+                return;
+            case "rightTrigger":
                 image.sprite = inputDevice.gasSprite;
                 return;
             case "rightShoulder":
