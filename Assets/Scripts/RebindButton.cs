@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -17,9 +18,9 @@ public class RebindButton : MonoBehaviour
     private void Awake()
     {
         // Loads rebinds
-        //string rebindString = PlayerPrefs.GetString(rebinds, string.Empty);
-        //if (string.IsNullOrEmpty(rebindString)) return;
-        //InputListener.Instance.playerInput.actions.LoadBindingOverridesFromJson(rebindString);
+        string rebindString = PlayerPrefs.GetString(rebinds, string.Empty);
+        if (string.IsNullOrEmpty(rebindString)) return;
+        InputListener.Instance.playerInput.actions.LoadBindingOverridesFromJson(rebindString);
     }
 
     private void Start()
@@ -38,8 +39,9 @@ public class RebindButton : MonoBehaviour
     private void RebindComplete()
     {
         button.SetActive(true);
-        //string rebindString = InputListener.Instance.playerInput.actions.SaveBindingOverridesAsJson();
-        //PlayerPrefs.SetString(rebinds, rebindString);
+        string rebindString = InputListener.Instance.playerInput.actions.SaveBindingOverridesAsJson();
+        Debug.Log(rebindString);
+        PlayerPrefs.SetString(rebinds, rebindString);
         m_Action.action.Enable();
         rebindingOperation.Dispose();
         SetIcon();
@@ -83,19 +85,19 @@ public class RebindButton : MonoBehaviour
             case "select":
                 image.sprite = inputDevice.selectSprite;
                 return;
-            case "leftTrigger":
+            case "leftTriggerButton":
                 image.sprite = inputDevice.reverseSprite;
                 return;
-            case "rightTrigger":
+            case "rightTriggerButton":
                 image.sprite = inputDevice.gasSprite;
                 return;
             case "rightShoulder":
                 image.sprite = inputDevice.boostSprite;
                 return;
-            case "leftStick":
+            case string path when path.Contains("leftStick"):
                 image.sprite = inputDevice.moveSprite;
                 return;
-            case "rightStick":
+            case string path when path.Contains("rightStick"):
                 image.sprite = inputDevice.moveCameraSprite;
                 return;
         }
