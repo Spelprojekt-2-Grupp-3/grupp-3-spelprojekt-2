@@ -25,10 +25,10 @@ public class QuestData : ScriptableObject
     {
         bool successful = false;
         
-        if (step < steps.Count-1)
+        if (step <= steps.Count-1)
         {
-            step++;
             questText = steps[step];
+            step++;
             successful = true;
         }
 
