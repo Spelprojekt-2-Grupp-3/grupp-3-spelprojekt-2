@@ -25,7 +25,7 @@ public class QuestData : ScriptableObject
     {
         bool successful = false;
         
-        if (step < steps.Count)
+        if (step < steps.Count-1)
         {
             step++;
             questText = steps[step];
