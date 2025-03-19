@@ -32,15 +32,29 @@ public class RebindButton : MonoBehaviour
     {
         button.SetActive(false);
         m_Action.action.Disable();
-        rebindingOperation = m_Action.action.PerformInteractiveRebinding().WithControlsExcluding("Mouse").OnMatchWaitForAnother(0.1f).OnComplete(operation => RebindComplete()).Start();
+        rebindingOperation = m_Action.action.PerformInteractiveRebinding().WithControlsExcluding("Mouse").OnMatchWaitForAnother(0.1f).OnComplete(operation => RebindComplete(rebindingOperation)).Start();
     }
     
 
-    private void RebindComplete()
+    private void RebindComplete(InputActionRebindingExtensions.RebindingOperation operation)
     {
         button.SetActive(true);
-        string rebindString = InputListener.Instance.playerInput.actions.SaveBindingOverridesAsJson();
-        Debug.Log(rebindString);
+        string actionName = m_Action.name;
+        string rebindString = "";
+        if (rebindingOperation.action.ToString().Contains("leftStick"))
+        {
+            rebindString = "{\"bindings\":[{\"action\":\""+actionName+"\",\"id\":\"759da2d7-7b15-4668-8b9c-e8d55b86c0b3\",\"path\":\"<Gamepad>/leftStick\",\"interactions\":\"null\",\"processors\":\"null\"},{\"action\":\"Boat/MinigameButtonSouth\",\"id\":\"86cf62c7-bbad-4c9a-b99b-e5318e762a62\",\"path\":\"<Gamepad>/leftStick/left\",\"interactions\":\"null\",\"processors\":\"null\"}]}";
+        }
+        
+        else if (rebindingOperation.action.ToString().Contains("rightStick"))
+        {
+            rebindString = "{\"bindings\":[{\"action\":\""+actionName+"\",\"id\":\"759da2d7-7b15-4668-8b9c-e8d55b86c0b3\",\"path\":\"<Gamepad>/rightStick\",\"interactions\":\"null\",\"processors\":\"null\"},{\"action\":\"Boat/MinigameButtonSouth\",\"id\":\"86cf62c7-bbad-4c9a-b99b-e5318e762a62\",\"path\":\"<Gamepad>/leftStick/left\",\"interactions\":\"null\",\"processors\":\"null\"}]}";
+        }
+
+        else
+        {
+            rebindString = InputListener.Instance.playerInput.actions.SaveBindingOverridesAsJson();
+        }
         PlayerPrefs.SetString(rebinds, rebindString);
         m_Action.action.Enable();
         rebindingOperation.Dispose();
