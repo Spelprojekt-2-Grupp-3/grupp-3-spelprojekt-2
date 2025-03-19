@@ -17,9 +17,9 @@ public class RebindButton : MonoBehaviour
     private void Awake()
     {
         // Loads rebinds
-        string rebindString = PlayerPrefs.GetString(rebinds, string.Empty);
-        if (string.IsNullOrEmpty(rebindString)) return;
-        InputListener.Instance.playerInput.actions.LoadBindingOverridesFromJson(rebindString);
+        //string rebindString = PlayerPrefs.GetString(rebinds, string.Empty);
+        //if (string.IsNullOrEmpty(rebindString)) return;
+        //InputListener.Instance.playerInput.actions.LoadBindingOverridesFromJson(rebindString);
     }
 
     private void Start()
@@ -30,6 +30,7 @@ public class RebindButton : MonoBehaviour
     public void Pressed()
     {
         button.SetActive(false);
+        m_Action.action.Disable();
         rebindingOperation = m_Action.action.PerformInteractiveRebinding().WithControlsExcluding("Mouse").OnMatchWaitForAnother(0.1f).OnComplete(operation => RebindComplete()).Start();
     }
     
@@ -37,8 +38,9 @@ public class RebindButton : MonoBehaviour
     private void RebindComplete()
     {
         button.SetActive(true);
-        string rebindString = InputListener.Instance.playerInput.actions.SaveBindingOverridesAsJson();
-        PlayerPrefs.SetString(rebinds, rebindString);
+        //string rebindString = InputListener.Instance.playerInput.actions.SaveBindingOverridesAsJson();
+        //PlayerPrefs.SetString(rebinds, rebindString);
+        m_Action.action.Enable();
         rebindingOperation.Dispose();
         SetIcon();
     }
