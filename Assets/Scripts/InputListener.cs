@@ -9,6 +9,7 @@ public class InputListener : MonoBehaviour
 {
     public static InputListener Instance { get; private set; }
     [HideInInspector] public PlayerInput playerInput;
+    public CurrentInputIcons inputDevice;
 
     private void OnEnable()
     {
@@ -52,5 +53,9 @@ public class InputListener : MonoBehaviour
         int bindingIndex = action.GetBindingIndex(playerInput.currentControlScheme.ToLower());
         if (bindingIndex == -1) return;
         action.GetBindingDisplayString(bindingIndex, out deviceLayoutName, out controlPath);
+        if (context.performed)
+        {
+            Debug.Log(controlPath);
+        }
     }
 }

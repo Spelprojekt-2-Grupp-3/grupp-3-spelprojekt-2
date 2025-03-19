@@ -10,49 +10,40 @@ public class RebindButton : MonoBehaviour
 {
     [Tooltip("Reference to action that is to be rebound from the UI.")]
     [SerializeField] private InputActionReference m_Action;
-    //[SerializeField] private TMP_InputField actionText;
-    private Button button;
-    private PlayerInputActions playerControls;
-    public InputAction anyKey;
+    [SerializeField] private GameObject button;
+    [SerializeField] private Image icon;
+    private InputActionRebindingExtensions.RebindingOperation rebindingOperation;
     private void Awake()
     {
-        button = GetComponent<Button>();
-        Events.setIcons.AddListener(SetIcon);
-        playerControls = new PlayerInputActions();
+        
     }
 
     public void Pressed()
     {
-        button.interactable = false;
-        Debug.Log(InputListener.Instance.playerInput.currentControlScheme);
-        anyKey.Enable();
-        anyKey.performed += OnKey;
+        button.SetActive(false);
+        rebindingOperation = m_Action.action.PerformInteractiveRebinding().WithControlsExcluding("Mouse").OnMatchWaitForAnother(0.1f).OnComplete(operation => RebindComplete()).Start();
     }
     
 
-    private void OnKey(InputAction.CallbackContext context)
+    private void RebindComplete()
     {
-        button.interactable = true;
-        anyKey.Disable();
+        button.SetActive(true);
+        rebindingOperation.Dispose();
+        SetIcon();
     }
 
-    private void ListenForInput(InputAction.CallbackContext context)
+    private void SetIcon()
     {
-        Debug.Log(context);
-        button.interactable = true;
-    }
-
-    private void SetIcon(CurrentInputDevice inputDevice, PlayerInput input)
-    {
-        return;
         var deviceLayoutName = default(string);
         var controlPath = default(string);
         var action = m_Action.action;
-        int bindingIndex = action.GetBindingIndex(input.currentControlScheme.ToLower());
+        int bindingIndex = action.GetBindingIndex(InputListener.Instance.playerInput.currentControlScheme.ToLower());
+        var inputDevice = InputListener.Instance.inputDevice.currentInputDevice;
         if (bindingIndex == -1) return;
         action.GetBindingDisplayString(bindingIndex, out deviceLayoutName, out controlPath);
-        var image = GetComponent<Image>();
+        var image = icon;
         //actionText.text = controlPath;
+        PlayerPrefs.SetString(action.name, controlPath);
 
         switch (controlPath)
         {
