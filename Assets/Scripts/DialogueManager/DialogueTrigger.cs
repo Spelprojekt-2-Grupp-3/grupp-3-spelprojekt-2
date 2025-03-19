@@ -20,8 +20,11 @@ public class DialogueTrigger : MonoBehaviour
     [Tooltip("Text file for the quest Dialogue"), SerializeField]
     private TextAsset questTextJSON;
 
-    [Tooltip("For if the character has an extra quest"), SerializeField]
-    private TextAsset extraQuestJSON;
+    [Tooltip("Dialogue for when the minigame is done"), SerializeField]
+    private TextAsset minigameDialogueJSON;
+    
+    [Tooltip("For when the character completes a quest"), SerializeField]
+    private TextAsset completeQuestJSON;
 
     [Header("Related Quest settings")] [SerializeField]
     private List<InfoToSearch> infoToSearch = new List<InfoToSearch>();
@@ -81,20 +84,27 @@ public class DialogueTrigger : MonoBehaviour
             //Check to make sure there is a quest
             if (questTextJSON && questLog.TestForQuest(infoToSearch[0].ID, infoToSearch[0].step))
             {
-
                 if (!DialogueManager.GetInstance().dialogueQueue.Contains(questTextJSON))
                     DialogueManager.GetInstance().dialogueQueue.Add(questTextJSON);
                 foundValidDialogue = true;
             }
-            if (extraQuestJSON && questLog.TestForQuest(infoToSearch[1].ID, infoToSearch[1].step))
+            
+            if (minigameDialogueJSON && questLog.TestForQuest(infoToSearch[1].ID, infoToSearch[1].step))
             {
-                if (!DialogueManager.GetInstance().dialogueQueue.Contains(extraQuestJSON))
-                    DialogueManager.GetInstance().dialogueQueue.Add(extraQuestJSON);
+                if (!DialogueManager.GetInstance().dialogueQueue.Contains(minigameDialogueJSON))
+                    DialogueManager.GetInstance().dialogueQueue.Add(minigameDialogueJSON);
                 foundValidDialogue = true;
-                
-                Debug.Log("Found quest ID: " + infoToSearch[1].ID + "with step: "+infoToSearch[1].step);
+            }
+            
+            if (completeQuestJSON && questLog.TestForQuest(infoToSearch[2].ID, infoToSearch[2].step))
+            {
+                if (!DialogueManager.GetInstance().dialogueQueue.Contains(completeQuestJSON))
+                    DialogueManager.GetInstance().dialogueQueue.Add(completeQuestJSON);
+                foundValidDialogue = true;
             }
 
+            
+            
             if (foundValidDialogue)
             {
                 DialogueManager.GetInstance().EnterDialogueMode(DialogueManager.GetInstance().dialogueQueue[0]);
@@ -107,6 +117,16 @@ public class DialogueTrigger : MonoBehaviour
             }
         }
     }
+
+    //bool AddDialogue(TextAsset textJSON)
+    //{
+    //    if (!DialogueManager.GetInstance().dialogueQueue.Contains(textJSON))
+    //    {
+    //        DialogueManager.GetInstance().dialogueQueue.Add(textJSON);
+    //        return true;
+    //    }
+    //    return false;
+    //}
     
     private void OnTriggerEnter(Collider other)
     {
