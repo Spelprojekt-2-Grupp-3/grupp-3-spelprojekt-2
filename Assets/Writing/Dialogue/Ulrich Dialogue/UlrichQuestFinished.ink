@@ -14,7 +14,7 @@ Any longer and I would've suffocated to death like some sad sack of- #Speaker:Ul
 
 And who are you? Do I know you? #Speaker:Ulrich
 
-    * [I'm cleo.]
+    * [I'm Cleo.]
     
 -You wouldn't recognize me, I'm new here. The name's Cleo. #Speaker:Cleo
 
@@ -64,6 +64,6 @@ I'll get going, then. #Speaker:Cleo
 
 Hrm. #Speaker:Ulrich
 
-~ EditQuest(3, 2)
+~ EditQuest(3, 4)
 
 -> END

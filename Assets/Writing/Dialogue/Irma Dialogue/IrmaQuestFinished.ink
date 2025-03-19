@@ -89,6 +89,6 @@ I gotta head back inside now, but please, talk to me whenever! #Speaker:Irma
     
 -Will do. #Speaker:Cleo
 
-~ EditQuest(2, 2)
+~ EditQuest(2, 4)
 
 -> END

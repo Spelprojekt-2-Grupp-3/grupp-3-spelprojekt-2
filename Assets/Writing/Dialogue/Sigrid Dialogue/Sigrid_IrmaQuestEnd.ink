@@ -4,15 +4,9 @@ EXTERNAL EditQuest(int ID, int step)
 
 === SigridDialogueIrma ===
 
-What's up? #Speaker:Sigrid
+I worked out that issue for you. #Speaker:Cleo
 
-    * [About a cog...]
-    
--Irma needs a cog for a project she's working on. She asked me to come get it for her. #Speaker:Cleo 
-
-Right, I have a bunch of those. #Speaker:Sigrid
-
-Let me get one. #Speaker:Sigrid
+I appreciate the help. I'll get you a cog. #Speaker:Sigrid
 
 [Sigrid starts rummaging through a whole bunch of boxes.] #Speaker:Sigrid
 
@@ -28,6 +22,6 @@ Anyway, thanks! I'll be going now. #Speaker:Cleo
 
 Bye. #Speaker:Sigrid
 
-~ EditQuest(2, 1)
+~ EditQuest(2, 3)
 
 -> END

@@ -56,6 +56,6 @@ I don't have much else for you. #Speaker:Sigrid
 
 No problem. #Speaker:Sigrid
 
-    ~ EditQuest(1, 2)
+    ~ EditQuest(1, 4)
 
 -> END
