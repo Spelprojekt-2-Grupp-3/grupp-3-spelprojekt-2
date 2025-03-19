@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8098650507041300717}
   - component: {fileID: 7633035979760249234}
   - component: {fileID: 7427580362955761292}
+  - component: {fileID: -7359689079499496542}
   m_Layer: 0
   m_Name: rock07
   m_TagString: Untagged
@@ -101,6 +102,28 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 1
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8619641313898112711, guid: 0f827aec868795e4682e6dde38fac740, type: 3}
+--- !u!64 &-7359689079499496542
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7354184845390798445}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
   m_Convex: 0
