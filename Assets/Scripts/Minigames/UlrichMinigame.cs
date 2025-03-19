@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using FMODUnity;
 using Ink.Parsed;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -19,6 +20,7 @@ public class UlrichMinigme : Minigames
     List<GameObject> objects = new List<GameObject>();
     private GameObject selectedObject;
     [SerializeField] private GameObject hoverMarker;
+    [SerializeField] private EventReference potSound;
 
     private void Start()
     {
@@ -100,7 +102,11 @@ public class UlrichMinigme : Minigames
 
     private void Update()
     {
-        if (EventSystem.current.currentSelectedGameObject is null) return;
+        if (EventSystem.current.currentSelectedGameObject is null)
+        {
+            Debug.Log("null");
+            return;
+        }
         if (submit.WasPerformedThisFrame())
         {
             if (selectedObject is null)
@@ -108,6 +114,7 @@ public class UlrichMinigme : Minigames
                 selectedObject = EventSystem.current.currentSelectedGameObject;
                 selectedObject.transform.position = new Vector3(selectedObject.transform.position.x,
                     selectedObject.transform.position.y + 10, selectedObject.transform.position.z);
+                RuntimeManager.PlayOneShot(potSound);
             }
             else
             {
@@ -115,6 +122,7 @@ public class UlrichMinigme : Minigames
                     selectedObject.transform.position.y - 10, selectedObject.transform.position.z);
                 (EventSystem.current.currentSelectedGameObject.transform.position, selectedObject.transform.position) 
                     = (selectedObject.transform.position, EventSystem.current.currentSelectedGameObject.transform.position);
+                RuntimeManager.PlayOneShot(potSound);
                 selectedObject = null;
             }
         }
@@ -141,6 +149,7 @@ public class UlrichMinigme : Minigames
 
     private void SelectionHandler(PlayerInput sentInputDevice)
     {
+        if (objects.Count <= 0) return;
         if (sentInputDevice.currentControlScheme.ToLower().Contains("keyboard"))
         {
             EventSystem.current.SetSelectedGameObject(null);

@@ -321,6 +321,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 7f7fd9995c4435f488f7df319f651fb7,
         type: 2}
+    - target: {fileID: 3944962591397387063, guid: e6b5b42ab4f530c4d8503746337a425b,
+        type: 3}
+      propertyPath: m_DefaultActionMap
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3944962591397387063, guid: e6b5b42ab4f530c4d8503746337a425b,
+        type: 3}
+      propertyPath: m_DefaultControlScheme
+      value: Gamepad
+      objectReference: {fileID: 0}
     - target: {fileID: 5903711366032893847, guid: e6b5b42ab4f530c4d8503746337a425b,
         type: 3}
       propertyPath: m_Name
@@ -349,7 +359,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &746415942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -941,7 +951,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 1044390533}
+  m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1391273426
@@ -1029,7 +1039,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f763cb3eda7aba74f85d63ef55d373bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Action: {fileID: -553405992795321234, guid: 1f866763a0b1b7e43ba6a4e833c4fed9,
+  m_Action: {fileID: 6467425783824610354, guid: 1f866763a0b1b7e43ba6a4e833c4fed9,
     type: 3}
   button: {fileID: 1044390533}
   icon: {fileID: 1152709981}
