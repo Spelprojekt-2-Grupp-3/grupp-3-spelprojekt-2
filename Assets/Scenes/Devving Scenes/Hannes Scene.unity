@@ -633,7 +633,7 @@ MonoBehaviour:
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
+    m_FadeDuration: 0.5
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
@@ -649,7 +649,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1044390536}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1044390538}
+        m_TargetAssemblyTypeName: RebindButton, Assembly-CSharp
+        m_MethodName: Pressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1044390536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -700,9 +712,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f763cb3eda7aba74f85d63ef55d373bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Action: {fileID: -8891947229002662070, guid: 1f866763a0b1b7e43ba6a4e833c4fed9,
-    type: 3}
-  actionText: {fileID: 0}
+  m_Action: {fileID: 0}
+  anyKey:
+    m_Name: Any Key
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 0be3ccf0-58cd-45f9-9a40-324c513fa5e6
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
 --- !u!1 &1152709978
 GameObject:
   m_ObjectHideFlags: 0
