@@ -4,17 +4,11 @@ EXTERNAL EditQuest(int ID, int step)
 
 === BengtDialogueSigrid ===
 
-Hey again! What can I do for you? #Speaker:Bengt
+Man, that couldn't have been easy! Stubborn old machine... #Speaker:Bengt
 
-    * [About coffee...]
-    
--I'm running an errand for Sigrid right now, she wanted me to bring her coffee. #Speaker:Cleo
+Anyway, thanks for the help! You're the best! #Speaker:Bengt
 
-"Bengts' is the only one I drink!" she said. #Speaker:Cleo
-
-Haha! The secret is to make it real bitter and strong. It's like catnip to her! #Speaker:Bengt
-
-I'll go fetch you a pack! #Speaker:Bengt
+I'll go fetch you a pack of that coffee! #Speaker:Bengt
 
 [Bengt heads inside for a moment and comes back out with a package in hand.] #Speaker:Bengt
 
@@ -28,6 +22,6 @@ I'd offer you some as well, but... well, I think you'd be awake for a week strai
 
 But thanks! #Speaker:Cleo
 
-    ~ EditQuest(1, 1)
+    ~ EditQuest(1, 3)
 
 -> END

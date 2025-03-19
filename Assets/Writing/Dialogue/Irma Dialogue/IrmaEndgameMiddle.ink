@@ -46,6 +46,18 @@ So just stay safe, yeah? I don't know what I'd do if yet another person went mis
 
 Gosh, your confidence is rubbing off on me... I'll be cheering you on from here! #Speaker:Irma
 
+Actually, I have one favor to ask before you head out. #Speaker:Irma
+
+I want to make sure you can contact me if you get lost. #Speaker:Irma
+
+Could you help me set the frequency on my radio before you go? It's super important! #Speaker:Irma
+
+    * [I'll do it.]
+    
+-Of course! The safer the better, right? #Speaker:Cleo
+
+Thank you so much! #Speaker:Irma
+
 ~ EditQuest(0, 1)
 
 -> END

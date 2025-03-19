@@ -8,13 +8,13 @@ Phew, you're back! #Speaker:Vera
 
 So, what did Ulrich say? #Speaker:Vera
 
-    * [This flower...]
+    * [These flowers...]
     
--He gave me this flower. #Speaker:Cleo
+-He gave me these flowers. #Speaker:Cleo
 
-I'm pretty sure he wants us to make tea out of it...? #Speaker:Cleo
+I'm pretty sure he wants us to make tea out of them...? #Speaker:Cleo
 
-[Vera snatches the flower out of your hand.] #Speaker:Vera
+[Vera snatches the flowers out of your hand.] #Speaker:Vera
 
 Make tea, got it! Roger that! Thanks! #Speaker:Vera
 
@@ -60,6 +60,6 @@ No problem! Let me know if there's anything else I could help you with. #Speaker
 
 Don't be a stranger! #Speaker:Vera
 
-~ EditQuest(4, 2)
+~ EditQuest(4, 4)
 
 -> END
