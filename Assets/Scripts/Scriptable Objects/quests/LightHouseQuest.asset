@@ -10,17 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: df70c93a25f00d444b694d00b88499b6, type: 3}
-  m_Name: quest2
+  m_Name: LightHouseQuest
   m_EditorClassIdentifier: 
   questTitle: The lighthouse keeper
-  questText: Help Sigrid
-  recipient: Sigrid
+  initialQuestText: quest has begun
   step: 0
   ID: 1
-  quest:
-    questName: 
-    questInfo: 
-    steps:
-    - 
-    - 
-    - 
+  questText: Help Sigrid
+  steps:
+  - quest updated once...
+  - ...twice now...
+  - ...and final update

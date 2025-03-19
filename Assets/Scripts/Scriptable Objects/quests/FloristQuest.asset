@@ -10,17 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: df70c93a25f00d444b694d00b88499b6, type: 3}
-  m_Name: quest2 3
+  m_Name: FloristQuest
   m_EditorClassIdentifier: 
-  questTitle: The head of the union
-  questText: Help Vera
-  recipient: Vera
+  questTitle: The florist
+  initialQuestText: 
   step: 0
-  ID: 4
-  quest:
-    questName: 
-    questInfo: 
-    steps:
-    - 
-    - 
-    - 
+  ID: 3
+  questText: Help Ulrich
+  steps:
+  - 
+  - 
+  - 

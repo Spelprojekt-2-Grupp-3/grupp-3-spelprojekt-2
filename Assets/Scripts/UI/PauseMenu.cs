@@ -2,12 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 public class PauseMenu : MonoBehaviour
 {
+    [SerializeField] private GameObject firstSelected;
+    [SerializeField] private GameObject optionsObject;
     private PlayerInputActions playerControls;
-    private InputAction pause;
+    private InputAction pause, cancel;
     private bool paused;
     [SerializeField] private Camera camera;
     [SerializeField] private RenderTexture renderTexture;
@@ -22,41 +25,88 @@ public class PauseMenu : MonoBehaviour
         pause.Enable();
         cameraBrain = Camera.main;
         playerMovement = GameObject.FindWithTag("Player");
+        cancel = playerControls.UI.Cancel;
+        cancel.Disable();
     }
 
     private void ActivatePauseMenu(InputAction.CallbackContext context)
     {
-        paused = !paused;
-        if (paused)
+        if (!paused)
         {
-            //Time.timeScale = 0;
-            
-            if (playerMovement.activeSelf)
-            {
-                Events.stopPlayer?.Invoke();
-            }
-            else
-            {
-                Events.stopBoat.Invoke();
-            }
-            gameObject.GetComponent<Canvas>().enabled = true;
-            camera.enabled = true;
-            cameraBrain.targetTexture = renderTexture;
+            Pause();
         }
         else
         {
-            //Time.timeScale = 1;
-            if (playerMovement.activeSelf)
-            {
-                Events.startPlayer?.Invoke();
-            }
-            else
-            {
-                Events.startBoat.Invoke();
-            }
-            gameObject.GetComponent<Canvas>().enabled = false;
-            camera.enabled = false;
-            cameraBrain.targetTexture = null;
+            Resume();
+        }
+    }
+
+    private void Pause()
+    {
+        cancel.Enable();
+        playerControls.UI.Cancel.performed += TryCancel;
+        paused = true;
+        if (playerMovement.activeSelf)
+        {
+            Events.stopPlayer?.Invoke();
+        }
+        else
+        {
+            Events.stopBoat.Invoke();
+        }
+        gameObject.GetComponent<Canvas>().enabled = true;
+        EventSystem.current.SetSelectedGameObject(firstSelected);
+        camera.enabled = true;
+        cameraBrain.targetTexture = renderTexture;
+    }
+
+    public void Resume()
+    {
+        cancel.Disable();
+        playerControls.UI.Cancel.performed -= TryCancel;
+        paused = false;
+        if (playerMovement.activeSelf)
+        {
+            Events.startPlayer?.Invoke();
+        }
+        else
+        {
+            Events.startBoat.Invoke();
+        }
+        gameObject.GetComponent<Canvas>().enabled = false;
+        camera.enabled = false;
+        cameraBrain.targetTexture = null;
+        EventSystem.current.SetSelectedGameObject(null);
+    }
+
+    public void MainMenu()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Main Menu");
+    }
+
+    public void Options()
+    {
+        optionsObject.SetActive(!optionsObject.activeSelf);
+        if (optionsObject.activeSelf)
+        {
+            EventSystem.current.SetSelectedGameObject(optionsObject.transform.GetChild(0).gameObject);
+        }
+    }
+
+    private void TryCancel(InputAction.CallbackContext context)
+    {
+        if (optionsObject.activeSelf)
+        {
+            optionsObject.SetActive(false);
+            EventSystem.current.SetSelectedGameObject(firstSelected);
+        }
+        else if (optionsObject.transform.GetChild(0).gameObject.activeSelf)
+        {
+            optionsObject.transform.GetChild(0).gameObject.SetActive(false);
+        }
+        else if (gameObject.GetComponent<Canvas>().enabled)
+        {
+            Resume();
         }
     }
 }

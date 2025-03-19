@@ -26,7 +26,7 @@ public class BoatMovement : MonoBehaviour
     [SerializeField, Range(0f, 2500f)] private float maxSpeed = 2000f;
     [SerializeField, Range(-1250, 0f)] private float maxReverseSpeed = 1000f;
     [SerializeField, Range(0, 90)] private int sideTiltAngle = 25;
-    [SerializeField, Range(0, 90)] private int frontTiltAngle = 25;
+    [SerializeField, Range(0, 90)] public int frontTiltAngle = 25;
     [SerializeField, Range(0f, 10f)] private float tiltSpeed = 1f;
     public FMODUnity.EventReference boatSoundEvent, boatWaterSoundEvent;
 

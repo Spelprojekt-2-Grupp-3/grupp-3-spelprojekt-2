@@ -39,8 +39,9 @@ public class VolumeController : MonoBehaviour
 
     private VCA _sfxVCA;
 
-    private void Start()
+    private void Awake()
     {
+        Debug.Log("AWAKKKKEE");
         // Fetch the VCA by name from FMOD
         _masterVCA = RuntimeManager.GetVCA(_masterVCAName);
         _musicVCA = RuntimeManager.GetVCA(_musicVCAName);
@@ -49,8 +50,8 @@ public class VolumeController : MonoBehaviour
         // If the VCA is valid then retrieve the saved volume setting from PlayerPrefs
         if (_masterVCA.isValid())
         {
-            float initialVolume = PlayerPrefs.GetFloat("MasterVolume", 1.0f);
-            _masterVCA.setVolume(initialVolume);
+            float initialVolume = PlayerPrefs.GetFloat("MasterVolume");
+            //_masterVCA.setVolume(initialVolume);
             if (masterVolumeSlider != null)
             {
                 // Set initial volume on the VCA
@@ -61,8 +62,8 @@ public class VolumeController : MonoBehaviour
         
         if (_musicVCA.isValid())
         {
-            float initialVolume = PlayerPrefs.GetFloat("MusicVolume", 1.0f);
-            _musicVCA.setVolume(initialVolume);
+            float initialVolume = PlayerPrefs.GetFloat("MusicVolume");
+            //_musicVCA.setVolume(initialVolume);
             if (musicVolumeSlider != null)
             {
                 musicVolumeSlider.value = initialVolume;
@@ -72,8 +73,8 @@ public class VolumeController : MonoBehaviour
         
         if (_sfxVCA.isValid())
         {
-            float initialVolume = PlayerPrefs.GetFloat("SFXVolume", 1.0f);
-            _sfxVCA.setVolume(initialVolume);
+            float initialVolume = PlayerPrefs.GetFloat("SFXVolume");
+            //_sfxVCA.setVolume(initialVolume);
             if (sfxVolumeSlider != null)
             {
                 sfxVolumeSlider.value = initialVolume;

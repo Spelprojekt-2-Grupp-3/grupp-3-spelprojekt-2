@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [CreateAssetMenu(
     menuName = "Scriptable Objects/Quest Data Object",
@@ -11,21 +12,23 @@ using UnityEngine;
 public class QuestData : ScriptableObject
 {
     public string questTitle;
-    public string questText;
-    public string recipient;
+    public string initialQuestText;
     public int step;
     public int ID;
 
-    public QuestTest quest = new QuestTest();
-
+    [HideInInspector]public string questText;
+    
+    //public QuestTest quest = new QuestTest();
+    public List<string> steps = new List<string>();
+    
     public bool NextStep()
     {
         bool successful = false;
         
-        if (step < quest.steps.Count)
+        if (step <= steps.Count-1)
         {
+            questText = steps[step];
             step++;
-            questText= quest.questInfo;
             successful = true;
         }
 
@@ -36,7 +39,5 @@ public class QuestData : ScriptableObject
 [Serializable]
 public class QuestTest
 {
-    public string questName;
-    public string questInfo;
-    public List<string> steps = new List<string>();
+    //public List<string> steps = new List<string>();
 }

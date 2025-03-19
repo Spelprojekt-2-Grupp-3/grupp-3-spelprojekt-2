@@ -17,6 +17,9 @@ public class DialogueManager : MonoBehaviour
     [SerializeField]
     private float typingSpeed = 0.04f;
 
+    [Header("Globals Ink File")]
+    [SerializeField] private TextAsset loadGlobalsJSON;
+    
     [Header("Dialogue UI")]
     [SerializeField]
     private GameObject dialogueUI;
@@ -54,6 +57,7 @@ public class DialogueManager : MonoBehaviour
     private TextMeshProUGUI[] _choicesText;
     private Story _currentStory;
     private MinigameHandler[] minigameHandlers;
+    private DialogueVariables _dialogueVariables;
 
     //Readonly (I dont know why)
     public bool dialogueIsPlaying { get; private set; }
@@ -108,6 +112,7 @@ public class DialogueManager : MonoBehaviour
         choicesParent = dialogueUI.transform.Find("Choices").gameObject;
 
         minigameHandlers = FindObjectsOfType<MinigameHandler>();
+        _dialogueVariables = new DialogueVariables(loadGlobalsJSON);
 
         if (choicesParent != null)
         {
@@ -217,6 +222,8 @@ public class DialogueManager : MonoBehaviour
         _currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
         dialogueUI.SetActive(true);
+        
+        _dialogueVariables.StartListening(_currentStory);
 
         BindExternal();
         //
@@ -226,7 +233,6 @@ public class DialogueManager : MonoBehaviour
         displayNameText.text = "Name";
         portraitAnimator.Play("Default");
         layoutAnimator.Play("NPC");
-        //Doesnt work yet
         Events.stopPlayer?.Invoke();
 
         ContinueStory();
@@ -243,7 +249,7 @@ public class DialogueManager : MonoBehaviour
         dialogueIsPlaying = false;
         dialogueUI.SetActive(false);
         dialogueText.text = "";
-        //Doesnt work yet
+        _dialogueVariables.StopListening(_currentStory);
         Events.startPlayer?.Invoke();
         MultipleDialogueStart();
     }
