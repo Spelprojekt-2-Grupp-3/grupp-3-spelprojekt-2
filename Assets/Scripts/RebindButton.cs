@@ -1,0 +1,166 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.UI;
+
+public class RebindButton : MonoBehaviour
+{
+    [Tooltip("Reference to action that is to be rebound from the UI.")]
+    [SerializeField] private InputActionReference m_Action;
+    //[SerializeField] private TMP_InputField actionText;
+    private Button button;
+    private PlayerInputActions playerControls;
+    public InputAction anyKey;
+    private void Awake()
+    {
+        button = GetComponent<Button>();
+        Events.setIcons.AddListener(SetIcon);
+        playerControls = new PlayerInputActions();
+    }
+
+    public void Pressed()
+    {
+        button.interactable = false;
+        Debug.Log(InputListener.Instance.playerInput.currentControlScheme);
+        anyKey.Enable();
+        anyKey.performed += OnKey;
+    }
+    
+
+    private void OnKey(InputAction.CallbackContext context)
+    {
+        button.interactable = true;
+        anyKey.Disable();
+    }
+
+    private void ListenForInput(InputAction.CallbackContext context)
+    {
+        Debug.Log(context);
+        button.interactable = true;
+    }
+
+    private void SetIcon(CurrentInputDevice inputDevice, PlayerInput input)
+    {
+        return;
+        var deviceLayoutName = default(string);
+        var controlPath = default(string);
+        var action = m_Action.action;
+        int bindingIndex = action.GetBindingIndex(input.currentControlScheme.ToLower());
+        if (bindingIndex == -1) return;
+        action.GetBindingDisplayString(bindingIndex, out deviceLayoutName, out controlPath);
+        var image = GetComponent<Image>();
+        //actionText.text = controlPath;
+
+        switch (controlPath)
+        {
+            case "buttonSouth":
+                if (action.actionMap.name.ToLower() == "player")
+                {
+                    image.sprite = inputDevice.interactSprite;
+                }
+                else
+                {
+                    image.sprite = inputDevice.buttonSouth;
+                }
+                return;
+            case "buttonNorth":
+                image.sprite = inputDevice.buttonNorth;
+                return;
+            case "buttonEast":
+                image.sprite = inputDevice.buttonEast;
+                return;
+            case "buttonWest":
+                image.sprite = inputDevice.buttonWest;
+                return;
+            case "start":
+                image.sprite = inputDevice.startSprite;
+                return;
+            case "select":
+                image.sprite = inputDevice.selectSprite;
+                return;
+            case "leftTrigger":
+                image.sprite = inputDevice.reverseSprite;
+                return;
+            case "rightTrigger":
+                image.sprite = inputDevice.gasSprite;
+                return;
+            case "rightShoulder":
+                image.sprite = inputDevice.boostSprite;
+                return;
+            case "leftStick":
+                image.sprite = inputDevice.moveSprite;
+                return;
+            case "rightStick":
+                image.sprite = inputDevice.moveCameraSprite;
+                return;
+        }
+
+        if (deviceLayoutName.ToLower() == "keyboard" || deviceLayoutName.ToLower() == "mouse")
+        {
+            if (action.actionMap.name.ToLower() == "boat")
+            {
+                switch (controlPath)
+                {
+                    case "s":
+                        image.sprite = inputDevice.reverseSprite;
+                        return;
+                    case "w":
+                        image.sprite = inputDevice.gasSprite;
+                        return;
+                    case "e":
+                        image.sprite = inputDevice.interactSprite;
+                        return;
+                    case "d":
+                    case "a":
+                        image.sprite = inputDevice.moveSprite;
+                        return;
+                    case "delta":
+                        image.sprite = inputDevice.moveCameraSprite;
+                        return;
+                    case "escape":
+                        image.sprite = inputDevice.startSprite;
+                        return;
+                    case "select":
+                        image.sprite = inputDevice.selectSprite;
+                        return;
+                    case "shift":
+                        image.sprite = inputDevice.boostSprite;
+                        return;
+                }
+            }
+            else
+            {
+                switch (controlPath)
+                {
+                    case "e":
+                        image.sprite = inputDevice.interactSprite;
+                        return;
+                    case "s":
+                        image.sprite = inputDevice.buttonSouth;
+                        return;
+                    case "w":
+                        image.sprite = inputDevice.buttonNorth;
+                        return;
+                    case "d":
+                        image.sprite = inputDevice.buttonEast;
+                        return;
+                    case "a":
+                        image.sprite = inputDevice.buttonWest;
+                        return;
+                    case "escape":
+                        image.sprite = inputDevice.startSprite;
+                        return;
+                    case "select":
+                        image.sprite = inputDevice.selectSprite;
+                        return;
+                    case "shift":
+                        image.sprite = inputDevice.boostSprite;
+                        return;
+                }
+            }
+        }
+    }
+}
