@@ -8,7 +8,9 @@ using UnityEngine.InputSystem;
 public class InputListener : MonoBehaviour
 {
     public static InputListener Instance { get; private set; }
-    [HideInInspector] public PlayerInput playerInput;
+
+    [HideInInspector]
+    public PlayerInput playerInput;
     public CurrentInputIcons inputDevice;
 
     private void OnEnable()
@@ -51,11 +53,9 @@ public class InputListener : MonoBehaviour
         var controlPath = default(string);
         var action = context.action;
         int bindingIndex = action.GetBindingIndex(playerInput.currentControlScheme.ToLower());
-        if (bindingIndex == -1) return;
+        if (bindingIndex == -1)
+            return;
         action.GetBindingDisplayString(bindingIndex, out deviceLayoutName, out controlPath);
-        if (context.performed)
-        {
-            Debug.Log(controlPath);
-        }
+        if (context.performed) { }
     }
 }
