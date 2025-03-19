@@ -20,7 +20,7 @@ public class MinigameHandler : MonoBehaviour
         hasBeenInstantiated = false;
         playerInput = new PlayerInputActions();
         allowStartMinigame = false;
-        minigameQuestStart = true;
+        minigameQuestStart = false;
     }
 
     private void OnEnable()
