@@ -67,6 +67,7 @@ GameObject:
   - component: {fileID: 881082103372787084}
   - component: {fileID: 5054940504146034588}
   - component: {fileID: 5917870803390284924}
+  - component: {fileID: 1824590601540674341}
   m_Layer: 0
   m_Name: pCube43
   m_TagString: Untagged
@@ -139,6 +140,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1824590601540674341
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2732812679824494489}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6208080743906942372, guid: 77e9fcdeb2795604986842ea8ca5a1cf, type: 3}
 --- !u!1 &8627882154348945787
 GameObject:
   m_ObjectHideFlags: 0
@@ -150,6 +173,7 @@ GameObject:
   - component: {fileID: 7985665887966753763}
   - component: {fileID: 2195118762098505203}
   - component: {fileID: 504699473293135306}
+  - component: {fileID: 4254720652108307183}
   m_Layer: 0
   m_Name: pCube36
   m_TagString: Untagged
@@ -222,3 +246,25 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &4254720652108307183
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8627882154348945787}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 972614196974622048, guid: 77e9fcdeb2795604986842ea8ca5a1cf, type: 3}

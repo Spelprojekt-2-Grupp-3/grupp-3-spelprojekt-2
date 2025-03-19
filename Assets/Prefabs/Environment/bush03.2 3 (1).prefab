@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8757240368379455529}
   - component: {fileID: 6117101429686411622}
   - component: {fileID: 7854930796884413144}
+  - component: {fileID: -3865858229223604424}
   m_Layer: 0
   m_Name: bush03.2 3 (1)
   m_TagString: Untagged
@@ -101,6 +102,28 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 1
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -6602441374692447843, guid: f9d4ecb847d23f14ea7ea1251b284b02, type: 3}
+--- !u!64 &-3865858229223604424
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6779034171207708718}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
   m_Convex: 0
