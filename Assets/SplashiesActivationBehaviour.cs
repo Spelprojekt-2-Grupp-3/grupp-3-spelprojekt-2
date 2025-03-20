@@ -29,13 +29,21 @@ public class SplashiesActivationBehaviour : MonoBehaviour
     {
         pS = GetComponent<ParticleSystem>();
         t = new Timer();
+        activation = false;
+        if (Random.Range(1, 11) > 1)
+        {
+            pS.Stop();
+        }
     }
+
+    private bool activation;
 
     // Update is called once per frame
     void Update()
     {
-        if (pS.isStopped)
+        if (pS.isStopped && !activation)
         {
+            activation = true;
             t.ExecuteAfterTime(waitTime, ActivationMayhaps);
         }
     }
@@ -46,5 +54,6 @@ public class SplashiesActivationBehaviour : MonoBehaviour
         {
             pS.Play();
         }
+        activation = false;
     }
 }
