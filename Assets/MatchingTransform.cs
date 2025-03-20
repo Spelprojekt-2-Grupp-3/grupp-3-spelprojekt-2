@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Ink.Parsed;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
@@ -28,8 +29,20 @@ public class MatchingTransform : MonoBehaviour
         World
     };
 
+    [SerializeField, Header("Assign only if you need to reference the player, used for ANIRIG")]
+    private GameObject cleo;
+
+    [SerializeField]
+    private Transform hipTransform;
+
     // Start is called before the first frame update
     void Start() { }
+
+    [SerializeField]
+    float maxDistance = 100;
+
+    [SerializeField]
+    private LayerMask layerMask;
 
     // Update is called once per frame
     void Update()
@@ -51,6 +64,42 @@ public class MatchingTransform : MonoBehaviour
                 transform.rotation = transformToMatch.rotation;
             if (scale)
                 transform.localScale = transformToMatch.localScale;
+        }
+    }
+
+    void FixedUpdate()
+    {
+        if (cleo != null)
+        {
+            RaycastHit hit;
+            //WE ARE PLAY PLAY CLIPPO
+            //YAHOOWAHOO I MISS MY WIFE, TAILS
+            float hipY = hipTransform.position.y;
+            Vector3 startPos = new Vector3(transform.position.x, hipY, transform.position.z);
+            if (Physics.Raycast(startPos, Vector3.down, out hit, maxDistance, layerMask))
+            {
+                Debug.DrawRay(startPos, Vector3.down * hit.distance, Color.magenta);
+                Debug.Log("Hit");
+            }
+            else
+            {
+                Debug.DrawRay(startPos, Vector3.down * maxDistance, Color.cyan);
+
+                Debug.Log("no hit");
+            }
+
+            /*
+                OK so I find hip bone
+                I find hip local Y pos,
+                send ray from foot position, offset with hip y. range to slightly below feet level
+                Find contact world position
+                move target to contact position
+
+                Separate manager script
+                Compare collision object world space y
+                Deactivate higher collider
+        
+            */
         }
     }
 }
