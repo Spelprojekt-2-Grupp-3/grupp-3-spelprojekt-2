@@ -42,6 +42,8 @@ public class MinigameHandler : MonoBehaviour
     {
         if (!allowStartMinigame || hasBeenInstantiated || !minigameQuestStart) return;
         minigameInstance = Instantiate(minigameCanvasPrefab);
+        minigameInstance.GetComponent<Minigames>().ID = questID;
+        minigameInstance.GetComponent<Minigames>().step = step;
         hasBeenInstantiated = true;
     }
 
