@@ -202,6 +202,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3159187288051400254, guid: f67b1942a5244d943bbdf59098a13cc7,
         type: 3}
+      propertyPath: punctuationPauseSpeed
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3159187288051400254, guid: f67b1942a5244d943bbdf59098a13cc7,
+        type: 3}
       propertyPath: dialogueSound.Guid.Data1
       value: -275653017
       objectReference: {fileID: 0}
@@ -890,7 +895,7 @@ PrefabInstance:
     - target: {fileID: 964106899243683150, guid: e038b92317793124db4f814ca362de46,
         type: 3}
       propertyPath: m_Name
-      value: Question NPC
+      value: NPC1
       objectReference: {fileID: 0}
     - target: {fileID: 5672551112512614370, guid: e038b92317793124db4f814ca362de46,
         type: 3}
@@ -951,7 +956,7 @@ PrefabInstance:
         type: 3}
       propertyPath: fillerDialogueJSON
       value: 
-      objectReference: {fileID: 4900000, guid: dd9caddbb873d5841a57c501e928aff3, type: 3}
+      objectReference: {fileID: 4900000, guid: 9780a56458f3ccb4888a1e44095056f7, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1870,7 +1875,7 @@ PrefabInstance:
     - target: {fileID: 964106899243683150, guid: e038b92317793124db4f814ca362de46,
         type: 3}
       propertyPath: m_Name
-      value: Hater NPC
+      value: NPC2
       objectReference: {fileID: 0}
     - target: {fileID: 2796903089032053517, guid: e038b92317793124db4f814ca362de46,
         type: 3}

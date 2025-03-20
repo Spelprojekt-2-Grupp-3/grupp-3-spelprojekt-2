@@ -16,6 +16,10 @@ public class DialogueManager : MonoBehaviour
     [Header("Parameters")]
     [SerializeField]
     private float typingSpeed = 0.04f;
+    
+    [SerializeField]
+    [Tooltip("The pause after a . ! ? etc")]
+    private float punctuationPauseSpeed = 0.25f;
 
     [Header("Globals Ink File")]
     [SerializeField]
@@ -290,6 +294,8 @@ public class DialogueManager : MonoBehaviour
 
     private IEnumerator DisplayLine(string line)
     {
+        line = line.Replace("…", "...");
+        
         dialogueText.text = ""; // Clear previous text
         continueIcon.SetActive(false);
         HideChoices();
@@ -299,8 +305,10 @@ public class DialogueManager : MonoBehaviour
 
         StartCoroutine(CanSkip()); // Start skipping delay
 
-        foreach (char letter in line.ToCharArray())
+        for (int i = 0; i < line.Length; i++)
         {
+            char letter = line[i];
+            
             if (_canSkip && _submitSkip) // If player clicks AFTER the delay, show full text
             {
                 _submitSkip = false;
@@ -309,14 +317,28 @@ public class DialogueManager : MonoBehaviour
             }
 
             dialogueText.text += letter;
-            //hopefully rätt???
             RuntimeManager.PlayOneShot(dialogueSound, Camera.main.transform.position);
-            yield return new WaitForSeconds(typingSpeed);
+            
+            // If this is the last character, skip the pause (this should always be the last character based on the ink files I reviewed, but there might be exceptions)
+            if (i == line.Length - 2) 
+            {
+                break;
+            }
+            
+            // Apply typewriter effect and longer pause for punctuations
+            if ((letter == '.' || letter == '!' || letter == '?' || letter == ';' || letter == ':'))
+            {
+                yield return new WaitForSeconds(punctuationPauseSpeed);
+            }
+            else
+            {
+                yield return new WaitForSeconds(typingSpeed);
+            }
         }
 
         continueIcon.SetActive(true);
         DisplayChoices();
-
+        
         _canContinueToNextLine = true;
         _canSkip = false; // Reset skipping permission
     }
