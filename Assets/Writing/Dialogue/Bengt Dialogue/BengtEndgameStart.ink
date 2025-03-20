@@ -4,7 +4,7 @@ EXTERNAL EditQuest(int ID, int step)
 
 === BengtDialogue2 ===
 
-Hey there! How's it going with those upgrades. #Speaker:Bengt
+Hey there! How's it going with those upgrades? #Speaker:Bengt
 
     * [I got them all.]
     
@@ -26,7 +26,7 @@ Oh! Aherm, I see... #Speaker:Bengt
 
 [Gaze cast downward, Bengt awkwardly shuffles his feet.] #Speaker:Bengt
 
-[He gets all red in the face. Weird.] #Speaker:Bengt
+[He's all red in the face. Weird.] #Speaker:Bengt
 
     * [Are you okay?]
     
@@ -48,7 +48,7 @@ There's this thing that happens every week. #Speaker:Bengt
 
 A big ol' whirlpool forms somewhere on the archipelago and swallows things up! #Speaker:Bengt
 
-I'm like, very sure that's what happened. Not just to your parents, but Irma's sister, too. #Speaker:Bengt
+I'm pretty sure that's what happened. Not just to your parents, but Irma's sister, too. #Speaker:Bengt
 
     * [Why keep it secret?]
     
@@ -62,7 +62,7 @@ We were lucky that Irma doesn't leave her island much, but it would be much hard
 
 Oh, but it's so stressful keeping it secret! You have no idea how relieving it is to spill the beans like this. #Speaker:Bengt
 
-[Bengt breathes out a big sigh of relief as if to prove his point.] #Speaker:Bengt
+//[Bengt breathes out a big sigh of relief as if to prove his point.] #Speaker:Bengt
 
     * [How do I get to it?]
     
@@ -70,9 +70,9 @@ Oh, but it's so stressful keeping it secret! You have no idea how relieving it i
 
 Darn it, I knew you'd ask! #Speaker:Bengt
 
-... Actually, come to think of it... #Speaker:Bengt
+... Actually, come to think of it, with your boat all bolstered up the way it is now... #Speaker:Bengt
 
-With your boat all bolstered up the way it is now, you might be able to pass through it without too much damage. #Speaker:Bengt
+... you might be able to pass through it without too much damage. #Speaker:Bengt
 
 [Bengt slaps his knee and looks at you with renewed vigor.] #Speaker:Bengt
 
@@ -106,6 +106,6 @@ I'll owe her big time for making her wait this long, though. #Speaker:Bengt
 
 ~ EditQuest(0, 0)
 
-But off you go! I'm rooting for you! #Speaker:Bengt
+Anyway, off you go! I'm rooting for you! #Speaker:Bengt
 
 -> END

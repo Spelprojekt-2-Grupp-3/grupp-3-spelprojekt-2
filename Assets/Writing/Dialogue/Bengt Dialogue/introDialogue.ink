@@ -1,3 +1,5 @@
+EXTERNAL Fade(float time)
+
 -> intro
 
 === intro ===
@@ -124,9 +126,11 @@ I'll go ahead and add that on now, then. #Speaker:Bengt
 
 Give me a moment! I'll be right back. #Speaker:Bengt
 
-[Bengt disappears into his workshop.] #Speaker:Bengt
+~ Fade(3.5)
 
-[You hear a collection of bangs and clanks until he pops back out, wiping sweat off his brow.] #Speaker:Bengt
+//[Bengt disappears into his workshop.] #Speaker:Bengt
+
+//[You hear a collection of bangs and clanks until he pops back out, wiping sweat off his brow.] #Speaker:Bengt
 
 All done! #Speaker:Bengt
 

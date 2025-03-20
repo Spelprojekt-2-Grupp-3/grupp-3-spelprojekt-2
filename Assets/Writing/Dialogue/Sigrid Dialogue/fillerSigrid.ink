@@ -47,15 +47,15 @@ What's up? #Speaker:Sigrid
     
     Our ship was wrecked, just like yours. But we were okay. #Speaker:Sigrid
     
-    My parents raised a fuss about the lighthouse not working. Took it up with the residents and whatnot. #Speaker:Sigrid
+    My parents raised a fuss about the lighthouse not working. Took it up with the residents. #Speaker:Sigrid
     
     They took it upon themselves to get it up and running. Didn't even make plans on leaving at all. #Speaker:Sigrid
     
     We eventually just considered this to be our new home. #Speaker:Sigrid
     
-    Some decades later, they became too old and rusty to keep running up and down all these stairs, so I took over. #Speaker:Sigrid
+    Some decades later, they became too old and rusty to keep running up and down all these stairs. #Speaker:Sigrid
     
-    'Been tending to the lighthouse ever since. #Speaker:Sigrid
+    I've been the one tending to the lighthouse ever since. #Speaker:Sigrid
     
     What else? #Speaker:Sigrid
     
@@ -94,9 +94,11 @@ What's up? #Speaker:Sigrid
     
     I like Bengt. We're on good terms. #Speaker:Sigrid
     
-    I remember when he was just a snot-nosed brat running around, fiddling with all the mechanisms up here. #Speaker:Sigrid
+    I remember when he was just a snot-nosed brat fiddling with all the mechanisms up here. #Speaker:Sigrid
     
-    Funny guy. I never understood his fascination with this stuff. All I care about is if it works or not. #Speaker:Sigrid
+    Funny guy. I never understood his fascination with this stuff. #Speaker:Sigrid
+    
+    All I care about is if it works or not. #Speaker:Sigrid
     
     Anyone else? #Speaker:Sigrid
     
@@ -141,7 +143,7 @@ What's up? #Speaker:Sigrid
     
     I admire that he has the energy to tend to his plants every day. #Speaker:Sigrid
     
-    What, with his allergies and his age... that takes drive. #Speaker:Sigrid
+    Considering his allergies and his age... that takes drive. #Speaker:Sigrid
     
     I heard others got a bad first impression from him, but I didn't. Neither did my folks. #Speaker:Sigrid
     
@@ -171,7 +173,7 @@ What's up? #Speaker:Sigrid
     
     ...and that it keeps away other predators that could mess with the ecosystem if they were to invade it. #Speaker:Sigrid
     
-    I respect her opinion, but... actually, no. I don't. #Speaker:Sigrid 
+    I respect her opinion, but... no. I don't. #Speaker:Sigrid 
     
     It's skewed to care more for some fish than our people's safety. That irritates me. #Speaker:Sigrid
     

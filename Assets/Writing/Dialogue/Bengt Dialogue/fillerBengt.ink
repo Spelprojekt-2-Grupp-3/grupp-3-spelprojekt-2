@@ -1,3 +1,5 @@
+INCLUDE ../globals.ink
+
 -> fillerBengt
 
 === fillerBengt ===
@@ -9,7 +11,7 @@ Something on your mind? #Speaker:Bengt
 -> questions
 
 = questions
-    
+
     + [About you...]
     
     I've got some questions about you. #Speaker:Cleo
@@ -20,11 +22,19 @@ Something on your mind? #Speaker:Bengt
     
     -> bengtQuestions
 
+        Hmm... I can't say I have much else to tell you! #Speaker:Bengt
+        
+        How about we move on from that? #Speaker:Bengt
+        
+        -> questions
+
     + [About the other islanders...]
     
     What are your thoughts on the others in the archipelago? #Speaker:Cleo
     
-    I get along pretty well with all of them. Is there anyone in particular you're wondering about? #Speaker:Bengt
+    I get along pretty well with all of them. #Speaker:Bengt
+    
+    Is there anyone in particular you're wondering about? #Speaker:Bengt
     
     -> characters1
 
@@ -49,7 +59,9 @@ Something on your mind? #Speaker:Bengt
     
     So did my parents, and my grandparents, and so on. #Speaker:Bengt
     
-    Actually, my workshop has been inherited for generations! Lots of mechanics in my family tree. #Speaker:Bengt
+    Actually, my workshop has been inherited for generations! #Speaker:Bengt
+    
+    Lots of mechanics in my family tree... #Speaker:Bengt
     
     -> bengtQuestions
     
@@ -59,11 +71,15 @@ Something on your mind? #Speaker:Bengt
     
     Not in the least! #Speaker:Bengt
     
-    I'm not a very adventurous guy, and what I've heard about the outside world doesn't align with me at all. #Speaker:Bengt
+    I'm not a very adventurous guy, and what I've heard about the outside world... #Speaker:Bengt
     
-    Plus, I have my workshop, all these interesting birds, a bunch of friends... I'm content staying here. #Speaker:Bengt
+    Well, it doesn't align with me at all! #Speaker:Bengt
     
-    I even get the occasional outsider looking for help, like you! That's enough excitement for me. #Speaker:Bengt
+    Plus, I have my workshop, all these interesting birds, a bunch of friends... #Speaker:Bengt
+    
+    I'm content staying here. #Speaker:Bengt
+    
+    I even get the occasional outsider looking for help, like you! That's enough excitement. #Speaker:Bengt
     
     Anyway, was there anything else? #Speaker:Bengt
     
@@ -86,11 +102,13 @@ Something on your mind? #Speaker:Bengt
     
     When I was a kid, I was super interested in how the lighthouse spotlight kept rotating... #Speaker:Bengt
     
-    I nagged and nagged and nagged for my parents to take me there so I could check it out for myself, and they did! #Speaker:Bengt
+    I nagged and nagged and nagged for my parents to take me there so I could check it out... #Speaker:Bengt
+    
+    ... and they did! #Speaker:Bengt
     
     Sigrid seemed... not too pleased, at first. I thought she'd scold us, honestly. #Speaker:Bengt
     
-    Even so, she showed me up to the top floor and let me look at that light. It was magical to me back then! #Speaker:Bengt
+    Even so, she showed me up to the top floor and let me look at that light. #Speaker:Bengt
     
     Anyway, what I'm trying to get across here is that she might seem standoffish at times... #Speaker:Bengt
     
@@ -108,7 +126,9 @@ Something on your mind? #Speaker:Bengt
     
     What about Irma? #Speaker:Cleo
     
-    Irma came here not too long ago... well, it's been over a decade, but that's much shorter than anyone else here. #Speaker:Bengt
+    Irma came here not too long ago... #Speaker:Bengt
+    
+    Well, it's been over a decade, but that's much shorter than anyone else here. #Speaker:Bengt
     
     After her sister disappeared, she was pretty closed off for a while. #Speaker:Bengt
     
@@ -116,11 +136,11 @@ Something on your mind? #Speaker:Bengt
     
     Fortunately, our jobs here wound up colliding every now and then. #Speaker:Bengt
     
-    We had to work together on a few projects, and it gave me the opportunity to talk to her some more. #Speaker:Bengt
+    We had to work together on a few projects. That let me talk to her some more. #Speaker:Bengt
     
     She's quick-witted and smart! And passionate about her craft! I respect her a lot. #Speaker:Bengt
     
-    Anyone else?
+    Anyone else? #Speaker:Bengt
     
     -> characters1
     
@@ -147,7 +167,7 @@ Something on your mind? #Speaker:Bengt
     
     He's constantly congested! I can hardly hear him anytime I visit. #Speaker:Bengt
     
-    Frankly, the first time I spoke with him, I thought he was mad at me! He sounded so gruff! #Speaker:Bengt
+    The first time I spoke with him, I thought he was mad at me! He sounded so gruff! #Speaker:Bengt
     
     Luckily he's a lot easier to understand when he takes his allergy medicine... #Speaker:Bengt
     
@@ -155,9 +175,11 @@ Something on your mind? #Speaker:Bengt
     
     He gave me some great tips on how to attract birds with different kinds of flowers... #Speaker:Bengt
     
-    ...and I do maintenance on his gardening tools from time to time. We get along amicably if I say so myself. #Speaker:Bengt
+    ...and I do maintenance on his gardening tools from time to time. #Speaker:Bengt
     
-    So, uh, don't take it personally if he seems... off. Poor guy just needs a hit of his nasal spray. #Speaker:Bengt
+    We get along amicably if I say so myself! #Speaker:Bengt
+    
+    Anyway, don't take it personally if he seems off. Poor guy just needs a hit of his nasal spray. #Speaker:Bengt
     
     Anyone else? #Speaker:Bengt
     
@@ -180,8 +202,6 @@ Something on your mind? #Speaker:Bengt
     Oh, but I felt no ill will toward her whatsoever! She was right, after all. #Speaker:Bengt 
     
     Anytime I want to take something like that into the water again, I double check with Vera first. #Speaker:Bengt
-    
-    She insists on not doing anything to disturb the waters here, and if there's anything I admire it's passion like that! #Speaker:Bengt
     
     I just hope she doesn't think of me as a threat to the ecosystem, ha ha... I'd hate to be her enemy. #Speaker:Bengt
     
