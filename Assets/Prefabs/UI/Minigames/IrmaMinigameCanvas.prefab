@@ -1599,6 +1599,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasBeenPlayed: 0
+  ID: 0
+  step: 0
+  questLog: {fileID: 0}
   leftStickIcon: {fileID: 7079072249796058690}
   rightStickIcon: {fileID: 6575175703235575192}
   submitIcon: {fileID: 6515140907519381718}
@@ -1611,11 +1614,11 @@ MonoBehaviour:
   rightStickControl: {fileID: 8253809515253767832}
   radioSound:
     Guid:
-      Data1: 506138914
-      Data2: 1138198446
-      Data3: -1513102179
-      Data4: 717071395
-    Path: event:/Sound/SFX/minigames/Radio (test)
+      Data1: 832002549
+      Data2: 1337645052
+      Data3: 430384046
+      Data4: -505198473
+    Path: event:/Sound/SFX/minigames/Radio (med musik av leo)
 --- !u!1 &9213600566468043362
 GameObject:
   m_ObjectHideFlags: 0

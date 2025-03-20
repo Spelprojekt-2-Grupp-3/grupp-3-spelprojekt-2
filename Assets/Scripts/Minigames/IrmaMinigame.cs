@@ -110,7 +110,6 @@ public class IrmaMinigame : Minigames
         if (!hasStarted) return;
         if (leftStick.IsInProgress())
         {
-            Debug.Log("left stick");
             currentValueLeft += Mathf.RoundToInt(leftStick.ReadValue<Vector2>().x);
             
             if (currentValueLeft > numberRange)
@@ -132,7 +131,6 @@ public class IrmaMinigame : Minigames
 
         if (rightStick.IsInProgress())
         {
-            Debug.Log("right stick");
             currentValueRight += Mathf.RoundToInt(rightStick.ReadValue<Vector2>().x);
             if (currentValueRight > numberRange)
             {
