@@ -91,6 +91,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -534592245459536454, guid: 641cff9c56884cd42a82559aea08c6d1,
         type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 8469143447288218026, guid: 9eb25f830074b684ea3cfce9fa86b277,
+        type: 3}
+    - target: {fileID: -534592245459536454, guid: 641cff9c56884cd42a82559aea08c6d1,
+        type: 3}
       propertyPath: m_BlendShapeWeights.Array.data[0]
       value: 0
       objectReference: {fileID: 0}
@@ -224,8 +230,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91ac7d8b5eeae5a40a516f48e3b95ec3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotationLerpSpeed: 0
   maxMoveSpeed: 778
   acceleration: 35
+  _idleInterpolationSpeed: 0
 --- !u!114 &2905560321775232315
 MonoBehaviour:
   m_ObjectHideFlags: 0
