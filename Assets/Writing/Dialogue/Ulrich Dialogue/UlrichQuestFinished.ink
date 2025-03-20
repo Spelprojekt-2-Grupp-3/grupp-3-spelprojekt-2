@@ -1,4 +1,5 @@
 EXTERNAL EditQuest(int ID, int step)
+EXTERNAL Fade(int time)
 
 -> UlrichDialogue2
 
@@ -30,7 +31,9 @@ Right, right. You're here about the upgrade. I'm on it. #Speaker:Ulrich
 
 Wait here, will you? #Speaker:Ulrich
 
-[Ulrich shuffles over to your boat and installs the upgrade.] #Speaker:Ulrich 
+~ Fade(3.5)
+
+//[Ulrich shuffles over to your boat and installs the upgrade.] #Speaker:Ulrich 
 
 There. #Speaker:Ulrich
 

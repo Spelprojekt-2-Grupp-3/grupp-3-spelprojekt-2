@@ -1,5 +1,5 @@
 EXTERNAL EditQuest(int ID, int step)
-
+EXTERNAL Fade(int time)
 
 -> IrmaDialogue2
 
@@ -69,9 +69,13 @@ It's just weird that people are going missing and apparently no one notices anyt
 
 I don't suspect them, mind you. I just can't shake the feeling they're keeping something from me. #Speaker:Irma
 
-... I'm guessing you oughta get going soon. #Speaker:Irma
+... I'm guessing you oughta get going soon. I should probably install that upgrade for you now. #Speaker:Irma
 
-But do me another favor, yeah? #Speaker:Irma
+~ Fade(3.5)
+
+Done! #Speaker:Irma
+
+... Do me another favor, yeah? #Speaker:Irma
 
 If you find out anything regarding your parents, talk to me before anyone else. #Speaker:Irma
 

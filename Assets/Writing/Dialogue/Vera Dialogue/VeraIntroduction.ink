@@ -4,7 +4,7 @@ EXTERNAL EditQuest(int ID, int step)
 
 === VeraDialogue1 ===
 
-Hey there, stanger! #Speaker:Vera
+Hey there, stranger! #Speaker:Vera
 
 You look like a fish fresh out of water! Guessing you're new around here. #Speaker:Vera
 
@@ -42,7 +42,7 @@ I was diving nearby when a nasty little thing swum by and stung me! #Speaker:Ver
     
 -You were stung?! By what? Is it dangerous? #Speaker:Cleo
 
-Ha! It's nothing serious, thankfully. But I'm not in a mood to spend the next few hours puking my guts out. #Speaker:Vera
+Ha! It's nothing serious, but I'm not in a mood to spend the next few hours puking my guts out. #Speaker:Vera
 
 How is that not serious?! #Speaker:Cleo
 
