@@ -296,7 +296,10 @@ public class DialogueManager : MonoBehaviour
     {
         line = line.Replace("…", "...");
         
-        dialogueText.text = ""; // Clear previous text
+        // Set the text to full line, but set the visible characters to 0 (for the text to not jump)
+        dialogueText.text = line;
+        dialogueText.maxVisibleCharacters = 0;
+        
         continueIcon.SetActive(false);
         HideChoices();
 
@@ -308,11 +311,12 @@ public class DialogueManager : MonoBehaviour
         for (int i = 0; i < line.Length; i++)
         {
             char letter = line[i];
+            dialogueText.maxVisibleCharacters++;
             
             if (_canSkip && _submitSkip) // If player clicks AFTER the delay, show full text
             {
+                dialogueText.maxVisibleCharacters = line.Length;
                 _submitSkip = false;
-                dialogueText.text = line;
                 break;
             }
 
