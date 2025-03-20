@@ -16,8 +16,8 @@ Here ya go! #Speaker:Vera
     
 -Thanks for the help. #Speaker:Cleo
 
-Back at ya! You best be off now. Don't leave poor Ulrich sniffling too much longer! #Speaker:Vera
-
 ~ EditQuest(3, 3)
+
+Back at ya! You best be off now. Don't leave poor Ulrich sniffling too much longer! #Speaker:Vera
 
 -> END

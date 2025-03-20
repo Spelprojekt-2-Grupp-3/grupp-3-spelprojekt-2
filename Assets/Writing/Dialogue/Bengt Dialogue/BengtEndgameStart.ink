@@ -104,8 +104,8 @@ I wrote it ages ago, but never sent it. #Speaker:Bengt
 
 I'll owe her big time for making her wait this long, though. #Speaker:Bengt
 
-But off you go! I'm rooting for you! #Speaker:Bengt
-
 ~ EditQuest(0, 0)
+
+But off you go! I'm rooting for you! #Speaker:Bengt
 
 -> END

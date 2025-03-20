@@ -20,8 +20,8 @@ I'd offer you some as well, but... well, I think you'd be awake for a week strai
     
 -I definitely won't be drinking this, then... #Speaker:Cleo 
 
-But thanks! #Speaker:Cleo
+~ EditQuest(1, 3)
 
-    ~ EditQuest(1, 3)
+But thanks! #Speaker:Cleo
 
 -> END

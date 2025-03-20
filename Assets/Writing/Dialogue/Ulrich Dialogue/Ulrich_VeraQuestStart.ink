@@ -1,4 +1,5 @@
 EXTERNAL EditQuest(int ID, int step)
+EXTERNAL MinigameQuest(int ID, int step)
 
 -> UlrichDialogueVera
 
@@ -36,8 +37,9 @@ Hrmhrm... Hremn! #Speaker:Ulrich
 
 Hrmn! #Speaker:Ulrich
 
-[Ulrich nods.] #Speaker:Ulrich
-
 ~ EditQuest(4, 1)
+~ MinigameQuest(4, 2)
+
+[Ulrich nods.] #Speaker:Ulrich
 
 -> END

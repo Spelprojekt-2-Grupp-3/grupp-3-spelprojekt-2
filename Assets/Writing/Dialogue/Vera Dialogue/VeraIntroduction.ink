@@ -56,8 +56,8 @@ Think you're up for it? #Speaker:Vera
     
 -Of course! Yeah! Geez... #Speaker:Cleo
 
-That's the spirit! #Speaker:Vera
-
 ~ EditQuest(4, 0)
+
+That's the spirit! #Speaker:Vera
 
 -> END

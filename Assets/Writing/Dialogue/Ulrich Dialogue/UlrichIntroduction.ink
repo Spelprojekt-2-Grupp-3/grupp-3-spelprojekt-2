@@ -50,8 +50,8 @@ Hrmnrhgh. Heerhmnmngh Jemhgmh. Vrrha! #Speaker:Ulrich
     
 -Well, okay then... I'll see what I can do...? #Speaker:Cleo
 
-Hrnm! #Speaker:Ulrich
-
 ~ EditQuest(3, 0)
+
+Hrnm! #Speaker:Ulrich
 
 -> END

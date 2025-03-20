@@ -91,4 +91,6 @@ I gotta head back inside now, but please, talk to me whenever! #Speaker:Irma
 
 ~ EditQuest(2, 4)
 
+Hope to see you again! #Speaker:Irma
+
 -> END

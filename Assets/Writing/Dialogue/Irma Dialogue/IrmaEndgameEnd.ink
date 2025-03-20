@@ -16,8 +16,8 @@ Now you can contact me if you need help or find something... #Speaker:Irma
 
 I've gotta go now, wish me good luck! #Speaker:Cleo
 
-Be safe out there...! #Speaker:Irma
-
 ~ EditQuest(0, 3)
+
+Be safe out there...! #Speaker:Irma
 
 -> END

@@ -58,8 +58,8 @@ No problem! Let me know if there's anything else I could help you with. #Speaker
     
 -I need to get going. #Speaker:Cleo
 
-Don't be a stranger! #Speaker:Vera
-
 ~ EditQuest(4, 4)
+
+Don't be a stranger! #Speaker:Vera
 
 -> END

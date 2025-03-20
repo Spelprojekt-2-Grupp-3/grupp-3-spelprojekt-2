@@ -1,4 +1,5 @@
 EXTERNAL EditQuest(int ID, int step)
+EXTERNAL MinigameQuest(int ID, int step)
 
 -> Vera_UlrichQuestStart
 
@@ -30,8 +31,9 @@ I meant to clean them up myself, but why do that when I can have someone do it f
     
 -I'll take care of that for you, then. #Speaker:Cleo
 
-Perfect! #Speaker:Vera
-
 ~ EditQuest(3, 1)
+~ MinigameQuest(3, 2)
+
+Perfect! #Speaker:Vera
 
 -> END

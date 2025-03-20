@@ -54,8 +54,8 @@ I don't have much else for you. #Speaker:Sigrid
     
 -I'll be heading out then. Thanks again. #Speaker:Cleo
 
-No problem. #Speaker:Sigrid
+~ EditQuest(1, 4)
 
-    ~ EditQuest(1, 4)
+No problem. #Speaker:Sigrid
 
 -> END

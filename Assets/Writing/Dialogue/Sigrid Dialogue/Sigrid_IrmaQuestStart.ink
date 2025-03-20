@@ -1,4 +1,5 @@
 EXTERNAL EditQuest(int ID, int step)
+EXTERNAL MinigameQuest(int ID, int step)
 
 -> Sigrid_IrmaQuestStart
 
@@ -28,8 +29,9 @@ Deal? #Speaker:Sigrid
     
 -I'll get right to it. #Speaker:Cleo
 
-Good to hear. #Speaker:Sigrid
-
 ~ EditQuest(2, 1)
+~ MinigameQuest(2, 2)
+
+Good to hear. #Speaker:Sigrid
 
 -> END

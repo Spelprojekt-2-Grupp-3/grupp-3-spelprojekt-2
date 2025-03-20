@@ -62,8 +62,8 @@ Mhrmnm. #Speaker:Ulrich
 
 I'll get going, then. #Speaker:Cleo
 
-Hrm. #Speaker:Ulrich
-
 ~ EditQuest(3, 4)
+
+Hrm. #Speaker:Ulrich
 
 -> END

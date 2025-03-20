@@ -20,8 +20,8 @@ I don't know what size she needs, so I packed them all in there. #Speaker:Sigrid
 
 Anyway, thanks! I'll be going now. #Speaker:Cleo
 
-Bye. #Speaker:Sigrid
-
 ~ EditQuest(2, 3)
+
+Bye. #Speaker:Sigrid
 
 -> END

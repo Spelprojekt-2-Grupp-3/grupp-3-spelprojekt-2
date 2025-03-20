@@ -22,8 +22,8 @@ Hrrgnmm! #Speaker:Ulrich
 
 Thanks, Ulrich! #Speaker:Cleo
 
-Hrnm. #Speaker:Ulrich
-
 ~ EditQuest(4, 3)
+
+Hrnm. #Speaker:Ulrich
 
 -> END

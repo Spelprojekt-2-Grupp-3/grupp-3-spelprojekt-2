@@ -55,9 +55,9 @@ If you're up for it, I'd like you to go and borrow one for me. #Speaker:Irma
     * [I'm in.]
     
 -I'll get you a cog. #Speaker:Cleo
-    
-Perfect! I'll be waiting here. #Speaker:Irma
 
 ~ EditQuest(2, 0)
+    
+Perfect! I'll be waiting here. #Speaker:Irma
 
 -> END

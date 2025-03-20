@@ -1,4 +1,5 @@
 EXTERNAL EditQuest(int ID, int step)
+INCLUDE ../globals.ink
 
 -> SigridDialogue1
 
@@ -32,7 +33,7 @@ Nothing personal, of course. Just not used to outsiders is all. #Speaker:Sigrid
 
     * [A favor for a favor?]
     
--Bengt told me you all trade favors here. What if I helped you out with something first?
+-Bengt told me you all trade favors here. What if I helped you out with something first? #Speaker:Cleo
 
 Hmm... yeah, that works. #Speaker:Sigrid
 
@@ -50,8 +51,8 @@ I want you to head to Bengt and get me some from him. Think you're up for it? #S
     
 - I'll get you that coffee! #Speaker:Cleo
 
-'Preciate it. #Speaker:Sigrid
-
 ~ EditQuest(1, 0)
+
+'Preciate it. #Speaker:Sigrid
 
 -> END

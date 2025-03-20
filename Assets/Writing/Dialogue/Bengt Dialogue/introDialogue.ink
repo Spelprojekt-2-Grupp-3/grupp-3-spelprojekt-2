@@ -13,7 +13,7 @@ Sorry, I’m a bit shocked! We, uh… don’t get a whole lot of visitors. #Spea
     * [Who are you?]
     
 -Who are you...? #Speaker:Cleo
-    
+
 I’m Bengt, resident mechanic! #Speaker:Bengt
 
 I see your boat over there has taken some damage. I’d offer to help fix it up, but… #Speaker:Bengt
@@ -90,7 +90,7 @@ All things considered, you're lucky it wound up in the hands of someone willing 
 
 But, moving on... #Speaker:Bengt
     
-    * [I see...] 
+    * [I see...]
     
 I see. That makes things harder for me... #Speaker:Cleo
 
@@ -108,7 +108,7 @@ The Kraken has a mean habit of preventing anyone from leaving. #Speaker:Bengt
     
 You'll want to make sure your boat can withstand some pushback before you try to leave. #Speaker:Bengt
 
-    * [Can you help?] 
+    * [Can you help?]
     
 -You mentioned you’re a mechanic. Could you improve the boat for me? #Speaker:Cleo
     

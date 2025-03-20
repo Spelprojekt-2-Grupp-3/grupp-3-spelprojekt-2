@@ -1,4 +1,5 @@
 EXTERNAL EditQuest(int ID, int step)
+EXTERNAL MinigameQuest(int ID, int step)
 
 -> Bengt_SigridQuestStart
 
@@ -28,8 +29,9 @@ I need some help getting it back up and running! Think you're up for it? #Speake
     
 -I'll see what I can do. #Speaker:Cleo
 
-Great, thanks! #Speaker:Bengt
-
 ~ EditQuest(1, 1)
+~ MinigameQuest(1, 2)
+
+Great, thanks! #Speaker:Bengt
 
 -> END
