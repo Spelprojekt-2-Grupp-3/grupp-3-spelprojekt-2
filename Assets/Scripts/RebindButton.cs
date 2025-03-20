@@ -18,9 +18,9 @@ public class RebindButton : MonoBehaviour
     private void Awake()
     {
         // Loads rebinds
-        //string rebindString = PlayerPrefs.GetString(rebinds, string.Empty);
-        //if (string.IsNullOrEmpty(rebindString)) return;
-        //m_Action.action.LoadBindingOverridesFromJson(rebindString);
+        string rebindString = PlayerPrefs.GetString(rebinds, string.Empty);
+        if (string.IsNullOrEmpty(rebindString)) return;
+        m_Action.action.LoadBindingOverridesFromJson(rebindString);
     }
 
     private void Start()
