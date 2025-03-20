@@ -1,4 +1,5 @@
 EXTERNAL EditQuest(int ID, int step)
+EXTERNAL Fade(float time)
 
 -> BengtDialogueSigrid
 
@@ -10,7 +11,9 @@ Anyway, thanks for the help! You're the best! #Speaker:Bengt
 
 I'll go fetch you a pack of that coffee! #Speaker:Bengt
 
-[Bengt heads inside for a moment and comes back out with a package in hand.] #Speaker:Bengt
+~ Fade(3.5)
+
+//[Bengt heads inside for a moment and comes back out with a package in hand.] #Speaker:Bengt
 
 There you have it! #Speaker:Bengt
 

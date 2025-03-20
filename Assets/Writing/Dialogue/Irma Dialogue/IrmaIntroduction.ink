@@ -8,11 +8,11 @@ Hi, I'm looking for... #Speaker:Cleo
 
 One sec! #Speaker:Irma
 
-[...] #Speaker:Cleo
+... #Speaker:Cleo
 
-[.....] #Speaker:Cleo
+..... #Speaker:Cleo
 
-[.......] #Speaker:Cleo
+....... #Speaker:Cleo
 
     * [Hello?]
     
@@ -20,7 +20,7 @@ One sec! #Speaker:Irma
 
 Shoot- I'll be right with you! #Speaker:Irma
 
-[...] #Speaker:Cleo
+... #Speaker:Cleo
 
 Sorry, sorry, I was busy doing something and... #Speaker:Irma
 

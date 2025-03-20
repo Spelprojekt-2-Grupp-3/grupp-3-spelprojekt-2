@@ -165,7 +165,7 @@ Something on your mind? #Speaker:Irma
     
     I'm totally lost on all this ecosystem stuff she's so passionate about... #Speaker:Irma
     
-    I can see why it's important, and I make sure to dispose of my electronic scraps safely so I don't mess it up! #Speaker:Irma
+    I know it's important, and I make sure to dispose of my electronic scraps safely so I don't mess it up! #Speaker:Irma
     
     But to dedicate so much time and energy into a bunch of water... I mean, wow. #Speaker:Irma
     

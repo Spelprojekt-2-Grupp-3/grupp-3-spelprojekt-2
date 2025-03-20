@@ -1,4 +1,5 @@
 EXTERNAL EditQuest(int ID, int step)
+EXTERNAL Fade(int time)
 
 -> VeraDialogue2
 
@@ -20,6 +21,8 @@ Make tea, got it! Roger that! Thanks! #Speaker:Vera
 
 [She hurries into her hut.] #Speaker:Vera
 
+~ Fade(2.5)
+
 [A few moments later, she comes back with a cup of tea in hand.] #Speaker:Vera
 
 Lemme tell ya, I got nervous for a sec there! #Speaker:Vera
@@ -30,7 +33,9 @@ So, what was it you needed? A boat upgrade, right? #Speaker:Vera
 
 Give me a sec and I'll hook you up. #Speaker:Vera
 
-[Vera downs her tea before she gets to work on installing your upgrade.] #Speaker:Vera
+~ Fade(3.5)
+
+//[Vera downs her tea before she gets to work on installing your upgrade.] #Speaker:Vera
 
 .... All done! #Speaker:Vera
 

@@ -1,4 +1,5 @@
 EXTERNAL EditQuest(int ID, int step)
+EXTERNAL Fade(float time)
 
 -> SigridDialogue2
 
@@ -10,9 +11,11 @@ That solves my problem. Thanks. #Speaker:Sigrid
 
 I'll get you your upgrade. #Speaker:Sigrid
 
-[Sigrid gets straight to work on installing your new upgrade.] #Speaker:Sigrid
+~ Fade(3.5)
 
-[When she finishes, she dusts her palms off and looks at you.] #Speaker:Sigrid
+//[Sigrid gets straight to work on installing your new upgrade.] #Speaker:Sigrid
+
+//[When she finishes, she dusts her palms off and looks at you.] #Speaker:Sigrid
 
 Is there anything else? #Speaker:Sigrid
 
