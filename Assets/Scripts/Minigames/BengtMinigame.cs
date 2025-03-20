@@ -46,6 +46,7 @@ public class BengtMinigame : Minigames
     private void Awake()
     {
         playerControls = new PlayerInputActions();
+        questLog = FindObjectOfType<QuestLog>();
         StartMinigame();
     }
 
@@ -64,6 +65,7 @@ public class BengtMinigame : Minigames
     public override void StopMinigame()
     {
         Events.startPlayer?.Invoke();
+        questLog.UpdateQuest(ID,step);
         Destroy(gameObject);
     }
 

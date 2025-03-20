@@ -53,6 +53,7 @@ public class IrmaMinigame : Minigames
     private void Awake()
     {
         playerControls = new PlayerInputActions();
+        questLog = FindObjectOfType<QuestLog>();
     }
 
     private void Start()
@@ -84,6 +85,7 @@ public class IrmaMinigame : Minigames
         var brain = Camera.main.GetComponent<CinemachineBrain>(); 
         brain.enabled = true;
         Events.startPlayer?.Invoke();
+        questLog.UpdateQuest(ID,step);
         Destroy(gameObject);
     }
 

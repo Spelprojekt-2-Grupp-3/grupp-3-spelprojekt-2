@@ -25,6 +25,7 @@ public class UlrichMinigme : Minigames
     private void Start()
     {
         StartMinigame();
+        questLog = FindObjectOfType<QuestLog>();
     }
 
     private void OnEnable()
@@ -97,6 +98,7 @@ public class UlrichMinigme : Minigames
     public override void StopMinigame()
     {
         Events.startPlayer?.Invoke();
+        questLog.UpdateQuest(ID,step);
         Destroy(gameObject);
     }
 

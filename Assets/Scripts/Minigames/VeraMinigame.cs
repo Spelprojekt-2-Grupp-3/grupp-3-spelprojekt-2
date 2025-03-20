@@ -24,6 +24,7 @@ public class VeraMinigame : Minigames
     private void Awake()
     {
         playerControls = new PlayerInputActions();
+        questLog = FindObjectOfType<QuestLog>();
     }
 
     private void OnEnable()
@@ -147,6 +148,7 @@ public class VeraMinigame : Minigames
     public override void StopMinigame()
     {
         Events.startPlayer?.Invoke();
+        questLog.UpdateQuest(ID,step);
         Destroy(canvasInstance);
         canvasInstance = null;
     }

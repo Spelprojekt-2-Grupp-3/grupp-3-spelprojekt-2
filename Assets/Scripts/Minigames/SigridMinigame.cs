@@ -41,6 +41,7 @@ public class SigridMinigame : Minigames
     {
         playerControls = new PlayerInputActions();
         pickedObject = null;
+        questLog = FindObjectOfType<QuestLog>();
     }
 
     private void Start()
@@ -82,6 +83,7 @@ public class SigridMinigame : Minigames
     public override void StopMinigame()
     {
         Events.startPlayer?.Invoke();
+        questLog.UpdateQuest(ID,step);
         Destroy(gameObject);
     }
 
