@@ -18,8 +18,9 @@ public class DialogueManager : MonoBehaviour
     private float typingSpeed = 0.04f;
 
     [Header("Globals Ink File")]
-    [SerializeField] private TextAsset loadGlobalsJSON;
-    
+    [SerializeField]
+    private TextAsset loadGlobalsJSON;
+
     [Header("Dialogue UI")]
     [SerializeField]
     private GameObject dialogueUI;
@@ -160,7 +161,7 @@ public class DialogueManager : MonoBehaviour
                 questLog.UpdateQuest(ID, step);
             }
         );
-        
+
         _currentStory.BindExternalFunction(
             "MinigameQuest",
             (int ID, int step) =>
@@ -171,9 +172,9 @@ public class DialogueManager : MonoBehaviour
                 }
             }
         );
-        
+
         _currentStory.BindExternalFunction(
-            "FadeToBlack",
+            "Fade",
             (float time) =>
             {
                 FadeToBlack(time);
@@ -222,7 +223,7 @@ public class DialogueManager : MonoBehaviour
         _currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
         dialogueUI.SetActive(true);
-        
+
         _dialogueVariables.StartListening(_currentStory);
 
         BindExternal();
