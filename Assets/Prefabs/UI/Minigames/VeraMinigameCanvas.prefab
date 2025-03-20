@@ -789,6 +789,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasBeenPlayed: 0
+  ID: 0
+  step: 0
+  questLog: {fileID: 0}
   shellPrefab: {fileID: 3365458794043395927, guid: f14dea796a55c214092d7dbf5782ee18,
     type: 3}
   currentInput: {fileID: 11400000, guid: 7f7fd9995c4435f488f7df319f651fb7, type: 2}
@@ -799,3 +802,10 @@ MonoBehaviour:
   cleanerShell: {fileID: 21300000, guid: 19dedc87f79a6f04e9a60a54b2b07f5f, type: 3}
   moreCleanShell: {fileID: 21300000, guid: beea39a88e4c3854d9b907aca91c53eb, type: 3}
   fullyCleanShell: {fileID: 21300000, guid: 2b13474618033624ebd30fe8fc9ed001, type: 3}
+  cleanSound:
+    Guid:
+      Data1: -587451723
+      Data2: 1110275868
+      Data3: -400658766
+      Data4: -465931152
+    Path: event:/Sound/SFX/minigames/SeaShells (SHIT)

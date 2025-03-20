@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using FMODUnity;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
@@ -20,6 +21,7 @@ public class VeraMinigame : Minigames
     [SerializeField] private GameObject mouseMarker;
     private GameObject mouseMarkerInstance;
     [SerializeField] private Sprite cleanerShell, moreCleanShell, fullyCleanShell;
+    [SerializeField] private EventReference cleanSound;
 
     private void Awake()
     {
@@ -97,6 +99,7 @@ public class VeraMinigame : Minigames
                 if (EventSystem.current.currentSelectedGameObject.name == "Water")
                 {
                     currentlySelected.GetComponent<Shell>().dirtyLevel -= 1;
+                    RuntimeManager.PlayOneShot(cleanSound);
                     if (currentlySelected.GetComponent<Shell>().dirtyLevel == 2)
                     {
                         currentlySelected.GetComponent<Image>().sprite = cleanerShell;
