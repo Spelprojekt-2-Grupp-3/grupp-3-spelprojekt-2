@@ -17,7 +17,7 @@ public class CollissionHeightComparison : MonoBehaviour
     void Start() { }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (R_Col.GetComponent<BoxCollider>().enabled == L_Col.GetComponent<BoxCollider>().enabled)
         {

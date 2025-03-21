@@ -149,7 +149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cleo: {fileID: 3258300440175446683}
   hipTransform: {fileID: 2138295848941798146}
-  maxDistance: 6.9
+  maxDistance: 10
   layerMask:
     serializedVersion: 2
     m_Bits: 64
@@ -369,7 +369,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4411403705377191574}
-  - component: {fileID: 8582260150571819735}
   - component: {fileID: 8371018895811457285}
   m_Layer: 0
   m_Name: L_Leg_Target
@@ -393,32 +392,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4843237294207223060}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8582260150571819735
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4016196543573759945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0822f2a9f1fba741ad8eb3d336b2f5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  transformToMatch: {fileID: 269974129122984583}
-  space: 0
-  position: 1
-  rotation: 1
-  scale: 0
-  cleo: {fileID: 3258300440175446683}
-  hipTransform: {fileID: 5092629782340035910}
-  maxDistance: 6.9
-  layerMask:
-    serializedVersion: 2
-    m_Bits: 64
-  fuuuck: {fileID: 7318602372133511951}
-  sibling: {fileID: 0}
-  grounded: 0
 --- !u!114 &8371018895811457285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -433,7 +406,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cleo: {fileID: 3258300440175446683}
   hipTransform: {fileID: 5092629782340035910}
-  maxDistance: 6.9
+  maxDistance: 10
   layerMask:
     serializedVersion: 2
     m_Bits: 64
@@ -840,6 +813,7 @@ MonoBehaviour:
   maxMoveSpeed: 1230
   acceleration: 98
   _idleInterpolationSpeed: 0.2
+  moveDirection: {x: 0, y: 0, z: 0}
 --- !u!114 &2905560321775232315
 MonoBehaviour:
   m_ObjectHideFlags: 0

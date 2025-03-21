@@ -47,7 +47,7 @@ public class AnimationRigTransform : MonoBehaviour
     private TwoBoneIKConstraint AniRigConstraint;
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         ActiveClipName = cleo.GetComponent<Animator>().GetCurrentAnimatorClipInfo(0)[0].clip.name;
         //Debug.Log(ActiveClipName);
@@ -61,13 +61,17 @@ public class AnimationRigTransform : MonoBehaviour
             transformToMatch = IdleTransformPos;
             //IdlePos
         }
-        Debug.Log(ActiveClipName);
+        //     Debug.Log(ActiveClipName);
         transform.localPosition = transformToMatch.localPosition;
         transform.localEulerAngles = transformToMatch.localEulerAngles;
 
-        if (cleo != null && ActiveClipName == "Idle01")
+        if (
+            cleo != null
+            && ActiveClipName == "Idle01"
+            && cleo.GetComponent<PlayerMovement>().moveDirection.sqrMagnitude < 0.1
+        )
         {
-            //            Debug.Log("Running Cleo Idle Functionality");
+            Debug.Log("Running Cleo Idle Functionality");
             RaycastHit hit;
             //WE ARE PLAY PLAY CLIPPO
             //YAHOOWAHOO I MISS MY WIFE, TAILS

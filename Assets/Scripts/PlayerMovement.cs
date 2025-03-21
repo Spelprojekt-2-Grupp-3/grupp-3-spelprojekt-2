@@ -86,12 +86,15 @@ public class PlayerMovement : MonoBehaviour
         currentRight = camera.transform.right;
     }
 
+    [HideInInspector]
+    public Vector3 moveDirection;
+
     private void FixedUpdate()
     {
         if (!movePlayer)
             return;
         float targetRotationSpeed = 10f;
-        Vector3 moveDirection =
+        moveDirection =
             (currentForward * move.ReadValue<Vector2>().y)
             + (currentRight * move.ReadValue<Vector2>().x);
 
@@ -109,7 +112,7 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
-//            Debug.Log(moveDirection);
+            //            Debug.Log(moveDirection);
             moveDirection = Vector2.Lerp(moveDirection, new Vector2(0, 0), _idleInterpolationSpeed);
             _aniControl.SetFloat("Speed", moveDirection.sqrMagnitude);
         }
