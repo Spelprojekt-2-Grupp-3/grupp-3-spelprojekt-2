@@ -33,11 +33,17 @@ public class InventoryMenu : MonoBehaviour
         tabRight = playerInput.UI.MenuRight;
         tabLeft = playerInput.UI.MenuLeft;
         EnableControls();
+        
+        Events.startPlayer.AddListener(EnableControls);
+        Events.stopPlayer.AddListener(ForceClose);
     }
 
     private void OnDisable()
     {
         DisableControls();
+        
+        Events.startPlayer.RemoveListener(EnableControls);
+        Events.stopPlayer.RemoveListener(ForceClose);
     }
 
     private void Start()
@@ -46,14 +52,20 @@ public class InventoryMenu : MonoBehaviour
         menuObject.SetActive(false);
     }
 
-    public void DisableControls()
+    void DisableControls()
     {
         DisableOther();
         openJournal.Disable();
-        isOpen = false;
     }
 
-    public void EnableControls()
+    void ForceClose()
+    {
+        DisableControls();
+        isOpen = false;
+        menuObject.SetActive(false);
+    }
+    
+    void EnableControls()
     {
         EnableOther();
         openJournal.Enable();
