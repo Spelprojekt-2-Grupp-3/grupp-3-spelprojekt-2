@@ -18,9 +18,7 @@ public class RebindButton : MonoBehaviour
     private void Awake()
     {
         // Loads rebinds
-        string rebindString = PlayerPrefs.GetString(rebinds, string.Empty);
-        if (string.IsNullOrEmpty(rebindString)) return;
-        m_Action.action.LoadBindingOverridesFromJson(rebindString);
+        LoadRebinds();
     }
 
     private void Start()
@@ -33,32 +31,34 @@ public class RebindButton : MonoBehaviour
         button.SetActive(false);
         m_Action.action.Disable();
         rebindingOperation = m_Action.action.PerformInteractiveRebinding().WithControlsExcluding("Mouse").OnMatchWaitForAnother(0.1f).OnComplete(operation => RebindComplete()).Start();
+        m_Action.action.Enable();
     }
     
 
     private void RebindComplete()
     {
         button.SetActive(true);
-        string actionName = m_Action.name;
-        string rebindString = "";
-        if (rebindingOperation.action.ToString().Contains("leftStick"))
-        {
-            rebindString = "{\"bindings\":[{\"action\":\""+actionName+"\",\"id\":\"759da2d7-7b15-4668-8b9c-e8d55b86c0b3\",\"path\":\"<Gamepad>/leftStick\",\"interactions\":\"null\",\"processors\":\"null\"},{\"action\":\"Boat/MinigameButtonSouth\",\"id\":\"86cf62c7-bbad-4c9a-b99b-e5318e762a62\",\"path\":\"<Gamepad>/leftStick/left\",\"interactions\":\"null\",\"processors\":\"null\"}]}";
-        }
-        
-        else if (rebindingOperation.action.ToString().Contains("rightStick"))
-        {
-            rebindString = "{\"bindings\":[{\"action\":\""+actionName+"\",\"id\":\"759da2d7-7b15-4668-8b9c-e8d55b86c0b3\",\"path\":\"<Gamepad>/rightStick\",\"interactions\":\"null\",\"processors\":\"null\"},{\"action\":\"Boat/MinigameButtonSouth\",\"id\":\"86cf62c7-bbad-4c9a-b99b-e5318e762a62\",\"path\":\"<Gamepad>/leftStick/left\",\"interactions\":\"null\",\"processors\":\"null\"}]}";
-        }
-
-        else
-        {
-            rebindString = InputListener.Instance.playerInput.actions.SaveBindingOverridesAsJson();
-        }
-        PlayerPrefs.SetString(rebinds, rebindString);
         m_Action.action.Enable();
         rebindingOperation.Dispose();
+        
+        var bindingIndex = m_Action.action.GetBindingIndex(InputListener.Instance.playerInput.currentControlScheme.ToLower());
+        Debug.Log(m_Action.action.bindings[bindingIndex].effectivePath);
+        m_Action.action.ApplyBindingOverride(bindingIndex, m_Action.action.bindings[bindingIndex].effectivePath);
+        
+        string rebindString = m_Action.action.actionMap.SaveBindingOverridesAsJson();
+        PlayerPrefs.SetString(rebinds, rebindString);
+        LoadRebinds();
         SetIcon();
+    }
+
+    private void LoadRebinds()
+    {
+        string rebindString = PlayerPrefs.GetString(rebinds, string.Empty);
+        Debug.Log("Rebind: " + rebindString);
+        if (string.IsNullOrEmpty(rebindString)) return;
+        m_Action.action.actionMap.Enable();
+        m_Action.action.actionMap.LoadBindingOverridesFromJson(rebindString);
+        Debug.Log("after loaded:" + m_Action.action.actionMap.SaveBindingOverridesAsJson());
     }
 
     private void SetIcon()
@@ -75,7 +75,7 @@ public class RebindButton : MonoBehaviour
         switch (controlPath)
         {
             case "buttonSouth":
-                    image.sprite = inputDevice.buttonSouth;
+                image.sprite = inputDevice.buttonSouth;
                 return;
             case "buttonNorth":
                 image.sprite = inputDevice.buttonNorth;
