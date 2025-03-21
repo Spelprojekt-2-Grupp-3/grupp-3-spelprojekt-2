@@ -47,7 +47,16 @@ public class MatchingTransform : MonoBehaviour
 
     private Vector3 FootOffsetValue = new Vector3(0, 1.07f, 0);
 
+    bool flipped;
 
+    [SerializeField]
+    public BoxCollider fuuuck;
+
+    [SerializeField]
+    private MatchingTransform sibling;
+
+    [HideInInspector]
+    public bool grounded;
 
     // Update is called once per frame
     void Update()
@@ -70,30 +79,12 @@ public class MatchingTransform : MonoBehaviour
             if (scale)
                 transform.localScale = transformToMatch.localScale;
         }
-        if (cleo != null)
-        {
-            RaycastHit hit;
-            //WE ARE PLAY PLAY CLIPPO
-            //YAHOOWAHOO I MISS MY WIFE, TAILS
-            float hipY = hipTransform.position.y;
-            Vector3 startPos = new Vector3(transform.position.x, hipY, transform.position.z);
-            if (Physics.Raycast(startPos, Vector3.down, out hit, maxDistance, layerMask))
-            {
-                Debug.DrawRay(startPos, Vector3.down * hit.distance, Color.magenta);
-                transform.position = hit.point + FootOffsetValue;
-                Debug.Log(hit.collider.gameObject.name);
-            }
-            else
-            {
-                Debug.DrawRay(startPos, Vector3.down * maxDistance, Color.cyan);
-                cleo.GetComponent<CollissionHeightComparison>().FlipActation();
-                //Debug.Log("no hit");
-            }
+        
 
-            //need to make sure te correct one is active if subtle change is made 
-            cleo.GetComponent<CollissionHeightComparison>().CheckPos();
+            //need to make sure te correct one is active if subtle change is made
+            // cleo.GetComponent<CollissionHeightComparison>().CheckPos();
         }
     }
 
-    void FixedUpdate() { }
-}
+ 
+

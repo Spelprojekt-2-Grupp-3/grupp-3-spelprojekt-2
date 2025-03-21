@@ -11,11 +11,21 @@ public class CollissionHeightComparison : MonoBehaviour
     [SerializeField]
     private GameObject L_Col;
 
+    [SerializeField]
+    private Animator animator;
+
     // Start is called before the first frame update
     void Start() { }
 
     // Update is called once per frame
-    void Update() { }
+    void Update()
+    {
+        if (R_Col.GetComponent<BoxCollider>().enabled == L_Col.GetComponent<BoxCollider>().enabled)
+        {
+            CheckPos();
+        }
+        //Debug.Log(animator.GetCurrentAnimatorClipInfo(0)[0].clip.name);
+    }
 
     public void CheckPos()
     {
