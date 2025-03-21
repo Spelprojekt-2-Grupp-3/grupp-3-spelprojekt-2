@@ -58,7 +58,6 @@ public class IslandBoarding : MonoBehaviour
     {
         islandThemeInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
         ambianceInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
-        Debug.Log("Allow boat board" + allowBoatBoard);
     }
 
     private void OnTriggerEnter(Collider other)
