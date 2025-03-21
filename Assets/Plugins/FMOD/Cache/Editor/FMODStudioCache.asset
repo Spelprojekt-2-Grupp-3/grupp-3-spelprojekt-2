@@ -160,7 +160,7 @@ MonoBehaviour:
   - {fileID: 8167632474658657221}
   MinDistance: 1
   MaxDistance: 20
-  Length: 57600
+  Length: 115200
 --- !u!114 &-6989165873705748848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -549,10 +549,10 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/Banks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638781006122484912
+  lastModified: 638781308591911462
   FileSizes:
   - Name: 
-    Value: 3342
+    Value: 3330
   Exists: 1
 --- !u!114 &-4055353369233749306
 MonoBehaviour:
@@ -622,7 +622,7 @@ MonoBehaviour:
   Banks:
   - {fileID: 8182886605034168985}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -1307,7 +1307,7 @@ MonoBehaviour:
     data1: 3813424906
     data2: 1999398737
   Type: 0
-  IsGlobal: 1
+  IsGlobal: 0
   Labels: []
   Exists: 1
 --- !u!114 &11400000
@@ -1366,15 +1366,13 @@ MonoBehaviour:
   - {fileID: 6223120046420076957}
   - {fileID: 1059533170620124717}
   - {fileID: 8339037003840245863}
-  - {fileID: 1880679678394007748}
   - {fileID: -5106476197329766246}
-  EditorParameters:
-  - {fileID: 4258373662463232916}
+  EditorParameters: []
   MasterBanks:
   - {fileID: 8182886605034168985}
   StringsBanks:
   - {fileID: -4265464848103356742}
-  cacheTime: 638781006122484912
+  cacheTime: 638781308591911462
   cacheVersion: 131622
 --- !u!114 &459774145964946755
 MonoBehaviour:
@@ -1615,33 +1613,6 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &1880679678394007748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Sound/SFX/minigames/SeaShells (SHIT)
-  m_EditorClassIdentifier: 
-  Path: event:/Sound/SFX/minigames/SeaShells (SHIT)
-  Guid:
-    Data1: -587451723
-    Data2: 1110275868
-    Data3: -400658766
-    Data4: -465931152
-  Banks:
-  - {fileID: 8182886605034168985}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 573
 --- !u!114 &1953245367781192041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1864,7 +1835,7 @@ MonoBehaviour:
     data1: 3813424906
     data2: 1999398737
   Type: 0
-  IsGlobal: 1
+  IsGlobal: 0
   Labels: []
   Exists: 1
 --- !u!114 &3107178793023101214
@@ -1944,7 +1915,7 @@ MonoBehaviour:
     data1: 3813424906
     data2: 1999398737
   Type: 0
-  IsGlobal: 1
+  IsGlobal: 0
   Labels: []
   Exists: 1
 --- !u!114 &3836119706583133636
@@ -2058,30 +2029,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &4258373662463232916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Fade
-  m_EditorClassIdentifier: 
-  Name: Fade
-  StudioPath: parameter:/Fade
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 3813424906
-    data2: 1999398737
-  Type: 0
-  IsGlobal: 1
-  Labels: []
-  Exists: 1
 --- !u!114 &4484955660969178201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2475,7 +2422,7 @@ MonoBehaviour:
     data1: 3813424906
     data2: 1999398737
   Type: 0
-  IsGlobal: 1
+  IsGlobal: 0
   Labels: []
   Exists: 1
 --- !u!114 &7155238255842091075
@@ -2753,7 +2700,7 @@ MonoBehaviour:
     data1: 3813424906
     data2: 1999398737
   Type: 0
-  IsGlobal: 1
+  IsGlobal: 0
   Labels: []
   Exists: 1
 --- !u!114 &8182886605034168985
@@ -2771,7 +2718,7 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/Banks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638781006122474704
+  lastModified: 638781308591851390
   FileSizes: []
   Exists: 1
 --- !u!114 &8247415871218049302
@@ -2878,7 +2825,7 @@ MonoBehaviour:
     data1: 3813424906
     data2: 1999398737
   Type: 0
-  IsGlobal: 1
+  IsGlobal: 0
   Labels: []
   Exists: 1
 --- !u!114 &8695176056675701637
