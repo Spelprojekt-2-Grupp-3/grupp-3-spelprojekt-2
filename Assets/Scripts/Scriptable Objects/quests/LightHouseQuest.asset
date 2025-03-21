@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: LightHouseQuest
   m_EditorClassIdentifier: 
   questTitle: The lighthouse keeper
-  initialQuestText: quest has begun
-  step: 0
+  initialQuestText: Talk to sigrid
+  step: 5
   ID: 1
-  questText: ...and final update
+  questText: ...and back to first
   steps:
-  - character intro (not bengt) done
-  - talk to antoher person
-  - do Minigame
-  - talk with p2 again
-  - ...and back to first
+  - talk to bengt
+  - start generator
+  - talk to bengt
+  - talk to sigrid
+  - quest complete
