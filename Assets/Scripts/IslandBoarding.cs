@@ -12,7 +12,6 @@ public class IslandBoarding : MonoBehaviour
     private PlayerInputActions playerControls;
     private InputAction board;
     [SerializeField, Tooltip("Location for where the player spawns when boarding")] private Transform playerBoardingLocation;
-    [SerializeField] private bool isOnBoat;
     [SerializeField] private GameObject boatCamera;
     [SerializeField] private GameObject playerCamera;
     private bool allowIslandBoard;
@@ -40,55 +39,43 @@ public class IslandBoarding : MonoBehaviour
         islandThemeInstance = FMODUnity.RuntimeManager.CreateInstance(islandTheme);
         ambianceInstance = FMODUnity.RuntimeManager.CreateInstance(ambiance);
         playerControls = new PlayerInputActions();
-        
-        if (starterIsland)
-        {
-            isOnBoat = false;
-        }
-        else
-        {
-            isOnBoat = true;
-        }
     }
 
     private void OnEnable()
     {
         board = playerControls.Player.Interact;
+        board.Enable();
+        board.performed += TryBoarding;
     }
 
     private void OnDisable()
     {
-        
+        board.Disable();
+        board.performed -= TryBoarding;
     }
 
     void Update()
     {
         islandThemeInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
         ambianceInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(gameObject));
+        Debug.Log("Allow boat board" + allowBoatBoard);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        board.Enable();
-        board.performed += TryBoarding;
-        
-        if (other.gameObject.tag == "Boat" && isOnBoat)
+        if (other.gameObject.tag == "Boat")
         {
             allowIslandBoard = true;
         }
 
-        if (other.gameObject.tag == "Player" && !isOnBoat)
+        if (other.gameObject.tag == "Player")
         {
-            Debug.Log("allow boat board");
             allowBoatBoard = true;
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        board.Disable();
-        board.performed -= TryBoarding;
-        
         if (other.gameObject.tag == "Boat")
         {
             allowIslandBoard = false;
@@ -102,20 +89,19 @@ public class IslandBoarding : MonoBehaviour
 
     private void TryBoarding(InputAction.CallbackContext context)
     {
-        if (allowIslandBoard && isOnBoat)
-        {
-            BoardIsland();
-        }
-        
-        else if (allowBoatBoard && !isOnBoat)
+        if (allowBoatBoard)
         {
             BoardBoat();
+        }
+        
+        else if (allowIslandBoard)
+        {
+            BoardIsland();
         }
     }
 
     public void BoardIsland()
     {
-        isOnBoat = false;
         islandThemeInstance.start();
         ambianceInstance.start();
         Events.stopBoat?.Invoke();
@@ -130,7 +116,6 @@ public class IslandBoarding : MonoBehaviour
 
     public void BoardBoat()
     {
-        isOnBoat = true;
         islandThemeInstance.stop(0);
         ambianceInstance.stop(0);
         Events.startBoat?.Invoke();
