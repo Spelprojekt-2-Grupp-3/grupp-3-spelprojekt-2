@@ -21,7 +21,7 @@ public class CollissionHeightComparison : MonoBehaviour
     {
         if (R_Col.GetComponent<BoxCollider>().enabled == L_Col.GetComponent<BoxCollider>().enabled)
         {
-            CheckPos();
+          //  CheckPos();
         }
         //Debug.Log(animator.GetCurrentAnimatorClipInfo(0)[0].clip.name);
     }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
 
@@ -22,8 +23,6 @@ public class AnimationRigTransform : MonoBehaviour
     private LayerMask layerMask;
 
     private Vector3 FootOffsetValue = new Vector3(0, 1.07f, 0);
-
-    bool flipped;
 
     [SerializeField]
     public BoxCollider fuuuck;
@@ -83,7 +82,6 @@ public class AnimationRigTransform : MonoBehaviour
                 Debug.DrawRay(startPos, Vector3.down * hit.distance, Color.magenta);
                 transform.position = hit.point + FootOffsetValue;
                 //Debug.Log(hit.collider.gameObject.name);
-                flipped = false;
                 grounded = true;
             }
             else
@@ -97,6 +95,17 @@ public class AnimationRigTransform : MonoBehaviour
 
                 grounded = false;
                 Debug.DrawRay(startPos, Vector3.down * maxDistance, Color.cyan);
+                if (!grounded && sibling.grounded)
+                {
+                    if (Physics.Raycast(startPos, Vector3.down, out hit, 10, layerMask))
+                    {
+                        AniRigConstraint.weight = 1;
+                        Debug.DrawRay(startPos, Vector3.down * hit.distance, Color.magenta);
+                        transform.position = hit.point + FootOffsetValue;
+                        //Debug.Log(hit.collider.gameObject.name);
+                        grounded = true;
+                    }
+                }
                 /*  if (!flipped)
                   {
                       fuuuck.enabled = true;
@@ -109,8 +118,13 @@ public class AnimationRigTransform : MonoBehaviour
             //need to make sure te correct one is active if subtle change is made
             // cleo.GetComponent<CollissionHeightComparison>().CheckPos();
         }
-        else if (cleo != null && ActiveClipName == "Run750")
+        else if (
+            cleo != null
+            && ActiveClipName == "Run750"
+            && cleo.GetComponent<PlayerMovement>().moveDirection.sqrMagnitude > 0.1f
+        )
         {
+            fuuuck.enabled = true;
             AniRigConstraint.weight = 0;
         }
         else

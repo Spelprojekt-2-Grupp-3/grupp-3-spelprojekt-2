@@ -16,7 +16,7 @@ public class BasicGroundCheck : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         bool grounded = Physics.Raycast(
             transform.position + new Vector3(0, 1, 0),
