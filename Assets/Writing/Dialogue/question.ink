@@ -10,6 +10,8 @@ Which person do you hate the most?
     -> chosen("Sigrid")
 + [Ulrich]
     -> chosen("Ulrich")
++ [Vera]
+    -> chosen("Vera")
 
 === chosen(person) ===
 ~ person_name = person

@@ -130,6 +130,36 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 719082927}
     m_Modifications:
+    - target: {fileID: 1485013164160268748, guid: f67b1942a5244d943bbdf59098a13cc7,
+        type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485013164160268748, guid: f67b1942a5244d943bbdf59098a13cc7,
+        type: 3}
+      propertyPath: m_Navigation.m_SelectOnUp
+      value: 
+      objectReference: {fileID: 50242822}
+    - target: {fileID: 1485013164160268748, guid: f67b1942a5244d943bbdf59098a13cc7,
+        type: 3}
+      propertyPath: m_Navigation.m_WrapAround
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1485013164160268748, guid: f67b1942a5244d943bbdf59098a13cc7,
+        type: 3}
+      propertyPath: m_Navigation.m_SelectOnDown
+      value: 
+      objectReference: {fileID: 50242824}
+    - target: {fileID: 1485013164160268748, guid: f67b1942a5244d943bbdf59098a13cc7,
+        type: 3}
+      propertyPath: m_Navigation.m_SelectOnLeft
+      value: 
+      objectReference: {fileID: 50242822}
+    - target: {fileID: 1485013164160268748, guid: f67b1942a5244d943bbdf59098a13cc7,
+        type: 3}
+      propertyPath: m_Navigation.m_SelectOnRight
+      value: 
+      objectReference: {fileID: 50242824}
     - target: {fileID: 2185193864368582434, guid: f67b1942a5244d943bbdf59098a13cc7,
         type: 3}
       propertyPath: m_Name
@@ -137,54 +167,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3139799813174341439, guid: f67b1942a5244d943bbdf59098a13cc7,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      propertyPath: m_Navigation.m_Mode
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 3139799813174341439, guid: f67b1942a5244d943bbdf59098a13cc7,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3139799813174341439, guid: f67b1942a5244d943bbdf59098a13cc7,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3139799813174341439, guid: f67b1942a5244d943bbdf59098a13cc7,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      propertyPath: m_Navigation.m_SelectOnUp
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 50242825}
     - target: {fileID: 3139799813174341439, guid: f67b1942a5244d943bbdf59098a13cc7,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      propertyPath: m_Navigation.m_SelectOnDown
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 50242823}
     - target: {fileID: 3139799813174341439, guid: f67b1942a5244d943bbdf59098a13cc7,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 3139799813174341439, guid: f67b1942a5244d943bbdf59098a13cc7,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      propertyPath: m_Navigation.m_SelectOnLeft
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 50242825}
     - target: {fileID: 3139799813174341439, guid: f67b1942a5244d943bbdf59098a13cc7,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: DialogueManager, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 3139799813174341439, guid: f67b1942a5244d943bbdf59098a13cc7,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3139799813174341439, guid: f67b1942a5244d943bbdf59098a13cc7,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      propertyPath: m_Navigation.m_SelectOnRight
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 50242823}
     - target: {fileID: 3159187288051400254, guid: f67b1942a5244d943bbdf59098a13cc7,
         type: 3}
       propertyPath: textEffect
@@ -225,6 +230,31 @@ PrefabInstance:
       propertyPath: dialogueSound.Guid.Data4
       value: 82491761
       objectReference: {fileID: 0}
+    - target: {fileID: 5129146325745622802, guid: f67b1942a5244d943bbdf59098a13cc7,
+        type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5129146325745622802, guid: f67b1942a5244d943bbdf59098a13cc7,
+        type: 3}
+      propertyPath: m_Navigation.m_SelectOnUp
+      value: 
+      objectReference: {fileID: 50242823}
+    - target: {fileID: 5129146325745622802, guid: f67b1942a5244d943bbdf59098a13cc7,
+        type: 3}
+      propertyPath: m_Navigation.m_SelectOnDown
+      value: 
+      objectReference: {fileID: 50242825}
+    - target: {fileID: 5129146325745622802, guid: f67b1942a5244d943bbdf59098a13cc7,
+        type: 3}
+      propertyPath: m_Navigation.m_SelectOnLeft
+      value: 
+      objectReference: {fileID: 50242823}
+    - target: {fileID: 5129146325745622802, guid: f67b1942a5244d943bbdf59098a13cc7,
+        type: 3}
+      propertyPath: m_Navigation.m_SelectOnRight
+      value: 
+      objectReference: {fileID: 50242825}
     - target: {fileID: 5715069621187912541, guid: f67b1942a5244d943bbdf59098a13cc7,
         type: 3}
       propertyPath: m_IsActive
@@ -305,6 +335,31 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9106850147816469087, guid: f67b1942a5244d943bbdf59098a13cc7,
+        type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9106850147816469087, guid: f67b1942a5244d943bbdf59098a13cc7,
+        type: 3}
+      propertyPath: m_Navigation.m_SelectOnUp
+      value: 
+      objectReference: {fileID: 50242824}
+    - target: {fileID: 9106850147816469087, guid: f67b1942a5244d943bbdf59098a13cc7,
+        type: 3}
+      propertyPath: m_Navigation.m_SelectOnDown
+      value: 
+      objectReference: {fileID: 50242822}
+    - target: {fileID: 9106850147816469087, guid: f67b1942a5244d943bbdf59098a13cc7,
+        type: 3}
+      propertyPath: m_Navigation.m_SelectOnLeft
+      value: 
+      objectReference: {fileID: 50242824}
+    - target: {fileID: 9106850147816469087, guid: f67b1942a5244d943bbdf59098a13cc7,
+        type: 3}
+      propertyPath: m_Navigation.m_SelectOnRight
+      value: 
+      objectReference: {fileID: 50242822}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -334,8 +389,8 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 50242821}
   m_SourcePrefab: {fileID: 100100000, guid: f67b1942a5244d943bbdf59098a13cc7, type: 3}
---- !u!4 &50242819 stripped
-Transform:
+--- !u!224 &50242819 stripped
+RectTransform:
   m_CorrespondingSourceObject: {fileID: 6531581124029817212, guid: f67b1942a5244d943bbdf59098a13cc7,
     type: 3}
   m_PrefabInstance: {fileID: 50242818}
@@ -367,6 +422,54 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &50242822 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3139799813174341439, guid: f67b1942a5244d943bbdf59098a13cc7,
+    type: 3}
+  m_PrefabInstance: {fileID: 50242818}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486815752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &50242823 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1485013164160268748, guid: f67b1942a5244d943bbdf59098a13cc7,
+    type: 3}
+  m_PrefabInstance: {fileID: 50242818}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026625882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &50242824 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5129146325745622802, guid: f67b1942a5244d943bbdf59098a13cc7,
+    type: 3}
+  m_PrefabInstance: {fileID: 50242818}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1475960592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &50242825 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9106850147816469087, guid: f67b1942a5244d943bbdf59098a13cc7,
+    type: 3}
+  m_PrefabInstance: {fileID: 50242818}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1740172472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &89578850
 GameObject:
   m_ObjectHideFlags: 0
@@ -2762,7 +2865,7 @@ PrefabInstance:
         type: 3}
       propertyPath: fillerDialogueJSON
       value: 
-      objectReference: {fileID: 4900000, guid: 8b26feb8b458dc5478d0123a8957565e, type: 3}
+      objectReference: {fileID: 4900000, guid: dd9caddbb873d5841a57c501e928aff3, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
