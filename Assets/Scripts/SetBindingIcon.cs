@@ -16,9 +16,14 @@ public class SetBindingIcon : MonoBehaviour
         Events.setIcons.AddListener(SetIcon);
     }
 
+    private void Start()
+    {
+        Debug.Log(InputListener.Instance.inputDevice.currentInputDevice);
+        SetIcon(InputListener.Instance.inputDevice.currentInputDevice, InputListener.Instance.playerInput);
+    }
+
     private void SetIcon(CurrentInputDevice inputDevice, PlayerInput input)
     {
-        Debug.Log("set binding icon");
         var deviceLayoutName = default(string);
         var controlPath = default(string);
         var action = m_Action.action;

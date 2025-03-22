@@ -62,7 +62,7 @@ public class IslandBoarding : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Boat")
+        if (other.gameObject.tag == "Boat" && !playerCharacter.activeSelf)
         {
             allowIslandBoard = true;
         }
