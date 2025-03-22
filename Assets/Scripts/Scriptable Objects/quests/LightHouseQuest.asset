@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: LightHouseQuest
   m_EditorClassIdentifier: 
   questTitle: The lighthouse keeper
-  initialQuestText: Talk to sigrid
-  step: 5
+  initialQuestText: Talk to Sigrid
+  step: 0
   ID: 1
   questText: ...and back to first
   steps:
-  - talk to bengt
-  - start generator
-  - talk to bengt
-  - talk to sigrid
-  - quest complete
+  - Ask Bengt for coffee
+  - Start Bengt's generator
+  - Talk to Bengt
+  - Deliver the coffee to Sigrid
+  - You received an upgrade from Sigrid

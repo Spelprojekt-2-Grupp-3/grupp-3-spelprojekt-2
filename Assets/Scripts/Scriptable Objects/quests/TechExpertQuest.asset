@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: TechExpertQuest
   m_EditorClassIdentifier: 
   questTitle: The tech expert
-  initialQuestText: ExampleText
-  step: 5
+  initialQuestText: Talk to Irma
+  step: 0
   ID: 2
   questText: 
   steps:
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Ask Sigrid for a cog
+  - Fix Sigrid's fuse box
+  - Talk to Sigrid
+  - Deliver the cogs to Irma
+  - You received an upgrade from Irma

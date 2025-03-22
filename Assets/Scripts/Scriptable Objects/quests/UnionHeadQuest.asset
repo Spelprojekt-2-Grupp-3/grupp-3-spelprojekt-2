@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: UnionHeadQuest
   m_EditorClassIdentifier: 
   questTitle: The head of the union
-  initialQuestText: ExampleText
+  initialQuestText: Talk to Vera
   step: 0
   ID: 4
   questText: Help Vera
   steps:
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Ask Ulrich about a cure
+  - Arrange Ulrich's pots
+  - Talk to Ulrich
+  - Deliver the flowers to Vera
+  - You received an upgrade from Vera
