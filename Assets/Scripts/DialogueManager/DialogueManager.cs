@@ -330,7 +330,7 @@ public class DialogueManager : MonoBehaviour
             }
             
             // Apply typewriter effect and longer pause for punctuations
-            if ((letter == '.' || letter == '!' || letter == '?' || letter == ';' || letter == ':'))
+            if ((letter == '.' || letter == ',' || letter == '!' || letter == '?' || letter == ';' || letter == ':'))
             {
                 yield return new WaitForSeconds(punctuationPauseSpeed);
             }
