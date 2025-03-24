@@ -125,6 +125,9 @@
         },
         {
             "m_Id": "14da7983dc7c49a7a445d0e1381cf8cb"
+        },
+        {
+            "m_Id": "1b6a0a17d07d4b9abbfdd1ca93e49bee"
         }
     ],
     "m_Keywords": [],
@@ -3719,7 +3722,7 @@
     "m_FloatType": 1,
     "m_RangeValues": {
         "x": 5.0,
-        "y": 20.0
+        "y": 100.0
     }
 }
 
@@ -3735,9 +3738,9 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 4441.0,
-            "y": 595.0,
-            "width": 208.00048828125,
+            "x": 4265.99951171875,
+            "y": 585.9999389648438,
+            "width": 208.0,
             "height": 361.0
         }
     },
@@ -4173,6 +4176,34 @@
 }
 
 {
+    "m_SGVersion": 1,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
+    "m_ObjectId": "1b6a0a17d07d4b9abbfdd1ca93e49bee",
+    "m_Guid": {
+        "m_GuidSerialized": "fcbc6dbd-6533-49aa-ba48-cd16095562c0"
+    },
+    "m_Name": "WaveColourActive",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "WaveColourActive",
+    "m_DefaultReferenceName": "_WaveColourActive",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_DismissedVersion": 0,
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_Value": 0.0,
+    "m_FloatType": 0,
+    "m_RangeValues": {
+        "x": 0.0,
+        "y": 1.0
+    }
+}
+
+{
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.CategoryData",
     "m_ObjectId": "1c3ccb475e76428eb967d4becffd9ac3",
@@ -4180,6 +4211,9 @@
     "m_ChildObjectList": [
         {
             "m_Id": "df3c960520c14481ab17bdbaabe2fe26"
+        },
+        {
+            "m_Id": "1b6a0a17d07d4b9abbfdd1ca93e49bee"
         }
     ]
 }
@@ -8106,10 +8140,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 4088.000244140625,
-            "y": 1384.0,
-            "width": 207.999755859375,
-            "height": 326.0
+            "x": 4057.999755859375,
+            "y": 1359.0,
+            "width": 208.000244140625,
+            "height": 325.9998779296875
         }
     },
     "m_Slots": [
@@ -15980,10 +16014,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 4158.400390625,
-            "y": 1076.400146484375,
-            "width": 0.0,
-            "height": 0.0
+            "x": 4054.999755859375,
+            "y": 1040.0,
+            "width": 192.999755859375,
+            "height": 33.9998779296875
         }
     },
     "m_Slots": [
