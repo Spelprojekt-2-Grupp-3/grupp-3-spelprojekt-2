@@ -566,22 +566,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasBeenPlayed: 0
+  ID: 0
+  step: 0
+  questLog: {fileID: 0}
   currentInput: {fileID: 11400000, guid: 7f7fd9995c4435f488f7df319f651fb7, type: 2}
   hoverMarker: {fileID: 3893645919411594546}
   pickSound:
     Guid:
-      Data1: 601376897
-      Data2: 1121801758
-      Data3: 1092410275
-      Data4: -1807714793
-    Path: event:/Sound/SFX/minigames/SparkPlug
+      Data1: 1965917864
+      Data2: 1252406682
+      Data3: -819517819
+      Data4: -28572622
+    Path: event:/Sound/SFX/minigames/SparkPlug_PickUp
   placeSound:
     Guid:
-      Data1: 601376897
-      Data2: 1121801758
-      Data3: 1092410275
-      Data4: -1807714793
-    Path: event:/Sound/SFX/minigames/SparkPlug
+      Data1: -663140645
+      Data2: 1127497738
+      Data3: -1739676258
+      Data4: -1915265652
+    Path: event:/Sound/SFX/minigames/SparkPlug_Correct
+  placedWrongSound:
+    Guid:
+      Data1: -62283281
+      Data2: 1308349428
+      Data3: -592568182
+      Data4: -1983032645
+    Path: event:/Sound/SFX/minigames/SparkPlug_Wrong
 --- !u!222 &5181417779806371923
 CanvasRenderer:
   m_ObjectHideFlags: 0

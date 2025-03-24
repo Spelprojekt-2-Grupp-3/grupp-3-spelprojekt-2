@@ -19,7 +19,7 @@ public class SigridMinigame : Minigames
     private Fuse[] fuses = new Fuse[9];
     private List<int> fusesPos = new List<int>(){0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14};
     [SerializeField] private GameObject hoverMarker;
-    [SerializeField] private EventReference pickSound, placeSound;
+    [SerializeField] private EventReference pickSound, placeSound, placedWrongSound;
 
     private void OnEnable()
     {
@@ -117,6 +117,10 @@ public class SigridMinigame : Minigames
                     {
                         StopMinigame();
                     }
+                }
+                else if (EventSystem.current.currentSelectedGameObject.GetComponent<EmptyFuse>())
+                {
+                    RuntimeManager.PlayOneShot(placedWrongSound);
                 }
             }
         }
