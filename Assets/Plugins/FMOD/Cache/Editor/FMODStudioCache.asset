@@ -78,6 +78,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 8000
+--- !u!114 &-7589231508838002377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound/SFX/VoiceNPC (type sound3)
+  m_EditorClassIdentifier: 
+  Path: event:/Sound/SFX/VoiceNPC (type sound3)
+  Guid:
+    Data1: -87089686
+    Data2: 1090996618
+    Data3: -574869375
+    Data4: 553571057
+  Banks:
+  - {fileID: 8182886605034168985}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-7511163899894503196
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -603,7 +630,11 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/Banks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
+<<<<<<< Updated upstream
   lastModified: 638784421856710142
+=======
+  lastModified: 638784379702827825
+>>>>>>> Stashed changes
   FileSizes:
   - Name: 
     Value: 3520
@@ -1422,17 +1453,55 @@ MonoBehaviour:
   - {fileID: 6183422624546703948}
   - {fileID: 8953189975178421815}
   - {fileID: -4077272988570097576}
+<<<<<<< Updated upstream
   - {fileID: -4548981580506572477}
   - {fileID: 2468467684710994446}
   - {fileID: -6572987060633915381}
   - {fileID: 7546178885952048233}
+=======
+  - {fileID: 3965133772815399251}
+  - {fileID: 5363778807347015925}
+  - {fileID: 424385921298452021}
+  - {fileID: -7589231508838002377}
+>>>>>>> Stashed changes
   EditorParameters: []
   MasterBanks:
   - {fileID: 8182886605034168985}
   StringsBanks:
   - {fileID: -4265464848103356742}
+<<<<<<< Updated upstream
   cacheTime: 638784421856710142
+=======
+  cacheTime: 638784379702827825
+>>>>>>> Stashed changes
   cacheVersion: 131622
+--- !u!114 &424385921298452021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound/SFX/Foley/NPC_Foley (upgrade)
+  m_EditorClassIdentifier: 
+  Path: event:/Sound/SFX/Foley/NPC_Foley (upgrade)
+  Guid:
+    Data1: -718663069
+    Data2: 1221773495
+    Data3: 944533901
+    Data4: 719006976
+  Banks:
+  - {fileID: 8182886605034168985}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 9979
 --- !u!114 &459774145964946755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2033,6 +2102,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 70034
+--- !u!114 &3965133772815399251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound/SFX/VoiceNPC (type sound2)
+  m_EditorClassIdentifier: 
+  Path: event:/Sound/SFX/VoiceNPC (type sound2)
+  Guid:
+    Data1: -2104442354
+    Data2: 1297406293
+    Data3: 1337309868
+    Data4: 828850176
+  Banks:
+  - {fileID: 8182886605034168985}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &4062773369029124327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2251,6 +2347,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 280284
+--- !u!114 &5363778807347015925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound/SFX/VoiceNPC (type sound1)
+  m_EditorClassIdentifier: 
+  Path: event:/Sound/SFX/VoiceNPC (type sound1)
+  Guid:
+    Data1: 990276390
+    Data2: 1251322154
+    Data3: 242465972
+    Data4: 952600712
+  Banks:
+  - {fileID: 8182886605034168985}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &5655193152269694373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2831,7 +2954,11 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/Banks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
+<<<<<<< Updated upstream
   lastModified: 638784421856603426
+=======
+  lastModified: 638784379702817696
+>>>>>>> Stashed changes
   FileSizes: []
   Exists: 1
 --- !u!114 &8247415871218049302
