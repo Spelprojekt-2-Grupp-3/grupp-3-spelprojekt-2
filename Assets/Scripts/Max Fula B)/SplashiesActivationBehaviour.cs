@@ -29,13 +29,13 @@ public class SplashiesActivationBehaviour : MonoBehaviour
         pS = GetComponent<ParticleSystem>();
         t = new Timer();
         activation = false;
-        if (Random.Range(1, 11) > 1)
+        if (Random.Range(1, 11) >= 5)
         {
             pS.Stop();
         }
     }
 
-    private bool activation;
+    private bool activation = false;
 
     // Update is called once per frame
     void Update()
@@ -43,7 +43,7 @@ public class SplashiesActivationBehaviour : MonoBehaviour
         if (pS.isStopped && !activation)
         {
             activation = true;
-            t.ExecuteAfterTime(waitTime, ActivationMayhaps);
+            StartCoroutine(t.ExecuteAfterTime(waitTime, ActivationMayhaps));
         }
     }
 
@@ -53,6 +53,8 @@ public class SplashiesActivationBehaviour : MonoBehaviour
         {
             pS.Play();
         }
+      //  Debug.Log("Kalla mig laser mannen för mitt vapen har laser");
+
         activation = false;
     }
 }

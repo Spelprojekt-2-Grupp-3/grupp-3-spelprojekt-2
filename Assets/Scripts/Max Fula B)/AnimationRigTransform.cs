@@ -70,7 +70,7 @@ public class AnimationRigTransform : MonoBehaviour
             && cleo.GetComponent<PlayerMovement>().moveDirection.sqrMagnitude < 0.1
         )
         {
-            Debug.Log("Running Cleo Idle Functionality");
+//            Debug.Log("Running Cleo Idle Functionality");
             RaycastHit hit;
             //WE ARE PLAY PLAY CLIPPO
             //YAHOOWAHOO I MISS MY WIFE, TAILS
