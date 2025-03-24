@@ -548,6 +548,9 @@
         },
         {
             "m_Id": "15c37d5eb9be459f9114e335498420e9"
+        },
+        {
+            "m_Id": "bb1f647e22d64cac9f197c399be7eac4"
         }
     ],
     "m_GroupDatas": [
@@ -1950,6 +1953,20 @@
             "m_InputSlot": {
                 "m_Node": {
                     "m_Id": "f67a02e4007d4265ba43e91f27496449"
+                },
+                "m_SlotId": 0
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "bb1f647e22d64cac9f197c399be7eac4"
+                },
+                "m_SlotId": 0
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "2e5ab51e412844b4bc5495c067629647"
                 },
                 "m_SlotId": 0
             }
@@ -5712,6 +5729,21 @@
         "x": -3198.0,
         "y": 566.0
     }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
+    "m_ObjectId": "39c0b1dcb93b4dd6bba5da899218170f",
+    "m_Id": 0,
+    "m_DisplayName": "Lighting Smoothness",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Out",
+    "m_StageCapability": 3,
+    "m_Value": 0.0,
+    "m_DefaultValue": 0.0,
+    "m_Labels": []
 }
 
 {
@@ -10053,8 +10085,8 @@
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
     "m_Hidden": false,
-    "m_Value": 0.0,
-    "m_FloatType": 0,
+    "m_Value": 0.10000000149011612,
+    "m_FloatType": 1,
     "m_RangeValues": {
         "x": 0.0,
         "y": 1.0
@@ -12894,6 +12926,42 @@
     "useTilingAndOffset": false,
     "m_Modifiable": true,
     "m_DefaultType": 0
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
+    "m_ObjectId": "bb1f647e22d64cac9f197c399be7eac4",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "Property",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": 4680.0,
+            "y": 871.0,
+            "width": 185.0,
+            "height": 34.0
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "39c0b1dcb93b4dd6bba5da899218170f"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_DismissedVersion": 0,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_Property": {
+        "m_Id": "8c3257d340f04293bc9f3a4dcd0223df"
+    }
 }
 
 {
