@@ -73,6 +73,7 @@ public class DialogueManager : MonoBehaviour
     private bool _canContinueToNextLine = false;
     private bool _canSkip = false;
     private bool _submitSkip = false;
+    [HideInInspector] public InputAction submit;
 
     private QuestLog questLog;
 
@@ -138,6 +139,8 @@ public class DialogueManager : MonoBehaviour
         inventoryMenu = FindObjectOfType<InventoryMenu>();
 
         _playerInput = new PlayerInputActions();
+        submit = _playerInput.Player.ContinueDialogue;
+        submit.Enable();
 
         questLog.AddQuest();
     }
@@ -188,7 +191,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
-        if (_playerInput.Player.Interact.WasPressedThisFrame())
+        if (submit.WasPressedThisFrame())
         {
             _submitSkip = true;
         }
