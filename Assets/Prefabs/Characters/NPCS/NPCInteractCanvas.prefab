@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8951338777199092193}
   - component: {fileID: 5069582861150217545}
   - component: {fileID: 298012447632088314}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Icon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 4342658303643839572}
   - component: {fileID: 1089968246536869834}
   - component: {fileID: 8815060024064361649}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: To interact
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -236,7 +236,7 @@ GameObject:
   - component: {fileID: 7716660827095138870}
   - component: {fileID: 2436010142609390755}
   - component: {fileID: 2345982749076459764}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Press
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -373,7 +373,7 @@ GameObject:
   - component: {fileID: 7262713176816242250}
   - component: {fileID: 2001024505743940544}
   - component: {fileID: 1584444631032185620}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: NPCInteractCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -409,7 +409,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9065927570984628907}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 2
   m_Camera: {fileID: 0}
@@ -447,7 +447,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &2001024505743940544
 MonoBehaviour:
   m_ObjectHideFlags: 0
