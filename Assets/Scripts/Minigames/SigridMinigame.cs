@@ -20,7 +20,6 @@ public class SigridMinigame : Minigames
     private List<int> fusesPos = new List<int>(){0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14};
     [SerializeField] private GameObject hoverMarker;
     [SerializeField] private EventReference pickSound, placeSound;
-    [SerializeField] private GameObject FyrLight;
 
     private void OnEnable()
     {
@@ -78,7 +77,6 @@ public class SigridMinigame : Minigames
     public override void CloseMinigame(InputAction.CallbackContext context)
     {
         Events.startPlayer?.Invoke();
-        FyrLight.SetActive(true);
         gameObject.SetActive(false);
     }
 

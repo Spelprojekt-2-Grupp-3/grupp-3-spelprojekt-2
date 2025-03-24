@@ -13,6 +13,7 @@ public class AffectWorld : MonoBehaviour
     [SerializeField] private float multiplier;
     //Length should be 100947 for fyr
     [SerializeField] private float intensityLength;
+    [SerializeField] private GameObject quest;
 
     private void Start()
     {
