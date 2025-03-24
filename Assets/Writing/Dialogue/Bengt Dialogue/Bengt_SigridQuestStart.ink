@@ -15,7 +15,7 @@ Hey again! What can I do for you? #Speaker:Bengt
 
 Haha! The secret is to make it real bitter and strong. It's like catnip to her! #Speaker:Bengt
 
-I'll need your help with something first, though. Favor for a favor! #Speaker:Bengts
+I'll need your help with something first, though. Favor for a favor! #Speaker:Bengt
 
     * [Fine.]
     
@@ -23,7 +23,7 @@ I'll need your help with something first, though. Favor for a favor! #Speaker:Be
 
 You see my generator over there? That old hunk of scrap is giving me a hard time. #Speaker:Bengt
 
-I need some help getting it back up and running! Think you're up for it? #Speaker:Bengts
+I need some help getting it back up and running! Think you're up for it? #Speaker:Bengt
 
     * [I'll do it.]
     

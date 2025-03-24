@@ -58,7 +58,9 @@ Well, no one has ever come back after falling in! #Speaker:Bengt
 
 Me, Sigrid, Ulrich and Vera all agreed to keep it hidden so no one would think to risk it. #Speaker:Bengt
 
-We were lucky that Irma doesn't leave her island much, but it would be much harder for someone like you to not notice. #Speaker:Bengt
+We were lucky that Irma doesn't leave her island much... #Speaker:Bengt
+
+... but it would be much harder for someone like you to not notice. #Speaker:Bengt
 
 Oh, but it's so stressful keeping it secret! You have no idea how relieving it is to spill the beans like this. #Speaker:Bengt
 
@@ -104,7 +106,7 @@ I wrote it ages ago, but never sent it. #Speaker:Bengt
 
 I'll owe her big time for making her wait this long, though. #Speaker:Bengt
 
-~ EditQuest(0, 0)
+~ EditQuest(0, 1)
 
 Anyway, off you go! I'm rooting for you! #Speaker:Bengt
 
