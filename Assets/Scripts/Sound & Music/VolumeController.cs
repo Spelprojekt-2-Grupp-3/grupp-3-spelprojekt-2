@@ -41,7 +41,6 @@ public class VolumeController : MonoBehaviour
 
     private void Awake()
     {
-        Debug.Log("AWAKKKKEE");
         // Fetch the VCA by name from FMOD
         _masterVCA = RuntimeManager.GetVCA(_masterVCAName);
         _musicVCA = RuntimeManager.GetVCA(_musicVCAName);
