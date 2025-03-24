@@ -53,6 +53,10 @@ public class PauseMenu : MonoBehaviour
 
     private void Pause()
     {
+        if (DialogueManager.GetInstance().dialogueIsPlaying)
+        {
+            DialogueManager.GetInstance().PauseDialogue();
+        }
         DialogueManager.GetInstance().submit.Disable();
         cancel.Enable();
         playerControls.UI.Cancel.performed += TryCancel;
@@ -73,6 +77,10 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+        if (DialogueManager.GetInstance().dialogueIsPlaying)
+        {
+            DialogueManager.GetInstance().ResumeDialogue();
+        }
         DialogueManager.GetInstance().submit.Enable();
         cancel.Disable();
         playerControls.UI.Cancel.performed -= TryCancel;

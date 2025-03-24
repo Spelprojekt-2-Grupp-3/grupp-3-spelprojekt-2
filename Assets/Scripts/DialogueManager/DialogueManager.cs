@@ -280,6 +280,17 @@ public class DialogueManager : MonoBehaviour
         Events.startPlayer?.Invoke();
         MultipleDialogueStart();
     }
+    
+    public void PauseDialogue()
+    {
+        dialogueUI.SetActive(false);
+    }
+    
+    public void ResumeDialogue()
+    {
+        dialogueUI.SetActive(true);
+        StartCoroutine(SelectFirstChoice());
+    }
 
     private void MultipleDialogueStart()
     {
