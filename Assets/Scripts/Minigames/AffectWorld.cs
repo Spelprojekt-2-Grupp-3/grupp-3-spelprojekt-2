@@ -21,6 +21,9 @@ public class AffectWorld : MonoBehaviour
 
     private void Update()
     {
-        intensity.intensity = Mathf.PingPong(Time.time*multiplier, intensityLength);
+        if (objektToAffectWorld.activeInHierarchy)
+        {
+            intensity.intensity = Mathf.PingPong(Time.time*multiplier, intensityLength);
+        } 
     }
 }
