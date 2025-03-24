@@ -588,6 +588,11 @@ PrefabInstance:
         type: 3}
     - target: {fileID: -534592245459536454, guid: 641cff9c56884cd42a82559aea08c6d1,
         type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e366fbd8db0c28347a3f2001af36619d, type: 2}
+    - target: {fileID: -534592245459536454, guid: 641cff9c56884cd42a82559aea08c6d1,
+        type: 3}
       propertyPath: m_BlendShapeWeights.Array.data[0]
       value: 0
       objectReference: {fileID: 0}
