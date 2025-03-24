@@ -22,6 +22,7 @@ public class Events : MonoBehaviour
     public static UnityEvent BengtMinigameHit = new UnityEvent();
     public static UnityEvent<string> sendInput = new UnityEvent<string>();
     public static UnityEvent<CurrentInputDevice, PlayerInput> setIcons = new UnityEvent<CurrentInputDevice, PlayerInput>();
+    public static UnityEvent<int, int> sendUpdatedQuest = new UnityEvent<int, int>();
 
     private void OnEnable()
     {

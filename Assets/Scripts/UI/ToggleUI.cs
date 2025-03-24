@@ -21,12 +21,17 @@ public class ToggleUI : MonoBehaviour
     {
         toggleUI.Enable();
         toggleUI.performed += Toggle;
+        if (!hideUI)
+        {
+            objectToHide.SetActive(true);
+        }
     }
 
     private void OnDisable()
     {
         toggleUI.Disable();
         toggleUI.performed -= Toggle;
+        objectToHide.SetActive(false);
     }
 
     private void Toggle(InputAction.CallbackContext context)

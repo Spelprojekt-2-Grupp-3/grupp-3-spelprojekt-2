@@ -86,6 +86,7 @@ public class SigridMinigame : Minigames
     {
         Events.startPlayer?.Invoke();
         questLog.UpdateQuest(ID,step);
+        Events.sendUpdatedQuest?.Invoke(ID, step);
         Destroy(gameObject);
     }
 
