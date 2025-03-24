@@ -77,10 +77,6 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
-        if (DialogueManager.GetInstance().dialogueIsPlaying)
-        {
-            DialogueManager.GetInstance().ResumeDialogue();
-        }
         DialogueManager.GetInstance().submit.Enable();
         cancel.Disable();
         playerControls.UI.Cancel.performed -= TryCancel;
@@ -97,6 +93,10 @@ public class PauseMenu : MonoBehaviour
         camera.enabled = false;
         cameraBrain.targetTexture = null;
         EventSystem.current.SetSelectedGameObject(null);
+        if (DialogueManager.GetInstance().dialogueIsPlaying)
+        {
+            DialogueManager.GetInstance().ResumeDialogue();
+        }
     }
 
     public void MainMenu()

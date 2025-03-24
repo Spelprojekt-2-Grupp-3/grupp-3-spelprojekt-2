@@ -290,6 +290,8 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueUI.SetActive(true);
         StartCoroutine(SelectFirstChoice());
+        HandleTags(_currentStory.currentTags);
+        Events.stopPlayer?.Invoke();
     }
 
     private void MultipleDialogueStart()
