@@ -1,5 +1,6 @@
 EXTERNAL EditQuest(int ID, int step)
 EXTERNAL Fade(float time)
+INCLUDE ../globals.ink
 
 -> SigridDialogue2
 
@@ -58,6 +59,11 @@ I don't have much else for you. #Speaker:Sigrid
 -I'll be heading out then. Thanks again. #Speaker:Cleo
 
 ~ EditQuest(1, 4)
+~ SigridQuest = "complete"
+{
+- IrmaQuest == "complete" and UlrichQuest == "complete" and VeraQuest == "complete":
+~ EditQuest(0, 0)
+}
 
 No problem. #Speaker:Sigrid
 

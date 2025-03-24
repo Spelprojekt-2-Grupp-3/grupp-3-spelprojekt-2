@@ -1,5 +1,6 @@
 EXTERNAL EditQuest(int ID, int step)
 EXTERNAL Fade(int time)
+INCLUDE ../globals.ink
 
 -> VeraDialogue2
 
@@ -64,6 +65,11 @@ No problem! Let me know if there's anything else I could help you with. #Speaker
 -I need to get going. #Speaker:Cleo
 
 ~ EditQuest(4, 4)
+~ VeraQuest = "complete"
+{
+- SigridQuest == "complete" and UlrichQuest == "complete" and IrmaQuest == "complete":
+~ EditQuest(0, 0)
+}
 
 Don't be a stranger! #Speaker:Vera
 
