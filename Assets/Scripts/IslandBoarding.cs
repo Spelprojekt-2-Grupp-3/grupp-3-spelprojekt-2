@@ -38,6 +38,27 @@ public class IslandBoarding : MonoBehaviour
     {
         islandThemeInstance = FMODUnity.RuntimeManager.CreateInstance(islandTheme);
         ambianceInstance = FMODUnity.RuntimeManager.CreateInstance(ambiance);
+        
+        var masterVCA = FMODUnity.RuntimeManager.GetVCA("vca:/Master");
+        var musicVCA = FMODUnity.RuntimeManager.GetVCA("vca:/Music");
+        var sfxVCA = FMODUnity.RuntimeManager.GetVCA("vca:/SFX");
+        if (masterVCA.isValid())
+        {
+            float initialVolume = PlayerPrefs.GetFloat("MasterVolume");
+            masterVCA.setVolume(initialVolume);
+        }
+
+        if (musicVCA.isValid())
+        {
+            float initialVolume = PlayerPrefs.GetFloat("MusicVolume");
+            musicVCA.setVolume(initialVolume);
+        }
+        
+        if (sfxVCA.isValid())
+        {
+            float initialVolume = PlayerPrefs.GetFloat("SFXVolume");
+            sfxVCA.setVolume(initialVolume);
+        }
         playerControls = new PlayerInputActions();
     }
 
