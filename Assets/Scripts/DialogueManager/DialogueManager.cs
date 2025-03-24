@@ -16,7 +16,7 @@ public class DialogueManager : MonoBehaviour
     [Header("Parameters")]
     [SerializeField]
     private float typingSpeed = 0.04f;
-    
+
     [SerializeField]
     [Tooltip("The pause after a . ! ? etc")]
     private float punctuationPauseSpeed = 0.25f;
@@ -73,7 +73,9 @@ public class DialogueManager : MonoBehaviour
     private bool _canContinueToNextLine = false;
     private bool _canSkip = false;
     private bool _submitSkip = false;
-    [HideInInspector] public InputAction submit;
+
+    [HideInInspector]
+    public InputAction submit;
 
     private QuestLog questLog;
 
@@ -91,6 +93,8 @@ public class DialogueManager : MonoBehaviour
 
     [SerializeField]
     private Animator FadeToBlackAnimator;
+
+    private GameObject _NPC;
 
     private void Awake()
     {
@@ -187,6 +191,20 @@ public class DialogueManager : MonoBehaviour
                 FadeToBlack(time);
             }
         );
+        _currentStory.BindExternalFunction(
+            "Point",
+            () =>
+            {
+                NPCPoint();
+            }
+        );
+        _currentStory.BindExternalFunction(
+            "Give",
+            () =>
+            {
+                NPCGive();
+            }
+        );
     }
 
     private void Update()
@@ -227,6 +245,7 @@ public class DialogueManager : MonoBehaviour
 
     public void EnterDialogueMode(TextAsset inkJSON)
     {
+        Debug.Log(_NPC.name);
         _currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
         dialogueUI.SetActive(true);
@@ -298,11 +317,11 @@ public class DialogueManager : MonoBehaviour
     private IEnumerator DisplayLine(string line)
     {
         line = line.Replace("…", "...");
-        
+
         // Set the text to full line, but set the visible characters to 0 (for the text to not jump)
         dialogueText.text = line;
         dialogueText.maxVisibleCharacters = 0;
-        
+
         continueIcon.SetActive(false);
         HideChoices();
 
@@ -315,7 +334,7 @@ public class DialogueManager : MonoBehaviour
         {
             char letter = line[i];
             dialogueText.maxVisibleCharacters++;
-            
+
             if (_canSkip && _submitSkip) // If player clicks AFTER the delay, show full text
             {
                 dialogueText.maxVisibleCharacters = line.Length;
@@ -325,15 +344,24 @@ public class DialogueManager : MonoBehaviour
 
             dialogueText.text += letter;
             RuntimeManager.PlayOneShot(dialogueSound, Camera.main.transform.position);
-            
+
             // If this is the last character, skip the pause (this should always be the last character based on the ink files I reviewed, but there might be exceptions)
-            if (i == line.Length - 2) 
+            if (i == line.Length - 2)
             {
                 break;
             }
-            
+
             // Apply typewriter effect and longer pause for punctuations
-            if ((letter == '.' || letter == ',' || letter == '!' || letter == '?' || letter == ';' || letter == ':'))
+            if (
+                (
+                    letter == '.'
+                    || letter == ','
+                    || letter == '!'
+                    || letter == '?'
+                    || letter == ';'
+                    || letter == ':'
+                )
+            )
             {
                 yield return new WaitForSeconds(punctuationPauseSpeed);
             }
@@ -345,7 +373,7 @@ public class DialogueManager : MonoBehaviour
 
         continueIcon.SetActive(true);
         DisplayChoices();
-        
+
         _canContinueToNextLine = true;
         _canSkip = false; // Reset skipping permission
     }
@@ -405,11 +433,11 @@ public class DialogueManager : MonoBehaviour
                 }
                 else if (tagValue == "Ulrich")
                 {
-                    layoutAnimator.Play("NPC");    
+                    layoutAnimator.Play("NPC");
                 }
                 else if (tagValue == "Vera")
                 {
-                    layoutAnimator.Play("NPC");    
+                    layoutAnimator.Play("NPC");
                 }
 
                 // Determine the text and portrait based on speaker
@@ -482,5 +510,20 @@ public class DialogueManager : MonoBehaviour
     {
         FadeToBlackAnimator.SetTrigger("Fade");
         FadeToBlackAnimator.SetFloat("SpeedParam", 1 / duration);
+    }
+
+    private void NPCPoint()
+    {
+        _NPC.GetComponent<Animator>().SetTrigger("Point");
+    }
+
+    private void NPCGive()
+    {
+        _NPC.GetComponent<Animator>().SetTrigger("Give");
+    }
+
+    public void FetchLatestNPC(GameObject g)
+    {
+        _NPC = g;
     }
 }

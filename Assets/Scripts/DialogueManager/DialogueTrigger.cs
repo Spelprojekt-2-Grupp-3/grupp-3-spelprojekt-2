@@ -22,22 +22,24 @@ public class DialogueTrigger : MonoBehaviour
 
     [Tooltip("Dialogue for when the minigame is done"), SerializeField]
     private TextAsset minigameDialogueJSON;
-    
+
     [Tooltip("For when the character completes a quest"), SerializeField]
     private TextAsset completeQuestJSON;
 
-    [Header("Related Quest settings")] [SerializeField]
+    [Header("Related Quest settings")]
+    [SerializeField]
     private List<InfoToSearch> infoToSearch = new List<InfoToSearch>();
 
     private QuestLog questLog;
     private bool firstTalk;
-    
+
     // Checks if the player is close to NPC
     private bool playerInRange;
     private PlayerInputActions _playerInput;
 
     private void Start()
     {
+        Debug.Log(transform.parent.name);
         firstTalk = true;
     }
 
@@ -69,9 +71,10 @@ public class DialogueTrigger : MonoBehaviour
 
     private void StartDialogue()
     {
+        DialogueManager.GetInstance().FetchLatestNPC(transform.parent.gameObject);
         //We first make sure no dialogue is active
         if (!DialogueManager.GetInstance().dialogueIsPlaying)
-        { 
+        {
             bool foundValidDialogue = false;
             //If it's the first time talking to someone, we'll play their introductory file
             if (firstTalk && introductionDialogueJSON)
@@ -87,26 +90,34 @@ public class DialogueTrigger : MonoBehaviour
                     DialogueManager.GetInstance().dialogueQueue.Add(questTextJSON);
                 foundValidDialogue = true;
             }
-            
-            if (minigameDialogueJSON && questLog.TestForQuest(infoToSearch[1].ID, infoToSearch[1].step))
+
+            if (
+                minigameDialogueJSON
+                && questLog.TestForQuest(infoToSearch[1].ID, infoToSearch[1].step)
+            )
             {
                 if (!DialogueManager.GetInstance().dialogueQueue.Contains(minigameDialogueJSON))
                     DialogueManager.GetInstance().dialogueQueue.Add(minigameDialogueJSON);
                 foundValidDialogue = true;
             }
-            
-            if (completeQuestJSON && questLog.TestForQuest(infoToSearch[2].ID, infoToSearch[2].step))
+
+            if (
+                completeQuestJSON && questLog.TestForQuest(infoToSearch[2].ID, infoToSearch[2].step)
+            )
             {
                 if (!DialogueManager.GetInstance().dialogueQueue.Contains(completeQuestJSON))
                     DialogueManager.GetInstance().dialogueQueue.Add(completeQuestJSON);
                 foundValidDialogue = true;
             }
-            
-            
+
             if (foundValidDialogue)
             {
-                DialogueManager.GetInstance().EnterDialogueMode(DialogueManager.GetInstance().dialogueQueue[0]);
-                DialogueManager.GetInstance().dialogueQueue.Remove(DialogueManager.GetInstance().dialogueQueue[0]);
+                DialogueManager
+                    .GetInstance()
+                    .EnterDialogueMode(DialogueManager.GetInstance().dialogueQueue[0]);
+                DialogueManager
+                    .GetInstance()
+                    .dialogueQueue.Remove(DialogueManager.GetInstance().dialogueQueue[0]);
             }
             //Else we default to filler dialogue, as long as there is a valid asset
             else if (fillerDialogueJSON)
@@ -125,7 +136,7 @@ public class DialogueTrigger : MonoBehaviour
     //    }
     //    return false;
     //}
-    
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
