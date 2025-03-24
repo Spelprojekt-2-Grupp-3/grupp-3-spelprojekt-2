@@ -98,7 +98,7 @@ Material:
     m_Floats:
     - _AlphaClip: 0
     - _AlphaToMask: 0
-    - _BendStrength: 2
+    - _BendStrength: 1.2
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
@@ -116,10 +116,10 @@ Material:
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _Metallic: 0
-    - _NoiseScale: 2
+    - _NoiseScale: 1.4
     - _OcclusionStrength: 1
     - _Parallax: 0.005
-    - _PivotAdjustment: 0
+    - _PivotAdjustment: -50
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
@@ -129,7 +129,7 @@ Material:
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
-    - _TimeScale: 0.1
+    - _TimeScale: 0.5
     - _WorkflowMode: 0
     - _ZTest: 4
     - _ZWrite: 1
