@@ -88,6 +88,7 @@ public class PlayerMovement : MonoBehaviour
 
     [HideInInspector]
     public Vector3 moveDirection;
+    Vector3 previousInputMagnitude;
 
     private void FixedUpdate()
     {
@@ -107,13 +108,19 @@ public class PlayerMovement : MonoBehaviour
                 Quaternion.Euler(0, targetYRotation, 0),
                 rotationLerpSpeed
             );
-
+            previousInputMagnitude = moveDirection;
             _aniControl.SetFloat("Speed", moveDirection.sqrMagnitude);
+            _idleInterpolationSpeed = 0.2f;
         }
         else
         {
-            //            Debug.Log(moveDirection);
-            moveDirection = Vector2.Lerp(moveDirection, new Vector2(0, 0), _idleInterpolationSpeed);
+            Debug.Log(previousInputMagnitude);
+            _idleInterpolationSpeed += Time.deltaTime*2;
+            moveDirection = Vector2.Lerp(
+                previousInputMagnitude,
+                new Vector2(0, 0),
+                _idleInterpolationSpeed
+            );
             _aniControl.SetFloat("Speed", moveDirection.sqrMagnitude);
         }
 

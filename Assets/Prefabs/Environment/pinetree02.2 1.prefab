@@ -13,12 +13,12 @@ GameObject:
   - component: {fileID: 6816321211546494538}
   - component: {fileID: 940492956451266753}
   - component: {fileID: -2346275184178135071}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: pinetree02.2 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8871281314945831660
 Transform:
@@ -28,9 +28,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8163592246291660405}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 63.787155, y: -8.231256, z: -21.72749}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: fb0cf160dc9b42348998d77ce09b3814, type: 2}
-  - {fileID: 2100000, guid: 9a0bf48667159dd40b7902206a1689eb, type: 2}
+  - {fileID: 2100000, guid: d9e43743270dff440980a30353ab5274, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
