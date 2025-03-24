@@ -68,6 +68,9 @@ public class SetBindingIcon : MonoBehaviour
             case "rightShoulder": 
                 image.sprite = inputDevice.boostSprite;
                 return;
+            case "leftShoulder": 
+                image.sprite = inputDevice.hideUISprite;
+                return;
             case "leftStick": 
                 image.sprite = inputDevice.moveSprite;
                 return;
@@ -107,6 +110,9 @@ public class SetBindingIcon : MonoBehaviour
                     case "shift": 
                         image.sprite = inputDevice.boostSprite;
                         return;
+                    case "c":
+                        image.sprite = inputDevice.hideUISprite;
+                        return;
                 }
             }
             else
@@ -136,6 +142,9 @@ public class SetBindingIcon : MonoBehaviour
                         return;
                     case "shift": 
                         image.sprite = inputDevice.boostSprite;
+                        return;
+                    case "c":
+                        image.sprite = inputDevice.hideUISprite;
                         return;
                 }
             }

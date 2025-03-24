@@ -66,4 +66,5 @@ public class CurrentInputDevice
     public Sprite buttonEast;
     public Sprite startSprite;
     public Sprite selectSprite;
+    public Sprite hideUISprite;
 }
