@@ -391,9 +391,25 @@ public class DialogueManager : MonoBehaviour
                 {
                     layoutAnimator.Play("Player");
                 }
-                else
+                else if (tagValue == "Bengt")
                 {
                     layoutAnimator.Play("NPC");
+                }
+                else if (tagValue == "Irma")
+                {
+                    layoutAnimator.Play("NPC");
+                }
+                else if (tagValue == "Sigrid")
+                {
+                    layoutAnimator.Play("NPC");
+                }
+                else if (tagValue == "Ulrich")
+                {
+                    layoutAnimator.Play("NPC");    
+                }
+                else if (tagValue == "Vera")
+                {
+                    layoutAnimator.Play("NPC");    
                 }
 
                 // Determine the text and portrait based on speaker
