@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3547633897496658239}
   - component: {fileID: 6816321211546494538}
   - component: {fileID: 940492956451266753}
-  - component: {fileID: -3054066713072754542}
   m_Layer: 0
   m_Name: pinetree02.2 2
   m_TagString: Untagged
@@ -64,7 +63,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: fb0cf160dc9b42348998d77ce09b3814, type: 2}
-  - {fileID: 2100000, guid: be8fff48560e4c149b66dfe11c599486, type: 2}
+  - {fileID: 2100000, guid: ab42280be21375f4cabdc1709e7d3c4e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -103,28 +102,6 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 1
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5667961617959078298, guid: f9d4ecb847d23f14ea7ea1251b284b02, type: 3}
---- !u!64 &-3054066713072754542
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8163592246291660405}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
   m_Convex: 0
