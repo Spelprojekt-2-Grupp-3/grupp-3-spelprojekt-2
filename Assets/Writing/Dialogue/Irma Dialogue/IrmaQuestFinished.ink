@@ -1,5 +1,6 @@
 EXTERNAL EditQuest(int ID, int step)
 EXTERNAL Fade(int time)
+INCLUDE ../globals.ink
 
 -> IrmaDialogue2
 
@@ -94,6 +95,11 @@ I gotta head back inside now, but please, talk to me whenever! #Speaker:Irma
 -Will do. #Speaker:Cleo
 
 ~ EditQuest(2, 4)
+~ IrmaQuest = "complete"
+{
+- SigridQuest == "complete" and UlrichQuest == "complete" and VeraQuest == "complete":
+~ EditQuest(0, 0)
+}
 
 Hope to see you again! #Speaker:Irma
 
