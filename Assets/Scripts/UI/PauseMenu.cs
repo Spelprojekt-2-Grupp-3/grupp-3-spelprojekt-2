@@ -31,6 +31,11 @@ public class PauseMenu : MonoBehaviour
 
     private void ActivatePauseMenu(InputAction.CallbackContext context)
     {
+        var minigames = FindObjectsOfType<Minigames>();
+        foreach (var minigame in minigames)
+        {
+            minigame.CloseMinigame(context);
+        }
         if (!paused)
         {
             Pause();
