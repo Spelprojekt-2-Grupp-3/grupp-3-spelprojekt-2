@@ -57,8 +57,8 @@ Could you help me set the frequency on my radio before you go? It's super import
     
 -Of course! The safer the better, right? #Speaker:Cleo
 
-~ EditQuest(0, 1)
-~ MinigameQuest(0, 2)
+~ EditQuest(0, 2)
+~ MinigameQuest(0, 3)
 
 Thank you so much! #Speaker:Irma
 
