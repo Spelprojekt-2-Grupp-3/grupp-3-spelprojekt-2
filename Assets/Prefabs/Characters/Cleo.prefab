@@ -831,10 +831,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7ecbf241f2337a4eafa03d99cf6bc2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 400
+  force: 300
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  rnge: 0
 --- !u!114 &6664508215988467802
 MonoBehaviour:
   m_ObjectHideFlags: 0
