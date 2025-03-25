@@ -1486,6 +1486,17 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": true
                 },
                 {
+                    ""name"": ""right"",
+                    ""id"": ""01809035-f3fe-42cf-86c1-a345b30ac6ab"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""NavigateRight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
                     ""name"": ""Joystick"",
                     ""id"": ""7f0cd14f-acb2-4b9f-9fe1-8e207461a6fc"",
                     ""path"": ""2DVector"",
@@ -1555,6 +1566,17 @@ public partial class @PlayerInputActions: IInputActionCollection2, IDisposable
                     ""name"": ""left"",
                     ""id"": ""74088aef-0ec9-4797-9977-071c3fbee7e0"",
                     ""path"": ""<Gamepad>/dpad/left"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""NavigateLeft"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""0a544694-d2d6-477e-9a52-9833166a5a74"",
+                    ""path"": ""<Gamepad>/buttonEast"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
