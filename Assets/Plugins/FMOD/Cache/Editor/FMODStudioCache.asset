@@ -56,6 +56,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 70034
+--- !u!114 &-8998741288824177100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Music_Credits
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Music_Credits
+  Guid:
+    Data1: -1723925037
+    Data2: 1200898654
+    Data3: -915698021
+    Data4: 1517249753
+  Banks:
+  - {fileID: -2378913393820472077}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 140000
 --- !u!114 &-8937340593296267022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -348,7 +375,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 6070
+  Length: 4534
 --- !u!114 &-5342092036153488839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -396,10 +423,10 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/Banks/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638784379702827825
+  lastModified: 638785120809400381
   FileSizes:
   - Name: 
-    Value: 3520
+    Value: 3654
   Exists: 1
 --- !u!114 &-5116525063533432468
 MonoBehaviour:
@@ -753,7 +780,7 @@ MonoBehaviour:
   Path: Assets/Plugins/FMOD/Banks/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638784379702817696
+  lastModified: 638785120809315687
   FileSizes: []
   Exists: 1
 --- !u!114 &-2328484509231998288
@@ -783,6 +810,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-2183232196020380840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound/AMB/Wind 2
+  m_EditorClassIdentifier: 
+  Path: event:/Sound/AMB/Wind 2
+  Guid:
+    Data1: 1801984759
+    Data2: 1247697039
+    Data3: -1634680924
+    Data4: 1576778476
+  Banks:
+  - {fileID: -2378913393820472077}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 59000
 --- !u!114 &-2075931869886911573
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1043,7 +1097,7 @@ MonoBehaviour:
   Banks:
   - {fileID: -2378913393820472077}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
@@ -1135,12 +1189,15 @@ MonoBehaviour:
   - {fileID: -5342092036153488839}
   - {fileID: 7258090228261762027}
   - {fileID: -1276400361446310855}
+  - {fileID: -8998741288824177100}
+  - {fileID: 1290333273772653841}
+  - {fileID: -2183232196020380840}
   EditorParameters: []
   MasterBanks:
   - {fileID: -2378913393820472077}
   StringsBanks:
   - {fileID: -5299713688339893596}
-  cacheTime: 638784379702827825
+  cacheTime: 638785120809400381
   cacheVersion: 131622
 --- !u!114 &184797887261639720
 MonoBehaviour:
@@ -1244,6 +1301,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 241
+--- !u!114 &1290333273772653841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Sound/SFX/minigames/SeaShells (lessSHIT)
+  m_EditorClassIdentifier: 
+  Path: event:/Sound/SFX/minigames/SeaShells (lessSHIT)
+  Guid:
+    Data1: -417116691
+    Data2: 1139505245
+    Data3: -1327436928
+    Data4: 947997636
+  Banks:
+  - {fileID: -2378913393820472077}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 299
 --- !u!114 &1549609412402792693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1404,7 +1488,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 9979
+  Length: 5200
 --- !u!114 &3916951388422479700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1557,7 +1641,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 9979
+  Length: 6300
 --- !u!114 &5134357310074027272
 MonoBehaviour:
   m_ObjectHideFlags: 0
