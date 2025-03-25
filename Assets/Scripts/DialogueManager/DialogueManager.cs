@@ -73,6 +73,8 @@ public class DialogueManager : MonoBehaviour
     private bool _canContinueToNextLine = false;
     private bool _canSkip = false;
     private bool _submitSkip = false;
+    private bool _isFadingToBlack = false;
+
 
     [HideInInspector]
     public InputAction submit;
@@ -221,7 +223,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         // If player clicks and can continue, go to the next line
-        if (_submitSkip && _canContinueToNextLine && _currentStory.currentChoices.Count == 0)
+        if (_submitSkip && _canContinueToNextLine && _currentStory.currentChoices.Count == 0 && !_isFadingToBlack)
         {
             _submitSkip = false; // Reset input buffer
             ContinueStory();
@@ -521,8 +523,17 @@ public class DialogueManager : MonoBehaviour
 
     private void FadeToBlack(float duration)
     {
+        _isFadingToBlack = true;
         FadeToBlackAnimator.SetTrigger("Fade");
         FadeToBlackAnimator.SetFloat("SpeedParam", 1 / duration);
+        
+        StartCoroutine(ResetFadeToBlack(duration));
+    }
+    
+    private IEnumerator ResetFadeToBlack(float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        _isFadingToBlack = false;
     }
 
     private void NPCPoint()
