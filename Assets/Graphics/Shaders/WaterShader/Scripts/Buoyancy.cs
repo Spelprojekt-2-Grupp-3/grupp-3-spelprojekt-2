@@ -150,19 +150,19 @@ public class BuoyantObject : MonoBehaviour
             }
             else
             {
-//                Debug.Log("submerged");
+                //                Debug.Log("submerged");
                 strength = 3;
                 //strength = defaultStrength;
             }
 
-            if (
-                transform.position.y <= waterHeight + 0.4f
-                && transform.CompareTag("Boat")
-                && !subm
-            )
+            if (transform.position.y <= waterHeight + 0.4f && transform.CompareTag("Boat") && !subm)
             {
                 strength = 25;
                 rb.velocity = rb.velocity / 1.1f;
+                foreach (var v in gameObject.GetComponentsInChildren<ParticleFollow>())
+                {
+                    v.ShouldEmit = true;
+                }
                 subm = true;
             }
             var submersion = Mathf.Clamp01(waveHeight - effectorHeight) / objectDepth;

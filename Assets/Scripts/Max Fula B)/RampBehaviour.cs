@@ -35,6 +35,11 @@ public class RampBehaviour : MonoBehaviour
             defaultTiltAngle = bM.frontTiltAngle;
             bM.frontTiltAngle = targetAngle;
             Timer t = new Timer();
+            foreach (var v in g.GetComponentsInChildren<ParticleFollow>())
+            {
+                v.ShouldEmit = false;
+            }
+
             StartCoroutine(t.ExecuteAfterTime(waitTime, Reactivate));
         }
     }
