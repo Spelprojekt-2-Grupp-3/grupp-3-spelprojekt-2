@@ -41,9 +41,16 @@ public class ParticleFollow : MonoBehaviour
     [Tooltip("Clamps particle motion to never go below this world Y value")]
     private float lowerLimit;
 
+    public bool ShouldEmit = true;
+
     // Update is called once per frame
     void Update()
     {
+        if (!ShouldEmit)
+        {
+            particleSystem.enableEmission = false;
+            return;
+        }
         //We get the active movement speed of the player
         playerMovementSpeed = player.GetComponent<BoatMovement>().moveSpeed;
         if (playerMovementSpeed > 0.1f)
