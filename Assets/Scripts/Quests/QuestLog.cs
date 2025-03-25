@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using Vector2 = System.Numerics.Vector2;
 
@@ -13,6 +14,13 @@ public class QuestLog : MonoBehaviour
 
     [SerializeField]
     private GameObject questMenuTextObject;
+
+    [SerializeField] private GameObject noticeObject;
+    [SerializeField] private float popUpTimer;
+
+    private float actualTimer;
+    private bool popUpActive;
+    
     private List<QuestData> questList = new List<QuestData>();
     private List<QuestData> finishedQuests = new List<QuestData>();
     private List<QuestData> toRemove = new List<QuestData>();
@@ -33,7 +41,20 @@ public class QuestLog : MonoBehaviour
         if (questMenuTextObject)
             questMenuTextObject.SetActive(state);
     }
-    
+
+    private void Update()
+    {
+        if (popUpActive)
+        {
+            actualTimer -= Time.deltaTime;
+            if (actualTimer <= 0)
+            {
+                popUpActive = false;
+                noticeObject.SetActive(false);
+            }
+        }
+    }
+
     public void AddQuest()
     {
         for (int i = 0; i < questsData.Count; i++)
@@ -71,9 +92,14 @@ public class QuestLog : MonoBehaviour
                     if(questID == questObject.ID)
                         questObject.UpdateText(quest);
                 }
+
+                popUpActive = true;
+                noticeObject.SetActive(true);
+                actualTimer = popUpTimer;
+                noticeObject.GetComponentInChildren<TMP_Text>().text = quest.questTitle + " has been updated";
             }
         }
-        RemoveQuests();
+        //RemoveQuests();
     }
 
     private void CompleteQuest(QuestData quest)
