@@ -98,7 +98,7 @@ public class QuestLog : MonoBehaviour
                 noticeObject.GetComponent<Animator>().SetTrigger("In");
               //  noticeObject.SetActive(true);
                 actualTimer = popUpTimer;
-                noticeObject.GetComponentInChildren<TMP_Text>().text = quest.questTitle + " has been updated";
+                noticeObject.GetComponentInChildren<TMP_Text>().text = quest.questTitle;
             }
         }
         //RemoveQuests();
