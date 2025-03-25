@@ -46,11 +46,6 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    private void OnEnable()
-    {
-        EventSystem.current.SetSelectedGameObject(firstSelected);
-    }
-
     private void Pause()
     {
         if (DialogueManager.GetInstance().dialogueIsPlaying)
