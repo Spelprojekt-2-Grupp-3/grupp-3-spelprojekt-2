@@ -65,6 +65,7 @@ public class BengtMinigame : Minigames
     public override void StopMinigame()
     {
         Events.startPlayer?.Invoke();
+        Events.sendUpdatedQuest?.Invoke(ID, step);
         questLog.UpdateQuest(ID,step);
         Destroy(gameObject);
     }
