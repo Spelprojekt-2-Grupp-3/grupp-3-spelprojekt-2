@@ -50,7 +50,8 @@ public class QuestLog : MonoBehaviour
             if (actualTimer <= 0)
             {
                 popUpActive = false;
-                noticeObject.SetActive(false);
+                noticeObject.GetComponent<Animator>().SetTrigger("Out");
+          //      noticeObject.SetActive(false);
             }
         }
     }
@@ -94,7 +95,8 @@ public class QuestLog : MonoBehaviour
                 }
 
                 popUpActive = true;
-                noticeObject.SetActive(true);
+                noticeObject.GetComponent<Animator>().SetTrigger("In");
+              //  noticeObject.SetActive(true);
                 actualTimer = popUpTimer;
                 noticeObject.GetComponentInChildren<TMP_Text>().text = quest.questTitle + " has been updated";
             }
