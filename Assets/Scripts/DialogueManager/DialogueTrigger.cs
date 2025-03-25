@@ -63,7 +63,7 @@ public class DialogueTrigger : MonoBehaviour
     private void Update()
     {
         // Check if player is inside the trigger and presses the "Interact" action
-        if (playerInRange && _playerInput.Player.Interact.WasPressedThisFrame())
+        if (playerInRange && _playerInput.Player.Interact.WasPressedThisFrame() && DialogueManager.GetInstance().canStartNewDialogue)
         {
             StartDialogue();
         }
