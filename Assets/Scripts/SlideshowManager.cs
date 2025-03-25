@@ -13,7 +13,6 @@ public class SlideshowManager : MonoBehaviour
     [SerializeField] private Image image;
     [SerializeField] private Sprite[] panels;
     public EventReference selectSound;
-    private SceneManager sceneManager;
     private int currentPanelIndex = 0;
     private PlayerInputActions _playerInput;
     
@@ -21,7 +20,6 @@ public class SlideshowManager : MonoBehaviour
     {
         _playerInput = new PlayerInputActions();
         image = GetComponent<Image>();
-        sceneManager = FindObjectOfType<SceneManager>();
     }
 
     private void OnEnable()
@@ -61,7 +59,7 @@ public class SlideshowManager : MonoBehaviour
         }
         else
         {
-            sceneManager.Load("Main Scene");
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Main Scene");
             Debug.Log("Slideshow finished!");
             OnSelect();
         }
