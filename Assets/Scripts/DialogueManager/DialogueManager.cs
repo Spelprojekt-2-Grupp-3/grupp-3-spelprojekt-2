@@ -79,6 +79,8 @@ public class DialogueManager : MonoBehaviour
     private bool _submitSkip = false;
     private bool _isFadingToBlack = false;
     private float _dialogueCooldownTimer = 0f;
+    
+    [HideInInspector]
     public bool canStartNewDialogue = true;
 
     [HideInInspector]
@@ -539,9 +541,12 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    public EventReference fadeToBlackSound;
+    
     private void FadeToBlack(float duration)
     {
         _isFadingToBlack = true;
+        RuntimeManager.PlayOneShot(fadeToBlackSound, Camera.main.transform.position);
         FadeToBlackAnimator.SetTrigger("Fade");
         FadeToBlackAnimator.SetFloat("SpeedParam", 1 / duration);
         
