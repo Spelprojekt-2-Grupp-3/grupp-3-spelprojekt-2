@@ -113,15 +113,14 @@ public class PauseMenu : MonoBehaviour
     {
         if (optionsObject.activeSelf)
         {
+            Debug.Log("optionsmenu active");
             optionsObject.SetActive(false);
             EventSystem.current.SetSelectedGameObject(firstSelected);
         }
-        else if (optionsObject.transform.GetChild(0).gameObject.activeSelf)
-        {
-            optionsObject.transform.GetChild(0).gameObject.SetActive(false);
-        }
+        
         else if (gameObject.GetComponent<Canvas>().enabled)
         {
+            Debug.Log("tried to unpause");
             Resume();
         }
     }
