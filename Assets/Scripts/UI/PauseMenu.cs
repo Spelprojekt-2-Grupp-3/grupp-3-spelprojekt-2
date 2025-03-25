@@ -104,6 +104,7 @@ public class PauseMenu : MonoBehaviour
         optionsObject.SetActive(!optionsObject.activeSelf);
         if (optionsObject.activeSelf)
         {
+            optionsObject.transform.GetChild(0).gameObject.SetActive(true);
             EventSystem.current.SetSelectedGameObject(optionsObject.transform.GetChild(0).gameObject);
         }
     }
