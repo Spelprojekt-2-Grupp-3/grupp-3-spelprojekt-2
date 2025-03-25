@@ -20,6 +20,10 @@ public class DialogueManager : MonoBehaviour
     [SerializeField]
     [Tooltip("The pause after a . ! ? etc")]
     private float punctuationPauseSpeed = 0.25f;
+    
+    [SerializeField]
+    [Tooltip("The time it takes for the dialogue to be interactable again after a dialogue has ended")]
+    private float dialogueCooldownTime = 2f;
 
     [Header("Globals Ink File")]
     [SerializeField]
@@ -74,7 +78,9 @@ public class DialogueManager : MonoBehaviour
     private bool _canSkip = false;
     private bool _submitSkip = false;
     private bool _isFadingToBlack = false;
-
+    private float _dialogueCooldownTimer = 0f;
+    public bool canStartNewDialogue = true;
+    
 
     [HideInInspector]
     public InputAction submit;
@@ -211,10 +217,21 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
-        if (submit.WasPressedThisFrame())
+        // Adds a dialogue cooldown so you don't accidentally start a new dialogue when spamming
+        if (!canStartNewDialogue)
+        {
+            _dialogueCooldownTimer -= Time.deltaTime;
+            if (_dialogueCooldownTimer <= 0f)
+            {
+                canStartNewDialogue = true;
+            }
+        }
+        
+        if (!_isFadingToBlack && submit.WasPressedThisFrame())
         {
             _submitSkip = true;
         }
+
 
         // Return if dialogue isn't playing
         if (!dialogueIsPlaying)
@@ -280,6 +297,8 @@ public class DialogueManager : MonoBehaviour
         dialogueText.text = "";
         _dialogueVariables.StopListening(_currentStory);
         Events.startPlayer?.Invoke();
+        canStartNewDialogue = false;
+        _dialogueCooldownTimer = dialogueCooldownTime;
         MultipleDialogueStart();
     }
     
