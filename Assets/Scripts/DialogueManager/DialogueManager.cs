@@ -80,7 +80,6 @@ public class DialogueManager : MonoBehaviour
     private bool _isFadingToBlack = false;
     private float _dialogueCooldownTimer = 0f;
     public bool canStartNewDialogue = true;
-    
 
     [HideInInspector]
     public InputAction submit;
