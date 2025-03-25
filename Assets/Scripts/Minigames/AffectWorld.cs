@@ -8,11 +8,6 @@ public class AffectWorld : MonoBehaviour
 {
     //First point light under lights in hierarchy
     [SerializeField, Tooltip("The gameobject for the lightsource that should be turned on")] GameObject lightSource;
-    private Light intensity;
-    //Multiplier should be 20000 for fyr
-    [SerializeField] private float multiplier;
-    //Length should be 100947 for fyr
-    [SerializeField] private float intensityLength;
     [SerializeField, Tooltip("What id and step should affect the world")] private int id, step;
 
     private void OnEnable()
