@@ -122,6 +122,10 @@ public class AnimationRigTransform : MonoBehaviour
                   }*/
             }
 
+            if (!sibling.fuuuck.enabled && !fuuuck.enabled)
+            {
+                fuuuck.enabled = true;
+            }
             //need to make sure te correct one is active if subtle change is made
             // cleo.GetComponent<CollissionHeightComparison>().CheckPos();
         }
