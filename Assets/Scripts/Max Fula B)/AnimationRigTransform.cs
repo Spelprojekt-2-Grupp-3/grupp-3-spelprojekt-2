@@ -44,6 +44,7 @@ public class AnimationRigTransform : MonoBehaviour
 
     [SerializeField]
     private TwoBoneIKConstraint AniRigConstraint;
+    public RaycastHit hit;
 
     // Update is called once per frame
     void FixedUpdate()
@@ -70,8 +71,7 @@ public class AnimationRigTransform : MonoBehaviour
             && cleo.GetComponent<PlayerMovement>().moveDirection.sqrMagnitude < 0.1
         )
         {
-//            Debug.Log("Running Cleo Idle Functionality");
-            RaycastHit hit;
+            //            Debug.Log("Running Cleo Idle Functionality");
             //WE ARE PLAY PLAY CLIPPO
             //YAHOOWAHOO I MISS MY WIFE, TAILS
             float hipY = hipTransform.position.y;
@@ -82,6 +82,12 @@ public class AnimationRigTransform : MonoBehaviour
                 Debug.DrawRay(startPos, Vector3.down * hit.distance, Color.magenta);
                 transform.position = hit.point + FootOffsetValue;
                 //Debug.Log(hit.collider.gameObject.name);
+                if (hit.point.y > sibling.hit.point.y)
+                {
+                    fuuuck.enabled = false;
+                    sibling.fuuuck.enabled = true;
+                    
+                }
                 grounded = true;
             }
             else
