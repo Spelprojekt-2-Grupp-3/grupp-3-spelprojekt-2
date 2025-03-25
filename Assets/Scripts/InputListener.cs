@@ -44,5 +44,6 @@ public class InputListener : MonoBehaviour
     private void ChangeDevice(PlayerInput input)
     {
         Events.checkInputEvent?.Invoke(input);
+        Debug.Log("changed device");
     }
 }
