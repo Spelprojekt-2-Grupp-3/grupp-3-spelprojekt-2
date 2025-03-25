@@ -175,6 +175,36 @@ PrefabInstance:
       propertyPath: m_fontColor32.rgba
       value: 4280627006
       objectReference: {fileID: 0}
+    - target: {fileID: 759393013098238339, guid: f67b1942a5244d943bbdf59098a13cc7,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 118
+      objectReference: {fileID: 0}
+    - target: {fileID: 759393013098238339, guid: f67b1942a5244d943bbdf59098a13cc7,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 71
+      objectReference: {fileID: 0}
+    - target: {fileID: 759393013098238339, guid: f67b1942a5244d943bbdf59098a13cc7,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.22000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 759393013098238339, guid: f67b1942a5244d943bbdf59098a13cc7,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.22000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 759393013098238339, guid: f67b1942a5244d943bbdf59098a13cc7,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.22000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 759393013098238339, guid: f67b1942a5244d943bbdf59098a13cc7,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1025970925908935024, guid: f67b1942a5244d943bbdf59098a13cc7,
         type: 3}
       propertyPath: m_fontSize
@@ -324,6 +354,27 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Navigation.m_SelectOnRight
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1693438165298849840, guid: f67b1942a5244d943bbdf59098a13cc7,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 47ec17ace386b764bb0517974e0a504c,
+        type: 3}
+    - target: {fileID: 1693438165298849840, guid: f67b1942a5244d943bbdf59098a13cc7,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.8862746
+      objectReference: {fileID: 0}
+    - target: {fileID: 1693438165298849840, guid: f67b1942a5244d943bbdf59098a13cc7,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.9294118
+      objectReference: {fileID: 0}
+    - target: {fileID: 1693438165298849840, guid: f67b1942a5244d943bbdf59098a13cc7,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.95294124
       objectReference: {fileID: 0}
     - target: {fileID: 2185193864368582434, guid: f67b1942a5244d943bbdf59098a13cc7,
         type: 3}
@@ -646,7 +697,7 @@ Animator:
   m_GameObject: {fileID: 50242820}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f6d0cb4e50f6e654fa44eb34f77e256c, type: 2}
+  m_Controller: {fileID: 9100000, guid: 16e20da594de10246ad032d1abc4881d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -897,6 +948,8 @@ MonoBehaviour:
   questBoxPrefab: {fileID: 0}
   questContainer: {fileID: 0}
   questMenuTextObject: {fileID: 0}
+  noticeObject: {fileID: 0}
+  popUpTimer: 0
   questsData:
   - {fileID: 11400000, guid: 5d43f6937b46fab449ee1daed6ea6d04, type: 2}
   - {fileID: 11400000, guid: 980f6e31cc99ad84c91a91ca9c42f3e9, type: 2}
@@ -1325,7 +1378,7 @@ PrefabInstance:
         type: 3}
       propertyPath: fillerDialogueJSON
       value: 
-      objectReference: {fileID: 4900000, guid: 9780a56458f3ccb4888a1e44095056f7, type: 3}
+      objectReference: {fileID: 4900000, guid: e0f2e460c034b2f42b2d879df50a996b, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
