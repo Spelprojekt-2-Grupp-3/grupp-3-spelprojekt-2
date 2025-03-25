@@ -71,6 +71,8 @@ public class AnimationRigTransform : MonoBehaviour
             && cleo.GetComponent<PlayerMovement>().moveDirection.sqrMagnitude < 0.1
         )
         {
+            cleo.GetComponent<CapsuleCollider>().center = new Vector3(0, 16.93f, 0);
+            cleo.GetComponent<CapsuleCollider>().height = 23.44f;
             //            Debug.Log("Running Cleo Idle Functionality");
             //WE ARE PLAY PLAY CLIPPO
             //YAHOOWAHOO I MISS MY WIFE, TAILS
@@ -86,7 +88,6 @@ public class AnimationRigTransform : MonoBehaviour
                 {
                     fuuuck.enabled = false;
                     sibling.fuuuck.enabled = true;
-                    
                 }
                 grounded = true;
             }
@@ -130,11 +131,15 @@ public class AnimationRigTransform : MonoBehaviour
             && cleo.GetComponent<PlayerMovement>().moveDirection.sqrMagnitude > 0.1f
         )
         {
-            fuuuck.enabled = true;
+            fuuuck.enabled = false;
+            cleo.GetComponent<CapsuleCollider>().center = new Vector3(0, 14.4f, 0);
+            cleo.GetComponent<CapsuleCollider>().height = 28.25f;
             AniRigConstraint.weight = 0;
         }
         else
         {
+            fuuuck.enabled = true;
+
             AniRigConstraint.weight = 0;
         }
     }
