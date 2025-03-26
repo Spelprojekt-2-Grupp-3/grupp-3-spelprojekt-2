@@ -1,5 +1,6 @@
 EXTERNAL EditQuest(int ID, int step)
 INCLUDE ../globals.ink
+EXTERNAL Give()
 
 {UlrichQuest == "complete":
 
@@ -25,6 +26,8 @@ Hrrgnmm! #Speaker:Ulrich
 
 [Ulrich nods.] #Speaker:Ulrich
 
+~ Give()
+
     * [Got it.]
     
 -Alright, I'll let Vera know! #Speaker:Cleo
@@ -45,6 +48,8 @@ Hrnm. #Speaker:Ulrich
 [Ulrich walks over to the pots and picks a few flowers.] #Speaker:Ulrich
 
 There, make tea out of these and it should dissolve the toxin! #Speaker:Ulrich
+
+~ Give()
 
     * [Got it.]
     

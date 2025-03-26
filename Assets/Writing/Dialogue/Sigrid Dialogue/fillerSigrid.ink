@@ -1,3 +1,5 @@
+INCLUDE ../globals.ink
+
 -> fillerSigrid
 
 === fillerSigrid ===
@@ -9,6 +11,14 @@ What's up? #Speaker:Sigrid
 -> questions
 
 = questions
+
+    + [I heard something...]
+    
+    I heard something interesting... #Speaker:Cleo
+    
+    Yeah? #Speaker:Sigrid
+    
+    -> activeQuestions
 
     + [About you...]
     
@@ -188,3 +198,33 @@ What's up? #Speaker:Sigrid
     Alright then. #Speaker:Sigrid
 
     -> questions
+    
+    
+    
+= activeQuestions
+
++ [Nevermind.]
+    
+    Actually, nevermind! #Speaker:Cleo
+    
+    Okay then. #Speaker:Sigrid
+    
+-> questions
+
+* {VeraCoffeeMystery == "standby"} [Eccentric coffee...?]
+
+    You said something about Vera having "eccentric coffee". What did you mean? #Speaker:Cleo
+    
+    She puts some weird... fish goo in it or whatever. #Speaker:Sigrid
+
+    She says it's for nutrition, but it tastes real funky. And slimey. It's gross. #Speaker:Sigrid
+
+    Oh, ew. #Speaker:Cleo
+
+    Yeah. Ask her if you want to know what on earth she puts in there. #Speaker:Sigrid
+
+    ~ VeraCoffeeMystery = "active"
+    
+    Anything else? #Speaker:Sigrid
+    
+-> activeQuestions

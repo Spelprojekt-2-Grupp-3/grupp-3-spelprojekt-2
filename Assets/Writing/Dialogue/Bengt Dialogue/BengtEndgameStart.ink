@@ -1,4 +1,5 @@
 EXTERNAL EditQuest(int ID, int step)
+EXTERNAL Give()
 
 -> BengtDialogue2
 
@@ -82,8 +83,6 @@ Okay! I'll tell you! #Speaker:Bengt
 
 It's actually just about time for it to show up again. #Speaker:Bengt
 
-It tends to move around, but always stays within the archipelago. #Speaker:Bengt
-
 All you need to do is seek it out, and head straight into it! #Speaker:Bengt
 
     * [Alright.]
@@ -95,6 +94,8 @@ That's the spirit! Phew, I'm SO relieved! #Speaker:Bengt
 Just, one more favor? #Speaker:Bengt
 
 Take this letter to Irma. #Speaker:Bengt
+
+~ Give()
 
     * [What's on it?]
     

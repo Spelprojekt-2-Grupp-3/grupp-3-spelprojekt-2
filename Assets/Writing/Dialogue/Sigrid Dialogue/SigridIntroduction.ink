@@ -71,6 +71,8 @@ Anyway... #Speaker:Cleo
 
     * [Yes.]
     
+~ VeraCoffeeMystery = "standby"
+    
 - I'll get you that coffee! #Speaker:Cleo
 
 ~ EditQuest(1, 0)

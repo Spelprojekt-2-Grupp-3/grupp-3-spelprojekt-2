@@ -226,6 +226,24 @@ How's it hanging? #Speaker:Vera
     
 -> questions
 
+* {IrmaRiddles == "standby"} [Irma's riddles...]
+
+    What was that you mentioned, about Irma's riddles...? #Speaker:Cleo
+    
+    Right, she loves those little brain teasers! #Speaker:Vera
+
+    ~ IrmaRiddles = "active"
+
+    She challenges me to solve 'em every so often, and they have me stumped every time! #Speaker:Vera
+
+    If you like riddles, ask her to dish one out to ya. Maybe you'd do better at it than me! #Speaker:Vera
+    
+    Maybe I will. #Speaker:Cleo
+    
+    Anything else? #Speaker:Vera
+    
+    -> activeQuestions
+
 * {VeraCoffeeMystery == "solved" and coffeeTasted == ""} [Could I try your coffee?]
 
     Okay, the curiosity is killing me! Can I try your coffee? #Speaker:Cleo
@@ -263,7 +281,7 @@ How's it hanging? #Speaker:Vera
     ~ coffeeTasted = "true"
 
     -> activeQuestions
-
+    
 * {VeraCoffeeMystery == "active"} [Your coffee...]
 
     Sigrid told me you put something weird in your coffee. #Speaker:Cleo
