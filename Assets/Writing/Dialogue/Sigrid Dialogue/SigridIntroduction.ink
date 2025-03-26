@@ -33,7 +33,9 @@ Nothing personal, of course. Just not used to outsiders is all. #Speaker:Sigrid
 
     * [A favor for a favor?]
     
--Bengt told me you all trade favors here. What if I helped you out with something first? #Speaker:Cleo
+-You trade favors around here, right? #Speaker:Cleo
+
+What if I helped you out with something first? #Speaker:Cleo
 
 Hmm... yeah, that works. #Speaker:Sigrid
 
@@ -45,7 +47,27 @@ And I'm fresh out. #Speaker:Sigrid
 
 Bengt has the best coffee around here. I refuse to drink anything else. #Speaker:Sigrid
 
-I want you to head to Bengt and get me some from him. Think you're up for it? #Speaker:Sigrid
+I want you to head to Bengt and get me some. Think you're up for it? #Speaker:Sigrid
+
+    * [Why only Bengts'?]
+    
+Why only Bengt's coffee? Can't I ask anyone else? #Speaker:Cleo
+    
+Ulrich only drinks tea, Irma's coffee is too weak, and Vera's is too... eccentric. #Speaker:Sigrid
+
+Eccentric...? #Speaker:Cleo
+
+She puts some weird... fish goo in it or whatever. #Speaker:Sigrid
+
+She says it's for nutrition, but it tastes real funky. And slimey. It's gross. #Speaker:Sigrid
+
+Oh, ew. #Speaker:Cleo
+
+Yeah. Ask her if you want to know what on earth she puts in there. #Speaker:Sigrid
+
+~ VeraCoffeeMystery = "active"
+
+Anyway... #Speaker:Cleo
 
     * [Yes.]
     

@@ -1,3 +1,7 @@
+INCLUDE ../globals.ink
+EXTERNAL Fade(int time)
+EXTERNAL Give()
+
 -> fillerVera
 
 === fillerVera ===
@@ -10,7 +14,15 @@ How's it hanging? #Speaker:Vera
 
 = questions
 
-    * [About you...]
+    + [I heard something...]
+    
+    I heard something interesting... #Speaker:Cleo
+    
+    I'm all ears! What's up? #Speaker:Vera
+    
+    -> activeQuestions
+
+    + [About you...]
     
     I've got some questions about you. #Speaker:Cleo
 
@@ -202,3 +214,146 @@ How's it hanging? #Speaker:Vera
     Moving on, then? #Speaker:Vera
 
     -> questions
+    
+    
+= activeQuestions 
+
++ [Nevermind.]
+    
+    Actually, nevermind! #Speaker:Cleo
+    
+    Moving on, then? #Speaker:Vera
+    
+-> questions
+
+* {VeraCoffeeMystery == "solved" and coffeeTasted == ""} [Could I try your coffee?]
+
+    Okay, the curiosity is killing me! Can I try your coffee? #Speaker:Cleo
+    
+    Ha! Of course you can! I'll fetch you a cup. #Speaker:Vera 
+    
+    ~ Fade(2.0)
+    
+    All done! Have a sip, why don't you? #Speaker:Vera
+    
+    ~ Give()
+    
+    [You take a whiff of the coffee.] #Speaker:Cleo
+    
+    [Aside from a faint fishy odor, it seems... relatively normal.] #Speaker:Cleo
+    
+    [When you take a sip, however, you notice the coffee is gooey and thick...] #Speaker:Cleo
+    
+    [The taste is downright rotten! You can't swallow this... concoction! Your eyes are tearing up!] #Speaker:Cleo
+    
+    [You spit the coffee back out into the cup.] #Speaker:Cleo
+    
+    Blehh! Oh, geez! That's so not happening! #Speaker:Cleo
+    
+    I warned you! It's got a real kick, doesn't it? #Speaker:Vera
+    
+    That's an understatement! Gosh... You seriously drink this every morning? #Speaker:Cleo
+    
+    A cup of fish goo a day keeps the doctor away! #Speaker:Vera
+    
+    I don't think that's how the saying goes. #Speaker:Cleo
+    
+    Ha! Anyway, was that all? #Speaker:Vera
+    
+    ~ coffeeTasted = "true"
+
+    -> activeQuestions
+
+* {VeraCoffeeMystery == "active"} [Your coffee...]
+
+    Sigrid told me you put something weird in your coffee. #Speaker:Cleo
+    
+    Ha! Of course she'd say that. #Speaker:Vera
+    
+    She's not wrong, though. I do include a secret ingredient. #Speaker:Vera
+    
+    What is it? #Speaker:Cleo
+    
+    Glyco-protein! #Speaker:Vera
+    
+    ~ VeraCoffeeMystery = "solved"
+
+    Or, well, slime. I scrape it off the fish we catch. #Speaker:Vera
+    
+    ** [Wait, what?]
+    
+    You put... slime... in your coffee...? Hold on, is it even safe?! #Speaker:Cleo
+    
+    Did I mention the ecosystem here is unique to this archipelago? #Speaker:Vera
+    
+    There's this fish around here that produces that slime, and it's just teeming with nutrition! #Speaker:Vera
+    
+    Sure, the first few attempts gave me the runs... #Speaker:Vera
+    
+    Ew. #Speaker:Cleo
+    
+    But then I figured out how to brew out any icky bacteria without losing what makes the slime healthy. #Speaker:Vera
+    
+    I've been chugging it every morning since then! Really, the taste is fine when you're used to it. #Speaker:Vera
+    
+    *** [Cool!]
+    
+    Y'know... that's actually kinda cool! #Speaker:Cleo
+    
+    Right?! #Speaker:Vera
+    
+    There's a ton of interesting things you can discover if you buckle down and commit to trying them. #Speaker:Vera
+    
+    Wanna try a cup? #Speaker:Vera
+    
+    **** [Nope!]
+    
+    Uh, I wouldn't go that far..! #Speaker:Cleo
+    
+    **** [Sure!]
+    
+    Yeah, totally! #Speaker:Cleo
+    
+    ~ coffeeTasted = "true"
+    
+    That's the spirit! I'll brew you a cup. #Speaker:Vera
+    
+    ~ Fade(2.0)
+    
+    All done! Have a sip, why don't you? #Speaker:Vera
+    
+    ~ Give()
+    
+    [You take a whiff of the coffee.] #Speaker:Cleo
+    
+    [Aside from a faint fishy odor, it seems... relatively normal.] #Speaker:Cleo
+    
+    [When you take a sip, however, you notice the coffee is gooey and thick...] #Speaker:Cleo
+    
+    [The taste is downright rotten! You can't swallow this... concoction! Your eyes are tearing up!] #Speaker:Cleo
+    
+    [You spit the coffee back out into the cup.] #Speaker:Cleo
+    
+    Blehh! Oh, geez! That's so not happening! #Speaker:Cleo
+    
+    I warned you! It's got a real kick, doesn't it? #Speaker:Vera
+    
+    That's an understatement! Gosh... You seriously drink this every morning? #Speaker:Cleo
+    
+    A cup of fish goo a day keeps the doctor away! #Speaker:Vera
+    
+    I don't think that's how the saying goes. #Speaker:Cleo
+    
+    *** [Ew!]
+    
+    Urgh, I regret asking about this... #Speaker:Cleo
+    
+    ** [I'm done asking...]
+    
+    I'm already regretting this topic! The less I know, the better. #Speaker:Cleo
+    
+    -Ha! Anyway, was that all? #Speaker:Vera
+    
+    -> activeQuestions
+    
+    

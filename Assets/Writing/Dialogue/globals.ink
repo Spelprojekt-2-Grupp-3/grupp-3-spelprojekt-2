@@ -7,3 +7,10 @@ VAR IrmaQuest = ""
 VAR UlrichQuest = ""
 
 VAR VeraQuest = ""
+
+
+
+
+
+VAR VeraCoffeeMystery = ""
+VAR coffeeTasted = ""
