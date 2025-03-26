@@ -49,7 +49,7 @@ public class VolumeController : MonoBehaviour
         // If the VCA is valid then retrieve the saved volume setting from PlayerPrefs
         if (_masterVCA.isValid())
         {
-            float initialVolume = PlayerPrefs.GetFloat("MasterVolume");
+            float initialVolume = PlayerPrefs.GetFloat("MasterVolume", 1);
             //_masterVCA.setVolume(initialVolume);
             if (masterVolumeSlider != null)
             {
@@ -61,7 +61,7 @@ public class VolumeController : MonoBehaviour
         
         if (_musicVCA.isValid())
         {
-            float initialVolume = PlayerPrefs.GetFloat("MusicVolume");
+            float initialVolume = PlayerPrefs.GetFloat("MusicVolume", 1);
             //_musicVCA.setVolume(initialVolume);
             if (musicVolumeSlider != null)
             {
@@ -72,7 +72,7 @@ public class VolumeController : MonoBehaviour
         
         if (_sfxVCA.isValid())
         {
-            float initialVolume = PlayerPrefs.GetFloat("SFXVolume");
+            float initialVolume = PlayerPrefs.GetFloat("SFXVolume", 1);
             //_sfxVCA.setVolume(initialVolume);
             if (sfxVolumeSlider != null)
             {

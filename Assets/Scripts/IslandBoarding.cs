@@ -44,19 +44,19 @@ public class IslandBoarding : MonoBehaviour
         var sfxVCA = FMODUnity.RuntimeManager.GetVCA("vca:/SFX");
         if (masterVCA.isValid())
         {
-            float initialVolume = PlayerPrefs.GetFloat("MasterVolume");
+            float initialVolume = PlayerPrefs.GetFloat("MasterVolume", 1);
             masterVCA.setVolume(initialVolume);
         }
 
         if (musicVCA.isValid())
         {
-            float initialVolume = PlayerPrefs.GetFloat("MusicVolume");
+            float initialVolume = PlayerPrefs.GetFloat("MusicVolume", 1);
             musicVCA.setVolume(initialVolume);
         }
         
         if (sfxVCA.isValid())
         {
-            float initialVolume = PlayerPrefs.GetFloat("SFXVolume");
+            float initialVolume = PlayerPrefs.GetFloat("SFXVolume", 1);
             sfxVCA.setVolume(initialVolume);
         }
         playerControls = new PlayerInputActions();
