@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: CurrentInputDevice
   m_EditorClassIdentifier: 
   currentInputDevice:
-    moveSprite: {fileID: 21300000, guid: fc1b2a3549f140c428d689cd12cecdb9, type: 3}
+    moveSprite: {fileID: 1885484719, guid: 8f79f6e4458632948be052badfb80cb5, type: 3}
     moveCameraSprite: {fileID: -1687450975, guid: 1fa35af712aa3c546b7303ceeeeb5748,
       type: 3}
     interactSprite: {fileID: -219010909, guid: 2901e3ed1fbd7e94696200da56570769, type: 3}
-    gasSprite: {fileID: 1963317846, guid: 10466f0308243cc4cb6b2ee9883e6d2c, type: 3}
-    boostSprite: {fileID: -1825204540, guid: dd0ee7f80c62b1e4ba54fc19b636ce6a, type: 3}
-    reverseSprite: {fileID: -1807836684, guid: 10466f0308243cc4cb6b2ee9883e6d2c, type: 3}
+    gasSprite: {fileID: -1185852343, guid: 0fa67898eeabd134db14f80bea9e02bc, type: 3}
+    boostSprite: {fileID: 1814908058, guid: 0fa67898eeabd134db14f80bea9e02bc, type: 3}
+    reverseSprite: {fileID: 660948688, guid: 0fa67898eeabd134db14f80bea9e02bc, type: 3}
     buttonSouth: {fileID: -1807836684, guid: 10466f0308243cc4cb6b2ee9883e6d2c, type: 3}
     buttonNorth: {fileID: 1963317846, guid: 10466f0308243cc4cb6b2ee9883e6d2c, type: 3}
     buttonWest: {fileID: -1023558987, guid: 10466f0308243cc4cb6b2ee9883e6d2c, type: 3}
@@ -58,13 +58,13 @@ MonoBehaviour:
     selectSprite: {fileID: 780814646, guid: d86926982acd7ad43a103d6621f0a9f6, type: 3}
     hideUISprite: {fileID: -1110010275, guid: 0eae3de4eaa8a894ea22a52b0872aa03, type: 3}
   keyboard:
-    moveSprite: {fileID: 21300000, guid: fc1b2a3549f140c428d689cd12cecdb9, type: 3}
+    moveSprite: {fileID: 1885484719, guid: 8f79f6e4458632948be052badfb80cb5, type: 3}
     moveCameraSprite: {fileID: -1687450975, guid: 1fa35af712aa3c546b7303ceeeeb5748,
       type: 3}
     interactSprite: {fileID: -219010909, guid: 2901e3ed1fbd7e94696200da56570769, type: 3}
-    gasSprite: {fileID: 1963317846, guid: 10466f0308243cc4cb6b2ee9883e6d2c, type: 3}
-    boostSprite: {fileID: -1825204540, guid: dd0ee7f80c62b1e4ba54fc19b636ce6a, type: 3}
-    reverseSprite: {fileID: -1807836684, guid: 10466f0308243cc4cb6b2ee9883e6d2c, type: 3}
+    gasSprite: {fileID: -1185852343, guid: 0fa67898eeabd134db14f80bea9e02bc, type: 3}
+    boostSprite: {fileID: 1814908058, guid: 0fa67898eeabd134db14f80bea9e02bc, type: 3}
+    reverseSprite: {fileID: 660948688, guid: 0fa67898eeabd134db14f80bea9e02bc, type: 3}
     buttonSouth: {fileID: -1807836684, guid: 10466f0308243cc4cb6b2ee9883e6d2c, type: 3}
     buttonNorth: {fileID: 1963317846, guid: 10466f0308243cc4cb6b2ee9883e6d2c, type: 3}
     buttonWest: {fileID: -1023558987, guid: 10466f0308243cc4cb6b2ee9883e6d2c, type: 3}
