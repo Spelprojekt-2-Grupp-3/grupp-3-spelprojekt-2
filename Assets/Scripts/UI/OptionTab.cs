@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,6 +22,11 @@ public class OptionTab : MonoBehaviour
         {
             EventSystem.current.SetSelectedGameObject(firstSelected);
         }
+    }
+
+    private void Update()
+    {
+        Debug.Log(EventSystem.current.currentSelectedGameObject.name);
     }
 
     public void DisableVisuals()
