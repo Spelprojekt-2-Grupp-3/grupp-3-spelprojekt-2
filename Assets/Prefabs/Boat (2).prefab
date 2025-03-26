@@ -408,10 +408,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ceb39cbed5ed79a4ab28136b484bcea3,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 76131727041173471}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ceb39cbed5ed79a4ab28136b484bcea3,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 2192523200203989090}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ceb39cbed5ed79a4ab28136b484bcea3,
         type: 3}
@@ -421,14 +417,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 4312718034645026842}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ceb39cbed5ed79a4ab28136b484bcea3,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7177320514865401471}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ceb39cbed5ed79a4ab28136b484bcea3,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3249243041706087646}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: ceb39cbed5ed79a4ab28136b484bcea3,
         type: 3}
       insertIndex: -1
@@ -450,20 +438,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1206182379097037004}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &76131727041173471
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2052605322176439709}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e06464d2118bbbf4396c7607fcfd3cfe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shipmentCount: 0
-  items: []
 --- !u!114 &2192523200203989090
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -554,38 +528,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 7647103343603046634, guid: 082a88536c3cab641b5611ceab8b2ef2, type: 3}
---- !u!114 &7177320514865401471
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2052605322176439709}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00a4f2eb0505c6b49994ac6b39e27be9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Mat: {fileID: 2100000, guid: 6bf172fe843df5b4296db2b7df4a390a, type: 2}
-  Cam: {fileID: 0}
-  Mask:
-    serializedVersion: 2
-    m_Bits: 8
-  Size: 2
---- !u!114 &3249243041706087646
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2052605322176439709}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e06464d2118bbbf4396c7607fcfd3cfe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shipmentCount: 0
-  items: []
 --- !u!54 &3645798527923110277
 Rigidbody:
   m_ObjectHideFlags: 0
