@@ -6,6 +6,8 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using FMODUnity;
+using FMOD.Studio;
 
 public class SceneManager : MonoBehaviour
 {
@@ -18,6 +20,9 @@ public class SceneManager : MonoBehaviour
     [SerializeField] private GameObject exit;
     private InputDevice previousDevice = null;
     private PlayerInput playerInput;
+
+    public StudioEventEmitter menuTheme;
+    public StudioEventEmitter creditsTheme;
 
     private void Awake()
     {
@@ -58,6 +63,20 @@ public class SceneManager : MonoBehaviour
             s = "Close";
         else
             s = "Credits";
+    }
+
+    public void ToggleMusic()
+    {
+        if (creditsTheme.IsPlaying())
+        {
+            creditsTheme.Stop();
+            menuTheme.Play();
+        }
+        else
+        {
+            menuTheme.Stop();
+            creditsTheme.Play();
+        }
     }
 
     public void ChangeTextElement(GameObject tmp)
