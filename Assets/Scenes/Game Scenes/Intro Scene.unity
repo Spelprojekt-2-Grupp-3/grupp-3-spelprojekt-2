@@ -976,12 +976,17 @@ PrefabInstance:
     - target: {fileID: 3944962591397387063, guid: e6b5b42ab4f530c4d8503746337a425b,
         type: 3}
       propertyPath: m_DefaultActionMap
-      value: 06e7e9f8-86a4-4161-9d72-3aadc97b4054
+      value: UI
       objectReference: {fileID: 0}
     - target: {fileID: 3944962591397387063, guid: e6b5b42ab4f530c4d8503746337a425b,
         type: 3}
       propertyPath: m_DefaultControlScheme
-      value: 
+      value: Gamepad
+      objectReference: {fileID: 0}
+    - target: {fileID: 3944962591397387063, guid: e6b5b42ab4f530c4d8503746337a425b,
+        type: 3}
+      propertyPath: m_NeverAutoSwitchControlSchemes
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5903711366032893847, guid: e6b5b42ab4f530c4d8503746337a425b,
         type: 3}
