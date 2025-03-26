@@ -103,7 +103,7 @@ public class SetBindingIcon : MonoBehaviour
                     case "escape":
                         image.sprite = inputDevice.startSprite;
                         return;
-                    case "select": 
+                    case "tab": 
                         image.sprite = inputDevice.selectSprite;
                         return;
                     case "shift": 
@@ -136,7 +136,7 @@ public class SetBindingIcon : MonoBehaviour
                     case "escape":
                         image.sprite = inputDevice.startSprite;
                         return;
-                    case "select": 
+                    case "tab": 
                         image.sprite = inputDevice.selectSprite;
                         return;
                     case "shift": 
