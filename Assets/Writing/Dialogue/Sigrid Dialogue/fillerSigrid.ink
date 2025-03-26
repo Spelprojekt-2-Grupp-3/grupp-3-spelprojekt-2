@@ -141,10 +141,6 @@ What's up? #Speaker:Sigrid
     
     What about Ulrich? #Speaker:Cleo
     
-    I admire that he has the energy to tend to his plants every day. #Speaker:Sigrid
-    
-    Considering his allergies and his age... that takes drive. #Speaker:Sigrid
-    
     I heard others got a bad first impression from him, but I didn't. Neither did my folks. #Speaker:Sigrid
     
     If you're a good person you won't need to worry about pleasantries. It's how you act that counts. #Speaker:Sigrid

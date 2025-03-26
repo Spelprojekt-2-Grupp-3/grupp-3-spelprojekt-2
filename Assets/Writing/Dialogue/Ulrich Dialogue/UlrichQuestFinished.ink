@@ -56,15 +56,9 @@ Now, move along. #Speaker:Ulrich
 
     * [Alright.]
     
--That's too bad... #Speaker:Cleo
+-That's too bad... I'll just keep looking. #Speaker:Cleo
 
 [Ulrich mumbles something under his breath before coughing once again.] #Speaker:Ulrich
-
-Mhrmnm. #Speaker:Ulrich
-
-[Looks like the nasal spray is wearing off...] #Speaker:Cleo
-
-I'll get going, then. #Speaker:Cleo
 
 ~ EditQuest(3, 4)
 ~ UlrichQuest = "complete"
@@ -73,6 +67,6 @@ I'll get going, then. #Speaker:Cleo
 ~ EditQuest(0, 0)
 }
 
-Hrm. #Speaker:Ulrich
+Off with you, then. #Speaker:Ulrich
 
 -> END
