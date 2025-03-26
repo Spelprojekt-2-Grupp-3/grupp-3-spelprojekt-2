@@ -18,7 +18,6 @@ public class SetBindingIcon : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log(InputListener.Instance.inputDevice.currentInputDevice);
         SetIcon(InputListener.Instance.inputDevice.currentInputDevice, InputListener.Instance.playerInput);
     }
 

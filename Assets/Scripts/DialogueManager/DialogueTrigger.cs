@@ -39,7 +39,6 @@ public class DialogueTrigger : MonoBehaviour
 
     private void Start()
     {
-        Debug.Log(transform.parent.name);
         firstTalk = true;
     }
 

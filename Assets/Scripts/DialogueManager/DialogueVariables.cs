@@ -20,7 +20,7 @@ public class DialogueVariables : MonoBehaviour
         {
             Ink.Runtime.Object value = globalVariablesStory.variablesState.GetVariableWithName(name);
             _variables.Add(name, value);
-            Debug.Log("Initialized global dialogue variable: " + name + " = " + value);
+//            Debug.Log("Initialized global dialogue variable: " + name + " = " + value);
         }
     }
     public void StartListening(Story story)

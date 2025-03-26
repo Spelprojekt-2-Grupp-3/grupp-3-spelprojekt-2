@@ -111,12 +111,9 @@ public class PlayerMovement : MonoBehaviour
             previousInputMagnitude = moveDirection;
             _aniControl.SetFloat("Speed", moveDirection.sqrMagnitude);
             _idleInterpolationSpeed = 0.2f;
-            Debug.Log("run");
         }
         else
         {
-            Debug.Log("Idle");
-            Debug.Log(previousInputMagnitude);
             _idleInterpolationSpeed += Time.deltaTime * 2;
             Vector3 InterpMoveDirection = Vector2.Lerp(
                 previousInputMagnitude,
