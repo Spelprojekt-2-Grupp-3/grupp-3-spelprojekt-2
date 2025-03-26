@@ -20,9 +20,11 @@ public class DialogueManager : MonoBehaviour
     [SerializeField]
     [Tooltip("The pause after a . ! ? etc")]
     private float punctuationPauseSpeed = 0.25f;
-    
+
     [SerializeField]
-    [Tooltip("The time it takes for the dialogue to be interactable again after a dialogue has ended")]
+    [Tooltip(
+        "The time it takes for the dialogue to be interactable again after a dialogue has ended"
+    )]
     private float dialogueCooldownTime = 2f;
 
     [Header("Globals Ink File")]
@@ -79,7 +81,7 @@ public class DialogueManager : MonoBehaviour
     private bool _submitSkip = false;
     private bool _isFadingToBlack = false;
     private float _dialogueCooldownTimer = 0f;
-    
+
     [HideInInspector]
     public bool canStartNewDialogue = true;
 
@@ -227,12 +229,11 @@ public class DialogueManager : MonoBehaviour
                 canStartNewDialogue = true;
             }
         }
-        
+
         if (!_isFadingToBlack && submit.WasPressedThisFrame())
         {
             _submitSkip = true;
         }
-
 
         // Return if dialogue isn't playing
         if (!dialogueIsPlaying)
@@ -241,7 +242,12 @@ public class DialogueManager : MonoBehaviour
         }
 
         // If player clicks and can continue, go to the next line
-        if (_submitSkip && _canContinueToNextLine && _currentStory.currentChoices.Count == 0 && !_isFadingToBlack)
+        if (
+            _submitSkip
+            && _canContinueToNextLine
+            && _currentStory.currentChoices.Count == 0
+            && !_isFadingToBlack
+        )
         {
             _submitSkip = false; // Reset input buffer
             ContinueStory();
@@ -302,12 +308,12 @@ public class DialogueManager : MonoBehaviour
         _dialogueCooldownTimer = dialogueCooldownTime;
         MultipleDialogueStart();
     }
-    
+
     public void PauseDialogue()
     {
         dialogueUI.SetActive(false);
     }
-    
+
     public void ResumeDialogue()
     {
         dialogueUI.SetActive(true);
@@ -542,17 +548,22 @@ public class DialogueManager : MonoBehaviour
     }
 
     public EventReference fadeToBlackSound;
-    
+
     private void FadeToBlack(float duration)
     {
-        _isFadingToBlack = true;
+        //  _isFadingToBlack = true;
         RuntimeManager.PlayOneShot(fadeToBlackSound, Camera.main.transform.position);
         FadeToBlackAnimator.SetTrigger("Fade");
         FadeToBlackAnimator.SetFloat("SpeedParam", 1 / duration);
-        
+
         StartCoroutine(ResetFadeToBlack(duration));
     }
-    
+
+    public void SetFadeState(bool b)
+    {
+        _isFadingToBlack = b;
+    }
+
     private IEnumerator ResetFadeToBlack(float duration)
     {
         yield return new WaitForSeconds(duration);
