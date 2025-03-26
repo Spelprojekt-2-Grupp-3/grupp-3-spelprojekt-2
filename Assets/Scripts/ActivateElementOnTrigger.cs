@@ -48,7 +48,10 @@ public class ActivateElementOnTrigger : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         playerInsideTriggerZone = true;
-        outlineMat.SetFloat("_CutoffRange", 800);
+        if (outlineMat != null && other.gameObject.CompareTag("Player"))
+        {
+            outlineMat.SetFloat("_CutoffRange", 800);
+        }
         if (obj.GetComponent<Canvas>())
         {
             obj.GetComponent<Canvas>().enabled = true;
@@ -61,7 +64,10 @@ public class ActivateElementOnTrigger : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-         outlineMat.SetFloat("_CutoffRange", 0);
+        if (outlineMat != null)
+        {
+            outlineMat.SetFloat("_CutoffRange", 0);
+        }
         playerInsideTriggerZone = false;
 
         if (obj.GetComponent<Canvas>())
