@@ -7,13 +7,21 @@ using UnityEngine.InputSystem;
 
 public class PauseMenu : MonoBehaviour
 {
-    [SerializeField] private GameObject firstSelected;
-    [SerializeField] private GameObject optionsObject;
+    [SerializeField]
+    private GameObject firstSelected;
+
+    [SerializeField]
+    private GameObject optionsObject;
     private PlayerInputActions playerControls;
-    private InputAction pause, cancel;
+    private InputAction pause,
+        cancel;
     private bool paused;
-    [SerializeField] private Camera camera;
-    [SerializeField] private RenderTexture renderTexture;
+
+    [SerializeField]
+    private Camera camera;
+
+    [SerializeField]
+    private RenderTexture renderTexture;
     private Camera cameraBrain;
     private GameObject playerMovement;
 
@@ -38,10 +46,12 @@ public class PauseMenu : MonoBehaviour
         }
         if (!paused)
         {
+            Cursor.lockState = CursorLockMode.None;
             Pause();
         }
         else
         {
+            Cursor.lockState = CursorLockMode.Locked;
             Resume();
         }
     }
@@ -72,6 +82,7 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         DialogueManager.GetInstance().submit.Enable();
         cancel.Disable();
         playerControls.UI.Cancel.performed -= TryCancel;
@@ -96,6 +107,7 @@ public class PauseMenu : MonoBehaviour
 
     public void MainMenu()
     {
+        Cursor.lockState = CursorLockMode.None;
         UnityEngine.SceneManagement.SceneManager.LoadScene("Main Menu");
     }
 
@@ -105,7 +117,9 @@ public class PauseMenu : MonoBehaviour
         if (optionsObject.activeSelf)
         {
             optionsObject.transform.GetChild(0).gameObject.SetActive(true);
-            EventSystem.current.SetSelectedGameObject(optionsObject.transform.GetChild(0).gameObject);
+            EventSystem.current.SetSelectedGameObject(
+                optionsObject.transform.GetChild(0).gameObject
+            );
         }
     }
 
@@ -113,14 +127,13 @@ public class PauseMenu : MonoBehaviour
     {
         if (optionsObject.activeSelf)
         {
-            Debug.Log("optionsmenu active");
+        //    Debug.Log("optionsmenu active");
             optionsObject.SetActive(false);
             EventSystem.current.SetSelectedGameObject(firstSelected);
         }
-        
         else if (gameObject.GetComponent<Canvas>().enabled)
         {
-            Debug.Log("tried to unpause");
+         //   Debug.Log("tried to unpause");
             Resume();
         }
     }

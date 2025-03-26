@@ -20,9 +20,11 @@ public class DialogueManager : MonoBehaviour
     [SerializeField]
     [Tooltip("The pause after a . ! ? etc")]
     private float punctuationPauseSpeed = 0.25f;
-    
+
     [SerializeField]
-    [Tooltip("The time it takes for the dialogue to be interactable again after a dialogue has ended")]
+    [Tooltip(
+        "The time it takes for the dialogue to be interactable again after a dialogue has ended"
+    )]
     private float dialogueCooldownTime = 2f;
 
     [Header("Globals Ink File")]
@@ -79,7 +81,7 @@ public class DialogueManager : MonoBehaviour
     private bool _submitSkip = false;
     private bool _isFadingToBlack = false;
     private float _dialogueCooldownTimer = 0f;
-    
+
     [HideInInspector]
     public bool canStartNewDialogue = true;
 
@@ -109,7 +111,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (_instance != null)
         {
-            Debug.LogWarning("More than one Dialogue Manager in scene!");
+          //  Debug.LogWarning("More than one Dialogue Manager in scene!");
         }
         _instance = this;
 
@@ -227,12 +229,11 @@ public class DialogueManager : MonoBehaviour
                 canStartNewDialogue = true;
             }
         }
-        
+
         if (!_isFadingToBlack && submit.WasPressedThisFrame())
         {
             _submitSkip = true;
         }
-
 
         // Return if dialogue isn't playing
         if (!dialogueIsPlaying)
@@ -241,7 +242,12 @@ public class DialogueManager : MonoBehaviour
         }
 
         // If player clicks and can continue, go to the next line
-        if (_submitSkip && _canContinueToNextLine && _currentStory.currentChoices.Count == 0 && !_isFadingToBlack)
+        if (
+            _submitSkip
+            && _canContinueToNextLine
+            && _currentStory.currentChoices.Count == 0
+            && !_isFadingToBlack
+        )
         {
             _submitSkip = false; // Reset input buffer
             ContinueStory();
@@ -265,7 +271,7 @@ public class DialogueManager : MonoBehaviour
 
     public void EnterDialogueMode(TextAsset inkJSON)
     {
-        Debug.Log(_NPC.name);
+     //   Debug.Log(_NPC.name);
         _currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
         dialogueUI.SetActive(true);
@@ -302,12 +308,12 @@ public class DialogueManager : MonoBehaviour
         _dialogueCooldownTimer = dialogueCooldownTime;
         MultipleDialogueStart();
     }
-    
+
     public void PauseDialogue()
     {
         dialogueUI.SetActive(false);
     }
-    
+
     public void ResumeDialogue()
     {
         dialogueUI.SetActive(true);
@@ -318,8 +324,10 @@ public class DialogueManager : MonoBehaviour
 
     private void MultipleDialogueStart()
     {
-        if (dialogueQueue.Count == 0)
+        if (dialogueQueue.Count == 0){
+            Cursor.lockState = CursorLockMode.Locked;
             return;
+        }
 
         EnterDialogueMode(dialogueQueue[0]);
         dialogueQueue.Remove(dialogueQueue[0]);
@@ -438,7 +446,7 @@ public class DialogueManager : MonoBehaviour
             string[] splitTag = tag.Split(":");
             if (splitTag.Length != 2)
             {
-                Debug.LogError("Tag could not be parsed: " + tag);
+                //Debug.LogError("Tag could not be parsed: " + tag);
                 return; // Exit early if the tag is invalid
             }
 
@@ -481,7 +489,7 @@ public class DialogueManager : MonoBehaviour
             }
             else
             {
-                Debug.LogWarning("Tag came in but is not currently being handled: " + tagKey);
+              //  Debug.LogWarning("Tag came in but is not currently being handled: " + tagKey);
             }
         }
     }
@@ -493,10 +501,10 @@ public class DialogueManager : MonoBehaviour
         //Check to make sure the UI can support the amount of choices coming in
         if (currentChoices.Count > choices.Length)
         {
-            Debug.LogWarning(
+            /*Debug.LogWarning(
                 "More choices were given than the UI can support. Number of choices given: "
                     + currentChoices.Count
-            );
+            );*/
         }
 
         int index = 0;
@@ -533,7 +541,7 @@ public class DialogueManager : MonoBehaviour
 
     public void MakeChoice(int choiceIndex)
     {
-        Debug.Log(choiceIndex);
+     //   Debug.Log(choiceIndex);
         if (_canContinueToNextLine)
         {
             _currentStory.ChooseChoiceIndex(choiceIndex);
@@ -542,17 +550,22 @@ public class DialogueManager : MonoBehaviour
     }
 
     public EventReference fadeToBlackSound;
-    
+
     private void FadeToBlack(float duration)
     {
-        _isFadingToBlack = true;
+        //  _isFadingToBlack = true;
         RuntimeManager.PlayOneShot(fadeToBlackSound, Camera.main.transform.position);
         FadeToBlackAnimator.SetTrigger("Fade");
         FadeToBlackAnimator.SetFloat("SpeedParam", 1 / duration);
-        
+
         StartCoroutine(ResetFadeToBlack(duration));
     }
-    
+
+    public void SetFadeState(bool b)
+    {
+        _isFadingToBlack = b;
+    }
+
     private IEnumerator ResetFadeToBlack(float duration)
     {
         yield return new WaitForSeconds(duration);
