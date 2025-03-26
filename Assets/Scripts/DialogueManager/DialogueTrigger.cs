@@ -70,6 +70,7 @@ public class DialogueTrigger : MonoBehaviour
 
     private void StartDialogue()
     {
+        Cursor.lockState = CursorLockMode.None;
         DialogueManager.GetInstance().FetchLatestNPC(transform.parent.gameObject);
         //We first make sure no dialogue is active
         if (!DialogueManager.GetInstance().dialogueIsPlaying)

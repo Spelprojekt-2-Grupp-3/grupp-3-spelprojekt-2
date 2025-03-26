@@ -39,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
         camera = Camera.main.GetComponent<Camera>();
         currentForward = camera.transform.forward;
         currentRight = camera.transform.right;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void OnEnable()
@@ -144,7 +145,7 @@ public class PlayerMovement : MonoBehaviour
     {
         movePlayer = false;
         _aniControl.SetFloat("Speed", 0);
-        Debug.Log("stopped player");
+   //     Debug.Log("stopped player");
         move.Disable();
         moveCam.Disable();
         interact.Disable();

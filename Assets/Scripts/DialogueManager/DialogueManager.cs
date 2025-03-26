@@ -111,7 +111,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (_instance != null)
         {
-            Debug.LogWarning("More than one Dialogue Manager in scene!");
+          //  Debug.LogWarning("More than one Dialogue Manager in scene!");
         }
         _instance = this;
 
@@ -271,7 +271,7 @@ public class DialogueManager : MonoBehaviour
 
     public void EnterDialogueMode(TextAsset inkJSON)
     {
-        Debug.Log(_NPC.name);
+     //   Debug.Log(_NPC.name);
         _currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
         dialogueUI.SetActive(true);
@@ -324,8 +324,10 @@ public class DialogueManager : MonoBehaviour
 
     private void MultipleDialogueStart()
     {
-        if (dialogueQueue.Count == 0)
+        if (dialogueQueue.Count == 0){
+            Cursor.lockState = CursorLockMode.Locked;
             return;
+        }
 
         EnterDialogueMode(dialogueQueue[0]);
         dialogueQueue.Remove(dialogueQueue[0]);
@@ -444,7 +446,7 @@ public class DialogueManager : MonoBehaviour
             string[] splitTag = tag.Split(":");
             if (splitTag.Length != 2)
             {
-                Debug.LogError("Tag could not be parsed: " + tag);
+                //Debug.LogError("Tag could not be parsed: " + tag);
                 return; // Exit early if the tag is invalid
             }
 
@@ -487,7 +489,7 @@ public class DialogueManager : MonoBehaviour
             }
             else
             {
-                Debug.LogWarning("Tag came in but is not currently being handled: " + tagKey);
+              //  Debug.LogWarning("Tag came in but is not currently being handled: " + tagKey);
             }
         }
     }
@@ -499,10 +501,10 @@ public class DialogueManager : MonoBehaviour
         //Check to make sure the UI can support the amount of choices coming in
         if (currentChoices.Count > choices.Length)
         {
-            Debug.LogWarning(
+            /*Debug.LogWarning(
                 "More choices were given than the UI can support. Number of choices given: "
                     + currentChoices.Count
-            );
+            );*/
         }
 
         int index = 0;
@@ -539,7 +541,7 @@ public class DialogueManager : MonoBehaviour
 
     public void MakeChoice(int choiceIndex)
     {
-        Debug.Log(choiceIndex);
+     //   Debug.Log(choiceIndex);
         if (_canContinueToNextLine)
         {
             _currentStory.ChooseChoiceIndex(choiceIndex);
