@@ -24,11 +24,6 @@ public class OptionTab : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        Debug.Log(EventSystem.current.currentSelectedGameObject.name);
-    }
-
     public void DisableVisuals()
     {
         tabVisuals.SetActive(false);
