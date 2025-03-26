@@ -11,6 +11,10 @@ VAR VeraQuest = ""
 
 
 
-
 VAR VeraCoffeeMystery = ""
 VAR coffeeTasted = ""
+
+
+
+VAR IrmaRiddles = ""
+VAR riddlesSolved = ""

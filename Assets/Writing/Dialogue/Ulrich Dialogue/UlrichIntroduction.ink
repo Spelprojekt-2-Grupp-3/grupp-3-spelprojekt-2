@@ -1,4 +1,5 @@
 EXTERNAL EditQuest(int ID, int step)
+EXTERNAL Point()
 
 -> UlrichDialogue1
 
@@ -43,6 +44,8 @@ Hmrbnmr... hermem. Hrrlghgh! #Speaker:Ulrich
 Um... do you know how I might go about doing that? #Speaker:Cleo
 
 Hrmnrhgh. Heerhmnmngh Jemhgmh. Vrrha! #Speaker:Ulrich
+
+~ Point()
 
 [He gestures toward what seems to be Vera's island.] #Speaker:Ulrich
 

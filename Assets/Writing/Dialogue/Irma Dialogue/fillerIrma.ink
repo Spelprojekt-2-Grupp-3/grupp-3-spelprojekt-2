@@ -1,3 +1,5 @@
+INCLUDE ../globals.ink
+
 -> fillerIrma
 
 === fillerIrma ===
@@ -10,7 +12,15 @@ Something on your mind? #Speaker:Irma
 
 = questions
 
-    * [About you...]
+    + [I heard something...]
+    
+    I heard something interesting... #Speaker:Cleo
+    
+    Ooh, what is it? #Speaker:Irma
+    
+    -> activeQuestions
+
+    + [About you...]
     
     I've got some questions about you. #Speaker:Cleo
 
@@ -18,7 +28,7 @@ Something on your mind? #Speaker:Irma
     
     -> irmaQuestions
     
-    * [About the other islanders...]
+    + [About the other islanders...]
     
     What are your thoughts on the others in the archipelago? #Speaker:Cleo
     
@@ -192,3 +202,239 @@ Something on your mind? #Speaker:Irma
     Roger that. What else do you want to talk about? #Speaker:Irma
 
     -> questions
+    
+    
+= activeQuestions
+
++ [Nevermind.]
+    
+    Actually, nevermind! #Speaker:Cleo
+    
+    Moving on, then? #Speaker:Irma
+    
+-> questions
+
++ {IrmaRiddles == "solved" and riddlesSolved != "true"} [I want to solve riddles.]
+
+    I'd like to take a crack at those riddles! #Speaker:Cleo
+    
+    Now you're speaking my language! How about... #Speaker:Irma
+    
+    {riddlesSolved == "": -> riddle1 }
+    
+    {riddlesSolved == "1": -> riddle2 }
+    
+    {riddlesSolved == "2": -> riddle3 }
+    
+
+* {IrmaRiddles == "active"} [You like riddles?]
+
+    Vera mentioned you love riddles. #Speaker:Cleo
+    
+    ~ IrmaRiddles = "solved"
+    
+    Oh, do I ever! #Speaker:Irma
+    
+    Then, how about you answer this... #Speaker:Cleo
+    
+    Where do you take a sick boat? #Speaker:Cleo
+    
+    Pff, the dock! #Speaker:Irma
+    
+    Aw, okay that one was easy! How about... #Speaker:Cleo
+    
+    What's a vampire's favorite boat to travel on? #Speaker:Cleo
+    
+    Hmm... #Speaker:Irma
+    
+    Aha! A blood vessel! #Speaker:Irma
+    
+    Are all your riddles boat-related, by the way? #Speaker:Irma
+    
+    My riddle arsenal is a bit limited, I admit. #Speaker:Cleo
+    
+    How about I challenge you to a few? You game? #Speaker:Irma
+    
+        ** [Nah.]
+        
+    -> exitRiddles
+    
+        ** [Sure!]
+        
+    Oh! Totally, yes! #Speaker:Cleo
+    
+    Sweet! How about... #Speaker:Irma
+    
+    -> riddle1
+    
+    = riddle1
+    
+    A girl has as many brothers as sisters, but each brother has only half as many brothers as sisters... #Speaker:Irma
+    
+    How many brothers and sisters are there in the family?
+    
+    * [4 sisters, 3 brothers.]
+    
+    Is there... four sisters, three brothers? #Speaker:Cleo
+    
+    Ding ding ding! That's right! #Speaker:Irma
+    
+    ~ riddlesSolved = "1"
+    
+    Are you ready for another one? #Speaker:Irma
+    
+    ** [Nah.]
+        
+        -> exitRiddles
+        
+    ** [Yes!]
+    
+        Hit me! #Speaker:Cleo
+        
+        That's the spirit! #Speaker:Irma
+        
+        -> riddle2
+        
+    * [3 sisters, 4 brothers.]
+    
+    Is there... three sisters, four brothers? #Speaker:Cleo
+
+    Oof, nope! I'll repeat it for you... #Speaker:Irma
+    
+    -> riddle1
+
+    * [2 sisters, 5 brothers.]
+    
+    Is there... two sisters, five brothers? #Speaker:Cleo
+    
+    Oof, nope! I'll repeat it for you... #Speaker:Irma
+    
+    -> riddle1
+    
+    + [Repeat that.]
+    
+    Hmm... could you repeat the riddle for me? #Speaker:Cleo
+    
+    Of course! #Speaker:Irma
+    
+    -> riddle1
+        
+        = riddle2
+        
+        A is the brother of B. B is the brother of C. C is the father of D. #Speaker:Irma
+        
+        How is D related to A? #Speaker:Irma
+        
+        * [A's father.]
+        
+        D is A's father! #Speaker:Cleo
+        
+        No, no! I'll repeat it for you... #Speaker:Irma
+    
+        -> riddle2
+        
+        * [A's uncle.]
+        
+        D is A's uncle! #Speaker:Cleo
+
+        That's correct! #Speaker:Irma
+        
+        ~ riddlesSolved = "2"
+        
+        How about just one more? #Speaker:Irma
+        
+            ** [Nah.]
+        
+        -> exitRiddles
+    
+            ** [Yes!]
+    
+            Hit me! #Speaker:Cleo
+        
+            That's the spirit! #Speaker:Irma
+        
+            -> riddle3
+            
+            * [A's brother.]
+        
+        D is A's brother! #Speaker:Cleo
+        
+        No, no! I'll repeat it for you... #Speaker:Irma
+    
+        -> riddle2
+        
+        + [Repeat that.]
+        
+        Hmm... could you repeat the riddle for me? #Speaker:Cleo
+    
+        Of course! #Speaker:Irma
+    
+        -> riddle2
+            
+            = riddle3
+            
+            I dance in the wind and I bow to a storm... #Speaker:Irma
+            
+            I grow best in temperatures that are warm... #Speaker:Irma
+            
+            By the riverbeds, I like to grow, where the people in boats like to row... #Speaker:Irma
+            
+            What am I? #Speaker:Irma
+            
+            * [Seaweed!]
+            
+            You're seaweed! #Speaker:Cleo
+            
+            That I am not! I'll repeat it for you... #Speaker:Irma
+    
+            -> riddle3
+            
+            * [A reed!]
+            
+            You're a reed! #Speaker:Cleo
+            
+            That I am! You got me all figured out! #Speaker:Irma
+            
+            I'm all out of riddles now, so how about you give that brain of yours a rest? #Speaker:Irma
+            
+            Phew, I sure will! #Speaker:Cleo
+            
+            ~ riddlesSolved = "true"
+            
+            Right, was there anything else you wondered about? #Speaker:Irma
+            
+            -> activeQuestions
+            
+            * [A water lily!]
+            
+            You're a water lily! #Speaker:Cleo
+            
+            That I am not! I'll repeat it for you... #Speaker:Irma
+            
+            -> riddle3
+            
+            + [Repeat that.]
+            
+            Hmm... could you repeat the riddle for me? #Speaker:Cleo
+    
+            Of course! #Speaker:Irma
+    
+        -> riddle3
+        
+        
+    ** [No.]
+    
+    -> exitRiddles
+    
+    
+    = exitRiddles
+        
+    Maybe another time? #Speaker:Cleo
+    
+    Bummer! That's alright, let me know whenever you'd like to work your brain out with me! #Speaker:Irma
+    
+    Sure, I'll do that. #Speaker:Cleo
+    
+    Was there anything else, though? #Speaker:Irma
+
+-> questions
