@@ -66,7 +66,7 @@ public class BengtMinigame : Minigames
     {
         Events.startPlayer?.Invoke();
         Events.sendUpdatedQuest?.Invoke(ID, step);
-        questLog.UpdateQuest(ID,step);
+        questLog.UpdateQuest(ID, step);
         Destroy(gameObject);
     }
 
