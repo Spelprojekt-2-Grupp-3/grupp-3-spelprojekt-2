@@ -29,6 +29,8 @@ public class QuestLog : MonoBehaviour
 
     private List<Quest> questObjectList = new List<Quest>();
 
+    [SerializeField] private List<GameObject> questObjects;
+
     [Tooltip("for fine adjustments of the placement of quests on menu"),SerializeField] private float offset;
     
     [SerializeField]
@@ -63,14 +65,8 @@ public class QuestLog : MonoBehaviour
             Debug.Log("Added quest");
             questList.Add(questsData[i]);
             questsData[i].step = 0;
-            
-            //create the quest in the visual Quest log
-            var questVisualObject = Instantiate(questBoxPrefab, questContainer.transform);
-            var rect = questVisualObject.GetComponent<RectTransform>();
 
-            rect.transform.position = new Vector3(rect.transform.position.x,  rect.transform.position.y - (rect.sizeDelta.y + offset) * (i - 2));
-            
-            var questVisual = questVisualObject.GetComponent<Quest>();
+            var questVisual = questObjects[i].GetComponent<Quest>();
             
             questObjectList.Add(questVisual); //add it to list for text-updating later
             questVisual.SetInitial(questsData[i]); //set the initial variables for the quest
