@@ -39,6 +39,8 @@ public class IrmaMinigame : Minigames
         exit.Enable();
         exit.performed += CloseMinigame;
         Events.stopPlayer?.Invoke();
+        var brain = Camera.main.GetComponent<CinemachineBrain>(); 
+        brain.enabled = false;
     }
 
     private void OnDisable()
@@ -77,6 +79,8 @@ public class IrmaMinigame : Minigames
     
     public override void CloseMinigame(InputAction.CallbackContext context)
     {
+        var brain = Camera.main.GetComponent<CinemachineBrain>(); 
+        brain.enabled = true;
         Events.startPlayer?.Invoke();
         gameObject.SetActive(false);
     }
