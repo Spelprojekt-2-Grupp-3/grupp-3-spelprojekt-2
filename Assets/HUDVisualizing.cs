@@ -19,11 +19,11 @@ public class HUDVisualizing : MonoBehaviour
     {
         if (controlScheme.activeInHierarchy)
         {
-            myText.text = "Hide HUD";
+            myText.text = "Hide Controls";
         }
         else
         {
-            myText.text = "Show HUD";
+            myText.text = "Show Controls";
         }
     }
 }
