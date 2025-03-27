@@ -31,7 +31,9 @@ I know I shouldn't ask you to, but we both need this, right? #Speaker:Irma
 
     * [Yeah, I'm going.]
     
--I'm already on the case. I haven't found the whirlpool yet, but something tells me it's out there now. #Speaker:Cleo
+-I'm already on the case! #Speaker:Cleo
+
+I haven't found the whirlpool yet, but something tells me it's out there now. #Speaker:Cleo
 
 Whew! Okay, okay... #Speaker:Irma
 

@@ -24,9 +24,9 @@ Hrrgnmm! #Speaker:Ulrich
     
 -Should we make tea of these...? #Speaker:Cleo
 
-[Ulrich nods.] #Speaker:Ulrich
-
 ~ Give()
+
+[Ulrich nods.] #Speaker:Ulrich
 
     * [Got it.]
     
@@ -49,11 +49,11 @@ Hrnm. #Speaker:Ulrich
 
 There, make tea out of these and it should dissolve the toxin! #Speaker:Ulrich
 
-~ Give()
-
     * [Got it.]
     
 -Alright, I'll let Vera know! #Speaker:Cleo
+
+~ Give()
 
 Thanks, Ulrich! #Speaker:Cleo
 

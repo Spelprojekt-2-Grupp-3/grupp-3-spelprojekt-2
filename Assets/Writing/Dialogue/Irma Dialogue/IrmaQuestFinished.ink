@@ -32,7 +32,7 @@ I am! #Speaker:Irma
 
 Gosh, I can't believe it actually reached you. It's been so long! #Speaker:Irma
 
-    * [About my parents...]
+    * [My parents...]
     
 -If you're the one who found this boat, does that mean you know where my parents might've gone? #Speaker:Cleo
 
@@ -62,7 +62,7 @@ I tried to ask the others if they knew anything, but they play dumb. #Speaker:Ir
 
     * [How can you tell?]
     
--What do you mean, they play dumb? What if they really don't know? #Speaker:Cleo 
+What do you mean, they play dumb? What if they really don't know? #Speaker:Cleo 
 
 Some of them have been here their whole lives, and those who haven't have lived here longer than I have! #Speaker:Irma
 
@@ -70,13 +70,19 @@ It's just weird that people are going missing and apparently no one notices anyt
 
 I don't suspect them, mind you. I just can't shake the feeling they're keeping something from me. #Speaker:Irma
 
-... I'm guessing you oughta get going soon. I should probably install that upgrade for you now. #Speaker:Irma
+    * [That's weird.]
+    
+Really? That IS weird... #Speaker:Cleo
+
+Right?! #Speaker:Irma
+
+-... I'm guessing you oughta get going soon. I should probably install that upgrade for you now. #Speaker:Irma
 
 ~ Fade(3.5)
 
-Done! #Speaker:Irma
+..... Done! #Speaker:Irma
 
-... Do me another favor, yeah? #Speaker:Irma
+Do me another favor, yeah? #Speaker:Irma
 
 If you find out anything regarding your parents, talk to me before anyone else. #Speaker:Irma
 

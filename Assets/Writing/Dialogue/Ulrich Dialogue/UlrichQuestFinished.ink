@@ -36,13 +36,13 @@ Wait here, will you? #Speaker:Ulrich
 
 //[Ulrich shuffles over to your boat and installs the upgrade.] #Speaker:Ulrich 
 
-There. #Speaker:Ulrich
+..... There. #Speaker:Ulrich
 
 I have work to get to. Whatever else you got to say, make it quick. #Speaker:Ulrich
 
     * [My parents...]
     
--I was told my parents passed through this archipelago a long time ago. #Speaker:Cleo
+I was told my parents passed through this archipelago a long time ago. #Speaker:Cleo
 
 Have you seen them at all? Do you know where they might've gone? #Speaker:Cleo
 
@@ -54,11 +54,13 @@ I can't help you. #Speaker:Ulrich
 
 Now, move along. #Speaker:Ulrich
 
-    * [Alright.]
-    
--That's too bad... I'll just keep looking. #Speaker:Cleo
+That's too bad... I'll just keep looking. #Speaker:Cleo
 
-[Ulrich mumbles something under his breath before coughing once again.] #Speaker:Ulrich
+    * [That's all.]
+    
+Nothing comes to mind. I'll take my leave now! #Speaker:Cleo
+
+-[Ulrich mumbles something under his breath before coughing once again.] #Speaker:Ulrich
 
 ~ EditQuest(3, 4)
 ~ UlrichQuest = "complete"

@@ -24,7 +24,7 @@ Make tea, got it! Roger that! Thanks! #Speaker:Vera
 
 ~ Fade(2.5)
 
-[A few moments later, she comes back with a cup of tea in hand.] #Speaker:Vera
+[....A few moments later, she comes back with a cup of tea in hand.] #Speaker:Vera
 
 Lemme tell ya, I got nervous for a sec there! #Speaker:Vera
 
@@ -44,7 +44,7 @@ Are you heading out or is there anything else I could help you with? #Speaker:Ve
 
     * [My parents...]
     
--I'm looking for my parents. Or at least, any trace of them... This was their boat. #Speaker:Cleo
+I'm looking for my parents. Or at least, any trace of them... This was their boat. #Speaker:Cleo
 
 You wouldn't happen to know anything, would you? #Speaker:Cleo
 
@@ -52,11 +52,13 @@ I thought I recognized that old thing. #Speaker:Vera
 
 I'm sorry, kiddo, but I can't help you with that. I've no clue where your folks might've gone. #Speaker:Vera
 
-    * [I see...]
-    
--I see... #Spealer:Cleo
+I see... #Speaker:Cleo
 
-Anyway, thanks for the upgrade. #Speaker:Cleo
+    * [Nope.]
+    
+Nah, I'm good! #Speaker:Cleo
+
+-Anyway, thanks for the upgrade. #Speaker:Cleo
 
 No problem! Let me know if there's anything else I could help you with. #Speaker:Vera
 

@@ -15,7 +15,7 @@ I appreciate the help. I'll get you a cog. #Speaker:Sigrid
 
 //[She then returns and hands you a very, very heavy package.] #Speaker:Sigrid
 
-I don't know what size she needs, so I packed them all in this box. #Speaker:Sigrid
+..... I don't know what size she needs, so I packed them all in this box. #Speaker:Sigrid
 
     * [Thanks.]
     
