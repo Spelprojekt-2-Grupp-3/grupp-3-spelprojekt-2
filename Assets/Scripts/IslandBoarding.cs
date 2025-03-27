@@ -94,6 +94,19 @@ public class IslandBoarding : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "Boat" && !playerCharacter.activeSelf)
+        {
+            allowIslandBoard = true;
+        }
+
+        if (other.gameObject.tag == "Player")
+        {
+            allowBoatBoard = true;
+        }
+    }
+
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Boat")
@@ -130,7 +143,6 @@ public class IslandBoarding : MonoBehaviour
         playerCamera.SetActive(true);
         playerCharacter.SetActive(true);
         allowIslandBoard = false;
-        allowBoatBoard = true;
         musicManager.StopOceanMusic();
     }
 
@@ -144,7 +156,6 @@ public class IslandBoarding : MonoBehaviour
         playerCamera.SetActive(false);
         boatCamera.SetActive(true);
         allowBoatBoard = false;
-        allowIslandBoard = true;
         musicManager.StartOceanMusic();
     }
 }
