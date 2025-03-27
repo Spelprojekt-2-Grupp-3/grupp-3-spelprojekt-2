@@ -22,6 +22,7 @@ public class VeraMinigame : Minigames
     private GameObject mouseMarkerInstance;
     [SerializeField] private Sprite cleanerShell, moreCleanShell, fullyCleanShell;
     [SerializeField] private EventReference cleanSound;
+    private bool startedMinigame;
 
     private void Awake()
     {
@@ -38,6 +39,7 @@ public class VeraMinigame : Minigames
         exit = playerControls.UI.ButtonEast;
         exit.Enable();
         exit.performed += CloseMinigame;
+        if(startedMinigame) OpenMinigame();
     }
 
     private void OnDisable()
@@ -62,13 +64,20 @@ public class VeraMinigame : Minigames
         {
             GameObject shell = Instantiate(shellPrefab, canvasInstance.transform);
             shell.transform.position = new Vector3(shell.transform.position.x, shell.transform.position.y + yPos);
-            yPos += 105f;
+            yPos += 50f;
             var shellComponent = shell.AddComponent<Shell>();
             shellComponent.dirtyLevel = 3;
             shells.Add(shell);
         }
         mouseMarkerInstance = Instantiate(mouseMarker, transform);
 
+        EventSystem.current.SetSelectedGameObject(shells[0]);
+        startedMinigame = true;
+    }
+
+    private void OpenMinigame()
+    {
+        Events.stopPlayer?.Invoke();
         EventSystem.current.SetSelectedGameObject(shells[0]);
     }
     
