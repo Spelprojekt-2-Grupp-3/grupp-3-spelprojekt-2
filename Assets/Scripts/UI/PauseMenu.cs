@@ -24,6 +24,7 @@ public class PauseMenu : MonoBehaviour
     private RenderTexture renderTexture;
     private Camera cameraBrain;
     private GameObject playerMovement;
+    private IslandBoarding[] islandBoardings;
 
     private void Awake()
     {
@@ -35,7 +36,9 @@ public class PauseMenu : MonoBehaviour
         playerMovement = GameObject.FindWithTag("Player");
         cancel = playerControls.UI.Cancel;
         cancel.Disable();
+        islandBoardings = FindObjectsOfType<IslandBoarding>();
     }
+    
 
     private void ActivatePauseMenu(InputAction.CallbackContext context)
     {
@@ -63,6 +66,10 @@ public class PauseMenu : MonoBehaviour
             DialogueManager.GetInstance().PauseDialogue();
         }
         DialogueManager.GetInstance().submit.Disable();
+        foreach (var boarding in islandBoardings)
+        {
+            boarding.board.Disable();
+        }
         cancel.Enable();
         playerControls.UI.Cancel.performed += TryCancel;
         paused = true;
@@ -102,6 +109,10 @@ public class PauseMenu : MonoBehaviour
         if (DialogueManager.GetInstance().dialogueIsPlaying)
         {
             DialogueManager.GetInstance().ResumeDialogue();
+        }
+        foreach (var boarding in islandBoardings)
+        {
+            boarding.board.Enable();
         }
     }
 

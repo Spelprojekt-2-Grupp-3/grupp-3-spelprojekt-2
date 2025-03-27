@@ -10,7 +10,7 @@ public class IslandBoarding : MonoBehaviour
     [SerializeField] private bool starterIsland;
     [SerializeField] private GameObject playerCharacter;
     private PlayerInputActions playerControls;
-    private InputAction board;
+    [HideInInspector] public InputAction board;
     [SerializeField, Tooltip("Location for where the player spawns when boarding")] private Transform playerBoardingLocation;
     [SerializeField] private GameObject boatCamera;
     [SerializeField] private GameObject playerCamera;
@@ -67,16 +67,12 @@ public class IslandBoarding : MonoBehaviour
         board = playerControls.Player.Interact;
         board.Enable();
         board.performed += TryBoarding;
-        Events.stopBoat.AddListener(DontAllowBoard);
-        Events.stopPlayer.AddListener(DontAllowBoard);
     }
 
     private void OnDisable()
     {
         board.Disable();
         board.performed -= TryBoarding;
-        Events.startBoat.AddListener(AllowBoard);
-        Events.startPlayer.AddListener(AllowBoard);
     }
 
     void Update()
@@ -150,15 +146,5 @@ public class IslandBoarding : MonoBehaviour
         allowBoatBoard = false;
         allowIslandBoard = true;
         musicManager.StartOceanMusic();
-    }
-
-    private void DontAllowBoard()
-    {
-        board.Disable();
-    }
-
-    private void AllowBoard()
-    {
-        board.Enable();
     }
 }
