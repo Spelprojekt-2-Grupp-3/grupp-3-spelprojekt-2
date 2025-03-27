@@ -18,17 +18,15 @@ I'll get you your upgrade. #Speaker:Sigrid
 
 //[When she finishes, she dusts her palms off and looks at you.] #Speaker:Sigrid
 
-Is there anything else? #Speaker:Sigrid
+..... Is there anything else? #Speaker:Sigrid
 
-    * [Actually, there is...]
+    * [My parents...]
 
--I'm trying to find out what happened to my parents. They were last seen at this archipelago. #Speaker:Cleo
+I'm trying to find out what happened to my parents. They were last seen at this archipelago. #Speaker:Cleo
 
 If a pair of outsiders passed by here, I would've noticed. You sure you're at the right place? #Speaker:Sigrid
 
-    * [I got this letter...]
-    
--I received this letter from someone here. #Speaker:Cleo
+I received this letter from someone here. #Speaker:Cleo
     
 [You hand Sigrid the letter.]
 
@@ -44,13 +42,15 @@ Even if we did know something, we might not remember it. #Speaker:Sigrid
 
 Apologies. #Speaker:Sigrid
 
-    * [It's fine.]
-    
--That's alright. I'll keep looking. #Speaker:Cleo
+That's alright. I'll keep looking. #Speaker:Cleo
     
 [Sigrid shifts awkwardly.] #Speaker:Sigrid
 
-Shouldn't you get going? #Speaker:Sigrid
+    * [Nope.]
+    
+No, that's it! #Speaker:Cleo
+
+-Shouldn't you get going? #Speaker:Sigrid
 
 I don't have much else for you. #Speaker:Sigrid
 

@@ -319,17 +319,17 @@ Anyway, what else is going on? #Speaker:Irma
         
         -> riddle2
         
-    * [3 sisters, 4 brothers.]
+    * [2 sisters, 4 brothers.]
     
-    Is there... three sisters, four brothers? #Speaker:Cleo
+    Is there... two sisters, four brothers? #Speaker:Cleo
 
     Oof, nope! I'll repeat it for you... #Speaker:Irma
     
     -> riddle1
 
-    * [2 sisters, 5 brothers.]
+    * [5 sisters, 2 brothers.]
     
-    Is there... two sisters, five brothers? #Speaker:Cleo
+    Is there... five sisters, two brothers? #Speaker:Cleo
     
     Oof, nope! I'll repeat it for you... #Speaker:Irma
     

@@ -290,7 +290,7 @@ What now? #Speaker:Ulrich
     
     Irma is a smart girl, but all that tech mumbo jumbo means nothing to me! #Speaker:Ulrich
     
-    Youngsters need to be out and about, not stay inside poking at... thingamajigs! #Speaker:Ulrich
+    Youngsters need to be out and about, not staying inside poking at... thingamajigs! #Speaker:Ulrich
     
     It's fine for an old coot like me to stick to myself, but Irma... #Speaker:Ulrich
     
@@ -356,13 +356,13 @@ Aw, c'mon... I'm so curious! She said it even made you cry! #Speaker:Cleo
 
 What I listen to is none of your business! #Speaker:Ulrich
 
-[Seems like you'll need to convince him to spill the beans...] #Speaker:Ulrich
-
-[But how?] #Speaker:Ulrich
-
 -> convinceUlrich
 
 = convinceUlrich
+
+[Seems like you'll need to convince him to spill the beans...] #Speaker:Ulrich
+
+[But how?] #Speaker:Ulrich
 
     * [Barter!] 
     
@@ -404,7 +404,7 @@ What I listen to is none of your business! #Speaker:Ulrich
     
     It's a tragedy. About a fisherwoman that falls in love with a shipwrecked sailor. #Speaker:Ulrich
     
-    And...? #Speaker:Ulrich
+    And...? #Speaker:Cleo
     
     ... the fisherwoman is married to the sailor's captain. #Speaker:Ulrich
     

@@ -30,7 +30,7 @@ How's it hanging? #Speaker:Vera
     
     -> veraQuestions
     
-    * [About the other islanders...]
+    + [About the other islanders...]
     
     What are your thoughts on the others in the archipelago? #Speaker:Cleo
     
