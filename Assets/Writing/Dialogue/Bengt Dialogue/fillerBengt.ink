@@ -12,6 +12,14 @@ Something on your mind? #Speaker:Bengt
 
 = questions
 
+    + [I heard something...]
+    
+    I heard something interesting... #Speaker:Cleo
+    
+    Something interesting? Well, now I'm curious! #Speaker:Bengt
+    
+    -> activeQuestions
+
     + [About you...]
     
     I've got some questions about you. #Speaker:Cleo
@@ -220,4 +228,70 @@ Something on your mind? #Speaker:Bengt
     Alright. Anything else you wondered about? #Speaker:Bengt
     
     -> questions
+    
+
+
+= activeQuestions
+
++ [Nevermind.]
+    
+    Actually, nevermind! #Speaker:Cleo
+    
+    Alrighty! #Speaker:Bengt
+    
+-> questions
+
+* {BengtYapping == "active"} [You talk a lot...]
+
+I had a little chat with Ulrich, and he says you talk a lot. #Speaker:Cleo
+
+Bengt... have you been harassing that poor man? #Speaker:Cleo
+
+~ BengtYapping = "solved"
+
+Ha ha! I do like talking! #Speaker:Bengt
+
+But between you and me, I bother Ulrich a little extra! #Speaker:Bengt
+
+    ** [Why?]
+    
+    But why? #Speaker:Cleo
+    
+    He visits so rarely! And it's not often I can actually understand him! #Speaker:Bengt
+    
+    When there's an opportunity to really chat, I gotta take it! #Speaker:Bengt
+    
+    Plus, between you and me... #Speaker:Bengt
+    
+    He's so grumpy all the time, I can't help but tease him. #Speaker:Bengt
+    
+    *** [Stop that!]
+    
+    Hey, that's an old dude you're pestering! #Speaker:Cleo
+    
+    Respect your elders, man! #Speaker:Cleo
+    
+    I should, shouldn't I? Ha ha! #Speaker:Bengt
+    
+    Anyway, what else is up? #Speaker:Bengt
+    
+    -> activeQuestions
+    
+    *** [That's funny!]
+    
+    {UlrichRadioShow == "solved":
+    
+    I've teased him too, it actually is pretty fun! #Speaker:Cleo
+    
+    - else: 
+    
+        Okay, that actually sounds pretty fun. #Speaker:Cleo
+
+    }
+    
+    Right? Oh, it feels so mean, but I just can't help myself! #Speaker:Bengt
+    
+    Anyway, what else is up? #Speaker:Bengt
+
+    -> activeQuestions
     

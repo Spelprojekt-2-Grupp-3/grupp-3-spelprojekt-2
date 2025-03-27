@@ -44,6 +44,12 @@ I have work to get to. Whatever else you got to say, make it quick. #Speaker:Ulr
     
 I was told my parents passed through this archipelago a long time ago. #Speaker:Cleo
 
+{parentsAskedAbout == "":
+
+~ parentsAskedAbout = "true"
+
+}
+
 Have you seen them at all? Do you know where they might've gone? #Speaker:Cleo
 
 Listen, kid. My memory ain't what it used to be. I can't remember everyone that passed by. #Speaker:Ulrich

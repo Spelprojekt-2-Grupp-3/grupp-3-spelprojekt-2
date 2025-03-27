@@ -41,19 +41,25 @@ I know what happened to your parents...! Or, I think I do. #Speaker:Bengt
 
 Agh, it's complicated! Y'know this place is weird sometimes! #Speaker:Bengt
 
-    * [What happened?]
+    * [Out with it!]
     
--C'mon, Bengt! Out with it! #Speaker:Cleo
+C'mon, Bengt! Out with it! #Speaker:Cleo
 
-There's this thing that happens every week. #Speaker:Bengt
+Okay, okay! #Speaker:Bengt
 
-A big ol' whirlpool forms somewhere on the archipelago and swallows things up! #Speaker:Bengt
+    * [Take your time.]
+    
+Okay, take a breather... and then tell me. #Speaker:Cleo
+
+-... There's this thing that happens every week. #Speaker:Bengt
+
+This big whirlpool forms somewhere on the archipelago and swallows things up! #Speaker:Bengt
 
 I'm pretty sure that's what happened. Not just to your parents, but Irma's sister, too. #Speaker:Bengt
 
     * [Why keep it secret?]
     
--Why wouldn't you tell me? Or Irma? #Speaker:Cleo
+Why wouldn't you tell me? Or Irma? #Speaker:Cleo
 
 Well, no one has ever come back after falling in! #Speaker:Bengt
 
@@ -63,7 +69,7 @@ We were lucky that Irma doesn't leave her island much... #Speaker:Bengt
 
 ... but it would be much harder for someone like you to not notice. #Speaker:Bengt
 
-Oh, but it's so stressful keeping it secret! You have no idea how relieving it is to spill the beans like this. #Speaker:Bengt
+Oh, but it's so stressful keeping it secret! You have no idea how relieving it is to unload! #Speaker:Bengt
 
 //[Bengt breathes out a big sigh of relief as if to prove his point.] #Speaker:Bengt
 
@@ -71,17 +77,15 @@ Oh, but it's so stressful keeping it secret! You have no idea how relieving it i
     
 -How do I get to the whirlpool? When does it show up? #Speaker:Cleo
 
-Darn it, I knew you'd ask! #Speaker:Bengt
+Dang it, I knew you'd ask! It's dangerous, y'know! #Speaker:Bengt
 
 ... Actually, come to think of it, with your boat all bolstered up the way it is now... #Speaker:Bengt
 
-... you might be able to pass through it without too much damage. #Speaker:Bengt
-
-[Bengt slaps his knee and looks at you with renewed vigor.] #Speaker:Bengt
+You might be able to pass through it without too much damage. #Speaker:Bengt
 
 Okay! I'll tell you! #Speaker:Bengt
 
-It's actually just about time for it to show up again. #Speaker:Bengt
+It's actually just about time for the whirlpool to show up again. #Speaker:Bengt
 
 All you need to do is seek it out, and head straight into it! #Speaker:Bengt
 
