@@ -31,6 +31,11 @@ public class SceneManager : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(null);
     }
 
+    private void Start()
+    {
+        menuTheme.EventInstance.setVolume(PlayerPrefs.GetFloat("MusicVolume", 1) * PlayerPrefs.GetFloat("MasterVolume", 1));
+    }
+
     private void OnEnable()
     {
         navigate = playerInputActions.UI.Navigate;
@@ -71,11 +76,13 @@ public class SceneManager : MonoBehaviour
         {
             creditsTheme.Stop();
             menuTheme.Play();
+            menuTheme.EventInstance.setVolume(PlayerPrefs.GetFloat("MusicVolume", 1) * PlayerPrefs.GetFloat("MasterVolume", 1));
         }
         else
         {
             menuTheme.Stop();
             creditsTheme.Play();
+            creditsTheme.EventInstance.setVolume(PlayerPrefs.GetFloat("MusicVolume", 1) * PlayerPrefs.GetFloat("MasterVolume", 1));
         }
     }
 
