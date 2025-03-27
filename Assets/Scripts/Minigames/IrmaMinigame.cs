@@ -38,6 +38,7 @@ public class IrmaMinigame : Minigames
         exit = playerControls.UI.ButtonEast;
         exit.Enable();
         exit.performed += CloseMinigame;
+        Events.stopPlayer?.Invoke();
     }
 
     private void OnDisable()
