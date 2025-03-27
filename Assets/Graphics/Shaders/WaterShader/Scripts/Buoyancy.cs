@@ -152,6 +152,10 @@ public class BuoyantObject : MonoBehaviour
             {
                 //                Debug.Log("submerged");
                 strength = 3;
+                foreach (var v in gameObject.GetComponentsInChildren<ParticleFollow>())
+                {
+                    v.ShouldEmit = true;
+                }
                 //strength = defaultStrength;
             }
 
@@ -159,10 +163,7 @@ public class BuoyantObject : MonoBehaviour
             {
                 strength = 25;
                 rb.velocity = rb.velocity / 1.1f;
-                foreach (var v in gameObject.GetComponentsInChildren<ParticleFollow>())
-                {
-                    v.ShouldEmit = true;
-                }
+
                 subm = true;
             }
             var submersion = Mathf.Clamp01(waveHeight - effectorHeight) / objectDepth;
