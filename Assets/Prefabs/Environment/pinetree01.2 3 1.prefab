@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2710413046005721092}
   - component: {fileID: 4624215122866458427}
   - component: {fileID: 4373536445498536675}
-  - component: {fileID: 160907730663417809}
   m_Layer: 3
   m_Name: pinetree01.2 3 1
   m_TagString: Untagged
@@ -85,25 +84,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &160907730663417809
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6959791294558220851}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 1
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -256413847704731201, guid: f9d4ecb847d23f14ea7ea1251b284b02, type: 3}
