@@ -62,7 +62,6 @@ public class QuestLog : MonoBehaviour
     {
         for (int i = 0; i < questsData.Count; i++)
         {
-            Debug.Log("Added quest");
             questList.Add(questsData[i]);
             questsData[i].step = 0;
 
@@ -77,13 +76,10 @@ public class QuestLog : MonoBehaviour
     {
         foreach (var quest in questList)
         {
-            Debug.Log("looped questList");
             if (quest.ID == questID && quest.step == step)
             {
-                Debug.Log("Updated quest with ID: "+ questID);
                 if (!quest.NextStep())
                     CompleteQuest(quest);
-                Debug.Log(quest.ID);
                 foreach (var questObject in questObjectList)
                 {
                     if(questID == questObject.ID)
@@ -102,7 +98,6 @@ public class QuestLog : MonoBehaviour
 
     private void CompleteQuest(QuestData quest)
     {
-        Debug.Log("Completed quest:" + quest.ID);
         finishedQuests.Add(quest);
         toRemove.Add(quest);
     }
