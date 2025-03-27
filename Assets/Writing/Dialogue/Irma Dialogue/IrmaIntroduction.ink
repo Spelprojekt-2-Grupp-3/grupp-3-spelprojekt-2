@@ -1,4 +1,5 @@
 EXTERNAL EditQuest(int ID, int step)
+INCLUDE ../globals.ink
 
 -> IrmaDialogue1
 
@@ -52,9 +53,33 @@ Sigrid has a bunch of spare cogs for her lighthouse. #Speaker:Irma
 
 If you're up for it, I'd like you to go and borrow one for me. #Speaker:Irma
 
+If I don't get this tower up and running again, poor Ulrich is gonna miss his radio program! #Speaker:Irma
+
+    * [What program?]
+    
+Ulrich might miss his radio show? What show? #Speaker:Cleo
+
+[Irma looks around and then leans in close, like she's about to spill a secret.] #Speaker:Irma
+
+There's only one program our radios can pick up on from all the way out here... #Speaker:Irma
+
+It's this out-loud reading of a really, REALLY sappy book series. #Speaker:Irma
+
+I caught Ulrich listening to it once, and I'm pretty sure I saw tears in his eyes! Like, actual tears! #Speaker:Irma
+
+I don't have the guts to bring it up to him, myself! Gosh, that would be scary! #Speaker:Irma
+
+But if you're ever feeling brave enough to do it, try not to tease him too hard. #Speaker:Irma
+
+~ UlrichRadioShow = "active"
+
+Anyway, are you going to help me? #Speaker:Irma
+
     * [I'm in.]
     
--I'll get you a cog. #Speaker:Cleo
+~ UlrichRadioShow = "standby"
+    
+-I'll get you a cog! #Speaker:Cleo
 
 ~ EditQuest(2, 0)
     

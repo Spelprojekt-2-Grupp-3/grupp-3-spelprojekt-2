@@ -210,9 +210,33 @@ Something on your mind? #Speaker:Irma
     
     Actually, nevermind! #Speaker:Cleo
     
-    Moving on, then? #Speaker:Irma
+    Roger that. What else do you want to talk about? #Speaker:Irma
     
 -> questions
+
+* {UlrichRadioShow == "standby"} [Ulrich's radio show...]
+
+    What was it you said, that Ulrich listens to some radio show...? #Speaker:Cleo
+
+    Oh, that! #Speaker:Irma
+
+    [Irma looks around and then leans in close, like she's about to spill a secret.] #Speaker:Irma
+
+    There's only one program our radios can pick up on from all the way out here... #Speaker:Irma
+
+    It's this out-loud reading of a really, REALLY sappy book series. #Speaker:Irma
+
+    I caught Ulrich listening to it once, and I'm pretty sure I caught tears in his eyes! Like, actual tears! #Speaker:Irma
+
+    I don't have the guts to bring it up to him, myself! Gosh, that would be scary! #Speaker:Irma
+
+    But if you're ever feeling brave enough to do it, don't tease him too hard. #Speaker:Irma
+
+    ~ UlrichRadioShow = "active"
+
+Anyway, what else is going on? #Speaker:Irma
+
+-> activeQuestions
 
 + {IrmaRiddles == "solved" and riddlesSolved != "true"} [I want to solve riddles.]
 

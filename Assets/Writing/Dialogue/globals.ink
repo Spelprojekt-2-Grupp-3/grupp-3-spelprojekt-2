@@ -18,3 +18,7 @@ VAR coffeeTasted = ""
 
 VAR IrmaRiddles = ""
 VAR riddlesSolved = ""
+
+
+
+VAR UlrichRadioShow = ""
