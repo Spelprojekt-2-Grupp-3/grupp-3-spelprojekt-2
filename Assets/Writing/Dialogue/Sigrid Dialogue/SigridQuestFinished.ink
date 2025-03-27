@@ -24,6 +24,13 @@ I'll get you your upgrade. #Speaker:Sigrid
 
 I'm trying to find out what happened to my parents. They were last seen at this archipelago. #Speaker:Cleo
 
+{parentsAskedAbout == "":
+
+~ parentsAskedAbout = "true"
+
+}
+
+
 If a pair of outsiders passed by here, I would've noticed. You sure you're at the right place? #Speaker:Sigrid
 
 I received this letter from someone here. #Speaker:Cleo

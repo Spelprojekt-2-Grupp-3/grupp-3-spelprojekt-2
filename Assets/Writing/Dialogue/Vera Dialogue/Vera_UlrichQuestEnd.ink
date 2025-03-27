@@ -11,11 +11,9 @@ I see you took care of those shells for me! #Speaker:Vera
 
 Now then, I'll hand you that nasal spray. #Speaker:Vera
 
-~ Fade(3.5)
+~ Give()
 
 Here ya go! #Speaker:Vera
-
-~ Give()
 
     * [Thanks.]
     
@@ -30,6 +28,8 @@ I gotta say, I'm shocked you could figure out what Ulrich needed! #Speaker:Vera
 That man can be harder to figure out than one of Irma's riddles! #Speaker:Vera
 
     * [Irma's riddles?]
+    
+What do you mean? #Speaker:Cleo
     
 She loves those little brain teasers! #Speaker:Vera
 

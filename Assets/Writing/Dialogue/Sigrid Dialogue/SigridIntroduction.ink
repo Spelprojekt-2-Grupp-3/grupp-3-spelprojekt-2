@@ -31,7 +31,7 @@ I gotta admit, I'm a little hesitant to deal with a total stranger. #Speaker:Sig
 
 Nothing personal, of course. Just not used to outsiders is all. #Speaker:Sigrid
 
-    * [A favor for a favor?]
+    * [Favor for a favor?]
     
 -You trade favors around here, right? #Speaker:Cleo
 

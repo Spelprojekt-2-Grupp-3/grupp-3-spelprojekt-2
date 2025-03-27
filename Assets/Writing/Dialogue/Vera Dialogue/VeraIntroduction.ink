@@ -28,13 +28,19 @@ Bengt told me you'd be willing to upgrade my boat. #Speaker:Cleo
 
 Are you familiar with our little system? #Speaker:Vera 
 
-    * [Yes.]
+    * [Favors?]
     
--A favor for a favor. I know all about it. #Speaker:Cleo
+A favor for a favor. I know all about it. #Speaker:Cleo
 
 Saves me the trouble of explaining it, then! #Speaker:Vera
 
-You see, I have a favor to ask of you first. #Speaker:Vera
+    * [What?]
+    
+... What system? #Speaker:Cleo
+
+A favor for a favor, of course! #Speaker:Vera
+
+-You see, I have something to ask of you first. #Speaker:Vera
 
 I was diving nearby when a nasty little thing swum by and stung me! #Speaker:Vera
 

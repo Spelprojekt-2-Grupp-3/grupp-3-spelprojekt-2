@@ -9,6 +9,8 @@ VAR UlrichQuest = ""
 VAR VeraQuest = ""
 
 
+VAR parentsAskedAbout = ""
+
 
 
 VAR VeraCoffeeMystery = ""
@@ -22,3 +24,6 @@ VAR riddlesSolved = ""
 
 
 VAR UlrichRadioShow = ""
+
+
+VAR BengtYapping = ""

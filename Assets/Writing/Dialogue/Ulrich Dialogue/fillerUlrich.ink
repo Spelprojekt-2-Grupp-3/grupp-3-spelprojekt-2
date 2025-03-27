@@ -249,6 +249,8 @@ What now? #Speaker:Ulrich
     
     [Ulrich is obviously complaining, but there's something soft, fond even, about his tone.] #Speaker:Ulrich
     
+    ~ BengtYapping = "active"
+    
     Now, who else? #Speaker:Ulrich
     
     -> characters1

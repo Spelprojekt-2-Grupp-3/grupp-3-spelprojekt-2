@@ -46,6 +46,12 @@ Are you heading out or is there anything else I could help you with? #Speaker:Ve
     
 I'm looking for my parents. Or at least, any trace of them... This was their boat. #Speaker:Cleo
 
+{parentsAskedAbout == "":
+
+~ parentsAskedAbout = "true"
+
+}
+
 You wouldn't happen to know anything, would you? #Speaker:Cleo
 
 I thought I recognized that old thing. #Speaker:Vera

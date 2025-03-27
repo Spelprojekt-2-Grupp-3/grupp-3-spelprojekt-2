@@ -40,8 +40,6 @@ Oh, I'm not the one who found it! I just wrote you the letter! #Speaker:Irma
 
 And I'm sorry to say, I don't know anything about your parents' whereabouts. #Speaker:Irma
 
-... #Speaker:Irma
-
 I mean, I have a theory. #Speaker:Irma
 
 You see, it's about my sister. #Speaker:Irma
@@ -69,6 +67,24 @@ Some of them have been here their whole lives, and those who haven't have lived 
 It's just weird that people are going missing and apparently no one notices anything strange going on. #Speaker:Irma
 
 I don't suspect them, mind you. I just can't shake the feeling they're keeping something from me. #Speaker:Irma
+
+Have they given you the same answer? Or non-answer, really. #Speaker:Irma
+
+{parentsAskedAbout == "":
+
+Aside from Bengt, I haven't really gotten around to asking anyone... #Speaker:Cleo
+
+What?! Aren't you here to look for your parents? #Speaker:Irma
+
+Well, you won't be getting much info out of anyone anyway. Not in my experience. #Speaker:Irma
+
+- else:
+
+You know what? Now that you mention it... no one has any answers at all! #Speaker:Cleo
+
+See? It's weird! #Speaker:Irma
+
+}
 
     * [That's weird.]
     
