@@ -38,6 +38,7 @@ public class UlrichMinigme : Minigames
         buttonEast.Enable();
         Events.checkInputEvent.AddListener(SelectionHandler);
         buttonEast.performed += CloseMinigame;
+        Events.stopPlayer?.Invoke();
     }
 
     private void OnDisable()
